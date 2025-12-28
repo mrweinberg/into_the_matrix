@@ -28,6 +28,7 @@ class Card {
     this.text = [];
     this.flavor = "";
     this.isBackFace = false;
+    this.hasBackFace = false; 
   }
 
   /**
@@ -41,12 +42,13 @@ class Card {
     if (this.cost && this.cost.includes("{R}")) colors.push("Fiery Red");
     if (this.cost && this.cost.includes("{G}")) colors.push("Neon Green");
     
-    // Color indicators for back faces (often have no mana cost)
-    if (this.text.join(" ").includes("(Color Indicator: White)")) colors.push("Golden White");
-    if (this.text.join(" ").includes("(Color Indicator: Blue)")) colors.push("Electric Blue");
-    if (this.text.join(" ").includes("(Color Indicator: Black)")) colors.push("Dark Purple/Black");
-    if (this.text.join(" ").includes("(Color Indicator: Red)")) colors.push("Fiery Red");
-    if (this.text.join(" ").includes("(Color Indicator: Green)")) colors.push("Neon Green");
+    // Check text for Color Indicators (common on back faces)
+    const fullText = this.text.join(" ");
+    if (fullText.includes("Color Indicator: White")) colors.push("Golden White");
+    if (fullText.includes("Color Indicator: Blue")) colors.push("Electric Blue");
+    if (fullText.includes("Color Indicator: Black")) colors.push("Dark Purple/Black");
+    if (fullText.includes("Color Indicator: Red")) colors.push("Fiery Red");
+    if (fullText.includes("Color Indicator: Green")) colors.push("Neon Green");
 
     if (colors.length === 0) {
         if (this.type.toLowerCase().includes("land")) return "Environmental Colors";
@@ -56,127 +58,150 @@ class Card {
   }
 
   /**
-   * Returns true ONLY if the card explicitly has the Digital keyword ability.
-   * Avoids false positives like "Target creature with Digital".
+   * STRICT CHECK: Does this card have the Digital keyword ability?
    */
   hasDigitalKeyword() {
-    // Regex matches "Digital" at start of line, or after a comma, 
-    // ensuring it's part of a keyword list (e.g. "Flash, Digital").
-    const digitalRegex = /(^|,\s*)Digital(,\s*|$)/i;
+    // Regex matches "Digital" at start of line, or after a comma/space.
+    const digitalRegex = /(?:^|[\s,])Digital(?:[\s,.]|$)/i;
     return this.text.some(line => digitalRegex.test(line));
   }
 
   /**
-   * Returns the BACKGROUND setting based on the strict User Rule.
+   * STRICT SETTING RULE:
+   * 1. Creature + Digital = THE MATRIX
+   * 2. Creature + !Digital = THE REAL WORLD
+   * 3. Non-Creature = Heuristic
    */
   getWorldContext() {
     const nameLower = this.name.toLowerCase();
     const typeLower = this.type.toLowerCase();
     const textLower = this.text.join(" ").toLowerCase();
 
-    // =========================================================
-    // STRICT RULE: CREATURES
-    // =========================================================
+    // === CREATURE LOGIC (HARD RULES) ===
     if (typeLower.includes("creature")) {
         if (this.hasDigitalKeyword()) {
-            // ---> IT IS IN THE MATRIX
-            
-            // Sub-setting flavor:
+            // ---> INSIDE THE MATRIX
             if (textLower.includes("kung fu") || textLower.includes("monk")) {
-                 return { setting: "A Japanese Dojo inside the Matrix", tone: "Warm Wood tones with subtle Green digital haze" };
+                 return { setting: "A Japanese Dojo Simulation", tone: "Warm Wood, Rice Paper, Clean Light" };
             }
             if (nameLower.includes("construct") || nameLower.includes("loading")) {
-                return { setting: "The Construct Loading Program", tone: "Stark Infinite White" };
+                return { setting: "The Construct Loading Program", tone: "Stark Infinite White Void" };
             }
             if (nameLower.includes("agent") || typeLower.includes("agent")) {
-                return { setting: "Corporate Office or City Street", tone: "Sterile Green and Grey" };
+                return { setting: "Corporate Government Building", tone: "Sterile, Bureaucratic, Impersonal" };
             }
-            // Default Matrix
-            return { setting: "Urban Matrix Cityscape", tone: "Desaturated Reality with a sickly Green tint" };
+            // Standard Matrix
+            return { setting: "1999 Urban Cityscape (Simulated Reality)", tone: "Slightly Desaturated, High Contrast, Concrete and Glass" };
 
         } else {
-            // ---> IT IS IN THE REAL WORLD
-            
-            // Sub-setting flavor:
+            // ---> THE REAL WORLD
             if (nameLower.includes("machine city") || nameLower.includes("01")) {
                  return { setting: "The Machine City (01)", tone: "Oppressive Black metal and Orange sky" };
             }
             if (nameLower.includes("zion") || textLower.includes("citizen") || nameLower.includes("dock")) {
-                return { setting: "Zion (Underground Industrial City)", tone: "Warm Incandescent light, Molten metal, Earth tones" };
+                return { setting: "Zion (The Last City) - Can be open cavernous docks or industrial walkways", tone: "Warm Incandescent light, Molten metal, Stone" };
             }
-            // Default Real World
-            return { setting: "The Real World (Ruins / Sewers / Hovercraft Interior)", tone: "Cold Blues, Dark Greys, and Rusted Brown" };
+            // Standard Real World
+            return { setting: "The Real World (Ruins of the Surface, Sewers, or Hovercraft Interior)", tone: "Cold Blues, Dark Greys, Rusted Metal" };
         }
     }
 
-    // =========================================================
-    // NON-CREATURES (Fallback to heuristics)
-    // =========================================================
+    // === NON-CREATURE LOGIC (HEURISTICS) ===
     
-    // 1. Matrix Spells/Enchantments
+    // Matrix Spells/Enchantments
     if (
         nameLower.includes("code") || 
         nameLower.includes("virtual") || 
         nameLower.includes("download") ||
         nameLower.includes("blue screen") ||
-        typeLower.includes("saga") // Sagas are usually historical/abstract, but let's default to Matrix for "The Machine War" etc unless specified.
+        typeLower.includes("saga")
     ) {
-        return { setting: "Visualized Code / The Matrix", tone: "Digital Green and Black" };
+        return { setting: "Abstract Visualization of Data Streams", tone: "Surreal, Neon, Digital" };
     }
 
-    // 2. Real World Artifacts/Spells
+    // Real World Artifacts
     if (
         typeLower.includes("vehicle") || 
-        nameLower.includes("emp") ||
-        nameLower.includes("scrap") ||
+        nameLower.includes("emp") || 
+        nameLower.includes("scrap") || 
         nameLower.includes("battery")
     ) {
          return { setting: "The Real World (Industrial)", tone: "Cold Blue and Rust" };
     }
     
-    // 3. Fallback for others (Lands, ambiguity)
+    // Lands
     if (typeLower.includes("land")) {
-         if (nameLower.includes("simulated") || nameLower.includes("skyline")) return { setting: "Matrix Cityscape", tone: "Green Tinted Day" };
-         return { setting: "The Real World Surface", tone: "Scorched Earth" };
+         if (nameLower.includes("simulated") || nameLower.includes("skyline")) return { setting: "Matrix Cityscape", tone: "Simulated Daylight" };
+         return { setting: "The Real World Surface", tone: "Dark, Stormy, Scorched" };
     }
 
     // Default Fallback
-    return { setting: "Cinematic Matrix Universe", tone: "High Contrast Noir" };
+    return { setting: "The Matrix Universe", tone: "Cinematic Sci-Fi Noir" };
+  }
+
+  /**
+   * Selects an art style based on type and location.
+   */
+  getArtStyle() {
+    const world = this.getWorldContext();
+    const typeLower = this.type.toLowerCase();
+
+    // 1. Instants/Sorceries
+    if (typeLower.includes("instant") || typeLower.includes("sorcery") || typeLower.includes("enchantment")) {
+        return "Abstract Surrealism or Dynamic Action Illustration. Represent the manipulation of reality.";
+    }
+
+    // 2. Real World (Gritty)
+    if (world.setting.includes("Real World") || world.setting.includes("Zion")) {
+        return "Gritty Impasto Realism. Heavy texture, emphasis on rust, sweat, and fabric. Classical oil painting vibe.";
+    }
+
+    // 3. Matrix / Construct (Clean)
+    if (world.setting.includes("Matrix") || world.setting.includes("Construct") || world.setting.includes("City")) {
+        return "Sleek, High-Fidelity Realism. Sharp edges, polished surfaces, clear lighting. Resembles 90s sci-fi concept art.";
+    }
+
+    // 4. Default
+    return "Official Magic: The Gathering House Style. A balance of realism and painterly expression.";
   }
 
   generatePrompt() {
     const world = this.getWorldContext();
     const subjectColor = this.getSubjectColor();
-    const visualContext = this.flavor.length > 0 ? this.flavor : this.text.join(" ");
+    const artStyle = this.getArtStyle();
     
-    // Clean up text
+    let visualContext = this.flavor.length > 0 ? this.flavor : this.text.join(" ");
+    
+    // FIXED REGEX BLOCK
     const descriptiveText = visualContext
-        .replace(/\{.\}/g, "") 
+        .replace(/\{[^}]+\}/g, "") // Remove {W}, {1}, etc.
         .replace(/Digital|Jack-in|Eject|Override|Scry|Ward/g, "")
         .replace(/\(Color Indicator: .*?\)/g, "")
+        .replace(/\\/g, "") 
         .substring(0, 300);
 
     return `
       Generate an image.
-      Subject: A detailed illustration for a Magic: The Gathering card named "${this.name}". 
-        It is set in the "Matrix" universe, use elements from the Matrix movies and aesthetic.
+      
+      MANDATORY: NO TEXT. Do not render the card title, mana cost, or text box. This is an illustration ONLY.
+      
+      Subject: An illustration for a Magic: The Gathering card named "${this.name}". 
+      Universe: The Matrix.
       Type: ${this.type}
       
-      VISUAL COMPOSITION STRATEGY:
-      1. THE BACKGROUND (Setting): ${world.setting}. 
-         - Background Color Palette: ${world.tone}. 
-         - Keep the background true to this location (e.g., if Matrix, keep it urban/greenish; if Real World, keep it cold/industrial).
+      SETTING & TONE:
+      - Location: ${world.setting}.
+      - Color Palette/Mood: ${world.tone}.
+      - Note: If in the Matrix, keep it clean and urban. If in the Real World, keep it dirty and industrial.
       
-      2. THE SUBJECT (Motif): The central character, spell effect, or object.
-         - Subject Color Accent (highlights, not necessarily dominant colors): **${subjectColor}**.
+      SUBJECT DETAILS:
+      - The main focus (Character/Object) should feature **${subjectColor}** accents.
+      - Contrast the subject against the background.
       
-      Description of Action/Mood: "${descriptiveText}"
+      ACTION DESCRIPTION: "${descriptiveText}"
       
-      Art Style: Official Magic: The Gathering house style. 
-      - A painterly illustration. 
-      - Detailed textures (rust, cloth, digital rain, metal).
-      - NOT a movie screenshot. NOT a vector graphic.
-      - Do not include elements of a magic card frame, text box, or mana symbols. Only the illustration.
+      ART STYLE: ${artStyle}
+      - Use dramatic lighting and strong composition.
       
       Aspect Ratio: 5:4.
     `.trim();
@@ -186,10 +211,9 @@ class Card {
     let safeName = this.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
     let safeId = this.id;
     
-    // Append suffix for back faces to avoid overwriting and ensure sorting
     if (this.isBackFace) {
         safeName += "_back";
-        safeId += "b"; // Virtual ID for sorting
+        safeId += "b";
     } else if (this.hasBackFace) {
         safeName += "_front";
         safeId += "a";
@@ -209,32 +233,34 @@ function parseDesignBible(filePath) {
   const cards = [];
   let currentCard = null;
 
+  // Regex to match 
+  const sourceTagRegex = /\\/g;
+  
+  // Regex to match Card ID [C01]
   const idTagRegex = /^\[([A-Z]+\d+)\]\s+(.+?)(?:\s+(\{.*\})\s*)?$/;
 
   lines.forEach(line => {
-    // Remove source tags
-    let cleanLine = line.replace(/\\/g, '').trim();
+    // 1. Clean the line of source tags
+    let cleanLine = line.replace(sourceTagRegex, '').trim();
     if (!cleanLine) return;
 
-    // CHECK FOR SPLIT / TRANSFORM (//)
+    // 2. CHECK FOR SPLIT / TRANSFORM (//)
     if (cleanLine === '//') {
         if (currentCard) {
-            // Mark the current card as having a back face
+            // Mark Front Face
             currentCard.hasBackFace = true;
             cards.push(currentCard);
 
-            // Clone ID, create new card for the Back Face
+            // Create Back Face
             const oldId = currentCard.id;
             currentCard = new Card();
-            currentCard.id = oldId; // Same ID, getFileName handles the suffix
+            currentCard.id = oldId;
             currentCard.isBackFace = true;
-            // The next line in the file will be the Name, so we leave currentCard.name empty
-            // to be caught by the general logic below.
             return;
         }
     }
 
-    // CHECK FOR NEW CARD ID
+    // 3. CHECK FOR NEW CARD ID
     const idMatch = cleanLine.match(idTagRegex);
     if (idMatch) {
       if (currentCard) cards.push(currentCard);
@@ -248,13 +274,9 @@ function parseDesignBible(filePath) {
 
     if (!currentCard) return;
 
-    // POPULATE CARD DETAILS
+    // 4. POPULATE CARD DETAILS
     if (!currentCard.name && currentCard.isBackFace) {
-        // Special case: The first line after // is the name of the back face
-        // It might look like: "Digital Avatar (Color Indicator: White)"
-        // We strip the color indicator for the name field
         currentCard.name = cleanLine.replace(/\(Color Indicator: .*?\)/, '').trim();
-        // We might want to store the color indicator in text to help color logic
         if (cleanLine.includes("Color Indicator")) {
             currentCard.text.push(cleanLine);
         }
@@ -284,9 +306,13 @@ async function generateArtForCard(aiClient, card) {
     return;
   }
 
-  console.log(`\n🎨 Generating: ${card.name} (${card.isBackFace ? "BACK" : "FRONT"})`);
+  // Console Logging for Debugging
   const world = card.getWorldContext();
-  console.log(`   🌍 Background: ${world.setting} (${world.tone})`);
+  const isDigital = card.hasDigitalKeyword();
+  
+  console.log(`\n🎨 Generating: ${card.name} (${card.isBackFace ? "BACK" : "FRONT"})`);
+  console.log(`   🔍 Digital: ${isDigital} -> ${isDigital ? "MATRIX" : "REAL WORLD"}`);
+  console.log(`   🌍 Setting: ${world.setting}`);
   console.log(`   ✨ Subject Color: ${card.getSubjectColor()}`);
 
   try {
@@ -335,7 +361,7 @@ async function main() {
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR);
 
   console.log("------------------------------------------");
-  console.log("   MATRIX SET ART GENERATOR (V4 - Flip Cards & Strict Rules)");
+  console.log("   MATRIX SET ART GENERATOR (V7 - Fixed Regex)");
   console.log("------------------------------------------");
   
   const allCards = parseDesignBible(INPUT_FILE);
