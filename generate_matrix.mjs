@@ -42,7 +42,6 @@ class Card {
     if (this.cost && this.cost.includes("{R}")) colors.push("Fiery Red");
     if (this.cost && this.cost.includes("{G}")) colors.push("Neon Green");
     
-    // Check text for Color Indicators (common on back faces)
     const fullText = this.text.join(" ");
     if (fullText.includes("Color Indicator: White")) colors.push("Golden White");
     if (fullText.includes("Color Indicator: Blue")) colors.push("Electric Blue");
@@ -61,16 +60,12 @@ class Card {
    * STRICT CHECK: Does this card have the Digital keyword ability?
    */
   hasDigitalKeyword() {
-    // Regex matches "Digital" at start of line, or after a comma/space.
-    const digitalRegex = /(?:^|[\s,])Digital(?:[\s,.]|$)/i;
-    return this.text.some(line => digitalRegex.test(line));
+    const strictDigitalRegex = /(?:^|,\s*)Digital(?:\s*,|\s*$)/i;
+    return this.text.some(line => strictDigitalRegex.test(line));
   }
 
   /**
-   * STRICT SETTING RULE:
-   * 1. Creature + Digital = THE MATRIX
-   * 2. Creature + !Digital = THE REAL WORLD
-   * 3. Non-Creature = Heuristic
+   * STRICT SETTING RULE
    */
   getWorldContext() {
     const nameLower = this.name.toLowerCase();
@@ -98,9 +93,15 @@ class Card {
             if (nameLower.includes("machine city") || nameLower.includes("01")) {
                  return { setting: "The Machine City (01)", tone: "Oppressive Black metal and Orange sky" };
             }
-            if (nameLower.includes("zion") || textLower.includes("citizen") || nameLower.includes("dock")) {
-                return { setting: "Zion (The Last City) - Can be open cavernous docks or industrial walkways", tone: "Warm Incandescent light, Molten metal, Stone" };
+            
+            // EXPANDED ZION LOGIC
+            if (nameLower.includes("zion") || textLower.includes("citizen") || nameLower.includes("dock") || nameLower.includes("temple") || nameLower.includes("council")) {
+                return { 
+                    setting: "Zion (The Last City). Choose the specific area that best fits the subject: 1. The Dock (Massive open cavern with walkways). 2. The Temple (Sacred cave with stalactites and torches). 3. Living Levels (Cramped industrial apartments). 4. Engineering (Steam pipes and lava).", 
+                    tone: "Warm Earthy Tones, Incandescent lighting, Sweat, Metal, Stone" 
+                };
             }
+            
             // Standard Real World
             return { setting: "The Real World (Ruins of the Surface, Sewers, or Hovercraft Interior)", tone: "Cold Blues, Dark Greys, Rusted Metal" };
         }
@@ -108,18 +109,16 @@ class Card {
 
     // === NON-CREATURE LOGIC (HEURISTICS) ===
     
-    // Matrix Spells/Enchantments
     if (
         nameLower.includes("code") || 
         nameLower.includes("virtual") || 
-        nameLower.includes("download") ||
+        nameLower.includes("download") || 
         nameLower.includes("blue screen") ||
         typeLower.includes("saga")
     ) {
         return { setting: "Abstract Visualization of Data Streams", tone: "Surreal, Neon, Digital" };
     }
 
-    // Real World Artifacts
     if (
         typeLower.includes("vehicle") || 
         nameLower.includes("emp") || 
@@ -129,39 +128,36 @@ class Card {
          return { setting: "The Real World (Industrial)", tone: "Cold Blue and Rust" };
     }
     
-    // Lands
     if (typeLower.includes("land")) {
          if (nameLower.includes("simulated") || nameLower.includes("skyline")) return { setting: "Matrix Cityscape", tone: "Simulated Daylight" };
+         if (nameLower.includes("zion") || nameLower.includes("living") || nameLower.includes("hall")) {
+             return { 
+                setting: "Zion (The Last City). Choose from: The Dock, The Temple, Living Quarters, or Engineering.", 
+                tone: "Warm Incandescent light, Molten metal, Stone" 
+             };
+         }
          return { setting: "The Real World Surface", tone: "Dark, Stormy, Scorched" };
     }
 
-    // Default Fallback
     return { setting: "The Matrix Universe", tone: "Cinematic Sci-Fi Noir" };
   }
 
-  /**
-   * Selects an art style based on type and location.
-   */
   getArtStyle() {
     const world = this.getWorldContext();
     const typeLower = this.type.toLowerCase();
 
-    // 1. Instants/Sorceries
     if (typeLower.includes("instant") || typeLower.includes("sorcery") || typeLower.includes("enchantment")) {
         return "Abstract Surrealism or Dynamic Action Illustration. Represent the manipulation of reality.";
     }
 
-    // 2. Real World (Gritty)
     if (world.setting.includes("Real World") || world.setting.includes("Zion")) {
         return "Gritty Impasto Realism. Heavy texture, emphasis on rust, sweat, and fabric. Classical oil painting vibe.";
     }
 
-    // 3. Matrix / Construct (Clean)
     if (world.setting.includes("Matrix") || world.setting.includes("Construct") || world.setting.includes("City")) {
         return "Sleek, High-Fidelity Realism. Sharp edges, polished surfaces, clear lighting. Resembles 90s sci-fi concept art.";
     }
 
-    // 4. Default
     return "Official Magic: The Gathering House Style. A balance of realism and painterly expression.";
   }
 
@@ -172,9 +168,8 @@ class Card {
     
     let visualContext = this.flavor.length > 0 ? this.flavor : this.text.join(" ");
     
-    // FIXED REGEX BLOCK
     const descriptiveText = visualContext
-        .replace(/\{[^}]+\}/g, "") // Remove {W}, {1}, etc.
+        .replace(/\{[^}]+\}/g, "") 
         .replace(/Digital|Jack-in|Eject|Override|Scry|Ward/g, "")
         .replace(/\(Color Indicator: .*?\)/g, "")
         .replace(/\\/g, "") 
@@ -186,8 +181,14 @@ class Card {
       MANDATORY: NO TEXT. Do not render the card title, mana cost, or text box. This is an illustration ONLY.
       
       Subject: An illustration for a Magic: The Gathering card named "${this.name}". 
-      Universe: The Matrix.
+      Universe: The Matrix (Sci-Fi / Cyberpunk).
       Type: ${this.type}
+      
+      STRICT VISUAL CONSTRAINTS (NO FANTASY):
+      - DO NOT depict medieval weaponry such as broadswords, bows, shields, or plate armor.
+      - DO NOT depict wizards in robes or fantasy creatures (unless it is a specific matrix creature like a Sentinel/Squiddy).
+      - WEAPONRY: Use modern firearms (pistols, submachine guns), futuristic lightning rifles, or martial arts.
+      - CLOTHING: Use trench coats, leather, tactical gear, or ragged clothes (Zion). No tunics or capes.
       
       SETTING & TONE:
       - Location: ${world.setting}.
@@ -233,25 +234,18 @@ function parseDesignBible(filePath) {
   const cards = [];
   let currentCard = null;
 
-  // Regex to match 
   const sourceTagRegex = /\\/g;
-  
-  // Regex to match Card ID [C01]
   const idTagRegex = /^\[([A-Z]+\d+)\]\s+(.+?)(?:\s+(\{.*\})\s*)?$/;
 
   lines.forEach(line => {
-    // 1. Clean the line of source tags
     let cleanLine = line.replace(sourceTagRegex, '').trim();
     if (!cleanLine) return;
 
-    // 2. CHECK FOR SPLIT / TRANSFORM (//)
     if (cleanLine === '//') {
         if (currentCard) {
-            // Mark Front Face
             currentCard.hasBackFace = true;
             cards.push(currentCard);
 
-            // Create Back Face
             const oldId = currentCard.id;
             currentCard = new Card();
             currentCard.id = oldId;
@@ -260,7 +254,6 @@ function parseDesignBible(filePath) {
         }
     }
 
-    // 3. CHECK FOR NEW CARD ID
     const idMatch = cleanLine.match(idTagRegex);
     if (idMatch) {
       if (currentCard) cards.push(currentCard);
@@ -274,7 +267,6 @@ function parseDesignBible(filePath) {
 
     if (!currentCard) return;
 
-    // 4. POPULATE CARD DETAILS
     if (!currentCard.name && currentCard.isBackFace) {
         currentCard.name = cleanLine.replace(/\(Color Indicator: .*?\)/, '').trim();
         if (cleanLine.includes("Color Indicator")) {
@@ -306,7 +298,6 @@ async function generateArtForCard(aiClient, card) {
     return;
   }
 
-  // Console Logging for Debugging
   const world = card.getWorldContext();
   const isDigital = card.hasDigitalKeyword();
   
@@ -339,7 +330,7 @@ async function generateArtForCard(aiClient, card) {
 
     if (imageBase64) {
       fs.writeFileSync(outputPath, imageBase64, 'base64');
-      console.log(`   ✅ Saved.`);
+      console.log(`   ✅ Saved to ${outputPath}`);
     } else {
       console.error(`   ❌ Failed: No image data returned.`);
     }
@@ -361,7 +352,7 @@ async function main() {
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR);
 
   console.log("------------------------------------------");
-  console.log("   MATRIX SET ART GENERATOR (V7 - Fixed Regex)");
+  console.log("   MATRIX SET ART GENERATOR (V11 - No Medieval Weapons)");
   console.log("------------------------------------------");
   
   const allCards = parseDesignBible(INPUT_FILE);
@@ -383,7 +374,6 @@ async function main() {
 
   for (let i = 0; i < cardsToProcess.length; i++) {
     await generateArtForCard(ai, cardsToProcess[i]);
-    // Safety sleep
     await new Promise(r => setTimeout(r, 500));
   }
 }
