@@ -31,9 +31,6 @@ class Card {
     this.hasBackFace = false; 
   }
 
-  /**
-   * Returns the color of the MAGIC or SUBJECT.
-   */
   getSubjectColor() {
     const colors = [];
     if (this.cost && this.cost.includes("{W}")) colors.push("Golden White");
@@ -56,90 +53,176 @@ class Card {
     return colors.join(" and ");
   }
 
-  /**
-   * STRICT CHECK: Does this card have the Digital keyword ability?
-   */
   hasDigitalKeyword() {
     const strictDigitalRegex = /(?:^|,\s*)Digital(?:\s*,|\s*$)/i;
     return this.text.some(line => strictDigitalRegex.test(line));
   }
 
+  getCharacterDiversity() {
+    const typeLower = this.type.toLowerCase();
+    const nameLower = this.name.toLowerCase();
+
+    // 1. Skip non-creatures
+    if (!typeLower.includes("creature")) return "";
+    
+    // 2. STRICT HUMAN CHECK: Only apply diversity to Humans
+    // Programs/Agents are handled below or via specific logic. 
+    // Robots are handled by getRobotVisuals().
+    if (!typeLower.includes("human") && !typeLower.includes("scout") && !typeLower.includes("soldier") && !typeLower.includes("pilot")) return "";
+
+    // 3. Skip known characters (Lore accuracy)
+    const knownCharacters = ["neo", "morpheus", "trinity", "smith", "oracle", "seraph", "niobe", "ghost", "merovingian", "persephone", "keymaker", "architect"];
+    if (knownCharacters.some(char => nameLower.includes(char))) {
+        return ""; 
+    }
+
+    // 4. Agents are uniform
+    if (nameLower.includes("agent") || typeLower.includes("agent")) {
+        return "Appearance: Uniform Male Agent, caucasian, identical suit and sunglasses.";
+    }
+
+    // 5. Deterministic Generation
+    let hash = 0;
+    for (let i = 0; i < this.id.length; i++) {
+        hash = this.id.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const seed = Math.abs(hash);
+
+    const genders = ["Male", "Female"];
+    const ethnicities = [
+        "African descent", "Asian descent", "Caucasian", "Latino/Hispanic descent", 
+        "Middle Eastern descent", "South Asian descent", "Mixed heritage"
+    ];
+
+    const randomGender = genders[seed % genders.length];
+    const randomEthnicity = ethnicities[(seed * 3) % ethnicities.length];
+
+    return `Character Appearance: ${randomGender}, ${randomEthnicity}. (Consistent Identity).`;
+  }
+
   /**
-   * STRICT SETTING RULE
+   * NEW: Enforces Non-Humanoid Robot Designs
    */
+  getRobotVisuals() {
+    const typeLower = this.type.toLowerCase();
+    const nameLower = this.name.toLowerCase();
+
+    // Identify if this card is a Machine/Robot
+    // Note: "Programs" (Agents) are NOT robots in this context.
+    const isMachine = typeLower.includes("artifact creature") || typeLower.includes("robot") || typeLower.includes("construct") || typeLower.includes("thopter") || typeLower.includes("juggernaut") || typeLower.includes("horror");
+    
+    if (!isMachine) return "";
+
+    // Specific Sentinel Override
+    if (nameLower.includes("sentinel") || nameLower.includes("squid") || nameLower.includes("swarm")) {
+        return "ROBOT APPEARANCE: Movie-Accurate Sentinel ('Squiddy'). A floating, squid-like machine with a central sensory pod (multiple red eyes) and trailing metallic tentacles. NO humanoid legs/arms.";
+    }
+
+    // General Machine Override
+    return "ROBOT APPEARANCE: NON-HUMANOID. Industrial, insectoid, or arachnid machinery. Use heavy cables, hydraulics, and sensor eyes. Do NOT depict as a human-shaped android or man in a suit.";
+  }
+
+  getCompositionType() {
+    if (!this.type.toLowerCase().includes("creature")) return "";
+
+    let hash = 0;
+    for (let i = 0; i < this.id.length; i++) {
+        hash = this.id.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const seed = Math.abs(hash);
+    const roll = seed % 100;
+
+    if (roll < 20) {
+        return "COMPOSITION: DYNAMIC ACTION. High kinetic energy. Mid-air kick, dodging bullets, or diving while shooting. Use motion blur and Dutch angles.";
+    } else if (roll < 40) {
+        return "COMPOSITION: HEROIC STANCE. The subject is standing tall, centered, looking cool and collected. Coat billowing in the wind. Iconic movie poster vibe.";
+    } else if (roll < 60) {
+        return "COMPOSITION: INTENSE CLOSE-UP. Focus on the face, sunglasses reflections, or specific cybernetic details. Shallow depth of field, high emotion or focus.";
+    } else if (roll < 75) {
+        return "COMPOSITION: IMPOSING LOW ANGLE. The camera looks up at the subject, making them appear powerful and dominant. Noir lighting, strong shadows.";
+    } else if (roll < 90) {
+        return "COMPOSITION: ENVIRONMENTAL WIDE SHOT. The subject is small within a massive, impressive setting. Emphasize the scale of the world.";
+    } else {
+        return "COMPOSITION: STEALTH / TENSION. The subject is taking cover behind a wall, peeking around a corner, or hacking a terminal in the shadows. Suspenseful atmosphere.";
+    }
+  }
+
   getWorldContext() {
     const nameLower = this.name.toLowerCase();
     const typeLower = this.type.toLowerCase();
     const textLower = this.text.join(" ").toLowerCase();
+    const flavorLower = this.flavor.toLowerCase();
+    const combinedText = nameLower + " " + textLower + " " + flavorLower;
 
-    // === CREATURE LOGIC (HARD RULES) ===
+    const TECH_1999 = "TECHNOLOGY LEVEL: Late 1990s Contemporary. Standard wheeled cars, helicopters, CRT monitors. NO hovercars. NO spaceships.";
+    const TECH_SCIFI = "TECHNOLOGY LEVEL: Post-Apocalyptic Sci-Fi. Hovercrafts with magnetic pads, walkers (APUs), lightning rifles, tesla coils, rusted heavy machinery.";
+    const TECH_SURREAL = "TECHNOLOGY LEVEL: Surreal/Digital. Abstract code, glitch effects, impossible geometry.";
+
+    // === CREATURE LOGIC ===
     if (typeLower.includes("creature")) {
         if (this.hasDigitalKeyword()) {
-            // ---> INSIDE THE MATRIX
-            if (textLower.includes("kung fu") || textLower.includes("monk")) {
-                 return { setting: "A Japanese Dojo Simulation", tone: "Warm Wood, Rice Paper, Clean Light" };
+            // ---> INSIDE THE MATRIX (1999 Tech)
+            if (combinedText.includes("kung fu") || combinedText.includes("monk") || combinedText.includes("dojo")) {
+                 return { setting: "A Japanese Dojo Simulation. Features: Rice paper walls, wooden floors.", tone: "Warm Wood, Clean Light, Golden Hues", tech: "Traditional / Minimal" };
             }
-            if (nameLower.includes("construct") || nameLower.includes("loading")) {
-                return { setting: "The Construct Loading Program", tone: "Stark Infinite White Void" };
+            if (nameLower.includes("construct") || nameLower.includes("loading") || nameLower.includes("white")) {
+                return { setting: "The Construct Loading Program. Features: Infinite white void, racks of guns.", tone: "Stark Infinite White Void", tech: "Clean Digital" };
             }
-            if (nameLower.includes("agent") || typeLower.includes("agent")) {
-                return { setting: "Corporate Government Building", tone: "Sterile, Bureaucratic, Impersonal" };
+            if (nameLower.includes("agent") || typeLower.includes("agent") || combinedText.includes("security")) {
+                return { setting: "Government/Corporate Building. Sterile Office Lobby or Concrete Interrogation Room.", tone: "Sterile, Green-tinted Fluorescent", tech: TECH_1999 };
             }
-            // Standard Matrix
-            return { setting: "1999 Urban Cityscape (Simulated Reality)", tone: "Slightly Desaturated, High Contrast, Concrete and Glass" };
-
+            if (combinedText.includes("club") || combinedText.includes("chateau") || combinedText.includes("french")) {
+                return { setting: "The Merovingian's Territory. Club Hel (Industrial fetish club) or The Chateau (Grand staircase).", tone: "Rich Reds, Deep Shadows, Decadent Gold", tech: TECH_1999 };
+            }
+            if (combinedText.includes("subway") || combinedText.includes("train") || combinedText.includes("station")) {
+                return { setting: "Matrix Subway Station. Features: White tiled walls, graffiti, concrete platforms.", tone: "Dirty White, Greenish Florescent, Grimy", tech: TECH_1999 };
+            }
+            return { 
+                setting: "The Matrix City (1999 Aesthetic). Skyscraper rooftop, busy city street, or alleyway.", 
+                tone: "Slightly Desaturated, High Contrast, Green Tint",
+                tech: TECH_1999
+            };
         } else {
-            // ---> THE REAL WORLD
+            // ---> THE REAL WORLD (Sci-Fi Tech)
             if (nameLower.includes("machine city") || nameLower.includes("01")) {
-                 return { setting: "The Machine City (01)", tone: "Oppressive Black metal and Orange sky" };
+                 return { setting: "The Machine City (01). Features: Endless black towers, red lightning storms, swarms of sentinels.", tone: "Oppressive Black metal and Glowing Orange Sky", tech: TECH_SCIFI };
             }
-            
-            // EXPANDED ZION LOGIC
-            if (nameLower.includes("zion") || textLower.includes("citizen") || nameLower.includes("dock") || nameLower.includes("temple") || nameLower.includes("council")) {
+            if (nameLower.includes("zion") || textLower.includes("citizen") || nameLower.includes("dock") || nameLower.includes("temple")) {
                 return { 
-                    setting: "Zion (The Last City). Choose the specific area that best fits the subject: 1. The Dock (Massive open cavern with walkways). 2. The Temple (Sacred cave with stalactites and torches). 3. Living Levels (Cramped industrial apartments). 4. Engineering (Steam pipes and lava).", 
-                    tone: "Warm Earthy Tones, Incandescent lighting, Sweat, Metal, Stone" 
+                    setting: "Zion (The Last City). Choose: The Dock (Cavernous), The Temple (Cave), or Engineering (Industrial).", 
+                    tone: "Warm Earthy Tones, Incandescent lighting, Sweat, Metal, Stone",
+                    tech: TECH_SCIFI
                 };
             }
-            
-            // Standard Real World
-            return { setting: "The Real World (Ruins of the Surface, Sewers, or Hovercraft Interior)", tone: "Cold Blues, Dark Greys, Rusted Metal" };
+            if (combinedText.includes("pod") || combinedText.includes("farm") || combinedText.includes("harvest")) {
+                return { setting: "The Power Plant / Fetus Fields. Endless towers of pink glowing pods.", tone: "Bioluminescent Pink, Dark Machinery, Slime", tech: TECH_SCIFI };
+            }
+            if (combinedText.includes("ship") || combinedText.includes("hovercraft") || combinedText.includes("operator")) {
+                return { setting: "Hovercraft Interior (Nebuchadnezzar class). Cramped corridors, hanging cables, screens.", tone: "Cold Blue LEDs, Rusted Metal, Dim Lighting", tech: TECH_SCIFI };
+            }
+            return { 
+                setting: "The Real World Wasteland. Scorched sky, lightning, shattered ruins, or sewer tunnels.", 
+                tone: "Cold Blues, Dark Greys, Rusted Metal, Stormy",
+                tech: TECH_SCIFI
+            };
         }
     }
 
-    // === NON-CREATURE LOGIC (HEURISTICS) ===
-    
-    if (
-        nameLower.includes("code") || 
-        nameLower.includes("virtual") || 
-        nameLower.includes("download") || 
-        nameLower.includes("blue screen") ||
-        typeLower.includes("saga")
-    ) {
-        return { setting: "Abstract Visualization of Data Streams", tone: "Surreal, Neon, Digital" };
+    // === NON-CREATURE LOGIC ===
+    if (combinedText.includes("code") || combinedText.includes("virtual") || combinedText.includes("download") || combinedText.includes("blue screen")) {
+        return { setting: "Abstract Visualization of Data. Features: Cascading Green Code, glitches.", tone: "Surreal, Neon Green, Black Background", tech: TECH_SURREAL };
     }
-
-    if (
-        typeLower.includes("vehicle") || 
-        nameLower.includes("emp") || 
-        nameLower.includes("scrap") || 
-        nameLower.includes("battery")
-    ) {
-         return { setting: "The Real World (Industrial)", tone: "Cold Blue and Rust" };
+    if (typeLower.includes("vehicle") || combinedText.includes("emp") || combinedText.includes("scrap")) {
+         return { setting: "The Real World Sewers or Surface. Hovercrafts, sparks flying.", tone: "Cold Blue, Rust, Industrial", tech: TECH_SCIFI };
     }
-    
     if (typeLower.includes("land")) {
-         if (nameLower.includes("simulated") || nameLower.includes("skyline")) return { setting: "Matrix Cityscape", tone: "Simulated Daylight" };
-         if (nameLower.includes("zion") || nameLower.includes("living") || nameLower.includes("hall")) {
-             return { 
-                setting: "Zion (The Last City). Choose from: The Dock, The Temple, Living Quarters, or Engineering.", 
-                tone: "Warm Incandescent light, Molten metal, Stone" 
-             };
-         }
-         return { setting: "The Real World Surface", tone: "Dark, Stormy, Scorched" };
+         if (nameLower.includes("simulated") || nameLower.includes("skyline")) return { setting: "Matrix Cityscape Skyline", tone: "Simulated Daylight, Green Tint", tech: TECH_1999 };
+         if (nameLower.includes("zion") || nameLower.includes("living")) return { setting: "Zion (Dock or Living Quarters)", tone: "Warm Incandescent, Stone", tech: TECH_SCIFI };
+         if (nameLower.includes("machine") || nameLower.includes("01")) return { setting: "01 The Machine City", tone: "Black and Orange", tech: TECH_SCIFI };
+         return { setting: "The Real World Surface (Ruins)", tone: "Dark, Stormy, Scorched", tech: TECH_SCIFI };
     }
 
-    return { setting: "The Matrix Universe", tone: "Cinematic Sci-Fi Noir" };
+    return { setting: "The Matrix Universe (General)", tone: "Cinematic Sci-Fi Noir", tech: "1999 Aesthetic" };
   }
 
   getArtStyle() {
@@ -147,24 +230,24 @@ class Card {
     const typeLower = this.type.toLowerCase();
 
     if (typeLower.includes("instant") || typeLower.includes("sorcery") || typeLower.includes("enchantment")) {
-        return "Abstract Surrealism or Dynamic Action Illustration. Represent the manipulation of reality.";
+        return "Abstract Surrealism or Dynamic Action Illustration.";
     }
-
-    if (world.setting.includes("Real World") || world.setting.includes("Zion")) {
-        return "Gritty Impasto Realism. Heavy texture, emphasis on rust, sweat, and fabric. Classical oil painting vibe.";
+    if (world.setting.includes("Real World") || world.setting.includes("Zion") || world.setting.includes("Machine")) {
+        return "Gritty Impasto Realism. Heavy texture, emphasis on rust, sweat, grime. Classical oil painting vibe.";
     }
-
     if (world.setting.includes("Matrix") || world.setting.includes("Construct") || world.setting.includes("City")) {
-        return "Sleek, High-Fidelity Realism. Sharp edges, polished surfaces, clear lighting. Resembles 90s sci-fi concept art.";
+        return "Sleek, High-Fidelity Realism. Sharp edges, polished surfaces, clear lighting. 90s sci-fi concept art.";
     }
-
-    return "Official Magic: The Gathering House Style. A balance of realism and painterly expression.";
+    return "Official Magic: The Gathering House Style.";
   }
 
   generatePrompt() {
     const world = this.getWorldContext();
     const subjectColor = this.getSubjectColor();
     const artStyle = this.getArtStyle();
+    const diversity = this.getCharacterDiversity();
+    const composition = this.getCompositionType();
+    const robotVisuals = this.getRobotVisuals(); // Get strict robot constraints
     
     let visualContext = this.flavor.length > 0 ? this.flavor : this.text.join(" ");
     
@@ -177,29 +260,35 @@ class Card {
 
     return `
       Generate an image.
-      
       MANDATORY: NO TEXT. Do not render the card title, mana cost, or text box. This is an illustration ONLY.
       
       Subject: An illustration for a Magic: The Gathering card named "${this.name}". 
       Universe: The Matrix (Sci-Fi / Cyberpunk).
       Type: ${this.type}
       
-      STRICT VISUAL CONSTRAINTS (NO FANTASY):
-      - DO NOT depict medieval weaponry such as broadswords, bows, shields, or plate armor.
-      - DO NOT depict wizards in robes or fantasy creatures (unless it is a specific matrix creature like a Sentinel/Squiddy).
-      - WEAPONRY: Use modern firearms (pistols, submachine guns), futuristic lightning rifles, or martial arts.
-      - CLOTHING: Use trench coats, leather, tactical gear, or ragged clothes (Zion). No tunics or capes.
+      STRICT VISUAL CONSTRAINTS:
+      1. ${world.tech} (Strictly adhere to this era).
+      2. NO medieval weaponry (bows, swords, shields).
+      3. NO wizards in robes.
+      4. WEAPONRY: Modern firearms, martial arts, or futuristic lightning rifles (only if Real World).
+      5. ${robotVisuals}
       
-      SETTING & TONE:
+      **SCENE RECOGNITION PROTOCOL:**
+      - ANALYZE the Card Name: "${this.name}".
+      - Does this name refer to a specific, iconic scene or shot from The Matrix movies?
+      - IF YES: Prioritize depicting that specific scene.
+      - IF NO: Use the Setting, Subject, and Composition details below.
+      
+      FALLBACK SETTING & TONE (Use if not a specific movie scene):
       - Location: ${world.setting}.
       - Color Palette/Mood: ${world.tone}.
-      - Note: If in the Matrix, keep it clean and urban. If in the Real World, keep it dirty and industrial.
+      - ${composition}
       
       SUBJECT DETAILS:
-      - The main focus (Character/Object) should feature **${subjectColor}** accents.
-      - Contrast the subject against the background.
+      - Main focus features **${subjectColor}** accents.
+      - ${diversity}
       
-      ACTION DESCRIPTION: "${descriptiveText}"
+      ACTION/MOOD DESCRIPTION: "${descriptiveText}"
       
       ART STYLE: ${artStyle}
       - Use dramatic lighting and strong composition.
@@ -304,8 +393,7 @@ async function generateArtForCard(aiClient, card) {
   console.log(`\n🎨 Generating: ${card.name} (${card.isBackFace ? "BACK" : "FRONT"})`);
   console.log(`   🔍 Digital: ${isDigital} -> ${isDigital ? "MATRIX" : "REAL WORLD"}`);
   console.log(`   🌍 Setting: ${world.setting}`);
-  console.log(`   ✨ Subject Color: ${card.getSubjectColor()}`);
-
+  
   try {
     const response = await aiClient.models.generateContent({
       model: MODEL_ID,
@@ -352,7 +440,7 @@ async function main() {
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR);
 
   console.log("------------------------------------------");
-  console.log("   MATRIX SET ART GENERATOR (V11 - No Medieval Weapons)");
+  console.log("   MATRIX SET ART GENERATOR (V20 - 1999 Tech & Human Only)");
   console.log("------------------------------------------");
   
   const allCards = parseDesignBible(INPUT_FILE);
