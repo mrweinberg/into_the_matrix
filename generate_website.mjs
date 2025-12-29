@@ -352,7 +352,7 @@ function generateHTML(data) {
             background: #222;
             color: #aaa;
             transition: 0.2s;
-            font-size: 1.3em; /* Larger icons */
+            font-size: 1.3em; 
         }
         .color-btn i { margin: 0; }
         
@@ -392,12 +392,13 @@ function generateHTML(data) {
             box-shadow: 0 0 20px #fff;
         }
 
+        /* MODAL STYLES */
         .modal-overlay {
             display: none;
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.95);
             z-index: 999;
             align-items: center;
             justify-content: center;
@@ -411,7 +412,7 @@ function generateHTML(data) {
             padding: 20px;
             border-radius: 10px;
             position: relative;
-            max-height: 90vh;
+            max-height: 95vh;
             overflow-y: auto;
         }
         .close-modal {
@@ -420,13 +421,55 @@ function generateHTML(data) {
             font-size: 2rem;
             color: #fff;
             cursor: pointer;
+            z-index: 100;
         }
+        
+        /* TWO MODAL LAYOUT MODES */
+        
+        /* 1. Pack Mode: Grid of thumbnails */
         .pack-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
             margin-top: 20px;
+            justify-content: center;
         }
+        
+        /* 2. Single View: Large, Flex, Centered */
+        .single-view {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            margin-top: 20px;
+            width: 100%;
+            flex-wrap: wrap; /* Wraps DFCs on small screens */
+        }
+        
+        /* Adjust card size in Single View */
+        .single-view .card {
+            max-width: 700px; /* Big! */
+            width: 100%;
+            font-size: 1.1em;
+            cursor: default; /* No pointer in modal */
+        }
+        
+        /* Make sure DFC wrapper flows correctly in Single View */
+        .single-view .dfc-wrapper {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            justify-content: center;
+            border: none;
+            background: transparent;
+        }
+        
+        /* In pack view, we still want hover effects. In modal, maybe not? */
+        .single-view .card:hover {
+            transform: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
         .mechanics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -462,6 +505,7 @@ function generateHTML(data) {
             border-top: 5px solid #444; 
             height: 100%;
             position: relative;
+            cursor: pointer;
         }
         .card[data-color="W"] { border-top-color: #F0F2C0; }
         .card[data-color="U"] { border-top-color: #0E68AB; }
@@ -471,7 +515,7 @@ function generateHTML(data) {
         .card[data-color="Gold"] { border-top-color: #D4AF37; }
         .card[data-color="Land"] { border-top-color: #bfa586; }
 
-        .card:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(0, 255, 65, 0.3); border-color: var(--matrix-green); }
+        .gallery .card:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(0, 255, 65, 0.3); border-color: var(--matrix-green); }
 
         .card-header {
             padding: 10px 14px;
@@ -485,11 +529,10 @@ function generateHTML(data) {
         .card-name { font-weight: 700; font-size: 1.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .mana-cost { flex-shrink: 0; white-space: nowrap; display: flex; align-items: center; font-size: 1.1em; gap: 2px; }
 
-        /* --- UPDATED ART CONTAINER --- */
         .art-container {
             width: 100%;
-            height: auto;        /* Let image define height */
-            min-height: 150px;   /* Fallback for loading */
+            height: auto;        
+            min-height: 150px;   
             overflow: hidden;
             background: #000;
             position: relative;
@@ -500,7 +543,7 @@ function generateHTML(data) {
         }
         .art-container img { 
             width: 100%; 
-            height: auto;        /* No fixed height = no crop */
+            height: auto;        
             display: block;
             z-index: 1; 
         }
@@ -582,7 +625,7 @@ function generateHTML(data) {
     <div id="packModal" class="modal-overlay">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
-            <h2 style="text-align:center; color: var(--matrix-green);">BOOSTER PACK UNLOCKED</h2>
+            <h2 id="modalTitle" style="text-align:center; color: var(--matrix-green);">BOOSTER PACK UNLOCKED</h2>
             <div id="packContainer" class="pack-grid"></div>
         </div>
     </div>
@@ -594,7 +637,7 @@ function generateHTML(data) {
             <div class="stat-box">
                 <h2>System Stats</h2>
                 <p><strong>Total Files:</strong> <span id="visibleCount">${setInfo.cardCount}</span></p>
-                <p><strong>System Version:</strong> v1.6.0 (Full Art + Icons)</p>
+                <p><strong>System Version:</strong> v1.8.0 (Modal Fixes)</p>
                 <button class="btn-generate" onclick="openBoosterPack()">Open Simulation Pack</button>
             </div>
             <div>
@@ -696,6 +739,7 @@ function generateHTML(data) {
             return "Artifact";
         }
 
+        // --- RENDER LOGIC ---
         function renderCardJS(card) {
             const imagePath = \`${IMAGE_DIR}/\${card.fileName}\`;
             const colorClass = determineColorClass(card);
@@ -710,7 +754,7 @@ function generateHTML(data) {
             const cleanId = card.id.replace(/[\[\]]/g, '');
 
             return \`
-            <div class="card" data-color="\${colorClass}" data-pt="\${hasPt}">
+            <div class="card" data-color="\${colorClass}" data-pt="\${hasPt}" onclick="viewCard('\${card.id}')">
                 <div class="card-header">
                     <span class="card-name">\${card.name}</span>
                     <span class="mana-cost">\${replaceSymbols(card.cost)}</span>
@@ -729,6 +773,25 @@ function generateHTML(data) {
                 \${card.pt ? \`<div class="pt-box">\${card.pt}</div>\` : ''}
             </div>
             \`;
+        }
+
+        // Unified Card/DFC Render Logic
+        function getCardHTML_WithDFC(card) {
+            let cardHtml = renderCardJS(card);
+
+            if (card.hasBackFace) {
+                const backFace = ALL_CARDS.find(c => c.id === card.id && c.isBackFace);
+                if (backFace) {
+                    return \`
+                    <div class="dfc-wrapper">
+                        \${renderCardJS(card)}
+                        <div class="transform-icon">⇄</div>
+                        \${renderCardJS(backFace)}
+                    </div>
+                    \`;
+                }
+            }
+            return cardHtml;
         }
 
         // --- FILTERING LOGIC ---
@@ -752,18 +815,13 @@ function generateHTML(data) {
             const filtered = ALL_CARDS.filter(card => {
                 if (card.isBackFace) return false;
 
-                // General Search
                 const matchSearch = 
                     card.name.toLowerCase().includes(searchText) || 
                     card.text.join(' ').toLowerCase().includes(searchText);
 
-                // Rarity
                 const matchRarity = rarity === 'All' || card.rarity === rarity;
-
-                // Type (Includes subtypes now)
                 const matchType = typeText === '' || card.type.toLowerCase().includes(typeText);
 
-                // Color
                 const cardColor = determineColorClass(card);
                 const matchColor = activeColor ? cardColor === activeColor : true;
 
@@ -782,32 +840,23 @@ function generateHTML(data) {
                 return;
             }
 
-            const html = cards.map(card => {
-                let cardHtml = renderCardJS(card);
-
-                if (card.hasBackFace) {
-                    const backFace = ALL_CARDS.find(c => c.id === card.id && c.isBackFace);
-                    if (backFace) {
-                        return \`
-                        <div class="dfc-wrapper">
-                            \${renderCardJS(card)}
-                            <div class="transform-icon">⇄</div>
-                            \${renderCardJS(backFace)}
-                        </div>
-                        \`;
-                    }
-                }
-                
-                return cardHtml;
-            }).join('');
-
+            const html = cards.map(card => getCardHTML_WithDFC(card)).join('');
             container.innerHTML = html;
         }
 
-        // --- BOOSTER PACK LOGIC ---
-        function getRandom(arr, count) {
-            const shuffled = [...arr].sort(() => 0.5 - Math.random());
-            return shuffled.slice(0, count);
+        // --- INTERACTIVITY ---
+        
+        function viewCard(id) {
+            const card = ALL_CARDS.find(c => c.id === id && !c.isBackFace);
+            if (!card) return;
+
+            const container = document.getElementById("packContainer");
+            // Set mode to SINGLE VIEW (Big card, centered)
+            container.className = "single-view";
+            container.innerHTML = getCardHTML_WithDFC(card);
+            
+            document.getElementById("modalTitle").innerText = "CARD VIEW";
+            document.getElementById("packModal").style.display = "flex";
         }
 
         function openBoosterPack() {
@@ -835,18 +884,26 @@ function generateHTML(data) {
             else if (wildcardRoll > 0.60 && uncommons.length > 0) pack.push(...getRandom(uncommons, 1));
             else if (commons.length > 0) pack.push(...getRandom(commons, 1));
 
-            // Sort Pack (Mythic -> Land)
             pack.sort((a, b) => rarityWeights[b.rarity] - rarityWeights[a.rarity]);
 
             const container = document.getElementById("packContainer");
+            // Set mode to PACK GRID (Small cards, grid)
+            container.className = "pack-grid";
             container.innerHTML = "";
             
             pack.forEach(card => {
-                const html = renderCardJS(card);
+                // Use the shared helper so DFCs appear in packs too
+                const html = getCardHTML_WithDFC(card);
                 container.insertAdjacentHTML('beforeend', html);
             });
 
+            document.getElementById("modalTitle").innerText = "BOOSTER PACK UNLOCKED";
             document.getElementById("packModal").style.display = "flex";
+        }
+
+        function getRandom(arr, count) {
+            const shuffled = [...arr].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
         }
 
         function closeModal() {
@@ -878,19 +935,13 @@ function main() {
     process.exit(1);
   }
   
-  if (!fs.existsSync(OUTPUT_DIR)) {
-      // It's just root, so no mkdir needed usually
-  }
-
-  console.log("------------------------------------------");
-  console.log("   MATRIX SET WEBSITE GENERATOR (V16 - Full Art & Icons)");
-  console.log("------------------------------------------");
-  
   const data = parseDesignBible(INPUT_FILE);
+  console.log("------------------------------------------");
+  console.log("   MATRIX SET WEBSITE GENERATOR (V18 - Fixed Modal)");
+  console.log("------------------------------------------");
   console.log(`   Found ${data.cards.length} card faces.`);
   
   const htmlContent = generateHTML(data);
-  
   const outputPath = path.join(OUTPUT_DIR, OUTPUT_FILE);
   fs.writeFileSync(outputPath, htmlContent);
   

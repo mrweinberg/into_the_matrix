@@ -65,18 +65,21 @@ class Card {
     // 2. STRICT HUMAN CHECK
     if (!typeLower.includes("human") && !typeLower.includes("scout") && !typeLower.includes("soldier") && !typeLower.includes("pilot")) return "";
 
-    // 3. Skip known characters
+    // 3. SKIP LEGENDARY (Handled by strict resemblance rule now)
+    if (typeLower.includes("legendary")) return "";
+
+    // 4. Skip known characters (Redundant safety check)
     const knownCharacters = ["neo", "morpheus", "trinity", "smith", "oracle", "seraph", "niobe", "ghost", "merovingian", "persephone", "keymaker", "architect"];
     if (knownCharacters.some(char => nameLower.includes(char))) {
         return ""; 
     }
 
-    // 4. Agents are uniform
+    // 5. Agents are uniform
     if (nameLower.includes("agent") || typeLower.includes("agent")) {
         return "Appearance: Uniform Male Agent, caucasian, identical suit and sunglasses.";
     }
 
-    // 5. Deterministic Generation
+    // 6. Deterministic Generation for Generics
     let hash = 0;
     for (let i = 0; i < this.id.length; i++) {
         hash = this.id.charCodeAt(i) + ((hash << 5) - hash);
@@ -237,6 +240,14 @@ class Card {
     const composition = this.getCompositionType();
     const robotVisuals = this.getRobotVisuals(); 
     
+    // LEGENDARY CHECK
+    const isLegendary = this.type.toLowerCase().includes("legendary");
+    let likenessInstruction = "";
+    
+    if (isLegendary) {
+        likenessInstruction = "CHARACTER IDENTITY: This is a LEGENDARY character. The illustration MUST strictly resemble the specific character/actor as they appear in The Matrix films.";
+    }
+
     // SUNGLASSES LOGIC
     let sunglassesConstraint = "";
     if (world.setting.includes("Real World") || world.setting.includes("Zion") || world.setting.includes("Machine")) {
@@ -283,6 +294,7 @@ class Card {
       
       SUBJECT DETAILS:
       - Main focus features **${subjectColor}** accents.
+      - ${likenessInstruction}
       - ${diversity}
       
       ACTION/MOOD DESCRIPTION: "${descriptiveText}"
@@ -379,13 +391,12 @@ async function generateArtForCard(aiClient, card, isDryRun, forceOverwrite) {
   const prompt = card.generatePrompt();
   const outputPath = path.join(OUTPUT_DIR, card.getFileName());
 
-  // Check existence unless forced
   if (!forceOverwrite && fs.existsSync(outputPath)) {
     console.log(`[SKIP] ${card.getFileName()} already exists.`);
     return;
   }
 
-  // DRY RUN OUTPUT
+  // DRY RUN
   if (isDryRun) {
       console.log(`\n--- DRY RUN: ${card.name} (${card.isBackFace ? "BACK" : "FRONT"}) ---`);
       console.log(prompt);
@@ -446,20 +457,19 @@ async function main() {
   }
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR);
 
-  // ARGUMENT PARSING
+  // ARGUMENTS
   const args = process.argv.slice(2);
   const isDryRun = args.includes('--dryrun') || args.includes('-d');
   const isForce = args.includes('--force') || args.includes('-f');
   
-  // Check for --specific or -s
   let specificId = null;
   const specificIndex = args.findIndex(arg => arg === '--specific' || arg === '-s');
   if (specificIndex !== -1 && args[specificIndex + 1]) {
-    specificId = args[specificIndex + 1].replace(/[\[\]]/g, ''); // Remove brackets if user typed [C60]
+    specificId = args[specificIndex + 1].replace(/[\[\]]/g, ''); 
   }
 
   console.log("------------------------------------------");
-  console.log(`   MATRIX SET ART GENERATOR (V24)`);
+  console.log(`   MATRIX SET ART GENERATOR (V25)`);
   if (isDryRun) console.log("   ⚠️  DRY RUN MODE ENABLED ⚠️");
   if (isForce) console.log("   🔥 FORCE MODE: OVERWRITING ALL FILES 🔥");
   if (specificId) console.log(`   🎯 SPECIFIC MODE: Targeting Card ID '${specificId}'`);
@@ -468,19 +478,14 @@ async function main() {
   const allCards = parseDesignBible(INPUT_FILE);
   let cardsToProcess = [];
 
-  // FILTERING LOGIC
   if (specificId) {
-      // If specific ID, find it (matches force behavior for just this card)
       cardsToProcess = allCards.filter(card => card.id === specificId);
       if (cardsToProcess.length === 0) {
           console.error(`❌ Error: Card ID '${specificId}' not found in ${INPUT_FILE}`);
           return;
       }
   } else {
-      // Standard Batch
       cardsToProcess = allCards; 
-      // Note: We pass the filter logic to generateArtForCard via the 'isForce' flag
-      // so we can report SKIPs vs Generations accurately.
   }
 
   console.log(`   Found ${allCards.length} total card faces.`);
@@ -489,9 +494,7 @@ async function main() {
   const ai = new GoogleGenAI({ apiKey: API_KEY });
 
   for (let i = 0; i < cardsToProcess.length; i++) {
-    // If we are in specific mode, we treat it as a force overwrite for that card
     const forceThisCard = isForce || (specificId !== null);
-    
     await generateArtForCard(ai, cardsToProcess[i], isDryRun, forceThisCard);
     
     if (!isDryRun) {
