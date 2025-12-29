@@ -108,14 +108,15 @@ function parseDesignBible(filePath) {
   let parsingMode = "header"; 
   let currentMechanic = null;
 
-  const sourceTagRegex = /\\/gi;
+  const sourceTagRegex = /\\/gi; 
+  const citationRegex = /\\/gi;
   const idTagRegex = /^\[([A-Z]+\d+)\]\s+(.+?)(?:\s+(\{.*\})\s*)?$/;
   const sectionHeaderRegex = /^[A-Z\s&]+\(\d+\s+Cards\)$/;
   const noteRegex = /^\(Includes\s+.*\)$/;
   const mechanicKeywords = ["Digital", "Jack-in", "Eject", "Override", "Energy", "Gun Token"];
 
   lines.forEach(line => {
-    let cleanLine = line.replace(sourceTagRegex, '').trim();
+    let cleanLine = line.replace(sourceTagRegex, '').replace(citationRegex, '').trim();
     if (!cleanLine) return;
 
     if (cleanLine.includes("1. Mechanics & Glossary")) {
@@ -212,26 +213,27 @@ function parseDesignBible(filePath) {
 // 3. HTML GENERATION
 // ==========================================
 
+function replaceSymbols(text) {
+    if (!text) return "";
+    return text
+        .replace(/{W}/g, '<i class="ms ms-w ms-cost"></i>')
+        .replace(/{U}/g, '<i class="ms ms-u ms-cost"></i>')
+        .replace(/{B}/g, '<i class="ms ms-b ms-cost"></i>')
+        .replace(/{R}/g, '<i class="ms ms-r ms-cost"></i>')
+        .replace(/{G}/g, '<i class="ms ms-g ms-cost"></i>')
+        .replace(/{C}/g, '<i class="ms ms-c ms-cost"></i>')
+        .replace(/{E}/g, '<i class="ms ms-e ms-cost"></i>')
+        .replace(/{T}/g, '<i class="ms ms-tap ms-cost"></i>')
+        .replace(/{Q}/g, '<i class="ms ms-untap ms-cost"></i>')
+        .replace(/{S}/g, '<i class="ms ms-s ms-cost"></i>')
+        .replace(/{X}/g, '<i class="ms ms-x ms-cost"></i>')
+        .replace(/{(\d+)}/g, '<i class="ms ms-$1 ms-cost"></i>');
+}
+
 function generateHTML(data) {
     const { setInfo, cards } = data;
 
-    const galleryHTML = cards.map((card, index) => {
-        if (card.isBackFace) return '';
-
-        let html = renderCardHTML(card);
-
-        if (card.hasBackFace && cards[index + 1] && cards[index + 1].isBackFace) {
-            html = `
-            <div class="dfc-wrapper">
-                ${renderCardHTML(card)}
-                <div class="transform-icon">⇄</div>
-                ${renderCardHTML(cards[index + 1])}
-            </div>
-            `;
-        }
-        return html;
-    }).join('\n');
-
+    // MECHANICS (Static)
     const mechanicsHTML = setInfo.mechanics.map(mech => `
         <div class="mechanic-entry">
             <span class="mech-name">${replaceSymbols(mech.name)}</span>
@@ -239,6 +241,7 @@ function generateHTML(data) {
         </div>
     `).join('');
 
+    // CARDS JSON (Data Source)
     const cardsForJson = cards.map(c => ({ ...c, fileName: c.getFileName() }));
     const cardsJsonString = JSON.stringify(cardsForJson);
 
@@ -249,7 +252,7 @@ function generateHTML(data) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTG: ${setInfo.title}</title>
-    <link href="//cdn.jsdelivr.net/npm/mana-font@latest/css/mana.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/mana-font@latest/css/mana.min.css" rel="stylesheet" type="text/css" />
     
     <style>
         :root {
@@ -258,7 +261,6 @@ function generateHTML(data) {
             --card-bg: #151515;
             --text-color: #e0e0e0;
             --border-color: #333;
-            
             --rarity-common: #000;
             --rarity-uncommon: #707883;
             --rarity-rare: #b8860b;
@@ -286,7 +288,7 @@ function generateHTML(data) {
         }
         
         .dashboard {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto 50px auto;
             border: 1px solid var(--matrix-green);
             background: rgba(0, 255, 65, 0.05);
@@ -302,112 +304,105 @@ function generateHTML(data) {
             font-size: 1.2rem;
             text-transform: uppercase;
         }
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+        
+        /* FILTERS */
+        .filter-section {
+            display: flex;
+            flex-wrap: wrap;
             gap: 20px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
         }
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+            min-width: 200px;
+        }
+        .filter-label { font-size: 0.9em; color: var(--matrix-green); font-weight: bold; text-transform: uppercase; }
+        .search-input, .filter-select {
+            background: #000;
+            border: 1px solid var(--matrix-green);
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        .color-toggles { display: flex; gap: 5px; flex-wrap: wrap; }
+        .color-btn {
+            width: 35px; height: 35px; border-radius: 50%; border: 2px solid #555;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            font-weight: bold; background: #222; color: #aaa; transition: 0.2s;
+        }
+        .color-btn.active { border-color: #fff; box-shadow: 0 0 8px #fff; }
+        .cb-w.active { background: #f8e7b9; color: #000; }
+        .cb-u.active { background: #0e68ab; color: #fff; }
+        .cb-b.active { background: #150b00; color: #fff; }
+        .cb-r.active { background: #d3202a; color: #fff; }
+        .cb-g.active { background: #00733e; color: #fff; }
+        .cb-gold.active { background: #d4af37; color: #000; }
+        .cb-art.active { background: #7d7d7d; color: #000; }
+        .cb-land.active { background: #bfa586; color: #000; }
+
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         
         .btn-generate {
-            background: var(--matrix-green);
-            color: #000;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 20px;
-            width: 100%;
-            transition: 0.3s;
+            background: var(--matrix-green); color: #000; border: none; padding: 10px 20px;
+            font-size: 1.1rem; font-weight: bold; cursor: pointer; text-transform: uppercase;
+            letter-spacing: 1px; margin-top: 15px; width: 100%; transition: 0.3s;
             box-shadow: 0 0 10px var(--matrix-green);
         }
-        .btn-generate:hover {
-            background: #fff;
-            box-shadow: 0 0 20px #fff;
-        }
+        .btn-generate:hover { background: #fff; box-shadow: 0 0 20px #fff; }
 
+        /* MODALS */
         .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 999;
-            align-items: center;
-            justify-content: center;
-            overflow-y: auto;
+            display: none; position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%; background: rgba(0,0,0,0.9);
+            z-index: 999; align-items: center; justify-content: center; overflow-y: auto;
         }
         .modal-content {
-            background: #111;
-            border: 2px solid var(--matrix-green);
-            width: 90%;
-            max-width: 1400px;
-            padding: 20px;
-            border-radius: 10px;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        .close-modal {
-            position: absolute;
-            top: 10px; right: 20px;
-            font-size: 2rem;
-            color: #fff;
-            cursor: pointer;
-        }
-        .pack-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            background: #111; border: 2px solid var(--matrix-green); width: 90%;
+            max-width: 1400px; padding: 20px; border-radius: 10px; position: relative;
+            max-height: 90vh; overflow-y: auto;
         }
         
-        .stat-box { font-family: 'Courier New', Courier, monospace; }
-        .mechanics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+        /* CARD VIEWER SPECIFIC */
+        #cardViewerContent {
+            display: flex; justify-content: center; padding: 20px;
         }
-        .mechanic-entry {
-            background: rgba(0,0,0,0.3);
-            padding: 10px;
-            border-left: 3px solid var(--matrix-green);
+        /* Style specifically for the zoomed card */
+        #cardViewerContent .card {
+            width: 450px;
+            font-size: 1.15em;
+            box-shadow: 0 0 30px #000;
         }
-        .mech-name {
-            display: block;
-            font-weight: bold;
-            color: var(--matrix-green);
-            margin-bottom: 4px;
-            font-family: 'Courier New', Courier, monospace;
+
+        .close-modal {
+            position: absolute; top: 10px; right: 20px; font-size: 2rem;
+            color: #fff; cursor: pointer; z-index: 1001;
         }
+
+        .pack-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .mechanics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-top: 15px; }
+        .mechanic-entry { background: rgba(0,0,0,0.3); padding: 10px; border-left: 3px solid var(--matrix-green); }
+        .mech-name { display: block; font-weight: bold; color: var(--matrix-green); margin-bottom: 4px; }
         .mech-text { font-size: 0.9em; color: #ccc; line-height: 1.4; }
 
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1600px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px; max-width: 1600px; margin: 0 auto;
         }
         
         /* CARD STYLING */
         .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            flex-direction: column;
-            border-top: 5px solid #444; 
-            height: 100%;
-            position: relative;
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 14px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column;
+            border-top: 5px solid #444; height: 100%; position: relative;
+            cursor: pointer; /* Clickable */
         }
-
         .card[data-color="W"] { border-top-color: #F0F2C0; }
         .card[data-color="U"] { border-top-color: #0E68AB; }
         .card[data-color="B"] { border-top-color: #150B00; }
@@ -416,153 +411,56 @@ function generateHTML(data) {
         .card[data-color="Gold"] { border-top-color: #D4AF37; }
         .card[data-color="Land"] { border-top-color: #bfa586; }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
-            border-color: var(--matrix-green);
-        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(0, 255, 65, 0.3); border-color: var(--matrix-green); }
 
         .card-header {
-            padding: 10px 14px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;
             background: linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-            border-bottom: 1px solid #333;
-            gap: 10px;
+            border-bottom: 1px solid #333; gap: 10px;
         }
-        .card-name { 
-            font-weight: 700; 
-            font-size: 1.05em; 
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            min-width: 0;
-        }
-        .mana-cost {
-            flex-shrink: 0; 
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-            font-size: 1.1em; /* Adjusts icon size */
-            gap: 2px;
-        }
+        .card-name { font-weight: 700; font-size: 1.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .mana-cost { flex-shrink: 0; white-space: nowrap; display: flex; align-items: center; font-size: 1.1em; gap: 2px; }
 
         .art-container {
-            width: 100%;
-            height: 230px;
-            overflow: hidden;
-            background: #000;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 100%; height: 230px; overflow: hidden; background: #000;
+            position: relative; display: flex; align-items: center; justify-content: center;
             border-bottom: 1px solid #333;
         }
-        .art-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
-        }
-        .art-missing {
-            color: #444;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.8em;
-            position: absolute;
-            z-index: 0;
-            font-family: 'Courier New', monospace;
-        }
+        .art-container img { width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+        .art-missing { color: #444; text-align: center; font-size: 0.8em; position: absolute; z-index: 0; }
 
         .type-line {
-            padding: 8px 12px;
-            font-size: 0.9em;
-            border-bottom: 1px solid #333;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            background: rgba(255,255,255,0.03);
-            z-index: 2;
+            padding: 8px 12px; font-size: 0.9em; border-bottom: 1px solid #333;
+            display: flex; justify-content: space-between; align-items: center;
+            font-weight: 600; background: rgba(255,255,255,0.03); z-index: 2;
         }
         
-        .text-box {
-            padding: 14px;
-            font-size: 0.92em;
-            line-height: 1.45;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
+        .text-box { padding: 14px; font-size: 0.92em; line-height: 1.45; flex-grow: 1; display: flex; flex-direction: column; }
         .oracle-text p { margin: 0 0 8px 0; }
-        .oracle-text p:last-child { margin-bottom: 0; }
-        
-        .flavor-separator {
-            width: 90%;
-            height: 1px;
-            background: #444;
-            margin: 8px auto 8px auto;
-            border: none;
-        }
-        .flavor-text {
-            font-style: italic;
-            font-family: 'Times New Roman', Times, serif;
-            color: #999;
-            font-size: 0.95em;
-        }
+        .flavor-separator { width: 90%; height: 1px; background: #444; margin: 8px auto 8px auto; }
+        .flavor-text { font-style: italic; font-family: 'Times New Roman', Times, serif; color: #999; font-size: 0.95em; }
 
         .pt-box {
-            background: #222;
-            padding: 4px 10px;
-            border-radius: 8px;
-            font-weight: bold;
-            border: 1px solid #555;
-            font-size: 1.1em;
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            background: #222; padding: 4px 10px; border-radius: 8px; font-weight: bold;
+            border: 1px solid #555; font-size: 1.1em; position: absolute; bottom: 10px;
+            right: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
         .card[data-pt="yes"] .text-box { padding-bottom: 45px; }
 
         .dfc-wrapper {
-            grid-column: span 2; 
-            display: flex;
-            gap: 15px;
-            align-items: stretch;
-            background: rgba(255,255,255,0.02);
-            padding: 15px;
-            border-radius: 16px;
-            border: 1px dashed #444;
+            grid-column: span 2; display: flex; gap: 15px; align-items: stretch;
+            background: rgba(255,255,255,0.02); padding: 15px; border-radius: 16px; border: 1px dashed #444;
         }
         .dfc-wrapper .card { flex: 1; }
-        .transform-icon {
-            font-size: 2em;
-            color: var(--matrix-green);
-            align-self: center;
-        }
+        .transform-icon { font-size: 2em; color: var(--matrix-green); align-self: center; }
         
-        /* MANA FONT OVERRIDES (for alignment) */
-        i.ms {
-            vertical-align: baseline;
-            margin: 0 1px;
-        }
-        /* Specific fix for 'Tap' symbol which sometimes sits low */
+        i.ms { vertical-align: baseline; margin: 0 1px; }
         i.ms-tap { font-size: 0.9em; }
 
-        /* RARITY BADGE */
         .rarity-symbol {
-            font-size: 0.75em;
-            font-weight: 900;
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-left: auto;
-            border: 1px solid rgba(255,255,255,0.2);
-            box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-            font-family: sans-serif;
-            background: #000;
+            font-size: 0.75em; font-weight: 900; padding: 2px 6px; border-radius: 4px;
+            margin-left: auto; border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.5); font-family: sans-serif; background: #000;
         }
         .rarity-Common { color: #fff; background: var(--rarity-common); }
         .rarity-Uncommon { color: #fff; background: var(--rarity-uncommon); border-color: #a0a0a0; }
@@ -581,9 +479,15 @@ function generateHTML(data) {
 
     <div id="packModal" class="modal-overlay">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <span class="close-modal" onclick="closeModal('packModal')">&times;</span>
             <h2 style="text-align:center; color: var(--matrix-green);">BOOSTER PACK UNLOCKED</h2>
             <div id="packContainer" class="pack-grid"></div>
+        </div>
+    </div>
+
+    <div id="cardViewModal" class="modal-overlay" onclick="closeModal('cardViewModal')">
+        <div class="modal-content" style="max-width: 600px; background: transparent; border: none; box-shadow: none;">
+            <div id="cardViewerContent"></div>
         </div>
     </div>
 
@@ -593,9 +497,8 @@ function generateHTML(data) {
         <div class="info-grid">
             <div class="stat-box">
                 <h2>System Stats</h2>
-                <p><strong>Total Files:</strong> ${setInfo.cardCount}</p>
-                <p><strong>System Version:</strong> v1.0.8 (Mana Font Enabled)</p>
-                <p><strong>Status:</strong> CONNECTED</p>
+                <p><strong>Total Files:</strong> <span id="visibleCount">${setInfo.cardCount}</span></p>
+                <p><strong>System Version:</strong> v1.5.0 (Card Viewer)</p>
                 <button class="btn-generate" onclick="openBoosterPack()">Open Simulation Pack</button>
             </div>
             <div>
@@ -605,52 +508,99 @@ function generateHTML(data) {
                 </div>
             </div>
         </div>
+
+        <div class="filter-section">
+            <div class="filter-group">
+                <label class="filter-label">General Search</label>
+                <input type="text" id="searchInput" class="search-input" placeholder="Name, text, etc..." onkeyup="applyFilters()">
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Rarity</label>
+                <select id="rarityInput" class="filter-select" onchange="applyFilters()">
+                    <option value="All">All Rarities</option>
+                    <option value="Common">Common</option>
+                    <option value="Uncommon">Uncommon</option>
+                    <option value="Rare">Rare</option>
+                    <option value="Mythic">Mythic</option>
+                    <option value="Land">Basic Land</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Type / Subtype</label>
+                <input type="text" id="typeInput" class="search-input" placeholder="e.g. Artifact, Human, Vehicle" onkeyup="applyFilters()">
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Color</label>
+                <div class="color-toggles">
+                    <div class="color-btn cb-w" onclick="toggleColor('W', this)">W</div>
+                    <div class="color-btn cb-u" onclick="toggleColor('U', this)">U</div>
+                    <div class="color-btn cb-b" onclick="toggleColor('B', this)">B</div>
+                    <div class="color-btn cb-r" onclick="toggleColor('R', this)">R</div>
+                    <div class="color-btn cb-g" onclick="toggleColor('G', this)">G</div>
+                    <div class="color-btn cb-gold" onclick="toggleColor('Gold', this)">M</div>
+                    <div class="color-btn cb-art" onclick="toggleColor('Artifact', this)">A</div>
+                    <div class="color-btn cb-land" onclick="toggleColor('Land', this)">L</div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="gallery">
-        ${galleryHTML}
-    </div>
+    <div id="galleryContainer" class="gallery">
+        </div>
 
     <script>
         const ALL_CARDS = ${cardsJsonString};
+        let activeColor = null;
         
-        // --- MANA FONT REPLACEMENT LOGIC ---
+        const rarityWeights = { "Mythic": 4, "Rare": 3, "Uncommon": 2, "Common": 1, "Land": 0 };
+
+        // --- MANA FONT LOGIC ---
         function replaceSymbols(text) {
             if (!text) return "";
-            
-            // Replaces {W} with <i class="ms ms-w ms-cost"></i>
-            // The 'ms-cost' class adds the circular background shadow
             return text
                 .replace(/{W}/g, '<i class="ms ms-w ms-cost"></i>')
                 .replace(/{U}/g, '<i class="ms ms-u ms-cost"></i>')
                 .replace(/{B}/g, '<i class="ms ms-b ms-cost"></i>')
                 .replace(/{R}/g, '<i class="ms ms-r ms-cost"></i>')
                 .replace(/{G}/g, '<i class="ms ms-g ms-cost"></i>')
-                .replace(/{C}/g, '<i class="ms ms-c ms-cost"></i>') // Colorless
-                .replace(/{E}/g, '<i class="ms ms-e ms-cost"></i>') // Energy
-                .replace(/{T}/g, '<i class="ms ms-tap ms-cost"></i>') // Tap
-                .replace(/{Q}/g, '<i class="ms ms-untap ms-cost"></i>') // Untap
-                .replace(/{S}/g, '<i class="ms ms-s ms-cost"></i>') // Snow
+                .replace(/{C}/g, '<i class="ms ms-c ms-cost"></i>')
+                .replace(/{E}/g, '<i class="ms ms-e ms-cost"></i>')
+                .replace(/{T}/g, '<i class="ms ms-tap ms-cost"></i>')
+                .replace(/{Q}/g, '<i class="ms ms-untap ms-cost"></i>')
+                .replace(/{S}/g, '<i class="ms ms-s ms-cost"></i>')
                 .replace(/{X}/g, '<i class="ms ms-x ms-cost"></i>')
-                .replace(/{(\d+)}/g, '<i class="ms ms-$1 ms-cost"></i>');
+                .replace(/{(\\d+)}/g, '<i class="ms ms-$1 ms-cost"></i>');
         }
 
+        // --- COLOR LOGIC ---
+        function determineColorClass(card) {
+            let colorsFound = 0;
+            if (card.cost.includes("{W}")) colorsFound++;
+            if (card.cost.includes("{U}")) colorsFound++;
+            if (card.cost.includes("{B}")) colorsFound++;
+            if (card.cost.includes("{R}")) colorsFound++;
+            if (card.cost.includes("{G}")) colorsFound++;
+            
+            if (card.type.toLowerCase().includes("land")) return "Land";
+            if (colorsFound > 1) return "Gold";
+            if (colorsFound === 0) return "Artifact"; 
+
+            if (card.cost.includes("{W}")) return "W";
+            if (card.cost.includes("{U}")) return "U";
+            if (card.cost.includes("{B}")) return "B";
+            if (card.cost.includes("{R}")) return "R";
+            if (card.cost.includes("{G}")) return "G";
+            
+            return "Artifact";
+        }
+
+        // --- CARD RENDERING ---
         function renderCardJS(card) {
             const imagePath = \`../${IMAGE_DIR}/\${card.fileName}\`;
-            
-            let colorClass = "Artifact";
-            let colorsFound = 0;
-            if (card.cost.includes("{W}")) { colorClass = "W"; colorsFound++; }
-            if (card.cost.includes("{U}")) { colorClass = "U"; colorsFound++; }
-            if (card.cost.includes("{B}")) { colorClass = "B"; colorsFound++; }
-            if (card.cost.includes("{R}")) { colorClass = "R"; colorsFound++; }
-            if (card.cost.includes("{G}")) { colorClass = "G"; colorsFound++; }
-            if (colorsFound > 1) colorClass = "Gold";
-            if (card.type.toLowerCase().includes("land")) colorClass = "Land";
-
+            const colorClass = determineColorClass(card);
             const hasPt = card.pt ? "yes" : "no";
-            const textLines = card.text.map(l => \`<p>\${replaceSymbols(l)}</p>\`).join('');
             
+            const textLines = card.text.map(l => \`<p>\${replaceSymbols(l)}</p>\`).join('');
             let textBoxContent = \`<div class="oracle-text">\${textLines}</div>\`;
             if (card.flavor) {
                 textBoxContent += \`<div class="flavor-separator"></div><div class="flavor-text">\${replaceSymbols(card.flavor)}</div>\`;
@@ -658,15 +608,17 @@ function generateHTML(data) {
 
             const cleanId = card.id.replace(/[\[\]]/g, '');
 
+            // We pass the raw ID string (with brackets if needed, but array find works best with exact match)
+            // Let's pass the exact ID string to the onclick function
             return \`
-            <div class="card" data-color="\${colorClass}" data-pt="\${hasPt}">
+            <div class="card" data-color="\${colorClass}" data-pt="\${hasPt}" onclick="viewCard('\${card.id}')">
                 <div class="card-header">
                     <span class="card-name">\${card.name}</span>
                     <span class="mana-cost">\${replaceSymbols(card.cost)}</span>
                 </div>
                 <div class="art-container">
                     <div class="art-missing">Loading...<br>\${card.fileName}</div>
-                    <img src="\${imagePath}" alt="\${card.name}" onload="this.style.zIndex='2'" onerror="this.style.display='none'">
+                    <img src="\${imagePath}" alt="\${card.name}" loading="lazy" onload="this.style.zIndex='2'" onerror="this.style.display='none'">
                 </div>
                 <div class="type-line">
                     <span>\${card.displayType}</span>
@@ -678,6 +630,82 @@ function generateHTML(data) {
                 \${card.pt ? \`<div class="pt-box">\${card.pt}</div>\` : ''}
             </div>
             \`;
+        }
+
+        // --- FILTERING ---
+        function toggleColor(color, btn) {
+            if (activeColor === color) {
+                activeColor = null;
+                btn.classList.remove('active');
+            } else {
+                document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+                activeColor = color;
+                btn.classList.add('active');
+            }
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const searchText = document.getElementById('searchInput').value.toLowerCase();
+            const rarity = document.getElementById('rarityInput').value;
+            const typeText = document.getElementById('typeInput').value.toLowerCase();
+
+            const filtered = ALL_CARDS.filter(card => {
+                if (card.isBackFace) return false;
+                const matchSearch = card.name.toLowerCase().includes(searchText) || card.text.join(' ').toLowerCase().includes(searchText);
+                const matchRarity = rarity === 'All' || card.rarity === rarity;
+                const matchType = typeText === '' || card.type.toLowerCase().includes(typeText);
+                const cardColor = determineColorClass(card);
+                const matchColor = activeColor ? cardColor === activeColor : true;
+                return matchSearch && matchRarity && matchType && matchColor;
+            });
+
+            renderGallery(filtered);
+        }
+
+        function renderGallery(cards) {
+            const container = document.getElementById('galleryContainer');
+            document.getElementById('visibleCount').innerText = cards.length;
+            
+            if (cards.length === 0) {
+                container.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px; color:#555;">NO CARDS FOUND IN THE MATRIX</div>';
+                return;
+            }
+
+            const html = cards.map(card => {
+                let cardHtml = renderCardJS(card);
+                if (card.hasBackFace) {
+                    const backFace = ALL_CARDS.find(c => c.id === card.id && c.isBackFace);
+                    if (backFace) {
+                        return \`<div class="dfc-wrapper">\${renderCardJS(card)}<div class="transform-icon">⇄</div>\${renderCardJS(backFace)}</div>\`;
+                    }
+                }
+                return cardHtml;
+            }).join('');
+
+            container.innerHTML = html;
+        }
+
+        // --- MODAL LOGIC ---
+        function viewCard(id) {
+            // Find the card by ID
+            // Handle possibility of duplicate IDs if any (find first)
+            const card = ALL_CARDS.find(c => c.id === id);
+            if (!card) return;
+
+            const html = renderCardJS(card);
+            const container = document.getElementById('cardViewerContent');
+            
+            // Remove the onclick from the modal version so clicking it inside the modal doesn't re-trigger
+            const cleanHtml = html.replace(/onclick="viewCard\('[^']+'\)"/, '');
+            
+            container.innerHTML = cleanHtml;
+            document.getElementById('cardViewModal').style.display = 'flex';
+            
+            // Allow closing via escape key
+            document.onkeydown = function(evt) {
+                if (evt.key === "Escape") closeModal('cardViewModal');
+            };
         }
 
         function getRandom(arr, count) {
@@ -693,16 +721,11 @@ function generateHTML(data) {
             const mythics = ALL_CARDS.filter(c => c.rarity === "Mythic" && !c.isBackFace);
             
             const pack = [];
-            
             if (lands.length) pack.push(...getRandom(lands, 1));
             if (commons.length) pack.push(...getRandom(commons, 7));
             if (uncommons.length) pack.push(...getRandom(uncommons, 3));
-            
-            if (Math.random() > 0.87 && mythics.length > 0) {
-                pack.push(...getRandom(mythics, 1));
-            } else if (rares.length > 0) {
-                pack.push(...getRandom(rares, 1));
-            }
+            if (Math.random() > 0.87 && mythics.length > 0) pack.push(...getRandom(mythics, 1));
+            else if (rares.length > 0) pack.push(...getRandom(rares, 1));
 
             const wildcardRoll = Math.random();
             if (wildcardRoll > 0.95 && mythics.length > 0) pack.push(...getRandom(mythics, 1));
@@ -710,95 +733,33 @@ function generateHTML(data) {
             else if (wildcardRoll > 0.60 && uncommons.length > 0) pack.push(...getRandom(uncommons, 1));
             else if (commons.length > 0) pack.push(...getRandom(commons, 1));
 
+            pack.sort((a, b) => rarityWeights[b.rarity] - rarityWeights[a.rarity]);
+
             const container = document.getElementById("packContainer");
             container.innerHTML = "";
-            
             pack.forEach(card => {
-                const html = renderCardJS(card);
-                container.insertAdjacentHTML('beforeend', html);
+                container.insertAdjacentHTML('beforeend', renderCardJS(card));
             });
 
             document.getElementById("packModal").style.display = "flex";
         }
 
-        function closeModal() {
-            document.getElementById("packModal").style.display = "none";
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
         }
+        
         window.onclick = function(event) {
-            if (event.target == document.getElementById("packModal")) {
-                closeModal();
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.style.display = "none";
             }
         }
+
+        renderGallery(ALL_CARDS.filter(c => !c.isBackFace));
+
     </script>
 
 </body>
 </html>
-    `;
-}
-
-function renderCardHTML(card) {
-    const fileName = card.getFileName();
-    const imagePath = `../${IMAGE_DIR}/${fileName}`;
-    
-    // SERVER-SIDE RENDERER (Uses the same logic as client-side)
-    const replaceSymbols = (text) => {
-        if (!text) return "";
-        return text
-            .replace(/{W}/g, '<i class="ms ms-w ms-cost"></i>')
-            .replace(/{U}/g, '<i class="ms ms-u ms-cost"></i>')
-            .replace(/{B}/g, '<i class="ms ms-b ms-cost"></i>')
-            .replace(/{R}/g, '<i class="ms ms-r ms-cost"></i>')
-            .replace(/{G}/g, '<i class="ms ms-g ms-cost"></i>')
-            .replace(/{C}/g, '<i class="ms ms-c ms-cost"></i>')
-            .replace(/{E}/g, '<i class="ms ms-e ms-cost"></i>')
-            .replace(/{T}/g, '<i class="ms ms-tap ms-cost"></i>')
-            .replace(/{Q}/g, '<i class="ms ms-untap ms-cost"></i>')
-            .replace(/{S}/g, '<i class="ms ms-s ms-cost"></i>')
-            .replace(/{X}/g, '<i class="ms ms-x ms-cost"></i>')
-            .replace(/{(\d+)}/g, '<i class="ms ms-$1 ms-cost"></i>');
-    };
-    
-    const formatText = (lines) => lines.map(l => `<p>${replaceSymbols(l)}</p>`).join('');
-    
-    let colorClass = "Artifact";
-    let colorsFound = 0;
-    if (card.cost.includes("{W}")) { colorClass = "W"; colorsFound++; }
-    if (card.cost.includes("{U}")) { colorClass = "U"; colorsFound++; }
-    if (card.cost.includes("{B}")) { colorClass = "B"; colorsFound++; }
-    if (card.cost.includes("{R}")) { colorClass = "R"; colorsFound++; }
-    if (card.cost.includes("{G}")) { colorClass = "G"; colorsFound++; }
-    if (colorsFound > 1) colorClass = "Gold";
-    if (card.type.toLowerCase().includes("land")) colorClass = "Land";
-
-    const hasPt = card.pt ? "yes" : "no";
-
-    let textBoxContent = `<div class="oracle-text">${formatText(card.text)}</div>`;
-    
-    if (card.flavor) {
-        textBoxContent += `<div class="flavor-separator"></div><div class="flavor-text">${replaceSymbols(card.flavor)}</div>`;
-    }
-
-    const cleanId = card.id.replace(/[\[\]]/g, '');
-
-    return `
-    <div class="card" data-color="${colorClass}" data-pt="${hasPt}">
-        <div class="card-header">
-            <span class="card-name">${card.name}</span>
-            <span class="mana-cost">${replaceSymbols(card.cost)}</span>
-        </div>
-        <div class="art-container">
-            <div class="art-missing">Processing...<br>${fileName}</div>
-            <img src="${imagePath}" alt="${card.name}" onload="this.style.zIndex='2'" onerror="this.style.display='none'">
-        </div>
-        <div class="type-line">
-            <span>${card.displayType}</span>
-            <span class="rarity-symbol rarity-${card.rarity}" title="${card.rarity}">${cleanId}</span>
-        </div>
-        <div class="text-box">
-            ${textBoxContent}
-        </div>
-        ${card.pt ? `<div class="pt-box">${card.pt}</div>` : ''}
-    </div>
     `;
 }
 
@@ -817,12 +778,11 @@ function main() {
   }
 
   console.log("------------------------------------------");
-  console.log("   MATRIX SET WEBSITE GENERATOR (V8 - Font Icons)");
+  console.log("   MATRIX SET WEBSITE GENERATOR (V15 - Card Viewer)");
   console.log("------------------------------------------");
   
   const data = parseDesignBible(INPUT_FILE);
   console.log(`   Found ${data.cards.length} card faces.`);
-  console.log(`   Found ${data.setInfo.mechanics.length} mechanics.`);
   
   const htmlContent = generateHTML(data);
   
