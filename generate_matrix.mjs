@@ -8,10 +8,7 @@ import 'dotenv/config';
 // ==========================================
 
 const API_KEY = process.env.GEMINI_API_KEY;
-
-// Using the Gemini 3 model for image generation
 const MODEL_ID = "gemini-3-pro-image-preview"; 
-
 const INPUT_FILE = "MTG INTO THE MATRIX.txt";
 const OUTPUT_DIR = "matrix_art_output";
 
@@ -65,7 +62,7 @@ class Card {
     // 1. Skip non-creatures
     if (!typeLower.includes("creature")) return "";
     
-    // 2. STRICT HUMAN CHECK: Only apply diversity to Humans
+    // 2. STRICT HUMAN CHECK
     if (!typeLower.includes("human") && !typeLower.includes("scout") && !typeLower.includes("soldier") && !typeLower.includes("pilot")) return "";
 
     // 3. Skip known characters
@@ -378,15 +375,25 @@ function parseDesignBible(filePath) {
 // 4. API INTERACTION
 // ==========================================
 
-async function generateArtForCard(aiClient, card) {
+async function generateArtForCard(aiClient, card, isDryRun, forceOverwrite) {
   const prompt = card.generatePrompt();
   const outputPath = path.join(OUTPUT_DIR, card.getFileName());
 
-  if (fs.existsSync(outputPath)) {
+  // Check existence unless forced
+  if (!forceOverwrite && fs.existsSync(outputPath)) {
     console.log(`[SKIP] ${card.getFileName()} already exists.`);
     return;
   }
 
+  // DRY RUN OUTPUT
+  if (isDryRun) {
+      console.log(`\n--- DRY RUN: ${card.name} (${card.isBackFace ? "BACK" : "FRONT"}) ---`);
+      console.log(prompt);
+      console.log("---------------------------------------------------------------");
+      return;
+  }
+
+  // REAL RUN
   const world = card.getWorldContext();
   const isDigital = card.hasDigitalKeyword();
   
@@ -439,30 +446,57 @@ async function main() {
   }
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR);
 
+  // ARGUMENT PARSING
+  const args = process.argv.slice(2);
+  const isDryRun = args.includes('--dryrun') || args.includes('-d');
+  const isForce = args.includes('--force') || args.includes('-f');
+  
+  // Check for --specific or -s
+  let specificId = null;
+  const specificIndex = args.findIndex(arg => arg === '--specific' || arg === '-s');
+  if (specificIndex !== -1 && args[specificIndex + 1]) {
+    specificId = args[specificIndex + 1].replace(/[\[\]]/g, ''); // Remove brackets if user typed [C60]
+  }
+
   console.log("------------------------------------------");
-  console.log("   MATRIX SET ART GENERATOR (V22 - No Sunglasses)");
+  console.log(`   MATRIX SET ART GENERATOR (V24)`);
+  if (isDryRun) console.log("   ⚠️  DRY RUN MODE ENABLED ⚠️");
+  if (isForce) console.log("   🔥 FORCE MODE: OVERWRITING ALL FILES 🔥");
+  if (specificId) console.log(`   🎯 SPECIFIC MODE: Targeting Card ID '${specificId}'`);
   console.log("------------------------------------------");
   
   const allCards = parseDesignBible(INPUT_FILE);
-  
-  const cardsToProcess = allCards.filter(card => {
-    const fullPath = path.join(OUTPUT_DIR, card.getFileName());
-    return !fs.existsSync(fullPath);
-  });
+  let cardsToProcess = [];
+
+  // FILTERING LOGIC
+  if (specificId) {
+      // If specific ID, find it (matches force behavior for just this card)
+      cardsToProcess = allCards.filter(card => card.id === specificId);
+      if (cardsToProcess.length === 0) {
+          console.error(`❌ Error: Card ID '${specificId}' not found in ${INPUT_FILE}`);
+          return;
+      }
+  } else {
+      // Standard Batch
+      cardsToProcess = allCards; 
+      // Note: We pass the filter logic to generateArtForCard via the 'isForce' flag
+      // so we can report SKIPs vs Generations accurately.
+  }
 
   console.log(`   Found ${allCards.length} total card faces.`);
-  console.log(`   📝 Processing ${cardsToProcess.length} remaining faces.`);
+  console.log(`   📝 Processing ${cardsToProcess.length} selected faces.`);
 
-  if (cardsToProcess.length === 0) {
-    console.log("✅ All cards are already generated! Exiting.");
-    return;
-  }
-  
   const ai = new GoogleGenAI({ apiKey: API_KEY });
 
   for (let i = 0; i < cardsToProcess.length; i++) {
-    await generateArtForCard(ai, cardsToProcess[i]);
-    await new Promise(r => setTimeout(r, 500));
+    // If we are in specific mode, we treat it as a force overwrite for that card
+    const forceThisCard = isForce || (specificId !== null);
+    
+    await generateArtForCard(ai, cardsToProcess[i], isDryRun, forceThisCard);
+    
+    if (!isDryRun) {
+        await new Promise(r => setTimeout(r, 500));
+    }
   }
 }
 
