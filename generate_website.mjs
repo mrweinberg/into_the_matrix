@@ -454,7 +454,6 @@ function generateHTML(data) {
             cursor: default; /* No pointer in modal */
         }
         
-        /* Make sure DFC wrapper flows correctly in Single View */
         .single-view .dfc-wrapper {
             display: flex;
             gap: 20px;
@@ -464,7 +463,6 @@ function generateHTML(data) {
             background: transparent;
         }
         
-        /* In pack view, we still want hover effects. In modal, maybe not? */
         .single-view .card:hover {
             transform: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
@@ -637,7 +635,7 @@ function generateHTML(data) {
             <div class="stat-box">
                 <h2>System Stats</h2>
                 <p><strong>Total Files:</strong> <span id="visibleCount">${setInfo.cardCount}</span></p>
-                <p><strong>System Version:</strong> v1.8.0 (Modal Fixes)</p>
+                <p><strong>System Version:</strong> v1.9.0 (Smart Navigation)</p>
                 <button class="btn-generate" onclick="openBoosterPack()">Open Simulation Pack</button>
             </div>
             <div>
@@ -690,6 +688,8 @@ function generateHTML(data) {
     <script>
         const ALL_CARDS = ${cardsJsonString};
         let activeColor = null;
+        let currentPack = [];
+        let viewingCardFromPack = false;
 
         const rarityWeights = {
             "Mythic": 4,
@@ -780,6 +780,7 @@ function generateHTML(data) {
             let cardHtml = renderCardJS(card);
 
             if (card.hasBackFace) {
+                // Find back face
                 const backFace = ALL_CARDS.find(c => c.id === card.id && c.isBackFace);
                 if (backFace) {
                     return \`
@@ -847,58 +848,71 @@ function generateHTML(data) {
         // --- INTERACTIVITY ---
         
         function viewCard(id) {
+            // Check current modal state to set "Back" context
+            const modal = document.getElementById("packModal");
+            const isOpen = modal.style.display === "flex";
+            
+            if (isOpen) {
+                viewingCardFromPack = true;
+            } else {
+                viewingCardFromPack = false;
+            }
+
             const card = ALL_CARDS.find(c => c.id === id && !c.isBackFace);
             if (!card) return;
 
             const container = document.getElementById("packContainer");
-            // Set mode to SINGLE VIEW (Big card, centered)
             container.className = "single-view";
             container.innerHTML = getCardHTML_WithDFC(card);
             
             document.getElementById("modalTitle").innerText = "CARD VIEW";
-            document.getElementById("packModal").style.display = "flex";
+            modal.style.display = "flex";
         }
 
         function openBoosterPack() {
+            // New pack = Reset state
+            viewingCardFromPack = false; 
+            currentPack = [];
+
             const lands = ALL_CARDS.filter(c => c.rarity === "Land" && !c.isBackFace);
             const commons = ALL_CARDS.filter(c => c.rarity === "Common" && !c.isBackFace);
             const uncommons = ALL_CARDS.filter(c => c.rarity === "Uncommon" && !c.isBackFace);
             const rares = ALL_CARDS.filter(c => c.rarity === "Rare" && !c.isBackFace);
             const mythics = ALL_CARDS.filter(c => c.rarity === "Mythic" && !c.isBackFace);
             
-            const pack = [];
-            
-            if (lands.length) pack.push(...getRandom(lands, 1));
-            if (commons.length) pack.push(...getRandom(commons, 7));
-            if (uncommons.length) pack.push(...getRandom(uncommons, 3));
+            if (lands.length) currentPack.push(...getRandom(lands, 1));
+            if (commons.length) currentPack.push(...getRandom(commons, 7));
+            if (uncommons.length) currentPack.push(...getRandom(uncommons, 3));
             
             if (Math.random() > 0.87 && mythics.length > 0) {
-                pack.push(...getRandom(mythics, 1));
+                currentPack.push(...getRandom(mythics, 1));
             } else if (rares.length > 0) {
-                pack.push(...getRandom(rares, 1));
+                currentPack.push(...getRandom(rares, 1));
             }
 
             const wildcardRoll = Math.random();
-            if (wildcardRoll > 0.95 && mythics.length > 0) pack.push(...getRandom(mythics, 1));
-            else if (wildcardRoll > 0.85 && rares.length > 0) pack.push(...getRandom(rares, 1));
-            else if (wildcardRoll > 0.60 && uncommons.length > 0) pack.push(...getRandom(uncommons, 1));
-            else if (commons.length > 0) pack.push(...getRandom(commons, 1));
+            if (wildcardRoll > 0.95 && mythics.length > 0) currentPack.push(...getRandom(mythics, 1));
+            else if (wildcardRoll > 0.85 && rares.length > 0) currentPack.push(...getRandom(rares, 1));
+            else if (wildcardRoll > 0.60 && uncommons.length > 0) currentPack.push(...getRandom(uncommons, 1));
+            else if (commons.length > 0) currentPack.push(...getRandom(commons, 1));
 
-            pack.sort((a, b) => rarityWeights[b.rarity] - rarityWeights[a.rarity]);
+            currentPack.sort((a, b) => rarityWeights[b.rarity] - rarityWeights[a.rarity]);
 
+            renderPackView();
+            document.getElementById("packModal").style.display = "flex";
+        }
+
+        function renderPackView() {
             const container = document.getElementById("packContainer");
-            // Set mode to PACK GRID (Small cards, grid)
             container.className = "pack-grid";
             container.innerHTML = "";
             
-            pack.forEach(card => {
-                // Use the shared helper so DFCs appear in packs too
+            currentPack.forEach(card => {
                 const html = getCardHTML_WithDFC(card);
                 container.insertAdjacentHTML('beforeend', html);
             });
-
+            
             document.getElementById("modalTitle").innerText = "BOOSTER PACK UNLOCKED";
-            document.getElementById("packModal").style.display = "flex";
         }
 
         function getRandom(arr, count) {
@@ -907,8 +921,16 @@ function generateHTML(data) {
         }
 
         function closeModal() {
-            document.getElementById("packModal").style.display = "none";
+            // Logic: If we are viewing a single card FROM a pack, go back to pack.
+            // Otherwise, close the modal.
+            if (viewingCardFromPack) {
+                renderPackView();
+                viewingCardFromPack = false;
+            } else {
+                document.getElementById("packModal").style.display = "none";
+            }
         }
+        
         window.onclick = function(event) {
             if (event.target == document.getElementById("packModal")) {
                 closeModal();
@@ -937,7 +959,7 @@ function main() {
   
   const data = parseDesignBible(INPUT_FILE);
   console.log("------------------------------------------");
-  console.log("   MATRIX SET WEBSITE GENERATOR (V18 - Fixed Modal)");
+  console.log("   MATRIX SET WEBSITE GENERATOR (V19 - Smart Nav)");
   console.log("------------------------------------------");
   console.log(`   Found ${data.cards.length} card faces.`);
   
