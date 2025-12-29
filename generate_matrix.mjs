@@ -66,11 +66,9 @@ class Card {
     if (!typeLower.includes("creature")) return "";
     
     // 2. STRICT HUMAN CHECK: Only apply diversity to Humans
-    // Programs/Agents are handled below or via specific logic. 
-    // Robots are handled by getRobotVisuals().
     if (!typeLower.includes("human") && !typeLower.includes("scout") && !typeLower.includes("soldier") && !typeLower.includes("pilot")) return "";
 
-    // 3. Skip known characters (Lore accuracy)
+    // 3. Skip known characters
     const knownCharacters = ["neo", "morpheus", "trinity", "smith", "oracle", "seraph", "niobe", "ghost", "merovingian", "persephone", "keymaker", "architect"];
     if (knownCharacters.some(char => nameLower.includes(char))) {
         return ""; 
@@ -100,25 +98,18 @@ class Card {
     return `Character Appearance: ${randomGender}, ${randomEthnicity}. (Consistent Identity).`;
   }
 
-  /**
-   * NEW: Enforces Non-Humanoid Robot Designs
-   */
   getRobotVisuals() {
     const typeLower = this.type.toLowerCase();
     const nameLower = this.name.toLowerCase();
 
-    // Identify if this card is a Machine/Robot
-    // Note: "Programs" (Agents) are NOT robots in this context.
     const isMachine = typeLower.includes("artifact creature") || typeLower.includes("robot") || typeLower.includes("construct") || typeLower.includes("thopter") || typeLower.includes("juggernaut") || typeLower.includes("horror");
     
     if (!isMachine) return "";
 
-    // Specific Sentinel Override
     if (nameLower.includes("sentinel") || nameLower.includes("squid") || nameLower.includes("swarm")) {
         return "ROBOT APPEARANCE: Movie-Accurate Sentinel ('Squiddy'). A floating, squid-like machine with a central sensory pod (multiple red eyes) and trailing metallic tentacles. NO humanoid legs/arms.";
     }
 
-    // General Machine Override
     return "ROBOT APPEARANCE: NON-HUMANOID. Industrial, insectoid, or arachnid machinery. Use heavy cables, hydraulics, and sensor eyes. Do NOT depict as a human-shaped android or man in a suit.";
   }
 
@@ -161,7 +152,7 @@ class Card {
     // === CREATURE LOGIC ===
     if (typeLower.includes("creature")) {
         if (this.hasDigitalKeyword()) {
-            // ---> INSIDE THE MATRIX (1999 Tech)
+            // ---> INSIDE THE MATRIX
             if (combinedText.includes("kung fu") || combinedText.includes("monk") || combinedText.includes("dojo")) {
                  return { setting: "A Japanese Dojo Simulation. Features: Rice paper walls, wooden floors.", tone: "Warm Wood, Clean Light, Golden Hues", tech: "Traditional / Minimal" };
             }
@@ -183,7 +174,7 @@ class Card {
                 tech: TECH_1999
             };
         } else {
-            // ---> THE REAL WORLD (Sci-Fi Tech)
+            // ---> THE REAL WORLD
             if (nameLower.includes("machine city") || nameLower.includes("01")) {
                  return { setting: "The Machine City (01). Features: Endless black towers, red lightning storms, swarms of sentinels.", tone: "Oppressive Black metal and Glowing Orange Sky", tech: TECH_SCIFI };
             }
@@ -247,8 +238,16 @@ class Card {
     const artStyle = this.getArtStyle();
     const diversity = this.getCharacterDiversity();
     const composition = this.getCompositionType();
-    const robotVisuals = this.getRobotVisuals(); // Get strict robot constraints
+    const robotVisuals = this.getRobotVisuals(); 
     
+    // SUNGLASSES LOGIC
+    let sunglassesConstraint = "";
+    if (world.setting.includes("Real World") || world.setting.includes("Zion") || world.setting.includes("Machine")) {
+        sunglassesConstraint = "6. NO SUNGLASSES. Characters in the Real World/Zion do NOT wear sunglasses. Eyes should be visible. Clothing should be ragged sweaters or tactical gear.";
+    } else {
+        sunglassesConstraint = "6. Sunglasses are characteristic of the Matrix simulation and are allowed/encouraged for Agents and Renegades.";
+    }
+
     let visualContext = this.flavor.length > 0 ? this.flavor : this.text.join(" ");
     
     const descriptiveText = visualContext
@@ -272,6 +271,7 @@ class Card {
       3. NO wizards in robes.
       4. WEAPONRY: Modern firearms, martial arts, or futuristic lightning rifles (only if Real World).
       5. ${robotVisuals}
+      ${sunglassesConstraint}
       
       **SCENE RECOGNITION PROTOCOL:**
       - ANALYZE the Card Name: "${this.name}".
@@ -440,7 +440,7 @@ async function main() {
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR);
 
   console.log("------------------------------------------");
-  console.log("   MATRIX SET ART GENERATOR (V20 - 1999 Tech & Human Only)");
+  console.log("   MATRIX SET ART GENERATOR (V22 - No Sunglasses)");
   console.log("------------------------------------------");
   
   const allCards = parseDesignBible(INPUT_FILE);

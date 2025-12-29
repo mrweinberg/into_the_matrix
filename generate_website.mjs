@@ -7,7 +7,7 @@ import path from "node:path";
 
 const INPUT_FILE = "MTG INTO THE MATRIX.txt";
 const IMAGE_DIR = "matrix_art_output";    
-const OUTPUT_DIR = "matrix_site_output";  
+const OUTPUT_DIR = ".";  
 const OUTPUT_FILE = "index.html";
 
 // ==========================================
@@ -305,7 +305,6 @@ function generateHTML(data) {
             text-transform: uppercase;
         }
         
-        /* FILTERS */
         .filter-section {
             display: flex;
             flex-wrap: wrap;
@@ -321,7 +320,12 @@ function generateHTML(data) {
             flex: 1;
             min-width: 200px;
         }
-        .filter-label { font-size: 0.9em; color: var(--matrix-green); font-weight: bold; text-transform: uppercase; }
+        .filter-label {
+            font-size: 0.9em;
+            color: var(--matrix-green);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
         .search-input, .filter-select {
             background: #000;
             border: 1px solid var(--matrix-green);
@@ -330,12 +334,28 @@ function generateHTML(data) {
             border-radius: 4px;
             font-family: inherit;
         }
-        .color-toggles { display: flex; gap: 5px; flex-wrap: wrap; }
-        .color-btn {
-            width: 35px; height: 35px; border-radius: 50%; border: 2px solid #555;
-            cursor: pointer; display: flex; align-items: center; justify-content: center;
-            font-weight: bold; background: #222; color: #aaa; transition: 0.2s;
+        .color-toggles {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
         }
+        .color-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid #555;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            background: #222;
+            color: #aaa;
+            transition: 0.2s;
+            font-size: 1.3em; /* Larger icons */
+        }
+        .color-btn i { margin: 0; }
+        
         .color-btn.active { border-color: #fff; box-shadow: 0 0 8px #fff; }
         .cb-w.active { background: #f8e7b9; color: #000; }
         .cb-u.active { background: #0e68ab; color: #fff; }
@@ -346,62 +366,102 @@ function generateHTML(data) {
         .cb-art.active { background: #7d7d7d; color: #000; }
         .cb-land.active { background: #bfa586; color: #000; }
 
-        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
         
         .btn-generate {
-            background: var(--matrix-green); color: #000; border: none; padding: 10px 20px;
-            font-size: 1.1rem; font-weight: bold; cursor: pointer; text-transform: uppercase;
-            letter-spacing: 1px; margin-top: 15px; width: 100%; transition: 0.3s;
+            background: var(--matrix-green);
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            width: 100%;
+            transition: 0.3s;
             box-shadow: 0 0 10px var(--matrix-green);
         }
-        .btn-generate:hover { background: #fff; box-shadow: 0 0 20px #fff; }
+        .btn-generate:hover {
+            background: #fff;
+            box-shadow: 0 0 20px #fff;
+        }
 
-        /* MODALS */
         .modal-overlay {
-            display: none; position: fixed; top: 0; left: 0;
-            width: 100%; height: 100%; background: rgba(0,0,0,0.9);
-            z-index: 999; align-items: center; justify-content: center; overflow-y: auto;
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+            overflow-y: auto;
         }
         .modal-content {
-            background: #111; border: 2px solid var(--matrix-green); width: 90%;
-            max-width: 1400px; padding: 20px; border-radius: 10px; position: relative;
-            max-height: 90vh; overflow-y: auto;
+            background: #111;
+            border: 2px solid var(--matrix-green);
+            width: 90%;
+            max-width: 1400px;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
         }
-        
-        /* CARD VIEWER SPECIFIC */
-        #cardViewerContent {
-            display: flex; justify-content: center; padding: 20px;
-        }
-        /* Style specifically for the zoomed card */
-        #cardViewerContent .card {
-            width: 450px;
-            font-size: 1.15em;
-            box-shadow: 0 0 30px #000;
-        }
-
         .close-modal {
-            position: absolute; top: 10px; right: 20px; font-size: 2rem;
-            color: #fff; cursor: pointer; z-index: 1001;
+            position: absolute;
+            top: 10px; right: 20px;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
         }
-
-        .pack-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-        .mechanics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-top: 15px; }
-        .mechanic-entry { background: rgba(0,0,0,0.3); padding: 10px; border-left: 3px solid var(--matrix-green); }
+        .pack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .mechanics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .mechanic-entry {
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-left: 3px solid var(--matrix-green);
+        }
         .mech-name { display: block; font-weight: bold; color: var(--matrix-green); margin-bottom: 4px; }
         .mech-text { font-size: 0.9em; color: #ccc; line-height: 1.4; }
 
         .gallery {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px; max-width: 1600px; margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1600px;
+            margin: 0 auto;
         }
         
         /* CARD STYLING */
         .card {
-            background: var(--card-bg); border: 1px solid var(--border-color);
-            border-radius: 14px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column;
-            border-top: 5px solid #444; height: 100%; position: relative;
-            cursor: pointer; /* Clickable */
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            border-top: 5px solid #444; 
+            height: 100%;
+            position: relative;
         }
         .card[data-color="W"] { border-top-color: #F0F2C0; }
         .card[data-color="U"] { border-top-color: #0E68AB; }
@@ -414,25 +474,48 @@ function generateHTML(data) {
         .card:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(0, 255, 65, 0.3); border-color: var(--matrix-green); }
 
         .card-header {
-            padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             background: linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-            border-bottom: 1px solid #333; gap: 10px;
+            border-bottom: 1px solid #333;
+            gap: 10px;
         }
         .card-name { font-weight: 700; font-size: 1.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .mana-cost { flex-shrink: 0; white-space: nowrap; display: flex; align-items: center; font-size: 1.1em; gap: 2px; }
 
+        /* --- UPDATED ART CONTAINER --- */
         .art-container {
-            width: 100%; height: 230px; overflow: hidden; background: #000;
-            position: relative; display: flex; align-items: center; justify-content: center;
+            width: 100%;
+            height: auto;        /* Let image define height */
+            min-height: 150px;   /* Fallback for loading */
+            overflow: hidden;
+            background: #000;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-bottom: 1px solid #333;
         }
-        .art-container img { width: 100%; height: 100%; object-fit: cover; z-index: 1; }
-        .art-missing { color: #444; text-align: center; font-size: 0.8em; position: absolute; z-index: 0; }
+        .art-container img { 
+            width: 100%; 
+            height: auto;        /* No fixed height = no crop */
+            display: block;
+            z-index: 1; 
+        }
+        .art-missing { color: #444; text-align: center; font-size: 0.8em; position: absolute; z-index: 0; padding: 20px; }
 
         .type-line {
-            padding: 8px 12px; font-size: 0.9em; border-bottom: 1px solid #333;
-            display: flex; justify-content: space-between; align-items: center;
-            font-weight: 600; background: rgba(255,255,255,0.03); z-index: 2;
+            padding: 8px 12px;
+            font-size: 0.9em;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: rgba(255,255,255,0.03);
+            z-index: 2;
         }
         
         .text-box { padding: 14px; font-size: 0.92em; line-height: 1.45; flex-grow: 1; display: flex; flex-direction: column; }
@@ -441,15 +524,28 @@ function generateHTML(data) {
         .flavor-text { font-style: italic; font-family: 'Times New Roman', Times, serif; color: #999; font-size: 0.95em; }
 
         .pt-box {
-            background: #222; padding: 4px 10px; border-radius: 8px; font-weight: bold;
-            border: 1px solid #555; font-size: 1.1em; position: absolute; bottom: 10px;
-            right: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            background: #222;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 1px solid #555;
+            font-size: 1.1em;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
         .card[data-pt="yes"] .text-box { padding-bottom: 45px; }
 
         .dfc-wrapper {
-            grid-column: span 2; display: flex; gap: 15px; align-items: stretch;
-            background: rgba(255,255,255,0.02); padding: 15px; border-radius: 16px; border: 1px dashed #444;
+            grid-column: span 2; 
+            display: flex;
+            gap: 15px;
+            align-items: stretch;
+            background: rgba(255,255,255,0.02);
+            padding: 15px;
+            border-radius: 16px;
+            border: 1px dashed #444;
         }
         .dfc-wrapper .card { flex: 1; }
         .transform-icon { font-size: 2em; color: var(--matrix-green); align-self: center; }
@@ -458,9 +554,15 @@ function generateHTML(data) {
         i.ms-tap { font-size: 0.9em; }
 
         .rarity-symbol {
-            font-size: 0.75em; font-weight: 900; padding: 2px 6px; border-radius: 4px;
-            margin-left: auto; border: 1px solid rgba(255,255,255,0.2);
-            box-shadow: 1px 1px 3px rgba(0,0,0,0.5); font-family: sans-serif; background: #000;
+            font-size: 0.75em;
+            font-weight: 900;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: auto;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            font-family: sans-serif;
+            background: #000;
         }
         .rarity-Common { color: #fff; background: var(--rarity-common); }
         .rarity-Uncommon { color: #fff; background: var(--rarity-uncommon); border-color: #a0a0a0; }
@@ -479,15 +581,9 @@ function generateHTML(data) {
 
     <div id="packModal" class="modal-overlay">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('packModal')">&times;</span>
+            <span class="close-modal" onclick="closeModal()">&times;</span>
             <h2 style="text-align:center; color: var(--matrix-green);">BOOSTER PACK UNLOCKED</h2>
             <div id="packContainer" class="pack-grid"></div>
-        </div>
-    </div>
-
-    <div id="cardViewModal" class="modal-overlay" onclick="closeModal('cardViewModal')">
-        <div class="modal-content" style="max-width: 600px; background: transparent; border: none; box-shadow: none;">
-            <div id="cardViewerContent"></div>
         </div>
     </div>
 
@@ -498,7 +594,7 @@ function generateHTML(data) {
             <div class="stat-box">
                 <h2>System Stats</h2>
                 <p><strong>Total Files:</strong> <span id="visibleCount">${setInfo.cardCount}</span></p>
-                <p><strong>System Version:</strong> v1.5.0 (Card Viewer)</p>
+                <p><strong>System Version:</strong> v1.6.0 (Full Art + Icons)</p>
                 <button class="btn-generate" onclick="openBoosterPack()">Open Simulation Pack</button>
             </div>
             <div>
@@ -532,14 +628,14 @@ function generateHTML(data) {
             <div class="filter-group">
                 <label class="filter-label">Color</label>
                 <div class="color-toggles">
-                    <div class="color-btn cb-w" onclick="toggleColor('W', this)">W</div>
-                    <div class="color-btn cb-u" onclick="toggleColor('U', this)">U</div>
-                    <div class="color-btn cb-b" onclick="toggleColor('B', this)">B</div>
-                    <div class="color-btn cb-r" onclick="toggleColor('R', this)">R</div>
-                    <div class="color-btn cb-g" onclick="toggleColor('G', this)">G</div>
-                    <div class="color-btn cb-gold" onclick="toggleColor('Gold', this)">M</div>
-                    <div class="color-btn cb-art" onclick="toggleColor('Artifact', this)">A</div>
-                    <div class="color-btn cb-land" onclick="toggleColor('Land', this)">L</div>
+                    <div class="color-btn cb-w" onclick="toggleColor('W', this)"><i class="ms ms-w ms-cost"></i></div>
+                    <div class="color-btn cb-u" onclick="toggleColor('U', this)"><i class="ms ms-u ms-cost"></i></div>
+                    <div class="color-btn cb-b" onclick="toggleColor('B', this)"><i class="ms ms-b ms-cost"></i></div>
+                    <div class="color-btn cb-r" onclick="toggleColor('R', this)"><i class="ms ms-r ms-cost"></i></div>
+                    <div class="color-btn cb-g" onclick="toggleColor('G', this)"><i class="ms ms-g ms-cost"></i></div>
+                    <div class="color-btn cb-gold" onclick="toggleColor('Gold', this)"><i class="ms ms-multicolored ms-cost"></i></div>
+                    <div class="color-btn cb-art" onclick="toggleColor('Artifact', this)"><i class="ms ms-artifact ms-cost"></i></div>
+                    <div class="color-btn cb-land" onclick="toggleColor('Land', this)"><i class="ms ms-land ms-cost"></i></div>
                 </div>
             </div>
         </div>
@@ -551,8 +647,14 @@ function generateHTML(data) {
     <script>
         const ALL_CARDS = ${cardsJsonString};
         let activeColor = null;
-        
-        const rarityWeights = { "Mythic": 4, "Rare": 3, "Uncommon": 2, "Common": 1, "Land": 0 };
+
+        const rarityWeights = {
+            "Mythic": 4,
+            "Rare": 3,
+            "Uncommon": 2,
+            "Common": 1,
+            "Land": 0
+        };
 
         // --- MANA FONT LOGIC ---
         function replaceSymbols(text) {
@@ -594,9 +696,8 @@ function generateHTML(data) {
             return "Artifact";
         }
 
-        // --- CARD RENDERING ---
         function renderCardJS(card) {
-            const imagePath = \`../${IMAGE_DIR}/\${card.fileName}\`;
+            const imagePath = \`${IMAGE_DIR}/\${card.fileName}\`;
             const colorClass = determineColorClass(card);
             const hasPt = card.pt ? "yes" : "no";
             
@@ -608,10 +709,8 @@ function generateHTML(data) {
 
             const cleanId = card.id.replace(/[\[\]]/g, '');
 
-            // We pass the raw ID string (with brackets if needed, but array find works best with exact match)
-            // Let's pass the exact ID string to the onclick function
             return \`
-            <div class="card" data-color="\${colorClass}" data-pt="\${hasPt}" onclick="viewCard('\${card.id}')">
+            <div class="card" data-color="\${colorClass}" data-pt="\${hasPt}">
                 <div class="card-header">
                     <span class="card-name">\${card.name}</span>
                     <span class="mana-cost">\${replaceSymbols(card.cost)}</span>
@@ -632,7 +731,7 @@ function generateHTML(data) {
             \`;
         }
 
-        // --- FILTERING ---
+        // --- FILTERING LOGIC ---
         function toggleColor(color, btn) {
             if (activeColor === color) {
                 activeColor = null;
@@ -652,11 +751,22 @@ function generateHTML(data) {
 
             const filtered = ALL_CARDS.filter(card => {
                 if (card.isBackFace) return false;
-                const matchSearch = card.name.toLowerCase().includes(searchText) || card.text.join(' ').toLowerCase().includes(searchText);
+
+                // General Search
+                const matchSearch = 
+                    card.name.toLowerCase().includes(searchText) || 
+                    card.text.join(' ').toLowerCase().includes(searchText);
+
+                // Rarity
                 const matchRarity = rarity === 'All' || card.rarity === rarity;
+
+                // Type (Includes subtypes now)
                 const matchType = typeText === '' || card.type.toLowerCase().includes(typeText);
+
+                // Color
                 const cardColor = determineColorClass(card);
                 const matchColor = activeColor ? cardColor === activeColor : true;
+
                 return matchSearch && matchRarity && matchType && matchColor;
             });
 
@@ -674,40 +784,27 @@ function generateHTML(data) {
 
             const html = cards.map(card => {
                 let cardHtml = renderCardJS(card);
+
                 if (card.hasBackFace) {
                     const backFace = ALL_CARDS.find(c => c.id === card.id && c.isBackFace);
                     if (backFace) {
-                        return \`<div class="dfc-wrapper">\${renderCardJS(card)}<div class="transform-icon">⇄</div>\${renderCardJS(backFace)}</div>\`;
+                        return \`
+                        <div class="dfc-wrapper">
+                            \${renderCardJS(card)}
+                            <div class="transform-icon">⇄</div>
+                            \${renderCardJS(backFace)}
+                        </div>
+                        \`;
                     }
                 }
+                
                 return cardHtml;
             }).join('');
 
             container.innerHTML = html;
         }
 
-        // --- MODAL LOGIC ---
-        function viewCard(id) {
-            // Find the card by ID
-            // Handle possibility of duplicate IDs if any (find first)
-            const card = ALL_CARDS.find(c => c.id === id);
-            if (!card) return;
-
-            const html = renderCardJS(card);
-            const container = document.getElementById('cardViewerContent');
-            
-            // Remove the onclick from the modal version so clicking it inside the modal doesn't re-trigger
-            const cleanHtml = html.replace(/onclick="viewCard\('[^']+'\)"/, '');
-            
-            container.innerHTML = cleanHtml;
-            document.getElementById('cardViewModal').style.display = 'flex';
-            
-            // Allow closing via escape key
-            document.onkeydown = function(evt) {
-                if (evt.key === "Escape") closeModal('cardViewModal');
-            };
-        }
-
+        // --- BOOSTER PACK LOGIC ---
         function getRandom(arr, count) {
             const shuffled = [...arr].sort(() => 0.5 - Math.random());
             return shuffled.slice(0, count);
@@ -721,11 +818,16 @@ function generateHTML(data) {
             const mythics = ALL_CARDS.filter(c => c.rarity === "Mythic" && !c.isBackFace);
             
             const pack = [];
+            
             if (lands.length) pack.push(...getRandom(lands, 1));
             if (commons.length) pack.push(...getRandom(commons, 7));
             if (uncommons.length) pack.push(...getRandom(uncommons, 3));
-            if (Math.random() > 0.87 && mythics.length > 0) pack.push(...getRandom(mythics, 1));
-            else if (rares.length > 0) pack.push(...getRandom(rares, 1));
+            
+            if (Math.random() > 0.87 && mythics.length > 0) {
+                pack.push(...getRandom(mythics, 1));
+            } else if (rares.length > 0) {
+                pack.push(...getRandom(rares, 1));
+            }
 
             const wildcardRoll = Math.random();
             if (wildcardRoll > 0.95 && mythics.length > 0) pack.push(...getRandom(mythics, 1));
@@ -733,27 +835,30 @@ function generateHTML(data) {
             else if (wildcardRoll > 0.60 && uncommons.length > 0) pack.push(...getRandom(uncommons, 1));
             else if (commons.length > 0) pack.push(...getRandom(commons, 1));
 
+            // Sort Pack (Mythic -> Land)
             pack.sort((a, b) => rarityWeights[b.rarity] - rarityWeights[a.rarity]);
 
             const container = document.getElementById("packContainer");
             container.innerHTML = "";
+            
             pack.forEach(card => {
-                container.insertAdjacentHTML('beforeend', renderCardJS(card));
+                const html = renderCardJS(card);
+                container.insertAdjacentHTML('beforeend', html);
             });
 
             document.getElementById("packModal").style.display = "flex";
         }
 
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
+        function closeModal() {
+            document.getElementById("packModal").style.display = "none";
         }
-        
         window.onclick = function(event) {
-            if (event.target.classList.contains('modal-overlay')) {
-                event.target.style.display = "none";
+            if (event.target == document.getElementById("packModal")) {
+                closeModal();
             }
         }
 
+        // Initial Render
         renderGallery(ALL_CARDS.filter(c => !c.isBackFace));
 
     </script>
@@ -774,11 +879,11 @@ function main() {
   }
   
   if (!fs.existsSync(OUTPUT_DIR)) {
-      fs.mkdirSync(OUTPUT_DIR);
+      // It's just root, so no mkdir needed usually
   }
 
   console.log("------------------------------------------");
-  console.log("   MATRIX SET WEBSITE GENERATOR (V15 - Card Viewer)");
+  console.log("   MATRIX SET WEBSITE GENERATOR (V16 - Full Art & Icons)");
   console.log("------------------------------------------");
   
   const data = parseDesignBible(INPUT_FILE);
