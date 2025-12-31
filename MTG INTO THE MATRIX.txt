@@ -330,6 +330,7 @@ Choose target artifact or creature. You get {E}{E}{E}{E}. Then you may pay an am
 [M02] The Analyst {2}{U}{U}
 Legendary Creature — Program Advisor (2/3)
 Flash
+Digital
 When The Analyst enters the battlefield, if it's your turn, end the turn. (Exile all spells and abilities from the stack. The player whose turn it is discards down to their maximum hand size. Damage wears off, and "this turn" and "until end of turn" effects end.)
 If it's an opponent's turn, return up to one target spell to its owner's hand.
 [M03] The Oracle, Path Calculator {2}{U}{U}
@@ -348,8 +349,8 @@ Whenever you cast a spell, you may pay {E}{E}. If you do, choose one:
 • Target creature's base power and toughness becomes 1/1 until end of turn.
 [R081] Thomas Anderson {1}{U}
 Legendary Creature — Human (1/2)
-Skulk
-When Thomas Anderson deals combat damage to a player, look at the top card of your library. If it's a legendary creature, you may reveal it and put it into your hand.
+Skulk, Digital
+When Thomas Anderson deals combat damage to a player, look at the top card of your library. If it's a legendary creature, you may reveal it and put it into your hand. If you do, put a +1/+1 counter on Thomas Anderson.
 BLACK (33 Cards)
 [C041] Battery Farm Cultivator {2}{B}
 Artifact Creature — Robot (2/3)
@@ -644,9 +645,9 @@ If a source would deal damage to a permanent or player, it deals double that dam
 At the beginning of your upkeep, exile the top card of your library. You may play it this turn.
 “It’s crashing.”
 GREEN (34 Cards)
-[C091] Power Suit Fella {2}{G}
+[C091] APU Operator {2}{G}
 Creature — Human Soldier (3/3)
-Power Suit Fella gets +1/+1 and has trample as long as you have three or more {E}.
+APU Operator gets +1/+1 and has trample as long as you have three or more {E}.
 [C092] Ship Medic {2}{G}
 Creature — Human Cleric (2/2)
 When Ship Medic enters the battlefield, you get {E}{E}.

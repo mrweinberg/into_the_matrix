@@ -65,10 +65,10 @@ class Card {
     // 2. STRICT HUMAN CHECK
     if (!typeLower.includes("human") && !typeLower.includes("scout") && !typeLower.includes("soldier") && !typeLower.includes("pilot")) return "";
 
-    // 3. SKIP LEGENDARY (Handled by strict resemblance rule now)
+    // 3. SKIP LEGENDARY
     if (typeLower.includes("legendary")) return "";
 
-    // 4. Skip known characters (Redundant safety check)
+    // 4. Skip known characters
     const knownCharacters = ["neo", "morpheus", "trinity", "smith", "oracle", "seraph", "niobe", "ghost", "merovingian", "persephone", "keymaker", "architect"];
     if (knownCharacters.some(char => nameLower.includes(char))) {
         return ""; 
@@ -79,7 +79,7 @@ class Card {
         return "Appearance: Uniform Male Agent, caucasian, identical suit and sunglasses.";
     }
 
-    // 6. Deterministic Generation for Generics
+    // 6. Deterministic Generation
     let hash = 0;
     for (let i = 0; i < this.id.length; i++) {
         hash = this.id.charCodeAt(i) + ((hash << 5) - hash);
@@ -391,6 +391,7 @@ async function generateArtForCard(aiClient, card, isDryRun, forceOverwrite) {
   const prompt = card.generatePrompt();
   const outputPath = path.join(OUTPUT_DIR, card.getFileName());
 
+  // Check existence unless forced
   if (!forceOverwrite && fs.existsSync(outputPath)) {
     console.log(`[SKIP] ${card.getFileName()} already exists.`);
     return;
@@ -461,6 +462,7 @@ async function main() {
   const args = process.argv.slice(2);
   const isDryRun = args.includes('--dryrun') || args.includes('-d');
   const isForce = args.includes('--force') || args.includes('-f');
+  const isCleanup = args.includes('--cleanup') || args.includes('-c');
   
   let specificId = null;
   const specificIndex = args.findIndex(arg => arg === '--specific' || arg === '-s');
@@ -468,14 +470,45 @@ async function main() {
     specificId = args[specificIndex + 1].replace(/[\[\]]/g, ''); 
   }
 
+  // PARSE CARDS FIRST
+  const allCards = parseDesignBible(INPUT_FILE);
+
+  // --- CLEANUP MODE ---
+  if (isCleanup) {
+      console.log("------------------------------------------");
+      console.log("🧹  CLEANUP MODE INITIATED");
+      console.log("------------------------------------------");
+      
+      // 1. Build Allowlist of Valid Filenames
+      const validFilenames = new Set(allCards.map(c => c.getFileName()));
+      
+      // 2. Scan Directory
+      const filesInDir = fs.readdirSync(OUTPUT_DIR);
+      let deletedCount = 0;
+
+      filesInDir.forEach(file => {
+          // Only process png files to avoid deleting system files
+          if (file.endsWith(".png")) {
+              if (!validFilenames.has(file)) {
+                  console.log(`   🗑️  Deleting orphan file: ${file}`);
+                  fs.unlinkSync(path.join(OUTPUT_DIR, file));
+                  deletedCount++;
+              }
+          }
+      });
+
+      console.log(`   ✅ Cleanup complete. Removed ${deletedCount} orphan files.`);
+      return; // Exit after cleanup
+  }
+
+  // --- GENERATION MODE ---
   console.log("------------------------------------------");
-  console.log(`   MATRIX SET ART GENERATOR (V25)`);
+  console.log(`   MATRIX SET ART GENERATOR (V26)`);
   if (isDryRun) console.log("   ⚠️  DRY RUN MODE ENABLED ⚠️");
   if (isForce) console.log("   🔥 FORCE MODE: OVERWRITING ALL FILES 🔥");
   if (specificId) console.log(`   🎯 SPECIFIC MODE: Targeting Card ID '${specificId}'`);
   console.log("------------------------------------------");
   
-  const allCards = parseDesignBible(INPUT_FILE);
   let cardsToProcess = [];
 
   if (specificId) {
