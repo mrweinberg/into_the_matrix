@@ -319,7 +319,7 @@ class Card {
         .replace(/\{[^}]+\}/g, "") 
         .replace(/Digital|Jack-in|Eject|Override|Scry|Ward/g, "")
         .replace(/\(Color Indicator: .*?\)/g, "")
-        .replace(/\\/g, "") 
+        .replace(/\`/g, "") 
         .substring(0, 300);
 
     return `
@@ -387,7 +387,7 @@ function parseDesignBible(filePath) {
   const cards = [];
   let currentCard = null;
 
-  const sourceTagRegex = /\\/g;
+  const sourceTagRegex = /`/gi;
   const idTagRegex = /^\[([A-Z]+\d+)\]\s+(.+?)(?:\s+(\{.*\})\s*)?$/;
 
   lines.forEach(line => {

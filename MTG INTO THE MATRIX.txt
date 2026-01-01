@@ -274,7 +274,7 @@ Digital
 [C024] Local Beat Cop {1}{U}
 Creature — Program Agent (2/1)
 Flash, digital
-Override creature with digital (When this creature enters, sacrifice it unless you exile another creature with digital you control. When this creature leaves the battlefield, return the exiled card to the battlefield under its owner's control.)
+Override creature with digital
 When Local Beat Cop enters, tap target creature. It doesn't untap during its controller's next untap step.
 
 [C025] System Scan {1}{U}
