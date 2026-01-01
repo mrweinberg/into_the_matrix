@@ -180,7 +180,7 @@ class Card {
             if (nameLower.includes("machine city") || nameLower.includes("01")) {
                  return { setting: "The Machine City (01). Features: Endless black towers, red lightning storms, swarms of sentinels.", tone: "Oppressive Black metal and Glowing Orange Sky", tech: TECH_SCIFI };
             }
-            if (nameLower.includes("zion") || textLower.includes("citizen") || nameLower.includes("dock") || nameLower.includes("temple")) {
+            if (nameLower.includes("zion") || textLower.includes("citizen") || nameLower.includes("dock") || nameLower.includes("temple") || nameLower.includes("daycare")) {
                 return { 
                     setting: "Zion (The Last City). Choose: The Dock (Cavernous), The Temple (Cave), or Engineering (Industrial).", 
                     tone: "Warm Earthy Tones, Incandescent lighting, Sweat, Metal, Stone",

@@ -102,10 +102,9 @@ Choose one —
 • Return target creature card with mana value 3 or less from your graveyard to the battlefield.
 • Create two 1/1 white Human creature tokens.
 "Emergency protocol activated. All units respond."
-[U001] Daycare  {1}{W}
-Creature — Human Artificer (2/2)
+[U001] Daycare Manager {1}{W}
+Creature — Human Citizen (2/2)
 {T}, Pay {E}: Create a 1/1 white Human creature token.
-“I’m sending in reinforcements.”
 [U002] Uplink Guardian {2}{W}
 Creature — Human Soldier (1/3)
 Vigilance
@@ -965,15 +964,15 @@ Whenever another creature dies, you may pay {1}. If you do, create a Treasure to
 {T}, Sacrifice a Treasure: You draw a card and you lose 1 life.
 [R055] Trinity, Tactical Leader {2}{W}
 Legendary Creature — Human Soldier (2/3)
-Haste, Vigilance
-Whenever Trinity attacks, you may pay {E}{E}. If you do, create a Gun token attached to target attacking creature.
-{1}{R}{W}: Jack-in.
+First Strike, Vigilance
+Whenever Trinity attacks, you may pay {E}{E}. If you do, attacking creatures you control get +2/+0 until end of turn.
+{R}: Jack-in.
 //
-Trinity, Digital Savior (Color Indicator: W)
+Trinity, Digital Savior (Color Indicator: R/W)
 Legendary Creature — Human Soldier Program (3/3)
-Digital, First Strike, Vigilance
+Digital, Haste, Vigilance
 Whenever Trinity, Digital Savior attacks, create a Gun token attached to her.
-{R}{W}: Eject.
+{W}: Eject.
 [R056] Apoc, System Breaker {1}{R}{R}
 Legendary Creature — Human Rogue (2/4)
 Haste

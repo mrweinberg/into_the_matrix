@@ -121,11 +121,11 @@ function parseDesignBible(filePath) {
       if (!match) return null;
       const colors = match[1].toLowerCase();
       let code = "";
-      if (colors.includes("white")) code += "w";
-      if (colors.includes("blue")) code += "u";
-      if (colors.includes("black")) code += "b";
-      if (colors.includes("red")) code += "r";
-      if (colors.includes("green")) code += "g";
+      if (colors.includes("white") || colors.includes("w")) code += "w";
+      if (colors.includes("blue") || colors.includes("u")) code += "u";
+      if (colors.includes("black") || colors.includes("b")) code += "b";
+      if (colors.includes("red") || colors.includes("r")) code += "r";
+      if (colors.includes("green") || colors.includes("g")) code += "g";
       return code;
   };
 
@@ -204,7 +204,8 @@ function parseDesignBible(filePath) {
             const indicatorCode = parseIndicator(cleanLine);
             if (indicatorCode) {
                 currentCard.colorIndicator = indicatorCode;
-                currentCard.name = cleanLine.replace(/\(Color Indicator:.*?\)/, '').trim();
+                // FIX: Aggressive, case-insensitive replace to remove the indicator text
+                currentCard.name = cleanLine.replace(/\s*\(Color Indicator:.*?\)/gi, '').trim();
             } else {
                 currentCard.name = cleanLine;
             }
@@ -255,6 +256,7 @@ function replaceSymbols(text) {
 function generateHTML(data) {
     const { setInfo, cards } = data;
 
+    // MECHANICS (Static)
     const mechanicsHTML = setInfo.mechanics.map(mech => `
         <div class="mechanic-entry">
             <span class="mech-name">${replaceSymbols(mech.name)}</span>
@@ -262,6 +264,7 @@ function generateHTML(data) {
         </div>
     `).join('');
 
+    // CARDS JSON (Data Source)
     const cardsForJson = cards.map(c => ({ ...c, fileName: c.getFileName() }));
     const cardsJsonString = JSON.stringify(cardsForJson);
 
@@ -412,6 +415,7 @@ function generateHTML(data) {
             box-shadow: 0 0 20px #fff;
         }
 
+        /* MODAL STYLES */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -443,6 +447,9 @@ function generateHTML(data) {
             z-index: 100;
         }
         
+        /* TWO MODAL LAYOUT MODES */
+        
+        /* 1. Pack Mode: Grid of thumbnails */
         .pack-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -451,6 +458,7 @@ function generateHTML(data) {
             justify-content: center;
         }
         
+        /* 2. Single View: Large, Flex, Centered */
         .single-view {
             display: flex;
             justify-content: center;
@@ -458,14 +466,15 @@ function generateHTML(data) {
             gap: 20px;
             margin-top: 20px;
             width: 100%;
-            flex-wrap: wrap; 
+            flex-wrap: wrap; /* Wraps DFCs on small screens */
         }
         
+        /* Adjust card size in Single View */
         .single-view .card {
-            max-width: 700px; 
+            max-width: 700px; /* Big! */
             width: 100%;
             font-size: 1.1em;
-            cursor: default; 
+            cursor: default; /* No pointer in modal */
         }
         
         .single-view .dfc-wrapper {
@@ -504,6 +513,7 @@ function generateHTML(data) {
             margin: 0 auto;
         }
         
+        /* CARD STYLING */
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -648,7 +658,7 @@ function generateHTML(data) {
             <div class="stat-box">
                 <h2>System Stats</h2>
                 <p><strong>Visible Cards:</strong> <span id="visibleCount">${setInfo.cardCount}</span></p>
-                <p><strong>System Version:</strong> v2.2.0 (Auto-Sort)</p>
+                <p><strong>System Version:</strong> v2.3.0 (Clean Name Fix)</p>
                 <button class="btn-generate" onclick="openBoosterPack()">Open Simulation Pack</button>
             </div>
             <div>
@@ -721,8 +731,6 @@ function generateHTML(data) {
             
             // Check hybrid
             if(card.cost.match(/{[WUBRG]\\/[WUBRG]}/)) {
-                // If hybrid, logic implies colors are present.
-                // Simple regex check:
                 if(card.cost.includes('W')) w = true;
                 if(card.cost.includes('U')) u = true;
                 if(card.cost.includes('B')) b = true;
@@ -1048,7 +1056,7 @@ function main() {
   
   const data = parseDesignBible(INPUT_FILE);
   console.log("------------------------------------------");
-  console.log("   MATRIX SET WEBSITE GENERATOR (V22 - Auto Sort)");
+  console.log("   MATRIX SET WEBSITE GENERATOR (V23 - Clean Name Fix)");
   console.log("------------------------------------------");
   console.log(`   Found ${data.cards.length} card faces.`);
   
