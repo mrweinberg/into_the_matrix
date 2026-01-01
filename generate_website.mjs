@@ -11,45 +11,7 @@ const OUTPUT_DIR = ".";
 const OUTPUT_FILE = "index.html";
 
 // ==========================================
-// 2. DATA CONTENT (MARKDOWN BLOB)
-// ==========================================
-
-const DESIGN_NOTES_MD = `
-# Archetype Overview
-
-1. White/Blue (WU): System Infiltration
-**Description:** This archetype focuses on the **Jack-in** and **Eject** mechanics to gain value from transitioning between the Real World and the Matrix. It uses cards like Nebuchadnezzar's Ace to grant evasion to your crew.
-
-2. Blue/Black (UB): Agent Control
-**Description:** A classic control shell that utilizes **Digital** creatures and the **Override** mechanic to possess and neutralize opponent threats. It features Agent programs that can take over bodies at flash speed.
-
-3. Black/Red (BR): Sentinel Aggro
-**Description:** An aggressive artifact-centric deck that focuses on **Robot** tribal and **Menace** to push through damage. It rewards you for sacrificing artifacts for value and using Energy to burn out opponents.
-
-4. Red/Green (RG): Bio-Electric Power
-**Description:** This deck focuses on generating large amounts of **Energy {E}** and spending it on massive "Real World" threats like Beasts and Vehicles. It aims to overwhelm the board with high-power creatures and trampling damage.
-
-5. Green/White (GW): Zion Resistance
-**Description:** A "go-wide" strategy that boosts **Non-Digital (Human)** creatures. It utilizes **Vigilance** and **Lifelink** to stabilize the board and punish the Machines for attacking into Zion's defenses.
-
-6. White/Black (WB): Ghost Protocols
-**Description:** This archetype revolves around **Digital** creatures with evasive or defensive keywords like Menace, Lifelink, and Phasing. It represents the "Exiles" and supernatural programs found in the Matrix.
-
-7. Blue/Red (UR): Code Modification
-**Description:** A spells-matter and high-tech deck that uses **Energy** to manipulate combat or duplicate effects. It features Humans and Programs that grow or trigger abilities whenever you cast noncreature spells.
-
-8. Black/Green (BG): Harvester Operations
-**Description:** This archetype focuses on the graveyard and the recycling of resources. It uses **Robot** and **Ooze** creatures to gain value from death triggers and spends Energy to return threats to the battlefield.
-
-9. Red/White (RW): Armed and Ready
-**Description:** The premier Vehicle and Equipment deck. It leverages **Gun tokens** and specialized Pilots to create a highly efficient, fast-moving combat force that rewards aggressive play.
-
-10. Green/Blue (GU): System Mastery
-**Description:** A midrange "Value" deck that uses **Energy** to manipulate the battlefield and protect its creatures. It focuses on ramping mana and utilizing Flash or Hexproof to outmaneuver the opponent's code.
-`;
-
-// ==========================================
-// 3. DATA PARSING
+// 2. DATA PARSING
 // ==========================================
 
 class Card {
@@ -65,6 +27,7 @@ class Card {
     this.isBackFace = false;
     this.hasBackFace = false;
     this.pt = ""; 
+    this.colorIndicator = null;
   }
 
   getFileName() {
@@ -153,6 +116,19 @@ function parseDesignBible(filePath) {
   const noteRegex = /^\(Includes\s+.*\)$/;
   const mechanicKeywords = ["Digital", "Jack-in", "Eject", "Override", "Energy", "Gun Token"];
 
+  const parseIndicator = (line) => {
+      const match = line.match(/\(Color Indicator: (.*?)\)/i);
+      if (!match) return null;
+      const colors = match[1].toLowerCase();
+      let code = "";
+      if (colors.includes("white")) code += "w";
+      if (colors.includes("blue")) code += "u";
+      if (colors.includes("black")) code += "b";
+      if (colors.includes("red")) code += "r";
+      if (colors.includes("green")) code += "g";
+      return code;
+  };
+
   lines.forEach(line => {
     let cleanLine = line.replace(sourceTagRegex, '').replace(citationRegex, '').trim();
     if (!cleanLine) return;
@@ -225,14 +201,22 @@ function parseDesignBible(filePath) {
         if (!currentCard) return;
 
         if (!currentCard.name && currentCard.isBackFace) {
-            currentCard.name = cleanLine.replace(/\(Color Indicator:.*?\)/, '').trim();
-            if (cleanLine.includes("Color Indicator")) {
-                currentCard.text.push(cleanLine.match(/\(Color Indicator:.*?\)/)[0]);
+            const indicatorCode = parseIndicator(cleanLine);
+            if (indicatorCode) {
+                currentCard.colorIndicator = indicatorCode;
+                currentCard.name = cleanLine.replace(/\(Color Indicator:.*?\)/, '').trim();
+            } else {
+                currentCard.name = cleanLine;
             }
         } else if (!currentCard.type) {
             currentCard.type = cleanLine;
         } else {
-            currentCard.text.push(cleanLine);
+            const indicatorCode = parseIndicator(cleanLine);
+            if (indicatorCode && !currentCard.colorIndicator) {
+                currentCard.colorIndicator = indicatorCode;
+            } else {
+                currentCard.text.push(cleanLine);
+            }
         }
     }
   });
@@ -248,7 +232,7 @@ function parseDesignBible(filePath) {
 }
 
 // ==========================================
-// 4. HTML GENERATION
+// 3. HTML GENERATION
 // ==========================================
 
 function replaceSymbols(text) {
@@ -271,7 +255,6 @@ function replaceSymbols(text) {
 function generateHTML(data) {
     const { setInfo, cards } = data;
 
-    // MECHANICS
     const mechanicsHTML = setInfo.mechanics.map(mech => `
         <div class="mechanic-entry">
             <span class="mech-name">${replaceSymbols(mech.name)}</span>
@@ -279,7 +262,6 @@ function generateHTML(data) {
         </div>
     `).join('');
 
-    // CARDS JSON
     const cardsForJson = cards.map(c => ({ ...c, fileName: c.getFileName() }));
     const cardsJsonString = JSON.stringify(cardsForJson);
 
@@ -429,18 +411,7 @@ function generateHTML(data) {
             background: #fff;
             box-shadow: 0 0 20px #fff;
         }
-        .btn-secondary {
-            background: #222;
-            color: var(--matrix-green);
-            border: 1px solid var(--matrix-green);
-            box-shadow: none;
-        }
-        .btn-secondary:hover {
-            background: var(--matrix-green);
-            color: #000;
-        }
 
-        /* MODAL STYLES */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -463,22 +434,6 @@ function generateHTML(data) {
             max-height: 95vh;
             overflow-y: auto;
         }
-        
-        /* NOTES MODAL SPECIFIC */
-        #notesContent {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #ddd;
-            padding: 20px;
-        }
-        #notesContent h3 {
-            color: var(--matrix-green);
-            border-bottom: 1px solid #333;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-        #notesContent strong { color: #fff; }
-        
         .close-modal {
             position: absolute;
             top: 10px; right: 20px;
@@ -488,7 +443,6 @@ function generateHTML(data) {
             z-index: 100;
         }
         
-        /* LAYOUT MODES */
         .pack-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -506,12 +460,14 @@ function generateHTML(data) {
             width: 100%;
             flex-wrap: wrap; 
         }
+        
         .single-view .card {
-            max-width: 700px;
+            max-width: 700px; 
             width: 100%;
             font-size: 1.1em;
             cursor: default; 
         }
+        
         .single-view .dfc-wrapper {
             display: flex;
             gap: 20px;
@@ -520,6 +476,7 @@ function generateHTML(data) {
             border: none;
             background: transparent;
         }
+        
         .single-view .card:hover {
             transform: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
@@ -547,7 +504,6 @@ function generateHTML(data) {
             margin: 0 auto;
         }
         
-        /* CARD STYLING */
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -685,14 +641,6 @@ function generateHTML(data) {
         </div>
     </div>
 
-    <div id="notesModal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeNotesModal()">&times;</span>
-            <h2 style="text-align:center; color: var(--matrix-green);">DESIGN NOTES</h2>
-            <div id="notesContent"></div>
-        </div>
-    </div>
-
     <h1>${setInfo.title}</h1>
 
     <div class="dashboard">
@@ -700,11 +648,8 @@ function generateHTML(data) {
             <div class="stat-box">
                 <h2>System Stats</h2>
                 <p><strong>Visible Cards:</strong> <span id="visibleCount">${setInfo.cardCount}</span></p>
-                <p><strong>System Version:</strong> v2.1.0 (Design Notes)</p>
-                <div style="display:flex; gap:10px;">
-                    <button class="btn-generate" onclick="openBoosterPack()">Simulation Pack</button>
-                    <button class="btn-generate btn-secondary" onclick="openDesignNotes()">Design Notes</button>
-                </div>
+                <p><strong>System Version:</strong> v2.2.0 (Auto-Sort)</p>
+                <button class="btn-generate" onclick="openBoosterPack()">Open Simulation Pack</button>
             </div>
             <div>
                 <h2>Set Mechanics</h2>
@@ -757,20 +702,96 @@ function generateHTML(data) {
 
     <script>
         const ALL_CARDS = ${cardsJsonString};
-        const NOTES_MD = \`${DESIGN_NOTES_MD}\`;
-        
         let activeColor = null;
         let currentPack = [];
         let viewingCardFromPack = false;
 
-        const rarityWeights = {
-            "Mythic": 4, "Rare": 3, "Uncommon": 2, "Common": 1, "Land": 0
-        };
+        const rarityWeights = { "Mythic": 4, "Rare": 3, "Uncommon": 2, "Common": 1, "Land": 0 };
+        const raritySort = { "Mythic": 0, "Rare": 1, "Uncommon": 2, "Common": 3, "Land": 4 };
+
+        // --- SORTING LOGIC ---
+        function getCardColorIdentity(card) {
+            if (card.type.toLowerCase().includes('land')) return 7; // Land
+            
+            let w = card.cost.includes('{W}') || (card.colorIndicator && card.colorIndicator.includes('w'));
+            let u = card.cost.includes('{U}') || (card.colorIndicator && card.colorIndicator.includes('u'));
+            let b = card.cost.includes('{B}') || (card.colorIndicator && card.colorIndicator.includes('b'));
+            let r = card.cost.includes('{R}') || (card.colorIndicator && card.colorIndicator.includes('r'));
+            let g = card.cost.includes('{G}') || (card.colorIndicator && card.colorIndicator.includes('g'));
+            
+            // Check hybrid
+            if(card.cost.match(/{[WUBRG]\\/[WUBRG]}/)) {
+                // If hybrid, logic implies colors are present.
+                // Simple regex check:
+                if(card.cost.includes('W')) w = true;
+                if(card.cost.includes('U')) u = true;
+                if(card.cost.includes('B')) b = true;
+                if(card.cost.includes('R')) r = true;
+                if(card.cost.includes('G')) g = true;
+            }
+
+            let count = (w?1:0) + (u?1:0) + (b?1:0) + (r?1:0) + (g?1:0);
+            
+            if (count > 1) return 5; // Gold
+            if (count === 0) return 6; // Artifact
+            if (w) return 0;
+            if (u) return 1;
+            if (b) return 2;
+            if (r) return 3;
+            if (g) return 4;
+            return 6;
+        }
+
+        function calculateCMC(cost) {
+            if (!cost) return 0;
+            let cmc = 0;
+            // Matches {2}, {10}, {W}, {W/U}
+            const symbols = cost.match(/{[^{}]+}/g) || [];
+            symbols.forEach(sym => {
+                const inner = sym.replace(/[{}]/g, '');
+                if (!isNaN(parseInt(inner))) {
+                    cmc += parseInt(inner);
+                } else if (inner.includes('X')) {
+                    cmc += 0;
+                } else {
+                    cmc += 1; // W, U, W/U all count as 1 usually
+                }
+            });
+            return cmc;
+        }
+
+        function sortCards(cards) {
+            return cards.sort((a, b) => {
+                // 1. Color
+                const cA = getCardColorIdentity(a);
+                const cB = getCardColorIdentity(b);
+                if (cA !== cB) return cA - cB;
+
+                // 2. Rarity
+                const rA = raritySort[a.rarity] || 3;
+                const rB = raritySort[b.rarity] || 3;
+                if (rA !== rB) return rA - rB;
+
+                // 3. Mana Value
+                const mvA = calculateCMC(a.cost);
+                const mvB = calculateCMC(b.cost);
+                if (mvA !== mvB) return mvA - mvB;
+
+                // 4. Name
+                return a.name.localeCompare(b.name);
+            });
+        }
+
+        // Apply sort immediately
+        sortCards(ALL_CARDS);
 
         // --- MANA FONT LOGIC ---
         function replaceSymbols(text) {
             if (!text) return "";
             return text
+                .replace(/{([WUBRG])\\/([WUBRG])}/gi, (match, c1, c2) => \`<i class="ms ms-\${c1.toLowerCase()}\${c2.toLowerCase()} ms-cost"></i>\`)
+                .replace(/{([WUBRG])\\/P}/gi, (match, c1) => \`<i class="ms ms-p\${c1.toLowerCase()} ms-cost"></i>\`)
+                .replace(/{2\\/([WUBRG])}/gi, (match, c1) => \`<i class="ms ms-2\${c1.toLowerCase()} ms-cost"></i>\`)
                 .replace(/{W}/g, '<i class="ms ms-w ms-cost"></i>')
                 .replace(/{U}/g, '<i class="ms ms-u ms-cost"></i>')
                 .replace(/{B}/g, '<i class="ms ms-b ms-cost"></i>')
@@ -785,32 +806,7 @@ function generateHTML(data) {
                 .replace(/{(\\d+)}/g, '<i class="ms ms-$1 ms-cost"></i>');
         }
 
-        // --- MARKDOWN PARSER ---
-        function parseMarkdown(md) {
-            let html = md;
-            
-            // Headers: # Title -> <h2>Title</h2>
-            // We shift headers down one level to fit modal hierarchy
-            html = html.replace(/^# (.*$)/gim, '<h2>$1</h2>');
-            html = html.replace(/^## (.*$)/gim, '<h3>$1</h3>');
-            html = html.replace(/^### (.*$)/gim, '<h4>$1</h4>');
-            
-            // Archetype Headers (Number. Title)
-            html = html.replace(/^\\d+\\.\\s+(.*$)/gim, '<h3>$&</h3>');
-
-            // Bold: **text** -> <strong>text</strong>
-            html = html.replace(/\\*\\*(.*?)\\*\\*/gim, '<strong>$1</strong>');
-            
-            // Newlines -> <br>
-            html = html.replace(/\\n/gim, '<br>');
-            
-            // Symbol Replacement in text
-            html = replaceSymbols(html);
-            
-            return html;
-        }
-
-        // --- COLOR LOGIC ---
+        // --- COLOR LOGIC (UI) ---
         function determineColorClass(card) {
             let colorsFound = 0;
             if (card.cost.includes("{W}")) colorsFound++;
@@ -832,7 +828,6 @@ function generateHTML(data) {
             return "Artifact";
         }
 
-        // --- RENDER LOGIC ---
         function renderCardJS(card) {
             const imagePath = \`${IMAGE_DIR}/\${card.fileName}\`;
             const colorClass = determineColorClass(card);
@@ -845,6 +840,11 @@ function generateHTML(data) {
             }
 
             const cleanId = card.id.replace(/[\[\]]/g, '');
+            
+            let typeLineContent = \`<span>\${card.displayType}</span>\`;
+            if (card.colorIndicator) {
+                typeLineContent = \`<span><i class="ms ms-ci ms-ci-\${card.colorIndicator}"></i> \${card.displayType}</span>\`;
+            }
 
             return \`
             <div class="card" data-color="\${colorClass}" data-pt="\${hasPt}" onclick="viewCard('\${card.id}')">
@@ -857,7 +857,7 @@ function generateHTML(data) {
                     <img src="\${imagePath}" alt="\${card.name}" loading="lazy" onload="this.style.zIndex='2'" onerror="this.style.display='none'">
                 </div>
                 <div class="type-line">
-                    <span>\${card.displayType}</span>
+                    \${typeLineContent}
                     <span class="rarity-symbol rarity-\${card.rarity}" title="\${card.rarity}">\${cleanId}</span>
                 </div>
                 <div class="text-box">
@@ -868,7 +868,6 @@ function generateHTML(data) {
             \`;
         }
 
-        // Unified Card/DFC Render Logic
         function getCardHTML_WithDFC(card) {
             let cardHtml = renderCardJS(card);
 
@@ -887,7 +886,6 @@ function generateHTML(data) {
             return cardHtml;
         }
 
-        // --- FILTERING LOGIC ---
         function toggleColor(color, btn) {
             if (activeColor === color) {
                 activeColor = null;
@@ -930,6 +928,7 @@ function generateHTML(data) {
             const visibleCount = cards.length;
 
             document.getElementById('visibleCount').innerText = visibleCount;
+            
             const statusDiv = document.getElementById('filterStatus');
             statusDiv.innerHTML = \`SHOWING <strong>\${visibleCount}</strong> / \${totalCards} DATA ENTRIES\`;
             
@@ -942,8 +941,6 @@ function generateHTML(data) {
             container.innerHTML = html;
         }
 
-        // --- INTERACTIVITY ---
-        
         function viewCard(id) {
             const modal = document.getElementById("packModal");
             const isOpen = modal.style.display === "flex";
@@ -1024,29 +1021,12 @@ function generateHTML(data) {
             }
         }
         
-        // --- NEW: DESIGN NOTES LOGIC ---
-        function openDesignNotes() {
-            const contentDiv = document.getElementById("notesContent");
-            // Parse on open (efficient enough for this text size)
-            contentDiv.innerHTML = parseMarkdown(NOTES_MD);
-            document.getElementById("notesModal").style.display = "flex";
-        }
-
-        function closeNotesModal() {
-            document.getElementById("notesModal").style.display = "none";
-        }
-
-        // --- GLOBAL CLICK HANDLERS ---
         window.onclick = function(event) {
             if (event.target == document.getElementById("packModal")) {
                 closeModal();
             }
-            if (event.target == document.getElementById("notesModal")) {
-                closeNotesModal();
-            }
         }
 
-        // Initial Render
         renderGallery(ALL_CARDS.filter(c => !c.isBackFace));
 
     </script>
@@ -1057,7 +1037,7 @@ function generateHTML(data) {
 }
 
 // ==========================================
-// 5. MAIN EXECUTION
+// 4. MAIN EXECUTION
 // ==========================================
 
 function main() {
@@ -1068,7 +1048,7 @@ function main() {
   
   const data = parseDesignBible(INPUT_FILE);
   console.log("------------------------------------------");
-  console.log("   MATRIX SET WEBSITE GENERATOR (V21 - Notes Modal)");
+  console.log("   MATRIX SET WEBSITE GENERATOR (V22 - Auto Sort)");
   console.log("------------------------------------------");
   console.log(`   Found ${data.cards.length} card faces.`);
   

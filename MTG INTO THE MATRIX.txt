@@ -1097,9 +1097,9 @@ Counter target spell. You get {E} equal to that spell's mana value.
 [R079] Neo, Newly Awakened {R/W}
 Legendary Creature — Human Avatar (1/1)
 {R/W}: Neo becomes a 2/2 Human Monk with Vigilance.
-{R/W}{R/W}{R/W}: If Neo is a Monk, it becomes a 3/3 Human Monk Soldier and gains Prowess.
+{R/W}{R/W}: If Neo is a Monk, it becomes a 3/3 Human Monk Soldier and gains Prowess.
 {R/W}{R/W}{R/W}: If Neo is a Soldier, put a +1/+1 counter on it and it gains Digital until end of turn.
-[R081] Bullet Time Physics {1}{G}{U}
+[R082] Bullet Time Physics {1}{G}{U}
 Enchantment
 Creatures you control have "{1}, {Q}, Pay {E}: This creature gains hexproof and indestructible until end of turn." ({Q} is the untap symbol.)
 “He moves like they do.”
