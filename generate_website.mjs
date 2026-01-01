@@ -57,28 +57,6 @@ class Card {
     }
   }
 
-  detectFlavor() {
-    if (this.text.length === 0) return;
-    const lastLine = this.text[this.text.length - 1];
-    
-    if (lastLine.startsWith('"') || lastLine.startsWith('“')) {
-        this.flavor = lastLine;
-        this.text.pop(); 
-        return;
-    }
-
-    const narrativeStarters = ["The ", "A ", "An ", "It ", "They ", "We ", "He ", "She ", "Knowledge ", "Peace ", "War ", "Ignorance "];
-    const mechanicalTerms = ["target", "damage", "counter", "token", "battlefield", "graveyard", "exile", "library", "hand", "mana", "cost", "life", "draw", "discard", "sacrifice"];
-
-    const startsWithNarrative = narrativeStarters.some(s => lastLine.startsWith(s));
-    const hasMechanics = mechanicalTerms.some(t => lastLine.toLowerCase().includes(t));
-
-    if (startsWithNarrative && !hasMechanics) {
-        this.flavor = lastLine;
-        this.text.pop();
-    }
-  }
-
   deriveRarity() {
       if (this.type.toLowerCase().includes("land")) {
           this.rarity = "Land";
@@ -101,7 +79,8 @@ function parseDesignBible(filePath) {
   const setInfo = {
       title: "Unknown Set",
       cardCount: "0",
-      mechanics: []
+      mechanics: [],
+      designNotes: [] 
   };
   
   const cards = [];
@@ -142,6 +121,11 @@ function parseDesignBible(filePath) {
         if (currentMechanic) setInfo.mechanics.push(currentMechanic); 
         return;
     }
+    if (cleanLine.toLowerCase().includes("0. design notes") || cleanLine.toLowerCase().includes("draft archetypes")) {
+        parsingMode = "notes";
+        setInfo.designNotes.push(`## ${cleanLine}`);
+        return;
+    }
 
     if (parsingMode === "header") {
         if (cleanLine.includes("Set Design Document")) {
@@ -151,14 +135,23 @@ function parseDesignBible(filePath) {
             setInfo.cardCount = cleanLine.split(":")[1].trim();
         }
     }
+    else if (parsingMode === "notes") {
+        if (/^[A-Z]{2,}:/.test(cleanLine)) {
+            setInfo.designNotes.push(`**${cleanLine}**`);
+        } else {
+            setInfo.designNotes.push(cleanLine);
+        }
+    }
     else if (parsingMode === "mechanics") {
         const isNewMechanic = mechanicKeywords.some(k => cleanLine.startsWith(k));
         
         if (isNewMechanic) {
             if (currentMechanic) setInfo.mechanics.push(currentMechanic);
-            currentMechanic = { name: cleanLine, text: [] };
+            currentMechanic = { name: cleanLine, text: [], notes: [] };
         } else if (currentMechanic) {
-            if (!cleanLine.startsWith("Design Note:")) {
+            if (cleanLine.startsWith("Design Note:")) {
+                currentMechanic.notes.push(cleanLine.replace("Design Note:", "").trim());
+            } else {
                 currentMechanic.text.push(cleanLine);
             }
         }
@@ -169,7 +162,6 @@ function parseDesignBible(filePath) {
         if (cleanLine === '//') {
             if (currentCard) {
                 currentCard.extractStats();
-                currentCard.detectFlavor(); 
                 currentCard.deriveRarity();
                 currentCard.hasBackFace = true;
                 cards.push(currentCard);
@@ -186,7 +178,6 @@ function parseDesignBible(filePath) {
         if (idMatch) {
             if (currentCard) {
                 currentCard.extractStats();
-                currentCard.detectFlavor();
                 currentCard.deriveRarity();
                 cards.push(currentCard);
             }
@@ -204,13 +195,14 @@ function parseDesignBible(filePath) {
             const indicatorCode = parseIndicator(cleanLine);
             if (indicatorCode) {
                 currentCard.colorIndicator = indicatorCode;
-                // FIX: Aggressive, case-insensitive replace to remove the indicator text
                 currentCard.name = cleanLine.replace(/\s*\(Color Indicator:.*?\)/gi, '').trim();
             } else {
                 currentCard.name = cleanLine;
             }
         } else if (!currentCard.type) {
             currentCard.type = cleanLine;
+        } else if (cleanLine.startsWith("“") || cleanLine.startsWith('"')) {
+            currentCard.flavor += " " + cleanLine;
         } else {
             const indicatorCode = parseIndicator(cleanLine);
             if (indicatorCode && !currentCard.colorIndicator) {
@@ -224,7 +216,6 @@ function parseDesignBible(filePath) {
 
   if (currentCard) {
       currentCard.extractStats();
-      currentCard.detectFlavor();
       currentCard.deriveRarity();
       cards.push(currentCard);
   }
@@ -239,6 +230,10 @@ function parseDesignBible(filePath) {
 function replaceSymbols(text) {
     if (!text) return "";
     return text
+        // FIXED REGEX: Matches {W/U} (Forward Slash)
+        .replace(/{([WUBRG])\/([WUBRG])}/gi, (match, c1, c2) => `<i class="ms ms-${c1.toLowerCase()}${c2.toLowerCase()} ms-cost"></i>`)
+        .replace(/{([WUBRG])\/P}/gi, (match, c1) => `<i class="ms ms-p${c1.toLowerCase()} ms-cost"></i>`)
+        .replace(/{2\/([WUBRG])}/gi, (match, c1) => `<i class="ms ms-2${c1.toLowerCase()} ms-cost"></i>`)
         .replace(/{W}/g, '<i class="ms ms-w ms-cost"></i>')
         .replace(/{U}/g, '<i class="ms ms-u ms-cost"></i>')
         .replace(/{B}/g, '<i class="ms ms-b ms-cost"></i>')
@@ -256,17 +251,21 @@ function replaceSymbols(text) {
 function generateHTML(data) {
     const { setInfo, cards } = data;
 
-    // MECHANICS (Static)
     const mechanicsHTML = setInfo.mechanics.map(mech => `
         <div class="mechanic-entry">
             <span class="mech-name">${replaceSymbols(mech.name)}</span>
             <div class="mech-text">${mech.text.map(l => replaceSymbols(l)).join(' ')}</div>
+            ${mech.notes && mech.notes.length > 0 ? `
+                <div class="mech-notes">
+                    <strong>Design Note:</strong> ${mech.notes.map(n => replaceSymbols(n)).join(' ')}
+                </div>` : ''
+            }
         </div>
     `).join('');
 
-    // CARDS JSON (Data Source)
     const cardsForJson = cards.map(c => ({ ...c, fileName: c.getFileName() }));
     const cardsJsonString = JSON.stringify(cardsForJson);
+    const notesJsonString = JSON.stringify(setInfo.designNotes.join('\n\n'));
 
     return `
 <!DOCTYPE html>
@@ -276,6 +275,7 @@ function generateHTML(data) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTG: ${setInfo.title}</title>
     <link href="https://cdn.jsdelivr.net/npm/mana-font@latest/css/mana.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
         :root {
@@ -414,8 +414,14 @@ function generateHTML(data) {
             background: #fff;
             box-shadow: 0 0 20px #fff;
         }
+        .btn-notes {
+            background: #333;
+            color: #fff;
+            border: 1px solid var(--matrix-green);
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
 
-        /* MODAL STYLES */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -447,9 +453,6 @@ function generateHTML(data) {
             z-index: 100;
         }
         
-        /* TWO MODAL LAYOUT MODES */
-        
-        /* 1. Pack Mode: Grid of thumbnails */
         .pack-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -458,7 +461,6 @@ function generateHTML(data) {
             justify-content: center;
         }
         
-        /* 2. Single View: Large, Flex, Centered */
         .single-view {
             display: flex;
             justify-content: center;
@@ -466,17 +468,14 @@ function generateHTML(data) {
             gap: 20px;
             margin-top: 20px;
             width: 100%;
-            flex-wrap: wrap; /* Wraps DFCs on small screens */
+            flex-wrap: wrap; 
         }
-        
-        /* Adjust card size in Single View */
         .single-view .card {
-            max-width: 700px; /* Big! */
+            max-width: 700px; 
             width: 100%;
             font-size: 1.1em;
-            cursor: default; /* No pointer in modal */
+            cursor: default; 
         }
-        
         .single-view .dfc-wrapper {
             display: flex;
             gap: 20px;
@@ -485,7 +484,6 @@ function generateHTML(data) {
             border: none;
             background: transparent;
         }
-        
         .single-view .card:hover {
             transform: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
@@ -504,6 +502,20 @@ function generateHTML(data) {
         }
         .mech-name { display: block; font-weight: bold; color: var(--matrix-green); margin-bottom: 4px; }
         .mech-text { font-size: 0.9em; color: #ccc; line-height: 1.4; }
+        .mech-notes {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #444;
+            font-style: italic;
+            color: #888;
+            font-size: 0.85em;
+        }
+        .mech-notes strong { color: #aaa; font-style: normal; }
+
+        .markdown-body { color: #e0e0e0; padding: 20px; line-height: 1.6; }
+        .markdown-body h1, .markdown-body h2, .markdown-body h3 { color: var(--matrix-green); border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .markdown-body ul { list-style: square; color: #aaa; }
+        .markdown-body strong { color: #fff; }
 
         .gallery {
             display: grid;
@@ -513,7 +525,6 @@ function generateHTML(data) {
             margin: 0 auto;
         }
         
-        /* CARD STYLING */
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -562,12 +573,7 @@ function generateHTML(data) {
             justify-content: center;
             border-bottom: 1px solid #333;
         }
-        .art-container img { 
-            width: 100%; 
-            height: auto;        
-            display: block;
-            z-index: 1; 
-        }
+        .art-container img { width: 100%; height: auto; display: block; z-index: 1; }
         .art-missing { color: #444; text-align: center; font-size: 0.8em; position: absolute; z-index: 0; padding: 20px; }
 
         .type-line {
@@ -651,6 +657,14 @@ function generateHTML(data) {
         </div>
     </div>
 
+    <div id="notesModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeNotes()">&times;</span>
+            <h2 style="text-align:center; color: var(--matrix-green);">DESIGN NOTES & ARCHETYPES</h2>
+            <div id="notesContent" class="markdown-body"></div>
+        </div>
+    </div>
+
     <h1>${setInfo.title}</h1>
 
     <div class="dashboard">
@@ -658,8 +672,9 @@ function generateHTML(data) {
             <div class="stat-box">
                 <h2>System Stats</h2>
                 <p><strong>Visible Cards:</strong> <span id="visibleCount">${setInfo.cardCount}</span></p>
-                <p><strong>System Version:</strong> v2.3.0 (Clean Name Fix)</p>
+                <p><strong>System Version:</strong> v2.7.0 (Syntax Fix)</p>
                 <button class="btn-generate" onclick="openBoosterPack()">Open Simulation Pack</button>
+                <button class="btn-generate btn-notes" onclick="openNotes()">View Design Notes</button>
             </div>
             <div>
                 <h2>Set Mechanics</h2>
@@ -712,6 +727,8 @@ function generateHTML(data) {
 
     <script>
         const ALL_CARDS = ${cardsJsonString};
+        const DESIGN_NOTES = ${notesJsonString};
+        
         let activeColor = null;
         let currentPack = [];
         let viewingCardFromPack = false;
@@ -719,81 +736,6 @@ function generateHTML(data) {
         const rarityWeights = { "Mythic": 4, "Rare": 3, "Uncommon": 2, "Common": 1, "Land": 0 };
         const raritySort = { "Mythic": 0, "Rare": 1, "Uncommon": 2, "Common": 3, "Land": 4 };
 
-        // --- SORTING LOGIC ---
-        function getCardColorIdentity(card) {
-            if (card.type.toLowerCase().includes('land')) return 7; // Land
-            
-            let w = card.cost.includes('{W}') || (card.colorIndicator && card.colorIndicator.includes('w'));
-            let u = card.cost.includes('{U}') || (card.colorIndicator && card.colorIndicator.includes('u'));
-            let b = card.cost.includes('{B}') || (card.colorIndicator && card.colorIndicator.includes('b'));
-            let r = card.cost.includes('{R}') || (card.colorIndicator && card.colorIndicator.includes('r'));
-            let g = card.cost.includes('{G}') || (card.colorIndicator && card.colorIndicator.includes('g'));
-            
-            // Check hybrid
-            if(card.cost.match(/{[WUBRG]\\/[WUBRG]}/)) {
-                if(card.cost.includes('W')) w = true;
-                if(card.cost.includes('U')) u = true;
-                if(card.cost.includes('B')) b = true;
-                if(card.cost.includes('R')) r = true;
-                if(card.cost.includes('G')) g = true;
-            }
-
-            let count = (w?1:0) + (u?1:0) + (b?1:0) + (r?1:0) + (g?1:0);
-            
-            if (count > 1) return 5; // Gold
-            if (count === 0) return 6; // Artifact
-            if (w) return 0;
-            if (u) return 1;
-            if (b) return 2;
-            if (r) return 3;
-            if (g) return 4;
-            return 6;
-        }
-
-        function calculateCMC(cost) {
-            if (!cost) return 0;
-            let cmc = 0;
-            // Matches {2}, {10}, {W}, {W/U}
-            const symbols = cost.match(/{[^{}]+}/g) || [];
-            symbols.forEach(sym => {
-                const inner = sym.replace(/[{}]/g, '');
-                if (!isNaN(parseInt(inner))) {
-                    cmc += parseInt(inner);
-                } else if (inner.includes('X')) {
-                    cmc += 0;
-                } else {
-                    cmc += 1; // W, U, W/U all count as 1 usually
-                }
-            });
-            return cmc;
-        }
-
-        function sortCards(cards) {
-            return cards.sort((a, b) => {
-                // 1. Color
-                const cA = getCardColorIdentity(a);
-                const cB = getCardColorIdentity(b);
-                if (cA !== cB) return cA - cB;
-
-                // 2. Rarity
-                const rA = raritySort[a.rarity] || 3;
-                const rB = raritySort[b.rarity] || 3;
-                if (rA !== rB) return rA - rB;
-
-                // 3. Mana Value
-                const mvA = calculateCMC(a.cost);
-                const mvB = calculateCMC(b.cost);
-                if (mvA !== mvB) return mvA - mvB;
-
-                // 4. Name
-                return a.name.localeCompare(b.name);
-            });
-        }
-
-        // Apply sort immediately
-        sortCards(ALL_CARDS);
-
-        // --- MANA FONT LOGIC ---
         function replaceSymbols(text) {
             if (!text) return "";
             return text
@@ -814,7 +756,6 @@ function generateHTML(data) {
                 .replace(/{(\\d+)}/g, '<i class="ms ms-$1 ms-cost"></i>');
         }
 
-        // --- COLOR LOGIC (UI) ---
         function determineColorClass(card) {
             let colorsFound = 0;
             if (card.cost.includes("{W}")) colorsFound++;
@@ -894,6 +835,72 @@ function generateHTML(data) {
             return cardHtml;
         }
 
+        function getCardColorIdentity(card) {
+            if (card.type.toLowerCase().includes('land')) return 7; 
+            
+            let w = card.cost.includes('{W}') || (card.colorIndicator && card.colorIndicator.includes('w'));
+            let u = card.cost.includes('{U}') || (card.colorIndicator && card.colorIndicator.includes('u'));
+            let b = card.cost.includes('{B}') || (card.colorIndicator && card.colorIndicator.includes('b'));
+            let r = card.cost.includes('{R}') || (card.colorIndicator && card.colorIndicator.includes('r'));
+            let g = card.cost.includes('{G}') || (card.colorIndicator && card.colorIndicator.includes('g'));
+            
+            if(card.cost.match(/{[WUBRG]\\/[WUBRG]}/)) {
+                if(card.cost.includes('W')) w = true;
+                if(card.cost.includes('U')) u = true;
+                if(card.cost.includes('B')) b = true;
+                if(card.cost.includes('R')) r = true;
+                if(card.cost.includes('G')) g = true;
+            }
+
+            let count = (w?1:0) + (u?1:0) + (b?1:0) + (r?1:0) + (g?1:0);
+            
+            if (count > 1) return 5; 
+            if (count === 0) return 6; 
+            if (w) return 0;
+            if (u) return 1;
+            if (b) return 2;
+            if (r) return 3;
+            if (g) return 4;
+            return 6;
+        }
+
+        function calculateCMC(cost) {
+            if (!cost) return 0;
+            let cmc = 0;
+            const symbols = cost.match(/{[^{}]+}/g) || [];
+            symbols.forEach(sym => {
+                const inner = sym.replace(/[{}]/g, '');
+                if (!isNaN(parseInt(inner))) {
+                    cmc += parseInt(inner);
+                } else if (inner.includes('X')) {
+                    cmc += 0;
+                } else {
+                    cmc += 1;
+                }
+            });
+            return cmc;
+        }
+
+        function sortCards(cards) {
+            return cards.sort((a, b) => {
+                const cA = getCardColorIdentity(a);
+                const cB = getCardColorIdentity(b);
+                if (cA !== cB) return cA - cB;
+
+                const rA = raritySort[a.rarity] || 3;
+                const rB = raritySort[b.rarity] || 3;
+                if (rA !== rB) return rA - rB;
+
+                const mvA = calculateCMC(a.cost);
+                const mvB = calculateCMC(b.cost);
+                if (mvA !== mvB) return mvA - mvB;
+
+                return a.name.localeCompare(b.name);
+            });
+        }
+
+        sortCards(ALL_CARDS);
+
         function toggleColor(color, btn) {
             if (activeColor === color) {
                 activeColor = null;
@@ -936,7 +943,6 @@ function generateHTML(data) {
             const visibleCount = cards.length;
 
             document.getElementById('visibleCount').innerText = visibleCount;
-            
             const statusDiv = document.getElementById('filterStatus');
             statusDiv.innerHTML = \`SHOWING <strong>\${visibleCount}</strong> / \${totalCards} DATA ENTRIES\`;
             
@@ -952,12 +958,8 @@ function generateHTML(data) {
         function viewCard(id) {
             const modal = document.getElementById("packModal");
             const isOpen = modal.style.display === "flex";
-            
-            if (isOpen) {
-                viewingCardFromPack = true;
-            } else {
-                viewingCardFromPack = false;
-            }
+            if (isOpen) viewingCardFromPack = true;
+            else viewingCardFromPack = false;
 
             const card = ALL_CARDS.find(c => c.id === id && !c.isBackFace);
             if (!card) return;
@@ -1006,12 +1008,10 @@ function generateHTML(data) {
             const container = document.getElementById("packContainer");
             container.className = "pack-grid";
             container.innerHTML = "";
-            
             currentPack.forEach(card => {
                 const html = getCardHTML_WithDFC(card);
                 container.insertAdjacentHTML('beforeend', html);
             });
-            
             document.getElementById("modalTitle").innerText = "BOOSTER PACK UNLOCKED";
         }
 
@@ -1028,11 +1028,19 @@ function generateHTML(data) {
                 document.getElementById("packModal").style.display = "none";
             }
         }
+
+        function openNotes() {
+            document.getElementById('notesContent').innerHTML = marked.parse(DESIGN_NOTES);
+            document.getElementById('notesModal').style.display = "flex";
+        }
+
+        function closeNotes() {
+            document.getElementById('notesModal').style.display = "none";
+        }
         
         window.onclick = function(event) {
-            if (event.target == document.getElementById("packModal")) {
-                closeModal();
-            }
+            if (event.target == document.getElementById("packModal")) closeModal();
+            if (event.target == document.getElementById("notesModal")) closeNotes();
         }
 
         renderGallery(ALL_CARDS.filter(c => !c.isBackFace));
@@ -1056,7 +1064,7 @@ function main() {
   
   const data = parseDesignBible(INPUT_FILE);
   console.log("------------------------------------------");
-  console.log("   MATRIX SET WEBSITE GENERATOR (V23 - Clean Name Fix)");
+  console.log("   MATRIX SET WEBSITE GENERATOR (V27 - Syntax Fix)");
   console.log("------------------------------------------");
   console.log(`   Found ${data.cards.length} card faces.`);
   
