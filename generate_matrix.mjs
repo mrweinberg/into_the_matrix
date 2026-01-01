@@ -115,7 +115,7 @@ class Card {
     if (!isMachine) return "";
 
     if (nameLower.includes("sentinel") || nameLower.includes("squid") || nameLower.includes("swarm")) {
-        return "ROBOT APPEARANCE: Movie-Accurate Sentinel ('Squiddy'). A floating, squid-like machine with a central sensory pod (multiple red eyes) and trailing metallic tentacles. NO humanoid legs/arms.";
+        return "ROBOT APPEARANCE: Movie-Accurate Sentinel ('Squiddy'). A floating machine with a central sensory pod (multiple red eyes) and trailing metallic tentacles. NO humanoid legs/arms.";
     }
 
     return "ROBOT APPEARANCE: NON-HUMANOID. Industrial, insectoid, or arachnid machinery. Use heavy cables, hydraulics, and sensor eyes. Do NOT depict as a human-shaped android or man in a suit.";
@@ -208,9 +208,11 @@ class Card {
          return { setting: "The Real World Sewers or Surface. Hovercrafts, sparks flying.", tone: "Cold Blue, Rust, Industrial", tech: TECH_SCIFI };
     }
     if (typeLower.includes("land")) {
-         if (nameLower.includes("simulated") || nameLower.includes("skyline")) return { setting: "Matrix Cityscape Skyline", tone: "Simulated Daylight, Green Tint", tech: TECH_1999 };
+         if (nameLower.includes("hardline terminal") || nameLower.includes("simulated") || nameLower.includes("skyline") || nameLower.includes("alley")) return { setting: "Matrix Cityscape Skyline", tone: "Simulated Daylight, Green Tint", tech: TECH_1999 };
          if (nameLower.includes("zion") || nameLower.includes("living")) return { setting: "Zion (Dock or Living Quarters)", tone: "Warm Incandescent, Stone", tech: TECH_SCIFI };
          if (nameLower.includes("machine") || nameLower.includes("01")) return { setting: "01 The Machine City", tone: "Black and Orange", tech: TECH_SCIFI };
+         if (nameLower.includes("power") || nameLower.includes("pod")) return { setting: "The Power Plant / Fetus Fields", tone: "Bioluminescent Pink, Dark Machinery", tech: TECH_SCIFI };
+         if (nameLower.includes("hel") || nameLower.includes("chateau")) return { setting: "The Merovingian's Territory (Club Hel or Chateau)", tone: "Rich Reds, Deep Shadows, Decadent Gold", tech: TECH_1999 };
          return { setting: "The Real World Surface (Ruins)", tone: "Dark, Stormy, Scorched", tech: TECH_SCIFI };
     }
 
@@ -254,6 +256,10 @@ class Card {
     let likenessInstruction = "";
     if (isLegendary) {
         likenessInstruction = "CHARACTER IDENTITY: This is a LEGENDARY character. The illustration MUST strictly resemble the specific character/actor as they appear in The Matrix films.";
+    } else if (this.type.toLowerCase().includes("creature")) {
+        likenessInstruction = "CHARACTER IDENTITY: Generic character. Do NOT resemble any specific actor/character from The Matrix films.";
+    } else {
+        likenessInstruction = "CHARACTER IDENTITY: N/A. Use your judgment based on the subject. Ensure that characters generated are diverse.";
     }
 
     // SUNGLASSES LOGIC

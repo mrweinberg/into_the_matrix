@@ -109,8 +109,8 @@ Creature — Human Artificer (2/2)
 [U002] Uplink Guardian {2}{W}
 Creature — Human Soldier (1/3)
 Vigilance
-When Perimeter Scout enters the battlefield, you get {E}.
-Whenever a creature you control Jacks-in or Ejects, put a +1/+1 counter on Perimeter Scout.
+When Uplink Guardian enters the battlefield, you get {E}.
+Whenever a creature you control Jacks-in or Ejects, put a +1/+1 counter on Uplink Guardian.
 "The connection must be protected at all costs."
 [U003] Defensive Formation {1}{W}
 Enchantment
@@ -390,7 +390,7 @@ Creature — Program Virus (2/1)
 Digital
 Malicious Script can't block.
 Unearth {1}{R}
-[C051] Merovingian's Indulgence {2}{B}
+[C051] Merovingian's Indulgence {1}{B}
 Instant
 Target creature gets +1/+0 and gains lifelink and indestructible until end of turn.
 [C052] Replica Agent {2}{B}
@@ -1026,7 +1026,7 @@ Those creatures gain trample until end of turn.
 [R066] Neo, The Awakened {2}{G}{U}
 Legendary Creature — Human Avatar (3/3)
 Flash, Hexproof
-Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Neo, The One.
+Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Neo, The Awakened.
 As long as Neo has 5 or more power, he has flying and trample.
 [M09] The Architect, System Creator {4}{W}{U}
 Legendary Creature — Avatar Program (3/6)
@@ -1094,11 +1094,12 @@ Whenever Sentinel Scout deals combat damage to a player, deal 3 damage to up to 
 [R078] There is No Spoon {1}{U}{U}
 Instant
 Counter target spell. You get {E} equal to that spell's mana value.
-[R079] Neo, Newly Awakened
+[R079] Neo, Newly Awakened {R/W}
 Legendary Creature — Human Avatar (1/1)
 {R/W}: Neo becomes a 2/2 Human Monk with Vigilance.
 {R/W}{R/W}{R/W}: If Neo is a Monk, it becomes a 3/3 Human Monk Soldier and gains Prowess.
 {R/W}{R/W}{R/W}: If Neo is a Soldier, put a +1/+1 counter on it and it gains Digital until end of turn.
+[R081] Bullet Time Physics {1}{G}{U}
 Enchantment
 Creatures you control have "{1}, {Q}, Pay {E}: This creature gains hexproof and indestructible until end of turn." ({Q} is the untap symbol.)
 “He moves like they do.”
@@ -1107,13 +1108,13 @@ Legendary Creature — Agent Program (4/4)
 Digital, Ward {2}
 Whenever a creature enters the battlefield under an opponent's control, you may pay {B}. If you do, gain control of it until the end of your next turn.
 At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own.
-[M12] Neo, Humanity's Inspiration {1}{U}{W}
-Legendary Creature — Human Monk (2/3)
+[M12] Neo, Humanity's Inspiration {1}{U}{W}{R}
+Legendary Creature — Human Monk (3/4)
 Vigilance
 Non-digital creatures you control get +1/+1.
-At the beginning of combat on your turn, if you control a Digital creature, you may pay {1}{U}{W}. If you do, Jack-in.
+At the beginning of combat on your turn, if you control a Digital creature, you may pay {3}. If you do, Jack-in.
 //
-Neo, The One (Color Indicator: U/W)
+Neo, The One (Color Indicator: U/W/R)
 Legendary Creature — Human Avatar Program (4/4)
 Flying, Digital, Ward {2}
 Whenever Neo, The One attacks, put a +1/+1 counter on it and return target nonland permanent to its owner's hand.
