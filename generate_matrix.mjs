@@ -544,7 +544,7 @@ async function main() {
     await generateArtForCard(ai, cardsToProcess[i], isDryRun, forceThisCard);
     
     if (!isDryRun) {
-        await new Promise(r => setTimeout(r, 500));
+        await new Promise(r => setTimeout(r, 50));
     }
   }
 }

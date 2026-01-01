@@ -969,10 +969,10 @@ Haste, Vigilance
 Whenever Trinity attacks, you may pay {E}{E}. If you do, create a Gun token attached to target attacking creature.
 {1}{R}{W}: Jack-in.
 //
-Trinity, Combat Driver (Color Indicator: W)
+Trinity, Digital Savior (Color Indicator: W)
 Legendary Creature — Human Soldier Program (3/3)
 Digital, First Strike, Vigilance
-Whenever Trinity, Combat Driver attacks, create a Gun token attached to her.
+Whenever Trinity, Digital Savior attacks, create a Gun token attached to her.
 {R}{W}: Eject.
 [R056] Apoc, System Breaker {1}{R}{R}
 Legendary Creature — Human Rogue (2/4)
