@@ -60,7 +60,7 @@ A counter given to players. Used to pay for activated abilities or triggered eff
 
 Gun Token
 Token Artifact — Equipment
-Equipped creature gets +1/+1 and has first strike.
+Equipped creature gets +1/+0 and has first strike.
 When equipped creature deals combat damage, sacrifice this Artifact.
 Equip {1}
 
