@@ -11,7 +11,45 @@ const OUTPUT_DIR = ".";
 const OUTPUT_FILE = "index.html";
 
 // ==========================================
-// 2. DATA PARSING
+// 2. DATA CONTENT (MARKDOWN BLOB)
+// ==========================================
+
+const DESIGN_NOTES_MD = `
+# Archetype Overview
+
+1. White/Blue (WU): System Infiltration
+**Description:** This archetype focuses on the **Jack-in** and **Eject** mechanics to gain value from transitioning between the Real World and the Matrix. It uses cards like Nebuchadnezzar's Ace to grant evasion to your crew.
+
+2. Blue/Black (UB): Agent Control
+**Description:** A classic control shell that utilizes **Digital** creatures and the **Override** mechanic to possess and neutralize opponent threats. It features Agent programs that can take over bodies at flash speed.
+
+3. Black/Red (BR): Sentinel Aggro
+**Description:** An aggressive artifact-centric deck that focuses on **Robot** tribal and **Menace** to push through damage. It rewards you for sacrificing artifacts for value and using Energy to burn out opponents.
+
+4. Red/Green (RG): Bio-Electric Power
+**Description:** This deck focuses on generating large amounts of **Energy {E}** and spending it on massive "Real World" threats like Beasts and Vehicles. It aims to overwhelm the board with high-power creatures and trampling damage.
+
+5. Green/White (GW): Zion Resistance
+**Description:** A "go-wide" strategy that boosts **Non-Digital (Human)** creatures. It utilizes **Vigilance** and **Lifelink** to stabilize the board and punish the Machines for attacking into Zion's defenses.
+
+6. White/Black (WB): Ghost Protocols
+**Description:** This archetype revolves around **Digital** creatures with evasive or defensive keywords like Menace, Lifelink, and Phasing. It represents the "Exiles" and supernatural programs found in the Matrix.
+
+7. Blue/Red (UR): Code Modification
+**Description:** A spells-matter and high-tech deck that uses **Energy** to manipulate combat or duplicate effects. It features Humans and Programs that grow or trigger abilities whenever you cast noncreature spells.
+
+8. Black/Green (BG): Harvester Operations
+**Description:** This archetype focuses on the graveyard and the recycling of resources. It uses **Robot** and **Ooze** creatures to gain value from death triggers and spends Energy to return threats to the battlefield.
+
+9. Red/White (RW): Armed and Ready
+**Description:** The premier Vehicle and Equipment deck. It leverages **Gun tokens** and specialized Pilots to create a highly efficient, fast-moving combat force that rewards aggressive play.
+
+10. Green/Blue (GU): System Mastery
+**Description:** A midrange "Value" deck that uses **Energy** to manipulate the battlefield and protect its creatures. It focuses on ramping mana and utilizing Flash or Hexproof to outmaneuver the opponent's code.
+`;
+
+// ==========================================
+// 3. DATA PARSING
 // ==========================================
 
 class Card {
@@ -210,7 +248,7 @@ function parseDesignBible(filePath) {
 }
 
 // ==========================================
-// 3. HTML GENERATION
+// 4. HTML GENERATION
 // ==========================================
 
 function replaceSymbols(text) {
@@ -233,7 +271,7 @@ function replaceSymbols(text) {
 function generateHTML(data) {
     const { setInfo, cards } = data;
 
-    // MECHANICS (Static)
+    // MECHANICS
     const mechanicsHTML = setInfo.mechanics.map(mech => `
         <div class="mechanic-entry">
             <span class="mech-name">${replaceSymbols(mech.name)}</span>
@@ -241,7 +279,7 @@ function generateHTML(data) {
         </div>
     `).join('');
 
-    // CARDS JSON (Data Source)
+    // CARDS JSON
     const cardsForJson = cards.map(c => ({ ...c, fileName: c.getFileName() }));
     const cardsJsonString = JSON.stringify(cardsForJson);
 
@@ -391,6 +429,16 @@ function generateHTML(data) {
             background: #fff;
             box-shadow: 0 0 20px #fff;
         }
+        .btn-secondary {
+            background: #222;
+            color: var(--matrix-green);
+            border: 1px solid var(--matrix-green);
+            box-shadow: none;
+        }
+        .btn-secondary:hover {
+            background: var(--matrix-green);
+            color: #000;
+        }
 
         /* MODAL STYLES */
         .modal-overlay {
@@ -415,6 +463,22 @@ function generateHTML(data) {
             max-height: 95vh;
             overflow-y: auto;
         }
+        
+        /* NOTES MODAL SPECIFIC */
+        #notesContent {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #ddd;
+            padding: 20px;
+        }
+        #notesContent h3 {
+            color: var(--matrix-green);
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        #notesContent strong { color: #fff; }
+        
         .close-modal {
             position: absolute;
             top: 10px; right: 20px;
@@ -424,9 +488,7 @@ function generateHTML(data) {
             z-index: 100;
         }
         
-        /* TWO MODAL LAYOUT MODES */
-        
-        /* 1. Pack Mode: Grid of thumbnails */
+        /* LAYOUT MODES */
         .pack-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -435,7 +497,6 @@ function generateHTML(data) {
             justify-content: center;
         }
         
-        /* 2. Single View: Large, Flex, Centered */
         .single-view {
             display: flex;
             justify-content: center;
@@ -443,17 +504,14 @@ function generateHTML(data) {
             gap: 20px;
             margin-top: 20px;
             width: 100%;
-            flex-wrap: wrap; /* Wraps DFCs on small screens */
+            flex-wrap: wrap; 
         }
-        
-        /* Adjust card size in Single View */
         .single-view .card {
-            max-width: 700px; /* Big! */
+            max-width: 700px;
             width: 100%;
             font-size: 1.1em;
-            cursor: default; /* No pointer in modal */
+            cursor: default; 
         }
-        
         .single-view .dfc-wrapper {
             display: flex;
             gap: 20px;
@@ -462,7 +520,6 @@ function generateHTML(data) {
             border: none;
             background: transparent;
         }
-        
         .single-view .card:hover {
             transform: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
@@ -628,15 +685,26 @@ function generateHTML(data) {
         </div>
     </div>
 
+    <div id="notesModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeNotesModal()">&times;</span>
+            <h2 style="text-align:center; color: var(--matrix-green);">DESIGN NOTES</h2>
+            <div id="notesContent"></div>
+        </div>
+    </div>
+
     <h1>${setInfo.title}</h1>
 
     <div class="dashboard">
         <div class="info-grid">
             <div class="stat-box">
                 <h2>System Stats</h2>
-                <p><strong>Total Files:</strong> <span id="visibleCount">${setInfo.cardCount}</span></p>
-                <p><strong>System Version:</strong> v1.9.0 (Smart Navigation)</p>
-                <button class="btn-generate" onclick="openBoosterPack()">Open Simulation Pack</button>
+                <p><strong>Visible Cards:</strong> <span id="visibleCount">${setInfo.cardCount}</span></p>
+                <p><strong>System Version:</strong> v2.1.0 (Design Notes)</p>
+                <div style="display:flex; gap:10px;">
+                    <button class="btn-generate" onclick="openBoosterPack()">Simulation Pack</button>
+                    <button class="btn-generate btn-secondary" onclick="openDesignNotes()">Design Notes</button>
+                </div>
             </div>
             <div>
                 <h2>Set Mechanics</h2>
@@ -682,21 +750,21 @@ function generateHTML(data) {
         </div>
     </div>
 
+    <div id="filterStatus" style="text-align: center; margin: 20px 0; color: var(--matrix-green); font-family: 'Courier New', monospace; font-size: 1.2em;"></div>
+
     <div id="galleryContainer" class="gallery">
         </div>
 
     <script>
         const ALL_CARDS = ${cardsJsonString};
+        const NOTES_MD = \`${DESIGN_NOTES_MD}\`;
+        
         let activeColor = null;
         let currentPack = [];
         let viewingCardFromPack = false;
 
         const rarityWeights = {
-            "Mythic": 4,
-            "Rare": 3,
-            "Uncommon": 2,
-            "Common": 1,
-            "Land": 0
+            "Mythic": 4, "Rare": 3, "Uncommon": 2, "Common": 1, "Land": 0
         };
 
         // --- MANA FONT LOGIC ---
@@ -715,6 +783,31 @@ function generateHTML(data) {
                 .replace(/{S}/g, '<i class="ms ms-s ms-cost"></i>')
                 .replace(/{X}/g, '<i class="ms ms-x ms-cost"></i>')
                 .replace(/{(\\d+)}/g, '<i class="ms ms-$1 ms-cost"></i>');
+        }
+
+        // --- MARKDOWN PARSER ---
+        function parseMarkdown(md) {
+            let html = md;
+            
+            // Headers: # Title -> <h2>Title</h2>
+            // We shift headers down one level to fit modal hierarchy
+            html = html.replace(/^# (.*$)/gim, '<h2>$1</h2>');
+            html = html.replace(/^## (.*$)/gim, '<h3>$1</h3>');
+            html = html.replace(/^### (.*$)/gim, '<h4>$1</h4>');
+            
+            // Archetype Headers (Number. Title)
+            html = html.replace(/^\\d+\\.\\s+(.*$)/gim, '<h3>$&</h3>');
+
+            // Bold: **text** -> <strong>text</strong>
+            html = html.replace(/\\*\\*(.*?)\\*\\*/gim, '<strong>$1</strong>');
+            
+            // Newlines -> <br>
+            html = html.replace(/\\n/gim, '<br>');
+            
+            // Symbol Replacement in text
+            html = replaceSymbols(html);
+            
+            return html;
         }
 
         // --- COLOR LOGIC ---
@@ -780,7 +873,6 @@ function generateHTML(data) {
             let cardHtml = renderCardJS(card);
 
             if (card.hasBackFace) {
-                // Find back face
                 const backFace = ALL_CARDS.find(c => c.id === card.id && c.isBackFace);
                 if (backFace) {
                     return \`
@@ -834,7 +926,12 @@ function generateHTML(data) {
 
         function renderGallery(cards) {
             const container = document.getElementById('galleryContainer');
-            document.getElementById('visibleCount').innerText = cards.length;
+            const totalCards = ALL_CARDS.filter(c => !c.isBackFace).length;
+            const visibleCount = cards.length;
+
+            document.getElementById('visibleCount').innerText = visibleCount;
+            const statusDiv = document.getElementById('filterStatus');
+            statusDiv.innerHTML = \`SHOWING <strong>\${visibleCount}</strong> / \${totalCards} DATA ENTRIES\`;
             
             if (cards.length === 0) {
                 container.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px; color:#555;">NO CARDS FOUND IN THE MATRIX</div>';
@@ -848,7 +945,6 @@ function generateHTML(data) {
         // --- INTERACTIVITY ---
         
         function viewCard(id) {
-            // Check current modal state to set "Back" context
             const modal = document.getElementById("packModal");
             const isOpen = modal.style.display === "flex";
             
@@ -870,7 +966,6 @@ function generateHTML(data) {
         }
 
         function openBoosterPack() {
-            // New pack = Reset state
             viewingCardFromPack = false; 
             currentPack = [];
 
@@ -921,8 +1016,6 @@ function generateHTML(data) {
         }
 
         function closeModal() {
-            // Logic: If we are viewing a single card FROM a pack, go back to pack.
-            // Otherwise, close the modal.
             if (viewingCardFromPack) {
                 renderPackView();
                 viewingCardFromPack = false;
@@ -931,9 +1024,25 @@ function generateHTML(data) {
             }
         }
         
+        // --- NEW: DESIGN NOTES LOGIC ---
+        function openDesignNotes() {
+            const contentDiv = document.getElementById("notesContent");
+            // Parse on open (efficient enough for this text size)
+            contentDiv.innerHTML = parseMarkdown(NOTES_MD);
+            document.getElementById("notesModal").style.display = "flex";
+        }
+
+        function closeNotesModal() {
+            document.getElementById("notesModal").style.display = "none";
+        }
+
+        // --- GLOBAL CLICK HANDLERS ---
         window.onclick = function(event) {
             if (event.target == document.getElementById("packModal")) {
                 closeModal();
+            }
+            if (event.target == document.getElementById("notesModal")) {
+                closeNotesModal();
             }
         }
 
@@ -948,7 +1057,7 @@ function generateHTML(data) {
 }
 
 // ==========================================
-// 4. MAIN EXECUTION
+// 5. MAIN EXECUTION
 // ==========================================
 
 function main() {
@@ -959,7 +1068,7 @@ function main() {
   
   const data = parseDesignBible(INPUT_FILE);
   console.log("------------------------------------------");
-  console.log("   MATRIX SET WEBSITE GENERATOR (V19 - Smart Nav)");
+  console.log("   MATRIX SET WEBSITE GENERATOR (V21 - Notes Modal)");
   console.log("------------------------------------------");
   console.log(`   Found ${data.cards.length} card faces.`);
   

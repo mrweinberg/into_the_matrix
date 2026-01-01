@@ -53,7 +53,7 @@ Digital, First Strike
 {W}: Eject.
 [C005] Zion Militia {1}{W}
 Creature — Human Soldier (1/1)
-When Zion Militia enters the battlefield, create a 1/1 white Human Soldier creature token.
+When Zion Militia enters the battlefield, create a 1/1 white Human creature token.
 [C006] Stasis Field {1}{W}
 Enchantment — Aura
 Enchant creature
@@ -83,32 +83,31 @@ Target artifact or creature gains indestructible until end of turn. If it's a Ve
 [C012] Zion Armorer {2}{W}
 Creature — Human Soldier (2/3)
 When Zion Armorer enters the battlefield, create a Gun token.
-[C013] Zion Welder {W}
+[C013] Youthful Welder {W}
 Creature — Human Artificer (1/1)
-{T}: Target Vehicle you control gets +1/+1 until end of turn.
+{T}: Target Vehicle you control gets +2/+1 until end of turn.
 {2}{W}, {T}: Create a Gun token.
 [C014] Bullet Time {1}{W}
 Instant
 Target creature gains protection from instants, sorceries, and artifacts until end of turn.
 Prevent all combat damage that would be dealt to that creature this turn.
 “He moves like they do.”
-[C015] Perimeter Guard {3}{W}
-Creature — Human Soldier (2/4)
-Vigilance
-“Eyes open. They could be anywhere.”
+[C015] Prophesizing Elder {3}{W}
+Creature — Human Cleric (2/4)
+When Prophesizing Elder enters, scry 2 and gain 2 life.
 [R001] Emergency Protocol {1}{W}
 Instant
 Choose one —
 • Target creature gains indestructible until end of turn.
 • Return target creature card with mana value 3 or less from your graveyard to the battlefield.
-• Create two 1/1 white Human Soldier creature tokens.
+• Create two 1/1 white Human creature tokens.
 "Emergency protocol activated. All units respond."
-[U001] Zion Operator {1}{W}
+[U001] Daycare  {1}{W}
 Creature — Human Artificer (2/2)
-{T}, Pay {E}: Create a 1/1 white Human Soldier creature token.
+{T}, Pay {E}: Create a 1/1 white Human creature token.
 “I’m sending in reinforcements.”
-[U002] Perimeter Scout {2}{W}
-Creature — Human Soldier (1/4)
+[U002] Uplink Guardian {2}{W}
+Creature — Human Soldier (1/3)
 Vigilance
 When Perimeter Scout enters the battlefield, you get {E}.
 Whenever a creature you control Jacks-in or Ejects, put a +1/+1 counter on Perimeter Scout.
@@ -145,8 +144,8 @@ Legendary Creature — Human Soldier Program (3/3)
 Digital, Double Strike, Vigilance
 When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target creature with power 3 or greater.
 {W}: Eject.
-[C017] Zion Peacekeeper {1}{W}
-Creature — Human Soldier (0/4)
+[C017] Peace Advocate {1}{W}
+Creature — Human Citizen (0/4)
 Defender
 {3}{W}: Jack-in.
 //
@@ -175,7 +174,7 @@ If you control a Vehicle, that creature gets indestructible until your next turn
 Enchantment
 Creatures have base power and toughness 1/1.
 Players have hexproof.
-“Peace. But at what cost?”
+“Through great sacrifice, at long last, the humans and machines defined the new terms of coexistence.”
 BLUE (36 Cards)
 [C021] Follow the White Rabbit {1}{U}
 Sorcery
@@ -293,7 +292,6 @@ Creatures can't attack you unless their controller pays {2} for each creature at
 Instant
 Reveal the top five cards of your library. An opponent separates those cards into two piles. Put one pile into your hand and the other into your graveyard.
 “You take the blue pill, the story ends. You take the red pill, you stay in Wonderland.”
-
 [U018] Hardline Searcher {1}{U}
 Creature — Human Rogue (1/2)
 {T}: Draw a card, then discard a card.
@@ -333,7 +331,7 @@ Flash
 Digital
 When The Analyst enters the battlefield, if it's your turn, end the turn. (Exile all spells and abilities from the stack. The player whose turn it is discards down to their maximum hand size. Damage wears off, and "this turn" and "until end of turn" effects end.)
 If it's an opponent's turn, return up to one target spell to its owner's hand.
-[M03] The Oracle, Path Calculator {2}{U}{U}
+[M03] The Oracle, Destiny Planner {2}{U}{U}
 Legendary Creature — Program Advisor (1/4)
 Digital, Ward 2
 Play with the top card of your library revealed. You may cast the top card of your library.
@@ -361,7 +359,7 @@ Instant
 Target creature gets -2/-2 until end of turn.
 If you control an Agent, destroy that creature instead.
 [C043] Disposable Informant {B}
-Creature — Program Assassin (1/1)
+Creature — Human Program Assassin (1/1)
 Digital, Deathtouch
 When Disposable Informant leaves the battlefield, target creature an opponent controls gets -1/-1 until end of turn.
 [C044] Glitched Citizen {1}{B}
@@ -443,7 +441,7 @@ Sacrifice a Robot: Sentinel Swarm gets +2/+2 until end of turn.
 Whenever a Robot you control dies, you may pay {B}. If you do, create a 1/1 colorless Robot artifact creature token with flying.
 [C058] Deploy Sentinels {2}{B}
 Sorcery
-Create two 1/1 colorless Robot artifact creature tokens with flying.
+Create two 1/1 colorless Robot artifact creature tokens with flying. You get {E}{E}.
 [C059] Viral Injection {1}{B}
 Instant
 Target creature gets +2/+0 and gains Digital until end of turn.
@@ -511,23 +509,22 @@ Creature — Human Wizard (1/3)
 Instant
 Thermal Cutter deals 3 damage to target creature.
 If you control an artifact creature or a creature with Digital, Thermal Cutter deals 2 damage to that creature's controller.
-[C076] Combat Specialist {1}{R}
+[C076] Avid Marksman {1}{R}
 Creature — Human Soldier (2/1)
 Haste
-Whenever Combat Specialist becomes equipped, it gets +1/+1 until end of turn.
+Whenever Avid Marksman becomes equipped, it gets +1/+1 until end of turn.
 {2}{R}: Jack-in.
 //
-Weapons Expert (Color Indicator: Red)
+Expert Sniper (Color Indicator: Red)
 Creature — Human Soldier Program (3/2)
 Digital
 When this creature transforms into Weapons Expert, create a Gun token.
 {R}: Eject.
-[C077] Zion Gunner {2}{R}
-Creature — Human Soldier (3/2)
+[C077] Zealous Protector {3}{R}
+Creature — Human Soldier (4/3)
 Reach
-As long as Zion Gunner is equipped, it has first strike.
-Vehicles crewed by Zion Gunner have first strike.
-[C078] Hardline Hacker {1}{R}
+Zealous Protector can block creatures with Digital as if it had Digital
+[C078] Manic Decrypter {1}{R}
 Creature — Human Rogue (2/1)
 Haste
 {1}{R}, {T}: Target Digital creature can't block this turn.
@@ -536,7 +533,7 @@ Instant
 Target creature gets +2/+0 until end of turn. Create a Gun token attached to it.
 [C080] Overcharge {R}
 Instant
-Target creature gets +3/+0 until end of turn. If you have four or more {E}, it also gains trample until end of turn.
+Target creature gets +3/+1 until end of turn. If you have four or more {E}, it also gains trample until end of turn.
 [C081] Drone Pilot {R}
 Artifact Creature — Robot (1/1)
 Haste
@@ -547,7 +544,7 @@ Trample
 When Dockside Loader enters the battlefield, you get {E}.
 “It’s heavy, but it hits hard.”
 [C083] Sentinel Sweeper {3}{R}
-Creature — Robot (2/3)
+Artifact Creature — Robot (2/3)
 Flying
 When Sentinel Sweeper dies, you get {E}.
 “They swarm the sewers, looking for warmth.”
@@ -701,7 +698,7 @@ Instant
 Target creature gets +3/+3 and gains reach until end of turn.
 “Push it! Now!”
 [C105] Canopy Stalker {3}{G}
-Creature — Beast (3/3)
+Creature — Construct Beast (3/3)
 Reach
 Canopy Stalker can block creatures with Digital as though they didn't have Digital.
 "The Matrix's predators don't just hunt flesh; they hunt the data streams that sustain it."
@@ -767,7 +764,7 @@ Then, if you have 6 or more {E}, creatures you control gain Haste and Indestruct
 [R043] Founding of Zion {2}{G}
 Enchantment — Saga
 I — Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.
-II — Create a 1/1 white Human Soldier creature token.
+II — Create a 1/1 white Human creature token.
 III — Put two +1/+1 counters on target creature you control. It gains vigilance until end of turn.
 [R044] System Purge Virus {3}{G}{G}
 Sorcery
@@ -786,11 +783,6 @@ Legendary Creature — Human Advisor (2/3)
 Reach
 When Zion Archivist enters the battlefield, shuffle target player's graveyard into their library. You may draw a card for each creature card shuffled into a library this way, then discard that many cards.
 {G}, {T}: Put target card from your graveyard on the bottom of your library. If it was a Human or Robot card, draw a card.
-[M07] Awaken the One {4}{G}{G}
-Sorcery
-Search your library for a Legendary creature card and put it onto the battlefield.
-If that creature is a Human Avatar, put two +1/+1 counters on it. Then shuffle.
-If you control a Digital creature, you may cast this spell as if it had flash.
 [M08] Root Access {5}{G}{G}
 Sorcery
 Reveal the top seven cards of your library. You may put any number of permanent cards from among them onto the battlefield. Put the rest on the bottom of your library in a random order.
@@ -904,8 +896,8 @@ Surveillance Agent can't be blocked.
 Artifact Creature — Robot (2/2)
 Menace
 Other Artifact creatures you control get +1/+0.
-[U093] Resistance Captain {G}{W}
-Creature — Human Soldier (2/2)
+[U093] Reality Advocate {G}{W}
+Creature — Human Advisor (2/2)
 Other Non-Digital creatures you control get +1/+1.
 [U094] Tank, the Operator {1}{G}{U}
 Legendary Creature — Human Pilot (2/3)
@@ -1031,11 +1023,11 @@ Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Sera
 Instant
 Distribute X +1/+1 counters among any number of target creatures you control.
 Those creatures gain trample until end of turn.
-[R066] Neo, The One {2}{G}{U}
+[R066] Neo, The Awakened {2}{G}{U}
 Legendary Creature — Human Avatar (3/3)
 Flash, Hexproof
 Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Neo, The One.
-As long as Neo has 4 or more power, he has flying and trample.
+As long as Neo has 5 or more power, he has flying and trample.
 [M09] The Architect, System Creator {4}{W}{U}
 Legendary Creature — Avatar Program (3/6)
 Digital, Vigilance
@@ -1208,9 +1200,9 @@ When Red Woman Code enters the battlefield, goad target creature.
 [U070] Portable EMP {3}
 Artifact
 {T}, Sacrifice Portable EMP: Tap all artifacts and creatures with Digital. They don't untap during their controllers' next untap step.
-[U071] Electronic Parasite {1}
+[U071] Electronic Tracking Bug {1}
 Artifact — Equipment
-When Electronic Parasite enters the battlefield, look at target opponent's hand.
+When Electronic Tracking Bug enters the battlefield, look at target opponent's hand.
 Equipped creature gets +1/+0 and has "Whenever this creature deals combat damage to a player, scry 1."
 Equip {1}
 [M14] The Nebuchadnezzar {4}

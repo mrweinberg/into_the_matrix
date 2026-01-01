@@ -12,6 +12,18 @@ const MODEL_ID = "gemini-3-pro-image-preview";
 const INPUT_FILE = "MTG INTO THE MATRIX.txt";
 const OUTPUT_DIR = "matrix_art_output";
 
+// Global Session Seed: Ensures consistency within a run, but variance between runs.
+const SESSION_SEED = Date.now();
+
+// Top 20 Iconic MTG Artists
+const MTG_ARTISTS = [
+    "Kev Walker", "John Avon", "Rebecca Guay", "Terese Nielsen", "Christopher Rush",
+    "Dan Frazier", "Mark Tedin", "Rob Alexander", "Seb McKinnon", "Chris Rahn",
+    "Magali Villeneuve", "Johannes Voss", "Raymond Swanland", "Wayne Reynolds",
+    "Steve Argyle", "Jason Chan", "Ryan Pancoast", "Adam Paquette", "Zoltan Boros",
+    "Richard Kane Ferguson"
+];
+
 // ==========================================
 // 2. CLASS DEFINITION
 // ==========================================
@@ -59,30 +71,26 @@ class Card {
     const typeLower = this.type.toLowerCase();
     const nameLower = this.name.toLowerCase();
 
-    // 1. Skip non-creatures
     if (!typeLower.includes("creature")) return "";
-    
-    // 2. STRICT HUMAN CHECK
+    // STRICT HUMAN CHECK
     if (!typeLower.includes("human") && !typeLower.includes("scout") && !typeLower.includes("soldier") && !typeLower.includes("pilot")) return "";
-
-    // 3. SKIP LEGENDARY
+    // SKIP LEGENDARY
     if (typeLower.includes("legendary")) return "";
 
-    // 4. Skip known characters
     const knownCharacters = ["neo", "morpheus", "trinity", "smith", "oracle", "seraph", "niobe", "ghost", "merovingian", "persephone", "keymaker", "architect"];
     if (knownCharacters.some(char => nameLower.includes(char))) {
         return ""; 
     }
 
-    // 5. Agents are uniform
     if (nameLower.includes("agent") || typeLower.includes("agent")) {
         return "Appearance: Uniform Male Agent, caucasian, identical suit and sunglasses.";
     }
 
-    // 6. Deterministic Generation
+    // DETERMINISTIC SEEDING (Based on ID + Session)
+    const uniqueString = this.id + SESSION_SEED;
     let hash = 0;
-    for (let i = 0; i < this.id.length; i++) {
-        hash = this.id.charCodeAt(i) + ((hash << 5) - hash);
+    for (let i = 0; i < uniqueString.length; i++) {
+        hash = uniqueString.charCodeAt(i) + ((hash << 5) - hash);
     }
     const seed = Math.abs(hash);
 
@@ -116,12 +124,8 @@ class Card {
   getCompositionType() {
     if (!this.type.toLowerCase().includes("creature")) return "";
 
-    let hash = 0;
-    for (let i = 0; i < this.id.length; i++) {
-        hash = this.id.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    const seed = Math.abs(hash);
-    const roll = seed % 100;
+    // PURE RANDOM
+    const roll = Math.floor(Math.random() * 100);
 
     if (roll < 20) {
         return "COMPOSITION: DYNAMIC ACTION. High kinetic energy. Mid-air kick, dodging bullets, or diving while shooting. Use motion blur and Dutch angles.";
@@ -152,7 +156,6 @@ class Card {
     // === CREATURE LOGIC ===
     if (typeLower.includes("creature")) {
         if (this.hasDigitalKeyword()) {
-            // ---> INSIDE THE MATRIX
             if (combinedText.includes("kung fu") || combinedText.includes("monk") || combinedText.includes("dojo")) {
                  return { setting: "A Japanese Dojo Simulation. Features: Rice paper walls, wooden floors.", tone: "Warm Wood, Clean Light, Golden Hues", tech: "Traditional / Minimal" };
             }
@@ -174,7 +177,6 @@ class Card {
                 tech: TECH_1999
             };
         } else {
-            // ---> THE REAL WORLD
             if (nameLower.includes("machine city") || nameLower.includes("01")) {
                  return { setting: "The Machine City (01). Features: Endless black towers, red lightning storms, swarms of sentinels.", tone: "Oppressive Black metal and Glowing Orange Sky", tech: TECH_SCIFI };
             }
@@ -199,7 +201,6 @@ class Card {
         }
     }
 
-    // === NON-CREATURE LOGIC ===
     if (combinedText.includes("code") || combinedText.includes("virtual") || combinedText.includes("download") || combinedText.includes("blue screen")) {
         return { setting: "Abstract Visualization of Data. Features: Cascading Green Code, glitches.", tone: "Surreal, Neon Green, Black Background", tech: TECH_SURREAL };
     }
@@ -220,16 +221,24 @@ class Card {
     const world = this.getWorldContext();
     const typeLower = this.type.toLowerCase();
 
+    let baseStyle = "Official Magic: The Gathering House Style.";
     if (typeLower.includes("instant") || typeLower.includes("sorcery") || typeLower.includes("enchantment")) {
-        return "Abstract Surrealism or Dynamic Action Illustration.";
+        baseStyle = "Abstract Surrealism or Dynamic Action Illustration.";
+    } else if (world.setting.includes("Real World") || world.setting.includes("Zion") || world.setting.includes("Machine")) {
+        baseStyle = "Gritty Impasto Realism. Heavy texture, emphasis on rust, sweat, grime. Classical oil painting vibe.";
+    } else if (world.setting.includes("Matrix") || world.setting.includes("Construct") || world.setting.includes("City")) {
+        baseStyle = "Sleek, High-Fidelity Realism. Sharp edges, polished surfaces, clear lighting. 90s sci-fi concept art.";
     }
-    if (world.setting.includes("Real World") || world.setting.includes("Zion") || world.setting.includes("Machine")) {
-        return "Gritty Impasto Realism. Heavy texture, emphasis on rust, sweat, grime. Classical oil painting vibe.";
+
+    const roll = Math.floor(Math.random() * 100); 
+
+    if (roll < 50) {
+        const artistIndex = Math.floor(Math.random() * MTG_ARTISTS.length);
+        const artist = MTG_ARTISTS[artistIndex];
+        return `Style of ${artist}.`; 
     }
-    if (world.setting.includes("Matrix") || world.setting.includes("Construct") || world.setting.includes("City")) {
-        return "Sleek, High-Fidelity Realism. Sharp edges, polished surfaces, clear lighting. 90s sci-fi concept art.";
-    }
-    return "Official Magic: The Gathering House Style.";
+
+    return baseStyle;
   }
 
   generatePrompt() {
@@ -243,7 +252,6 @@ class Card {
     // LEGENDARY CHECK
     const isLegendary = this.type.toLowerCase().includes("legendary");
     let likenessInstruction = "";
-    
     if (isLegendary) {
         likenessInstruction = "CHARACTER IDENTITY: This is a LEGENDARY character. The illustration MUST strictly resemble the specific character/actor as they appear in The Matrix films.";
     }
@@ -391,7 +399,6 @@ async function generateArtForCard(aiClient, card, isDryRun, forceOverwrite) {
   const prompt = card.generatePrompt();
   const outputPath = path.join(OUTPUT_DIR, card.getFileName());
 
-  // Check existence unless forced
   if (!forceOverwrite && fs.existsSync(outputPath)) {
     console.log(`[SKIP] ${card.getFileName()} already exists.`);
     return;
@@ -413,6 +420,8 @@ async function generateArtForCard(aiClient, card, isDryRun, forceOverwrite) {
   console.log(`   🔍 Digital: ${isDigital} -> ${isDigital ? "MATRIX" : "REAL WORLD"}`);
   console.log(`   🌍 Setting: ${world.setting}`);
   
+  const startTime = Date.now();
+
   try {
     const response = await aiClient.models.generateContent({
       model: MODEL_ID,
@@ -435,15 +444,20 @@ async function generateArtForCard(aiClient, card, isDryRun, forceOverwrite) {
       }
     }
 
+    const endTime = Date.now();
+    const duration = ((endTime - startTime) / 1000).toFixed(2);
+
     if (imageBase64) {
       fs.writeFileSync(outputPath, imageBase64, 'base64');
-      console.log(`   ✅ Saved to ${outputPath}`);
+      console.log(`   ✅ Saved to ${outputPath} (${duration}s)`);
     } else {
-      console.error(`   ❌ Failed: No image data returned.`);
+      console.error(`   ❌ Failed: No image data returned. (${duration}s)`);
     }
 
   } catch (error) {
-    console.error(`   ❌ API Error: ${error.message}`);
+    const endTime = Date.now();
+    const duration = ((endTime - startTime) / 1000).toFixed(2);
+    console.error(`   ❌ API Error: ${error.message} (${duration}s)`);
   }
 }
 
@@ -470,24 +484,18 @@ async function main() {
     specificId = args[specificIndex + 1].replace(/[\[\]]/g, ''); 
   }
 
-  // PARSE CARDS FIRST
+  // PARSE
   const allCards = parseDesignBible(INPUT_FILE);
 
-  // --- CLEANUP MODE ---
+  // CLEANUP
   if (isCleanup) {
       console.log("------------------------------------------");
       console.log("🧹  CLEANUP MODE INITIATED");
       console.log("------------------------------------------");
-      
-      // 1. Build Allowlist of Valid Filenames
       const validFilenames = new Set(allCards.map(c => c.getFileName()));
-      
-      // 2. Scan Directory
       const filesInDir = fs.readdirSync(OUTPUT_DIR);
       let deletedCount = 0;
-
       filesInDir.forEach(file => {
-          // Only process png files to avoid deleting system files
           if (file.endsWith(".png")) {
               if (!validFilenames.has(file)) {
                   console.log(`   🗑️  Deleting orphan file: ${file}`);
@@ -496,14 +504,13 @@ async function main() {
               }
           }
       });
-
       console.log(`   ✅ Cleanup complete. Removed ${deletedCount} orphan files.`);
-      return; // Exit after cleanup
+      return; 
   }
 
-  // --- GENERATION MODE ---
+  // GENERATION
   console.log("------------------------------------------");
-  console.log(`   MATRIX SET ART GENERATOR (V26)`);
+  console.log(`   MATRIX SET ART GENERATOR (V30 - Session Consistency)`);
   if (isDryRun) console.log("   ⚠️  DRY RUN MODE ENABLED ⚠️");
   if (isForce) console.log("   🔥 FORCE MODE: OVERWRITING ALL FILES 🔥");
   if (specificId) console.log(`   🎯 SPECIFIC MODE: Targeting Card ID '${specificId}'`);
