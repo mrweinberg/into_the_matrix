@@ -10,6 +10,7 @@ import 'dotenv/config';
 const API_KEY = process.env.GEMINI_API_KEY;
 const MODEL_ID = "gemini-3-pro-image-preview"; 
 const INPUT_FILE = "MTG INTO THE MATRIX.txt";
+const OVERRIDE_FILE = "artOverrides.json";
 const OUTPUT_DIR = "matrix_art_output";
 
 // Global Session Seed: Ensures consistency within a run, but variance between runs.
@@ -23,6 +24,33 @@ const MTG_ARTISTS = [
     "Steve Argyle", "Jason Chan", "Ryan Pancoast", "Adam Paquette", "Zoltan Boros",
     "Richard Kane Ferguson"
 ];
+
+// Load Overrides if file exists
+let artOverrides = {};
+if (fs.existsSync(OVERRIDE_FILE)) {
+    try {
+        const rawData = fs.readFileSync(OVERRIDE_FILE, 'utf8');
+        // Expecting an array of objects or an object keyed by ID. 
+        // Let's assume the JSON is an array of objects like the example provided, 
+        // but we'll convert it to a map for easier lookup.
+        const parsedData = JSON.parse(rawData);
+        
+        if (Array.isArray(parsedData)) {
+            parsedData.forEach(item => {
+                if (item.id) artOverrides[item.id] = item;
+            });
+        } else {
+             // If it's a single object (like the example provided), wrap it or handle it.
+             // If the example provided was just one entry in a file that might contain many:
+             if (parsedData.id) {
+                 artOverrides[parsedData.id] = parsedData;
+             }
+        }
+        console.log(`   📂 Loaded ${Object.keys(artOverrides).length} art overrides.`);
+    } catch (e) {
+        console.error("   ⚠️ Failed to parse artOverrides.json:", e.message);
+    }
+}
 
 // ==========================================
 // 2. CLASS DEFINITION
@@ -115,7 +143,7 @@ class Card {
     if (!isMachine) return "";
 
     if (nameLower.includes("sentinel") || nameLower.includes("squid") || nameLower.includes("swarm")) {
-        return "ROBOT APPEARANCE: Movie-Accurate Sentinel ('Squiddy'). A floating machine with a central sensory pod (multiple red eyes) and trailing metallic tentacles. NO humanoid legs/arms.";
+        return "ROBOT APPEARANCE: Movie-Accurate Sentinel. A floating machine with a central sensory pod (multiple red eyes) and trailing metallic tentacles. NO humanoid legs/arms.";
     }
 
     return "ROBOT APPEARANCE: NON-HUMANOID. Industrial, insectoid, or arachnid machinery. Use heavy cables, hydraulics, and sensor eyes. Do NOT depict as a human-shaped android or man in a suit.";
@@ -244,11 +272,12 @@ class Card {
   }
 
   generatePrompt() {
-    const world = this.getWorldContext();
+    // 1. Calculate Default Derived Values
+    let world = this.getWorldContext();
     const subjectColor = this.getSubjectColor();
-    const artStyle = this.getArtStyle();
-    const diversity = this.getCharacterDiversity();
-    const composition = this.getCompositionType();
+    let artStyle = this.getArtStyle();
+    let diversity = this.getCharacterDiversity();
+    let composition = this.getCompositionType();
     const robotVisuals = this.getRobotVisuals(); 
     
     // LEGENDARY CHECK
@@ -265,13 +294,27 @@ class Card {
     // SUNGLASSES LOGIC
     let sunglassesConstraint = "";
     if (world.setting.includes("Real World") || world.setting.includes("Zion") || world.setting.includes("Machine")) {
-        sunglassesConstraint = "6. NO SUNGLASSES. Characters in the Real World/Zion do NOT wear sunglasses. Eyes should be visible. Clothing should be ragged sweaters or tactical gear.";
+        sunglassesConstraint = "6. NO SUNGLASSES. Characters in the Real World/Zion do NOT wear sunglasses.";
     } else {
-        sunglassesConstraint = "6. Sunglasses are characteristic of the Matrix simulation and are allowed/encouraged for Agents and Renegades.";
+        sunglassesConstraint = "6. Sunglasses are characteristic of the Matrix simulation.";
     }
 
     let visualContext = this.flavor.length > 0 ? this.flavor : this.text.join(" ");
     
+    // 2. APPLY OVERRIDES IF EXIST
+    const override = artOverrides[this.id];
+    let subjectDescription = `Main focus features **${subjectColor}** accents. ${likenessInstruction} ${diversity}`;
+    
+    if (override) {
+        console.log(`   ⚡ Applying overrides for ${this.id}...`);
+        if (override.setting) world.setting = override.setting;
+        if (override.subject) subjectDescription = override.subject; // Full replace of subject details
+        if (override.composition) composition = "COMPOSITION: " + override.composition;
+        if (override.artStyle) artStyle = override.artStyle;
+        if (override.sunglasses === false) sunglassesConstraint = "6. NO SUNGLASSES.";
+        if (override.sunglasses === true) sunglassesConstraint = "6. Sunglasses are MANDATORY.";
+    }
+
     const descriptiveText = visualContext
         .replace(/\{[^}]+\}/g, "") 
         .replace(/Digital|Jack-in|Eject|Override|Scry|Ward/g, "")
@@ -307,9 +350,7 @@ class Card {
       - ${composition}
       
       SUBJECT DETAILS:
-      - Main focus features **${subjectColor}** accents.
-      - ${likenessInstruction}
-      - ${diversity}
+      - ${subjectDescription}
       
       ACTION/MOOD DESCRIPTION: "${descriptiveText}"
       
@@ -405,6 +446,7 @@ async function generateArtForCard(aiClient, card, isDryRun, forceOverwrite) {
   const prompt = card.generatePrompt();
   const outputPath = path.join(OUTPUT_DIR, card.getFileName());
 
+  // Check existence unless forced
   if (!forceOverwrite && fs.existsSync(outputPath)) {
     console.log(`[SKIP] ${card.getFileName()} already exists.`);
     return;
@@ -516,7 +558,7 @@ async function main() {
 
   // GENERATION
   console.log("------------------------------------------");
-  console.log(`   MATRIX SET ART GENERATOR (V30 - Session Consistency)`);
+  console.log(`   MATRIX SET ART GENERATOR (V31 - Overrides Supported)`);
   if (isDryRun) console.log("   ⚠️  DRY RUN MODE ENABLED ⚠️");
   if (isForce) console.log("   🔥 FORCE MODE: OVERWRITING ALL FILES 🔥");
   if (specificId) console.log(`   🎯 SPECIFIC MODE: Targeting Card ID '${specificId}'`);
@@ -544,7 +586,7 @@ async function main() {
     await generateArtForCard(ai, cardsToProcess[i], isDryRun, forceThisCard);
     
     if (!isDryRun) {
-        await new Promise(r => setTimeout(r, 50));
+        await new Promise(r => setTimeout(r, 100));
     }
   }
 }
