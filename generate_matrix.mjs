@@ -200,7 +200,7 @@ class Card {
                 return { setting: "Matrix Subway Station. Features: White tiled walls, graffiti, concrete platforms.", tone: "Dirty White, Greenish Florescent, Grimy", tech: TECH_1999 };
             }
             return { 
-                setting: "The Matrix City (1999 Aesthetic). Skyscraper rooftop, busy city street, or alleyway.", 
+                setting: "The Matrix City (1999 Aesthetic). Skyscraper rooftop, busy city street, alleyway, or building interior.", 
                 tone: "Slightly Desaturated, High Contrast, Green Tint",
                 tech: TECH_1999
             };
