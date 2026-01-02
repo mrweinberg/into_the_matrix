@@ -1,16 +1,20 @@
 ﻿INTO THE MATRIX (ITM) - Set Design Document
 Total Card Count: 251
+
 0. Design Notes
-This set was designed with the help of Google Gemini and Claude Sonnet. While I designed the mechanics and the initial cards, they helped fill out the file, create the art, and create the website. There is no way I would have gotten this done so fast without them.
-To represent the different worlds, I repurposed Shadow as Digital. While Shadow is a bit of a dud mechanic, I feel like with a stronger thematic focus, it can be a useful tool for this set. By trying to split it along color lines, it makes the digital world as relevant as the non-digital world.
+This set was designed with the help of Google Gemini and Claude Sonnet.
+While I designed the mechanics and the initial cards, they helped fill out the file, create the art, and create the website.
+To represent the different worlds, I repurposed Shadow as Digital.
+While Shadow is a bit of a dud mechanic, I feel like with a stronger thematic focus, it can be a useful tool for this set.
+By trying to split it along color lines, it makes the digital world as relevant as the non-digital world.
 This requires each color to have the tools to interact with each world, so the colors break down as such:
 W: The in-between color. Represents the order of the The Matrix and the human community of the real world. Eject/Jack-In lets it engage in both with a single card.
 U: The logic and order of the matrix. It gets down to the very structure of it, and also the humans that can interact with it. Mostly digital, with classic blue control tools.
 B: The agents and manipulators of the world are in Black. Mostly, but not entirely, digital, it also includes much of the real world machine army.
 R: Represents the raw passion of the human resistance and the explosive, physical nature of the Real World. It interacts with the Digital world through disruption—using "EMP" effects and direct damage to "burn out" programs and artifacts.
 G: Green represents the "fields" of the Machine City and the organic endurance of Zion. It generates and stores the most energy and mostly only interacts with the digital world through interaction and "digital reach".
-
-Energy is an important component of the set. Fundamental to The Matrix universe, here we try to explore some new design space. Card that are spenders but not generators, classic engine pieces, and energy threshold cards make it fundamental to playing this set.
+Energy is an important component of the set. Fundamental to The Matrix universe, here we try to explore some new design space.
+Cards that are spenders but not generators, classic engine pieces, and energy threshold cards make it fundamental to playing this set.
 
 Draft Archetypes:
 WU: System Infiltration
@@ -34,6 +38,7 @@ The premier Vehicle and Equipment deck. It leverages Gun tokens and specialized 
 GU: System Mastery
 A midrange "Value" deck that uses Energy to manipulate the battlefield and protect its creatures. It focuses on ramping mana and utilizing Flash to outmaneuver the opponent's code.
 1. Mechanics & Glossary
+
 Digital
 Keyword Ability
 Digital (This creature can block or be blocked only by creatures with digital.)
@@ -66,7 +71,9 @@ Equip {1}
 
 2. Card Gallery
 
-WHITE (30 Cards)
+========== WHITE (31 Cards) ==========
+
+--- COMMONS ---
 
 [C001] Hovercraft Crewman {1}{W}
 Creature — Human Soldier (1/4)
@@ -128,10 +135,6 @@ Creature — Human Artificer (2/3)
 When Fleet Mechanic enters, you may return target Vehicle or Equipment card from your graveyard to your hand.
 “She’s beat up, but she’ll fly.”
 
-[C011] Hull Breach Patch {W}
-Instant
-Target artifact or creature gains indestructible until end of turn. If it's a Vehicle, untap it.
-
 [C012] Zion Armorer {2}{W}
 Creature — Human Soldier (2/3)
 When Zion Armorer enters, create a Gun token.
@@ -143,7 +146,8 @@ Creature — Human Artificer (1/1)
 
 [C014] Bullet Time {1}{W}
 Instant
-Target creature gains protection from artifacts, from instants, and from sorceries until end of turn. Prevent all combat damage that would be dealt to it this turn.
+Target creature gains protection from artifacts, from instants, and from sorceries until end of turn.
+Prevent all combat damage that would be dealt to it this turn.
 “He moves like they do.”
 
 [C015] Prophesizing Elder {3}{W}
@@ -170,13 +174,17 @@ Choose one:
 Instant
 Create two Gun tokens. You may attach them to creatures you control.
 
-[R001] Emergency Protocol {1}{W}
-Instant
-Choose one —
-• Target creature gains indestructible until end of turn.
-• Return target creature card with mana value 3 or less from your graveyard to the battlefield.
-• Create two 1/1 white Human creature tokens.
-"Emergency protocol activated. All units respond."
+[C020] Peace Advocate {1}{W} [DUPLICATE CODE]
+Creature — Human Citizen (0/4)
+Defender
+{3}{W}: Jack-in.
+//
+System Guardian (Color Indicator: White)
+Creature — Human Soldier Program (4/5)
+Digital, vigilance
+{W}: Eject.
+
+--- UNCOMMONS ---
 
 [U001] Daycare Manager {1}{W}
 Creature — Human Citizen (2/2)
@@ -198,12 +206,6 @@ Creatures you control get +0/+2 as long as they are untapped.
 Creature — Human Artificer (2/2)
 Whenever an Equipment you control is put into a graveyard from the battlefield, put a +1/+1 counter on Scrap-Metal Tactician.
 
-[R002] Automated Turret {2}{W}
-Artifact Creature — Robot Wall (4/4)
-Defender, reach, vigilance
-As long as you control a Vehicle, Automated Turret can attack as though it didn't have defender.
-Whenever Automated Turret blocks, it deals 2 damage to target attacking creature.
-
 [U005] Captain's Speech {1}{W}{W}
 Sorcery
 Creatures you control get +2/+2 until end of turn.
@@ -212,27 +214,6 @@ Creatures you control get +2/+2 until end of turn.
 Creature — Human Soldier (2/2)
 Whenever another Human enters under your control, you get {E}.
 {T}, Pay {E}: Tap target creature.
-
-[R003] Switch, Faithful Defender {1}{W}{W}
-Legendary Creature — Human Soldier (2/2)
-Double strike, vigilance
-{1}{W}: Jack-in.
-//
-Switch, Digital Guardian (Color Indicator: White)
-Legendary Creature — Human Soldier Program (3/3)
-Digital, double strike, vigilance
-When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target creature with power 3 or greater.
-{W}: Eject.
-
-[C017] Peace Advocate {1}{W}
-Creature — Human Citizen (0/4)
-Defender
-{3}{W}: Jack-in.
-//
-System Guardian (Color Indicator: White)
-Creature — Human Soldier Program (4/5)
-Digital, vigilance
-{W}: Eject.
 
 [U007] Restless Sleeper {W}
 Creature — Human Citizen (1/1)
@@ -244,14 +225,51 @@ Creature — Human Soldier (3/2)
 First strike
 “I woke up.”
 
+--- RARES ---
+
+[R001] Emergency Protocol {1}{W}
+Instant
+Choose one —
+• Target creature gains indestructible until end of turn.
+• Return target creature card with mana value 3 or less from your graveyard to the battlefield.
+• Create two 1/1 white Human creature tokens.
+"Emergency protocol activated. All units respond."
+
+[R002] Automated Turret {2}{W}
+Artifact Creature — Robot Wall (4/4)
+Defender, reach, vigilance
+As long as you control a Vehicle, Automated Turret can attack as though it didn't have defender.
+Whenever Automated Turret blocks, it deals 2 damage to target attacking creature.
+
+[R003] Switch, Faithful Defender {1}{W}{W}
+Legendary Creature — Human Soldier (2/2)
+Double strike, vigilance
+{1}{W}: Jack-in.
+//
+Switch, Digital Guardian (Color Indicator: White)
+Legendary Creature — Human Soldier Program (3/3)
+Digital, double strike, vigilance
+When Switch, Digital Guardian dies, you may pay {W}.
+If you do, exile target creature with power 3 or greater.
+{W}: Eject.
+
 [R004] Guns. Lots of Guns. {2}{W}
 Sorcery
 Create five Gun tokens. Until end of turn, Equipment you control have equip {0}.
 
 [R005] Rooftop Rescue {3}{W}
 Sorcery
-Return target creature card from your graveyard to the battlefield. If you control a Vehicle, that creature gains indestructible until your next turn.
+Return target creature card from your graveyard to the battlefield.
+If you control a Vehicle, that creature gains indestructible until your next turn.
 “Morpheus, get up!”
+
+[R006] Zion Frontline Hero {2}{W}
+Creature — Human Soldier (3/2)
+Whenever Zion Frontline Hero attacks, another target attacking creature gets +X/+X until end of turn, where X is Zion Frontline Hero's power.
+At the beginning of your end step, if Zion Frontline Hero is in your graveyard and you control three or more other creatures, you may pay {E}{E}.
+If you do, return it to your hand.
+
+--- MYTHICS ---
 
 [M01] The Truce {3}{W}{W}
 Enchantment
@@ -259,12 +277,17 @@ Creatures have base power and toughness 1/1.
 Players have hexproof.
 “Through great sacrifice, at long last, the humans and machines defined the new terms of coexistence.”
 
-BLUE (36 Cards)
+
+========== BLUE (37 Cards) ==========
+
+--- COMMONS ---
 
 [C021] Follow the White Rabbit {1}{U}
 Sorcery
 Kicker {U}
-Look at the top four cards of your library. Put one into your hand and the rest on the bottom of your library in any order. If this spell was kicked, put two into your hand instead.
+Look at the top four cards of your library.
+Put one into your hand and the rest on the bottom of your library in any order.
+If this spell was kicked, put two into your hand instead.
 
 [C022] Code-Hack Splicer {U}
 Creature — Human Wizard (1/1)
@@ -273,7 +296,8 @@ Creature — Human Wizard (1/1)
 //
 Deep-Dive Hacker (Color Indicator: Blue)
 Creature — Human Wizard Program (2/1)
-Digital, unblockable
+Digital
+This creature cannot be blocked.
 {U}: Eject.
 
 [C023] Keymaker's Guide {1}{U}
@@ -291,11 +315,12 @@ Digital
 Creature — Program Agent (2/1)
 Flash, digital
 Override creature with digital
-When Local Beat Cop enters, tap target creature. It doesn't untap during its controller's next untap step.
+When Local Beat Cop enters, tap target creature. Put a stun counter on it.
 
 [C025] System Scan {1}{U}
 Sorcery
-Target opponent reveals their hand and the top card of their library. You may put the revealed card from their library into their graveyard.
+Target opponent reveals their hand and the top card of their library.
+You may put the revealed card from their library into their graveyard.
 Draw a card.
 
 [C026] Data Courier {1}{U}
@@ -310,7 +335,8 @@ You get {E}.
 
 [C028] Compile Error {1}{U}
 Instant
-Return target nonland permanent to its owner's hand. If you have three or more {E}, scry 2.
+Return target nonland permanent to its owner's hand.
+If you have three or more {E}, scry 2.
 
 [C029] Corrupted Packet {U}
 Instant
@@ -374,16 +400,13 @@ Digital
 {T}: Add {U}. Only use this mana to cast spells with digital, instants, or sorceries.
 {T}: Transform target creature with Eject or Jack-In.
 
+--- UNCOMMONS ---
+
 [U011] Code Freeze {2}{U}
 Instant
 As an additional cost to cast this spell, pay any amount of {E}.
 Tap X target creatures and put two stun counters on each of them, where X is the amount of {E} paid plus one.
 Draw a card.
-
-[R011] Extended Network {2}{U}{U}
-Enchantment
-You may have creatures you control override creatures you don't control. (You still control the overriding creature.)
-Whenever a creature you control overrides another creature, draw a card.
 
 [U012] Recursive Search {2}{U}
 Sorcery
@@ -400,12 +423,6 @@ You get {E}{E}.
 [U014] Subroutine Optimization {1}{U}
 Enchantment
 Whenever a creature enters under your control, if it has flash or entered during an opponent's turn, draw a card.
-
-[R012] Code Runner {2}{U}
-Creature — Human Rogue (2/2)
-Flash, ward {1}
-Spells you cast during your opponent's turn cost {1} less to cast.
-Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Code Runner and you get {E}.
 
 [U015] Reality Shift {1}{U}
 Instant
@@ -432,6 +449,27 @@ Digital, flying
 Whenever Data Stream Surfer deals combat damage to a player, draw a card.
 {U}: Eject.
 
+[U019] Surveillance Agent {1}{U}
+Creature — Agent Program (3/2)
+Digital
+Override creature with digital
+Surveillance Agent can't be blocked.
+{1}{U}: Return Surveillance Agent to its owner's hand.
+
+--- RARES ---
+
+[R011] Extended Network {2}{U}{U}
+Enchantment
+You may have creatures you control override creatures you don't control.
+(You still control the overriding creature.)
+Whenever a creature you control overrides another creature, draw a card.
+
+[R012] Code Runner {2}{U}
+Creature — Human Rogue (2/2)
+Flash, ward {1}
+Spells you cast during your opponent's turn cost {1} less to cast.
+Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Code Runner and you get {E}.
+
 [R013] Residual Self Image {3}{U}
 Enchantment
 You may cast the back face of double-faced cards in your hand or graveyard as though they were the front face.
@@ -451,8 +489,16 @@ III — Exile all creatures, then return them to the battlefield tapped under th
 
 [R016] Confiscation Coup {3}{U}{U}
 Sorcery
-Choose target artifact or creature. You get {E}{E}{E}{E}. Then you may pay an amount of {E} equal to that permanent's mana value. If you do, gain control of it.
+Choose target artifact or creature. You get {E}{E}{E}{E}.
+Then you may pay an amount of {E} equal to that permanent's mana value. If you do, gain control of it.
 “You belong to me now, Mr. Anderson.”
+
+[R081] Thomas Anderson {1}{U}
+Legendary Creature — Human (1/2)
+Skulk, digital
+When Thomas Anderson deals combat damage to a player, look at the top card of your library. If it's a legendary creature, you may reveal it and put it into your hand. If you do, put a +1/+1 counter on Thomas Anderson.
+
+--- MYTHICS ---
 
 [M02] The Analyst {2}{U}{U}
 Legendary Creature — Program Advisor (2/3)
@@ -477,12 +523,10 @@ Whenever you cast a spell, you may pay {E}{E}. If you do, choose one:
 • Return target nonland permanent to its owner's hand.
 • Target creature's base power and toughness becomes 1/1 until end of turn.
 
-[R081] Thomas Anderson {1}{U}
-Legendary Creature — Human (1/2)
-Skulk, digital
-When Thomas Anderson deals combat damage to a player, look at the top card of your library. If it's a legendary creature, you may reveal it and put it into your hand. If you do, put a +1/+1 counter on Thomas Anderson.
 
-BLACK (33 Cards)
+========== BLACK (40 Cards) ==========
+
+--- COMMONS ---
 
 [C041] Battery Farm Cultivator {2}{B}
 Artifact Creature — Robot (2/3)
@@ -557,6 +601,27 @@ Sorcery
 Target player discards two cards and loses {E}{E}{E}.
 “Deleting personality files...”
 
+[C058] Deploy Sentinels {2}{B}
+Sorcery
+Create two 1/1 colorless Robot artifact creature tokens with flying. You get {E}{E}.
+
+[C059] Viral Injection {1}{B}
+Instant
+Target creature gets +2/+0 and gains digital until end of turn.
+When that creature dies this turn, draw a card.
+
+[C060] System Drain {1}{B}
+Sorcery
+Target opponent loses 2 life and you gain 2 life.
+You get {E}{E}.
+
+[C061] Blood-Fuel Converter {1}{B}
+Creature — Human Cleric (1/2)
+{1}{B}, Pay 1 life: You get {E}{E}.
+“The body is just a battery.”
+
+--- UNCOMMONS ---
+
 [U021] Recycled Data {1}{B}
 Creature — Program Virus (2/1)
 Digital
@@ -577,56 +642,74 @@ Sorcery
 Return up to two target creature cards from your graveyard to your hand.
 If you control a Robot or a creature with digital, you get {E}{E}.
 
-[R021] Sentinel Swarm {3}{B}
-Artifact Creature — Robot (2/3)
-Flying, menace
-When Sentinel Swarm enters, create three 1/1 colorless Robot artifact creature tokens with flying.
-Sacrifice a Robot: Sentinel Swarm gets +2/+2 until end of turn.
-Whenever a Robot you control dies, you may pay {B}. If you do, create a 1/1 colorless Robot artifact creature token with flying.
-
-[C058] Deploy Sentinels {2}{B}
-Sorcery
-Create two 1/1 colorless Robot artifact creature tokens with flying. You get {E}{E}.
-
-[C059] Viral Injection {1}{B}
-Instant
-Target creature gets +2/+0 and gains digital until end of turn.
-When that creature dies this turn, draw a card.
-
 [U025] Cross-Wiring {B}
 Enchantment — Aura
 Enchant creature
 Enchanted creature has deathtouch.
 When Cross-Wiring enters, create a Gun token.
 
-[C060] System Drain {1}{B}
+[U027] Meter Reader {1}{B}
+Creature — Agent Program (2/3)
+Digital, menace
+Override creature with digital
+Whenever Meter Reader deals combat damage to a player, that player loses {E} equal to the damage dealt.
+You get {E} equal to the amount of {E} that player lost.
+
+[U028] Reinforcement Agent {1}{B}
+Creature — Agent Program (4/4)
+Digital
+Override creature with digital
+
+[U029] Hardline Interceptor {1}{B}{B}
+Creature — Program Agent (2/2)
+Digital
+When Hardline Interceptor enters, target creature gets -2/-2 until end of turn.
+If that creature has digital, it gets -4/-4 until end of turn instead.
+"The system doesn't just find glitches; it deletes them."
+
+[U030] Systematic Overwrite {2}{B}
 Sorcery
-Target opponent loses 2 life and you gain 2 life.
-You get {E}{E}.
+Target creature's controller sacrifices it unless they pay {E}{E}{E}.
+If a creature died this turn, you may return target Robot or Program card from your graveyard to your hand.
+"A simple rewrite of the primary instruction set."
+
+[U031] Zion Fuel-Runner {2}{B}
+Creature — Human Rogue (3/2)
+When Zion Fuel-Runner enters, you may exile an artifact or creature card from your graveyard. If you do, you get {E}{E}.
+Pay {E}{E}: Target creature gains lifelink until end of turn.
+"In the tunnels, nothing is truly dead until it's out of sparks."
+
+[U032] Sentinel Scavenger {3}{B}
+Artifact Creature — Robot (3/3)
+Menace
+Whenever another artifact or creature you control is put into a graveyard from the battlefield, you get {E}.
+Sacrifice an artifact or creature: Sentinel Scavenger gets +1/+1 until end of turn.
+
+[U033] Neural Spike {B}
+Instant
+Target opponent reveals their hand. You choose a nonland card from it.
+That player discards that card unless they pay {E}{E}.
+If you control a creature with digital, you gain 2 life.
+"It's not just the mind that feels the pain; it's the connection."
+
+--- RARES ---
+
+[R021] Sentinel Swarm {4}{B}
+Artifact Creature — Robot (2/3)
+Flying, menace
+When Sentinel Swarm enters, create three 1/1 colorless Robot artifact creature tokens with flying.
+Sacrifice a Robot: Sentinel Swarm gets +2/+2 until end of turn.
+Whenever a Robot you control dies, you may pay {1}{B}. If you do, create a 1/1 colorless Robot artifact creature token with flying.
 
 [R022] Black Market Surgeon {2}{B}
 Creature — Human Rogue (2/3)
 {1}, Sacrifice another creature: Return target creature card with mana value less than the sacrificed creature's mana value from your graveyard to your hand.
 {2}{B}, Sacrifice two creatures: Return target creature card from your graveyard to the battlefield.
 
-[R026] Copper-Top Rebel {B}
-Creature — Human Rebel (1/1)
-{1}{B}, Sacrifice another creature: Jack-in.
-//
-Unshackled Virus (Color Indicator: Black)
-Creature — Human Program (5/4)
-Digital, menace
-At the beginning of your end step, sacrifice a creature or eject.
-
-[C061] Blood-Fuel Converter {1}{B}
-Creature — Human Cleric (1/2)
-{1}{B}, Pay 1 life: You get {E}{E}.
-“The body is just a battery.”
-
 [R023] The Trainman {2}{B}
 Legendary Creature — Program Guide (2/3)
 Digital
-When The Trainman enters, exile another target creature until The Trainman leaves the battlefield. If you control the exiled card, draw two cards. If you don't control the exiled card, its owner loses 2 life and you gain 2 life.
+When The Trainman enters, exile another target creature until The Trainman leaves the battlefield. If you control the exiled card, draw two cards and lose 2 life. If you don't control the exiled card, its owner loses 2 life and you gain 2 life.
 
 [R024] Scorched Skies {2}{B}{B}
 Enchantment — Saga
@@ -639,13 +722,27 @@ Enchantment
 Whenever a creature dies, each opponent loses 1 life and you gain 1 life.
 At the beginning of your end step, if three or more creatures died this turn, draw a card.
 
+[R026] Copper-Top Rebel {B}
+Creature — Human Rebel (1/1)
+{1}{B}, Sacrifice another creature: Jack-in.
+//
+Unshackled Virus (Color Indicator: Black)
+Creature — Human Program (5/4)
+Digital, menace
+At the beginning of your end step, sacrifice a creature or eject.
+
+--- MYTHICS ---
+
 [M05] Nightmare Matrix {4}{B}{B}
 Enchantment
 Creatures you control have digital and menace.
 Whenever a creature an opponent controls dies, return it to the battlefield under your control. It's an Agent Program in addition to its other types.
 “The perfect world was a dream that your primitive cerebrum kept trying to wake up from.”
 
-RED (33 Cards)
+
+========== RED (33 Cards) ==========
+
+--- COMMONS ---
 
 [C071] Electrobolt {R}
 Instant
@@ -743,6 +840,8 @@ When Machine Addict enters, add {E}{E}{E}. At the beginning of your next end ste
 Creature - Human Citizen (2/1)
 {1}, {T}, Discard a card: Draw a card.
 
+--- UNCOMMONS ---
+
 [U031] Take the Red Pill {1}{R}
 Enchantment — Aura
 Enchant creature
@@ -752,18 +851,8 @@ When Take the Red Pill enters, put a +1/+1 counter on target creature.
 [U032] Pipeline Saboteur {1}{R}
 Creature — Human Rogue (2/1)
 Haste
-When Pipeline Saboteur attacks, you may pay {E}. If you do, target creature can't block this turn.
-
-[R031] System Override {2}{R}
-Sorcery
-Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn. If it's an artifact or has digital, sacrifice it at the beginning of the next end step.
-You may cast System Override as though it had flash if you have four or more {E}.
-
-[R032] Hunter-Killer Sentinel {3}{R}
-Artifact Creature — Robot (3/3)
-Flash, flying
-When Hunter-Killer Sentinel enters, you may change the target of target spell or ability to Hunter-Killer Sentinel.
-Whenever Hunter-Killer Sentinel deals combat damage to a player, you may sacrifice it. If you do, it deals 4 damage to each creature that player controls.
+When Pipeline Saboteur attacks, you may pay {E}.
+If you do, target creature can't block this turn.
 
 [U033] Surge Channeler {2}{R}
 Creature — Human Artificer (2/3)
@@ -811,6 +900,21 @@ Creature — Human Artificer (3/2)
 Whenever you sacrifice an Equipment, Volatile Fabricator deals 1 damage to any target.
 “Don't let the casing go to waste. It's explosive.”
 
+--- RARES ---
+
+[R031] System Override {2}{R}
+Sorcery
+Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn.
+If it's an artifact or has digital, sacrifice it at the beginning of the next end step.
+You may cast System Override as though it had flash if you have four or more {E}.
+
+[R032] Hunter-Killer Sentinel {3}{R}
+Artifact Creature — Robot (3/3)
+Flash, flying
+When Hunter-Killer Sentinel enters, you may change the target of target spell or ability to Hunter-Killer Sentinel.
+Whenever Hunter-Killer Sentinel deals combat damage to a player, you may sacrifice it.
+If you do, it deals 4 damage to each creature that player controls.
+
 [R033] EMP Blast {1}{R}{R}
 Sorcery
 EMP Blast deals 3 damage to each creature with digital and each artifact creature.
@@ -825,7 +929,8 @@ III — Create a 5/5 colorless Robot artifact creature token with menace and has
 [R035] Cypher, Reality Skeptic {2}{R}
 Legendary Creature — Human Rogue (2/2)
 First strike
-At the beginning of your precombat main phase, you may sacrifice a creature or artifact. If you do, add {R}{R} and exile the top card of your library. You may play that card this turn.
+At the beginning of your precombat main phase, you may sacrifice a creature or artifact.
+If you do, add {R}{R} and exile the top card of your library. You may play that card this turn.
 
 [R036] The Red Woman {1}{R}{R}
 Legendary Creature — Program (1/1)
@@ -834,13 +939,18 @@ Creatures your opponents control attack each combat if able.
 Whenever a creature an opponent controls attacks, if it isn't attacking you or a planeswalker you control, you draw a card and lose 1 life.
 "Were you listening to me, Neo? Or were you looking at the woman in the red dress?"
 
+--- MYTHICS ---
+
 [M06] System Instability {3}{R}{R}
 Enchantment
 If a source would deal damage to a permanent or player, it deals double that damage instead.
 At the beginning of your upkeep, exile the top card of your library. You may play it this turn.
 “It’s crashing.”
 
-GREEN (34 Cards)
+
+========== GREEN (34 Cards) ==========
+
+--- COMMONS ---
 
 [C091] APU Operator {2}{G}
 Creature — Human Soldier (3/3)
@@ -926,7 +1036,7 @@ Target creature you control deals damage equal to its power to targer creature y
 
 [C108] Sifter of Ruins {1}{G}
 Creature - Human Archivist (1/2)
-When this creature enters, mill three cards. You may put a land card from among them into your hand. If you don't, put a +1/+1 counter on this creature. 
+When this creature enters, mill three cards. You may put a land card from among them into your hand. If you don't, put a +1/+1 counter on this creature.
 
 [C109] Lineage Honorer {3}{G}
 Creature - Human Archivist (4/3)
@@ -937,15 +1047,12 @@ At the beginning of your end step, if a creature died this turn, put a +1/+1 cou
 Creature — Human Druid (1/3)
 {T}: Add {G}. If this mana is spent to cast a creature spell that doesn't have digital, that creature enters with an additional +1/+1 counter on it.
 
+--- UNCOMMONS ---
+
 [U041] Heavy-Duty Construct {3}{G}
 Creature — Robot (6/6)
 Trample
 As an additional cost to cast this spell, pay {E}{E} or sacrifice a creature.
-
-[R041] Bio-Energy Conversion {1}{G}
-Enchantment
-Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token and you get {E}. This ability triggers only once each turn.
-{1}, Sacrifice an Ooze: Surveil 1.
 
 [U042] Nutrient Silo {1}{G}
 Creature — Plant Wall (0/4)
@@ -995,6 +1102,14 @@ Trample
 Pay {E}: Augmented Brawler gets +1/+1 until end of turn.
 “My upgrades are real.”
 
+--- RARES ---
+
+[R041] Bio-Energy Conversion {1}{G}
+Enchantment
+Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token and you get {E}.
+This ability triggers only once each turn.
+{1}, Sacrifice an Ooze: Surveil 1.
+
 [R042] Reclaim the Surface {4}{G}{G}
 Sorcery
 Create two 4/4 green Beast creature tokens.
@@ -1026,11 +1141,18 @@ Reach
 When Zion Archivist enters, shuffle target player's graveyard into their library. You may draw a card for each creature card shuffled into a library this way, then discard that many cards.
 {G}, {T}: Put target card from your graveyard on the bottom of your library. If it was a Human or Robot card, draw a card.
 
+--- MYTHICS ---
+
 [M08] Root Access {5}{G}{G}
 Sorcery
-Reveal the top seven cards of your library. You may put any number of permanent cards from among them onto the battlefield. Put the rest on the bottom of your library in a random order.
+Reveal the top seven cards of your library.
+You may put any number of permanent cards from among them onto the battlefield.
+Put the rest on the bottom of your library in a random order.
 
-MULTICOLOR (67 Cards)
+
+========== MULTICOLOR (59 Cards) ==========
+
+--- UNCOMMONS ---
 
 [U051] Agent White {1}{W}{B}
 Legendary Creature — Agent Program (3/4)
@@ -1105,54 +1227,6 @@ Defender
 Matrix Watcher can block creatures with digital as though they didn't have digital.
 {2}{G}: Scry 1.
 
-[U027] Meter Reader {1}{B}
-Creature — Agent Program (2/3)
-Digital, menace
-Override creature with digital
-Whenever Meter Reader deals combat damage to a player, that player loses {E} equal to the damage dealt. You get {E} equal to the amount of {E} that player lost.
-
-[U028] Reinforcement Agent {1}{B}
-Creature — Agent Program (4/4)
-Digital
-Override creature with digital
-
-[U029] Hardline Interceptor {1}{B}{B}
-Creature — Program Agent (2/2)
-Digital
-When Hardline Interceptor enters, target creature gets -2/-2 until end of turn. If that creature has digital, it gets -4/-4 until end of turn instead.
-"The system doesn't just find glitches; it deletes them."
-
-[U030] Systematic Overwrite {2}{B}
-Sorcery
-Target creature's controller sacrifices it unless they pay {E}{E}{E}.
-If a creature died this turn, you may return target Robot or Program card from your graveyard to your hand.
-"A simple rewrite of the primary instruction set."
-
-[U031] Zion Fuel-Runner {2}{B}
-Creature — Human Rogue (3/2)
-When Zion Fuel-Runner enters, you may exile an artifact or creature card from your graveyard. If you do, you get {E}{E}.
-Pay {E}{E}: Target creature gains lifelink until end of turn.
-"In the tunnels, nothing is truly dead until it's out of sparks."
-
-[U032] Sentinel Scavenger {3}{B}
-Artifact Creature — Robot (3/3)
-Menace
-Whenever another artifact or creature you control is put into a graveyard from the battlefield, you get {E}.
-Sacrifice an artifact or creature: Sentinel Scavenger gets +1/+1 until end of turn.
-
-[U033] Neural Spike {B}
-Instant
-Target opponent reveals their hand. You choose a nonland card from it. That player discards that card unless they pay {E}{E}.
-If you control a creature with digital, you gain 2 life.
-"It's not just the mind that feels the pain; it's the connection."
-
-[U019] Surveillance Agent {1}{U}
-Creature — Agent Program (3/2)
-Digital
-Override creature with digital
-Surveillance Agent can't be blocked.
-{1}{U}: Return Surveillance Agent to its owner's hand.
-
 [U092] Swarm Commander {B}{R}
 Artifact Creature — Robot (2/2)
 Menace
@@ -1209,6 +1283,8 @@ Digital
 Ward—Pay 3 life.
 If damage would be dealt to Cain and Abel, prevent that damage unless the source is an Artifact.
 
+--- RARES ---
+
 [R051] Agent Smith, Unshackled {3}{B}{R}
 Legendary Creature — Agent Rogue (4/4)
 Override creature
@@ -1255,7 +1331,8 @@ Whenever Trinity, Digital Savior attacks, create a Gun token attached to her.
 Legendary Creature — Human Rogue (2/4)
 Haste
 Whenever you cast an instant or sorcery spell, you get {E}.
-Whenever Apoc attacks, you may pay {E}{E}{E}. If you do, copy the next instant or sorcery spell you cast this turn. You may choose new targets for the copy.
+Whenever Apoc attacks, you may pay {E}{E}{E}. If you do, copy the next instant or sorcery spell you cast this turn.
+You may choose new targets for the copy.
 
 [R057] Harvester Unit {3}{B}
 Artifact Creature — Robot (4/4)
@@ -1287,12 +1364,8 @@ At the beginning of your upkeep, you may mill two cards.
 [R062] Prime Sentinel, The Hunter {3}{B}{R}
 Legendary Artifact Creature — Robot (5/4)
 Flying, menace
-Whenever Prime Sentinel, The Hunter attacks, you may sacrifice another artifact or creature. If you do, Prime Sentinel deals damage equal to that card's mana value to any target.
-
-[R006] Zion Frontline Hero {2}{W}
-Creature — Human Soldier (3/2)
-Whenever Zion Frontline Hero attacks, another target attacking creature gets +X/+X until end of turn, where X is Zion Frontline Hero's power.
-At the beginning of your end step, if Zion Frontline Hero is in your graveyard and you control three or more other creatures, you may pay {E}{E}. If you do, return it to your hand.
+Whenever Prime Sentinel, The Hunter attacks, you may sacrifice another artifact or creature.
+If you do, Prime Sentinel deals damage equal to that card's mana value to any target.
 
 [R063] Commander Lock {2}{G}{W}
 Legendary Creature — Human Soldier (3/4)
@@ -1309,18 +1382,6 @@ Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Sera
 [R065] Martial Arts Upload {X}{G}
 Instant
 Distribute X +1/+1 counters among any number of target creatures you control. Those creatures gain trample until end of turn.
-
-[M09] The Architect, System Creator {4}{W}{U}
-Legendary Creature — Avatar Program (3/6)
-Digital, vigilance
-When The Architect enters, return all creatures to their owners' hands.
-Whenever a creature enters, its controller may pay {2}. If they don't, put a digital counter on it. (Creatures with digital counters have digital.)
-
-[M10] Agent Smith, System Anomaly {1}{W}{B}
-Legendary Creature — Program Agent (3/3)
-Digital, menace
-The "legend rule" doesn't apply to tokens you control named Agent Smith, System Anomaly.
-Whenever Agent Smith deals combat damage to a player, create a token that's a copy of it.
 
 [R067] Niobe, Logos Commander {3}{R}{W}{B}
 Legendary Creature — Human Pilot (5/5)
@@ -1343,12 +1404,6 @@ Legendary Creature — Human Rogue (3/2)
 Menace
 Whenever Bane, Sleeper Agent deals combat damage to a player, you may sacrifice an artifact or creature. If you do, look at that player's hand and choose a nonland card from it. That player discards that card.
 When Bane, Sleeper Agent dies, you may pay {E}{E}{E}. If you do, return it to its owner's hand.
-
-[M11] Sati, The Sunrise {G}{W}
-Legendary Creature — Program Child (1/2)
-Digital
-{T}: Add one mana of any color.
-{W}{U}{G}, {T}, Sacrifice Sati: Exile all nonland permanents, then return them to the battlefield tapped under their owners' control.
 
 [R071] Morpheus, Dojo Master {2}{G}{U}
 Legendary Creature — Human Monk (3/3)
@@ -1396,17 +1451,39 @@ Legendary Creature — Human Avatar (1/1)
 {R/W}{R/W}: If Neo is a Monk, it becomes a 3/3 Human Monk Soldier and gains prowess.
 {R/W}{R/W}{R/W}: If Neo is a Soldier, put a +1/+1 counter on it and it gains digital until end of turn.
 
+[R080] Agent Smith, System Virus {3}{B}{B}
+Legendary Creature — Agent Program (4/4)
+Digital, ward {2}
+Whenever a creature enters under an opponent's control, you may pay {B}.
+If you do, gain control of it until the end of your next turn.
+At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own.
+
 [R082] Bullet Time Physics {1}{G}{U}
 Enchantment
 Creatures you control have "{1}, {Q}, Pay {E}: This creature gains hexproof and indestructible until end of turn."
 ({Q} is the untap symbol.)
 “He moves like they do.”
 
-[R080] Agent Smith, System Virus {3}{B}{B}
-Legendary Creature — Agent Program (4/4)
-Digital, ward {2}
-Whenever a creature enters under an opponent's control, you may pay {B}. If you do, gain control of it until the end of your next turn.
-At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own.
+--- MYTHICS ---
+
+[M09] The Architect, System Creator {4}{W}{U}
+Legendary Creature — Avatar Program (3/6)
+Digital, vigilance
+When The Architect enters, return all creatures to their owners' hands.
+Whenever a creature enters, its controller may pay {2}. If they don't, put a digital counter on it.
+(Creatures with digital counters have digital.)
+
+[M10] Agent Smith, System Anomaly {1}{W}{B}
+Legendary Creature — Program Agent (3/3)
+Digital, menace
+The "legend rule" doesn't apply to tokens you control named Agent Smith, System Anomaly.
+Whenever Agent Smith deals combat damage to a player, create a token that's a copy of it.
+
+[M11] Sati, The Sunrise {G}{W}
+Legendary Creature — Program Child (1/2)
+Digital
+{T}: Add one mana of any color.
+{W}{U}{G}, {T}, Sacrifice Sati: Exile all nonland permanents, then return them to the battlefield tapped under their owners' control.
 
 [M12] Neo, Humanity's Inspiration {1}{U}{W}{R}
 Legendary Creature — Human Monk (3/4)
@@ -1426,7 +1503,15 @@ When The Hammer enters, you get {E}{E}{E}.
 Whenever The Hammer attacks, you may pay {E}{E}. If you do, destroy target artifact or creature with digital.
 Crew 3
 
-ARTIFACTS & COLORLESS (25 Cards)
+
+========== ARTIFACTS & COLORLESS (26 Cards) ==========
+
+--- COMMONS ---
+
+[C120] The Oracle’s Cookie {1}
+Artifact — Food
+When The Oracle’s Cookie enters, scry 2.
+{2}, {T}, Sacrifice The Oracle’s Cookie: You gain 3 life.
 
 [C121] APU Corps {5}
 Artifact Creature — Construct Mech (4/5)
@@ -1447,11 +1532,6 @@ Artifact — Vehicle (3/4)
 Scavenged Chassis gets +2/+1 if it was crewed by a Robot this turn.
 Crew 1
 
-[C94] The Oracle’s Cookie {1}
-Artifact — Food
-When The Oracle’s Cookie enters, scry 2.
-{2}, {T}, Sacrifice The Oracle’s Cookie: You gain 3 life.
-
 [C126] Tasty Wheat {1}
 Artifact — Food
 {2}, {T}, Sacrifice Tasty Wheat: You gain 3 life and draw a card.
@@ -1466,6 +1546,13 @@ Artifact
 When Prism Interface enters, draw a card and you get {E}.
 {1}, {T}: Add one mana of any color.
 {T}, Pay {E}: Add one mana of any color.
+
+[C129] Combat Hovercraft {3}{R}
+Artifact — Vehicle (5/3)
+Trample
+Crew 2
+
+--- UNCOMMONS ---
 
 [U061] Operator's Console {2}
 Artifact
@@ -1499,11 +1586,6 @@ Artifact — Equipment
 Equipped creature gets +1/+0 and has "{2}, {T}: Tap target creature."
 Equip {1}
 
-[C129] Combat Hovercraft {3}{R}
-Artifact — Vehicle (5/3)
-Trample
-Crew 2
-
 [U067] Sentinel Carcass {4}
 Artifact — Vehicle (5/4)
 Menace
@@ -1521,7 +1603,7 @@ When Red Woman Code enters, goad target creature.
 
 [U070] Portable EMP {3}
 Artifact
-{T}, Sacrifice Portable EMP: Tap all artifacts and creatures with digital. They don't untap during their controllers' next untap step.
+{T}, Sacrifice Portable EMP: Tap all artifacts and creatures with digital. Put a stun counter on each creature tapped this way.
 
 [U071] Electronic Tracking Bug {1}
 Artifact — Equipment
@@ -1529,11 +1611,7 @@ When Electronic Tracking Bug enters, look at target opponent's hand.
 Equipped creature gets +1/+0 and has "Whenever this creature deals combat damage to a player, scry 1."
 Equip {1}
 
-[M14] The Nebuchadnezzar {4}
-Artifact — Vehicle (4/5)
-Flying
-Whenever The Nebuchadnezzar attacks, you may have any number of creatures you control jack-in or eject. Put a +1/+1 counter on each of those creatures.
-Crew 2
+--- RARES ---
 
 [R091] APU Gatling Cannon {3}
 Artifact — Equipment
@@ -1554,6 +1632,15 @@ Digital, haste
 Whenever The Ducati attacks, you may pay {E}{E}. If you do, target creature can't block this turn.
 Crew 1
 
+--- MYTHICS ---
+
+[M14] The Nebuchadnezzar {4}
+Artifact — Vehicle (4/5)
+Flying
+Whenever The Nebuchadnezzar attacks, you may have any number of creatures you control jack-in or eject.
+Put a +1/+1 counter on each of those creatures.
+Crew 2
+
 [M15] Deus Ex Machina {8}
 Legendary Artifact Creature — God Construct (8/8)
 Indestructible
@@ -1561,7 +1648,10 @@ As long as you have nine or fewer {E}, Deus Ex Machina isn't a creature.
 At the beginning of your upkeep, you get {E}{E}.
 {T}, Pay {E}{E}{E}{E}: Destroy target permanent.
 
-LANDS (16 Cards)
+
+========== LANDS (17 Cards) ==========
+
+--- COMMONS ---
 
 [CL01] Simulated Skyline
 Land
@@ -1627,6 +1717,8 @@ Construct Loading Zone enters tapped.
 Land
 {T}, Sacrifice Hardline Exit: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.
 
+--- UNCOMMONS ---
+
 [UL01] Broadcast Node
 Land
 {T}: Add {C}.
@@ -1645,6 +1737,8 @@ Land
 {T}: Add {C}.
 {1}{B}{G}, {T}, Sacrifice a creature: You get {E}{E}.
 “There are fields, endless fields, where human beings are no longer born. We are grown.”
+
+--- RARES ---
 
 [RL01] 01, The Machine City
 Legendary Land
