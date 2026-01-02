@@ -1310,12 +1310,6 @@ Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Sera
 Instant
 Distribute X +1/+1 counters among any number of target creatures you control. Those creatures gain trample until end of turn.
 
-[R066] Neo, The Awakened {2}{G}{U}
-Legendary Creature — Human Avatar (3/3)
-Flash, hexproof
-Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Neo, The Awakened.
-As long as Neo has power 5 or greater, he has flying and trample.
-
 [M09] The Architect, System Creator {4}{W}{U}
 Legendary Creature — Avatar Program (3/6)
 Digital, vigilance
@@ -1550,7 +1544,7 @@ Equip {2}
 [R092] The Logos {3}
 Legendary Artifact — Vehicle (3/4)
 Flying
-Whenever The Logos deals combat damage to a player, scry 2.
+Whenever The Logos deals combat damage to a player, draw a card.
 Whenever you draw a card, if The Logos is a creature, put a +1/+1 counter on it.
 Crew 2
 

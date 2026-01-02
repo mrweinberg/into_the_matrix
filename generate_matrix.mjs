@@ -345,7 +345,7 @@ class Card {
         .replace(/Digital|Jack-in|Eject|Override|Scry|Ward/g, "")
         .replace(/\(Color Indicator: .*?\)/g, "")
         .replace(/\\/g, "") 
-        .substring(0, 300);
+        .substring(0, 600);
 
     return `
       Generate an image.
@@ -357,8 +357,6 @@ class Card {
       
       STRICT VISUAL CONSTRAINTS:
       1. ${world.tech} (Strictly adhere to this era).
-      2. NO medieval weaponry (bows, swords, shields).
-      3. NO wizards in robes.
       4. WEAPONRY: Modern firearms, martial arts, or futuristic lightning rifles (only if Real World).
       5. ${robotVisuals}
       ${sunglassesConstraint}

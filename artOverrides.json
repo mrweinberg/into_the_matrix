@@ -29,5 +29,12 @@
         "artStyle": "Resemble the works of Therese Neilsen",
         "composition": "The Oracle and The Architect in the foreground, the city in the background",
         "lighting": "Soft, natural lighting with a warm glow, evoking a sense of peace and contemplation."
+    },
+    {
+        "id": "U099",
+        "subject": "Captain Mifune, a middle-aged black man in a white robe with a red vest. Portrayed by Nathaniel Lees. He has a focused look on his face as he commands his construct.",
+        "setting": "The dock of Zion, under seige by sentinels. The sky is dark and filled with smoke, with the city in the background.",
+        "composition": "Captain Mifune in the foreground, in his construct, leading a group of rebels against the sentinels.",
+        "lighting": "Harsh, dramatic lighting with strong contrasts, highlighting the chaos of the battle."
     }
 ]
