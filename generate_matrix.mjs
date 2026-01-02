@@ -300,7 +300,7 @@ class Card {
     const robotVisuals = this.getRobotVisuals();
     
     // NEW V33 FEATURES
-    const lighting = this.getLighting(); 
+    let lighting = this.getLighting(); 
     const visualKeywords = this.getVisualKeywords();
     const framingInstruction = this.getFramingInstruction(); 
     if (framingInstruction) {
@@ -335,6 +335,7 @@ class Card {
         if (override.subject) subjectDescription = override.subject; 
         if (override.composition) composition = "COMPOSITION: " + override.composition;
         if (override.artStyle) artStyle = override.artStyle;
+        if (override.lighting) lighting = override.lighting;
         if (override.sunglasses === false) sunglassesConstraint = "6. NO SUNGLASSES.";
         if (override.sunglasses === true) sunglassesConstraint = "6. Sunglasses are MANDATORY.";
     }

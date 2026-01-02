@@ -21,5 +21,13 @@
         "id": "C089",
         "setting": "Inside a makeshift tent-shop in Zion",
         "subject": "A wily old rebel merchant showing off various weapons and gear to a group of new recruits."
+    },
+    {
+        "id": "M01",
+        "subject": "The Oracle (an old Black lady with white hair and a warm smile) and The Architect (a middle-aged white man with white hair in a suit) sitting on a bench, engaged in a deep conversation.",
+        "setting": "Inside the matrix, but without any digital artifacts. A serene park with lush greenery and a calm pond reflecting the sky.",
+        "artStyle": "Resemble the works of Therese Neilsen",
+        "composition": "The Oracle and The Architect in the foreground, the city in the background",
+        "lighting": "Soft, natural lighting with a warm glow, evoking a sense of peace and contemplation."
     }
 ]
