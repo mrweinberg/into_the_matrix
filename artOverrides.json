@@ -11,5 +11,15 @@
         "id": "C087",
         "setting": "A workshop in the real world, near Zion",
         "subject": "A large pot of molten metal, with a sentinel being melted into it."
+    },
+    {
+        "id": "C019",
+        "setting": "Inside the matrix, a busy urban street at night",
+        "subject": "Two plugged-in rebels are behind cover, with agents on the other side. Each has a gun appear in-hand"
+    },
+    {
+        "id": "C089",
+        "setting": "Inside a makeshift tent-shop in Zion",
+        "subject": "A wily old rebel merchant showing off various weapons and gear to a group of new recruits."
     }
 ]
