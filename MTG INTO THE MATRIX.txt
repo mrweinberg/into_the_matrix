@@ -150,6 +150,26 @@ Target creature gains protection from artifacts, from instants, and from sorceri
 Creature — Human Cleric (2/4)
 When Prophesizing Elder enters, scry 2 and you gain 2 life.
 
+[C016] Operator Support {W}
+Instant
+Target creature gets +2/+2. You get {E}{E}.
+
+[C017] Zion Volunteer {1}{W}
+Creature - Human Citizen (3/1)
+Ward {1}
+When Zion Volunteer enters, if you control an artifact, gain 3 life.
+
+[C018] Forceful Disarmament {1}{W}
+Instant
+Choose one:
+* Destroy target artifact.
+* Destroy target enchantment.
+* Destroy up to 3 target artifact tokens.
+
+[C019] Weapon Drop {1}{W}
+Instant
+Create two Gun tokens. You may attach them to creatures you control.
+
 [R001] Emergency Protocol {1}{W}
 Instant
 Choose one —
@@ -177,10 +197,6 @@ Creatures you control get +0/+2 as long as they are untapped.
 [U004] Scrap-Metal Tactician {1}{W}
 Creature — Human Artificer (2/2)
 Whenever an Equipment you control is put into a graveyard from the battlefield, put a +1/+1 counter on Scrap-Metal Tactician.
-
-[C016] Weapon Drop {1}{W}
-Instant
-Create two Gun tokens. You may attach them to creatures you control.
 
 [R002] Automated Turret {2}{W}
 Artifact Creature — Robot Wall (4/4)
@@ -284,7 +300,7 @@ Draw a card.
 
 [C026] Data Courier {1}{U}
 Creature — Program Scout (2/1)
-Digital, flying
+Digital
 When Data Courier leaves the battlefield, draw a card.
 
 [C027] Blue Screen {1}{U}
@@ -338,6 +354,25 @@ Enchantment — Aura
 Enchant creature
 When Take the Blue Pill enters, tap enchanted creature and you get {E}{E}.
 Enchanted creature doesn't untap during its controller's untap step.
+
+[C038] Archive Interface {1}{U}
+Creature — Wall (0/4)
+Defender, digital
+{T}, Pay {E}{E}: Draw a card.
+"Knowledge is free, if you have the bandwidth."
+
+[C039] Glitch Trap {1}{U}
+Enchantment - Aura
+Flash
+Enchant creature or artifact
+Enchanted permanent does not untap during its controller's untap step.
+{E}{E}: Shuffle enchanted permanent into its owner's deck.
+
+[C040] Link Monitor {1}{U}
+Creature - Program Artificer (2/1)
+Digital
+{T}: Add {U}. Only use this mana to cast spells with digital, instants, or sorceries.
+{T}: Transform target creature with Eject or Jack-In.
 
 [U011] Code Freeze {2}{U}
 Instant
@@ -397,12 +432,6 @@ Digital, flying
 Whenever Data Stream Surfer deals combat damage to a player, draw a card.
 {U}: Eject.
 
-[C038] Archive Interface {1}{U}
-Creature — Wall (0/4)
-Defender, digital
-{T}, Pay {E}{E}: Draw a card.
-"Knowledge is free, if you have the bandwidth."
-
 [R013] Residual Self Image {3}{U}
 Enchantment
 You may cast the back face of double-faced cards in your hand or graveyard as though they were the front face.
@@ -460,10 +489,6 @@ Artifact Creature — Robot (2/3)
 When Battery Farm Cultivator enters, you get {E}{E}.
 Whenever Battery Farm Cultivator attacks, you may pay {E}{E}. If you do, create a 1/1 white Citizen creature token with digital.
 
-[C042] Standard Procedure {1}{B}
-Instant
-Target creature gets -2/-2 until end of turn. If you control an Agent, destroy that creature instead.
-
 [C043] Disposable Informant {B}
 Creature — Human Program Assassin (1/1)
 Digital, deathtouch
@@ -497,12 +522,6 @@ Menace
 Artifact Creature — Robot (3/2)
 Menace
 When Dredge-Line Crawler dies, you may return target artifact card with mana value 3 or less from your graveyard to your hand.
-
-[C050] Malicious Script {1}{B}
-Creature — Program Virus (2/1)
-Digital
-Malicious Script can't block.
-Unearth {1}{R}
 
 [C051] Merovingian's Indulgence {1}{B}
 Instant
@@ -711,6 +730,19 @@ Panic Fire deals 4 damage to target creature.
 Sorcery
 Exile the top two cards of your library. Choose one of them. Until your next turn, you may play that card.
 
+[C087] Slag Melt {1}{R}
+Instant
+Destroy target artifact. If it was a creature, Slag Melt deals 2 damage to that creature's controller.
+
+[C088] Machine Addict {3}{R}
+Creature - Human Rogue (4/3)
+Haste
+When Machine Addict enters, add {E}{E}{E}. At the beginning of your next end step, lose {E}{E}{E}.
+
+[C089] Independent Trader {1}{R}
+Creature - Human Citizen (2/1)
+{1}, {T}, Discard a card: Draw a card.
+
 [U031] Take the Red Pill {1}{R}
 Enchantment — Aura
 Enchant creature
@@ -850,7 +882,7 @@ Target creature you control fights target creature you don't control. If you con
 Enchantment — Aura
 Enchant land
 When Hardline Connection enters, you get {E}{E}.
-Enchanted land has "{T}: Add {G} or {U}."
+Enchanted land has "{T}: Add a mana of any color."
 
 [C100] Dojo Program {3}{G}
 Creature — Program Monk (3/3)
@@ -867,11 +899,10 @@ Creature — Human Scout (2/2)
 Reach
 Whenever you cast a spell that targets Zion Traceur, put a +1/+1 counter on it.
 
-[C103] Attune with Aether {G}
+[C103] Unlikely Growth {1}{G}
 Sorcery
-Search your library for a basic land card, reveal it, put it into your hand, then shuffle.
+Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.
 You get {E}{E}.
-“I’m in. Signal is strong.”
 
 [C104] Bio-Surge {1}{G}
 Instant
@@ -888,6 +919,23 @@ Canopy Stalker can block creatures with digital as though they didn't have digit
 Instant
 Destroy target artifact or enchantment. You get {E}{E}.
 “This doesn't belong here.”
+
+[C107] Kinetic Impact {G}
+Sorcery
+Target creature you control deals damage equal to its power to targer creature you don't control.
+
+[C108] Sifter of Ruins {1}{G}
+Creature - Human Archivist (1/2)
+When this creature enters, mill three cards. You may put a land card from among them into your hand. If you don't, put a +1/+1 counter on this creature. 
+
+[C109] Lineage Honorer {3}{G}
+Creature - Human Archivist (4/3)
+Ward {2}
+At the beginning of your end step, if a creature died this turn, put a +1/+1 counter on this creature.
+
+[C110] Deep Earth Cultivator {1}{G}
+Creature — Human Druid (1/3)
+{T}: Add {G}. If this mana is spent to cast a creature spell that doesn't have digital, that creature enters with an additional +1/+1 counter on it.
 
 [U041] Heavy-Duty Construct {3}{G}
 Creature — Robot (6/6)
@@ -918,10 +966,6 @@ Put a +1/+1 counter on target creature. It gains hexproof and reach until end of
 Enchantment
 When Battery Storage enters, you get {E}{E}.
 Pay {E}{E}: Target artifact or creature you control gains indestructible until end of turn. Tap it.
-
-[U046] Deep Earth Cultivator {1}{G}
-Creature — Human Druid (1/3)
-{T}: Add {G}. If this mana is spent to cast a creature spell that doesn't have digital, that creature enters with an additional +1/+1 counter on it.
 
 [U047] Code Vision {1}{G}
 Enchantment
@@ -1054,10 +1098,6 @@ Draw two cards and you get {E}{E}.
 Creature — Human Artificer (2/2)
 Whenever an artifact creature you control dies, you get {E} and may discard a card. If you do, draw a card.
 {3}, Sacrifice an artifact: Create a 3/3 colorless Robot artifact creature token.
-
-[C111] Enforce Reality {2}{G}
-Instant
-Destroy target artifact, enchantment, or creature with digital.
 
 [U091] Matrix Watcher {2}{G}
 Creature — Human Technician (2/6)

@@ -13,10 +13,8 @@ const INPUT_FILE = "MTG INTO THE MATRIX.txt";
 const OVERRIDE_FILE = "artOverrides.json";
 const OUTPUT_DIR = "matrix_art_output";
 
-// Global Session Seed: Ensures consistency within a run, but variance between runs.
 const SESSION_SEED = Date.now();
 
-// Top 20 Iconic MTG Artists
 const MTG_ARTISTS = [
     "Kev Walker", "John Avon", "Rebecca Guay", "Terese Nielsen", "Christopher Rush",
     "Dan Frazier", "Mark Tedin", "Rob Alexander", "Seb McKinnon", "Chris Rahn",
@@ -25,26 +23,15 @@ const MTG_ARTISTS = [
     "Richard Kane Ferguson"
 ];
 
-// Load Overrides if file exists
 let artOverrides = {};
 if (fs.existsSync(OVERRIDE_FILE)) {
     try {
         const rawData = fs.readFileSync(OVERRIDE_FILE, 'utf8');
-        // Expecting an array of objects or an object keyed by ID. 
-        // Let's assume the JSON is an array of objects like the example provided, 
-        // but we'll convert it to a map for easier lookup.
         const parsedData = JSON.parse(rawData);
-        
         if (Array.isArray(parsedData)) {
-            parsedData.forEach(item => {
-                if (item.id) artOverrides[item.id] = item;
-            });
-        } else {
-             // If it's a single object (like the example provided), wrap it or handle it.
-             // If the example provided was just one entry in a file that might contain many:
-             if (parsedData.id) {
-                 artOverrides[parsedData.id] = parsedData;
-             }
+            parsedData.forEach(item => { if (item.id) artOverrides[item.id] = item; });
+        } else if (parsedData.id) {
+             artOverrides[parsedData.id] = parsedData;
         }
         console.log(`   📂 Loaded ${Object.keys(artOverrides).length} art overrides.`);
     } catch (e) {
@@ -66,6 +53,45 @@ class Card {
     this.flavor = "";
     this.isBackFace = false;
     this.hasBackFace = false; 
+  }
+
+  // --- 1. KEYWORD PARSING (New in V33) ---
+  getVisualKeywords() {
+    const fullText = this.text.join(" ").toLowerCase();
+    let cues = [];
+
+    if (fullText.includes("flying")) cues.push("Subject is AIRBORNE / LEVITATING.");
+    if (fullText.includes("haste")) cues.push("Use MOTION BLUR to convey high speed.");
+    if (fullText.includes("deathtouch")) cues.push("Subject's attacks trail GREEN CODE GLITCHES or POISON.");
+    if (fullText.includes("trample")) cues.push("Subject looks MASSIVE, breaking through obstacles/walls.");
+    if (fullText.includes("vigilance")) cues.push("Subject is ALERT, in a defensive martial arts stance.");
+    if (fullText.includes("stealth") || fullText.includes("hexproof") || fullText.includes("shroud")) cues.push("Subject is partially obscured by shadows or 'bending' light.");
+    if (fullText.includes("flash")) cues.push("Subject is bursting into the scene from code/nothingness.");
+    if (fullText.includes("fight")) cues.push("Action shot: Mid-combat impact.");
+
+    return cues.join(" ");
+  }
+
+  // --- 2. LIGHTING ENGINE (New in V33) ---
+  getLighting() {
+    const c = this.getSubjectColor(); // Reusing existing color logic helper
+    if (c.includes("White")) return "Lighting: Bright, harsh interrogation lights or 'The Construct' pure white.";
+    if (c.includes("Blue")) return "Lighting: Cool blue, CRT monitor glow, rain-slicked reflections.";
+    if (c.includes("Black")) return "Lighting: Low-key Noir, heavy shadows, bioluminescent red/pink ambient glow (if Real World).";
+    if (c.includes("Red")) return "Lighting: Dynamic, high-contrast, sparks flying, muzzle flashes, emergency red sirens.";
+    if (c.includes("Green")) return "Lighting: Iconic 'Matrix Green' tint, fluorescent office flicker, code cascading in shadows.";
+    return "Lighting: Cinematic, high contrast.";
+  }
+
+  // --- 3. TYPE FRAMING (New in V33) ---
+  getFramingInstruction() {
+    const t = this.type.toLowerCase();
+    if (t.includes("land")) return "Framing: PANORAMIC LANDSCAPE / WIDE SHOT. Focus on the environment.";
+    if (t.includes("artifact")) return "Framing: MACRO SHOT / OBJECT STUDY. Focus on the texture and machinery.";
+    if (t.includes("instant") || t.includes("sorcery")) return "Framing: DYNAMIC ACTION SHOT. Capture the exact moment the spell's effect occurs.";
+    if (t.includes("saga") || t.includes("enchantment")) return "Framing: ABSTRACT or SYMBOLIC. Can include floating code or 'glitch' overlays.";
+    if (t.includes("planeswalker")) return "Framing: HEROIC PORTRAIT. Low angle, looking up at the powerful subject.";
+    return ""; // Default for creatures handled by getCompositionType
   }
 
   getSubjectColor() {
@@ -100,9 +126,7 @@ class Card {
     const nameLower = this.name.toLowerCase();
 
     if (!typeLower.includes("creature")) return "";
-    // STRICT HUMAN CHECK
     if (!typeLower.includes("human") && !typeLower.includes("scout") && !typeLower.includes("soldier") && !typeLower.includes("pilot")) return "";
-    // SKIP LEGENDARY
     if (typeLower.includes("legendary")) return "";
 
     const knownCharacters = ["neo", "morpheus", "trinity", "smith", "oracle", "seraph", "niobe", "ghost", "merovingian", "persephone", "keymaker", "architect"];
@@ -114,7 +138,6 @@ class Card {
         return "Appearance: Uniform Male Agent, caucasian, identical suit and sunglasses.";
     }
 
-    // DETERMINISTIC SEEDING (Based on ID + Session)
     const uniqueString = this.id + SESSION_SEED;
     let hash = 0;
     for (let i = 0; i < uniqueString.length; i++) {
@@ -152,7 +175,6 @@ class Card {
   getCompositionType() {
     if (!this.type.toLowerCase().includes("creature")) return "";
 
-    // PURE RANDOM
     const roll = Math.floor(Math.random() * 100);
 
     if (roll < 20) {
@@ -200,7 +222,7 @@ class Card {
                 return { setting: "Matrix Subway Station. Features: White tiled walls, graffiti, concrete platforms.", tone: "Dirty White, Greenish Florescent, Grimy", tech: TECH_1999 };
             }
             return { 
-                setting: "The Matrix City (1999 Aesthetic). Skyscraper rooftop, busy city street, alleyway, or building interior.", 
+                setting: "The Matrix City (1999 Aesthetic). Skyscraper rooftop, busy city street, or alleyway.", 
                 tone: "Slightly Desaturated, High Contrast, Green Tint",
                 tech: TECH_1999
             };
@@ -208,7 +230,7 @@ class Card {
             if (nameLower.includes("machine city") || nameLower.includes("01")) {
                  return { setting: "The Machine City (01). Features: Endless black towers, red lightning storms, swarms of sentinels.", tone: "Oppressive Black metal and Glowing Orange Sky", tech: TECH_SCIFI };
             }
-            if (nameLower.includes("zion") || textLower.includes("citizen") || nameLower.includes("dock") || nameLower.includes("temple") || nameLower.includes("daycare")) {
+            if (nameLower.includes("zion") || textLower.includes("citizen") || nameLower.includes("dock") || nameLower.includes("temple")) {
                 return { 
                     setting: "Zion (The Last City). Choose: The Dock (Cavernous), The Temple (Cave), or Engineering (Industrial).", 
                     tone: "Warm Earthy Tones, Incandescent lighting, Sweat, Metal, Stone",
@@ -236,11 +258,9 @@ class Card {
          return { setting: "The Real World Sewers or Surface. Hovercrafts, sparks flying.", tone: "Cold Blue, Rust, Industrial", tech: TECH_SCIFI };
     }
     if (typeLower.includes("land")) {
-         if (nameLower.includes("hardline terminal") || nameLower.includes("simulated") || nameLower.includes("skyline") || nameLower.includes("alley")) return { setting: "Matrix Cityscape Skyline", tone: "Simulated Daylight, Green Tint", tech: TECH_1999 };
+         if (nameLower.includes("simulated") || nameLower.includes("skyline")) return { setting: "Matrix Cityscape Skyline", tone: "Simulated Daylight, Green Tint", tech: TECH_1999 };
          if (nameLower.includes("zion") || nameLower.includes("living")) return { setting: "Zion (Dock or Living Quarters)", tone: "Warm Incandescent, Stone", tech: TECH_SCIFI };
          if (nameLower.includes("machine") || nameLower.includes("01")) return { setting: "01 The Machine City", tone: "Black and Orange", tech: TECH_SCIFI };
-         if (nameLower.includes("power") || nameLower.includes("pod")) return { setting: "The Power Plant / Fetus Fields", tone: "Bioluminescent Pink, Dark Machinery", tech: TECH_SCIFI };
-         if (nameLower.includes("hel") || nameLower.includes("chateau")) return { setting: "The Merovingian's Territory (Club Hel or Chateau)", tone: "Rich Reds, Deep Shadows, Decadent Gold", tech: TECH_1999 };
          return { setting: "The Real World Surface (Ruins)", tone: "Dark, Stormy, Scorched", tech: TECH_SCIFI };
     }
 
@@ -272,18 +292,24 @@ class Card {
   }
 
   generatePrompt() {
-    // 1. Calculate Default Derived Values
     let world = this.getWorldContext();
     const subjectColor = this.getSubjectColor();
     let artStyle = this.getArtStyle();
     let diversity = this.getCharacterDiversity();
     let composition = this.getCompositionType();
-    const robotVisuals = this.getRobotVisuals(); 
+    const robotVisuals = this.getRobotVisuals();
     
-    // LEGENDARY CHECK
-    const isLegendary = this.type.toLowerCase().includes("legendary");
+    // NEW V33 FEATURES
+    const lighting = this.getLighting(); 
+    const visualKeywords = this.getVisualKeywords();
+    const framingInstruction = this.getFramingInstruction(); 
+    if (framingInstruction) {
+        // Override random composition for specific types (Lands/Spells)
+        composition = framingInstruction;
+    }
+    
     let likenessInstruction = "";
-    if (isLegendary) {
+    if (this.type.toLowerCase().includes("legendary")) {
         likenessInstruction = "CHARACTER IDENTITY: This is a LEGENDARY character. The illustration MUST strictly resemble the specific character/actor as they appear in The Matrix films.";
     } else if (this.type.toLowerCase().includes("creature")) {
         likenessInstruction = "CHARACTER IDENTITY: Generic character. Do NOT resemble any specific actor/character from The Matrix films.";
@@ -291,7 +317,6 @@ class Card {
         likenessInstruction = "CHARACTER IDENTITY: N/A. Use your judgment based on the subject. Ensure that characters generated are diverse.";
     }
 
-    // SUNGLASSES LOGIC
     let sunglassesConstraint = "";
     if (world.setting.includes("Real World") || world.setting.includes("Zion") || world.setting.includes("Machine")) {
         sunglassesConstraint = "6. NO SUNGLASSES. Characters in the Real World/Zion do NOT wear sunglasses.";
@@ -301,14 +326,13 @@ class Card {
 
     let visualContext = this.flavor.length > 0 ? this.flavor : this.text.join(" ");
     
-    // 2. APPLY OVERRIDES IF EXIST
     const override = artOverrides[this.id];
     let subjectDescription = `Main focus features **${subjectColor}** accents. ${likenessInstruction} ${diversity}`;
     
     if (override) {
         console.log(`   ⚡ Applying overrides for ${this.id}...`);
         if (override.setting) world.setting = override.setting;
-        if (override.subject) subjectDescription = override.subject; // Full replace of subject details
+        if (override.subject) subjectDescription = override.subject; 
         if (override.composition) composition = "COMPOSITION: " + override.composition;
         if (override.artStyle) artStyle = override.artStyle;
         if (override.sunglasses === false) sunglassesConstraint = "6. NO SUNGLASSES.";
@@ -319,7 +343,7 @@ class Card {
         .replace(/\{[^}]+\}/g, "") 
         .replace(/Digital|Jack-in|Eject|Override|Scry|Ward/g, "")
         .replace(/\(Color Indicator: .*?\)/g, "")
-        .replace(/\`/g, "") 
+        .replace(/\\/g, "") 
         .substring(0, 300);
 
     return `
@@ -346,11 +370,13 @@ class Card {
       
       FALLBACK SETTING & TONE (Use if not a specific movie scene):
       - Location: ${world.setting}.
+      - ${lighting}
       - Color Palette/Mood: ${world.tone}.
       - ${composition}
       
       SUBJECT DETAILS:
       - ${subjectDescription}
+      - ${visualKeywords}
       
       ACTION/MOOD DESCRIPTION: "${descriptiveText}"
       
@@ -387,11 +413,16 @@ function parseDesignBible(filePath) {
   const cards = [];
   let currentCard = null;
 
-  const sourceTagRegex = /`/gi;
+  const sourceTagRegex = /\\/gi;
+  const backslashRegex = /\\/g;
   const idTagRegex = /^\[([A-Z]+\d+)\]\s+(.+?)(?:\s+(\{.*\})\s*)?$/;
 
   lines.forEach(line => {
-    let cleanLine = line.replace(sourceTagRegex, '').trim();
+    let cleanLine = line
+        .replace(sourceTagRegex, '')  
+        .replace(backslashRegex, '')  
+        .trim();
+    
     if (!cleanLine) return;
 
     if (cleanLine === '//') {
@@ -446,13 +477,11 @@ async function generateArtForCard(aiClient, card, isDryRun, forceOverwrite) {
   const prompt = card.generatePrompt();
   const outputPath = path.join(OUTPUT_DIR, card.getFileName());
 
-  // Check existence unless forced
   if (!forceOverwrite && fs.existsSync(outputPath)) {
     console.log(`[SKIP] ${card.getFileName()} already exists.`);
     return;
   }
 
-  // DRY RUN
   if (isDryRun) {
       console.log(`\n--- DRY RUN: ${card.name} (${card.isBackFace ? "BACK" : "FRONT"}) ---`);
       console.log(prompt);
@@ -460,7 +489,6 @@ async function generateArtForCard(aiClient, card, isDryRun, forceOverwrite) {
       return;
   }
 
-  // REAL RUN
   const world = card.getWorldContext();
   const isDigital = card.hasDigitalKeyword();
   
@@ -520,7 +548,6 @@ async function main() {
   }
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR);
 
-  // ARGUMENTS
   const args = process.argv.slice(2);
   const isDryRun = args.includes('--dryrun') || args.includes('-d');
   const isForce = args.includes('--force') || args.includes('-f');
@@ -532,10 +559,8 @@ async function main() {
     specificId = args[specificIndex + 1].replace(/[\[\]]/g, ''); 
   }
 
-  // PARSE
   const allCards = parseDesignBible(INPUT_FILE);
 
-  // CLEANUP
   if (isCleanup) {
       console.log("------------------------------------------");
       console.log("🧹  CLEANUP MODE INITIATED");
@@ -556,9 +581,8 @@ async function main() {
       return; 
   }
 
-  // GENERATION
   console.log("------------------------------------------");
-  console.log(`   MATRIX SET ART GENERATOR (V31 - Overrides Supported)`);
+  console.log(`   MATRIX SET ART GENERATOR (V33 - Enhanced Detail)`);
   if (isDryRun) console.log("   ⚠️  DRY RUN MODE ENABLED ⚠️");
   if (isForce) console.log("   🔥 FORCE MODE: OVERWRITING ALL FILES 🔥");
   if (specificId) console.log(`   🎯 SPECIFIC MODE: Targeting Card ID '${specificId}'`);
