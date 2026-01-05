@@ -113,6 +113,7 @@ function parseDesignBible(filePath) {
   const sourceTagRegex = /\\/gi; 
   const citationRegex = /\\/gi;
   const idTagRegex = /^\[([A-Z]+\d+)\]\s+(.+?)(?:\s+(\{.*\})\s*)?$/;
+  // Note: We use startsWith in the loop now, but keep these for legacy checks
   const sectionHeaderRegex = /^[A-Z\s&]+\(\d+\s+Cards\)$/;
   const noteRegex = /^\(Includes\s+.*\)$/;
   const mechanicKeywords = ["Digital", "Jack-in", "Eject", "Override", "Energy", "Gun Token"];
@@ -179,7 +180,8 @@ function parseDesignBible(filePath) {
         }
     }
     else if (parsingMode === "cards") {
-        if (sectionHeaderRegex.test(cleanLine) || noteRegex.test(cleanLine)) return;
+        // FILTER FIX: Ignore Headers like "=== WHITE ===" or "--- COMMONS ---"
+        if (cleanLine.startsWith("=") || cleanLine.startsWith("---") || sectionHeaderRegex.test(cleanLine) || noteRegex.test(cleanLine)) return;
 
         if (cleanLine === '//') {
             if (currentCard) {
@@ -298,7 +300,6 @@ function generateHTML(data) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTG: ${setInfo.title}</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/mana-font@latest/css/mana.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     

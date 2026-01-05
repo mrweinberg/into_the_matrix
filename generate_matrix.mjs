@@ -55,7 +55,7 @@ class Card {
     this.hasBackFace = false; 
   }
 
-  // --- 1. KEYWORD PARSING (New in V33) ---
+  // --- 1. KEYWORD PARSING ---
   getVisualKeywords() {
     const fullText = this.text.join(" ").toLowerCase();
     let cues = [];
@@ -68,13 +68,14 @@ class Card {
     if (fullText.includes("stealth") || fullText.includes("hexproof") || fullText.includes("shroud")) cues.push("Subject is partially obscured by shadows or 'bending' light.");
     if (fullText.includes("flash")) cues.push("Subject is bursting into the scene from code/nothingness.");
     if (fullText.includes("fight")) cues.push("Action shot: Mid-combat impact.");
+    if (fullText.includes("crew")) cues.push("Show scale relative to human pilots/drivers.");
 
     return cues.join(" ");
   }
 
-  // --- 2. LIGHTING ENGINE (New in V33) ---
+  // --- 2. LIGHTING ENGINE ---
   getLighting() {
-    const c = this.getSubjectColor(); // Reusing existing color logic helper
+    const c = this.getSubjectColor(); 
     if (c.includes("White")) return "Lighting: Bright, harsh interrogation lights or 'The Construct' pure white.";
     if (c.includes("Blue")) return "Lighting: Cool blue, CRT monitor glow, rain-slicked reflections.";
     if (c.includes("Black")) return "Lighting: Low-key Noir, heavy shadows, bioluminescent red/pink ambient glow (if Real World).";
@@ -83,15 +84,16 @@ class Card {
     return "Lighting: Cinematic, high contrast.";
   }
 
-  // --- 3. TYPE FRAMING (New in V33) ---
+  // --- 3. TYPE FRAMING ---
   getFramingInstruction() {
     const t = this.type.toLowerCase();
     if (t.includes("land")) return "Framing: PANORAMIC LANDSCAPE / WIDE SHOT. Focus on the environment.";
+    if (t.includes("vehicle")) return "Framing: DYNAMIC VEHICLE ACTION SHOT. Low angle or chasing perspective.";
     if (t.includes("artifact")) return "Framing: MACRO SHOT / OBJECT STUDY. Focus on the texture and machinery.";
     if (t.includes("instant") || t.includes("sorcery")) return "Framing: DYNAMIC ACTION SHOT. Capture the exact moment the spell's effect occurs.";
     if (t.includes("saga") || t.includes("enchantment")) return "Framing: ABSTRACT or SYMBOLIC. Can include floating code or 'glitch' overlays.";
     if (t.includes("planeswalker")) return "Framing: HEROIC PORTRAIT. Low angle, looking up at the powerful subject.";
-    return ""; // Default for creatures handled by getCompositionType
+    return ""; 
   }
 
   getSubjectColor() {
@@ -157,9 +159,48 @@ class Card {
     return `Character Appearance: ${randomGender}, ${randomEthnicity}. (Consistent Identity).`;
   }
 
+  // --- 4. VEHICLE LOGIC (New in V34) ---
+  getVehicleVisuals() {
+    const typeLower = this.type.toLowerCase();
+    const nameLower = this.name.toLowerCase();
+
+    if (!typeLower.includes("vehicle")) return "";
+
+    // A. LEGENDARY VEHICLES (Strict Movie Accuracy)
+    if (typeLower.includes("legendary")) {
+        return "VEHICLE APPEARANCE: This is a LEGENDARY vehicle. It must STRICTLY resemble the specific ship/vehicle from The Matrix films as identified by the card name (e.g., The Nebuchadnezzar, The Logos). Use rusted metal textures, heavy industrial cables, and hovering magnetic pads.";
+    }
+
+    // B. GENERIC VEHICLES (Category Detection)
+    if (nameLower.includes("hovercraft") || nameLower.includes("ship")) {
+        return "VEHICLE APPEARANCE: Real World Hovercraft. Industrial, rusted steel hull, lightning rod antennas, glowing blue magnetic hover-pads. NOT a spaceship.";
+    }
+    if (nameLower.includes("apu") || nameLower.includes("walker") || nameLower.includes("suit")) {
+        return "VEHICLE APPEARANCE: APU (Armored Personnel Unit). A bipedal hydraulic mech suit with open cockpit, heavy machine guns on arms, and exposed ammunition belts. Gritty industrial aesthetic.";
+    }
+    if (nameLower.includes("truck") || nameLower.includes("semi")) {
+        return "VEHICLE APPEARANCE: Heavy Semi-Truck (1999 aesthetic). Chrome grille, boxy design, highway setting.";
+    }
+    if (nameLower.includes("helicopter") || nameLower.includes("chopper")) {
+        return "VEHICLE APPEARANCE: Bell 212 Helicopter or similar 1990s model. Black tactical paint, side-mounted minigun.";
+    }
+    if (nameLower.includes("car") || nameLower.includes("sedan") || nameLower.includes("police")) {
+        return "VEHICLE APPEARANCE: 1990s Black Sedan or Police Cruiser. Boxy, realistic, glossy finish.";
+    }
+    if (nameLower.includes("bike") || nameLower.includes("motorcycle")) {
+        return "VEHICLE APPEARANCE: Ducati 996 or generic sportbike. Sleek, fast, black or dark green.";
+    }
+
+    // Default Fallback
+    return "VEHICLE APPEARANCE: Industrial Machine or 1990s Vehicle. Consistent with The Matrix universe technology.";
+  }
+
   getRobotVisuals() {
     const typeLower = this.type.toLowerCase();
     const nameLower = this.name.toLowerCase();
+
+    // If it's a vehicle, defer to getVehicleVisuals
+    if (typeLower.includes("vehicle")) return this.getVehicleVisuals();
 
     const isMachine = typeLower.includes("artifact creature") || typeLower.includes("robot") || typeLower.includes("construct") || typeLower.includes("thopter") || typeLower.includes("juggernaut") || typeLower.includes("horror");
     
@@ -254,7 +295,11 @@ class Card {
     if (combinedText.includes("code") || combinedText.includes("virtual") || combinedText.includes("download") || combinedText.includes("blue screen")) {
         return { setting: "Abstract Visualization of Data. Features: Cascading Green Code, glitches.", tone: "Surreal, Neon Green, Black Background", tech: TECH_SURREAL };
     }
+    // VEHICLE CONTEXT
     if (typeLower.includes("vehicle") || combinedText.includes("emp") || combinedText.includes("scrap")) {
+         if (nameLower.includes("police") || nameLower.includes("sedan") || nameLower.includes("truck") || nameLower.includes("helicopter") || nameLower.includes("ducati")) {
+             return { setting: "The Matrix City Streets or Rooftops.", tone: "Slightly Desaturated, High Contrast, Green Tint", tech: TECH_1999 };
+         }
          return { setting: "The Real World Sewers or Surface. Hovercrafts, sparks flying.", tone: "Cold Blue, Rust, Industrial", tech: TECH_SCIFI };
     }
     if (typeLower.includes("land")) {
@@ -297,20 +342,21 @@ class Card {
     let artStyle = this.getArtStyle();
     let diversity = this.getCharacterDiversity();
     let composition = this.getCompositionType();
-    const robotVisuals = this.getRobotVisuals();
+    
+    // UPDATED: Now fetches Vehicle Visuals if applicable
+    const robotVisuals = this.getRobotVisuals(); 
     
     // NEW V33 FEATURES
     let lighting = this.getLighting(); 
     const visualKeywords = this.getVisualKeywords();
     const framingInstruction = this.getFramingInstruction(); 
     if (framingInstruction) {
-        // Override random composition for specific types (Lands/Spells)
         composition = framingInstruction;
     }
     
     let likenessInstruction = "";
     if (this.type.toLowerCase().includes("legendary")) {
-        likenessInstruction = "CHARACTER IDENTITY: This is a LEGENDARY character. The illustration MUST strictly resemble the specific character/actor as they appear in The Matrix films.";
+        likenessInstruction = "CHARACTER IDENTITY: This is a LEGENDARY character/subject. The illustration MUST strictly resemble the specific character/vehicle as they appear in The Matrix films.";
     } else if (this.type.toLowerCase().includes("creature")) {
         likenessInstruction = "CHARACTER IDENTITY: Generic character. Do NOT resemble any specific actor/character from The Matrix films.";
     } else {
@@ -581,7 +627,7 @@ async function main() {
   }
 
   console.log("------------------------------------------");
-  console.log(`   MATRIX SET ART GENERATOR (V33 - Enhanced Detail)`);
+  console.log(`   MATRIX SET ART GENERATOR (V34 - Vehicle Logic)`);
   if (isDryRun) console.log("   ⚠️  DRY RUN MODE ENABLED ⚠️");
   if (isForce) console.log("   🔥 FORCE MODE: OVERWRITING ALL FILES 🔥");
   if (specificId) console.log(`   🎯 SPECIFIC MODE: Targeting Card ID '${specificId}'`);
