@@ -676,7 +676,7 @@ If a creature died this turn, you may return target Robot or Program card from y
 
 [U031] Zion Fuel-Runner {2}{B}
 Creature — Human Rogue (3/2)
-When Zion Fuel-Runner enters, you may exile an artifact or creature card from your graveyard. If you do, you get {E}{E}.
+When Zion Fuel-Runner enters, you may exile an artifact or creature card from a graveyard. If you do, you get {E}{E}.
 Pay {E}{E}: Target creature gains lifelink until end of turn.
 "In the tunnels, nothing is truly dead until it's out of sparks."
 
@@ -1397,10 +1397,10 @@ Menace
 Whenever Bane, Sleeper Agent deals combat damage to a player, you may sacrifice an artifact or creature. If you do, look at that player's hand and choose a nonland card from it. That player discards that card.
 When Bane, Sleeper Agent dies, you may pay {E}{E}{E}. If you do, return it to its owner's hand.
 
-[R071] Morpheus, Dojo Master {2}{G}{U}
+[R071] Morpheus, Revealer {2}{G}{U}
 Legendary Creature — Human Monk (3/3)
 Flash
-When Morpheus, Dojo Master enters, target creature gets +2/+2 and gains hexproof until end of turn.
+When Morpheus, Revealer enters, target creature gets +2/+2 and gains hexproof until end of turn.
 At the beginning of your end step, if you control a creature with power 4 or greater, you get {E}.
 
 [R072] Trinity, Combat Driver {1}{R}{W}
