@@ -403,7 +403,7 @@ class Card {
       
       STRICT VISUAL CONSTRAINTS:
       1. ${world.tech} (Strictly adhere to this era).
-      4. WEAPONRY: Modern firearms, martial arts, or futuristic lightning rifles (only if Real World).
+      4. WEAPONRY: If the character needs a weapon, use modern firearms, martial arts, or futuristic lightning rifles (only if Real World).
       5. ${robotVisuals}
       ${sunglassesConstraint}
       

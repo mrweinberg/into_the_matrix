@@ -27,8 +27,8 @@ RG: Bio-Electric Power
 This deck focuses on generating large amounts of Energy {E} and spending it on massive "Real World" threats like Beasts and Vehicles. It aims to overwhelm the board with high-power creatures and trampling damage.
 GW: Zion Resistance
 A "go-wide" strategy that boosts Non-Digital (Human) creatures. It utilizes Vigilance and Lifelink to stabilize the board and punish the Machines for attacking into Zion's defenses.
-WB: Ghost Protocols
-This archetype revolves around Digital creatures with evasive or defensive keywords like Menace, Lifelink, and Phasing. It represents the "Exiles" and supernatural programs found in the Matrix.
+WB: Lifesucking Exiles
+This archetype revolves around an attrition based strategy utilizing the Merovingian's exiles enabling you to gain life and utilize that lifegain.
 UR: Code Modification
 A spells-matter and high-tech deck that uses Energy to power your spells or pay off casting them. It features Humans and Programs that grow or trigger abilities whenever you cast noncreature spells.
 BG: Harvester Operations
@@ -90,9 +90,9 @@ Sorcery
 Create three 1/1 white Citizen creature tokens with digital.
 Draw a card.
 
-[C003] Zion Defender {1}{W}
-Creature — Human Soldier (2/2)
-{1},{T}: Tap target creature with digital.
+[C003] Community Organizer {1}{W}
+Creature — Human Citizen (2/2)
+Whenever another creature you control enters, you gain 1 life.
 
 [C004] Zion Neophyte {W}
 Creature — Human Monk (1/1)
@@ -225,6 +225,10 @@ Awakened Rebel (Color Indicator: White)
 Creature — Human Soldier (3/2)
 First strike
 “I woke up.”
+
+[U008] Life Celebrant {2}{W}
+Creature - Human Citizen (2/3)
+Whenever you gain life, put a +1/+1 counter on this creature. You may untap it.
 
 --- RARES ---
 
@@ -606,10 +610,10 @@ Target player discards two cards and loses {E}{E}{E}.
 Sorcery
 Create two 1/1 colorless Robot artifact creature tokens with flying. You get {E}{E}.
 
-[C059] Viral Injection {1}{B}
-Instant
-Target creature gets +2/+0 and gains digital until end of turn.
-When that creature dies this turn, draw a card.
+[C059] Chateau Vampire {1}{B}
+Creature - Vampire Program (1/3)
+Digital
+If another creature has died this turn, this creature gets +2/+0 and lifelink.
 
 [C060] System Drain {1}{B}
 Sorcery
@@ -962,8 +966,8 @@ Creature — Human Cleric (2/2)
 When Ship Medic enters, you get {E}{E}.
 Whenever Ship Medic attacks, you may pay {E}. If you do, put a +1/+1 counter on target creature.
 
-[C093] Zion Scrap-Hulk {4}{G}
-Creature — Human Warrior (5/5)
+[C093] Zion Scrap-Hulk {3}{G}
+Creature — Human Warrior (3/5)
 Reach
 Zion Scrap-Hulk can block creatures with digital as though they didn't have digital.
 "Equipped with deep-code sensors, even the oldest loaders can track a sentinel's digital signature."
@@ -1097,8 +1101,8 @@ Creature — Human Druid Program (6/6)
 Digital, trample
 {G}: Eject.
 
-[U050] Augmented Brawler {4}{G}
-Creature — Human Warrior (5/5)
+[U050] Augmented Brawler {5}{G}
+Creature — Human Warrior (5/4)
 Trample
 Pay {E}: Augmented Brawler gets +1/+1 until end of turn.
 “My upgrades are real.”
@@ -1154,12 +1158,6 @@ Put the rest on the bottom of your library in a random order.
 ========== MULTICOLOR (59 Cards) ==========
 
 --- UNCOMMONS ---
-
-[U051] Agent White {1}{W}{B}
-Legendary Creature — Agent Program (3/4)
-Digital, lifelink
-Override creature with digital
-Other Agent creatures you control get +1/+1.
 
 [U081] Mind-Body Sync {W}{U}
 Enchantment
