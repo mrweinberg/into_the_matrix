@@ -335,8 +335,8 @@ Put a stun counter on it.
 
 [C034] System Scan {1}{U}
 Sorcery
-Target opponent reveals their hand and the top card of their library.
-You may put the revealed card from their library into their graveyard.
+Target opponent reveals their hand.
+Look at the top card of their library. You may put it in their graveyard.
 Draw a card.
 
 [C035] Data Courier {1}{U}
@@ -1474,13 +1474,13 @@ At the beginning of your end step, each opponent loses 1 life for each creature 
 
 --- MYTHICS ---
 
-[M03] The Oracle, Destiny Planner {2}{G}{U}
-Legendary Creature — Program Advisor (1/4)
+[M03] The Oracle, Destiny Planner {3}{G}{U}
+Legendary Creature — Program Advisor (1/5)
 Digital, ward {2}
 Play with the top card of your library revealed.
 You may cast the top card of your library.
 Whenever you cast a spell from your library, you get {E}.
-{T}, Pay {E}{E}: Scry 2.
+{E}{E}: Scry 2.
 
 [M09] The Architect, System Creator {4}{W}{U}
 Legendary Creature — Avatar Program (3/6)
