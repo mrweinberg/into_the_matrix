@@ -71,7 +71,7 @@ Equip {1}
 
 2. Card Gallery
 
-========== WHITE (31 Cards) ==========
+========== WHITE (36 Cards) ==========
 
 --- COMMONS ---
 
@@ -292,7 +292,8 @@ Enchantment
 Creatures have base power and toughness 1/1.
 Players have hexproof.
 
- ========== BLUE (37 Cards) ==========
+
+========== BLUE (40 Cards) ==========
 
 --- COMMONS ---
 
@@ -539,7 +540,8 @@ Whenever you cast a spell, you may pay {E}{E}. If you do, choose one:
 • Return target nonland permanent to its owner's hand.
 • Target creature's base power and toughness becomes 1/1 until end of turn.
 
- ========== BLACK (40 Cards) ==========
+
+========== BLACK (42 Cards) ==========
 
 --- COMMONS ---
 
@@ -703,6 +705,18 @@ Target opponent reveals their hand. You choose a nonland card from it.
 That player discards that card unless they pay {E}{E}.
 If you control a creature with digital, you gain 2 life.
 
+[U102] Agent Brown, Enforcer {2}{B}{B}
+Legendary Creature — Agent Program (3/3)
+Flash, digital
+Override creature with digital
+When Agent Brown enters, if it overrode a creature, destroy target creature.
+
+[U103] Inevitable Deletion {1}{B}{B}
+Instant
+As an additional cost to cast this spell, sacrifice a creature.
+Destroy target creature or planeswalker.
+Draw a card.
+
 --- RARES ---
 
 [R040] Sentinel Swarm {4}{B}
@@ -765,7 +779,8 @@ Creatures you control have digital and menace.
 Whenever a creature an opponent controls dies, return it to the battlefield under your control.
 It's an Agent Program in addition to its other types.
 
- ========== RED (33 Cards) ==========
+
+========== RED (41 Cards) ==========
 
 --- COMMONS ---
 
@@ -838,7 +853,7 @@ Flying
 When Sentinel Sweeper dies, you get {E}.
 
 [C103] Magma-Code Brawler {2}{R}
-Creature — Program Warrior (3/2)
+Creature — Program Warrior (3/1)
 Digital, haste
 
 [C104] Panic Fire {2}{R}
@@ -864,6 +879,16 @@ At the beginning of your next end step, lose {E}{E}{E}.
 [C108] Independent Trader {1}{R}
 Creature - Human Citizen (2/1)
 {1}, {T}, Discard a card: Draw a card.
+
+[C152] Lightning Rifle {1}{R}
+Artifact — Equipment
+Equipped creature has "{T}, Pay {E}: This creature deals 2 damage to target creature."
+Equip {2}
+
+[C158] Combat Hovercraft {3}{R}
+Artifact — Vehicle (5/3)
+Trample
+Crew 2
 
 --- UNCOMMONS ---
 
@@ -987,7 +1012,8 @@ Enchantment
 If a source would deal damage to a permanent or player, it deals double that damage instead.
 At the beginning of your upkeep, exile the top card of your library. You may play it this turn.
 
- ========== GREEN (34 Cards) ==========
+
+========== GREEN (39 Cards) ==========
 
 --- COMMONS ---
 
@@ -1139,6 +1165,12 @@ Creature — Human Warrior (5/4)
 Trample
 Pay {E}: Augmented Brawler gets +1/+1 until end of turn.
 
+[U109] Matrix Watcher {2}{G}
+Creature — Human Technician (2/4)
+Defender
+Matrix Watcher can block creatures with digital as though they didn't have digital.
+{2}{G}: Scry 1.
+
 --- RARES ---
 
 [R080] Bio-Energy Conversion {1}{G}
@@ -1200,7 +1232,8 @@ Reveal the top seven cards of your library.
 You may put any number of permanent cards from among them onto the battlefield.
 Put the rest on the bottom of your library in a random order.
 
- ========== MULTICOLOR (59 Cards) ==========
+
+========== MULTICOLOR (44 Cards) ==========
 
 --- UNCOMMONS ---
 
@@ -1220,18 +1253,6 @@ Creature — Human Pilot Program (3/3)
 Digital, vigilance
 Other creatures you control with eject get +1/+1.
 {2}: Eject.
-
-[U102] Agent Brown, Enforcer {2}{B}{B}
-Legendary Creature — Agent Program (3/3)
-Flash, digital
-Override creature with digital
-When Agent Brown enters, if it overrode a creature, destroy target creature.
-
-[U103] Inevitable Deletion {1}{B}{B}
-Instant
-As an additional cost to cast this spell, sacrifice a creature.
-Destroy target creature or planeswalker.
-Draw a card.
 
 [U104] Agent Jones, Dodger {2}{U}{B}
 Legendary Creature — Agent Program (4/2)
@@ -1262,12 +1283,6 @@ Whenever an artifact creature you control dies, you get {E} and may discard a ca
 If you do, draw a card.
 {3}, Sacrifice an artifact: Create a 3/3 colorless Robot artifact creature token.
 Activate this ability only as a sorcery.
-
-[U109] Matrix Watcher {2}{G}
-Creature — Human Technician (2/4)
-Defender
-Matrix Watcher can block creatures with digital as though they didn't have digital.
-{2}{G}: Scry 1.
 
 [U110] Swarm Commander {B}{R}
 Artifact Creature — Robot (2/2)
@@ -1513,7 +1528,7 @@ You may have Agent Smith override creatures you don't control.
 Agent Smith has digital as long as the overridden creature had digital.
 
 
-========== ARTIFACTS & COLORLESS (26 Cards) ==========
+========== ARTIFACTS & COLORLESS (23 Cards) ==========
 
 --- COMMONS ---
 
@@ -1526,11 +1541,6 @@ When The Oracle’s Cookie enters or leaves the battlefield, scry 2.
 Artifact Creature — Construct Mech (4/5)
 Reach
 When APU Corps enters, you get {E}{E}.
-
-[C152] Lightning Rifle {1}{R}
-Artifact — Equipment
-Equipped creature has "{T}, Pay {E}: This creature deals 2 damage to target creature."
-Equip {2}
 
 [C153] Standard Issue Hovercraft {3}
 Artifact — Vehicle (4/4)
@@ -1556,11 +1566,6 @@ Artifact
 When Prism Interface enters, draw a card and you get {E}.
 {1}, {T}: Add one mana of any color.
 {T}, Pay {E}: Add one mana of any color.
-
-[C158] Combat Hovercraft {3}{R}
-Artifact — Vehicle (5/3)
-Trample
-Crew 2
 
 --- UNCOMMONS ---
 
@@ -1662,7 +1667,8 @@ As long as you have nine or fewer {E}, Deus Ex Machina isn't a creature.
 At the beginning of your upkeep, you get {E}{E}{E}.
 {T}, Pay {E}{E}{E}{E}: Destroy target permanent.
 
- ========== LANDS (17 Cards) ==========
+
+========== LANDS (16 Cards) ==========
 
 --- COMMONS ---
 
@@ -1763,3 +1769,4 @@ Legendary Land
 {T}: Add one mana of any color.
 Spend this mana only to cast a spell with "Program" in its type line.
 {3}, {T}: Target Program creature you control gains indestructible until end of turn.
+
