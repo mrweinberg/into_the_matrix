@@ -95,8 +95,8 @@ Creature — Human Citizen (2/2)
 Whenever another creature you control enters, you gain 1 life.
 
 [C004] Zion Neophyte {W}
-Creature — Human Monk (1/1)
-{1}{U}: Jack-in.
+Creature — Human Monk (1/2)
+{U}: Jack-in.
 //
 Awakened Kung Fu Master (Color Indicator: White)
 Creature — Human Monk Program (2/2)
