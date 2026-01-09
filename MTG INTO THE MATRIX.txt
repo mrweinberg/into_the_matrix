@@ -273,6 +273,18 @@ Legendary Creature — Human Soldier (2/4)
 When Escape Tactician enters, you get {E}{E}.
 {E}{E}, {T}: Exile target creature you control. At the beginning of the next end step, return it to the battlefield under its owner's control.
 
+[R008] Trinity, Tactical Leader {2}{W}
+Legendary Creature — Human Soldier (2/3)
+First strike, vigilance
+Whenever Trinity attacks, you may pay {E}{E}. If you do, attacking creatures you control get +2/+0 until end of turn.
+{R}: Jack-in.
+//
+Trinity, Digital Savior (Color Indicator: R/W)
+Legendary Creature — Human Soldier Program (3/3)
+Digital, haste, vigilance
+Whenever Trinity, Digital Savior attacks, create a Gun token attached to her.
+{W}: Eject.
+
 --- MYTHICS ---
 
 [M01] The Truce {3}{W}{W}
