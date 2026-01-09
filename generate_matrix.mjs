@@ -374,7 +374,8 @@ class Card {
     
     const override = artOverrides[this.id];
     let subjectDescription = `Main focus features **${subjectColor}** accents. ${likenessInstruction} ${diversity}`;
-    
+    let weaponry = "4. WEAPONRY: If the character needs a weapon, use modern firearms, martial arts, or futuristic lightning rifles (only if Real World).";
+
     if (override) {
         console.log(`   ⚡ Applying overrides for ${this.id}...`);
         if (override.setting) world.setting = override.setting;
@@ -384,6 +385,7 @@ class Card {
         if (override.lighting) lighting = override.lighting;
         if (override.sunglasses === false) sunglassesConstraint = "6. NO SUNGLASSES.";
         if (override.sunglasses === true) sunglassesConstraint = "6. Sunglasses are MANDATORY.";
+        if (override.weaponry === false) weaponry = false;
     }
 
     const descriptiveText = visualContext
@@ -403,7 +405,7 @@ class Card {
       
       STRICT VISUAL CONSTRAINTS:
       1. ${world.tech} (Strictly adhere to this era).
-      4. WEAPONRY: If the character needs a weapon, use modern firearms, martial arts, or futuristic lightning rifles (only if Real World).
+      ${weaponry}
       5. ${robotVisuals}
       ${sunglassesConstraint}
       

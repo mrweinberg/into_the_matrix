@@ -758,32 +758,17 @@ Creatures you control have digital and menace.
 Whenever a creature an opponent controls dies, return it to the battlefield under your control. It's an Agent Program in addition to its other types.
 “"The perfect world was a dream that your primitive cerebrum kept trying to wake up from."
 
-[R027] The Merovingian, Trafficker {2}{B}
-Legendary Creature — Program Rogue (2/3)
-Digital
-Whenever another creature dies, you may pay {1}. If you do, create a Treasure token.
-{T}, Sacrifice a Treasure: You draw a card and you lose 1 life.
-
-[R028] Harvester Unit {3}{B}
+[R027] Harvester Unit {3}{B}
 Artifact Creature — Robot (4/4)
 Trample
 Whenever another creature you control dies, you get {E}.
 {2}, Pay {E}{E}{E}: Return target creature card from your graveyard to the battlefield tapped.
 
-[R029] Bane, Sleeper Agent {2}{B}
+[R028] Bane, Sleeper Agent {2}{B}
 Legendary Creature — Human Rogue (3/2)
 Menace
 Whenever Bane, Sleeper Agent deals combat damage to a player, you may sacrifice an artifact or creature. If you do, look at that player's hand and choose a nonland card from it. That player discards that card.
 When Bane, Sleeper Agent dies, you may pay {E}{E}{E}. If you do, return it to its owner's hand.
-
-[R030] Agent Smith, System Virus {3}{B}{B}
-Legendary Creature — Agent Program (4/4)
-Digital, ward {2}
-Whenever a creature enters under an opponent's control, you may pay {B}.
-If you do, gain control of it until the end of your next turn.
-At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own.
-”
-
 
 ========== RED (33 Cards) ==========
 
@@ -983,22 +968,6 @@ Creatures your opponents control attack each combat if able.
 Whenever a creature an opponent controls attacks, if it isn't attacking you or a planeswalker you control, you draw a card and lose 1 life.
 "Were you listening to me, Neo? Or were you looking at the woman in the red dress?"
 
---- MYTHICS ---
-
-[M06] System Instability {3}{R}{R}
-Enchantment
-If a source would deal damage to a permanent or player, it deals double that damage instead.
-At the beginning of your upkeep, exile the top card of your library. You may play it this turn.
-“It’s crashing.”
-
-
-[R037] Apoc, System Breaker {1}{R}{R}
-Legendary Creature — Human Rogue (2/4)
-Haste
-Whenever you cast an instant or sorcery spell, you get {E}.
-Whenever Apoc attacks, you may pay {E}{E}{E}. If you do, copy the next instant or sorcery spell you cast this turn.
-You may choose new targets for the copy.
-
 [R038] Weapon Cache {2}{R}
 Enchantment
 At the beginning of your upkeep, create a Gun token.
@@ -1008,6 +977,14 @@ Equipment you control have "Equipped creature has '{T}: This Equipment becomes a
 Artifact Creature — Robot Scout (3/2)
 Menace
 Whenever Sentinel Scout deals combat damage to a player, deal 3 damage to up to one target creature with digital.
+
+--- MYTHICS ---
+
+[M06] System Instability {3}{R}{R}
+Enchantment
+If a source would deal damage to a permanent or player, it deals double that damage instead.
+At the beginning of your upkeep, exile the top card of your library. You may play it this turn.
+“It’s crashing.”
 
 ========== GREEN (34 Cards) ==========
 
@@ -1372,12 +1349,12 @@ When this creature enters, look at the top four cards of your library. You may r
 
 --- RARES ---
 
-[R051] Agent Smith, Unshackled {3}{B}{R}
-Legendary Creature — Agent Rogue (4/4)
-Override creature
-Menace, haste
-You may have Agent Smith override creatures you don't control.
-Agent Smith has digital as long as the overridden creature had digital.
+[R051] Welcome to the Real World {2}{G}{R}
+Enchantment - Saga
+I - Search your library for a basic land and put it on the battlefield tapped, then shuffle.
+II - Gain {E} for each land you control.
+III - Create an X/X colorless Construct token with trample, where X is the amount of {E} you have.
+"There are fields, endless fields... We are no longer born. We are grown."
 
 [R052] Morpheus, Uniter {2}{W}{G}
 Legendary Creature — Human Warrior (3/3)
@@ -1390,8 +1367,6 @@ Legendary Creature — Human Warrior Program (3/3)
 Trample, digital
 Creatures with digital get +1/+1 for each creature you control that doesn't have digital.
 {1}{G}{W}: Eject.
-
-
 
 [R053] Prime Biomass {X}{B}{G}
 Creature — Avatar Horror (0/0)
@@ -1447,28 +1422,38 @@ Whenever Trinity, Combat Driver crews a Vehicle, create a Gun token attached to 
 Instant
 Target creature gets +1/+1 for each creature your opponents control until end of turn. That creature can block any number of creatures this turn.
 
-
-
-
-
-
-
-
-
-
 [R063] Neo, Newly Awakened {R/W}
 Legendary Creature — Human Avatar (1/1)
 {R/W}: Neo becomes a 2/2 Human Monk with vigilance.
 {R/W}{R/W}: If Neo is a Monk, it becomes a 3/3 Human Monk Soldier and gains prowess.
 {R/W}{R/W}{R/W}: If Neo is a Soldier, put a +1/+1 counter on it and it gains digital until end of turn.
 
-
-
 [R064] Bullet Time Physics {1}{G}{U}
 Enchantment
 Creatures you control have "{1}, {Q}, Pay {E}: This creature gains hexproof and indestructible until end of turn."
 ({Q} is the untap symbol.)
 “He moves like they do.”
+
+[R065] The Merovingian, Trafficker {1}{W}{B}
+Legendary Creature — Program Rogue (2/3)
+Digital
+Whenever another creature dies, you may pay {1}. If you do, create a Treasure token.
+{T}, Sacrifice a Treasure: You draw a card and you lose 1 life.
+"Welcome to my world." —The Merovingian
+
+[R037] Apoc, System Breaker {1}{U}{R}
+Legendary Creature — Human Rogue (2/4)
+Haste
+Whenever you cast an instant or sorcery spell, you get {E}.
+Whenever Apoc attacks, you may pay {E}{E}{E}. If you do, copy the next instant or sorcery spell you cast this turn.
+You may choose new targets for the copy.
+
+[R038] Agent Smith, System Virus {3}{U}{B}
+Legendary Creature — Agent Program (4/4)
+Digital, ward {2}
+Whenever a creature enters under an opponent's control, you may pay {U/B}.
+If you do, gain control of it until the end of your next turn.
+At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own.
 
 --- MYTHICS ---
 
@@ -1509,14 +1494,20 @@ When The Hammer enters, you get {E}{E}{E}.
 Whenever The Hammer attacks, you may pay {E}{E}. If you do, destroy target artifact or creature with digital.
 Crew 3
 
+[M16] Agent Smith, Unshackled {3}{B}{R}
+Legendary Creature — Agent Rogue (4/4)
+Override creature
+Menace, haste
+You may have Agent Smith override creatures you don't control.
+Agent Smith has digital as long as the overridden creature had digital.
 
 ========== ARTIFACTS & COLORLESS (26 Cards) ==========
 
 --- COMMONS ---
 
-[C120] The Oracle’s Cookie {1}
+[C120] The Oracle’s Cookie {2}
 Artifact — Food
-When The Oracle’s Cookie enters, scry 2.
+When The Oracle’s Cookie enters or leaves the battlefield, scry 2.
 {2}, {T}, Sacrifice The Oracle’s Cookie: You gain 3 life.
 
 [C121] APU Corps {5}
@@ -1540,6 +1531,7 @@ Crew 1
 
 [C126] Tasty Wheat {1}
 Artifact — Food
+When you sacrifice Tasty Wheat, you put a +1/+1 counter on up to one target creature.
 {2}, {T}, Sacrifice Tasty Wheat: You gain 3 life and draw a card.
 
 [C127] The Spoon {0}
