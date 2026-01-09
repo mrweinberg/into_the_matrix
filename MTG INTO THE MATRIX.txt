@@ -1414,8 +1414,8 @@ At the beginning of your end step, if you control a creature with power 4 or gre
 
 [R110] Trinity, Combat Driver {1}{R}{W}
 Legendary Creature — Human Pilot (3/2)
-Haste
 Whenever Trinity, Combat Driver crews a Vehicle, create a Gun token attached to that Vehicle.
+Vehicles you control that are creatures get +1/+0 for each {E} you have.
 
 [R111] One Against Many {1}{W}{U}
 Instant
