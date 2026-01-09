@@ -531,14 +531,6 @@ Flash, digital
 When The Analyst enters, if it's your turn, end the turn.
 If it's an opponent's turn, return up to one target spell to its owner's hand.
 
-[M03] The Oracle, Destiny Planner {2}{U}{U}
-Legendary Creature — Program Advisor (1/4)
-Digital, ward {2}
-Play with the top card of your library revealed.
-You may cast the top card of your library.
-Whenever you cast a spell from the top of your library, you get {E}.
-{T}, Pay {E}{E}: Scry 2, then you may put the top card of your library into your graveyard.
-
 [M04] See The Matrix {2}{U}{U}{U}
 Enchantment
 You may cast spells as though they had flash.
@@ -1466,6 +1458,14 @@ Whenever a creature enters under an opponent's control, you may pay {U/B}. If yo
 At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own.
 
 --- MYTHICS ---
+
+[M03] The Oracle, Destiny Planner {2}{G}{U}
+Legendary Creature — Program Advisor (1/4)
+Digital, ward {2}
+Play with the top card of your library revealed.
+You may cast the top card of your library.
+Whenever you cast a spell from your library, you get {E}.
+{T}, Pay {E}{E}: Scry 2.
 
 [M09] The Architect, System Creator {4}{W}{U}
 Legendary Creature — Avatar Program (3/6)
