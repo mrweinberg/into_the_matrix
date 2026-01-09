@@ -120,10 +120,9 @@ Flying
 When Dock Defender enters, you may pay {1}. If you do, create a Gun token.
 "The dock is the heart of Zion, and it must not stop beating."
 
-[C008] Chateau Guard {2}{W}
-Creature — Program Soldier (2/3)
-Digital, vigilance
-"They don't guard the exits. They guard the master."
+[C008] Purged by the Firewall {1}{W}
+Instant
+Destroy target attacking or blocking creature.
 
 [C009] Deja Vu {W}
 Instant
@@ -756,7 +755,6 @@ Electrobolt deals 2 damage to target creature. If that creature is an artifact o
 [C072] Signal Hijacker {1}{R}
 Creature — Human Wizard (1/3)
 Prowess
-Whenever you cast an instant or sorcery spell, you get {E}.
 
 [C073] Data Flush {1}{R}
 Sorcery
@@ -961,8 +959,8 @@ At the beginning of your upkeep, exile the top card of your library. You may pla
 Creature — Human Soldier (3/3)
 APU Operator gets +1/+1 and has trample as long as you have three or more {E}.
 
-[C092] Ship Medic {2}{G}
-Creature — Human Cleric (2/2)
+[C092] Ship Medic {1}{G}
+Creature — Human Cleric (1/1)
 When Ship Medic enters, you get {E}{E}.
 Whenever Ship Medic attacks, you may pay {E}. If you do, put a +1/+1 counter on target creature.
 
@@ -1024,10 +1022,9 @@ Instant
 Target creature gets +3/+3 and gains reach until end of turn.
 “Push it! Now!”
 
-[C105] Canopy Stalker {3}{G}
-Creature — Construct Beast (3/3)
-Reach
-Canopy Stalker can block creatures with digital as though they didn't have digital.
+[C105] Rampaging Beastbot {4}{G}{G}
+Artifact Creature — Construct Beast (6/6)
+Trample, ward {2}
 "The Matrix's predators don't just hunt flesh; they hunt the data streams that sustain it."
 
 [C106] Natural Code {1}{G}
@@ -1194,15 +1191,9 @@ Flash, digital
 Override creature with digital
 Whenever Agent Jones becomes the target of a spell or ability, you may return it to its owner's hand.
 
-[U086] Glitch-Skin Weird {1}{U}{R}
-Creature — Program Weird (3/3)
-Digital
-Pay {E}: Glitch-Skin Weird gets +1/-1 or -1/+1 until end of turn.
-Pay {E}: Glitch-Skin Weird gains menace until end of turn.
-
 [U087] Mouse, Software Prodigy {1}{U}{R}
-Legendary Creature — Human Wizard (2/2)
-When Mouse, Software Prodigy enters, you get {E}{E}.
+Legendary Creature — Human Wizard (1/3)
+Whenever you cast an instant or sorcery spell, you get {E}.
 {T}, Pay {E}: Create a 1/1 white Citizen creature token with digital.
 Whenever a creature you control with digital deals combat damage to a player, you may discard a card. If you do, draw a card.
 
@@ -1215,10 +1206,10 @@ Instant
 As an additional cost to cast this spell, sacrifice a creature or artifact.
 Draw two cards and you get {E}{E}.
 
-[U090] Scrap Dealer {1}{B}{R}
-Creature — Human Artificer (2/2)
+[U090] Scrap Repurposer {1}{B}{R}
+Creature — Robot Artificer (2/3)
 Whenever an artifact creature you control dies, you get {E} and may discard a card. If you do, draw a card.
-{3}, Sacrifice an artifact: Create a 3/3 colorless Robot artifact creature token.
+{3}, Sacrifice an artifact: Create a 3/3 colorless Robot artifact creature token. Activate this ability only as a sorcery.
 
 [U091] Matrix Watcher {2}{G}
 Creature — Human Technician (2/6)
@@ -1240,6 +1231,13 @@ Legendary Creature — Human Pilot (2/3)
 Whenever a land enters under your control, you get {E}.
 {T}, Pay {E}{E}: Target creature gains your choice of hexproof, trample, or reach until end of turn.
 {T}, Pay {E}{E}: The next creature spell you cast this turn can be cast as if it had flash.
+
+[U095] Agent Grey, Suppressor {U}{B}
+Legendary Creature - Agent Program (3/3)
+Digital
+Override a digital creature
+When Agent Grey enters, you may tap up to one target creature.
+Whenever a creature an opponent controls becomes tapped, you may pay {1}. If you do, put a stun counter on it.
 
 [U096] The Twins, Ghost Programs {1}{W}{B}
 Legendary Creature — Program Spirit (3/2)
@@ -1272,6 +1270,37 @@ Creature — Human Soldier Program (3/3)
 Digital, first strike
 Attacking creatures you control with digital get +1/+0.
 {2}: Eject.
+
+[U101] Zion Heavy-Loader {1}{R}{G}
+Creature - Human Warrior (3/3)
+Trample
+When Zion Heavy-Loader enters, you get {E}{E}.
+At the beginning of combat on your turn, you may pay {E}. If you do, target creature you control gets +2/+0 and trample until end of turn.
+"Ideally, we use them for cargo. Practically? We use them for everything."
+
+[U102] Bio-Current Technician {R}{G}
+Creature - Human Druid Artificer (2/2)
+Haste
+{T}: Add {R} or {G}. If this mana is used to cast a creature with power 4 or greater, you get {E}{E}.
+"The levels are spiking. Disconnect the safeties and let it flow!"
+
+[U103] Code-Stream Stabilizer {1}{U}{G}
+Creature - Human Wizard (3/3)
+Flash
+When Code-Stream Stabilizer enters, you may have it tap or untap target creature. That creature can block creatures with digital until end of turn.
+"The simulation tries to correct anomalies. I make sure the anomalies stay."
+
+[U104] The Source's Defense {1}{B}{G}
+Enchantment
+At the beginning of your upkeep, you may mill two cards.
+{3}, Exile a creature card from your graveyard: Create a 2/2 colorless Robot artifact creature token with flying.
+
+[U105] Resistance Recuiter {1}{W}{G}
+Creature - Human Soldier (1/1)
+This creature gets +1/+1 for each other Human you control.
+When this creature enters, look at the top four cards of your library. You may reveal a Human card from among them and put it in your hand. Put the rest on the bottom of your library.
+
+
 
 --- RARES ---
 
@@ -1345,11 +1374,6 @@ At the beginning of your end step, if a creature died this turn, create a 1/1 gr
 Enchantment
 Whenever a creature you control with menace or digital attacks, put a +1/+1 counter on that creature.
 Whenever a creature you control with a +1/+1 counter on it deals combat damage to a player, you get {E}.
-
-[R061] The Source's Defense {1}{B}{G}
-Enchantment
-At the beginning of your upkeep, you may mill two cards.
-{2}, Exile a creature card from your graveyard: Create a 2/2 colorless Robot artifact creature token with flying.
 
 [R062] Prime Sentinel, The Hunter {3}{B}{R}
 Legendary Artifact Creature — Robot (5/4)

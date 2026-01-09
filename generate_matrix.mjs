@@ -518,20 +518,21 @@ function parseDesignBible(filePath) {
 // 4. API INTERACTION
 // ==========================================
 
+// RETURNS: true if generated, false if skipped
 async function generateArtForCard(aiClient, card, isDryRun, forceOverwrite) {
   const prompt = card.generatePrompt();
   const outputPath = path.join(OUTPUT_DIR, card.getFileName());
 
   if (!forceOverwrite && fs.existsSync(outputPath)) {
     console.log(`[SKIP] ${card.getFileName()} already exists.`);
-    return;
+    return false; // Skipped
   }
 
   if (isDryRun) {
       console.log(`\n--- DRY RUN: ${card.name} (${card.isBackFace ? "BACK" : "FRONT"}) ---`);
       console.log(prompt);
       console.log("---------------------------------------------------------------");
-      return;
+      return false; // Dry run counts as "didn't hit API" for delay purposes usually, or you can return true if you want delay.
   }
 
   const world = card.getWorldContext();
@@ -571,14 +572,17 @@ async function generateArtForCard(aiClient, card, isDryRun, forceOverwrite) {
     if (imageBase64) {
       fs.writeFileSync(outputPath, imageBase64, 'base64');
       console.log(`   ✅ Saved to ${outputPath} (${duration}s)`);
+      return true; // Success
     } else {
       console.error(`   ❌ Failed: No image data returned. (${duration}s)`);
+      return true; // Still hit API
     }
 
   } catch (error) {
     const endTime = Date.now();
     const duration = ((endTime - startTime) / 1000).toFixed(2);
     console.error(`   ❌ API Error: ${error.message} (${duration}s)`);
+    return true; // Still hit API
   }
 }
 
@@ -627,7 +631,7 @@ async function main() {
   }
 
   console.log("------------------------------------------");
-  console.log(`   MATRIX SET ART GENERATOR (V34 - Vehicle Logic)`);
+  console.log(`   MATRIX SET ART GENERATOR (V35 - Efficient Delay)`);
   if (isDryRun) console.log("   ⚠️  DRY RUN MODE ENABLED ⚠️");
   if (isForce) console.log("   🔥 FORCE MODE: OVERWRITING ALL FILES 🔥");
   if (specificId) console.log(`   🎯 SPECIFIC MODE: Targeting Card ID '${specificId}'`);
@@ -652,9 +656,12 @@ async function main() {
 
   for (let i = 0; i < cardsToProcess.length; i++) {
     const forceThisCard = isForce || (specificId !== null);
-    await generateArtForCard(ai, cardsToProcess[i], isDryRun, forceThisCard);
     
-    if (!isDryRun) {
+    // Capture return value
+    const didGenerate = await generateArtForCard(ai, cardsToProcess[i], isDryRun, forceThisCard);
+    
+    // Only wait if we actually hit the API (and aren't in dry run mode)
+    if (didGenerate && !isDryRun) {
         await new Promise(r => setTimeout(r, 100));
     }
   }

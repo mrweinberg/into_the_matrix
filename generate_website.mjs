@@ -113,7 +113,6 @@ function parseDesignBible(filePath) {
   const sourceTagRegex = /\\/gi; 
   const citationRegex = /\\/gi;
   const idTagRegex = /^\[([A-Z]+\d+)\]\s+(.+?)(?:\s+(\{.*\})\s*)?$/;
-  // Note: We use startsWith in the loop now, but keep these for legacy checks
   const sectionHeaderRegex = /^[A-Z\s&]+\(\d+\s+Cards\)$/;
   const noteRegex = /^\(Includes\s+.*\)$/;
   const mechanicKeywords = ["Digital", "Jack-in", "Eject", "Override", "Energy", "Gun Token"];
@@ -166,12 +165,24 @@ function parseDesignBible(filePath) {
         }
     }
     else if (parsingMode === "mechanics") {
-        const isNewMechanic = mechanicKeywords.some(k => cleanLine.startsWith(k));
+        // CHANGED: Smarter detection to avoid duplicates
+        const matchedKeyword = mechanicKeywords.find(k => cleanLine.startsWith(k));
         
-        if (isNewMechanic) {
-            if (currentMechanic) setInfo.mechanics.push(currentMechanic);
-            currentMechanic = { name: cleanLine, text: [], notes: [] };
+        if (matchedKeyword) {
+            // If we are already inside this mechanic, treat this line as text/explanation
+            if (currentMechanic && currentMechanic.name.startsWith(matchedKeyword)) {
+                if (cleanLine.startsWith("Design Note:")) {
+                    currentMechanic.notes.push(cleanLine.replace("Design Note:", "").trim());
+                } else {
+                    currentMechanic.text.push(cleanLine);
+                }
+            } else {
+                // It's a new mechanic
+                if (currentMechanic) setInfo.mechanics.push(currentMechanic);
+                currentMechanic = { name: cleanLine, text: [], notes: [] };
+            }
         } else if (currentMechanic) {
+            // No keyword match, just text
             if (cleanLine.startsWith("Design Note:")) {
                 currentMechanic.notes.push(cleanLine.replace("Design Note:", "").trim());
             } else {
@@ -180,7 +191,6 @@ function parseDesignBible(filePath) {
         }
     }
     else if (parsingMode === "cards") {
-        // FILTER FIX: Ignore Headers like "=== WHITE ===" or "--- COMMONS ---"
         if (cleanLine.startsWith("=") || cleanLine.startsWith("---") || sectionHeaderRegex.test(cleanLine) || noteRegex.test(cleanLine)) return;
 
         if (cleanLine === '//') {
@@ -641,7 +651,7 @@ function generateHTML(data) {
             <div class="stat-box">
                 <h2>System Stats</h2>
                 <p><strong>Visible Cards:</strong> <span id="visibleCount">${setInfo.cardCount}</span></p>
-                <p><strong>System Version:</strong> v3.3.0 (Revert & Restore)</p>
+                <p><strong>System Version:</strong> v3.5.0 (Parsing Logic Fix)</p>
                 <button class="btn-generate" onclick="openBoosterPack()">Open Simulation Pack</button>
                 <button class="btn-generate" onclick="startDraft()">Start Draft Simulator</button>
                 <button class="btn-generate btn-notes" onclick="openNotes()">View Design Notes</button>
@@ -1166,7 +1176,7 @@ function main() {
   
   const data = parseDesignBible(INPUT_FILE);
   console.log("------------------------------------------");
-  console.log("   MATRIX SET WEBSITE GENERATOR (V33 - Restored)");
+  console.log("   MATRIX SET WEBSITE GENERATOR (V35 - Parser Fix)");
   console.log("------------------------------------------");
   console.log(`   Found ${data.cards.length} card faces.`);
   
