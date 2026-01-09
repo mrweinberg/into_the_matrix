@@ -317,7 +317,7 @@ This creature cannot be blocked.
 [C032] Keymaker's Guide {1}{U}
 Creature — Human Rogue (1/3)
 When Keymaker's Guide enters, scry 2.
-{1}{W}: Jack-in.
+{W}: Jack-in.
 //
 Backdoor Accessor (Color Indicator: Blue)
 Creature — Human Rogue Program (2/3)
@@ -360,7 +360,7 @@ Draw a card.
 
 [C039] Physics Override {1}{U}
 Instant
-Target creature has base power and toughness 4/4 and gains flying until end of turn.
+Target creature has base power and toughness 3/3 and gains flying until end of turn.
 
 [C040] System Patcher {3}{U}
 Creature — Human Program (3/2)
@@ -543,7 +543,7 @@ Whenever you cast a spell from the top of your library, you get {E}.
 Enchantment
 You may cast spells as though they had flash.
 Whenever you cast a spell, you may pay {E}{E}. If you do, choose one:
-• Counter target spell.
+• Counter target spell unless its controller pays {3}.
 • Return target nonland permanent to its owner's hand.
 • Target creature's base power and toughness becomes 1/1 until end of turn.
 
@@ -678,7 +678,7 @@ Whenever Meter Reader deals combat damage to a player, that player loses {E} equ
 You get {E} equal to the amount of {E} that player lost.
 
 [U046] Reinforcement Agent {1}{B}
-Creature — Agent Program (4/4)
+Creature — Agent Program (4/3)
 Digital
 Override creature with digital
 
@@ -847,9 +847,9 @@ When Sentinel Sweeper dies, you get {E}.
 
 [C103] Magma-Code Brawler {2}{R}
 Creature — Program Warrior (3/2)
-Digital, menace
+Digital, haste
 
-[C104] Panic Fire {3}{R}
+[C104] Panic Fire {2}{R}
 Instant
 Panic Fire deals 4 damage to target creature.
 
@@ -967,11 +967,11 @@ First strike
 At the beginning of your precombat main phase, you may sacrifice a creature or artifact.
 If you do, add {R}{R} and exile the top card of your library. You may play that card this turn.
 
-[R065] The Red Woman {1}{R}{R}
+[R065] The Red Woman {2}{R}{R}
 Legendary Creature — Program (1/1)
 Digital, indestructible
 Creatures your opponents control attack each combat if able.
-Whenever a creature an opponent controls attacks, if it isn't attacking you or a planeswalker you control, you draw a card and lose 1 life.
+Whenever an opponent attacks you with one or more creatures, exile the top card from your library. Until the end of your next turn, you may play that card.
 
 [R066] Weapon Cache {2}{R}
 Enchantment
@@ -982,6 +982,11 @@ Equipment you control have "Equipped creature has '{T}: This Equipment becomes a
 Artifact Creature — Robot Scout (3/2)
 Menace
 Whenever Sentinel Scout deals combat damage to a player, deal 3 damage to up to one target creature with digital.
+
+[R068] Trinity, Combat Driver {2}{R}
+Legendary Creature — Human Pilot (3/2)
+Whenever Trinity, Combat Driver crews a Vehicle, create a Gun token attached to that Vehicle.
+Vehicles you control that are creatures get +1/+0 for every 2 {E} you have, rounded down.
 
 --- MYTHICS ---
 
@@ -1000,11 +1005,11 @@ APU Operator gets +1/+1 and has trample as long as you have three or more {E}.
 
 [C121] Ship Medic {1}{G}
 Creature — Human Cleric (1/1)
-When Ship Medic enters, you get {E}{E}.
+When Ship Medic enters, you get {E}.
 Whenever Ship Medic attacks, you may pay {E}. If you do, put a +1/+1 counter on target creature.
 
 [C122] Zion Scrap-Hulk {3}{G}
-Creature — Human Warrior (3/5)
+Creature — Human Warrior (3/4)
 Reach
 Zion Scrap-Hulk can block creatures with digital as though they didn't have digital.
 
@@ -1091,7 +1096,7 @@ If this mana is spent to cast a creature spell that doesn't have digital, that c
 --- UNCOMMONS ---
 
 [U080] Heavy-Duty Construct {3}{G}
-Creature — Robot (6/6)
+Creature — Robot (6/5)
 Trample
 As an additional cost to cast this spell, pay {E}{E} or sacrifice a creature.
 
@@ -1267,7 +1272,7 @@ If you do, draw a card.
 Activate this ability only as a sorcery.
 
 [U109] Matrix Watcher {2}{G}
-Creature — Human Technician (2/6)
+Creature — Human Technician (2/4)
 Defender
 Matrix Watcher can block creatures with digital as though they didn't have digital.
 {2}{G}: Scry 1.
@@ -1332,7 +1337,7 @@ Attacking creatures you control with digital get +1/+0.
 Creature - Human Warrior (3/3)
 Trample
 When Zion Heavy-Loader enters, you get {E}{E}.
-At the beginning of combat on your turn, you may pay {E}.
+At the beginning of combat on your turn, you may pay {E}{E}.
 If you do, target creature you control gets +2/+0 and trample until end of turn.
 
 [U120] Bio-Current Technician {R}{G}
@@ -1424,11 +1429,6 @@ Flash
 When Morpheus, Revealer enters, target creature gets +2/+2 and gains hexproof until end of turn.
 At the beginning of your end step, if you control a creature with power 4 or greater, you get {E}.
 
-[R110] Trinity, Combat Driver {1}{R}{W}
-Legendary Creature — Human Pilot (3/2)
-Whenever Trinity, Combat Driver crews a Vehicle, create a Gun token attached to that Vehicle.
-Vehicles you control that are creatures get +1/+0 for each {E} you have.
-
 [R111] One Against Many {1}{W}{U}
 Instant
 Target creature gets +1/+1 for each creature your opponents control until end of turn.
@@ -1462,8 +1462,7 @@ You may choose new targets for the copy.
 [R116] Agent Smith, System Virus {3}{U}{B}
 Legendary Creature — Agent Program (4/4)
 Digital, ward {2}
-Whenever a creature enters under an opponent's control, you may pay {U/B}.
-If you do, gain control of it until the end of your next turn.
+Whenever a creature enters under an opponent's control, you may pay {U/B}. If you do, gain control of it until the end of your next turn. Do this only once each turn.
 At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own.
 
 --- MYTHICS ---
@@ -1660,7 +1659,7 @@ Crew 2
 Legendary Artifact Creature — God Construct (8/8)
 Indestructible
 As long as you have nine or fewer {E}, Deus Ex Machina isn't a creature.
-At the beginning of your upkeep, you get {E}{E}.
+At the beginning of your upkeep, you get {E}{E}{E}.
 {T}, Pay {E}{E}{E}{E}: Destroy target permanent.
 
  ========== LANDS (17 Cards) ==========
