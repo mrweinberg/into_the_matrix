@@ -1466,7 +1466,7 @@ Whenever you cast an instant or sorcery spell, you get {E}.
 Whenever Apoc attacks, you may pay {E}{E}{E}. If you do, copy the next instant or sorcery spell you cast this turn.
 You may choose new targets for the copy.
 
-[R116] Agent Smith, System Virus {3}{U}{B}
+[R116] Agent Smith, Antivirus {4}{U}{B}
 Legendary Creature — Agent Program (4/4)
 Digital, ward {2}
 Whenever a creature enters under an opponent's control, you may pay {U/B}. If you do, gain control of it until the end of your next turn. Do this only once each turn.
