@@ -279,7 +279,12 @@ If you do, return it to your hand.
 Enchantment
 Creatures have base power and toughness 1/1.
 Players have hexproof.
-“Through great sacrifice, at long last, the humans and machines defined the new terms of coexistence.”
+"Through great sacrifice, at long last, the humans and machines defined the new terms of coexistence."
+
+[R007] Escape Tactician {1}{W}{W}
+Legendary Creature — Human Soldier (2/4)
+When Escape Tactician enters, you get {E}{E}.
+{E}{E}, {T}: Exile target creature you control. At the beginning of the next end step, return it to the battlefield under its owner's control.”
 
 
 ========== BLUE (37 Cards) ==========
@@ -527,6 +532,16 @@ Whenever you cast a spell, you may pay {E}{E}. If you do, choose one:
 • Return target nonland permanent to its owner's hand.
 • Target creature's base power and toughness becomes 1/1 until end of turn.
 
+[R017] There is No Spoon {1}{U}{U}
+Instant
+Counter target spell. You get {E} equal to that spell's mana value.
+
+[R018] Seraph, Guardian of the Oracle {3}{U}
+Legendary Creature — Angel Program (3/4)
+Ward {2}, digital
+You may cast creature spells as though they had flash.
+Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Seraph.
+
 
 ========== BLACK (40 Cards) ==========
 
@@ -741,7 +756,33 @@ At the beginning of your end step, sacrifice a creature or eject.
 Enchantment
 Creatures you control have digital and menace.
 Whenever a creature an opponent controls dies, return it to the battlefield under your control. It's an Agent Program in addition to its other types.
-“The perfect world was a dream that your primitive cerebrum kept trying to wake up from.”
+“"The perfect world was a dream that your primitive cerebrum kept trying to wake up from."
+
+[R027] The Merovingian, Trafficker {2}{B}
+Legendary Creature — Program Rogue (2/3)
+Digital
+Whenever another creature dies, you may pay {1}. If you do, create a Treasure token.
+{T}, Sacrifice a Treasure: You draw a card and you lose 1 life.
+
+[R028] Harvester Unit {3}{B}
+Artifact Creature — Robot (4/4)
+Trample
+Whenever another creature you control dies, you get {E}.
+{2}, Pay {E}{E}{E}: Return target creature card from your graveyard to the battlefield tapped.
+
+[R029] Bane, Sleeper Agent {2}{B}
+Legendary Creature — Human Rogue (3/2)
+Menace
+Whenever Bane, Sleeper Agent deals combat damage to a player, you may sacrifice an artifact or creature. If you do, look at that player's hand and choose a nonland card from it. That player discards that card.
+When Bane, Sleeper Agent dies, you may pay {E}{E}{E}. If you do, return it to its owner's hand.
+
+[R030] Agent Smith, System Virus {3}{B}{B}
+Legendary Creature — Agent Program (4/4)
+Digital, ward {2}
+Whenever a creature enters under an opponent's control, you may pay {B}.
+If you do, gain control of it until the end of your next turn.
+At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own.
+”
 
 
 ========== RED (33 Cards) ==========
@@ -951,6 +992,23 @@ At the beginning of your upkeep, exile the top card of your library. You may pla
 “It’s crashing.”
 
 
+[R037] Apoc, System Breaker {1}{R}{R}
+Legendary Creature — Human Rogue (2/4)
+Haste
+Whenever you cast an instant or sorcery spell, you get {E}.
+Whenever Apoc attacks, you may pay {E}{E}{E}. If you do, copy the next instant or sorcery spell you cast this turn.
+You may choose new targets for the copy.
+
+[R038] Weapon Cache {2}{R}
+Enchantment
+At the beginning of your upkeep, create a Gun token.
+Equipment you control have "Equipped creature has '{T}: This Equipment becomes a 2/2 Construct artifact creature until end of turn. It's still an Equipment.'"
+
+[R039] Sentinel Scout {2}{R}
+Artifact Creature — Robot Scout (3/2)
+Menace
+Whenever Sentinel Scout deals combat damage to a player, deal 3 damage to up to one target creature with digital.
+
 ========== GREEN (34 Cards) ==========
 
 --- COMMONS ---
@@ -1151,6 +1209,16 @@ Reveal the top seven cards of your library.
 You may put any number of permanent cards from among them onto the battlefield.
 Put the rest on the bottom of your library in a random order.
 
+[R047] Zion Mystic {G}
+Legendary Creature — Human Shaman (1/2)
+When Zion Mystic enters, you get {E}.
+{E}, {T}: Add one mana of any color.
+{3}, {T}: You get {E}.
+
+[R048] Martial Arts Upload {X}{G}
+Instant
+Distribute X +1/+1 counters among any number of target creatures you control. Those creatures gain trample until end of turn.
+
 
 ========== MULTICOLOR (59 Cards) ==========
 
@@ -1323,156 +1391,80 @@ Trample, digital
 Creatures with digital get +1/+1 for each creature you control that doesn't have digital.
 {1}{G}{W}: Eject.
 
-[R053] Niobe, Expert Pilot {2}{R}
-Legendary Creature — Human Pilot (2/2)
-Vehicles you control have haste.
-Whenever a Vehicle you control attacks, it gets +1/+0 for each {E} you have.
 
-[R054] The Merovingian, Trafficker {2}{B}
-Legendary Creature — Program Rogue (2/3)
-Digital
-Whenever another creature dies, you may pay {1}. If you do, create a Treasure token.
-{T}, Sacrifice a Treasure: You draw a card and you lose 1 life.
 
-[R055] Trinity, Tactical Leader {2}{W}
-Legendary Creature — Human Soldier (2/3)
-First strike, vigilance
-Whenever Trinity attacks, you may pay {E}{E}. If you do, attacking creatures you control get +2/+0 until end of turn.
-{R}: Jack-in.
-//
-Trinity, Digital Savior (Color Indicator: R/W)
-Legendary Creature — Human Soldier Program (3/3)
-Digital, haste, vigilance
-Whenever Trinity, Digital Savior attacks, create a Gun token attached to her.
-{W}: Eject.
-
-[R056] Apoc, System Breaker {1}{R}{R}
-Legendary Creature — Human Rogue (2/4)
-Haste
-Whenever you cast an instant or sorcery spell, you get {E}.
-Whenever Apoc attacks, you may pay {E}{E}{E}. If you do, copy the next instant or sorcery spell you cast this turn.
-You may choose new targets for the copy.
-
-[R057] Harvester Unit {3}{B}
-Artifact Creature — Robot (4/4)
-Trample
-Whenever another creature you control dies, you get {E}.
-{2}, Pay {E}{E}{E}: Return target creature card from your graveyard to the battlefield tapped.
-
-[R058] Prime Biomass {X}{B}{G}
+[R053] Prime Biomass {X}{B}{G}
 Creature — Avatar Horror (0/0)
 Trample
 Prime Biomass enters with X +1/+1 counters on it.
 When Prime Biomass dies, create X 1/1 green Ooze creature tokens, where X is Prime Biomass's power.
 
-[R059] The Caretaker, Field Overseer {1}{B}{G}
+[R054] The Caretaker, Field Overseer {1}{B}{G}
 Legendary Artifact Creature — Robot (2/3)
 At the beginning of your end step, if a creature died this turn, create a 1/1 green Ooze creature token.
 {B}{G}, Sacrifice a creature: You get {E}{E} and draw a card.
 
-[R060] Endless Pursuit {1}{B}{R}
+[R055] Endless Pursuit {1}{B}{R}
 Enchantment
 Whenever a creature you control with menace or digital attacks, put a +1/+1 counter on that creature.
 Whenever a creature you control with a +1/+1 counter on it deals combat damage to a player, you get {E}.
 
-[R062] Prime Sentinel, The Hunter {3}{B}{R}
+[R056] Prime Sentinel, The Hunter {3}{B}{R}
 Legendary Artifact Creature — Robot (5/4)
 Flying, menace
 Whenever Prime Sentinel, The Hunter attacks, you may sacrifice another artifact or creature.
 If you do, Prime Sentinel deals damage equal to that card's mana value to any target.
 
-[R063] Commander Lock {2}{G}{W}
+[R057] Commander Lock {2}{G}{W}
 Legendary Creature — Human Soldier (3/4)
 Vigilance
 At the beginning of combat on your turn, if you control three or more other creatures, you get {E}.
 Pay {E}{E}{E}{E}: Creatures you control get +2/+2 and gain trample until end of turn.
 
-[R064] Seraph, Guardian of the Oracle {3}{U}
-Legendary Creature — Angel Program (3/4)
-Ward {2}, digital
-You may cast creature spells as though they had flash.
-Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Seraph.
-
-[R065] Martial Arts Upload {X}{G}
-Instant
-Distribute X +1/+1 counters among any number of target creatures you control. Those creatures gain trample until end of turn.
-
-[R067] Niobe, Logos Commander {3}{R}{W}{B}
+[R058] Niobe, Logos Commander {3}{R}{W}{B}
 Legendary Creature — Human Pilot (5/5)
 Vigilance, menace
 Whenever an equipped creature or a Vehicle you control attacks, draw a card and you lose 1 life.
 You may pay {0} rather than pay the equip cost of Equipment you control that targets a Human.
 
-[R068] Final Stand at the Dock {3}{W}{R}
-Sorcery
-Create two 3/3 colorless Construct Artifact creature tokens. Sacrifice them at the beginning of the next end step.
-Creatures you control get +1/+1 and gain haste until end of turn.
-
-[R069] The Virtual Armory {1}{W}{R}
+[R059] The Virtual Armory {1}{W}{R}
 Enchantment
 Creatures you control get +1/+0 for each Equipment attached to them.
 At the beginning of combat on your turn, create a Gun token, then you may attach it to target creature you control.
 
-[R070] Bane, Sleeper Agent {2}{B}
-Legendary Creature — Human Rogue (3/2)
-Menace
-Whenever Bane, Sleeper Agent deals combat damage to a player, you may sacrifice an artifact or creature. If you do, look at that player's hand and choose a nonland card from it. That player discards that card.
-When Bane, Sleeper Agent dies, you may pay {E}{E}{E}. If you do, return it to its owner's hand.
-
-[R071] Morpheus, Revealer {2}{G}{U}
+[R060] Morpheus, Revealer {2}{G}{U}
 Legendary Creature — Human Monk (3/3)
 Flash
 When Morpheus, Revealer enters, target creature gets +2/+2 and gains hexproof until end of turn.
 At the beginning of your end step, if you control a creature with power 4 or greater, you get {E}.
 
-[R072] Trinity, Combat Driver {1}{R}{W}
+[R061] Trinity, Combat Driver {1}{R}{W}
 Legendary Creature — Human Pilot (3/2)
 Haste
 Whenever Trinity, Combat Driver crews a Vehicle, create a Gun token attached to that Vehicle.
 
-[R073] One Against Many {1}{W}{U}
+[R062] One Against Many {1}{W}{U}
 Instant
 Target creature gets +1/+1 for each creature your opponents control until end of turn. That creature can block any number of creatures this turn.
 
-[R074] Weapon Cache {2}{R}
-Enchantment
-At the beginning of your upkeep, create a Gun token.
-Equipment you control have "Equipped creature has '{T}: This Equipment becomes a 2/2 Construct artifact creature until end of turn. It's still an Equipment.'"
 
-[R075] Escape Tactician {1}{W}{W}
-Legendary Creature — Human Soldier (2/4)
-When Escape Tactician enters, you get {E}{E}.
-{E}{E}, {T}: Exile target creature you control. At the beginning of the next end step, return it to the battlefield under its owner's control.
 
-[R076] Zion Mystic {G}
-Legendary Creature — Human Shaman (1/2)
-When Zion Mystic enters, you get {E}.
-{E}, {T}: Add one mana of any color.
-{3}, {T}: You get {E}.
 
-[R077] Sentinel Scout {2}{R}
-Artifact Creature — Robot Scout (3/2)
-Menace
-Whenever Sentinel Scout deals combat damage to a player, deal 3 damage to up to one target creature with digital.
 
-[R078] There is No Spoon {1}{U}{U}
-Instant
-Counter target spell. You get {E} equal to that spell's mana value.
 
-[R079] Neo, Newly Awakened {R/W}
+
+
+
+
+[R063] Neo, Newly Awakened {R/W}
 Legendary Creature — Human Avatar (1/1)
 {R/W}: Neo becomes a 2/2 Human Monk with vigilance.
 {R/W}{R/W}: If Neo is a Monk, it becomes a 3/3 Human Monk Soldier and gains prowess.
 {R/W}{R/W}{R/W}: If Neo is a Soldier, put a +1/+1 counter on it and it gains digital until end of turn.
 
-[R080] Agent Smith, System Virus {3}{B}{B}
-Legendary Creature — Agent Program (4/4)
-Digital, ward {2}
-Whenever a creature enters under an opponent's control, you may pay {B}.
-If you do, gain control of it until the end of your next turn.
-At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own.
 
-[R082] Bullet Time Physics {1}{G}{U}
+
+[R064] Bullet Time Physics {1}{G}{U}
 Enchantment
 Creatures you control have "{1}, {Q}, Pay {E}: This creature gains hexproof and indestructible until end of turn."
 ({Q} is the untap symbol.)
