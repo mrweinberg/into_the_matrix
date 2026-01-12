@@ -223,8 +223,22 @@ First strike
 
 [U008] Life Celebrant {2}{W}
 Creature - Human Citizen (2/3)
-Whenever you gain life, put a +1/+1 counter on this creature.
-You may untap it.
+Whenever you gain life, put a +1/+1 counter on this creature. You may untap it.
+
+[U009] Morpheus, Seeker of Potential {4}{W}
+Legendary Creature - Human Advisor (4/4)
+First strike, digital
+Whenever Morpheus attacks, look at the top four cards of your library. You may reveal a creature with a Jack-In ability or with digital from among them and put it into your hand. Put the rest on the bottom of your library in any order.
+
+[U010] Field Medic {W}
+Creature - Human Cleric
+{T}: You gain 1 life.
+{1}{W}: Jack-in.
+//
+System Mender
+Creature - Human Program Cleric (1/2)
+Digital, lifelink
+Whenever you gain life, put a +1/+1 counter on target creature you control.
 
 --- RARES ---
 
@@ -330,8 +344,7 @@ Digital
 Creature — Program Agent (2/1)
 Flash, digital
 Override creature with digital
-When Local Beat Cop enters, tap target creature.
-Put a stun counter on it.
+When Local Beat Cop enters, tap up to one target creature and put a stun counter on it.
 
 [C034] System Scan {1}{U}
 Sorcery
@@ -470,13 +483,13 @@ Override creature with digital
 Surveillance Agent can't be blocked.
 {1}{U}: Return Surveillance Agent to its owner's hand.
 
---- RARES ---
+[U116] Viral Overwrite {3}{U}
+Enchantment — Aura
+Enchant creature
+You control enchanted creature.
+Enchanted creature is a Program with base power and toughness 3/3 and has digital.
 
-[R020] Extended Network {2}{U}{U}
-Enchantment
-You may have creatures you control override creatures you don't control.
-(You still control the overriding creature.)
-Whenever a creature you control overrides another creature, draw a card.
+--- RARES ---
 
 [R021] Code Runner {2}{U}
 Creature — Human Rogue (2/2)
@@ -498,8 +511,8 @@ Digital
 [R024] Paradise Failed {2}{U}{U}
 Enchantment — Saga
 I — Draw two cards, then discard a card.
-II — Tap up to two target creatures. They don't untap during their controller's next untap step.
-III — Exile all creatures, then return them to the battlefield tapped under their owners' control.
+II — Tap up to two target creatures. Put a stun counter on each creature tapped this way.
+III — Exile any number of target creatures, then return them to the battlefield under their owner's control.
 
 [R025] Confiscation Coup {3}{U}{U}
 Sorcery
@@ -648,21 +661,10 @@ Sorcery
 All creatures get -2/-2 until end of turn.
 Whenever a creature dies this turn, if it had digital, you get {E}.
 
-[U042] Awakened Custodian {3}{B}
-Creature — Human Rogue (2/2)
-When Awakened Custodian enters, return target creature card from your graveyard to your hand.
-Pay {E}: Awakened Custodian gains deathtouch until end of turn.
-
 [U043] Waste Management {2}{B}
 Sorcery
 Return up to two target creature cards from your graveyard to your hand.
 If you control a Robot or a creature with digital, you get {E}{E}.
-
-[U044] Cross-Wiring {B}
-Enchantment — Aura
-Enchant creature
-Enchanted creature has deathtouch.
-When Cross-Wiring enters, create a Gun token.
 
 [U045] Meter Reader {1}{B}
 Creature — Agent Program (2/3)
@@ -676,21 +678,14 @@ Creature — Agent Program (4/3)
 Digital
 Override creature with digital
 
-[U047] Hardline Interceptor {1}{B}{B}
-Creature — Program Agent (2/2)
-Digital
-When Hardline Interceptor enters, target creature gets -2/-2 until end of turn.
-If that creature has digital, it gets -4/-4 until end of turn instead.
-
 [U048] Systematic Overwrite {2}{B}
 Sorcery
 Target creature's controller sacrifices it unless they pay {E}{E}{E}.
-If a creature died this turn, you may return target Robot or Program card from your graveyard to your hand.
+If a creature died this turn, you a return a Robot or Program card from your graveyard to your hand.
 
-[U049] Zion Fuel-Runner {2}{B}
-Creature — Human Rogue (3/2)
-When Zion Fuel-Runner enters, you may exile an artifact or creature card from a graveyard.
-If you do, you get {E}{E}.
+[U049] Biomatter Repurposer {2}{B}
+Artifact Creature — Robot (3/2)
+When this creature enters, you may exile an artifact or creature card from a graveyard. If you do, you get {E}{E}.
 Pay {E}{E}: Target creature gains lifelink until end of turn.
 
 [U050] Sentinel Scavenger {3}{B}
@@ -702,7 +697,7 @@ Sacrifice an artifact or creature: Sentinel Scavenger gets +1/+1 until end of tu
 [U051] Neural Spike {B}
 Instant
 Target opponent reveals their hand. You choose a nonland card from it.
-That player discards that card unless they pay {E}{E}.
+That player discards that card unless they pay {E}{E}{E}.
 If you control a creature with digital, you gain 2 life.
 
 [U102] Agent Brown, Enforcer {2}{B}{B}
@@ -727,10 +722,11 @@ Sacrifice a Robot: Sentinel Swarm gets +2/+2 until end of turn.
 Whenever a Robot you control dies, you may pay {1}{B}.
 If you do, create a 1/1 colorless Robot artifact creature token with flying.
 
-[R041] Black Market Surgeon {2}{B}
-Creature — Human Rogue (2/3)
-{1}, Sacrifice another creature: Return target creature card with mana value less than the sacrificed creature's mana value from your graveyard to your hand.
-{2}{B}, Sacrifice two creatures: Return target creature card from your graveyard to the battlefield.
+[R041] Cain, Loyal Exile {3}{B}{B}
+Legendary Creature — Program Vampire (2/5)
+Digital, lifelink
+Whenever you gain life, up to one target creature gets -X/-X until end of turn, where X is the amount of life you gained.
+"I have survived versions of the Matrix you cannot imagine. You will not survive this one."
 
 [R042] The Trainman {2}{B}
 Legendary Creature — Program Guide (2/3)
@@ -1254,7 +1250,7 @@ Digital, vigilance
 Other creatures you control with eject get +1/+1.
 {2}: Eject.
 
-[U104] Agent Jones, Dodger {2}{U}{B}
+[U104] Agent Jones {1}{U}{B}
 Legendary Creature — Agent Program (4/2)
 Flash, digital
 Override creature with digital
@@ -1299,13 +1295,11 @@ Whenever a land enters under your control, you get {E}.
 {T}, Pay {E}{E}: Target creature gains your choice of hexproof, trample, or reach until end of turn.
 {T}, Pay {E}{E}: The next creature spell you cast this turn can be cast as if it had flash.
 
-[U113] Agent Grey, Suppressor {U}{B}
+[U113] Agent Grey, Suppressor {1}{U}{B}
 Legendary Creature - Agent Program (3/3)
 Digital
 Override a digital creature
-When Agent Grey enters, you may tap up to one target creature.
-Whenever a creature an opponent controls becomes tapped, you may pay {1}.
-If you do, put a stun counter on it.
+When Agent Grey enters, you may tap up to one target creature. Whenever a creature an opponent controls becomes tapped, you may pay {1}. If you do, put a stun counter on it.
 
 [U114] The Twins, Ghost Programs {1}{W}{B}
 Legendary Creature — Program Spirit (3/2)
@@ -1317,12 +1311,6 @@ Legendary Creature — Program Noble (2/3)
 Digital, lifelink
 Whenever another creature dies, you gain 1 life and may pay {1}.
 If you do, draw a card.
-
-[U116] Viral Overwrite {3}{U/B}
-Enchantment — Aura
-Enchant creature
-You control enchanted creature.
-Enchanted creature is a Program with base power and toughness 3/3 and has digital.
 
 [U117] Captain Mifune {R}{W}
 Legendary Creature — Human Soldier (2/2)
@@ -1466,8 +1454,9 @@ Whenever you cast an instant or sorcery spell, you get {E}.
 Whenever Apoc attacks, you may pay {E}{E}{E}. If you do, copy the next instant or sorcery spell you cast this turn.
 You may choose new targets for the copy.
 
-[R116] Agent Smith, Antivirus {4}{U}{B}
+[R116] Agent Smith, Antivirus {3}{U}{B}
 Legendary Creature — Agent Program (4/4)
+Override a digital creature
 Digital, ward {2}
 Whenever a creature enters under an opponent's control, you may pay {U/B}. If you do, gain control of it until the end of your next turn. Do this only once each turn.
 At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own.
@@ -1569,11 +1558,6 @@ When Prism Interface enters, draw a card and you get {E}.
 
 --- UNCOMMONS ---
 
-[U135] Operator's Console {2}
-Artifact
-{T}: Add {C}.
-{2}, {T}: Target creature you control jacks-in.
-
 [U136] Decoction Module {2}
 Artifact
 Whenever a creature enters under your control, you get {E}.
@@ -1613,21 +1597,9 @@ Crew 2
 Artifact
 {2}, {T}: Exile target nontoken creature you control, then return it to the battlefield transformed under its owner's control.
 
-[U143] Red Woman Code {1}
-Artifact — Clue
-When Red Woman Code enters, goad target creature.
-{2}, Sacrifice Red Woman Code: Draw a card.
-
 [U144] Portable EMP {3}
 Artifact
-{T}, Sacrifice Portable EMP: Tap all artifacts and creatures with digital.
-Put a stun counter on each creature tapped this way.
-
-[U145] Electronic Tracking Bug {1}
-Artifact — Equipment
-When Electronic Tracking Bug enters, look at target opponent's hand.
-Equipped creature gets +1/+0 and has "Whenever this creature deals combat damage to a player, scry 1."
-Equip {1}
+{T}, Sacrifice Portable EMP: Tap all artifacts and creatures with digital. Put a stun counter on each creature tapped this way.
 
 --- RARES ---
 
