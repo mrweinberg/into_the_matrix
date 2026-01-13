@@ -3,7 +3,7 @@ Total Card Count: 251
 
 0. Design Notes
 This set was designed with the help of Gemini and Claude. While I designed the mechanics and the initial cards, they helped fill out the file, create the art, and create the website. Final polishing, ensuring the set makes sense, and making the cards flavorful and fun has been done by hand.
-I'm aiming to make this a good limited environment over anything. That means that though the mechanics are quite parasitic, they should work in the context its meant to be played. If some cards play weirdly outside the set, it's not optimized for it.
+I'm aiming to make this a good limited environment over anything. That means that though the mechanics are quite parasitic, they should work in the context its meant to be played. If some cards play weirdly outside the set, that's okay, as it's not optimized for it.
 To represent the different worlds, I repurposed Shadow as Digital. While Shadow is a bit of a dud mechanic, I feel like with a stronger thematic focus, it can be a useful tool for this set.
 By trying to split it along color lines, it makes the digital world as relevant as the non-digital world. This requires each color to have the tools to interact with each world, so the colors break down as such:
 W: The in-between color. Represents the order of the The Matrix and the human community of the real world. Eject/Jack-In lets it engage in both with a single card.
