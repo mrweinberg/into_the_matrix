@@ -556,7 +556,7 @@ Counter target spell. You get {E} equal to that spell's mana value.
 Legendary Creature — Angel Program (3/4)
 Ward {2}, digital
 You may cast creature spells as though they had flash.
-Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Seraph.
+Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on target creature you control.
 
 --- MYTHICS ---
 
