@@ -1579,10 +1579,9 @@ Artifact — Vehicle (3/4)
 Scavenged Chassis gets +2/+1 if it was crewed by a Robot this turn.
 Crew 1
 
-[C155] Tasty Wheat {1}
+[C155] Simulated Steak {1}
 Artifact — Food
-When you sacrifice Tasty Wheat, you put a +1/+1 counter on up to one target creature.
-{2}, {T}, Sacrifice Tasty Wheat: You gain 3 life and draw a card.
+{2}, {T}, Sacrifice this artifact: You gain 3 life and draw a card.
 
 [C156] The Spoon {0}
 Artifact

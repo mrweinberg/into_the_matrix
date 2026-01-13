@@ -68,5 +68,11 @@
         "id": "U001",
         "subject": "A caretaker of children, an elder woman with a kind look on her face, keeping watch over 3-5 young children",
         "setting": "The nicer parts of Zion, rustic but well managed. There are learning posters on the walls."
+    },
+    {
+        "id": "C155",
+        "subject": "Cypher (Joe Pantoliano) eating a succulent steak, satisfied and unconcerned.",
+        "setting": "A fine steakhouse in The Matrix",
+        "sunglasses": false
     }
 ]
