@@ -979,9 +979,7 @@ Flying
 
 [R060] System Override {2}{R}
 Sorcery
-Gain control of target creature until end of turn.
-Untap that creature. It gains haste until end of turn.
-If it's an artifact or has digital, sacrifice it at the beginning of the next end step.
+Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn. If it's an artifact or has digital, sacrifice it at the beginning of the next end step.
 You may cast System Override as though it had flash if you have four or more {E}.
 
 [R061] Hunter-Killer Sentinel {3}{R}
@@ -1004,8 +1002,7 @@ III — Create a 5/5 colorless Robot artifact creature token with menace and has
 [R064] Cypher, Reality Skeptic {2}{R}
 Legendary Creature — Human Rogue (2/2)
 First strike
-At the beginning of your precombat main phase, you may sacrifice a creature or artifact.
-If you do, add {R}{R} and exile the top card of your library. You may play that card this turn.
+At the beginning of your precombat main phase, you may sacrifice a creature or artifact. If you do, add {R}{R} and exile the top card of your library. You may play that card this turn.
 
 [R065] The Red Woman {2}{R}{R}
 Legendary Creature — Program (1/1)
@@ -1013,10 +1010,10 @@ Digital, indestructible
 Creatures your opponents control attack each combat if able.
 Whenever an opponent attacks you with one or more creatures, exile the top card from your library. Until the end of your next turn, you may play that card.
 
-[R066] Weapon Cache {2}{R}
+[R066] Weapons Cache {2}{R}
 Enchantment
 At the beginning of your upkeep, create a Gun token.
-Equipment you control have "Equipped creature has '{T}: This Equipment becomes a 2/2 Construct artifact creature until end of turn. It's still an Equipment.'"
+If you would create a Gun token, create an additional Gun token.
 
 [R067] Sentinel Scout {2}{R}
 Artifact Creature — Robot Scout (3/2)
@@ -1297,8 +1294,7 @@ If you do, draw a card.
 
 [U106] Fatal Exception {U}{R}
 Instant
-Counter target spell unless its controller pays {3}.
-If that player pays the cost, Fatal Exception deals 3 damage to them.
+Counter target spell unless its controller pays {3}. If they do, Fatal Exception deals 3 damage to them.
 
 [U107] Liquefy {B}{G}
 Instant
@@ -1307,10 +1303,8 @@ Draw two cards and you get {E}{E}.
 
 [U108] Scrap Repurposer {1}{B}{R}
 Creature — Robot Artificer (2/3)
-Whenever an artifact creature you control dies, you get {E} and may discard a card.
-If you do, draw a card.
-{3}, Sacrifice an artifact: Create a 3/3 colorless Robot artifact creature token.
-Activate this ability only as a sorcery.
+Whenever an artifact creature you control dies, you get {E} and may discard a card. If you do, draw a card.
+{3}, Sacrifice an artifact: Create a 3/3 colorless Robot artifact creature token. Activate this ability only as a sorcery.
 
 [U110] Swarm Commander {B}{R}
 Artifact Creature — Robot (2/2)
@@ -1331,18 +1325,18 @@ Whenever a land enters under your control, you get {E}.
 Legendary Creature - Agent Program (3/3)
 Digital
 Override a digital creature
-When Agent Grey enters, you may tap up to one target creature. Whenever a creature an opponent controls becomes tapped, you may pay {1}. If you do, put a stun counter on it.
+When Agent Grey enters, you may tap up to one target creature. 
+Whenever a creature an opponent controls becomes tapped, you may pay {1}. If you do, put a stun counter on it.
 
 [U114] The Twins, Ghost Programs {1}{W}{B}
 Legendary Creature — Program Spirit (3/2)
 Digital, menace
-{1}: The Twins, Ghost Programs phases out.
+{W}{B}: Exile The Twins and return them to the battlefield at end of turn.
 
 [U115] Persephone, Disillusioned Wife {1}{W}{B}
 Legendary Creature — Program Noble (2/3)
 Digital, lifelink
-Whenever another creature dies, you gain 1 life and may pay {1}.
-If you do, draw a card.
+Whenever another creature dies, you gain 1 life and may pay {2}. If you do, draw a card.
 
 [U117] Captain Mifune {R}{W}
 Legendary Creature — Human Soldier (2/2)
@@ -1475,8 +1469,7 @@ Creatures you control have "{1}, {Q}, Pay {E}: This creature gains hexproof and 
 [R114] The Merovingian, Trafficker {1}{W}{B}
 Legendary Creature — Program Rogue (2/3)
 Digital
-Whenever another creature dies, you may pay {1}.
-If you do, create a Treasure token.
+Whenever another creature dies, you may pay {1}. If you do, create a Treasure token.
 {T}, Sacrifice a Treasure: You draw a card and you lose 1 life.
 
 [R115] Apoc, System Breaker {1}{U}{R}
