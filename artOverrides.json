@@ -63,5 +63,10 @@
         "subject": "An agent of the matrix. Looks like a generic white guy with greying hair.",
         "setting": "An interrogation room. White walls, table in the middle.",
         "composition": "Agent Grey is looming above a man slouched over the table."
+    },
+    {
+        "id": "U001",
+        "subject": "A caretaker of children, an elder woman with a kind look on her face, keeping watch over 3-5 young children",
+        "setting": "The nicer parts of Zion, rustic but well managed. There are learning posters on the walls."
     }
 ]
