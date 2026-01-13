@@ -2,19 +2,16 @@
 Total Card Count: 251
 
 0. Design Notes
-This set was designed with the help of Google Gemini and Claude Sonnet.
-While I designed the mechanics and the initial cards, they helped fill out the file, create the art, and create the website.
-To represent the different worlds, I repurposed Shadow as Digital.
-While Shadow is a bit of a dud mechanic, I feel like with a stronger thematic focus, it can be a useful tool for this set.
-By trying to split it along color lines, it makes the digital world as relevant as the non-digital world.
-This requires each color to have the tools to interact with each world, so the colors break down as such:
+This set was designed with the help of Gemini and Claude. While I designed the mechanics and the initial cards, they helped fill out the file, create the art, and create the website. Final polishing, ensuring the set makes sense, and making the cards flavorful and fun has been done by hand.
+I'm aiming to make this a good limited environment over anything. That means that though the mechanics are quite parasitic, they should work in the context its meant to be played. If some cards play weirdly outside the set, it's not optimized for it.
+To represent the different worlds, I repurposed Shadow as Digital. While Shadow is a bit of a dud mechanic, I feel like with a stronger thematic focus, it can be a useful tool for this set.
+By trying to split it along color lines, it makes the digital world as relevant as the non-digital world. This requires each color to have the tools to interact with each world, so the colors break down as such:
 W: The in-between color. Represents the order of the The Matrix and the human community of the real world. Eject/Jack-In lets it engage in both with a single card.
 U: The logic and order of the matrix. It gets down to the very structure of it, and also the humans that can interact with it. Mostly digital, with classic blue control tools.
 B: The agents and manipulators of the world are in Black. Mostly, but not entirely, digital, it also includes much of the real world machine army.
 R: Represents the raw passion of the human resistance and the explosive, physical nature of the Real World. It interacts with the Digital world through disruption—using "EMP" effects and direct damage to "burn out" programs and artifacts.
 G: Green represents the "fields" of the Machine City and the organic endurance of Zion. It generates and stores the most energy and mostly only interacts with the digital world through interaction and "digital reach".
-Energy is an important component of the set. Fundamental to The Matrix universe, here we try to explore some new design space.
-Cards that are spenders but not generators, classic engine pieces, and energy threshold cards make it fundamental to playing this set.
+Energy is an important component of the set. Fundamental to The Matrix universe, here we try to explore some new design space. Cards that are spenders but not generators, classic engine pieces, and energy threshold cards make it fundamental to playing this set.
 
 Draft Archetypes:
 WU: System Infiltration
@@ -22,7 +19,7 @@ This archetype focuses on the Jack-in and Eject mechanics to gain value from tra
 UB: Agent control
 A classic control shell that utilizes Digital creatures and the Override mechanic to possess and neutralize opponent threats.
 BR: Sentinel Aggro
-An aggressive artifact-centric deck that focuses on Robot tribal and Menace to push through damage. It rewards you for sacrificing artifacts for value and using Energy to burn out opponents.
+An aggressive artifact-centric deck that focuses on Robot tribal to push through. It rewards you for sacrificing artifacts for value and using Energy to burn out opponents.
 RG: Bio-Electric Power
 This deck focuses on generating large amounts of Energy {E} and spending it on massive "Real World" threats like Beasts and Vehicles. It aims to overwhelm the board with high-power creatures and trampling damage.
 GW: Zion Resistance
@@ -36,7 +33,7 @@ This archetype focuses on the graveyard and the recycling of resources. It uses 
 RW: Armed and Ready
 The premier Vehicle and Equipment deck. It leverages Gun tokens and specialized Pilots to create a highly efficient, fast-moving combat force that rewards aggressive play.
 GU: System Mastery
-A midrange "Value" deck that uses Energy to manipulate the battlefield and protect its creatures. It focuses on ramping mana and utilizing Flash to outmaneuver the opponent's code.
+A midrange deck that uses Energy and flash threats to manipulate the battlefield and protect its creatures. It's a reactive value town.
 1. Mechanics & Glossary
 
 Digital
@@ -231,14 +228,29 @@ First strike, digital
 Whenever Morpheus attacks, look at the top four cards of your library. You may reveal a creature with a Jack-In ability or with digital from among them and put it into your hand. Put the rest on the bottom of your library in any order.
 
 [U010] Field Medic {W}
-Creature - Human Cleric
+Creature - Human Cleric (1/1)
 {T}: You gain 1 life.
 {1}{W}: Jack-in.
 //
 System Mender
 Creature - Human Program Cleric (1/2)
 Digital, lifelink
-Whenever you gain life, put a +1/+1 counter on target creature you control.
+Whenever you gain life, put a +1/+1 counter on another target creature you control.
+
+[U011] Hoversuit Striker {3}{W}{W}
+Creature - Human Soldier (2/4)
+Flying
+This creature gets +1/+1 if you control a nontoken artifact.
+This creature gets +1/+1 if it is equipped.
+
+[U012] Disposal Subroutine {1}{W}
+Sorcery
+As an additional cost to cast this spell, pay {E}{E} or {3}.
+Exile target nonland permanent.
+
+[U013] Extraction Mission {1}{W}{W}
+Sorcery
+Return up to three creature cards from your graveyard to the battlefield with total mana value 3 or less.
 
 --- RARES ---
 
@@ -483,11 +495,20 @@ Override creature with digital
 Surveillance Agent can't be blocked.
 {1}{U}: Return Surveillance Agent to its owner's hand.
 
-[U116] Viral Overwrite {3}{U}
+[U029] Viral Overwrite {3}{U}{U}
 Enchantment — Aura
 Enchant creature
 You control enchanted creature.
 Enchanted creature is a Program with base power and toughness 3/3 and has digital.
+
+[U030] Subroutine Analyst {2}{U}{U}
+Creature - Program Wizard (2/1)
+Digital
+When this creature enters, return target instant or sorcery from your graveyard to your hand.
+
+[U031] Copy and Paste {3}{U}
+Sorcery
+Create a token copy of target creature you control. You may have it gain or lose digital.
 
 --- RARES ---
 
@@ -649,6 +670,13 @@ You get {E}{E}.
 Creature — Human Cleric (1/2)
 {1}{B}, Pay 1 life: You get {E}{E}.
 
+[C079] Neural Spike {B}
+Instant
+Target opponent reveals their hand. You choose a nonland card from it.
+That player discards that card unless they pay {E}{E}{E}.
+If you control a creature with digital, you gain 2 life.
+
+
 --- UNCOMMONS ---
 
 [U040] Recycled Data {1}{B}
@@ -694,19 +722,17 @@ Menace
 Whenever another artifact or creature you control is put into a graveyard from the battlefield, you get {E}.
 Sacrifice an artifact or creature: Sentinel Scavenger gets +1/+1 until end of turn.
 
-[U051] Neural Spike {B}
+[U051] Sudden Respawn {4}{B}
 Instant
-Target opponent reveals their hand. You choose a nonland card from it.
-That player discards that card unless they pay {E}{E}{E}.
-If you control a creature with digital, you gain 2 life.
+Return target creature from your graveyard to the battlefield tapped.
 
-[U102] Agent Brown, Enforcer {2}{B}{B}
+[U052] Agent Brown, Enforcer {2}{B}{B}
 Legendary Creature — Agent Program (3/3)
 Flash, digital
 Override creature with digital
 When Agent Brown enters, if it overrode a creature, destroy target creature.
 
-[U103] Inevitable Deletion {1}{B}{B}
+[U053] Inevitable Deletion {1}{B}{B}
 Instant
 As an additional cost to cast this spell, sacrifice a creature.
 Destroy target creature or planeswalker.
@@ -728,12 +754,10 @@ Digital, lifelink
 Whenever you gain life, up to one target creature gets -X/-X until end of turn, where X is the amount of life you gained.
 "I have survived versions of the Matrix you cannot imagine. You will not survive this one."
 
-[R042] The Trainman {2}{B}
+[R042] The Trainman {3}{B}
 Legendary Creature — Program Guide (2/3)
 Digital
-When The Trainman enters, exile another target creature until The Trainman leaves the battlefield.
-If you control the exiled card, draw two cards and lose 2 life.
-If you don't control the exiled card, its owner loses 2 life and you gain 2 life.
+When The Trainman enters, exile another target creature until The Trainman leaves the battlefield. If you control the exiled card, draw two cards and lose 2 life. If you don't control the exiled card, its owner loses 2 life and you gain 2 life.
 
 [R043] Scorched Skies {2}{B}{B}
 Enchantment — Saga
@@ -946,6 +970,16 @@ Whenever you get one or more {E}, Conduit Overloader deals 1 damage to each oppo
 [U069] Volatile Fabricator {2}{R}
 Creature — Human Artificer (3/2)
 Whenever you sacrifice an Equipment, Volatile Fabricator deals 1 damage to any target.
+
+[U070] Sentinel Charger {3}{R}
+Artifact Creature - Robot (4/3)
+Haste
+When this creature enters, you may discard a card. If you do, draw a card and create a Gun token attached to this creature.
+
+[U071] Draconic Sentinel {4}{R}{R}
+Artifact Creature - Robot Dragon (5/5)
+Flying
+{R}: This creature gets +1/+0 until end of turn.
 
 --- RARES ---
 
@@ -1161,11 +1195,16 @@ Creature — Human Warrior (5/4)
 Trample
 Pay {E}: Augmented Brawler gets +1/+1 until end of turn.
 
-[U109] Matrix Watcher {2}{G}
+[U089] Matrix Watcher {2}{G}
 Creature — Human Technician (2/4)
 Defender
 Matrix Watcher can block creatures with digital as though they didn't have digital.
 {2}{G}: Scry 1.
+
+[U090] Combat Simulation {1}{G}
+Sorcery
+Put a +1/+1 counter on target creature you control. It fights target creature you don't control.
+"Stop trying to hit me and hit me!"
 
 --- RARES ---
 
