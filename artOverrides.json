@@ -74,5 +74,11 @@
         "subject": "Cypher (Joe Pantoliano) eating a succulent steak, satisfied and unconcerned.",
         "setting": "A fine steakhouse in The Matrix",
         "sunglasses": false
+    },
+    {
+        "id": "R104",
+        "subject": "A flood of Sentinels chasing two scared humans",
+        "setting": "The sewers of the real world",
+        "composition": "On the left are the two humans, and the rest of the sewer pipe is full of sentinels."
     }
 ]
