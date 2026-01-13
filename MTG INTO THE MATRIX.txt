@@ -1047,10 +1047,10 @@ Creature — Human Cleric (1/1)
 When this creature enters, you get {E}.
 Whenever this creature attacks, you may pay {E}. If you do, put a +1/+1 counter on target creature.
 
-[C122] Zion Scrap-Hulk {3}{G}
-Creature — Human Warrior (3/4)
-Reach
-Zion Scrap-Hulk can block creatures with digital as though they didn't have digital.
+[C122] Zion Acid-Slinger {1}{G}
+Creature — Human Warrior (2/1)
+Reach, deathtouch
+This creature can block creatures with digital as though they didn't have digital.
 
 [C123] Nutrient Recycler {2}{G}
 Artifact Creature — Robot (3/2)
@@ -1193,7 +1193,7 @@ Matrix Watcher can block creatures with digital as though they didn't have digit
 
 [U090] Combat Simulation {1}{G}
 Sorcery
-Put a +1/+1 counter on target creature you control. It fights target creature you don't control.
+Put two +1/+1 counters on two target creatures you control.
 "Stop trying to hit me and hit me!"
 
 --- RARES ---
@@ -1242,7 +1242,7 @@ If it was a Human or Robot card, draw a card.
 Legendary Creature — Human Shaman (1/2)
 When Zion Mystic enters, you get {E}.
 {E}, {T}: Add one mana of any color.
-{3}, {T}: You get {E}.
+{2}, {T}: You get {E}.
 
 [R087] Martial Arts Upload {X}{G}
 Instant
@@ -1610,10 +1610,11 @@ Artifact — Equipment
 Equipped creature gets +1/+0 and has "{2}, {T}: Tap target creature."
 Equip {1}
 
-[U141] Sentinel Carcass {4}
-Artifact — Vehicle (5/4)
-Menace
-Sentinel Carcass can block creatures with digital as though they didn't have digital.
+[U141] Sentinel Trap-Ship {4}
+Artifact — Vehicle (4/4)
+Flash
+When this artifact enters, you may have it become a creature until end of turn.
+This creature can block creatures with digital as though they didn't have digital.
 Crew 2
 
 [U142] The Liquid Mirror {3}
