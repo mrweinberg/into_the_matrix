@@ -326,8 +326,7 @@ Players have hexproof.
 [C030] Follow the White Rabbit {1}{U}
 Sorcery
 Kicker {U}
-Look at the top four cards of your library.
-Put one into your hand and the rest on the bottom of your library in any order.
+Look at the top four cards of your library. Put one into your hand and the rest on the bottom of your library in any order.
 If this spell was kicked, put two into your hand instead.
 
 [C031] Code-Hack Splicer {U}
@@ -436,8 +435,7 @@ Enchanted permanent does not untap during its controller's untap step.
 
 [C049] Link Monitor {1}{U}
 Creature - Program Artificer (2/1)
-{T}: Add {U}.
-Only use this mana to cast spells with digital, instants, or sorceries.
+{T}: Add {U}. Only use this mana to cast spells with digital, instants, or sorceries.
 {T}: Transform target creature with Eject or Jack-In.
 
 --- UNCOMMONS ---
@@ -526,8 +524,8 @@ Creatures you control with eject get +1/+1 and have ward {2}.
 [R023] The Keymaker {1}{U}
 Legendary Creature — Program Rogue (1/3)
 Digital
-{T}: Target creature can't be blocked this turn.
-{T}, Pay {E}{E}: Target creature gains protection from the color of your choice until end of turn.
+{T}, Pay {E}: Target creature can't be blocked this turn.
+{T}, Pay {E}{E}: Target creature gains hexproof until end of turn.
 
 [R024] Paradise Failed {2}{U}{U}
 Enchantment — Saga
@@ -544,9 +542,7 @@ If you do, gain control of it.
 [R026] Thomas Anderson {1}{U}
 Legendary Creature — Human (1/2)
 Skulk, digital
-When Thomas Anderson deals combat damage to a player, look at the top card of your library.
-If it's a legendary creature, you may reveal it and put it into your hand.
-If you do, put a +1/+1 counter on Thomas Anderson.
+When Thomas Anderson deals combat damage to a player, look at the top card of your library. If it's a legendary creature, you may reveal it and put it into your hand. If you do, put a +1/+1 counter on Thomas Anderson.
 
 [R027] There is No Spoon {1}{U}{U}
 Instant
@@ -639,7 +635,7 @@ As long as Corrupted Hitman has first strike, it gets +2/+0.
 
 [C072] Reinitialize Soul {1}{B}
 Sorcery
-Kicker {1}{B}{E}{E}{E}
+Kicker {1}{B}{E}{E}
 Return target creature card from your graveyard to your hand.
 If this spell was kicked, put it onto the battlefield instead.
 
@@ -709,7 +705,7 @@ Override creature with digital
 [U048] Systematic Overwrite {2}{B}
 Sorcery
 Target creature's controller sacrifices it unless they pay {E}{E}{E}.
-If a creature died this turn, you a return a Robot or Program card from your graveyard to your hand.
+If a creature died this turn, you may return a Robot or Program card from your graveyard to your hand.
 
 [U049] Biomatter Repurposer {2}{B}
 Artifact Creature — Robot (3/2)
@@ -796,9 +792,7 @@ When Bane, Sleeper Agent dies, you may pay {E}{E}{E}. If you do, return it to it
 [M05] Nightmare Matrix {4}{B}{B}
 Enchantment
 Creatures you control have digital and menace.
-Whenever a creature an opponent controls dies, return it to the battlefield under your control.
-It's an Agent Program in addition to its other types.
-
+Whenever a creature an opponent controls dies, return it to the battlefield under your control. It's a Program in addition to its other types.
 
 ========== RED (41 Cards) ==========
 
@@ -994,8 +988,7 @@ You may cast System Override as though it had flash if you have four or more {E}
 Artifact Creature — Robot (3/3)
 Flash, flying
 When Hunter-Killer Sentinel enters, you may change the target of target spell or ability to Hunter-Killer Sentinel.
-Whenever Hunter-Killer Sentinel deals combat damage to a player, you may sacrifice it.
-If you do, it deals 4 damage to each creature that player controls.
+Whenever Hunter-Killer Sentinel deals combat damage to a player, you may sacrifice it. If you do, it deals 4 damage to each creature that player controls.
 
 [R062] EMP Blast {1}{R}{R}
 Sorcery
