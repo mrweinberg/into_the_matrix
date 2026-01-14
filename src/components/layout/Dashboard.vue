@@ -4,12 +4,15 @@
       <div class="stat-box">
         <h2>System Stats</h2>
         <p><strong>Visible Cards:</strong> {{ visibleCount }}</p>
-        <p><strong>System Version:</strong> v4.1.0 (Sorting and Filtering)</p>
+        <p><strong>System Version:</strong> v4.2.0 (Sealed Pool)</p>
         <button class="btn-generate" @click="$emit('open-booster')">
           Open Simulation Pack
         </button>
         <button class="btn-generate" @click="$emit('start-draft')">
           Start Draft Simulator
+        </button>
+        <button class="btn-generate" @click="$emit('generate-sealed')">
+          Generate Sealed Pool
         </button>
         <button class="btn-generate btn-notes" @click="$emit('open-notes')">
           View Design Notes
@@ -51,7 +54,7 @@ const rarity = defineModel('rarity', { type: String })
 const typeText = defineModel('typeText', { type: String })
 const activeColors = defineModel('activeColors', { type: Array })
 
-const emit = defineEmits(['open-booster', 'start-draft', 'open-notes', 'toggle-color'])
+const emit = defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-notes', 'toggle-color'])
 
 function toggleColor(color) {
   emit('toggle-color', color)

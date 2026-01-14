@@ -12,6 +12,7 @@
       @toggle-color="toggleColor"
       @open-booster="openBooster"
       @start-draft="startDraft"
+      @generate-sealed="generateSealed"
       @open-notes="showNotes = true"
     />
 
@@ -68,24 +69,33 @@
       @download="draft.downloadDeck()"
       @view-card="openCardDetailFromDraft"
     />
+
+    <!-- Sealed Pool Modal -->
+    <SealedModal
+      :show="showSealedPool"
+      :pool="sealedPool"
+      @close="showSealedPool = false"
+      @view-card="openCardDetailFromSealed"
+    />
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useCardStore } from '@/stores/cardStore'
+
 import { useFilters } from '@/composables/useFilters'
 import { useBooster } from '@/composables/useBooster'
 import { useDraft } from '@/composables/useDraft'
+import { generateSealedPool } from '@/utils/boosterLogic'
 import { sortCards } from '@/utils/cardUtils'
 import SortSelect from '@/components/filters/SortSelect.vue'
 
 import Dashboard from '@/components/layout/Dashboard.vue'
 import CardGallery from '@/components/cards/CardGallery.vue'
-import BoosterModal from '@/components/modals/BoosterModal.vue'
-import CardDetailModal from '@/components/modals/CardDetailModal.vue'
-import NotesModal from '@/components/modals/NotesModal.vue'
+
 import DraftModal from '@/components/modals/DraftModal.vue'
+import SealedModal from '@/components/modals/SealedModal.vue'
 
 const cardStore = useCardStore()
 
@@ -130,6 +140,11 @@ const showCardDetail = ref(false)
 const selectedCard = ref(null)
 const viewingFromPack = ref(false)
 const viewingFromDraft = ref(false)
+const viewingFromSealed = ref(false)
+
+// Sealed pool state
+const showSealedPool = ref(false)
+const sealedPool = ref([])
 
 // Notes modal state
 const showNotes = ref(false)
@@ -142,11 +157,17 @@ function startDraft() {
   draft.startDraft()
 }
 
+function generateSealed() {
+  sealedPool.value = generateSealedPool(allCards.value)
+  showSealedPool.value = true
+}
+
 function openCardDetail(card) {
   selectedCard.value = card
   showCardDetail.value = true
   viewingFromPack.value = false
   viewingFromDraft.value = false
+  viewingFromSealed.value = false
 }
 
 function openCardDetailFromPack(card) {
@@ -162,6 +183,13 @@ function openCardDetailFromDraft(card) {
   viewingFromDraft.value = true
 }
 
+function openCardDetailFromSealed(card) {
+  selectedCard.value = card
+  showCardDetail.value = true
+  viewingFromSealed.value = true
+  showSealedPool.value = false // Temporarily hide to show modal
+}
+
 function closeCardDetail() {
   showCardDetail.value = false
   selectedCard.value = null
@@ -173,6 +201,10 @@ function closeCardDetail() {
   }
   if (viewingFromDraft.value && draft.isReviewingPool.value) {
     viewingFromDraft.value = false
+  }
+  if (viewingFromSealed.value) {
+    showSealedPool.value = true
+    viewingFromSealed.value = false
   }
 }
 </script>

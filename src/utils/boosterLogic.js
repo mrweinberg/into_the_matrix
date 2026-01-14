@@ -46,3 +46,11 @@ export const rarityWeights = { Mythic: 4, Rare: 3, Uncommon: 2, Common: 1, Land:
 export function sortPackByRarity(pack) {
   return [...pack].sort((a, b) => rarityWeights[b.rarity] - rarityWeights[a.rarity])
 }
+
+export function generateSealedPool(allCards) {
+  let pool = []
+  for (let i = 0; i < 6; i++) {
+    pool.push(...generateBoosterPackData(allCards))
+  }
+  return pool
+}
