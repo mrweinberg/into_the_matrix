@@ -37,25 +37,11 @@
             <h2 class="modal-title">
               DRAFT COMPLETE - DECK BUILDER
               <br>
-              <button class="download-btn" @click="downloadDeck">
+              <button class="download-btn" @click="handleDownload">
                 Download List
               </button>
             </h2>
-            <div class="pack-grid">
-              <template v-for="card in sortedPool" :key="card.id">
-                <CardDFC
-                  v-if="card.hasBackFace"
-                  :card="card"
-                  :back-card="getBackFace(card)"
-                  @click="viewCard(card)"
-                />
-                <CardItem
-                  v-else
-                  :card="card"
-                  @click="viewCard(card)"
-                />
-              </template>
-            </div>
+            <DeckBuilder ref="builderRef" :initial-pool="pool" />
           </template>
         </div>
 
@@ -81,6 +67,7 @@ import CardItem from '@/components/cards/CardItem.vue'
 import CardDFC from '@/components/cards/CardDFC.vue'
 import DraftSidebar from './DraftSidebar.vue'
 import HoverPreview from './HoverPreview.vue'
+import DeckBuilder from '@/components/deck/DeckBuilder.vue'
 
 const props = defineProps({
   show: Boolean,
@@ -97,6 +84,7 @@ const emit = defineEmits(['close', 'pick', 'download', 'view-card'])
 
 const cardStore = useCardStore()
 const hoverCard = ref(null)
+const builderRef = ref(null)
 
 function getBackFace(card) {
   return cardStore.getBackFace(card)
@@ -110,8 +98,12 @@ function handleClose() {
   emit('close')
 }
 
-function downloadDeck() {
-  emit('download')
+function handleDownload() {
+  if (builderRef.value) {
+    builderRef.value.exportDeck()
+  } else {
+    emit('download')
+  }
 }
 
 function viewCard(card) {
