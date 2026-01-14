@@ -617,9 +617,9 @@ Artifact Creature — Robot (3/2)
 Menace
 When Dredge-Line Crawler dies, you may return target artifact card with mana value 3 or less from your graveyard to your hand.
 
-[C068] Merovingian's Indulgence {B}
+[C068] Merovingian's Indulgence {1}{B}
 Instant
-Target creature gains lifelink until end of turn. You gain 2 life.
+Target creature gets +1/+0 and gains lifelink and indestructible until end of turn.
 
 [C069] Replica Agent {B}
 Creature — Agent Program (1/1)
