@@ -122,8 +122,8 @@ Destroy target attacking or blocking creature.
 
 [C009] Deja Vu {W}
 Instant
-Exile target creature.
-If it was transformed, return it transformed. Otherwise, return it to the battlefield.
+Exile target creature you control, then return it to the battlefield.
+If it was transformed, return it transformed and you get.
 
 [C010] Fleet Mechanic {2}{W}
 Creature — Human Artificer (2/3)
@@ -436,9 +436,10 @@ Enchanted permanent does not untap during its controller's untap step.
 {E}{E}: Shuffle enchanted permanent into its owner's deck.
 
 [C049] Link Monitor {1}{U}
-Creature - Program Artificer (2/1)
-{T}: Add {U}. Only use this mana to cast spells with digital, instants, or sorceries.
-{T}: Transform target creature with Eject or Jack-In.
+Creature — Program Artificer (2/1)
+Whenever a creature you control transforms, you get {E}.
+{T}: Add {U}. Spend this mana only to cast spells with digital, instants, or sorceries.
+{T}: Transform target creature with a jack-in or eject ability.
 
 --- UNCOMMONS ---
 
@@ -616,9 +617,9 @@ Artifact Creature — Robot (3/2)
 Menace
 When Dredge-Line Crawler dies, you may return target artifact card with mana value 3 or less from your graveyard to your hand.
 
-[C068] Merovingian's Indulgence {1}{B}
+[C068] Merovingian's Indulgence {B}
 Instant
-Target creature gets +1/+0 and gains lifelink and indestructible until end of turn.
+Target creature gains lifelink until end of turn. You gain 2 life.
 
 [C069] Replica Agent {B}
 Creature — Agent Program (1/1)
@@ -664,6 +665,7 @@ You get {E}{E}.
 
 [C078] Blood-Fuel Converter {1}{B}
 Creature — Human Cleric (1/2)
+Lifelink
 {1}{B}, Pay 1 life: You get {E}{E}.
 
 [C079] Neural Spike {B}
@@ -817,7 +819,8 @@ If you discarded a nonland card, you get {E}{E}.
 
 [C093] Static-Charged Hacker {1}{R}
 Creature — Human Wizard (1/3)
-{1}, Pay {E}: Static-Charged Hacker gets +3/-1 until end of turn.
+Prowess
+{1}, Pay {E}: Static-Charged Hacker gets +2/+0 until end of turn.
 
 [C094] Thermal Cutter {1}{R}
 Instant
@@ -844,6 +847,7 @@ Zealous Protector can block creatures with digital as though they didn't have di
 [C097] Manic Decrypter {1}{R}
 Creature — Human Rogue (2/1)
 Haste
+Whenever you cast an instant or sorcery spell, Manic Decrypter gets +1/+0 until end of turn.
 {1}{R}, {T}: Target creature with digital can't block this turn.
 
 [C098] Lock and Load {1}{R}
