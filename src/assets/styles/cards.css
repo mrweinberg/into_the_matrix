@@ -1,0 +1,201 @@
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  border-top: 5px solid #444;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.card[data-color="W"] { border-top-color: #F0F2C0; }
+.card[data-color="U"] { border-top-color: #0E68AB; }
+.card[data-color="B"] { border-top-color: #150B00; }
+.card[data-color="R"] { border-top-color: #D3202A; }
+.card[data-color="G"] { border-top-color: #00733E; }
+.card[data-color="Gold"] { border-top-color: #D4AF37; }
+.card[data-color="Land"] { border-top-color: #bfa586; }
+.card[data-color="Artifact"] { border-top-color: #7d7d7d; }
+
+.gallery .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+  border-color: var(--matrix-green);
+}
+
+.card-header {
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border-bottom: 1px solid #333;
+  gap: 10px;
+}
+
+.card-name {
+  font-weight: 700;
+  font-size: 1.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mana-cost {
+  flex-shrink: 0;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  gap: 2px;
+}
+
+.art-container {
+  width: 100%;
+  height: auto;
+  min-height: 150px;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #333;
+}
+
+.art-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 1;
+}
+
+.art-missing {
+  color: #444;
+  text-align: center;
+  font-size: 0.8em;
+  position: absolute;
+  z-index: 0;
+  padding: 20px;
+}
+
+.type-line {
+  padding: 8px 12px;
+  font-size: 0.9em;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.03);
+  z-index: 2;
+}
+
+.text-box {
+  padding: 14px;
+  font-size: 0.92em;
+  line-height: 1.45;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.oracle-text p {
+  margin: 0 0 8px 0;
+}
+
+.flavor-separator {
+  width: 90%;
+  height: 1px;
+  background: #444;
+  margin: 8px auto 8px auto;
+}
+
+.flavor-text {
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  color: #999;
+  font-size: 0.95em;
+}
+
+.pt-box {
+  background: #222;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 1px solid #555;
+  font-size: 1.1em;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.card[data-pt="yes"] .text-box {
+  padding-bottom: 45px;
+}
+
+.dfc-wrapper {
+  grid-column: span 2;
+  display: flex;
+  gap: 15px;
+  align-items: stretch;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 15px;
+  border-radius: 16px;
+  border: 1px dashed #444;
+}
+
+.dfc-wrapper .card {
+  flex: 1;
+}
+
+.transform-icon {
+  font-size: 2em;
+  color: var(--matrix-green);
+  align-self: center;
+}
+
+i.ms {
+  vertical-align: baseline;
+  margin: 0 1px;
+}
+
+i.ms-tap {
+  font-size: 0.9em;
+}
+
+.rarity-symbol {
+  font-size: 0.75em;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-family: sans-serif;
+  background: #000;
+}
+
+.rarity-Common { color: #fff; background: var(--rarity-common); }
+.rarity-Uncommon { color: #fff; background: var(--rarity-uncommon); border-color: #a0a0a0; }
+.rarity-Rare { color: #222; background: var(--rarity-rare); border-color: #ffd700; }
+.rarity-Mythic { color: #fff; background: var(--rarity-mythic); border-color: #ff6347; }
+.rarity-Land { color: #fff; background: var(--rarity-land); }
+
+@media (max-width: 900px) {
+  .dfc-wrapper {
+    flex-direction: column;
+    grid-column: span 1;
+  }
+
+  .transform-icon {
+    transform: rotate(90deg);
+    margin: 10px 0;
+  }
+}

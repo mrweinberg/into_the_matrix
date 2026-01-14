@@ -1173,17 +1173,49 @@ function main() {
     console.error(`Error: Could not find ${INPUT_FILE}`);
     process.exit(1);
   }
-  
+
   const data = parseDesignBible(INPUT_FILE);
   console.log("------------------------------------------");
   console.log("   MATRIX SET WEBSITE GENERATOR (V35 - Parser Fix)");
   console.log("------------------------------------------");
   console.log(`   Found ${data.cards.length} card faces.`);
-  
+
+  // JSON-only mode for Vue app
+  if (process.argv.includes('--json-only')) {
+    const dataDir = path.join(process.cwd(), 'src', 'data');
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+    }
+
+    const cardsForJson = data.cards.map(c => ({ ...c, fileName: c.getFileName() }));
+
+    fs.writeFileSync(
+      path.join(dataDir, 'cards.json'),
+      JSON.stringify(cardsForJson, null, 2)
+    );
+
+    fs.writeFileSync(
+      path.join(dataDir, 'notes.json'),
+      JSON.stringify(data.setInfo.designNotes.join('\n\n'))
+    );
+
+    fs.writeFileSync(
+      path.join(dataDir, 'setInfo.json'),
+      JSON.stringify({
+        title: data.setInfo.title,
+        cardCount: data.setInfo.cardCount,
+        mechanics: data.setInfo.mechanics
+      }, null, 2)
+    );
+
+    console.log(`   ✅ JSON data files generated in src/data/`);
+    return;
+  }
+
   const htmlContent = generateHTML(data);
   const outputPath = path.join(OUTPUT_DIR, OUTPUT_FILE);
   fs.writeFileSync(outputPath, htmlContent);
-  
+
   console.log(`   ✅ Website generated at: ${outputPath}`);
 }
 

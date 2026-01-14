@@ -1,6 +1,25 @@
 {
+  "name": "into-the-matrix",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "generate-data": "node generate_website.mjs --json-only",
+    "generate-html": "node generate_website.mjs",
+    "generate-art": "node generate_matrix.mjs",
+    "build:full": "npm run generate-data && npm run build"
+  },
   "dependencies": {
     "@google/genai": "^1.31.0",
-    "dotenv": "^17.2.3"
+    "dotenv": "^17.2.3",
+    "vue": "^3.5.0",
+    "pinia": "^2.1.7",
+    "marked": "^11.0.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@vitejs/plugin-vue": "^4.5.0"
   }
 }
