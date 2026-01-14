@@ -11,7 +11,6 @@
       <option value="Uncommon">Uncommon</option>
       <option value="Rare">Rare</option>
       <option value="Mythic">Mythic</option>
-      <option value="Land">Basic Land</option>
     </select>
   </div>
 </template>

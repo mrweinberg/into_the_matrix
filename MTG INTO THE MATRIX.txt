@@ -1745,8 +1745,7 @@ Land
 [U160] Broadcast Node
 Land
 {T}: Add {C}.
-{1}, {T}: Target creature gains digital until end of turn.
-(It can block or be blocked only by creatures with digital.)
+{2}, {T}: Target creature gains digital until end of turn. (It can block or be blocked only by creatures with digital.)
 
 [U161] Aether Hub
 Land
@@ -1764,13 +1763,11 @@ Land
 [R150] 01, The Machine City
 Legendary Land
 {T}: Add {C}.
-{T}: Add one mana of any color.
-Spend this mana only to cast an Artifact, Robot, or Program spell or to activate an ability of an Artifact, Robot, or Program source.
+{T}: Add one mana of any color. Spend this mana only to cast an Artifact, Robot, or Program spell or to activate an ability of an Artifact, Robot, or Program source.
 
 [R151] Club Hel
 Legendary Land
 {T}: Add {C}.
-{T}: Add one mana of any color.
-Spend this mana only to cast a spell with "Program" in its type line.
+{T}: Add one mana of any color. Spend this mana only to cast a Program spell.
 {3}, {T}: Target Program creature you control gains indestructible until end of turn.
 

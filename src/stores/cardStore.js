@@ -31,6 +31,20 @@ export const useCardStore = defineStore('cards', () => {
       cards.value = cardsData.default
       designNotes.value = notesData.default
       setInfo.value = setInfoData.default
+
+      // Patch data: Fix Rarity for Lands
+      // The generator assigns "Land" rarity to all lands, but they are actually Common/Uncommon/Rare.
+      // We assume ID prefix C/U/R/M indicates rarity.
+      cardsData.default.forEach(card => {
+        if (card.rarity === 'Land') {
+          if (card.id.startsWith('C')) card.rarity = 'Common'
+          else if (card.id.startsWith('U')) card.rarity = 'Uncommon'
+          else if (card.id.startsWith('R')) card.rarity = 'Rare'
+          else if (card.id.startsWith('M')) card.rarity = 'Mythic'
+        }
+      })
+
+      cards.value = cardsData.default
       isLoaded.value = true
     } catch (error) {
       console.error('Failed to load card data:', error)
