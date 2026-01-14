@@ -8,7 +8,7 @@
       v-model:search-text="searchText"
       v-model:rarity="rarity"
       v-model:type-text="typeText"
-      v-model:active-color="activeColor"
+      v-model:active-colors="activeColors"
       @toggle-color="toggleColor"
       @open-booster="openBooster"
       @start-draft="startDraft"
@@ -16,7 +16,14 @@
     />
 
     <div class="filter-status">
-      SHOWING <strong>{{ filteredCards.length }}</strong> / {{ totalCards }} DATA ENTRIES
+      <span>SHOWING <strong>{{ filteredCards.length }}</strong> / {{ totalCards }} DATA ENTRIES</span>
+      <div class="sort-controls">
+        <SortSelect v-model="sortBy" />
+        <button class="btn-sort-dir" @click="toggleSortDirection" :title="'Sort ' + (sortDirection === 'asc' ? 'Descending' : 'Ascending')">
+          <i :class="sortDirection === 'asc' ? 'ms ms-planeswalker' : 'ms ms-planeswalker ms-b'"></i>
+          {{ sortDirection === 'asc' ? 'ASC' : 'DESC' }}
+        </button>
+      </div>
     </div>
 
     <CardGallery
@@ -71,6 +78,7 @@ import { useFilters } from '@/composables/useFilters'
 import { useBooster } from '@/composables/useBooster'
 import { useDraft } from '@/composables/useDraft'
 import { sortCards } from '@/utils/cardUtils'
+import SortSelect from '@/components/filters/SortSelect.vue'
 
 import Dashboard from '@/components/layout/Dashboard.vue'
 import CardGallery from '@/components/cards/CardGallery.vue'
@@ -91,16 +99,22 @@ const setInfo = computed(() => cardStore.setInfo)
 const designNotes = computed(() => cardStore.designNotes)
 const allCards = computed(() => cardStore.cards)
 const totalCards = computed(() => cardStore.frontFaceCards.length)
+const sortBy = ref('color')
+const sortDirection = ref('asc')
+
+function toggleSortDirection() {
+  sortDirection.value = sortDirection.value === 'asc' ? 'desc' : 'asc'
+}
 
 // Sorted cards for filtering
-const sortedCards = computed(() => sortCards(cardStore.frontFaceCards))
+const sortedCards = computed(() => sortCards(cardStore.frontFaceCards, sortBy.value, sortDirection.value))
 
 // Filters
 const {
   searchText,
   rarity,
   typeText,
-  activeColor,
+  activeColors,
   filteredCards,
   toggleColor
 } = useFilters(sortedCards)
@@ -166,5 +180,42 @@ function closeCardDetail() {
 <style>
 .app {
   min-height: 100vh;
+}
+
+.filter-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--matrix-green);
+  border-top: 1px solid var(--matrix-green);
+  color: var(--matrix-green);
+  font-family: 'Courier New', monospace;
+  margin-bottom: 20px;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-sort-dir {
+  background: transparent;
+  border: 1px solid var(--matrix-green);
+  color: var(--matrix-green);
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-sort-dir:hover {
+  background: var(--matrix-green);
+  color: #000;
 }
 </style>

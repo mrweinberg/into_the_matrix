@@ -1837,11 +1837,11 @@
   {
     "id": "C068",
     "name": "Merovingian's Indulgence",
-    "cost": "{B}",
+    "cost": "{1}{B}",
     "type": "Instant",
     "displayType": "Instant",
     "text": [
-      "Target creature gains lifelink until end of turn. You gain 2 life."
+      "Target creature gets +1/+0 and gains lifelink and indestructible until end of turn."
     ],
     "flavor": "",
     "rarity": "Common",

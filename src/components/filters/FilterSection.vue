@@ -3,7 +3,7 @@
     <SearchInput v-model="searchText" />
     <RaritySelect v-model="rarity" />
     <TypeInput v-model="typeText" />
-    <ColorToggles :active="activeColor" @toggle="toggleColor" />
+    <ColorToggles :active="activeColors" @toggle="toggleColor" />
   </div>
 </template>
 
@@ -16,7 +16,7 @@ import ColorToggles from './ColorToggles.vue'
 const searchText = defineModel('searchText', { type: String, default: '' })
 const rarity = defineModel('rarity', { type: String, default: 'All' })
 const typeText = defineModel('typeText', { type: String, default: '' })
-const activeColor = defineModel('activeColor', { type: String, default: null })
+const activeColors = defineModel('activeColors', { type: Array, default: () => [] })
 
 const emit = defineEmits(['toggle-color'])
 

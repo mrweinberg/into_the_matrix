@@ -4,7 +4,7 @@
       <div class="stat-box">
         <h2>System Stats</h2>
         <p><strong>Visible Cards:</strong> {{ visibleCount }}</p>
-        <p><strong>System Version:</strong> v4.0.0 (Vue)</p>
+        <p><strong>System Version:</strong> v4.1.0 (Sorting and Filtering)</p>
         <button class="btn-generate" @click="$emit('open-booster')">
           Open Simulation Pack
         </button>
@@ -25,7 +25,7 @@
       v-model:search-text="searchText"
       v-model:rarity="rarity"
       v-model:type-text="typeText"
-      v-model:active-color="activeColor"
+      v-model:active-colors="activeColors"
       @toggle-color="toggleColor"
     />
   </div>
@@ -49,7 +49,7 @@ defineProps({
 const searchText = defineModel('searchText', { type: String })
 const rarity = defineModel('rarity', { type: String })
 const typeText = defineModel('typeText', { type: String })
-const activeColor = defineModel('activeColor', { type: String })
+const activeColors = defineModel('activeColors', { type: Array })
 
 const emit = defineEmits(['open-booster', 'start-draft', 'open-notes', 'toggle-color'])
 

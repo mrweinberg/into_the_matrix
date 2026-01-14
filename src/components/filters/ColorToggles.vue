@@ -5,7 +5,7 @@
       <div
         v-for="color in colors"
         :key="color.id"
-        :class="['color-btn', color.class, { active: active === color.id }]"
+        :class="['color-btn', color.class, { active: active.includes(color.id) }]"
         @click="$emit('toggle', color.id)"
       >
         <i :class="color.icon"></i>
@@ -17,8 +17,8 @@
 <script setup>
 defineProps({
   active: {
-    type: String,
-    default: null
+    type: Array, // Changed from String
+    default: () => []
   }
 })
 
@@ -30,7 +30,7 @@ const colors = [
   { id: 'B', class: 'cb-b', icon: 'ms ms-b ms-cost' },
   { id: 'R', class: 'cb-r', icon: 'ms ms-r ms-cost' },
   { id: 'G', class: 'cb-g', icon: 'ms ms-g ms-cost' },
-  { id: 'Gold', class: 'cb-gold', icon: 'ms ms-multicolored ms-cost' },
+  { id: 'Gold', class: 'cb-gold', icon: 'ms ms-multicolor ms-cost' }, // Changed to ms-multicolor
   { id: 'Artifact', class: 'cb-art', icon: 'ms ms-artifact ms-cost' },
   { id: 'Land', class: 'cb-land', icon: 'ms ms-land ms-cost' }
 ]
