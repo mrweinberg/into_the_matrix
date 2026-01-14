@@ -82,9 +82,9 @@ Creature — Human Soldier Program (3/1)
 Digital, vigilance
 At the beginning of your end step, if this creature didn't attack this turn, eject.
 
-[C002] Crowd Simulation {4}{W}
+[C002] Crowd Simulation {3}{W}
 Sorcery
-Create three 1/1 white Citizen creature tokens with digital.
+Create two 1/1 white Citizen creature tokens with digital.
 Draw a card.
 
 [C003] Community Organizer {1}{W}
@@ -102,7 +102,7 @@ Digital, first strike
 
 [C005] Zion Militia {1}{W}
 Creature — Human Soldier (1/1)
-When Zion Militia enters, create a 1/1 white Human creature token.
+When Zion Militia enters, create a 1/1 white Human creature token and you get {E}.
 
 [C006] Stasis Field {1}{W}
 Enchantment — Aura
@@ -143,9 +143,10 @@ Instant
 Target creature gains protection from artifacts, from instants, and from sorceries until end of turn.
 Prevent all combat damage that would be dealt to it this turn.
 
-[C014] Prophesizing Elder {3}{W}
-Creature — Human Cleric (2/4)
-When Prophesizing Elder enters, scry 2 and you gain 2 life.
+[C014] Prophesizing Elder {4}{W}
+Creature — Human Cleric (3/5)
+Vigilance
+When Prophesizing Elder enters, scry 2 and you gain 3 life.
 
 [C015] Operator Support {W}
 Instant
@@ -174,7 +175,7 @@ Defender
 {3}{W}: Jack-in.
 //
 System Guardian (Color Indicator: White)
-Creature — Human Soldier Program (4/5)
+Creature — Human Soldier Program (5/5)
 Digital, vigilance
 {W}: Eject.
 
@@ -365,6 +366,7 @@ Draw a card.
 [C035] Data Courier {1}{U}
 Creature — Program Scout (2/1)
 Digital
+Data Courier can block creatures without digital.
 When Data Courier leaves the battlefield, draw a card.
 
 [C036] Blue Screen {1}{U}
@@ -423,6 +425,7 @@ Enchanted creature doesn't untap during its controller's untap step.
 [C047] Archive Interface {1}{U}
 Creature — Wall (0/4)
 Defender, digital
+Whenever you cast an instant or sorcery spell, you get {E}.
 {T}, Pay {E}{E}: Draw a card.
 
 [C048] Glitch Trap {1}{U}
@@ -452,10 +455,9 @@ Draw three cards. Then choose one —
 • Pay {E}{E} and discard one card.
 • Pay {E}{E}{E}{E} and discard no cards.
 
-[U022] Reality Bend {1}{U}
+[U022] Reality Bend {1}{U}{U}
 Instant
-Counter target spell that targets a creature you control.
-You get {E}{E}.
+Counter target spell. You get {E}.
 
 [U023] Subroutine Optimization {1}{U}
 Enchantment
@@ -587,6 +589,7 @@ When Disposable Informant leaves the battlefield, target creature an opponent co
 [C062] Glitched Citizen {1}{B}
 Creature — Program Citizen (2/1)
 Digital
+When Glitched Citizen enters, you get {E}.
 When Glitched Citizen leaves the battlefield, create a 1/1 white Citizen creature token with digital.
 
 [C063] Pod Harvester {1}{B}
@@ -650,9 +653,9 @@ Instant
 Create two 1/1 colorless Robot artifact creature tokens with flying.
 
 [C076] Chateau Vampire {1}{B}
-Creature - Vampire Program (1/3)
-Digital
-If another creature has died this turn, this creature gets +2/+0 and lifelink.
+Creature — Vampire Program (1/3)
+Digital, lifelink
+Whenever you gain life, Chateau Vampire gets +1/+0 until end of turn.
 
 [C077] System Drain {1}{B}
 Sorcery
@@ -1059,6 +1062,7 @@ Whenever a creature you control dies, put a +1/+1 counter on Nutrient Recycler.
 
 [C124] Fungi-Farm Laborer {1}{G}
 Creature — Human Citizen (2/1)
+When Fungi-Farm Laborer enters, you get {E}.
 When Fungi-Farm Laborer dies, create a 1/1 green Ooze creature token.
 
 [C125] Shared Battery {G}
@@ -1672,61 +1676,61 @@ Pay {E}{E}{E}{E}: Destroy target permanent. Activate this only as a sorcery and 
 Land
 Simulated Skyline enters tapped.
 {T}: Add {W} or {U}.
-{4}, {T}: You get {E}.
+{3}, {T}: You get {E}.
 
 [C171] Rain-Slicked Alley
 Land
 Rain-Slicked Alley enters tapped.
 {T}: Add {U} or {B}.
-{4}, {T}: You get {E}.
+{3}, {T}: You get {E}.
 
 [C172] Scorched Surface
 Land
 Scorched Surface enters tapped.
 {T}: Add {B} or {R}.
-{4}, {T}: You get {E}.
+{3}, {T}: You get {E}.
 
 [C173] Bio-Electric Field
 Land
 Bio-Electric Field enters tapped.
 {T}: Add {R} or {G}.
-{4}, {T}: You get {E}.
+{3}, {T}: You get {E}.
 
 [C174] Zion Living Quarters
 Land
 Zion Living Quarters enters tapped.
 {T}: Add {G} or {W}.
-{4}, {T}: You get {E}.
+{3}, {T}: You get {E}.
 
 [C175] Administrative Hall
 Land
 Administrative Hall enters tapped.
 {T}: Add {W} or {B}.
-{4}, {T}: You get {E}.
+{3}, {T}: You get {E}.
 
 [C176] Hardline Terminal
 Land
 Hardline Terminal enters tapped.
 {T}: Add {U} or {R}.
-{4}, {T}: You get {E}.
+{3}, {T}: You get {E}.
 
 [C177] Waste Conduit
 Land
 Waste Conduit enters tapped.
 {T}: Add {B} or {G}.
-{4}, {T}: You get {E}.
+{3}, {T}: You get {E}.
 
 [C178] Hangar Deck
 Land
 Hangar Deck enters tapped.
 {T}: Add {R} or {W}.
-{4}, {T}: You get {E}.
+{3}, {T}: You get {E}.
 
 [C179] Construct Loading Zone
 Land
 Construct Loading Zone enters tapped.
 {T}: Add {G} or {U}.
-{4}, {T}: You get {E}.
+{3}, {T}: You get {E}.
 
 [C180] Hardline Exit
 Land
