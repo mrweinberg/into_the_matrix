@@ -7,6 +7,7 @@ import './assets/styles/base.css'
 import './assets/styles/cards.css'
 import './assets/styles/modals.css'
 import './assets/styles/draft.css'
+import './assets/styles/print.css'
 
 const app = createApp(App)
 const pinia = createPinia()

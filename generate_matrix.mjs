@@ -8,7 +8,7 @@ import 'dotenv/config';
 // ==========================================
 
 const API_KEY = process.env.GEMINI_API_KEY;
-const MODEL_ID = "gemini-3-pro-image-preview"; 
+const MODEL_ID = "gemini-3-pro-image-preview";
 const INPUT_FILE = "MTG INTO THE MATRIX.txt";
 const OVERRIDE_FILE = "artOverrides.json";
 const OUTPUT_DIR = "matrix_art_output";
@@ -16,27 +16,27 @@ const OUTPUT_DIR = "matrix_art_output";
 const SESSION_SEED = Date.now();
 
 const MTG_ARTISTS = [
-    "Kev Walker", "John Avon", "Rebecca Guay", "Terese Nielsen", "Christopher Rush",
-    "Dan Frazier", "Mark Tedin", "Rob Alexander", "Seb McKinnon", "Chris Rahn",
-    "Magali Villeneuve", "Johannes Voss", "Raymond Swanland", "Wayne Reynolds",
-    "Steve Argyle", "Jason Chan", "Ryan Pancoast", "Adam Paquette", "Zoltan Boros",
-    "Richard Kane Ferguson"
+  "Kev Walker", "John Avon", "Rebecca Guay", "Terese Nielsen", "Christopher Rush",
+  "Dan Frazier", "Mark Tedin", "Rob Alexander", "Seb McKinnon", "Chris Rahn",
+  "Magali Villeneuve", "Johannes Voss", "Raymond Swanland", "Wayne Reynolds",
+  "Steve Argyle", "Jason Chan", "Ryan Pancoast", "Adam Paquette", "Zoltan Boros",
+  "Richard Kane Ferguson"
 ];
 
 let artOverrides = {};
 if (fs.existsSync(OVERRIDE_FILE)) {
-    try {
-        const rawData = fs.readFileSync(OVERRIDE_FILE, 'utf8');
-        const parsedData = JSON.parse(rawData);
-        if (Array.isArray(parsedData)) {
-            parsedData.forEach(item => { if (item.id) artOverrides[item.id] = item; });
-        } else if (parsedData.id) {
-             artOverrides[parsedData.id] = parsedData;
-        }
-        console.log(`   📂 Loaded ${Object.keys(artOverrides).length} art overrides.`);
-    } catch (e) {
-        console.error("   ⚠️ Failed to parse artOverrides.json:", e.message);
+  try {
+    const rawData = fs.readFileSync(OVERRIDE_FILE, 'utf8');
+    const parsedData = JSON.parse(rawData);
+    if (Array.isArray(parsedData)) {
+      parsedData.forEach(item => { if (item.id) artOverrides[item.id] = item; });
+    } else if (parsedData.id) {
+      artOverrides[parsedData.id] = parsedData;
     }
+    console.log(`   📂 Loaded ${Object.keys(artOverrides).length} art overrides.`);
+  } catch (e) {
+    console.error("   ⚠️ Failed to parse artOverrides.json:", e.message);
+  }
 }
 
 // ==========================================
@@ -52,7 +52,7 @@ class Card {
     this.text = [];
     this.flavor = "";
     this.isBackFace = false;
-    this.hasBackFace = false; 
+    this.hasBackFace = false;
   }
 
   // --- 1. KEYWORD PARSING ---
@@ -75,7 +75,7 @@ class Card {
 
   // --- 2. LIGHTING ENGINE ---
   getLighting() {
-    const c = this.getSubjectColor(); 
+    const c = this.getSubjectColor();
     if (c.includes("White")) return "Lighting: Bright, harsh interrogation lights or 'The Construct' pure white.";
     if (c.includes("Blue")) return "Lighting: Cool blue, CRT monitor glow, rain-slicked reflections.";
     if (c.includes("Black")) return "Lighting: Low-key Noir, heavy shadows, bioluminescent red/pink ambient glow (if Real World).";
@@ -93,7 +93,7 @@ class Card {
     if (t.includes("instant") || t.includes("sorcery")) return "Framing: DYNAMIC ACTION SHOT. Capture the exact moment the spell's effect occurs.";
     if (t.includes("saga") || t.includes("enchantment")) return "Framing: ABSTRACT or SYMBOLIC. Can include floating code or 'glitch' overlays.";
     if (t.includes("planeswalker")) return "Framing: HEROIC PORTRAIT. Low angle, looking up at the powerful subject.";
-    return ""; 
+    return "";
   }
 
   getSubjectColor() {
@@ -103,7 +103,7 @@ class Card {
     if (this.cost && this.cost.includes("{B}")) colors.push("Dark Purple/Black");
     if (this.cost && this.cost.includes("{R}")) colors.push("Fiery Red");
     if (this.cost && this.cost.includes("{G}")) colors.push("Neon Green");
-    
+
     const fullText = this.text.join(" ");
     if (fullText.includes("Color Indicator: White")) colors.push("Golden White");
     if (fullText.includes("Color Indicator: Blue")) colors.push("Electric Blue");
@@ -112,8 +112,8 @@ class Card {
     if (fullText.includes("Color Indicator: Green")) colors.push("Neon Green");
 
     if (colors.length === 0) {
-        if (this.type.toLowerCase().includes("land")) return "Environmental Colors";
-        return "Steel Grey and Chrome";
+      if (this.type.toLowerCase().includes("land")) return "Environmental Colors";
+      return "Steel Grey and Chrome";
     }
     return colors.join(" and ");
   }
@@ -133,24 +133,24 @@ class Card {
 
     const knownCharacters = ["neo", "morpheus", "trinity", "smith", "oracle", "seraph", "niobe", "ghost", "merovingian", "persephone", "keymaker", "architect"];
     if (knownCharacters.some(char => nameLower.includes(char))) {
-        return ""; 
+      return "";
     }
 
     if (nameLower.includes("agent") || typeLower.includes("agent")) {
-        return "Appearance: Uniform Male Agent, caucasian, identical suit and sunglasses.";
+      return "Appearance: Uniform Male Agent, caucasian, identical suit and sunglasses.";
     }
 
     const uniqueString = this.id + SESSION_SEED;
     let hash = 0;
     for (let i = 0; i < uniqueString.length; i++) {
-        hash = uniqueString.charCodeAt(i) + ((hash << 5) - hash);
+      hash = uniqueString.charCodeAt(i) + ((hash << 5) - hash);
     }
     const seed = Math.abs(hash);
 
     const genders = ["Male", "Female"];
     const ethnicities = [
-        "African descent", "Asian descent", "Caucasian", "Latino/Hispanic descent", 
-        "Middle Eastern descent", "South Asian descent", "Mixed heritage"
+      "African descent", "Asian descent", "Caucasian", "Latino/Hispanic descent",
+      "Middle Eastern descent", "South Asian descent", "Mixed heritage"
     ];
 
     const randomGender = genders[seed % genders.length];
@@ -168,27 +168,27 @@ class Card {
 
     // A. LEGENDARY VEHICLES (Strict Movie Accuracy)
     if (typeLower.includes("legendary")) {
-        return "VEHICLE APPEARANCE: This is a LEGENDARY vehicle. It must STRICTLY resemble the specific ship/vehicle from The Matrix films as identified by the card name (e.g., The Nebuchadnezzar, The Logos). Use rusted metal textures, heavy industrial cables, and hovering magnetic pads.";
+      return "VEHICLE APPEARANCE: This is a LEGENDARY vehicle. It must STRICTLY resemble the specific ship/vehicle from The Matrix films as identified by the card name (e.g., The Nebuchadnezzar, The Logos). Use rusted metal textures, heavy industrial cables, and hovering magnetic pads.";
     }
 
     // B. GENERIC VEHICLES (Category Detection)
     if (nameLower.includes("hovercraft") || nameLower.includes("ship")) {
-        return "VEHICLE APPEARANCE: Real World Hovercraft. Industrial, rusted steel hull, lightning rod antennas, glowing blue magnetic hover-pads. NOT a spaceship.";
+      return "VEHICLE APPEARANCE: Real World Hovercraft. Industrial, rusted steel hull, lightning rod antennas, glowing blue magnetic hover-pads. NOT a spaceship.";
     }
     if (nameLower.includes("apu") || nameLower.includes("walker") || nameLower.includes("suit")) {
-        return "VEHICLE APPEARANCE: APU (Armored Personnel Unit). A bipedal hydraulic mech suit with open cockpit, heavy machine guns on arms, and exposed ammunition belts. Gritty industrial aesthetic.";
+      return "VEHICLE APPEARANCE: APU (Armored Personnel Unit). A bipedal hydraulic mech suit with open cockpit, heavy machine guns on arms, and exposed ammunition belts. Gritty industrial aesthetic.";
     }
     if (nameLower.includes("truck") || nameLower.includes("semi")) {
-        return "VEHICLE APPEARANCE: Heavy Semi-Truck (1999 aesthetic). Chrome grille, boxy design, highway setting.";
+      return "VEHICLE APPEARANCE: Heavy Semi-Truck (1999 aesthetic). Chrome grille, boxy design, highway setting.";
     }
     if (nameLower.includes("helicopter") || nameLower.includes("chopper")) {
-        return "VEHICLE APPEARANCE: Bell 212 Helicopter or similar 1990s model. Black tactical paint, side-mounted minigun.";
+      return "VEHICLE APPEARANCE: Bell 212 Helicopter or similar 1990s model. Black tactical paint, side-mounted minigun.";
     }
     if (nameLower.includes("car") || nameLower.includes("sedan") || nameLower.includes("police")) {
-        return "VEHICLE APPEARANCE: 1990s Black Sedan or Police Cruiser. Boxy, realistic, glossy finish.";
+      return "VEHICLE APPEARANCE: 1990s Black Sedan or Police Cruiser. Boxy, realistic, glossy finish.";
     }
     if (nameLower.includes("bike") || nameLower.includes("motorcycle")) {
-        return "VEHICLE APPEARANCE: Ducati 996 or generic sportbike. Sleek, fast, black or dark green.";
+      return "VEHICLE APPEARANCE: Ducati 996 or generic sportbike. Sleek, fast, black or dark green.";
     }
 
     // Default Fallback
@@ -203,11 +203,11 @@ class Card {
     if (typeLower.includes("vehicle")) return this.getVehicleVisuals();
 
     const isMachine = typeLower.includes("artifact creature") || typeLower.includes("robot") || typeLower.includes("construct") || typeLower.includes("thopter") || typeLower.includes("juggernaut") || typeLower.includes("horror");
-    
+
     if (!isMachine) return "";
 
     if (nameLower.includes("sentinel") || nameLower.includes("squid") || nameLower.includes("swarm")) {
-        return "ROBOT APPEARANCE: Movie-Accurate Sentinel. A floating machine with a central sensory pod (multiple red eyes) and trailing metallic tentacles. NO humanoid legs/arms.";
+      return "ROBOT APPEARANCE: Movie-Accurate Sentinel. A floating machine with a central sensory pod (multiple red eyes) and trailing metallic tentacles. NO humanoid legs/arms.";
     }
 
     return "ROBOT APPEARANCE: NON-HUMANOID. Industrial, insectoid, or arachnid machinery. Use heavy cables, hydraulics, and sensor eyes. Do NOT depict as a human-shaped android or man in a suit.";
@@ -219,17 +219,17 @@ class Card {
     const roll = Math.floor(Math.random() * 100);
 
     if (roll < 20) {
-        return "COMPOSITION: DYNAMIC ACTION. High kinetic energy. Mid-air kick, dodging bullets, or diving while shooting. Use motion blur and Dutch angles.";
+      return "COMPOSITION: DYNAMIC ACTION. High kinetic energy. Mid-air kick, dodging bullets, or diving while shooting. Use motion blur and Dutch angles.";
     } else if (roll < 40) {
-        return "COMPOSITION: HEROIC STANCE. The subject is standing tall, centered, looking cool and collected. Coat billowing in the wind. Iconic movie poster vibe.";
+      return "COMPOSITION: HEROIC STANCE. The subject is standing tall, centered, looking cool and collected. Coat billowing in the wind. Iconic movie poster vibe.";
     } else if (roll < 60) {
-        return "COMPOSITION: INTENSE CLOSE-UP. Focus on the face, sunglasses reflections, or specific cybernetic details. Shallow depth of field, high emotion or focus.";
+      return "COMPOSITION: INTENSE CLOSE-UP. Focus on the face, sunglasses reflections, or specific cybernetic details. Shallow depth of field, high emotion or focus.";
     } else if (roll < 75) {
-        return "COMPOSITION: IMPOSING LOW ANGLE. The camera looks up at the subject, making them appear powerful and dominant. Noir lighting, strong shadows.";
+      return "COMPOSITION: IMPOSING LOW ANGLE. The camera looks up at the subject, making them appear powerful and dominant. Noir lighting, strong shadows.";
     } else if (roll < 90) {
-        return "COMPOSITION: ENVIRONMENTAL WIDE SHOT. The subject is small within a massive, impressive setting. Emphasize the scale of the world.";
+      return "COMPOSITION: ENVIRONMENTAL WIDE SHOT. The subject is small within a massive, impressive setting. Emphasize the scale of the world.";
     } else {
-        return "COMPOSITION: STEALTH / TENSION. The subject is taking cover behind a wall, peeking around a corner, or hacking a terminal in the shadows. Suspenseful atmosphere.";
+      return "COMPOSITION: STEALTH / TENSION. The subject is taking cover behind a wall, peeking around a corner, or hacking a terminal in the shadows. Suspenseful atmosphere.";
     }
   }
 
@@ -246,67 +246,67 @@ class Card {
 
     // === CREATURE LOGIC ===
     if (typeLower.includes("creature")) {
-        if (this.hasDigitalKeyword()) {
-            if (combinedText.includes("kung fu") || combinedText.includes("monk") || combinedText.includes("dojo")) {
-                 return { setting: "A Japanese Dojo Simulation. Features: Rice paper walls, wooden floors.", tone: "Warm Wood, Clean Light, Golden Hues", tech: "Traditional / Minimal" };
-            }
-            if (nameLower.includes("construct") || nameLower.includes("loading") || nameLower.includes("white")) {
-                return { setting: "The Construct Loading Program. Features: Infinite white void, racks of guns.", tone: "Stark Infinite White Void", tech: "Clean Digital" };
-            }
-            if (nameLower.includes("agent") || typeLower.includes("agent") || combinedText.includes("security")) {
-                return { setting: "Government/Corporate Building. Sterile Office Lobby or Concrete Interrogation Room.", tone: "Sterile, Green-tinted Fluorescent", tech: TECH_1999 };
-            }
-            if (combinedText.includes("club") || combinedText.includes("chateau") || combinedText.includes("french")) {
-                return { setting: "The Merovingian's Territory. Club Hel (Industrial fetish club) or The Chateau (Grand staircase).", tone: "Rich Reds, Deep Shadows, Decadent Gold", tech: TECH_1999 };
-            }
-            if (combinedText.includes("subway") || combinedText.includes("train") || combinedText.includes("station")) {
-                return { setting: "Matrix Subway Station. Features: White tiled walls, graffiti, concrete platforms.", tone: "Dirty White, Greenish Florescent, Grimy", tech: TECH_1999 };
-            }
-            return { 
-                setting: "The Matrix City (1999 Aesthetic). Skyscraper rooftop, busy city street, or alleyway.", 
-                tone: "Slightly Desaturated, High Contrast, Green Tint",
-                tech: TECH_1999
-            };
-        } else {
-            if (nameLower.includes("machine city") || nameLower.includes("01")) {
-                 return { setting: "The Machine City (01). Features: Endless black towers, red lightning storms, swarms of sentinels.", tone: "Oppressive Black metal and Glowing Orange Sky", tech: TECH_SCIFI };
-            }
-            if (nameLower.includes("zion") || textLower.includes("citizen") || nameLower.includes("dock") || nameLower.includes("temple")) {
-                return { 
-                    setting: "Zion (The Last City). Choose: The Dock (Cavernous), The Temple (Cave), or Engineering (Industrial).", 
-                    tone: "Warm Earthy Tones, Incandescent lighting, Sweat, Metal, Stone",
-                    tech: TECH_SCIFI
-                };
-            }
-            if (combinedText.includes("pod") || combinedText.includes("farm") || combinedText.includes("harvest")) {
-                return { setting: "The Power Plant / Fetus Fields. Endless towers of pink glowing pods.", tone: "Bioluminescent Pink, Dark Machinery, Slime", tech: TECH_SCIFI };
-            }
-            if (combinedText.includes("ship") || combinedText.includes("hovercraft") || combinedText.includes("operator")) {
-                return { setting: "Hovercraft Interior (Nebuchadnezzar class). Cramped corridors, hanging cables, screens.", tone: "Cold Blue LEDs, Rusted Metal, Dim Lighting", tech: TECH_SCIFI };
-            }
-            return { 
-                setting: "The Real World Wasteland. Scorched sky, lightning, shattered ruins, or sewer tunnels.", 
-                tone: "Cold Blues, Dark Greys, Rusted Metal, Stormy",
-                tech: TECH_SCIFI
-            };
+      if (this.hasDigitalKeyword()) {
+        if (combinedText.includes("kung fu") || combinedText.includes("monk") || combinedText.includes("dojo")) {
+          return { setting: "A Japanese Dojo Simulation. Features: Rice paper walls, wooden floors.", tone: "Warm Wood, Clean Light, Golden Hues", tech: "Traditional / Minimal" };
         }
+        if (nameLower.includes("construct") || nameLower.includes("loading") || nameLower.includes("white")) {
+          return { setting: "The Construct Loading Program. Features: Infinite white void, racks of guns.", tone: "Stark Infinite White Void", tech: "Clean Digital" };
+        }
+        if (nameLower.includes("agent") || typeLower.includes("agent") || combinedText.includes("security")) {
+          return { setting: "Government/Corporate Building. Sterile Office Lobby or Concrete Interrogation Room.", tone: "Sterile, Green-tinted Fluorescent", tech: TECH_1999 };
+        }
+        if (combinedText.includes("club") || combinedText.includes("chateau") || combinedText.includes("french")) {
+          return { setting: "The Merovingian's Territory. Club Hel (Industrial fetish club) or The Chateau (Grand staircase).", tone: "Rich Reds, Deep Shadows, Decadent Gold", tech: TECH_1999 };
+        }
+        if (combinedText.includes("subway") || combinedText.includes("train") || combinedText.includes("station")) {
+          return { setting: "Matrix Subway Station. Features: White tiled walls, graffiti, concrete platforms.", tone: "Dirty White, Greenish Florescent, Grimy", tech: TECH_1999 };
+        }
+        return {
+          setting: "The Matrix City (1999 Aesthetic). Skyscraper rooftop, busy city street, or alleyway.",
+          tone: "Slightly Desaturated, High Contrast, Green Tint",
+          tech: TECH_1999
+        };
+      } else {
+        if (nameLower.includes("machine city") || nameLower.includes("01")) {
+          return { setting: "The Machine City (01). Features: Endless black towers, red lightning storms, swarms of sentinels.", tone: "Oppressive Black metal and Glowing Orange Sky", tech: TECH_SCIFI };
+        }
+        if (nameLower.includes("zion") || textLower.includes("citizen") || nameLower.includes("dock") || nameLower.includes("temple")) {
+          return {
+            setting: "Zion (The Last City). Choose: The Dock (Cavernous), The Temple (Cave), or Engineering (Industrial).",
+            tone: "Warm Earthy Tones, Incandescent lighting, Sweat, Metal, Stone",
+            tech: TECH_SCIFI
+          };
+        }
+        if (combinedText.includes("pod") || combinedText.includes("farm") || combinedText.includes("harvest")) {
+          return { setting: "The Power Plant / Fetus Fields. Endless towers of pink glowing pods.", tone: "Bioluminescent Pink, Dark Machinery, Slime", tech: TECH_SCIFI };
+        }
+        if (combinedText.includes("ship") || combinedText.includes("hovercraft") || combinedText.includes("operator")) {
+          return { setting: "Hovercraft Interior (Nebuchadnezzar class). Cramped corridors, hanging cables, screens.", tone: "Cold Blue LEDs, Rusted Metal, Dim Lighting", tech: TECH_SCIFI };
+        }
+        return {
+          setting: "The Real World Wasteland. Scorched sky, lightning, shattered ruins, or sewer tunnels.",
+          tone: "Cold Blues, Dark Greys, Rusted Metal, Stormy",
+          tech: TECH_SCIFI
+        };
+      }
     }
 
     if (combinedText.includes("code") || combinedText.includes("virtual") || combinedText.includes("download") || combinedText.includes("blue screen")) {
-        return { setting: "Abstract Visualization of Data. Features: Cascading Green Code, glitches.", tone: "Surreal, Neon Green, Black Background", tech: TECH_SURREAL };
+      return { setting: "Abstract Visualization of Data. Features: Cascading Green Code, glitches.", tone: "Surreal, Neon Green, Black Background", tech: TECH_SURREAL };
     }
     // VEHICLE CONTEXT
     if (typeLower.includes("vehicle") || combinedText.includes("emp") || combinedText.includes("scrap")) {
-         if (nameLower.includes("police") || nameLower.includes("sedan") || nameLower.includes("truck") || nameLower.includes("helicopter") || nameLower.includes("ducati")) {
-             return { setting: "The Matrix City Streets or Rooftops.", tone: "Slightly Desaturated, High Contrast, Green Tint", tech: TECH_1999 };
-         }
-         return { setting: "The Real World Sewers or Surface. Hovercrafts, sparks flying.", tone: "Cold Blue, Rust, Industrial", tech: TECH_SCIFI };
+      if (nameLower.includes("police") || nameLower.includes("sedan") || nameLower.includes("truck") || nameLower.includes("helicopter") || nameLower.includes("ducati")) {
+        return { setting: "The Matrix City Streets or Rooftops.", tone: "Slightly Desaturated, High Contrast, Green Tint", tech: TECH_1999 };
+      }
+      return { setting: "The Real World Sewers or Surface. Hovercrafts, sparks flying.", tone: "Cold Blue, Rust, Industrial", tech: TECH_SCIFI };
     }
     if (typeLower.includes("land")) {
-         if (nameLower.includes("simulated") || nameLower.includes("skyline")) return { setting: "Matrix Cityscape Skyline", tone: "Simulated Daylight, Green Tint", tech: TECH_1999 };
-         if (nameLower.includes("zion") || nameLower.includes("living")) return { setting: "Zion (Dock or Living Quarters)", tone: "Warm Incandescent, Stone", tech: TECH_SCIFI };
-         if (nameLower.includes("machine") || nameLower.includes("01")) return { setting: "01 The Machine City", tone: "Black and Orange", tech: TECH_SCIFI };
-         return { setting: "The Real World Surface (Ruins)", tone: "Dark, Stormy, Scorched", tech: TECH_SCIFI };
+      if (nameLower.includes("simulated") || nameLower.includes("skyline")) return { setting: "Matrix Cityscape Skyline", tone: "Simulated Daylight, Green Tint", tech: TECH_1999 };
+      if (nameLower.includes("zion") || nameLower.includes("living")) return { setting: "Zion (Dock or Living Quarters)", tone: "Warm Incandescent, Stone", tech: TECH_SCIFI };
+      if (nameLower.includes("machine") || nameLower.includes("01")) return { setting: "01 The Machine City", tone: "Black and Orange", tech: TECH_SCIFI };
+      return { setting: "The Real World Surface (Ruins)", tone: "Dark, Stormy, Scorched", tech: TECH_SCIFI };
     }
 
     return { setting: "The Matrix Universe (General)", tone: "Cinematic Sci-Fi Noir", tech: "1999 Aesthetic" };
@@ -318,19 +318,19 @@ class Card {
 
     let baseStyle = "Official Magic: The Gathering House Style.";
     if (typeLower.includes("instant") || typeLower.includes("sorcery") || typeLower.includes("enchantment")) {
-        baseStyle = "Abstract Surrealism or Dynamic Action Illustration.";
+      baseStyle = "Abstract Surrealism or Dynamic Action Illustration.";
     } else if (world.setting.includes("Real World") || world.setting.includes("Zion") || world.setting.includes("Machine")) {
-        baseStyle = "Gritty Impasto Realism. Heavy texture, emphasis on rust, sweat, grime. Classical oil painting vibe.";
+      baseStyle = "Gritty Impasto Realism. Heavy texture, emphasis on rust, sweat, grime. Classical oil painting vibe.";
     } else if (world.setting.includes("Matrix") || world.setting.includes("Construct") || world.setting.includes("City")) {
-        baseStyle = "Sleek, High-Fidelity Realism. Sharp edges, polished surfaces, clear lighting. 90s sci-fi concept art.";
+      baseStyle = "Sleek, High-Fidelity Realism. Sharp edges, polished surfaces, clear lighting. 90s sci-fi concept art.";
     }
 
-    const roll = Math.floor(Math.random() * 100); 
+    const roll = Math.floor(Math.random() * 100);
 
     if (roll < 50) {
-        const artistIndex = Math.floor(Math.random() * MTG_ARTISTS.length);
-        const artist = MTG_ARTISTS[artistIndex];
-        return `Style of ${artist}.`; 
+      const artistIndex = Math.floor(Math.random() * MTG_ARTISTS.length);
+      const artist = MTG_ARTISTS[artistIndex];
+      return `Style of ${artist}.`;
     }
 
     return baseStyle;
@@ -342,58 +342,58 @@ class Card {
     let artStyle = this.getArtStyle();
     let diversity = this.getCharacterDiversity();
     let composition = this.getCompositionType();
-    
+
     // UPDATED: Now fetches Vehicle Visuals if applicable
-    const robotVisuals = this.getRobotVisuals(); 
-    
+    const robotVisuals = this.getRobotVisuals();
+
     // NEW V33 FEATURES
-    let lighting = this.getLighting(); 
+    let lighting = this.getLighting();
     const visualKeywords = this.getVisualKeywords();
-    const framingInstruction = this.getFramingInstruction(); 
+    const framingInstruction = this.getFramingInstruction();
     if (framingInstruction) {
-        composition = framingInstruction;
+      composition = framingInstruction;
     }
-    
+
     let likenessInstruction = "";
     if (this.type.toLowerCase().includes("legendary")) {
-        likenessInstruction = "CHARACTER IDENTITY: This is a LEGENDARY character/subject. The illustration MUST strictly resemble the specific character/vehicle as they appear in The Matrix films.";
+      likenessInstruction = "CHARACTER IDENTITY: This is a LEGENDARY character/subject. The illustration MUST strictly resemble the specific character/vehicle as they appear in The Matrix films.";
     } else if (this.type.toLowerCase().includes("creature")) {
-        likenessInstruction = "CHARACTER IDENTITY: Generic character. Do NOT resemble any specific actor/character from The Matrix films.";
+      likenessInstruction = "CHARACTER IDENTITY: Generic character. Do NOT resemble any specific actor/character from The Matrix films.";
     } else {
-        likenessInstruction = "CHARACTER IDENTITY: N/A. Use your judgment based on the subject. Ensure that characters generated are diverse.";
+      likenessInstruction = "CHARACTER IDENTITY: N/A. Use your judgment based on the subject. Ensure that characters generated are diverse.";
     }
 
     let sunglassesConstraint = "";
     if (world.setting.includes("Real World") || world.setting.includes("Zion") || world.setting.includes("Machine")) {
-        sunglassesConstraint = "6. NO SUNGLASSES. Characters in the Real World/Zion do NOT wear sunglasses.";
+      sunglassesConstraint = "6. NO SUNGLASSES. Characters in the Real World/Zion do NOT wear sunglasses.";
     } else {
-        sunglassesConstraint = "6. Sunglasses are characteristic of the Matrix simulation.";
+      sunglassesConstraint = "6. Sunglasses are characteristic of the Matrix simulation.";
     }
 
     let visualContext = this.flavor.length > 0 ? this.flavor : this.text.join(" ");
-    
+
     const override = artOverrides[this.id];
     let subjectDescription = `Main focus features **${subjectColor}** accents. ${likenessInstruction} ${diversity}`;
     let weaponry = "4. WEAPONRY: If the character needs a weapon, use modern firearms, martial arts, or futuristic lightning rifles (only if Real World).";
 
     if (override) {
-        console.log(`   ⚡ Applying overrides for ${this.id}...`);
-        if (override.setting) world.setting = override.setting;
-        if (override.subject) subjectDescription = override.subject; 
-        if (override.composition) composition = "COMPOSITION: " + override.composition;
-        if (override.artStyle) artStyle = override.artStyle;
-        if (override.lighting) lighting = override.lighting;
-        if (override.sunglasses === false) sunglassesConstraint = "6. NO SUNGLASSES.";
-        if (override.sunglasses === true) sunglassesConstraint = "6. Sunglasses are MANDATORY.";
-        if (override.weaponry === false) weaponry = false;
+      console.log(`   ⚡ Applying overrides for ${this.id}...`);
+      if (override.setting) world.setting = override.setting;
+      if (override.subject) subjectDescription = override.subject;
+      if (override.composition) composition = "COMPOSITION: " + override.composition;
+      if (override.artStyle) artStyle = override.artStyle;
+      if (override.lighting) lighting = override.lighting;
+      if (override.sunglasses === false) sunglassesConstraint = "6. NO SUNGLASSES.";
+      if (override.sunglasses === true) sunglassesConstraint = "6. Sunglasses are MANDATORY.";
+      if (override.weaponry === false) weaponry = false;
     }
 
     const descriptiveText = visualContext
-        .replace(/\{[^}]+\}/g, "") 
-        .replace(/Digital|Jack-in|Eject|Override|Scry|Ward/g, "")
-        .replace(/\(Color Indicator: .*?\)/g, "")
-        .replace(/\\/g, "") 
-        .substring(0, 600);
+      .replace(/\{[^}]+\}/g, "")
+      .replace(/Digital|Jack-in|Eject|Override|Scry|Ward/g, "")
+      .replace(/\(Color Indicator: .*?\)/g, "")
+      .replace(/\\/g, "")
+      .substring(0, 600);
 
     return `
       Generate an image.
@@ -430,20 +430,20 @@ class Card {
       ART STYLE: ${artStyle}
       - Use dramatic lighting and strong composition.
       
-      Aspect Ratio: 5:4.
+      Aspect Ratio: 4:3.
     `.trim();
   }
 
   getFileName() {
     let safeName = this.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
     let safeId = this.id;
-    
+
     if (this.isBackFace) {
-        safeName += "_back";
-        safeId += "b";
+      safeName += "_back";
+      safeId += "b";
     } else if (this.hasBackFace) {
-        safeName += "_front";
-        safeId += "a";
+      safeName += "_front";
+      safeId += "a";
     }
 
     return this.id ? `${safeId}_${safeName}.png` : `${safeName}.png`;
@@ -466,29 +466,29 @@ function parseDesignBible(filePath) {
 
   lines.forEach(line => {
     let cleanLine = line
-        .replace(sourceTagRegex, '')  
-        .replace(backslashRegex, '')  
-        .trim();
-    
+      .replace(sourceTagRegex, '')
+      .replace(backslashRegex, '')
+      .trim();
+
     if (!cleanLine) return;
 
     if (cleanLine === '//') {
-        if (currentCard) {
-            currentCard.hasBackFace = true;
-            cards.push(currentCard);
+      if (currentCard) {
+        currentCard.hasBackFace = true;
+        cards.push(currentCard);
 
-            const oldId = currentCard.id;
-            currentCard = new Card();
-            currentCard.id = oldId;
-            currentCard.isBackFace = true;
-            return;
-        }
+        const oldId = currentCard.id;
+        currentCard = new Card();
+        currentCard.id = oldId;
+        currentCard.isBackFace = true;
+        return;
+      }
     }
 
     const idMatch = cleanLine.match(idTagRegex);
     if (idMatch) {
       if (currentCard) cards.push(currentCard);
-      
+
       currentCard = new Card();
       currentCard.id = idMatch[1];
       currentCard.name = idMatch[2].trim();
@@ -499,10 +499,10 @@ function parseDesignBible(filePath) {
     if (!currentCard) return;
 
     if (!currentCard.name && currentCard.isBackFace) {
-        currentCard.name = cleanLine.replace(/\(Color Indicator: .*?\)/, '').trim();
-        if (cleanLine.includes("Color Indicator")) {
-            currentCard.text.push(cleanLine);
-        }
+      currentCard.name = cleanLine.replace(/\(Color Indicator: .*?\)/, '').trim();
+      if (cleanLine.includes("Color Indicator")) {
+        currentCard.text.push(cleanLine);
+      }
     } else if (!currentCard.type) {
       currentCard.type = cleanLine;
     } else if (cleanLine.startsWith("“") || cleanLine.startsWith('"')) {
@@ -531,19 +531,19 @@ async function generateArtForCard(aiClient, card, isDryRun, forceOverwrite) {
   }
 
   if (isDryRun) {
-      console.log(`\n--- DRY RUN: ${card.name} (${card.isBackFace ? "BACK" : "FRONT"}) ---`);
-      console.log(prompt);
-      console.log("---------------------------------------------------------------");
-      return false; // Dry run counts as "didn't hit API" for delay purposes usually, or you can return true if you want delay.
+    console.log(`\n--- DRY RUN: ${card.name} (${card.isBackFace ? "BACK" : "FRONT"}) ---`);
+    console.log(prompt);
+    console.log("---------------------------------------------------------------");
+    return false; // Dry run counts as "didn't hit API" for delay purposes usually, or you can return true if you want delay.
   }
 
   const world = card.getWorldContext();
   const isDigital = card.hasDigitalKeyword();
-  
+
   console.log(`\n🎨 Generating: ${card.name} (${card.isBackFace ? "BACK" : "FRONT"})`);
   console.log(`   🔍 Digital: ${isDigital} -> ${isDigital ? "MATRIX" : "REAL WORLD"}`);
   console.log(`   🌍 Setting: ${world.setting}`);
-  
+
   const startTime = Date.now();
 
   try {
@@ -603,33 +603,33 @@ async function main() {
   const isDryRun = args.includes('--dryrun') || args.includes('-d');
   const isForce = args.includes('--force') || args.includes('-f');
   const isCleanup = args.includes('--cleanup') || args.includes('-c');
-  
+
   let specificId = null;
   const specificIndex = args.findIndex(arg => arg === '--specific' || arg === '-s');
   if (specificIndex !== -1 && args[specificIndex + 1]) {
-    specificId = args[specificIndex + 1].replace(/[\[\]]/g, ''); 
+    specificId = args[specificIndex + 1].replace(/[\[\]]/g, '');
   }
 
   const allCards = parseDesignBible(INPUT_FILE);
 
   if (isCleanup) {
-      console.log("------------------------------------------");
-      console.log("🧹  CLEANUP MODE INITIATED");
-      console.log("------------------------------------------");
-      const validFilenames = new Set(allCards.map(c => c.getFileName()));
-      const filesInDir = fs.readdirSync(OUTPUT_DIR);
-      let deletedCount = 0;
-      filesInDir.forEach(file => {
-          if (file.endsWith(".png")) {
-              if (!validFilenames.has(file)) {
-                  console.log(`   🗑️  Deleting orphan file: ${file}`);
-                  fs.unlinkSync(path.join(OUTPUT_DIR, file));
-                  deletedCount++;
-              }
-          }
-      });
-      console.log(`   ✅ Cleanup complete. Removed ${deletedCount} orphan files.`);
-      return; 
+    console.log("------------------------------------------");
+    console.log("🧹  CLEANUP MODE INITIATED");
+    console.log("------------------------------------------");
+    const validFilenames = new Set(allCards.map(c => c.getFileName()));
+    const filesInDir = fs.readdirSync(OUTPUT_DIR);
+    let deletedCount = 0;
+    filesInDir.forEach(file => {
+      if (file.endsWith(".png")) {
+        if (!validFilenames.has(file)) {
+          console.log(`   🗑️  Deleting orphan file: ${file}`);
+          fs.unlinkSync(path.join(OUTPUT_DIR, file));
+          deletedCount++;
+        }
+      }
+    });
+    console.log(`   ✅ Cleanup complete. Removed ${deletedCount} orphan files.`);
+    return;
   }
 
   console.log("------------------------------------------");
@@ -638,17 +638,17 @@ async function main() {
   if (isForce) console.log("   🔥 FORCE MODE: OVERWRITING ALL FILES 🔥");
   if (specificId) console.log(`   🎯 SPECIFIC MODE: Targeting Card ID '${specificId}'`);
   console.log("------------------------------------------");
-  
+
   let cardsToProcess = [];
 
   if (specificId) {
-      cardsToProcess = allCards.filter(card => card.id === specificId);
-      if (cardsToProcess.length === 0) {
-          console.error(`❌ Error: Card ID '${specificId}' not found in ${INPUT_FILE}`);
-          return;
-      }
+    cardsToProcess = allCards.filter(card => card.id === specificId);
+    if (cardsToProcess.length === 0) {
+      console.error(`❌ Error: Card ID '${specificId}' not found in ${INPUT_FILE}`);
+      return;
+    }
   } else {
-      cardsToProcess = allCards; 
+    cardsToProcess = allCards;
   }
 
   console.log(`   Found ${allCards.length} total card faces.`);
@@ -658,13 +658,13 @@ async function main() {
 
   for (let i = 0; i < cardsToProcess.length; i++) {
     const forceThisCard = isForce || (specificId !== null);
-    
+
     // Capture return value
     const didGenerate = await generateArtForCard(ai, cardsToProcess[i], isDryRun, forceThisCard);
-    
+
     // Only wait if we actually hit the API (and aren't in dry run mode)
     if (didGenerate && !isDryRun) {
-        await new Promise(r => setTimeout(r, 100));
+      await new Promise(r => setTimeout(r, 100));
     }
   }
 }

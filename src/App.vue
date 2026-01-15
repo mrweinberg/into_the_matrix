@@ -20,6 +20,7 @@
       @open-notes="showNotes = true"
       @open-stats="showStats = true"
       @resume-pool="resumePool"
+      @open-print-proxies="openPrintProxiesFromDashboard"
     />
 
     <div class="filter-status">
@@ -84,6 +85,7 @@
       :initial-basic-lands="sealedInitialBasicLands"
       @close="closeSealed"
       @view-card="openCardDetailFromSealed"
+      @open-print-proxies="openPrintProxiesFromDeck"
     />
 
     <!-- Set Stats Modal -->
@@ -91,6 +93,14 @@
       :show="showStats"
       :stats="setInfo.stats"
       @close="showStats = false"
+    />
+
+    <!-- Print Proxy Modal -->
+    <PrintProxyModal
+      :show="showPrintProxy"
+      :mode="printProxyMode"
+      :initial-cards="printProxyInitialCards"
+      @close="showPrintProxy = false"
     />
   </div>
 </template>
@@ -116,6 +126,7 @@ import NotesModal from '@/components/modals/NotesModal.vue'
 import DraftModal from '@/components/modals/DraftModal.vue'
 import SealedModal from '@/components/modals/SealedModal.vue'
 import SetStatsModal from '@/components/modals/SetStatsModal.vue'
+import PrintProxyModal from '@/components/modals/PrintProxyModal.vue'
 
 const cardStore = useCardStore()
 
@@ -177,6 +188,11 @@ const showNotes = ref(false)
 
 // Stats modal state
 const showStats = ref(false)
+
+// Print proxy modal state
+const showPrintProxy = ref(false)
+const printProxyMode = ref('dashboard')
+const printProxyInitialCards = ref([])
 
 function openBooster() {
   booster.openPack()
@@ -279,6 +295,18 @@ function closeCardDetail() {
     showSealedPool.value = true
     viewingFromSealed.value = false
   }
+}
+
+function openPrintProxiesFromDashboard() {
+  printProxyMode.value = 'dashboard'
+  printProxyInitialCards.value = []
+  showPrintProxy.value = true
+}
+
+function openPrintProxiesFromDeck(cards) {
+  printProxyMode.value = 'deck'
+  printProxyInitialCards.value = cards
+  showPrintProxy.value = true
 }
 </script>
 

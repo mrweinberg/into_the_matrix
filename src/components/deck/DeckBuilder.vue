@@ -99,6 +99,9 @@
           <button class="export-btn" @click="exportDeck" title="Download deck list">
             Export
           </button>
+          <button class="print-btn" @click="openPrintProxies" title="Print proxy cards">
+            Print
+          </button>
         </div>
       </div>
 
@@ -191,7 +194,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['state-change'])
+const emit = defineEmits(['state-change', 'open-print-proxies'])
 
 const cardStore = useCardStore()
 const {
@@ -384,6 +387,10 @@ function removeFromDeck(index, isBasic, type) {
 
 function getCmcCount(cards) {
   return cards.reduce((sum, c) => sum + c.count, 0)
+}
+
+function openPrintProxies() {
+  emit('open-print-proxies', mainDeck.value)
 }
 
 // Filter out empty CMC columns
@@ -665,6 +672,23 @@ defineExpose({
 .export-btn:hover {
   background: var(--matrix-green);
   color: #000;
+}
+
+.print-btn {
+  padding: 3px 10px;
+  background: transparent;
+  color: #ccc;
+  border: 1px solid #666;
+  border-radius: 2px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.print-btn:hover {
+  border-color: var(--matrix-green);
+  color: var(--matrix-green);
 }
 
 .count-label {

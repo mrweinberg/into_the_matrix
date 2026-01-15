@@ -1,0 +1,507 @@
+/* ============================================
+   PRINT PROXY STYLES
+   Standard MTG card: 2.5" x 3.5" (63.5mm x 88.9mm)
+   US Letter (8.5" x 11"): 3 columns x 3 rows = 9 cards per page
+   ============================================ */
+
+/* Screen styles for the grid preview */
+.print-grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: #222;
+}
+
+.print-page {
+  display: grid;
+  grid-template-columns: repeat(3, 2.5in);
+  grid-template-rows: repeat(3, 3.5in);
+  gap: 0;
+  justify-content: center;
+  background: white;
+  padding: 0.25in;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Individual card sizing */
+.print-card {
+  width: 2.25in;
+  height: 3.15in;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  border-radius: 10px;
+  background: #fff;
+  color: #000;
+  font-family: 'Beleren', 'Plantin MT', 'Georgia', serif;
+  font-size: 7pt;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Card Header - Name & Mana Cost */
+.print-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  background: linear-gradient(to bottom, #e8e8e8, #d0d0d0);
+  border-bottom: 1px solid #999;
+  min-height: 18px;
+}
+
+.print-card-name {
+  font-weight: bold;
+  font-size: 9pt;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  margin-right: 4px;
+}
+
+.print-mana-cost {
+  flex-shrink: 0;
+  font-size: 11pt;
+  display: flex;
+  gap: 1px;
+}
+
+.print-mana-cost .ms {
+  font-size: 11pt;
+}
+
+/* Art Container */
+.print-art-container {
+  width: 100%;
+  height: 1.3in;
+  overflow: hidden;
+  background: #000;
+  border-bottom: 1px solid #999;
+}
+
+.print-art-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Type Line */
+.print-type-line {
+  padding: 3px 8px;
+  font-size: 7pt;
+  border-bottom: 1px solid #999;
+  background: linear-gradient(to bottom, #e8e8e8, #d0d0d0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.print-type-line .type-text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.print-rarity {
+  font-size: 6pt;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+/* Text Box */
+.print-text-box {
+  flex: 1;
+  padding: 6px 8px;
+  font-size: 7pt;
+  line-height: 1.35;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.print-oracle-text p {
+  margin: 0 0 4px 0;
+}
+
+.print-oracle-text p:last-child {
+  margin-bottom: 0;
+}
+
+.print-flavor-separator {
+  height: 1px;
+  background: #ccc;
+  margin: 5px 0;
+}
+
+.print-flavor-text {
+  font-style: italic;
+  color: #444;
+  font-size: 6.5pt;
+}
+
+/* Power/Toughness Box */
+.print-pt-box {
+  position: absolute;
+  bottom: 6px;
+  right: 8px;
+  background: linear-gradient(to bottom, #e8e8e8, #c8c8c8);
+  border: 1px solid #666;
+  padding: 2px 8px;
+  font-weight: bold;
+  font-size: 10pt;
+  border-radius: 6px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Text-only mode adjustments */
+.print-card[data-mode="text"] .print-art-container {
+  display: none;
+}
+
+.print-card[data-mode="text"] .print-text-box {
+  font-size: 8pt;
+  line-height: 1.4;
+}
+
+.print-card[data-mode="text"] .print-oracle-text p {
+  margin-bottom: 5px;
+}
+
+/* Color-based card styling */
+.print-card[data-color="W"] .print-card-header,
+.print-card[data-color="W"] .print-type-line {
+  background: linear-gradient(to bottom, #F9FAF4, #E8E8D0);
+}
+
+.print-card[data-color="U"] .print-card-header,
+.print-card[data-color="U"] .print-type-line {
+  background: linear-gradient(to bottom, #C1D7E9, #A0C0D8);
+}
+
+.print-card[data-color="B"] .print-card-header,
+.print-card[data-color="B"] .print-type-line {
+  background: linear-gradient(to bottom, #C9C5C0, #A8A4A0);
+}
+
+.print-card[data-color="R"] .print-card-header,
+.print-card[data-color="R"] .print-type-line {
+  background: linear-gradient(to bottom, #F9D1C3, #E8B8A8);
+}
+
+.print-card[data-color="G"] .print-card-header,
+.print-card[data-color="G"] .print-type-line {
+  background: linear-gradient(to bottom, #C4D3CA, #A8C4B0);
+}
+
+.print-card[data-color="Gold"] .print-card-header,
+.print-card[data-color="Gold"] .print-type-line {
+  background: linear-gradient(to bottom, #E9D992, #D4C070);
+}
+
+.print-card[data-color="Artifact"] .print-card-header,
+.print-card[data-color="Artifact"] .print-type-line {
+  background: linear-gradient(to bottom, #D3D4D5, #B8B8B8);
+}
+
+.print-card[data-color="Land"] .print-card-header,
+.print-card[data-color="Land"] .print-type-line {
+  background: linear-gradient(to bottom, #DCCEB5, #C8B898);
+}
+
+/* ============================================
+   PRINT PROXY MODAL STYLES
+   ============================================ */
+
+.print-proxy-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 90vh;
+}
+
+.print-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #1a1a1a;
+  border-bottom: 1px solid var(--matrix-green);
+  flex-shrink: 0;
+}
+
+.print-mode-toggle {
+  display: flex;
+  gap: 8px;
+}
+
+.print-mode-toggle button {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #444;
+  color: #888;
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.print-mode-toggle button.active {
+  border-color: var(--matrix-green);
+  color: var(--matrix-green);
+  background: rgba(0, 255, 65, 0.1);
+}
+
+.print-mode-toggle button:hover:not(.active) {
+  border-color: #666;
+  color: #aaa;
+}
+
+.print-info {
+  color: var(--matrix-green);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.print-info strong {
+  font-size: 1.1rem;
+}
+
+.print-btn {
+  padding: 10px 24px;
+  background: var(--matrix-green);
+  border: none;
+  color: #000;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.print-btn:hover {
+  background: #fff;
+  box-shadow: 0 0 15px var(--matrix-green);
+}
+
+.print-btn:disabled {
+  background: #444;
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Print Preview Area */
+.print-preview {
+  flex: 1;
+  overflow-y: auto;
+  background: #333;
+}
+
+/* Card Selector for Dashboard Mode */
+.print-card-selector {
+  display: flex;
+  gap: 20px;
+  padding: 15px 20px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #333;
+  flex-shrink: 0;
+}
+
+.selector-available {
+  flex: 1;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.selector-selected {
+  width: 300px;
+  max-height: 300px;
+  overflow-y: auto;
+  border-left: 1px solid #333;
+  padding-left: 20px;
+}
+
+.selector-header {
+  color: var(--matrix-green);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.selector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 6px;
+}
+
+.selector-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  background: rgba(0, 255, 65, 0.05);
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.selector-card:hover {
+  border-color: var(--matrix-green);
+  background: rgba(0, 255, 65, 0.1);
+}
+
+.selector-card-name {
+  color: #ccc;
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selector-card-cost {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Selected Cards List */
+.selected-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  border-bottom: 1px solid #333;
+}
+
+.selected-card-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.selected-card-name {
+  color: #ccc;
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.quantity-controls button {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid #444;
+  color: #888;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-controls button:hover {
+  border-color: var(--matrix-green);
+  color: var(--matrix-green);
+}
+
+.quantity-value {
+  color: var(--matrix-green);
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+
+.empty-selection {
+  color: #666;
+  font-style: italic;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Print-only container - hidden on screen, shown when printing */
+.print-only-container {
+  display: none;
+}
+
+/* ============================================
+   @MEDIA PRINT RULES
+   ============================================ */
+@media print {
+
+  /* Hide everything by default */
+  body>* {
+    display: none !important;
+  }
+
+  /* Show only the print-only-container */
+  body>.print-only-container {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    background: white !important;
+  }
+
+  .print-only-container .print-grid-container {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+  }
+
+  .print-page {
+    display: grid !important;
+    grid-template-columns: repeat(3, 2.5in) !important;
+    grid-template-rows: repeat(3, 3.5in) !important;
+    gap: 0 !important;
+    justify-content: center !important;
+    page-break-after: always;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    background: white !important;
+  }
+
+  .print-page:last-child {
+    page-break-after: auto;
+  }
+
+  .print-card {
+    display: flex !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    break-inside: avoid;
+  }
+
+  /* Page setup */
+  @page {
+    size: letter;
+    margin: 0.25in;
+  }
+
+  /* Ensure colors print */
+  .ms,
+  .ms-cost,
+  .print-card-header,
+  .print-type-line,
+  .print-pt-box,
+  .print-text-box,
+  .print-art-container {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

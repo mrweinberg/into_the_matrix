@@ -7,6 +7,7 @@
       :initial-deck="initialDeck"
       :initial-basic-lands="initialBasicLands"
       @state-change="onStateChange"
+      @open-print-proxies="onOpenPrintProxies"
     />
   </BaseModal>
 </template>
@@ -36,7 +37,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['close', 'view-card'])
+const emit = defineEmits(['close', 'view-card', 'open-print-proxies'])
 
 const { savePool } = useSavedPool()
 
@@ -65,6 +66,10 @@ function onStateChange(state) {
 
 function handleClose() {
   emit('close')
+}
+
+function onOpenPrintProxies(cards) {
+  emit('open-print-proxies', cards)
 }
 
 defineExpose({

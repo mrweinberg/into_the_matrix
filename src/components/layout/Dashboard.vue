@@ -12,6 +12,7 @@
           @open-stats="$emit('open-stats')"
           @open-notes="$emit('open-notes')"
           @resume-pool="$emit('resume-pool')"
+          @open-print-proxies="$emit('open-print-proxies')"
         />
       </div>
 
@@ -73,7 +74,8 @@ defineEmits([
   'toggle-color',
   'toggle-mv',
   'reset-filters',
-  'resume-pool'
+  'resume-pool',
+  'open-print-proxies'
 ])
 </script>
 

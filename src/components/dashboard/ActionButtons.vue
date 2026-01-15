@@ -55,6 +55,10 @@
           <span class="btn-icon">&#9633;</span>
           <span class="btn-text">Design Notes</span>
         </button>
+        <button class="action-btn action-secondary" @click="$emit('open-print-proxies')">
+          <span class="btn-icon">&#9113;</span>
+          <span class="btn-text">Print Proxies</span>
+        </button>
       </div>
     </div>
   </div>
@@ -64,7 +68,7 @@
 import { computed } from 'vue'
 import { useSavedPool } from '@/composables/useSavedPool'
 
-defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-stats', 'open-notes', 'resume-pool'])
+defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-stats', 'open-notes', 'resume-pool', 'open-print-proxies'])
 
 const { savedPool, poolType, clearPool, hasSavedPool: hasSavedPoolFn, getDeckCardCount } = useSavedPool()
 
