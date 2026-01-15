@@ -59,6 +59,10 @@
           <span class="btn-icon">&#9113;</span>
           <span class="btn-text">Print Proxies</span>
         </button>
+        <button class="action-btn action-secondary" @click="$emit('open-archetypes')">
+          <span class="btn-icon">&#9830;</span>
+          <span class="btn-text">Archetypes</span>
+        </button>
       </div>
     </div>
   </div>
@@ -68,7 +72,7 @@
 import { computed } from 'vue'
 import { useSavedPool } from '@/composables/useSavedPool'
 
-defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-stats', 'open-notes', 'resume-pool', 'open-print-proxies'])
+defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-stats', 'open-notes', 'resume-pool', 'open-print-proxies', 'open-archetypes'])
 
 const { savedPool, poolType, clearPool, hasSavedPool: hasSavedPoolFn, getDeckCardCount } = useSavedPool()
 

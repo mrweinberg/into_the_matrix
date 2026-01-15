@@ -8,14 +8,24 @@
       :initial-basic-lands="initialBasicLands"
       @state-change="onStateChange"
       @open-print-proxies="onOpenPrintProxies"
+      @open-playtest="onOpenPlaytest"
     />
   </BaseModal>
+
+  <PlaytestModal
+    :show="showPlaytest"
+    :deck="playtestData.deck"
+    :basic-lands="playtestData.basicLands"
+    :basic-land-cards="playtestData.basicLandCards"
+    @close="showPlaytest = false"
+  />
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, reactive } from 'vue'
 import BaseModal from './BaseModal.vue'
 import DeckBuilder from '@/components/deck/DeckBuilder.vue'
+import PlaytestModal from './PlaytestModal.vue'
 import { useSavedPool } from '@/composables/useSavedPool'
 
 const props = defineProps({
@@ -42,6 +52,14 @@ const emit = defineEmits(['close', 'view-card', 'open-print-proxies'])
 const { savePool } = useSavedPool()
 
 const deckBuilderRef = ref(null)
+
+// Playtest modal state
+const showPlaytest = ref(false)
+const playtestData = reactive({
+  deck: [],
+  basicLands: {},
+  basicLandCards: {}
+})
 
 // Key to force DeckBuilder re-initialization when pool/deck changes
 const deckBuilderKey = computed(() => {
@@ -70,6 +88,13 @@ function handleClose() {
 
 function onOpenPrintProxies(cards) {
   emit('open-print-proxies', cards)
+}
+
+function onOpenPlaytest(data) {
+  playtestData.deck = data.mainDeck || []
+  playtestData.basicLands = data.basicLands || {}
+  playtestData.basicLandCards = data.basicLandCards || {}
+  showPlaytest.value = true
 }
 
 defineExpose({

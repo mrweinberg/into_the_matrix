@@ -13,6 +13,7 @@
           @open-notes="$emit('open-notes')"
           @resume-pool="$emit('resume-pool')"
           @open-print-proxies="$emit('open-print-proxies')"
+          @open-archetypes="$emit('open-archetypes')"
         />
       </div>
 
@@ -75,7 +76,8 @@ defineEmits([
   'toggle-mv',
   'reset-filters',
   'resume-pool',
-  'open-print-proxies'
+  'open-print-proxies',
+  'open-archetypes'
 ])
 </script>
 

@@ -160,6 +160,7 @@ export function useDeckBuilder(initialPool = [], initialDeck = null, initialBasi
         groupedPool,
         mainDeck,
         basicLands,
+        basicLandCards,
         addToDeck,
         removeFromDeck,
         addBasicLand,

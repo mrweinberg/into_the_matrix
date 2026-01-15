@@ -21,6 +21,7 @@
       @open-stats="showStats = true"
       @resume-pool="resumePool"
       @open-print-proxies="openPrintProxiesFromDashboard"
+      @open-archetypes="showArchetypes = true"
     />
 
     <div class="filter-status">
@@ -102,6 +103,13 @@
       :initial-cards="printProxyInitialCards"
       @close="showPrintProxy = false"
     />
+
+    <!-- Archetype Analysis Modal -->
+    <ArchetypeModal
+      :show="showArchetypes"
+      @close="showArchetypes = false"
+      @view-card="openCardDetailFromArchetype"
+    />
   </div>
 </template>
 
@@ -127,6 +135,7 @@ import DraftModal from '@/components/modals/DraftModal.vue'
 import SealedModal from '@/components/modals/SealedModal.vue'
 import SetStatsModal from '@/components/modals/SetStatsModal.vue'
 import PrintProxyModal from '@/components/modals/PrintProxyModal.vue'
+import ArchetypeModal from '@/components/modals/ArchetypeModal.vue'
 
 const cardStore = useCardStore()
 
@@ -178,6 +187,7 @@ const selectedCard = ref(null)
 const viewingFromPack = ref(false)
 const viewingFromDraft = ref(false)
 const viewingFromSealed = ref(false)
+const viewingFromArchetype = ref(false)
 
 // Sealed pool state
 const showSealedPool = ref(false)
@@ -188,6 +198,9 @@ const showNotes = ref(false)
 
 // Stats modal state
 const showStats = ref(false)
+
+// Archetypes modal state
+const showArchetypes = ref(false)
 
 // Print proxy modal state
 const showPrintProxy = ref(false)
@@ -279,6 +292,13 @@ function openCardDetailFromSealed(card) {
   showSealedPool.value = false // Temporarily hide to show modal
 }
 
+function openCardDetailFromArchetype(card) {
+  selectedCard.value = card
+  showCardDetail.value = true
+  viewingFromArchetype.value = true
+  showArchetypes.value = false // Temporarily hide to show modal
+}
+
 function closeCardDetail() {
   showCardDetail.value = false
   selectedCard.value = null
@@ -294,6 +314,10 @@ function closeCardDetail() {
   if (viewingFromSealed.value) {
     showSealedPool.value = true
     viewingFromSealed.value = false
+  }
+  if (viewingFromArchetype.value) {
+    showArchetypes.value = true
+    viewingFromArchetype.value = false
   }
 }
 

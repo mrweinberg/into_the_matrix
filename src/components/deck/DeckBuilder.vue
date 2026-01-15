@@ -4,7 +4,8 @@
     <div class="builder-main">
       <!-- Pool Section -->
       <div class="pool-section">
-        <div class="section-header">
+          <!-- ... existing pool content ... -->
+          <div class="section-header">
           <div class="pool-info">
             <h3>Pool ({{ filteredPoolCount }}/{{ pool.length }})</h3>
             <div class="rarity-breakdown">
@@ -96,17 +97,33 @@
             <span class="count-label">Main Deck:</span>
             <span class="count-value" :class="{ 'count-valid': totalMainCount >= 40 }">{{ totalMainCount }}</span>
           </div>
+          <button 
+            class="stats-btn" 
+            :class="{ active: showStats }"
+            @click="showStats = !showStats"
+            title="Toggle Deck Statistics"
+          >
+            <i class="ms ms-planeswalker"></i> Stats
+          </button>
           <button class="export-btn" @click="exportDeck" title="Download deck list">
             Export
           </button>
           <button class="print-btn" @click="openPrintProxies" title="Print proxy cards">
             Print
           </button>
+          <button class="playtest-btn" @click="openPlaytest" title="Test your deck">
+            Playtest
+          </button>
         </div>
       </div>
 
+      <!-- Stats Overlay or In-line -->
+      <div v-if="showStats" class="stats-panel">
+        <DeckStats :deck="mainDeck" :basic-lands="basicLands" />
+      </div>
+
       <!-- Deck Section -->
-      <div class="deck-section">
+      <div v-show="!showStats" class="deck-section">
         <div class="section-header">
           <h3>Deck</h3>
           <div class="deck-hint">Click to remove from deck</div>
@@ -178,6 +195,7 @@ import { determineColorClass, calculateCMC } from '@/utils/cardUtils'
 import CardItem from '@/components/cards/CardItem.vue'
 import BasicLandPicker from './BasicLandPicker.vue'
 import DeckCardRow from './DeckCardRow.vue'
+import DeckStats from './DeckStats.vue'
 
 const props = defineProps({
   initialPool: {
@@ -194,7 +212,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['state-change', 'open-print-proxies'])
+const emit = defineEmits(['state-change', 'open-print-proxies', 'open-playtest'])
 
 const cardStore = useCardStore()
 const {
@@ -202,6 +220,7 @@ const {
   groupedPool,
   mainDeck,
   basicLands,
+  basicLandCards,
   addToDeck: deckAdd,
   removeFromDeck: deckRemove,
   addBasicLand,
@@ -220,6 +239,8 @@ watch([pool, mainDeck, basicLands], () => {
   }
   emit('state-change', state)
 }, { deep: true })
+
+const showStats = ref(false)
 
 const hoveredCard = ref(null)
 
@@ -393,6 +414,14 @@ function openPrintProxies() {
   emit('open-print-proxies', mainDeck.value)
 }
 
+function openPlaytest() {
+  emit('open-playtest', {
+    mainDeck: mainDeck.value,
+    basicLands: basicLands.value,
+    basicLandCards
+  })
+}
+
 // Filter out empty CMC columns
 const filteredDeckByCMC = computed(() => {
   const filtered = {}
@@ -429,6 +458,7 @@ defineExpose({
   exportDeck,
   mainDeck,
   basicLands,
+  basicLandCards,
   pool
 })
 </script>
@@ -691,6 +721,22 @@ defineExpose({
   color: var(--matrix-green);
 }
 
+.playtest-btn {
+  padding: 3px 10px;
+  background: rgba(0, 200, 255, 0.1);
+  color: #0cf;
+  border: 1px solid #0cf;
+  border-radius: 2px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.playtest-btn:hover {
+  background: rgba(0, 200, 255, 0.3);
+}
+
 .count-label {
   color: #888;
   font-size: 0.8rem;
@@ -704,6 +750,32 @@ defineExpose({
 
 .count-value.count-valid {
   color: var(--matrix-green);
+}
+
+.stats-btn {
+  padding: 3px 10px;
+  background: transparent;
+  color: #ccc;
+  border: 1px solid #666;
+  border-radius: 2px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.stats-btn:hover, .stats-btn.active {
+  border-color: var(--matrix-green);
+  color: var(--matrix-green);
+}
+
+.stats-panel {
+  flex: 1.2;
+  overflow-y: auto;
+  border: 1px solid rgba(0, 255, 65, 0.2);
+  padding: 6px 8px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
 }
 
 .deck-section {

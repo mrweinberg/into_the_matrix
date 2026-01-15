@@ -38,7 +38,11 @@
               DECK BUILDER
             </h2>
             <div class="deck-builder-container">
-              <DeckBuilder :initial-pool="sortedPool" ref="deckBuilderRef" />
+              <DeckBuilder
+                :initial-pool="sortedPool"
+                ref="deckBuilderRef"
+                @open-playtest="onOpenPlaytest"
+              />
             </div>
           </template>
         </div>
@@ -56,16 +60,25 @@
       </div>
     </Transition>
   </Teleport>
+
+  <PlaytestModal
+    :show="showPlaytest"
+    :deck="playtestData.deck"
+    :basic-lands="playtestData.basicLands"
+    :basic-land-cards="playtestData.basicLandCards"
+    @close="showPlaytest = false"
+  />
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 import { useCardStore } from '@/stores/cardStore'
 import CardItem from '@/components/cards/CardItem.vue'
 import CardDFC from '@/components/cards/CardDFC.vue'
 import DraftSidebar from './DraftSidebar.vue'
 import HoverPreview from './HoverPreview.vue'
 import DeckBuilder from '@/components/deck/DeckBuilder.vue'
+import PlaytestModal from './PlaytestModal.vue'
 
 const props = defineProps({
   show: Boolean,
@@ -83,6 +96,14 @@ const emit = defineEmits(['close', 'pick', 'download', 'view-card'])
 const cardStore = useCardStore()
 const hoverCard = ref(null)
 const deckBuilderRef = ref(null)
+
+// Playtest modal state
+const showPlaytest = ref(false)
+const playtestData = reactive({
+  deck: [],
+  basicLands: {},
+  basicLandCards: {}
+})
 
 function getBackFace(card) {
   return cardStore.getBackFace(card)
@@ -106,6 +127,13 @@ function downloadDeck() {
 
 function viewCard(card) {
   emit('view-card', card)
+}
+
+function onOpenPlaytest(data) {
+  playtestData.deck = data.mainDeck || []
+  playtestData.basicLands = data.basicLands || {}
+  playtestData.basicLandCards = data.basicLandCards || {}
+  showPlaytest.value = true
 }
 </script>
 
