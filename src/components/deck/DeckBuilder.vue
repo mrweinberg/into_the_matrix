@@ -32,6 +32,19 @@
             </div>
           </div>
           <div class="filter-group">
+            <span class="filter-label">Rarity:</span>
+            <div class="filter-buttons">
+              <button
+                v-for="rarity in rarityFilters"
+                :key="rarity.id"
+                :class="['filter-btn', 'rarity-btn', { active: activeRarities.has(rarity.id) }]"
+                @click="toggleRarity(rarity.id)"
+              >
+                {{ rarity.label }}
+              </button>
+            </div>
+          </div>
+          <div class="filter-group">
             <span class="filter-label">Type:</span>
             <div class="filter-buttons">
               <button
@@ -189,6 +202,7 @@ const hoveredCard = ref(null)
 // Filter state
 const activeColors = ref(new Set())
 const activeTypes = ref(new Set())
+const activeRarities = ref(new Set())
 const activeMVs = ref(new Set())
 
 const colorFilters = [
@@ -199,6 +213,13 @@ const colorFilters = [
   { id: 'G', name: 'Green', icon: 'ms ms-g ms-cost' },
   { id: 'Gold', name: 'Multicolor', icon: 'ms ms-gold' },
   { id: 'C', name: 'Colorless', icon: 'ms ms-c ms-cost' }
+]
+
+const rarityFilters = [
+  { id: 'Common', label: 'C' },
+  { id: 'Uncommon', label: 'U' },
+  { id: 'Rare', label: 'R' },
+  { id: 'Mythic', label: 'M' }
 ]
 
 const typeFilters = [
@@ -237,6 +258,15 @@ function toggleType(typeId) {
   activeTypes.value = new Set(activeTypes.value)
 }
 
+function toggleRarity(rarityId) {
+  if (activeRarities.value.has(rarityId)) {
+    activeRarities.value.delete(rarityId)
+  } else {
+    activeRarities.value.add(rarityId)
+  }
+  activeRarities.value = new Set(activeRarities.value)
+}
+
 function toggleMV(mvId) {
   if (activeMVs.value.has(mvId)) {
     activeMVs.value.delete(mvId)
@@ -249,11 +279,12 @@ function toggleMV(mvId) {
 function clearFilters() {
   activeColors.value = new Set()
   activeTypes.value = new Set()
+  activeRarities.value = new Set()
   activeMVs.value = new Set()
 }
 
 const hasActiveFilters = computed(() =>
-  activeColors.value.size > 0 || activeTypes.value.size > 0 || activeMVs.value.size > 0
+  activeColors.value.size > 0 || activeTypes.value.size > 0 || activeRarities.value.size > 0 || activeMVs.value.size > 0
 )
 
 function cardMatchesFilters(card) {
@@ -278,6 +309,13 @@ function cardMatchesFilters(card) {
       }
     }
     if (!matches) return false
+  }
+
+  // Rarity filter
+  if (activeRarities.value.size > 0) {
+    if (!activeRarities.value.has(card.rarity)) {
+      return false
+    }
   }
 
   // Mana value filter
@@ -503,6 +541,13 @@ defineExpose({
   font-family: 'Courier New', monospace;
   padding: 2px 6px;
   min-width: 22px;
+}
+
+.filter-btn.rarity-btn {
+  font-size: 0.7rem;
+  font-family: 'Courier New', monospace;
+  padding: 2px 6px;
+  min-width: 20px;
 }
 
 /* Color-specific button backgrounds when active */

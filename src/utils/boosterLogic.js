@@ -12,10 +12,8 @@ export function generateBoosterPackData(allCards) {
 
   const pack = []
 
-  // 1 land
-  if (lands.length) pack.push(...getRandom(lands, 1))
-  // 7 commons
-  if (commons.length) pack.push(...getRandom(commons, 7))
+  // 8 commons
+  if (commons.length) pack.push(...getRandom(commons, 8))
   // 3 uncommons
   if (uncommons.length) pack.push(...getRandom(uncommons, 3))
 
@@ -26,16 +24,18 @@ export function generateBoosterPackData(allCards) {
     pack.push(...getRandom(rares, 1))
   }
 
-  // Wildcard slot
-  const wildcardRoll = Math.random()
-  if (wildcardRoll > 0.95 && mythics.length > 0) {
-    pack.push(...getRandom(mythics, 1))
-  } else if (wildcardRoll > 0.85 && rares.length > 0) {
-    pack.push(...getRandom(rares, 1))
-  } else if (wildcardRoll > 0.60 && uncommons.length > 0) {
-    pack.push(...getRandom(uncommons, 1))
-  } else if (commons.length > 0) {
-    pack.push(...getRandom(commons, 1))
+  // Two Wildcard slots
+  for (let i = 0; i < 2; i++) {
+    const wildcardRoll = Math.random()
+    if (wildcardRoll > 0.95 && mythics.length > 0) {
+      pack.push(...getRandom(mythics, 1))
+    } else if (wildcardRoll > 0.85 && rares.length > 0) {
+      pack.push(...getRandom(rares, 1))
+    } else if (wildcardRoll > 0.60 && uncommons.length > 0) {
+      pack.push(...getRandom(uncommons, 1))
+    } else if (commons.length > 0) {
+      pack.push(...getRandom(commons, 1))
+    }
   }
 
   return pack
