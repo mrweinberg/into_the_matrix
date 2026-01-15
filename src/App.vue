@@ -17,6 +17,7 @@
       @start-draft="startDraft"
       @generate-sealed="generateSealed"
       @open-notes="showNotes = true"
+      @open-stats="showStats = true"
     />
 
     <div class="filter-status">
@@ -80,6 +81,13 @@
       @close="showSealedPool = false"
       @view-card="openCardDetailFromSealed"
     />
+
+    <!-- Set Stats Modal -->
+    <SetStatsModal
+      :show="showStats"
+      :stats="setInfo.stats"
+      @close="showStats = false"
+    />
   </div>
 </template>
 
@@ -102,6 +110,7 @@ import CardDetailModal from '@/components/modals/CardDetailModal.vue'
 import NotesModal from '@/components/modals/NotesModal.vue'
 import DraftModal from '@/components/modals/DraftModal.vue'
 import SealedModal from '@/components/modals/SealedModal.vue'
+import SetStatsModal from '@/components/modals/SetStatsModal.vue'
 
 const cardStore = useCardStore()
 
@@ -157,6 +166,9 @@ const sealedPool = ref([])
 
 // Notes modal state
 const showNotes = ref(false)
+
+// Stats modal state
+const showStats = ref(false)
 
 function openBooster() {
   booster.openPack()

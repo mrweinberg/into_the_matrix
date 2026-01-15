@@ -60,5 +60,255 @@
       ],
       "notes": []
     }
-  ]
+  ],
+  "stats": {
+    "totalCards": 286,
+    "colorCombinations": {
+      "W": 41,
+      "U": 42,
+      "B": 41,
+      "R": 43,
+      "G": 40,
+      "UW": 4,
+      "BU": 3,
+      "RU": 3,
+      "BG": 4,
+      "BR": 5,
+      "GW": 5,
+      "GU": 5,
+      "BW": 4,
+      "RW": 4,
+      "GR": 4,
+      "BRW": 1,
+      "RUW": 1,
+      "Colorless": 20,
+      "Land": 16
+    },
+    "rarityBreakdown": {
+      "Common": 107,
+      "Uncommon": 88,
+      "Rare": 60,
+      "Mythic": 15,
+      "Land": 16
+    },
+    "typeBreakdown": {
+      "Creature": 152,
+      "Sorcery": 30,
+      "Enchantment": 29,
+      "Instant": 39,
+      "Artifact": 20,
+      "Land": 16
+    },
+    "manaCurveByColor": {
+      "W": {
+        "0": 0,
+        "1": 6,
+        "2": 15,
+        "3": 14,
+        "4": 2,
+        "5": 4,
+        "6+": 0
+      },
+      "U": {
+        "0": 0,
+        "1": 3,
+        "2": 19,
+        "3": 8,
+        "4": 8,
+        "5": 3,
+        "6+": 1
+      },
+      "B": {
+        "0": 0,
+        "1": 7,
+        "2": 14,
+        "3": 9,
+        "4": 6,
+        "5": 4,
+        "6+": 1
+      },
+      "R": {
+        "0": 0,
+        "1": 4,
+        "2": 16,
+        "3": 11,
+        "4": 9,
+        "5": 2,
+        "6+": 1
+      },
+      "G": {
+        "0": 0,
+        "1": 6,
+        "2": 17,
+        "3": 7,
+        "4": 3,
+        "5": 2,
+        "6+": 5
+      },
+      "Multicolor": {
+        "0": 0,
+        "1": 1,
+        "2": 9,
+        "3": 21,
+        "4": 5,
+        "5": 5,
+        "6+": 2
+      },
+      "Colorless": {
+        "0": 1,
+        "1": 2,
+        "2": 5,
+        "3": 7,
+        "4": 3,
+        "5": 1,
+        "6+": 1
+      }
+    },
+    "manaCurveByRarity": {
+      "Mythic": {
+        "0": 0,
+        "1": 0,
+        "2": 1,
+        "3": 1,
+        "4": 3,
+        "5": 6,
+        "6+": 4
+      },
+      "Rare": {
+        "0": 0,
+        "1": 4,
+        "2": 8,
+        "3": 26,
+        "4": 14,
+        "5": 6,
+        "6+": 2
+      },
+      "Uncommon": {
+        "0": 0,
+        "1": 4,
+        "2": 32,
+        "3": 35,
+        "4": 10,
+        "5": 4,
+        "6+": 3
+      },
+      "Common": {
+        "0": 1,
+        "1": 21,
+        "2": 54,
+        "3": 15,
+        "4": 9,
+        "5": 5,
+        "6+": 2
+      }
+    },
+    "creatureStats": {
+      "total": 152,
+      "byRarity": {
+        "Common": 58,
+        "Uncommon": 52,
+        "Rare": 34,
+        "Mythic": 8
+      },
+      "averagePT": {
+        "power": 2.3,
+        "toughness": 2.7
+      },
+      "powerDistribution": {
+        "0": 5,
+        "1": 36,
+        "2": 53,
+        "3": 33,
+        "4": 15,
+        "5+": 9
+      },
+      "toughnessDistribution": {
+        "0": 1,
+        "1": 31,
+        "2": 39,
+        "3": 46,
+        "4": 21,
+        "5+": 13
+      }
+    },
+    "keywords": {
+      "Vigilance": 12,
+      "Digital": 77,
+      "Jack-in": 21,
+      "Flying": 14,
+      "Defender": 7,
+      "Ward": 10,
+      "Lifelink": 9,
+      "Eject": 7,
+      "First Strike": 3,
+      "Indestructible": 11,
+      "Reach": 11,
+      "Double Strike": 2,
+      "Hexproof": 7,
+      "Flash": 18,
+      "Override": 10,
+      "Deathtouch": 3,
+      "Menace": 17,
+      "Trample": 18,
+      "Haste": 16
+    },
+    "dfcCount": 18,
+    "instantSorceryRatio": {
+      "instants": 39,
+      "sorceries": 30,
+      "ratio": 1.3
+    },
+    "averageCMC": 2.85,
+    "cardsWithAbilities": {
+      "cardDraw": 31,
+      "removal": 57,
+      "counterspells": 5,
+      "tokenCreators": 35,
+      "energyCards": 116
+    },
+    "rarityByColor": {
+      "W": {
+        "Mythic": 1,
+        "Rare": 8,
+        "Uncommon": 13,
+        "Common": 19
+      },
+      "U": {
+        "Mythic": 2,
+        "Rare": 8,
+        "Uncommon": 12,
+        "Common": 20
+      },
+      "B": {
+        "Mythic": 1,
+        "Rare": 8,
+        "Uncommon": 12,
+        "Common": 20
+      },
+      "R": {
+        "Mythic": 1,
+        "Rare": 9,
+        "Uncommon": 12,
+        "Common": 21
+      },
+      "G": {
+        "Mythic": 1,
+        "Rare": 8,
+        "Uncommon": 11,
+        "Common": 20
+      },
+      "Multicolor": {
+        "Mythic": 7,
+        "Rare": 16,
+        "Uncommon": 20,
+        "Common": 0
+      },
+      "Colorless": {
+        "Mythic": 2,
+        "Rare": 3,
+        "Uncommon": 8,
+        "Common": 7
+      }
+    }
+  }
 }

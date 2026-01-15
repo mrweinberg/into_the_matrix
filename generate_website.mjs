@@ -261,7 +261,235 @@ function parseDesignBible(filePath) {
 }
 
 // ==========================================
-// 3. HTML GENERATION
+// 3. STATISTICS GENERATION
+// ==========================================
+
+function generateSetStats(cards) {
+  // Filter to front faces only for most stats
+  const frontFaces = cards.filter(c => !c.isBackFace);
+
+  // Helper functions
+  const getCardColors = (card) => {
+    const colors = [];
+    if (card.cost.includes('{W}') || (card.colorIndicator && card.colorIndicator.includes('w'))) colors.push('W');
+    if (card.cost.includes('{U}') || (card.colorIndicator && card.colorIndicator.includes('u'))) colors.push('U');
+    if (card.cost.includes('{B}') || (card.colorIndicator && card.colorIndicator.includes('b'))) colors.push('B');
+    if (card.cost.includes('{R}') || (card.colorIndicator && card.colorIndicator.includes('r'))) colors.push('R');
+    if (card.cost.includes('{G}') || (card.colorIndicator && card.colorIndicator.includes('g'))) colors.push('G');
+    // Check for hybrid mana
+    const hybridMatch = card.cost.match(/{([WUBRG])\/([WUBRG])}/gi);
+    if (hybridMatch) {
+      hybridMatch.forEach(m => {
+        const [, c1, c2] = m.match(/{([WUBRG])\/([WUBRG])}/i);
+        if (!colors.includes(c1.toUpperCase())) colors.push(c1.toUpperCase());
+        if (!colors.includes(c2.toUpperCase())) colors.push(c2.toUpperCase());
+      });
+    }
+    return colors;
+  };
+
+  const getColorIdentity = (card) => {
+    const colors = getCardColors(card);
+    if (card.type.toLowerCase().includes('land')) return 'Land';
+    if (colors.length === 0) return 'Colorless';
+    if (colors.length > 1) return colors.sort().join('');
+    return colors[0];
+  };
+
+  const calculateCMC = (cost) => {
+    if (!cost) return 0;
+    let cmc = 0;
+    const symbols = cost.match(/{[^{}]+}/g) || [];
+    symbols.forEach(sym => {
+      const inner = sym.replace(/[{}]/g, '');
+      if (!isNaN(parseInt(inner))) cmc += parseInt(inner);
+      else if (!inner.includes('X')) cmc += 1;
+    });
+    return cmc;
+  };
+
+  const getMainType = (card) => {
+    const type = card.type.toLowerCase();
+    if (type.includes('creature')) return 'Creature';
+    if (type.includes('instant')) return 'Instant';
+    if (type.includes('sorcery')) return 'Sorcery';
+    if (type.includes('enchantment')) return 'Enchantment';
+    if (type.includes('artifact')) return 'Artifact';
+    if (type.includes('land')) return 'Land';
+    if (type.includes('planeswalker')) return 'Planeswalker';
+    return 'Other';
+  };
+
+  // 1. Cards per color combination
+  const colorCombinations = {};
+  frontFaces.forEach(card => {
+    const identity = getColorIdentity(card);
+    colorCombinations[identity] = (colorCombinations[identity] || 0) + 1;
+  });
+
+  // 2. Cards per rarity
+  const rarityBreakdown = {};
+  frontFaces.forEach(card => {
+    rarityBreakdown[card.rarity] = (rarityBreakdown[card.rarity] || 0) + 1;
+  });
+
+  // 3. Cards per type
+  const typeBreakdown = {};
+  frontFaces.forEach(card => {
+    const mainType = getMainType(card);
+    typeBreakdown[mainType] = (typeBreakdown[mainType] || 0) + 1;
+  });
+
+  // 4. Mana curve by color (only non-land cards)
+  const manaCurveByColor = {};
+  const colorOrder = ['W', 'U', 'B', 'R', 'G', 'Multicolor', 'Colorless'];
+  colorOrder.forEach(c => manaCurveByColor[c] = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, '6+': 0 });
+
+  frontFaces.filter(c => !c.type.toLowerCase().includes('land')).forEach(card => {
+    const colors = getCardColors(card);
+    let colorKey;
+    if (colors.length === 0) colorKey = 'Colorless';
+    else if (colors.length > 1) colorKey = 'Multicolor';
+    else colorKey = colors[0];
+
+    const cmc = calculateCMC(card.cost);
+    const cmcKey = cmc >= 6 ? '6+' : cmc.toString();
+    manaCurveByColor[colorKey][cmcKey]++;
+  });
+
+  // 5. Mana curve within rarity
+  const manaCurveByRarity = {};
+  ['Mythic', 'Rare', 'Uncommon', 'Common'].forEach(r => {
+    manaCurveByRarity[r] = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, '6+': 0 };
+  });
+
+  frontFaces.filter(c => !c.type.toLowerCase().includes('land')).forEach(card => {
+    if (manaCurveByRarity[card.rarity]) {
+      const cmc = calculateCMC(card.cost);
+      const cmcKey = cmc >= 6 ? '6+' : cmc.toString();
+      manaCurveByRarity[card.rarity][cmcKey]++;
+    }
+  });
+
+  // 6. Creature stats
+  const creatures = frontFaces.filter(c => c.type.toLowerCase().includes('creature'));
+  const creatureStats = {
+    total: creatures.length,
+    byRarity: {},
+    averagePT: { power: 0, toughness: 0 },
+    powerDistribution: {},
+    toughnessDistribution: {}
+  };
+
+  let totalPower = 0, totalToughness = 0, ptCount = 0;
+  creatures.forEach(card => {
+    creatureStats.byRarity[card.rarity] = (creatureStats.byRarity[card.rarity] || 0) + 1;
+
+    if (card.pt) {
+      const [power, toughness] = card.pt.split('/').map(v => {
+        const num = parseInt(v);
+        return isNaN(num) ? 0 : num;
+      });
+      if (!isNaN(power) && !isNaN(toughness)) {
+        totalPower += power;
+        totalToughness += toughness;
+        ptCount++;
+
+        const pKey = power >= 5 ? '5+' : power.toString();
+        const tKey = toughness >= 5 ? '5+' : toughness.toString();
+        creatureStats.powerDistribution[pKey] = (creatureStats.powerDistribution[pKey] || 0) + 1;
+        creatureStats.toughnessDistribution[tKey] = (creatureStats.toughnessDistribution[tKey] || 0) + 1;
+      }
+    }
+  });
+
+  if (ptCount > 0) {
+    creatureStats.averagePT.power = Math.round((totalPower / ptCount) * 10) / 10;
+    creatureStats.averagePT.toughness = Math.round((totalToughness / ptCount) * 10) / 10;
+  }
+
+  // 7. Keyword/mechanic frequency
+  const keywords = {};
+  const keywordPatterns = [
+    'flying', 'first strike', 'double strike', 'deathtouch', 'lifelink',
+    'vigilance', 'trample', 'haste', 'reach', 'menace', 'flash',
+    'defender', 'hexproof', 'indestructible', 'ward', 'digital',
+    'jack-in', 'eject', 'override'
+  ];
+
+  frontFaces.forEach(card => {
+    const cardText = (card.text.join(' ') + ' ' + card.type).toLowerCase();
+    keywordPatterns.forEach(kw => {
+      if (cardText.includes(kw)) {
+        const kwTitle = kw.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        keywords[kwTitle] = (keywords[kwTitle] || 0) + 1;
+      }
+    });
+  });
+
+  // 8. Transform/DFC cards count
+  const dfcCards = frontFaces.filter(c => c.hasBackFace);
+
+  // 9. Instant/Sorcery ratio
+  const instants = frontFaces.filter(c => c.type.toLowerCase().includes('instant')).length;
+  const sorceries = frontFaces.filter(c => c.type.toLowerCase().includes('sorcery')).length;
+
+  // 10. Average CMC (non-land)
+  const nonLands = frontFaces.filter(c => !c.type.toLowerCase().includes('land'));
+  const totalCMC = nonLands.reduce((sum, c) => sum + calculateCMC(c.cost), 0);
+  const averageCMC = nonLands.length > 0 ? Math.round((totalCMC / nonLands.length) * 100) / 100 : 0;
+
+  // 11. Cards with specific abilities
+  const cardsWithAbilities = {
+    cardDraw: frontFaces.filter(c => c.text.join(' ').toLowerCase().includes('draw')).length,
+    removal: frontFaces.filter(c => {
+      const text = c.text.join(' ').toLowerCase();
+      return text.includes('destroy') || text.includes('exile') || text.includes('damage') || text.includes('-x/-x');
+    }).length,
+    counterspells: frontFaces.filter(c => c.text.join(' ').toLowerCase().includes('counter target')).length,
+    tokenCreators: frontFaces.filter(c => c.text.join(' ').toLowerCase().includes('create')).length,
+    energyCards: frontFaces.filter(c => c.text.join(' ').includes('{E}')).length
+  };
+
+  // 12. Rarity within each color
+  const rarityByColor = {};
+  colorOrder.forEach(c => rarityByColor[c] = { Mythic: 0, Rare: 0, Uncommon: 0, Common: 0 });
+
+  frontFaces.filter(c => !c.type.toLowerCase().includes('land')).forEach(card => {
+    const colors = getCardColors(card);
+    let colorKey;
+    if (colors.length === 0) colorKey = 'Colorless';
+    else if (colors.length > 1) colorKey = 'Multicolor';
+    else colorKey = colors[0];
+
+    if (rarityByColor[colorKey] && rarityByColor[colorKey][card.rarity] !== undefined) {
+      rarityByColor[colorKey][card.rarity]++;
+    }
+  });
+
+  return {
+    totalCards: frontFaces.length,
+    colorCombinations,
+    rarityBreakdown,
+    typeBreakdown,
+    manaCurveByColor,
+    manaCurveByRarity,
+    creatureStats,
+    keywords,
+    dfcCount: dfcCards.length,
+    instantSorceryRatio: {
+      instants,
+      sorceries,
+      ratio: sorceries > 0 ? Math.round((instants / sorceries) * 100) / 100 : instants
+    },
+    averageCMC,
+    cardsWithAbilities,
+    rarityByColor
+  };
+}
+
+// ==========================================
+// 4. HTML GENERATION
 // ==========================================
 
 function replaceSymbols(text) {
@@ -1199,16 +1427,21 @@ function main() {
       JSON.stringify(data.setInfo.designNotes.join('\n\n'))
     );
 
+    // Generate comprehensive stats
+    const stats = generateSetStats(cardsForJson);
+
     fs.writeFileSync(
       path.join(dataDir, 'setInfo.json'),
       JSON.stringify({
         title: data.setInfo.title,
         cardCount: data.setInfo.cardCount,
-        mechanics: data.setInfo.mechanics
+        mechanics: data.setInfo.mechanics,
+        stats
       }, null, 2)
     );
 
     console.log(`   ✅ JSON data files generated in src/data/`);
+    console.log(`   📊 Set statistics included in setInfo.json`);
     return;
   }
 

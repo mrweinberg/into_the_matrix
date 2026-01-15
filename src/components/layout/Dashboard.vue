@@ -17,6 +17,9 @@
         <button class="btn-generate btn-notes" @click="$emit('open-notes')">
           View Design Notes
         </button>
+        <button class="btn-generate btn-stats" @click="$emit('open-stats')">
+          View Set Stats
+        </button>
       </div>
       <div>
         <h2>Set Mechanics</h2>
@@ -58,7 +61,7 @@ const typeText = defineModel('typeText', { type: String })
 const activeColors = defineModel('activeColors', { type: Array })
 const activeMVs = defineModel('activeMVs', { type: Array })
 
-const emit = defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-notes', 'toggle-color', 'toggle-mv', 'reset-filters'])
+const emit = defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-notes', 'open-stats', 'toggle-color', 'toggle-mv', 'reset-filters'])
 
 function toggleColor(color) {
   emit('toggle-color', color)
