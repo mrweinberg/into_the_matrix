@@ -4,7 +4,7 @@
       <div class="stat-box">
         <h2>System Stats</h2>
         <p><strong>Visible Cards:</strong> {{ visibleCount }}</p>
-        <p><strong>System Version:</strong> v4.2.0 (Sealed Pool)</p>
+        <p><strong>System Version:</strong> v4.3.0 (Deck Builder)</p>
         <button class="btn-generate" @click="$emit('open-booster')">
           Open Simulation Pack
         </button>
@@ -29,7 +29,10 @@
       v-model:rarity="rarity"
       v-model:type-text="typeText"
       v-model:active-colors="activeColors"
+      v-model:active-m-vs="activeMVs"
       @toggle-color="toggleColor"
+      @toggle-mv="toggleMV"
+      @reset="$emit('reset-filters')"
     />
   </div>
 </template>
@@ -53,10 +56,15 @@ const searchText = defineModel('searchText', { type: String })
 const rarity = defineModel('rarity', { type: String })
 const typeText = defineModel('typeText', { type: String })
 const activeColors = defineModel('activeColors', { type: Array })
+const activeMVs = defineModel('activeMVs', { type: Array })
 
-const emit = defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-notes', 'toggle-color'])
+const emit = defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-notes', 'toggle-color', 'toggle-mv', 'reset-filters'])
 
 function toggleColor(color) {
   emit('toggle-color', color)
+}
+
+function toggleMV(mv) {
+  emit('toggle-mv', mv)
 }
 </script>

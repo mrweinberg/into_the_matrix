@@ -4,12 +4,12 @@
       <div
         v-if="show"
         class="modal-overlay"
-        :class="{ 'draft-mode': variant === 'draft' }"
+        :class="{ 'draft-mode': variant === 'draft', 'full-width-mode': fullWidth }"
         @click.self="$emit('close')"
       >
-        <div class="modal-content">
+        <div class="modal-content" :class="{ 'full-width-content': fullWidth }">
           <button class="close-modal" @click="$emit('close')">&times;</button>
-          <h2 class="modal-title">
+          <h2 v-if="title || $slots.title" class="modal-title">
             <slot name="title">{{ title }}</slot>
           </h2>
           <slot></slot>
@@ -33,6 +33,10 @@ defineProps({
     type: String,
     default: 'default',
     validator: (v) => ['default', 'draft'].includes(v)
+  },
+  fullWidth: {
+    type: Boolean,
+    default: false
   }
 })
 

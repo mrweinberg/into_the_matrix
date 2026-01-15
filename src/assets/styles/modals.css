@@ -15,12 +15,12 @@
 .modal-content {
   background: #111;
   border: 2px solid var(--matrix-green);
-  width: 90%;
-  max-width: 1400px;
-  padding: 20px;
-  border-radius: 10px;
+  width: 98%;
+  max-width: 1600px;
+  padding: 8px;
+  border-radius: 6px;
   position: relative;
-  max-height: 95vh;
+  max-height: 98vh;
   overflow-y: auto;
   transition: all 0.3s ease;
 }
@@ -105,4 +105,14 @@
 .modal-enter-from .modal-content,
 .modal-leave-to .modal-content {
   transform: scale(0.95);
+}
+
+/* Full width mode for deck builder */
+.full-width-mode .modal-content.full-width-content {
+  width: 99%;
+  max-width: none;
+  height: 98vh;
+  max-height: 98vh;
+  padding: 4px;
+  overflow: hidden;
 }

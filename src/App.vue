@@ -9,7 +9,10 @@
       v-model:rarity="rarity"
       v-model:type-text="typeText"
       v-model:active-colors="activeColors"
+      v-model:active-m-vs="activeMVs"
       @toggle-color="toggleColor"
+      @toggle-mv="toggleMV"
+      @reset-filters="resetFilters"
       @open-booster="openBooster"
       @start-draft="startDraft"
       @generate-sealed="generateSealed"
@@ -94,6 +97,9 @@ import SortSelect from '@/components/filters/SortSelect.vue'
 import Dashboard from '@/components/layout/Dashboard.vue'
 import CardGallery from '@/components/cards/CardGallery.vue'
 
+import BoosterModal from '@/components/modals/BoosterModal.vue'
+import CardDetailModal from '@/components/modals/CardDetailModal.vue'
+import NotesModal from '@/components/modals/NotesModal.vue'
 import DraftModal from '@/components/modals/DraftModal.vue'
 import SealedModal from '@/components/modals/SealedModal.vue'
 
@@ -125,8 +131,11 @@ const {
   rarity,
   typeText,
   activeColors,
+  activeMVs,
   filteredCards,
-  toggleColor
+  toggleColor,
+  toggleMV,
+  resetFilters
 } = useFilters(sortedCards)
 
 // Booster pack

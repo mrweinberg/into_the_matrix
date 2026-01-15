@@ -1,11 +1,12 @@
 import { ref, computed } from 'vue'
-import { determineColorClass, getCardColors } from '@/utils/cardUtils'
+import { determineColorClass, getCardColors, calculateCMC } from '@/utils/cardUtils'
 
 export function useFilters(cards) {
   const searchText = ref('')
   const rarity = ref('All')
   const typeText = ref('')
   const activeColors = ref([])
+  const activeMVs = ref([])
 
   const filteredCards = computed(() => {
     return cards.value.filter(card => {
@@ -99,7 +100,15 @@ export function useFilters(cards) {
         matchColor = true
       }
 
-      return matchSearch && matchRarity && matchType && matchColor
+      // Mana Value filter
+      let matchMV = true
+      if (activeMVs.value.length > 0) {
+        const cmc = calculateCMC(card.cost)
+        const cmcKey = cmc >= 5 ? '5+' : cmc.toString()
+        matchMV = activeMVs.value.includes(cmcKey)
+      }
+
+      return matchSearch && matchRarity && matchType && matchColor && matchMV
     })
   })
 
@@ -139,11 +148,21 @@ export function useFilters(cards) {
     }
   }
 
+  function toggleMV(mv) {
+    const index = activeMVs.value.indexOf(mv)
+    if (index > -1) {
+      activeMVs.value.splice(index, 1)
+    } else {
+      activeMVs.value.push(mv)
+    }
+  }
+
   function resetFilters() {
     searchText.value = ''
     rarity.value = 'All'
     typeText.value = ''
     activeColors.value = []
+    activeMVs.value = []
   }
 
   return {
@@ -151,8 +170,10 @@ export function useFilters(cards) {
     rarity,
     typeText,
     activeColors,
+    activeMVs,
     filteredCards,
     toggleColor,
+    toggleMV,
     resetFilters
   }
 }

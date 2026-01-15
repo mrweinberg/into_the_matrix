@@ -458,7 +458,7 @@ Draw three cards. Then choose one —
 
 [U022] Reality Bend {1}{U}{U}
 Instant
-Counter target spell. You get {E}.
+Counter target spell. You draw a card, then discard a card.
 
 [U023] Subroutine Optimization {1}{U}
 Enchantment
