@@ -69,7 +69,13 @@ const colorIndicatorClass = computed(() =>
 )
 
 function formatText(text) {
-  return replaceSymbols(text)
+  if (!text) return ''
+  // First replace mana symbols
+  let formated = replaceSymbols(text)
+  // Then replace parenthetical text with italics
+  // We use a non-greedy match for content inside parentheses: \((.*?)\)
+  formated = formated.replace(/\((.*?)\)/g, '<i>($1)</i>')
+  return formated
 }
 
 function handleClick() {

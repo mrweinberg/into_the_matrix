@@ -24,7 +24,8 @@
     "type": "Creature — Human Soldier Program (3/1)",
     "displayType": "Creature — Human Soldier Program",
     "text": [
-      "Digital, vigilance",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Vigilance",
       "At the beginning of your end step, if this creature didn't attack this turn, eject."
     ],
     "flavor": "",
@@ -77,7 +78,7 @@
     "type": "Creature — Human Monk (1/2)",
     "displayType": "Creature — Human Monk",
     "text": [
-      "{U}: Jack-in."
+      "{U}: Jack-in. ({U}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -94,8 +95,9 @@
     "type": "Creature — Human Monk Program (2/2)",
     "displayType": "Creature — Human Monk Program",
     "text": [
-      "Digital, first strike",
-      "{W}: Eject."
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "First strike",
+      "{W}: Eject. ({W}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -363,7 +365,7 @@
     "displayType": "Creature — Human Citizen",
     "text": [
       "Defender",
-      "{3}{W}: Jack-in."
+      "{3}{W}: Jack-in. ({3}{W}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -380,8 +382,9 @@
     "type": "Creature — Human Soldier Program (5/5)",
     "displayType": "Creature — Human Soldier Program",
     "text": [
-      "Digital, vigilance",
-      "{W}: Eject."
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Vigilance",
+      "{W}: Eject. ({W}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -505,8 +508,8 @@
     "type": "Creature — Human Citizen (1/1)",
     "displayType": "Creature — Human Citizen",
     "text": [
-      "Digital",
-      "{1}{W}: Eject."
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "{1}{W}: Eject. ({1}{W}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -557,7 +560,8 @@
     "type": "Legendary Creature - Human Advisor (4/4)",
     "displayType": "Legendary Creature - Human Advisor",
     "text": [
-      "First strike, digital",
+      "First strike",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Whenever Morpheus attacks, look at the top four cards of your library. You may reveal a creature with a Jack-In ability or with digital from among them and put it into your hand. Put the rest on the bottom of your library in any order."
     ],
     "flavor": "",
@@ -576,7 +580,7 @@
     "displayType": "Creature - Human Cleric",
     "text": [
       "{T}: You gain 1 life.",
-      "{1}{W}: Jack-in."
+      "{1}{W}: Jack-in. ({1}{W}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -593,7 +597,8 @@
     "type": "Creature - Human Program Cleric (1/2)",
     "displayType": "Creature - Human Program Cleric",
     "text": [
-      "Digital, lifelink",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Lifelink",
       "Whenever you gain life, put a +1/+1 counter on another target creature you control."
     ],
     "flavor": "",
@@ -722,7 +727,8 @@
     "type": "Legendary Creature — Human Soldier Program (2/2)",
     "displayType": "Legendary Creature — Human Soldier Program",
     "text": [
-      "Digital, double strike, vigilance",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Double strike, vigilance",
       "When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target creature with power 3 or greater.",
       "{W}: Eject."
     ],
@@ -832,7 +838,8 @@
     "type": "Legendary Creature — Human Soldier Program (3/3)",
     "displayType": "Legendary Creature — Human Soldier Program",
     "text": [
-      "Digital, haste, vigilance",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Haste, vigilance",
       "Whenever Trinity, Digital Savior attacks, create a Gun token attached to her.",
       "{W}: Eject."
     ],
@@ -889,7 +896,7 @@
     "displayType": "Creature — Human Wizard",
     "text": [
       "{T}: Add {C}. Spend this mana only to cast Artifact spells or activate abilities that jack-in or eject.",
-      "{1}{U}: Jack-in."
+      "{1}{U}: Jack-in. ({1}{U}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -906,9 +913,9 @@
     "type": "Creature — Human Wizard Program (2/1)",
     "displayType": "Creature — Human Wizard Program",
     "text": [
-      "Digital",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "This creature cannot be blocked.",
-      "{U}: Eject."
+      "{U}: Eject. ({U}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -926,7 +933,7 @@
     "displayType": "Creature — Human Rogue",
     "text": [
       "When Keymaker's Guide enters, scry 2.",
-      "{W}: Jack-in."
+      "{W}: Jack-in. ({W}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -943,9 +950,9 @@
     "type": "Creature — Human Rogue Program (2/3)",
     "displayType": "Creature — Human Rogue Program",
     "text": [
-      "Digital",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "{T}: Target creature with digital can't be blocked this turn.",
-      "{1}{U}: Eject."
+      "{1}{U}: Eject. ({1}{U}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -962,8 +969,9 @@
     "type": "Creature — Program Agent (2/1)",
     "displayType": "Creature — Program Agent",
     "text": [
-      "Flash, digital",
-      "Override creature with digital",
+      "Flash",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)",
       "When Local Beat Cop enters, tap up to one target creature and put a stun counter on it."
     ],
     "flavor": "",
@@ -1000,7 +1008,7 @@
     "type": "Creature — Program Scout (2/1)",
     "displayType": "Creature — Program Scout",
     "text": [
-      "Digital",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Data Courier can block creatures without digital.",
       "When Data Courier leaves the battlefield, draw a card."
     ],
@@ -1090,7 +1098,7 @@
     "type": "Creature — Human Program (3/2)",
     "displayType": "Creature — Human Program",
     "text": [
-      "Digital",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "When System Patcher enters, return target creature to its owner's hand.",
       "If that creature had digital, you get {E}{E}."
     ],
@@ -1161,7 +1169,8 @@
     "type": "Creature — Program Serpent (5/5)",
     "displayType": "Creature — Program Serpent",
     "text": [
-      "Digital, ward {2}"
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Ward {2}"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1215,7 +1224,8 @@
     "type": "Creature — Wall (0/4)",
     "displayType": "Creature — Wall",
     "text": [
-      "Defender, digital",
+      "Defender",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Whenever you cast an instant or sorcery spell, you get {E}.",
       "{T}, Pay {E}{E}: Draw a card."
     ],
@@ -1399,7 +1409,7 @@
     "displayType": "Creature — Human Rogue",
     "text": [
       "{T}: Look at the top two cards of your library and exile one.",
-      "{1}{U}: Jack-in."
+      "{1}{U}: Jack-in. ({1}{U}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -1416,9 +1426,9 @@
     "type": "Creature — Human Rogue Program (2/2)",
     "displayType": "Creature — Human Rogue Program",
     "text": [
-      "Digital",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Whenever this creature deals combat damage to a player, you may put a card exiled by it in your hand.",
-      "{U}: Eject."
+      "{U}: Eject. ({U}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -1435,8 +1445,8 @@
     "type": "Creature — Agent Program (3/2)",
     "displayType": "Creature — Agent Program",
     "text": [
-      "Digital",
-      "Override creature with digital",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)",
       "Surveillance Agent can't be blocked.",
       "{1}{U}: Return Surveillance Agent to its owner's hand."
     ],
@@ -1474,7 +1484,7 @@
     "type": "Creature - Program Wizard (2/1)",
     "displayType": "Creature - Program Wizard",
     "text": [
-      "Digital",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "When this creature enters, return target instant or sorcery from your graveyard to your hand."
     ],
     "flavor": "",
@@ -1509,7 +1519,8 @@
     "type": "Creature — Human Rogue (2/2)",
     "displayType": "Creature — Human Rogue",
     "text": [
-      "Flash, ward {1}, digital",
+      "Flash, ward {1}",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Spells you cast during your opponent's turn cost {1} less to cast.",
       "Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Code Runner and you get {E}."
     ],
@@ -1603,7 +1614,8 @@
     "type": "Legendary Creature — Human (1/2)",
     "displayType": "Legendary Creature — Human",
     "text": [
-      "Skulk, digital",
+      "Skulk",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "When Thomas Anderson deals combat damage to a player, look at the top card of your library. If it's a legendary creature, you may reveal it and put it into your hand. If you do, put a +1/+1 counter on Thomas Anderson."
     ],
     "flavor": "",
@@ -1638,7 +1650,8 @@
     "type": "Legendary Creature — Angel Program (3/4)",
     "displayType": "Legendary Creature — Angel Program",
     "text": [
-      "Ward {2}, digital",
+      "Ward {2}",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "You may cast creature spells as though they had flash.",
       "Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on target creature you control."
     ],
@@ -1657,7 +1670,8 @@
     "type": "Legendary Creature — Program Advisor (2/3)",
     "displayType": "Legendary Creature — Program Advisor",
     "text": [
-      "Flash, digital",
+      "Flash",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "When The Analyst enters, if it's your turn, end the turn.",
       "If it's an opponent's turn, return up to one target spell to its owner's hand."
     ],
@@ -1715,7 +1729,8 @@
     "type": "Creature — Human Program Assassin (1/1)",
     "displayType": "Creature — Human Program Assassin",
     "text": [
-      "Digital, deathtouch",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Deathtouch",
       "When Disposable Informant leaves the battlefield, target creature an opponent controls gets -1/-1 until end of turn."
     ],
     "flavor": "",
@@ -1733,7 +1748,7 @@
     "type": "Creature — Program Citizen (2/1)",
     "displayType": "Creature — Program Citizen",
     "text": [
-      "Digital",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "When Glitched Citizen enters, you get {E}.",
       "When Glitched Citizen leaves the battlefield, create a 1/1 white Citizen creature token with digital."
     ],
@@ -1858,7 +1873,7 @@
     "type": "Creature — Agent Program (1/1)",
     "displayType": "Creature — Agent Program",
     "text": [
-      "Digital",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "When this creature leaves the battlefield, create a 1/1 colorless Program creature token with digital."
     ],
     "flavor": "",
@@ -1981,7 +1996,8 @@
     "type": "Creature — Vampire Program (1/3)",
     "displayType": "Creature — Vampire Program",
     "text": [
-      "Digital, lifelink",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Lifelink",
       "Whenever you gain life, Chateau Vampire gets +1/+0 until end of turn."
     ],
     "flavor": "",
@@ -2054,7 +2070,7 @@
     "type": "Creature — Program Virus (2/1)",
     "displayType": "Creature — Program Virus",
     "text": [
-      "Digital",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "When Recycled Data leaves the battlefield, return another target creature card from your graveyard to your hand."
     ],
     "flavor": "",
@@ -2090,7 +2106,8 @@
     "type": "Creature - Program Rogue",
     "displayType": "Creature - Program Rogue",
     "text": [
-      "Digital, lifelink",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Lifelink",
       "Whenever you gain life, you may pay {E}{E}. If you do, draw a card."
     ],
     "flavor": " \"Yeah, of course I know what you're looking for. The question is whether you're gonna pay for it.\"",
@@ -2126,8 +2143,9 @@
     "type": "Creature — Agent Program (2/3)",
     "displayType": "Creature — Agent Program",
     "text": [
-      "Digital, menace",
-      "Override creature with digital",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Menace",
+      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)",
       "Whenever Meter Reader deals combat damage to a player, that player loses {E} equal to the damage dealt.",
       "You get {E} equal to the amount of {E} that player lost."
     ],
@@ -2146,8 +2164,8 @@
     "type": "Creature — Agent Program (4/3)",
     "displayType": "Creature — Agent Program",
     "text": [
-      "Digital",
-      "Override creature with digital"
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2236,8 +2254,9 @@
     "type": "Legendary Creature — Agent Program (3/3)",
     "displayType": "Legendary Creature — Agent Program",
     "text": [
-      "Flash, digital",
-      "Override creature with digital",
+      "Flash",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)",
       "When Agent Brown enters, if it overrode a creature, destroy target creature."
     ],
     "flavor": "",
@@ -2294,7 +2313,8 @@
     "type": "Legendary Creature — Program Vampire (2/5)",
     "displayType": "Legendary Creature — Program Vampire",
     "text": [
-      "Digital, lifelink",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Lifelink",
       "Whenever you gain life, up to one target creature gets -X/-X until end of turn, where X is the amount of life you gained."
     ],
     "flavor": " \"I have survived versions of the Matrix you cannot imagine. You will not survive this one.\"",
@@ -2384,7 +2404,8 @@
     "type": "Creature — Human Program (5/4)",
     "displayType": "Creature — Human Program",
     "text": [
-      "Digital, menace",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Menace",
       "At the beginning of your end step, sacrifice a creature or eject."
     ],
     "flavor": "",
@@ -2548,7 +2569,7 @@
     "text": [
       "Haste",
       "Whenever Avid Marksman becomes equipped, it gets +1/+1 until end of turn.",
-      "{2}{R}: Jack-in."
+      "{2}{R}: Jack-in. ({2}{R}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2565,9 +2586,9 @@
     "type": "Creature — Human Soldier Program (3/2)",
     "displayType": "Creature — Human Soldier Program",
     "text": [
-      "Digital",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "When this creature transforms into Expert Sniper, create a Gun token.",
-      "{R}: Eject."
+      "{R}: Eject. ({R}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2710,7 +2731,8 @@
     "type": "Creature — Program Warrior (3/1)",
     "displayType": "Creature — Program Warrior",
     "text": [
-      "Digital, haste"
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Haste"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3002,7 +3024,8 @@
     "type": "Creature — Human Warrior Program (4/1)",
     "displayType": "Creature — Human Warrior Program",
     "text": [
-      "Digital, first strike, haste",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "First strike, haste",
       "At the beginning of the next end step, eject."
     ],
     "flavor": "",
@@ -3182,7 +3205,8 @@
     "type": "Legendary Creature — Program (1/1)",
     "displayType": "Legendary Creature — Program",
     "text": [
-      "Digital, indestructible",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Indestructible",
       "Creatures your opponents control attack each combat if able.",
       "Whenever an opponent attacks you with one or more creatures, exile the top card from your library. Until the end of your next turn, you may play that card."
     ],
@@ -3433,7 +3457,8 @@
     "type": "Creature — Program Monk (3/3)",
     "displayType": "Creature — Program Monk",
     "text": [
-      "Flash, digital",
+      "Flash",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "When Dojo Program enters, you get {E}{E}."
     ],
     "flavor": "",
@@ -3756,7 +3781,7 @@
     "displayType": "Creature — Human Druid",
     "text": [
       "{T}: Add {G}.",
-      "{4}{G}: Jack-in."
+      "{4}{G}: Jack-in. ({4}{G}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3773,8 +3798,9 @@
     "type": "Creature — Human Druid Program (6/6)",
     "displayType": "Creature — Human Druid Program",
     "text": [
-      "Digital, trample",
-      "{0}: Eject."
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Trample",
+      "{0}: Eject. ({0}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4038,7 +4064,7 @@
     "text": [
       "Flying",
       "Other creatures you control that can jack-in get +1/+1.",
-      "{2}: Jack-in."
+      "{2}: Jack-in. ({2}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4055,9 +4081,10 @@
     "type": "Creature — Human Pilot Program (3/3)",
     "displayType": "Creature — Human Pilot Program",
     "text": [
-      "Digital, vigilance",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Vigilance",
       "Other creatures you control with eject get +1/+1.",
-      "{2}: Eject."
+      "{2}: Eject. ({2}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4074,8 +4101,9 @@
     "type": "Legendary Creature — Agent Program (4/2)",
     "displayType": "Legendary Creature — Agent Program",
     "text": [
-      "Flash, digital",
-      "Override creature with digital",
+      "Flash",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)",
       "Whenever Agent Jones becomes the target of a spell or ability, you may return it to its owner's hand."
     ],
     "flavor": "",
@@ -4220,8 +4248,8 @@
     "type": "Legendary Creature - Agent Program (3/3)",
     "displayType": "Legendary Creature - Agent Program",
     "text": [
-      "Digital",
-      "Override a digital creature",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Override a digital creature (When this enters, sacrifice it unless you exile another digital creature you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)",
       "When Agent Grey enters, you may tap up to one target creature.",
       "Whenever a creature an opponent controls becomes tapped, you may pay {1}. If you do, put a stun counter on it."
     ],
@@ -4240,7 +4268,8 @@
     "type": "Legendary Creature — Program Spirit (3/2)",
     "displayType": "Legendary Creature — Program Spirit",
     "text": [
-      "Digital, menace",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Menace",
       "{W}{B}: Exile The Twins and return them to the battlefield at end of turn."
     ],
     "flavor": "",
@@ -4258,7 +4287,8 @@
     "type": "Legendary Creature — Program Noble (2/3)",
     "displayType": "Legendary Creature — Program Noble",
     "text": [
-      "Digital, lifelink",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Lifelink",
       "Whenever another creature dies, you gain 1 life and may pay {2}. If you do, draw a card."
     ],
     "flavor": "",
@@ -4295,7 +4325,7 @@
     "displayType": "Creature — Human Soldier",
     "text": [
       "When this creature enters or transforms into Uploaded Vanguard, create a Gun token.",
-      "{2}: Jack-in."
+      "{2}: Jack-in. ({2}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4312,9 +4342,10 @@
     "type": "Creature — Human Soldier Program (3/3)",
     "displayType": "Creature — Human Soldier Program",
     "text": [
-      "Digital, first strike",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "First strike",
       "Attacking creatures you control with digital get +1/+0.",
-      "{2}: Eject."
+      "{2}: Eject. ({2}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4465,7 +4496,8 @@
     "type": "Legendary Creature — Human Warrior Program (3/3)",
     "displayType": "Legendary Creature — Human Warrior Program",
     "text": [
-      "Trample, digital",
+      "Trample",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Creatures with digital get +1/+1 for each creature you control that doesn't have digital.",
       "{1}{G}{W}: Eject."
     ],
@@ -4727,7 +4759,8 @@
     "displayType": "Legendary Creature — Agent Program",
     "text": [
       "Override a digital creature",
-      "Digital, ward {2}",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Ward {2}",
       "Whenever a creature enters under an opponent's control, you may pay {U/B}. If you do, gain control of it until the end of your next turn. Do this only once each turn.",
       "At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own."
     ],
@@ -4746,7 +4779,8 @@
     "type": "Legendary Creature — Program Advisor (1/5)",
     "displayType": "Legendary Creature — Program Advisor",
     "text": [
-      "Digital, ward {2}",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Ward {2}",
       "Play with the top card of your library revealed.",
       "You may cast the top card of your library.",
       "Whenever you cast a spell from your library, you get {E}.",
@@ -4767,7 +4801,8 @@
     "type": "Legendary Creature — Avatar Program (3/6)",
     "displayType": "Legendary Creature — Avatar Program",
     "text": [
-      "Digital, vigilance",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Vigilance",
       "When The Architect enters, if it was cast, return all creatures to their owners' hands.",
       "Whenever a creature enters, its controller may pay {2}. If they don't, put a digital counter on it.",
       "(Creatures with digital counters have digital.)"
@@ -4787,7 +4822,8 @@
     "type": "Legendary Creature — Program Agent (3/3)",
     "displayType": "Legendary Creature — Program Agent",
     "text": [
-      "Digital, menace",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Menace",
       "The \"legend rule\" doesn't apply to tokens you control named Agent Smith, System Anomaly.",
       "Whenever Agent Smith deals combat damage to a player, create a token that's a copy of it."
     ],
@@ -5215,7 +5251,8 @@
     "type": "Legendary Artifact — Vehicle (3/2)",
     "displayType": "Legendary Artifact — Vehicle",
     "text": [
-      "Digital, haste",
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Haste",
       "Whenever The Ducati attacks, you may pay {E}{E}.",
       "If you do, target creature can't block this turn.",
       "Crew 1"

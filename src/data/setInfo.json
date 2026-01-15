@@ -36,7 +36,7 @@
       "name": "Override [Quality]",
       "text": [
         "Keyword Ability",
-        "Override [Quality] (When this creature enters, sacrifice it unless you exile another [Quality] creature you control. When this creature leaves the battlefield, return the exiled card to the battlefield under its owner's control. If the exiled card was under your control continuously since the beginning of your most recent turn, this creature gains haste until end of turn.)"
+        "Override [Quality] (When this enters, sacrifice it unless you exile another [Quality] creature you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)"
       ],
       "notes": [
         "A \"Champion\" variant used on Agents."
@@ -245,12 +245,12 @@
       "Reach": 11,
       "Double Strike": 2,
       "Hexproof": 7,
+      "Haste": 23,
       "Flash": 18,
       "Override": 10,
       "Deathtouch": 3,
       "Menace": 17,
-      "Trample": 18,
-      "Haste": 16
+      "Trample": 18
     },
     "dfcCount": 18,
     "instantSorceryRatio": {
@@ -261,7 +261,7 @@
     "averageCMC": 2.85,
     "cardsWithAbilities": {
       "cardDraw": 31,
-      "removal": 57,
+      "removal": 62,
       "counterspells": 5,
       "tokenCreators": 35,
       "energyCards": 116

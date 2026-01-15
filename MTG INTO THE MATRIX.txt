@@ -53,7 +53,7 @@ Design Note: Represents leaving the Matrix.
 
 Override [Quality]
 Keyword Ability
-Override [Quality] (When this creature enters, sacrifice it unless you exile another [Quality] creature you control. When this creature leaves the battlefield, return the exiled card to the battlefield under its owner's control. If the exiled card was under your control continuously since the beginning of your most recent turn, this creature gains haste until end of turn.)
+Override [Quality] (When this enters, sacrifice it unless you exile another [Quality] creature you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
 Design Note: A "Champion" variant used on Agents.
 
 Energy {E}
@@ -79,7 +79,8 @@ At the beginning of combat on your turn, if you control a creature with digital,
 //
 Digital Avatar (Color Indicator: White)
 Creature — Human Soldier Program (3/1)
-Digital, vigilance
+Digital (This creature can block or be blocked only by creatures with digital.)
+Vigilance
 At the beginning of your end step, if this creature didn't attack this turn, eject.
 
 [C002] Crowd Simulation {3}{W}
@@ -93,12 +94,13 @@ Whenever another creature you control enters, you gain 1 life.
 
 [C004] Zion Neophyte {W}
 Creature — Human Monk (1/2)
-{U}: Jack-in.
+{U}: Jack-in. ({U}: Transform this card. Activate only as a sorcery.)
 //
 Awakened Kung Fu Master (Color Indicator: White)
 Creature — Human Monk Program (2/2)
-Digital, first strike
-{W}: Eject.
+Digital (This creature can block or be blocked only by creatures with digital.)
+First strike
+{W}: Eject. ({W}: Transform this card. Activate only as a sorcery.)
 
 [C005] Zion Militia {1}{W}
 Creature — Human Soldier (1/1)
@@ -172,12 +174,13 @@ Create two Gun tokens. You may attach them to creatures you control.
 [C019] Peace Advocate {1}{W}
 Creature — Human Citizen (0/4)
 Defender
-{3}{W}: Jack-in.
+{3}{W}: Jack-in. ({3}{W}: Transform this card. Activate only as a sorcery.)
 //
 System Guardian (Color Indicator: White)
 Creature — Human Soldier Program (5/5)
-Digital, vigilance
-{W}: Eject.
+Digital (This creature can block or be blocked only by creatures with digital.)
+Vigilance
+{W}: Eject. ({W}: Transform this card. Activate only as a sorcery.)
 
 --- UNCOMMONS ---
 
@@ -212,8 +215,8 @@ Whenever another Human enters under your control, you get {E}.
 
 [U007] Restless Sleeper {W}
 Creature — Human Citizen (1/1)
-Digital
-{1}{W}: Eject.
+Digital (This creature can block or be blocked only by creatures with digital.)
+{1}{W}: Eject. ({1}{W}: Transform this card. Activate only as a sorcery.)
 //
 Awakened Rebel (Color Indicator: White)
 Creature — Human Soldier (3/2)
@@ -225,17 +228,19 @@ Whenever you gain life, put a +1/+1 counter on this creature. You may untap it.
 
 [U009] Morpheus, Seeker of Potential {4}{W}
 Legendary Creature - Human Advisor (4/4)
-First strike, digital
+First strike
+Digital (This creature can block or be blocked only by creatures with digital.)
 Whenever Morpheus attacks, look at the top four cards of your library. You may reveal a creature with a Jack-In ability or with digital from among them and put it into your hand. Put the rest on the bottom of your library in any order.
 
 [U010] Field Medic {W}
 Creature - Human Cleric (1/1)
 {T}: You gain 1 life.
-{1}{W}: Jack-in.
+{1}{W}: Jack-in. ({1}{W}: Transform this card. Activate only as a sorcery.)
 //
 System Mender
 Creature - Human Program Cleric (1/2)
-Digital, lifelink
+Digital (This creature can block or be blocked only by creatures with digital.)
+Lifelink
 Whenever you gain life, put a +1/+1 counter on another target creature you control.
 
 [U011] Hoversuit Striker {3}{W}{W}
@@ -275,7 +280,8 @@ Double strike, vigilance
 //
 Switch, Digital Guardian (Color Indicator: White)
 Legendary Creature — Human Soldier Program (2/2)
-Digital, double strike, vigilance
+Digital (This creature can block or be blocked only by creatures with digital.)
+Double strike, vigilance
 When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target creature with power 3 or greater.
 {W}: Eject.
 
@@ -291,8 +297,7 @@ If you control a Vehicle, that creature gains indestructible until your next tur
 [R006] Zion Frontline Hero {2}{W}
 Creature — Human Soldier (3/2)
 Whenever Zion Frontline Hero attacks, another target attacking creature gets +X/+X until end of turn, where X is Zion Frontline Hero's power.
-At the beginning of your end step, if Zion Frontline Hero is in your graveyard and you control three or more other creatures, you may pay {E}{E}.
-If you do, return it to your hand.
+At the beginning of your end step, if Zion Frontline Hero is in your graveyard and you control three or more other creatures, you may pay {E}{E}. If you do, return it to your hand.
 
 [R007] Escape Tactician {1}{W}{W}
 Legendary Creature — Human Soldier (2/4)
@@ -307,7 +312,8 @@ Whenever Trinity attacks, you may pay {E}{E}. If you do, attacking creatures you
 //
 Trinity, Digital Savior (Color Indicator: R/W)
 Legendary Creature — Human Soldier Program (3/3)
-Digital, haste, vigilance
+Digital (This creature can block or be blocked only by creatures with digital.)
+Haste, vigilance
 Whenever Trinity, Digital Savior attacks, create a Gun token attached to her.
 {W}: Eject.
 
@@ -332,29 +338,30 @@ If this spell was kicked, put two into your hand instead.
 [C031] Code-Hack Splicer {U}
 Creature — Human Wizard (1/1)
 {T}: Add {C}. Spend this mana only to cast Artifact spells or activate abilities that jack-in or eject.
-{1}{U}: Jack-in.
+{1}{U}: Jack-in. ({1}{U}: Transform this card. Activate only as a sorcery.)
 //
 Deep-Dive Hacker (Color Indicator: Blue)
 Creature — Human Wizard Program (2/1)
-Digital
+Digital (This creature can block or be blocked only by creatures with digital.)
 This creature cannot be blocked.
-{U}: Eject.
+{U}: Eject. ({U}: Transform this card. Activate only as a sorcery.)
 
 [C032] Keymaker's Guide {1}{U}
 Creature — Human Rogue (1/3)
 When Keymaker's Guide enters, scry 2.
-{W}: Jack-in.
+{W}: Jack-in. ({W}: Transform this card. Activate only as a sorcery.)
 //
 Backdoor Accessor (Color Indicator: Blue)
 Creature — Human Rogue Program (2/3)
-Digital
+Digital (This creature can block or be blocked only by creatures with digital.)
 {T}: Target creature with digital can't be blocked this turn.
-{1}{U}: Eject.
+{1}{U}: Eject. ({1}{U}: Transform this card. Activate only as a sorcery.)
 
 [C033] Local Beat Cop {1}{U}
 Creature — Program Agent (2/1)
-Flash, digital
-Override creature with digital
+Flash
+Digital (This creature can block or be blocked only by creatures with digital.)
+Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
 When Local Beat Cop enters, tap up to one target creature and put a stun counter on it.
 
 [C034] System Scan {1}{U}
@@ -365,7 +372,7 @@ Draw a card.
 
 [C035] Data Courier {1}{U}
 Creature — Program Scout (2/1)
-Digital
+Digital (This creature can block or be blocked only by creatures with digital.)
 Data Courier can block creatures without digital.
 When Data Courier leaves the battlefield, draw a card.
 
@@ -390,7 +397,7 @@ Target creature has base power and toughness 3/3 and gains flying until end of t
 
 [C040] System Patcher {3}{U}
 Creature — Human Program (3/2)
-Digital
+Digital (This creature can block or be blocked only by creatures with digital.)
 When System Patcher enters, return target creature to its owner's hand.
 If that creature had digital, you get {E}{E}.
 
@@ -409,7 +416,8 @@ Counter target creature spell.
 
 [C044] Logic-Stream Serpent {5}{U}
 Creature — Program Serpent (5/5)
-Digital, ward {2}
+Digital (This creature can block or be blocked only by creatures with digital.)
+Ward {2}
 
 [C045] Code Prowler {2}{U}
 Creature — Program Beast (3/2)
@@ -424,7 +432,8 @@ Enchanted creature doesn't untap during its controller's untap step.
 
 [C047] Archive Interface {1}{U}
 Creature — Wall (0/4)
-Defender, digital
+Defender
+Digital (This creature can block or be blocked only by creatures with digital.)
 Whenever you cast an instant or sorcery spell, you get {E}.
 {T}, Pay {E}{E}: Draw a card.
 
@@ -480,18 +489,18 @@ Put one pile into your hand and the other into your graveyard.
 [U027] Hardline Searcher {1}{U}
 Creature — Human Rogue (1/2)
 {T}: Look at the top two cards of your library and exile one.
-{1}{U}: Jack-in.
+{1}{U}: Jack-in. ({1}{U}: Transform this card. Activate only as a sorcery.)
 //
 Data Stream Surfer (Color Indicator: Blue)
 Creature — Human Rogue Program (2/2)
-Digital
+Digital (This creature can block or be blocked only by creatures with digital.)
 Whenever this creature deals combat damage to a player, you may put a card exiled by it in your hand.
-{U}: Eject.
+{U}: Eject. ({U}: Transform this card. Activate only as a sorcery.)
 
 [U028] Surveillance Agent {1}{U}
 Creature — Agent Program (3/2)
-Digital
-Override creature with digital
+Digital (This creature can block or be blocked only by creatures with digital.)
+Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
 Surveillance Agent can't be blocked.
 {1}{U}: Return Surveillance Agent to its owner's hand.
 
@@ -503,7 +512,7 @@ Enchanted creature is a Program with base power and toughness 3/3 and has digita
 
 [U030] Subroutine Analyst {2}{U}{U}
 Creature - Program Wizard (2/1)
-Digital
+Digital (This creature can block or be blocked only by creatures with digital.)
 When this creature enters, return target instant or sorcery from your graveyard to your hand.
 
 [U031] Copy and Paste {3}{U}
@@ -514,7 +523,8 @@ Create a token copy of target creature you control. You may have it gain or lose
 
 [R021] Code Runner {2}{U}
 Creature — Human Rogue (2/2)
-Flash, ward {1}, digital
+Flash, ward {1}
+Digital (This creature can block or be blocked only by creatures with digital.)
 Spells you cast during your opponent's turn cost {1} less to cast.
 Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Code Runner and you get {E}.
 
@@ -543,7 +553,8 @@ If you do, gain control of it.
 
 [R026] Thomas Anderson {1}{U}
 Legendary Creature — Human (1/2)
-Skulk, digital
+Skulk
+Digital (This creature can block or be blocked only by creatures with digital.)
 When Thomas Anderson deals combat damage to a player, look at the top card of your library. If it's a legendary creature, you may reveal it and put it into your hand. If you do, put a +1/+1 counter on Thomas Anderson.
 
 [R027] There is No Spoon {1}{U}{U}
@@ -552,7 +563,8 @@ Counter target spell. You get {E} equal to that spell's mana value.
 
 [R028] Seraph, Guardian of the Oracle {3}{U}
 Legendary Creature — Angel Program (3/4)
-Ward {2}, digital
+Ward {2}
+Digital (This creature can block or be blocked only by creatures with digital.)
 You may cast creature spells as though they had flash.
 Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on target creature you control.
 
@@ -560,7 +572,8 @@ Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on targ
 
 [M02] The Analyst {2}{U}{U}
 Legendary Creature — Program Advisor (2/3)
-Flash, digital
+Flash
+Digital (This creature can block or be blocked only by creatures with digital.)
 When The Analyst enters, if it's your turn, end the turn.
 If it's an opponent's turn, return up to one target spell to its owner's hand.
 
@@ -584,12 +597,13 @@ Whenever Battery Farm Cultivator attacks, you may pay {E}{E}. If you do, create 
 
 [C061] Disposable Informant {B}
 Creature — Human Program Assassin (1/1)
-Digital, deathtouch
+Digital (This creature can block or be blocked only by creatures with digital.)
+Deathtouch
 When Disposable Informant leaves the battlefield, target creature an opponent controls gets -1/-1 until end of turn.
 
 [C062] Glitched Citizen {1}{B}
 Creature — Program Citizen (2/1)
-Digital
+Digital (This creature can block or be blocked only by creatures with digital.)
 When Glitched Citizen enters, you get {E}.
 When Glitched Citizen leaves the battlefield, create a 1/1 white Citizen creature token with digital.
 
@@ -623,7 +637,7 @@ Target creature gets +1/+0 and gains lifelink and indestructible until end of tu
 
 [C069] Replica Agent {B}
 Creature — Agent Program (1/1)
-Digital
+Digital (This creature can block or be blocked only by creatures with digital.)
 When this creature leaves the battlefield, create a 1/1 colorless Program creature token with digital.
 
 [C070] Code Siphon {B}
@@ -655,7 +669,8 @@ Create two 1/1 colorless Robot artifact creature tokens with flying.
 
 [C076] Chateau Vampire {1}{B}
 Creature — Vampire Program (1/3)
-Digital, lifelink
+Digital (This creature can block or be blocked only by creatures with digital.)
+Lifelink
 Whenever you gain life, Chateau Vampire gets +1/+0 until end of turn.
 
 [C077] System Drain {1}{B}
@@ -678,7 +693,7 @@ If you control a creature with digital, you gain 2 life.
 
 [U040] Recycled Data {1}{B}
 Creature — Program Virus (2/1)
-Digital
+Digital (This creature can block or be blocked only by creatures with digital.)
 When Recycled Data leaves the battlefield, return another target creature card from your graveyard to your hand.
 
 [U041] System Purge {2}{B}
@@ -688,7 +703,8 @@ Whenever a creature dies this turn, if it had digital, you get {E}.
 
 [U042] Information Leech {1}{B}
 Creature - Program Rogue
-Digital, lifelink
+Digital (This creature can block or be blocked only by creatures with digital.)
+Lifelink
 Whenever you gain life, you may pay {E}{E}. If you do, draw a card.
 "Yeah, of course I know what you're looking for. The question is whether you're gonna pay for it."
 
@@ -699,15 +715,16 @@ If you control a Robot or a creature with digital, you get {E}{E}.
 
 [U045] Meter Reader {1}{B}
 Creature — Agent Program (2/3)
-Digital, menace
-Override creature with digital
+Digital (This creature can block or be blocked only by creatures with digital.)
+Menace
+Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
 Whenever Meter Reader deals combat damage to a player, that player loses {E} equal to the damage dealt.
 You get {E} equal to the amount of {E} that player lost.
 
 [U046] Reinforcement Agent {1}{B}
 Creature — Agent Program (4/3)
-Digital
-Override creature with digital
+Digital (This creature can block or be blocked only by creatures with digital.)
+Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
 
 [U048] Systematic Overwrite {2}{B}
 Sorcery
@@ -731,8 +748,9 @@ Return target creature from your graveyard to the battlefield tapped.
 
 [U052] Agent Brown, Enforcer {2}{B}{B}
 Legendary Creature — Agent Program (3/3)
-Flash, digital
-Override creature with digital
+Flash
+Digital (This creature can block or be blocked only by creatures with digital.)
+Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
 When Agent Brown enters, if it overrode a creature, destroy target creature.
 
 [U053] Inevitable Deletion {1}{B}{B}
@@ -752,7 +770,8 @@ Sacrifice a Robot: Sentinel Swarm gets +2/+2 until end of turn.
 
 [R041] Cain, Loyal Exile {3}{B}{B}
 Legendary Creature — Program Vampire (2/5)
-Digital, lifelink
+Digital (This creature can block or be blocked only by creatures with digital.)
+Lifelink
 Whenever you gain life, up to one target creature gets -X/-X until end of turn, where X is the amount of life you gained.
 "I have survived versions of the Matrix you cannot imagine. You will not survive this one."
 
@@ -778,7 +797,8 @@ Creature — Human Rebel (1/1)
 //
 Unshackled Virus (Color Indicator: Black)
 Creature — Human Program (5/4)
-Digital, menace
+Digital (This creature can block or be blocked only by creatures with digital.)
+Menace
 At the beginning of your end step, sacrifice a creature or eject.
 
 [R046] Harvester Unit {3}{B}
@@ -831,13 +851,13 @@ If you control an artifact creature or a creature with digital, Thermal Cutter d
 Creature — Human Soldier (2/1)
 Haste
 Whenever Avid Marksman becomes equipped, it gets +1/+1 until end of turn.
-{2}{R}: Jack-in.
+{2}{R}: Jack-in. ({2}{R}: Transform this card. Activate only as a sorcery.)
 //
 Expert Sniper (Color Indicator: Red)
 Creature — Human Soldier Program (3/2)
-Digital
+Digital (This creature can block or be blocked only by creatures with digital.)
 When this creature transforms into Expert Sniper, create a Gun token.
-{R}: Eject.
+{R}: Eject. ({R}: Transform this card. Activate only as a sorcery.)
 
 [C096] Zealous Protector {3}{R}
 Creature — Human Soldier (4/3)
@@ -876,7 +896,8 @@ When Sentinel Sweeper dies, you get {E}.
 
 [C103] Magma-Code Brawler {2}{R}
 Creature — Program Warrior (3/1)
-Digital, haste
+Digital (This creature can block or be blocked only by creatures with digital.)
+Haste
 
 [C104] Panic Fire {2}{R}
 Instant
@@ -962,7 +983,8 @@ If you do, jack-in.
 //
 Bullet-Hose Avatar (Color Indicator: Red)
 Creature — Human Warrior Program (4/1)
-Digital, first strike, haste
+Digital (This creature can block or be blocked only by creatures with digital.)
+First strike, haste
 At the beginning of the next end step, eject.
 
 [U068] Conduit Overloader {1}{R}
@@ -1014,7 +1036,8 @@ At the beginning of your precombat main phase, you may sacrifice a creature or a
 
 [R065] The Red Woman {2}{R}{R}
 Legendary Creature — Program (1/1)
-Digital, indestructible
+Digital (This creature can block or be blocked only by creatures with digital.)
+Indestructible
 Creatures your opponents control attack each combat if able.
 Whenever an opponent attacks you with one or more creatures, exile the top card from your library. Until the end of your next turn, you may play that card.
 
@@ -1090,7 +1113,8 @@ Enchanted land has "{T}: Add a mana of any color."
 
 [C129] Dojo Program {3}{G}
 Creature — Program Monk (3/3)
-Flash, digital
+Flash
+Digital (This creature can block or be blocked only by creatures with digital.)
 When Dojo Program enters, you get {E}{E}.
 
 [C130] Heavy-Load Lifter {4}{G}
@@ -1181,12 +1205,13 @@ When Prime Construct enters, you gain 4 life.
 [U087] Hydroponics Tender {1}{G}
 Creature — Human Druid (1/3)
 {T}: Add {G}.
-{4}{G}: Jack-in.
+{4}{G}: Jack-in. ({4}{G}: Transform this card. Activate only as a sorcery.)
 //
 Overgrown Simulation (Color Indicator: Green)
 Creature — Human Druid Program (6/6)
-Digital, trample
-{0}: Eject.
+Digital (This creature can block or be blocked only by creatures with digital.)
+Trample
+{0}: Eject. ({0}: Transform this card. Activate only as a sorcery.)
 
 [U088] Augmented Brawler {5}{G}
 Creature — Human Warrior (5/4)
@@ -1279,18 +1304,20 @@ Whenever a creature you control jacks-in or ejects, put a +1/+1 counter on it.
 Creature — Human Pilot (2/2)
 Flying
 Other creatures you control that can jack-in get +1/+1.
-{2}: Jack-in.
+{2}: Jack-in. ({2}: Transform this card. Activate only as a sorcery.)
 //
 Ace Pilot Avatar (Color Indicator: W/U)
 Creature — Human Pilot Program (3/3)
-Digital, vigilance
+Digital (This creature can block or be blocked only by creatures with digital.)
+Vigilance
 Other creatures you control with eject get +1/+1.
-{2}: Eject.
+{2}: Eject. ({2}: Transform this card. Activate only as a sorcery.)
 
 [U104] Agent Jones {1}{U}{B}
 Legendary Creature — Agent Program (4/2)
-Flash, digital
-Override creature with digital
+Flash
+Digital (This creature can block or be blocked only by creatures with digital.)
+Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
 Whenever Agent Jones becomes the target of a spell or ability, you may return it to its owner's hand.
 
 [U105] Mouse, Software Prodigy {1}{U}{R}
@@ -1331,19 +1358,21 @@ Whenever a land enters under your control, you get {E}.
 
 [U113] Agent Grey, Suppressor {1}{U}{B}
 Legendary Creature - Agent Program (3/3)
-Digital
-Override a digital creature
+Digital (This creature can block or be blocked only by creatures with digital.)
+Override a digital creature (When this enters, sacrifice it unless you exile another digital creature you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
 When Agent Grey enters, you may tap up to one target creature. 
 Whenever a creature an opponent controls becomes tapped, you may pay {1}. If you do, put a stun counter on it.
 
 [U114] The Twins, Ghost Programs {1}{W}{B}
 Legendary Creature — Program Spirit (3/2)
-Digital, menace
+Digital (This creature can block or be blocked only by creatures with digital.)
+Menace
 {W}{B}: Exile The Twins and return them to the battlefield at end of turn.
 
 [U115] Persephone, Disillusioned Wife {1}{W}{B}
 Legendary Creature — Program Noble (2/3)
-Digital, lifelink
+Digital (This creature can block or be blocked only by creatures with digital.)
+Lifelink
 Whenever another creature dies, you gain 1 life and may pay {2}. If you do, draw a card.
 
 [U117] Captain Mifune {R}{W}
@@ -1354,13 +1383,14 @@ Whenever a Vehicle you control attacks, you get {E}.
 [U118] Uploaded Vanguard {1}{R}{W}
 Creature — Human Soldier (2/2)
 When this creature enters or transforms into Uploaded Vanguard, create a Gun token.
-{2}: Jack-in.
+{2}: Jack-in. ({2}: Transform this card. Activate only as a sorcery.)
 //
 Vanguard Avatar (Color Indicator: R/W)
 Creature — Human Soldier Program (3/3)
-Digital, first strike
+Digital (This creature can block or be blocked only by creatures with digital.)
+First strike
 Attacking creatures you control with digital get +1/+0.
-{2}: Eject.
+{2}: Eject. ({2}: Transform this card. Activate only as a sorcery.)
 
 [U119] Zion Heavy-Loader {1}{R}{G}
 Creature - Human Warrior (3/3)
@@ -1409,7 +1439,8 @@ Creatures that don't have digital get +1/+1 for each creature you control with d
 //
 Morpheus, Commander (Color Indicator: W/G)
 Legendary Creature — Human Warrior Program (3/3)
-Trample, digital
+Trample
+Digital (This creature can block or be blocked only by creatures with digital.)
 Creatures with digital get +1/+1 for each creature you control that doesn't have digital.
 {1}{G}{W}: Eject.
 
@@ -1489,7 +1520,8 @@ You may choose new targets for the copy.
 [R116] Agent Smith, Antivirus {3}{U}{B}
 Legendary Creature — Agent Program (4/4)
 Override a digital creature
-Digital, ward {2}
+Digital (This creature can block or be blocked only by creatures with digital.)
+Ward {2}
 Whenever a creature enters under an opponent's control, you may pay {U/B}. If you do, gain control of it until the end of your next turn. Do this only once each turn.
 At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own.
 
@@ -1497,7 +1529,8 @@ At the beginning of your end step, each opponent loses 1 life for each creature 
 
 [M03] The Oracle, Destiny Planner {3}{G}{U}
 Legendary Creature — Program Advisor (1/5)
-Digital, ward {2}
+Digital (This creature can block or be blocked only by creatures with digital.)
+Ward {2}
 Play with the top card of your library revealed.
 You may cast the top card of your library.
 Whenever you cast a spell from your library, you get {E}.
@@ -1505,14 +1538,16 @@ Whenever you cast a spell from your library, you get {E}.
 
 [M09] The Architect, System Creator {4}{W}{U}
 Legendary Creature — Avatar Program (3/6)
-Digital, vigilance
+Digital (This creature can block or be blocked only by creatures with digital.)
+Vigilance
 When The Architect enters, if it was cast, return all creatures to their owners' hands.
 Whenever a creature enters, its controller may pay {2}. If they don't, put a digital counter on it.
 (Creatures with digital counters have digital.)
 
 [M10] Agent Smith, System Anomaly {1}{W}{B}
 Legendary Creature — Program Agent (3/3)
-Digital, menace
+Digital (This creature can block or be blocked only by creatures with digital.)
+Menace
 The "legend rule" doesn't apply to tokens you control named Agent Smith, System Anomaly.
 Whenever Agent Smith deals combat damage to a player, create a token that's a copy of it.
 
@@ -1650,7 +1685,8 @@ Crew 2
 
 [R132] The Ducati {2}
 Legendary Artifact — Vehicle (3/2)
-Digital, haste
+Digital (This creature can block or be blocked only by creatures with digital.)
+Haste
 Whenever The Ducati attacks, you may pay {E}{E}.
 If you do, target creature can't block this turn.
 Crew 1
