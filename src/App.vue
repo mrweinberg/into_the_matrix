@@ -19,6 +19,7 @@
       @generate-sealed="generateSealed"
       @open-notes="showNotes = true"
       @open-stats="showStats = true"
+      @resume-pool="resumePool"
     />
 
     <div class="filter-status">
@@ -69,7 +70,7 @@
       :current-pack="draft.currentPack.value"
       :pool="draft.pool.value"
       :sorted-pool="draft.sortedPool.value"
-      @close="draft.closeDraft()"
+      @close="closeDraft"
       @pick="draft.pickCard"
       @download="draft.downloadDeck()"
       @view-card="openCardDetailFromDraft"
@@ -79,7 +80,9 @@
     <SealedModal
       :show="showSealedPool"
       :pool="sealedPool"
-      @close="showSealedPool = false"
+      :initial-deck="sealedInitialDeck"
+      :initial-basic-lands="sealedInitialBasicLands"
+      @close="closeSealed"
       @view-card="openCardDetailFromSealed"
     />
 
@@ -99,6 +102,7 @@ import { useCardStore } from '@/stores/cardStore'
 import { useFilters } from '@/composables/useFilters'
 import { useBooster } from '@/composables/useBooster'
 import { useDraft } from '@/composables/useDraft'
+import { useSavedPool } from '@/composables/useSavedPool'
 import { generateSealedPool } from '@/utils/boosterLogic'
 import { sortCards } from '@/utils/cardUtils'
 import SortSelect from '@/components/filters/SortSelect.vue'
@@ -154,6 +158,9 @@ const booster = useBooster(allCards)
 // Draft
 const draft = useDraft(allCards)
 
+// Saved pool for resuming
+const { savedPool, savedDeck, savedBasicLands, poolType } = useSavedPool()
+
 // Card detail modal state
 const showCardDetail = ref(false)
 const selectedCard = ref(null)
@@ -181,7 +188,51 @@ function startDraft() {
 
 function generateSealed() {
   sealedPool.value = generateSealedPool(allCards.value)
+  // Clear any previous deck state when generating new pool
+  sealedInitialDeck.value = null
+  sealedInitialBasicLands.value = null
   showSealedPool.value = true
+}
+
+// Track initial deck state for sealed restoration
+const sealedInitialDeck = ref(null)
+const sealedInitialBasicLands = ref(null)
+
+function resumePool() {
+  if (poolType.value === 'draft') {
+    // Restore draft pool - open in review mode
+    draft.pool.value = [...savedPool.value]
+    draft.isOpen.value = true
+    draft.active.value = false
+    draft.isReviewingPool.value = true
+  } else if (poolType.value === 'sealed') {
+    // Restore sealed pool with deck state
+    // savedPool contains the FULL pool (remaining + deck cards)
+    // We need to filter out deck cards to get just the remaining pool
+    const deckCardIds = new Set((savedDeck.value || []).map(c => c.id))
+    const remainingPool = savedPool.value.filter(c => !deckCardIds.has(c.id))
+
+    sealedPool.value = remainingPool
+    sealedInitialDeck.value = savedDeck.value ? [...savedDeck.value] : null
+    sealedInitialBasicLands.value = savedBasicLands.value ? { ...savedBasicLands.value } : null
+    showSealedPool.value = true
+  }
+}
+
+function closeDraft() {
+  // Save the pool before closing if there are cards
+  if (draft.pool.value.length > 0) {
+    savePool(draft.pool.value, 'draft')
+  }
+  draft.closeDraft()
+}
+
+function closeSealed() {
+  // Saving is now handled automatically by SealedModal on state changes
+  // Clear initial deck state
+  sealedInitialDeck.value = null
+  sealedInitialBasicLands.value = null
+  showSealedPool.value = false
 }
 
 function openCardDetail(card) {

@@ -168,7 +168,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useCardStore } from '@/stores/cardStore'
 import { useDeckBuilder } from '@/composables/useDeckBuilder'
 import { determineColorClass, calculateCMC } from '@/utils/cardUtils'
@@ -180,13 +180,24 @@ const props = defineProps({
   initialPool: {
     type: Array,
     default: () => []
+  },
+  initialDeck: {
+    type: Array,
+    default: null
+  },
+  initialBasicLands: {
+    type: Object,
+    default: null
   }
 })
+
+const emit = defineEmits(['state-change'])
 
 const cardStore = useCardStore()
 const {
   pool,
   groupedPool,
+  mainDeck,
   basicLands,
   addToDeck: deckAdd,
   removeFromDeck: deckRemove,
@@ -195,7 +206,17 @@ const {
   deckByCMC,
   totalMainCount,
   exportDeck
-} = useDeckBuilder(props.initialPool)
+} = useDeckBuilder(props.initialPool, props.initialDeck, props.initialBasicLands)
+
+// Emit state changes for parent to track
+watch([pool, mainDeck, basicLands], () => {
+  const state = {
+    pool: [...pool.value],
+    mainDeck: [...mainDeck.value],
+    basicLands: { ...basicLands.value }
+  }
+  emit('state-change', state)
+}, { deep: true })
 
 const hoveredCard = ref(null)
 
@@ -398,7 +419,10 @@ const filteredPoolCount = computed(() => {
 })
 
 defineExpose({
-  exportDeck
+  exportDeck,
+  mainDeck,
+  basicLands,
+  pool
 })
 </script>
 
@@ -579,10 +603,11 @@ defineExpose({
 .pool-list {
   flex: 1;
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 4px;
   padding-right: 4px;
+  align-content: start;
 }
 
 .empty-message,

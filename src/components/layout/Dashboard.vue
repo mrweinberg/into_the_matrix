@@ -11,6 +11,7 @@
           @generate-sealed="$emit('generate-sealed')"
           @open-stats="$emit('open-stats')"
           @open-notes="$emit('open-notes')"
+          @resume-pool="$emit('resume-pool')"
         />
       </div>
 
@@ -71,7 +72,8 @@ defineEmits([
   'open-stats',
   'toggle-color',
   'toggle-mv',
-  'reset-filters'
+  'reset-filters',
+  'resume-pool'
 ])
 </script>
 

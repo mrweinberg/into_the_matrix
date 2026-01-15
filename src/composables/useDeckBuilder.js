@@ -1,10 +1,11 @@
 import { ref, computed } from 'vue'
 import { calculateCMC } from '@/utils/cardUtils'
 
-export function useDeckBuilder(initialPool = []) {
+export function useDeckBuilder(initialPool = [], initialDeck = null, initialBasicLands = null) {
+    // initialPool should already have deck cards filtered out when restoring
     const pool = ref([...initialPool])
-    const mainDeck = ref([])
-    const basicLands = ref({
+    const mainDeck = ref(initialDeck ? [...initialDeck] : [])
+    const basicLands = ref(initialBasicLands ? { ...initialBasicLands } : {
         Plains: 0,
         Island: 0,
         Swamp: 0,

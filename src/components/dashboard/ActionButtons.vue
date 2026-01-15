@@ -1,5 +1,22 @@
 <template>
   <div class="actions-container">
+    <!-- Resume Pool Banner -->
+    <div v-if="hasSavedPool" class="resume-banner">
+      <div class="resume-info">
+        <span class="resume-icon">&#9654;</span>
+        <span class="resume-text">
+          {{ poolType === 'draft' ? 'Draft' : 'Sealed' }} pool saved
+          <span class="resume-details">
+            ({{ savedPool?.length || 0 }} cards{{ deckCardCount > 0 ? ', ' + deckCardCount + ' in deck' : '' }})
+          </span>
+        </span>
+      </div>
+      <div class="resume-actions">
+        <button class="resume-btn" @click="$emit('resume-pool')">RESUME</button>
+        <button class="clear-pool-btn" @click="clearPool">×</button>
+      </div>
+    </div>
+
     <!-- Simulation Protocols -->
     <div class="actions-section">
       <h3 class="section-title">
@@ -44,10 +61,96 @@
 </template>
 
 <script setup>
-defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-stats', 'open-notes'])
+import { computed } from 'vue'
+import { useSavedPool } from '@/composables/useSavedPool'
+
+defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-stats', 'open-notes', 'resume-pool'])
+
+const { savedPool, poolType, clearPool, hasSavedPool: hasSavedPoolFn, getDeckCardCount } = useSavedPool()
+
+const hasSavedPool = computed(() => hasSavedPoolFn())
+const deckCardCount = computed(() => getDeckCardCount())
 </script>
 
 <style scoped>
+/* Resume Banner */
+.resume-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  background: rgba(0, 255, 65, 0.1);
+  border: 1px solid var(--matrix-green);
+  border-radius: 4px;
+  animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: var(--matrix-green); }
+  50% { border-color: rgba(0, 255, 65, 0.5); }
+}
+
+.resume-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resume-icon {
+  color: var(--matrix-green);
+  font-size: 1rem;
+}
+
+.resume-text {
+  color: var(--matrix-green);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.resume-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.resume-btn {
+  padding: 6px 16px;
+  background: var(--matrix-green);
+  border: none;
+  color: #000;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.resume-btn:hover {
+  background: #fff;
+  box-shadow: 0 0 10px var(--matrix-green);
+}
+
+.clear-pool-btn {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid #666;
+  color: #888;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.clear-pool-btn:hover {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+}
+
 .section-title {
   margin: 0 0 15px 0;
   font-size: 0.8rem;
