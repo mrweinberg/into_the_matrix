@@ -14,8 +14,6 @@
   "dependencies": {
     "@google/genai": "^1.31.0",
     "dotenv": "^17.2.3",
-    "downloadjs": "^1.4.7",
-    "html-to-image": "^1.11.13",
     "marked": "^11.0.0",
     "pinia": "^2.1.7",
     "vue": "^3.5.0"

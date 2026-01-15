@@ -83,7 +83,7 @@ const colorOptions = [
   { id: 'B', name: 'Black', icon: 'ms ms-b ms-cost' },
   { id: 'R', name: 'Red', icon: 'ms ms-r ms-cost' },
   { id: 'G', name: 'Green', icon: 'ms ms-g ms-cost' },
-  { id: 'Gold', name: 'Multicolor', icon: 'ms ms-multicolored ms-cost' },
+  { id: 'Gold', name: 'Multicolor', icon: 'ms ms-ci ms-ci-5' },
   { id: 'Artifact', name: 'Colorless', icon: 'ms ms-artifact ms-cost' },
   { id: 'Land', name: 'Land', icon: 'ms ms-land ms-cost' }
 ]

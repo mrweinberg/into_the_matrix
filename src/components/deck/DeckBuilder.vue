@@ -211,7 +211,7 @@ const colorFilters = [
   { id: 'B', name: 'Black', icon: 'ms ms-b ms-cost' },
   { id: 'R', name: 'Red', icon: 'ms ms-r ms-cost' },
   { id: 'G', name: 'Green', icon: 'ms ms-g ms-cost' },
-  { id: 'Gold', name: 'Multicolor', icon: 'ms ms-gold' },
+  { id: 'Gold', name: 'Multicolor', icon: 'ms ms-ci ms-ci-5' },
   { id: 'C', name: 'Colorless', icon: 'ms ms-c ms-cost' }
 ]
 

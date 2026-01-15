@@ -61,7 +61,7 @@
             <span class="color-count">{{ stats.colorCombinations[color] || 0 }}</span>
           </div>
           <div class="color-stat color-multi">
-            <i class="ms ms-multicolored ms-cost"></i>
+            <i class="ms ms-ci ms-ci-5"></i>
             <span class="color-count">{{ multicolorCount }}</span>
           </div>
           <div class="color-stat color-colorless">
@@ -82,7 +82,7 @@
           <div v-for="color in ['W', 'U', 'B', 'R', 'G', 'Multicolor', 'Colorless']" :key="color" class="curve-row" :class="'curve-' + color">
             <span class="curve-label">
               <i v-if="color.length === 1" :class="'ms ms-' + color.toLowerCase() + ' ms-cost'"></i>
-              <i v-else-if="color === 'Multicolor'" class="ms ms-multicolored ms-cost"></i>
+              <i v-else-if="color === 'Multicolor'" class="ms ms-ci ms-ci-5"></i>
               <i v-else class="ms ms-c ms-cost"></i>
             </span>
             <span v-for="mv in ['0', '1', '2', '3', '4', '5', '6+']" :key="mv" class="curve-cell" :class="getCellClass(stats.manaCurveByColor[color]?.[mv] || 0)">
