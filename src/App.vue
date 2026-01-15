@@ -5,6 +5,7 @@
     <Dashboard
       :visible-count="filteredCards.length"
       :mechanics="setInfo.mechanics"
+      :stats="setInfo.stats"
       v-model:search-text="searchText"
       v-model:rarity="rarity"
       v-model:type-text="typeText"
