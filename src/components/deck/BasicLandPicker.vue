@@ -41,9 +41,9 @@ function getIcon(type) {
   display: flex;
   gap: 15px;
   justify-content: center;
-  padding: 15px;
+  padding: 5px;
   background: rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid rgba(0, 255, 65, 0.1);
 }
 
@@ -58,7 +58,7 @@ function getIcon(type) {
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1.5rem;
   transition: transform 0.2s;
 }
 
@@ -78,8 +78,8 @@ function getIcon(type) {
   background: rgba(0, 255, 65, 0.1);
   border: 1px solid var(--matrix-green);
   color: var(--matrix-green);
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   display: flex;
   align-items: center;
   justify-content: center;

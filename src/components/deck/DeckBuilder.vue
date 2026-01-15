@@ -605,7 +605,7 @@ defineExpose({
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 10px;
+  padding: 2px 6px;
   background: rgba(0, 255, 65, 0.05);
   border-radius: 3px;
   border: 1px solid rgba(0, 255, 65, 0.1);
@@ -796,6 +796,7 @@ defineExpose({
 .preview-content > .card {
   width: 100%;
   max-width: 280px;
+  height: auto !important;
 }
 
 .preview-placeholder {
