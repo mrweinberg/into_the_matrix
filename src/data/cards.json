@@ -783,8 +783,7 @@
     "displayType": "Creature — Human Soldier",
     "text": [
       "Whenever Zion Frontline Hero attacks, another target attacking creature gets +X/+X until end of turn, where X is Zion Frontline Hero's power.",
-      "At the beginning of your end step, if Zion Frontline Hero is in your graveyard and you control three or more other creatures, you may pay {E}{E}.",
-      "If you do, return it to your hand."
+      "At the beginning of your end step, if Zion Frontline Hero is in your graveyard and you control three or more other creatures, you may pay {E}{E}. If you do, return it to your hand."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -969,9 +968,8 @@
     "type": "Creature — Program Agent (2/1)",
     "displayType": "Creature — Program Agent",
     "text": [
-      "Flash",
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)",
+      "Flash, digital (This creature can block or be blocked only by creatures with digital.)",
+      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
       "When Local Beat Cop enters, tap up to one target creature and put a stun counter on it."
     ],
     "flavor": "",
@@ -1446,7 +1444,7 @@
     "displayType": "Creature — Agent Program",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)",
+      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
       "Surveillance Agent can't be blocked.",
       "{1}{U}: Return Surveillance Agent to its owner's hand."
     ],
@@ -2145,7 +2143,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Menace",
-      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)",
+      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
       "Whenever Meter Reader deals combat damage to a player, that player loses {E} equal to the damage dealt.",
       "You get {E} equal to the amount of {E} that player lost."
     ],
@@ -2165,7 +2163,7 @@
     "displayType": "Creature — Agent Program",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)"
+      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2254,9 +2252,8 @@
     "type": "Legendary Creature — Agent Program (3/3)",
     "displayType": "Legendary Creature — Agent Program",
     "text": [
-      "Flash",
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)",
+      "Flash, digital (This creature can block or be blocked only by creatures with digital.)",
+      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
       "When Agent Brown enters, if it overrode a creature, destroy target creature."
     ],
     "flavor": "",
@@ -4101,9 +4098,8 @@
     "type": "Legendary Creature — Agent Program (4/2)",
     "displayType": "Legendary Creature — Agent Program",
     "text": [
-      "Flash",
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)",
+      "Flash, digital (This creature can block or be blocked only by creatures with digital.)",
+      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
       "Whenever Agent Jones becomes the target of a spell or ability, you may return it to its owner's hand."
     ],
     "flavor": "",
@@ -4249,7 +4245,7 @@
     "displayType": "Legendary Creature - Agent Program",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Override a digital creature (When this enters, sacrifice it unless you exile another digital creature you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)",
+      "Override a digital creature (When this enters, sacrifice it unless you exile another digital creature you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
       "When Agent Grey enters, you may tap up to one target creature.",
       "Whenever a creature an opponent controls becomes tapped, you may pay {1}. If you do, put a stun counter on it."
     ],
@@ -4759,8 +4755,7 @@
     "displayType": "Legendary Creature — Agent Program",
     "text": [
       "Override a digital creature",
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Ward {2}",
+      "Ward {2}, Digital (This creature can block or be blocked only by creatures with digital.)",
       "Whenever a creature enters under an opponent's control, you may pay {U/B}. If you do, gain control of it until the end of your next turn. Do this only once each turn.",
       "At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own."
     ],

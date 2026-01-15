@@ -53,7 +53,7 @@ Design Note: Represents leaving the Matrix.
 
 Override [Quality]
 Keyword Ability
-Override [Quality] (When this enters, sacrifice it unless you exile another [Quality] creature you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
+Override [Quality] (When this enters, sacrifice it unless you exile another [Quality] creature you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)
 Design Note: A "Champion" variant used on Agents.
 
 Energy {E}
@@ -359,9 +359,8 @@ Digital (This creature can block or be blocked only by creatures with digital.)
 
 [C033] Local Beat Cop {1}{U}
 Creature — Program Agent (2/1)
-Flash
-Digital (This creature can block or be blocked only by creatures with digital.)
-Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
+Flash, digital (This creature can block or be blocked only by creatures with digital.)
+Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)
 When Local Beat Cop enters, tap up to one target creature and put a stun counter on it.
 
 [C034] System Scan {1}{U}
@@ -500,7 +499,7 @@ Whenever this creature deals combat damage to a player, you may put a card exile
 [U028] Surveillance Agent {1}{U}
 Creature — Agent Program (3/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
-Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
+Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)
 Surveillance Agent can't be blocked.
 {1}{U}: Return Surveillance Agent to its owner's hand.
 
@@ -717,14 +716,14 @@ If you control a Robot or a creature with digital, you get {E}{E}.
 Creature — Agent Program (2/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Menace
-Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
+Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)
 Whenever Meter Reader deals combat damage to a player, that player loses {E} equal to the damage dealt.
 You get {E} equal to the amount of {E} that player lost.
 
 [U046] Reinforcement Agent {1}{B}
 Creature — Agent Program (4/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
-Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
+Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)
 
 [U048] Systematic Overwrite {2}{B}
 Sorcery
@@ -748,9 +747,8 @@ Return target creature from your graveyard to the battlefield tapped.
 
 [U052] Agent Brown, Enforcer {2}{B}{B}
 Legendary Creature — Agent Program (3/3)
-Flash
-Digital (This creature can block or be blocked only by creatures with digital.)
-Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
+Flash, digital (This creature can block or be blocked only by creatures with digital.)
+Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)
 When Agent Brown enters, if it overrode a creature, destroy target creature.
 
 [U053] Inevitable Deletion {1}{B}{B}
@@ -1315,9 +1313,8 @@ Other creatures you control with eject get +1/+1.
 
 [U104] Agent Jones {1}{U}{B}
 Legendary Creature — Agent Program (4/2)
-Flash
-Digital (This creature can block or be blocked only by creatures with digital.)
-Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
+Flash, digital (This creature can block or be blocked only by creatures with digital.)
+Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)
 Whenever Agent Jones becomes the target of a spell or ability, you may return it to its owner's hand.
 
 [U105] Mouse, Software Prodigy {1}{U}{R}
@@ -1359,7 +1356,7 @@ Whenever a land enters under your control, you get {E}.
 [U113] Agent Grey, Suppressor {1}{U}{B}
 Legendary Creature - Agent Program (3/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
-Override a digital creature (When this enters, sacrifice it unless you exile another digital creature you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)
+Override a digital creature (When this enters, sacrifice it unless you exile another digital creature you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)
 When Agent Grey enters, you may tap up to one target creature. 
 Whenever a creature an opponent controls becomes tapped, you may pay {1}. If you do, put a stun counter on it.
 
@@ -1520,8 +1517,7 @@ You may choose new targets for the copy.
 [R116] Agent Smith, Antivirus {3}{U}{B}
 Legendary Creature — Agent Program (4/4)
 Override a digital creature
-Digital (This creature can block or be blocked only by creatures with digital.)
-Ward {2}
+Ward {2}, Digital (This creature can block or be blocked only by creatures with digital.)
 Whenever a creature enters under an opponent's control, you may pay {U/B}. If you do, gain control of it until the end of your next turn. Do this only once each turn.
 At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own.
 

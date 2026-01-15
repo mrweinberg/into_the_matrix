@@ -17,7 +17,7 @@
       <span class="print-rarity">{{ cleanId }}</span>
     </div>
 
-    <div class="print-text-box">
+    <div class="print-text-box" :data-long-text="isLongText">
       <div class="print-oracle-text">
         <p v-for="(line, i) in card.text" :key="i" v-html="formatText(line)"></p>
       </div>
@@ -54,6 +54,15 @@ const cleanId = computed(() => (props.card.id || '').replace(/[\[\]]/g, ''))
 const colorIndicatorClass = computed(() =>
   props.card.colorIndicator ? `ms ms-ci ms-ci-${props.card.colorIndicator}` : ''
 )
+
+// Calculate total text length for font size adjustment
+const totalTextLength = computed(() => {
+  const oracleText = (props.card.text || []).join(' ')
+  const flavorText = props.card.flavor || ''
+  return oracleText.length + flavorText.length
+})
+
+const isLongText = computed(() => totalTextLength.value > 300)
 
 function formatText(text) {
   if (!text) return ''

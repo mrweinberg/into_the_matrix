@@ -141,6 +141,20 @@
   font-size: 6.5pt;
 }
 
+/* Reduced text size for cards with long text (>300 chars) */
+.print-text-box[data-long-text="true"] {
+  font-size: 6pt;
+  line-height: 1.25;
+}
+
+.print-text-box[data-long-text="true"] .print-oracle-text p {
+  margin-bottom: 2px;
+}
+
+.print-text-box[data-long-text="true"] .print-flavor-text {
+  font-size: 5.5pt;
+}
+
 /* Power/Toughness Box */
 .print-pt-box {
   position: absolute;

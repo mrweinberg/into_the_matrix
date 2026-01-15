@@ -36,7 +36,7 @@
       "name": "Override [Quality]",
       "text": [
         "Keyword Ability",
-        "Override [Quality] (When this enters, sacrifice it unless you exile another [Quality] creature you control. Return that card when this leaves. If you controlled the exiled card since your last turn began, this gains haste.)"
+        "Override [Quality] (When this enters, sacrifice it unless you exile another [Quality] creature you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)"
       ],
       "notes": [
         "A \"Champion\" variant used on Agents."
