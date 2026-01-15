@@ -4,10 +4,10 @@
       <div
         v-if="show"
         class="modal-overlay"
-        :class="{ 'draft-mode': !isReviewingPool }"
+        :class="{ 'draft-mode': !isReviewingPool, 'full-width-mode': isReviewingPool }"
         @click.self="handleClose"
       >
-        <div class="modal-content">
+        <div class="modal-content" :class="{ 'full-width-content': isReviewingPool }">
           <button class="close-modal" @click="handleClose">&times;</button>
 
           <!-- Draft in progress -->
@@ -41,6 +41,7 @@
               <DeckBuilder
                 :initial-pool="sortedPool"
                 ref="deckBuilderRef"
+                @open-print-proxies="onOpenPrintProxies"
                 @open-playtest="onOpenPlaytest"
               />
             </div>
@@ -68,6 +69,13 @@
     :basic-land-cards="playtestData.basicLandCards"
     @close="showPlaytest = false"
   />
+
+  <PrintProxyModal
+    :show="showPrintProxies"
+    mode="deck"
+    :initial-cards="printProxyCards"
+    @close="showPrintProxies = false"
+  />
 </template>
 
 <script setup>
@@ -79,6 +87,7 @@ import DraftSidebar from './DraftSidebar.vue'
 import HoverPreview from './HoverPreview.vue'
 import DeckBuilder from '@/components/deck/DeckBuilder.vue'
 import PlaytestModal from './PlaytestModal.vue'
+import PrintProxyModal from './PrintProxyModal.vue'
 
 const props = defineProps({
   show: Boolean,
@@ -105,6 +114,10 @@ const playtestData = reactive({
   basicLandCards: {}
 })
 
+// Print proxy modal state
+const showPrintProxies = ref(false)
+const printProxyCards = ref([])
+
 function getBackFace(card) {
   return cardStore.getBackFace(card)
 }
@@ -114,7 +127,16 @@ function pickCard(cardId) {
 }
 
 function handleClose() {
-  emit('close')
+  // Include deck state if we're in the deck builder phase
+  if (deckBuilderRef.value) {
+    emit('close', {
+      mainDeck: deckBuilderRef.value.mainDeck || [],
+      basicLands: deckBuilderRef.value.basicLands || {},
+      basicLandCards: deckBuilderRef.value.basicLandCards || {}
+    })
+  } else {
+    emit('close', null)
+  }
 }
 
 function downloadDeck() {
@@ -134,6 +156,11 @@ function onOpenPlaytest(data) {
   playtestData.basicLands = data.basicLands || {}
   playtestData.basicLandCards = data.basicLandCards || {}
   showPlaytest.value = true
+}
+
+function onOpenPrintProxies(cards) {
+  printProxyCards.value = cards || []
+  showPrintProxies.value = true
 }
 </script>
 

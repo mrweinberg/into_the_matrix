@@ -3,6 +3,8 @@ import { ref, computed } from 'vue'
 export function usePlaytest() {
   const library = ref([])
   const hand = ref([])
+  const battlefield = ref([])
+  const graveyard = ref([])
   const mulliganCount = ref(0)
   const hasKept = ref(false)
   const cardsToBottomRemaining = ref(0)
@@ -13,6 +15,8 @@ export function usePlaytest() {
 
   const librarySize = computed(() => library.value.length)
   const handSize = computed(() => hand.value.length)
+  const battlefieldSize = computed(() => battlefield.value.length)
+  const graveyardSize = computed(() => graveyard.value.length)
   const needsToBottom = computed(() => hasKept.value && cardsToBottomRemaining.value > 0)
 
   // Fisher-Yates shuffle
@@ -20,7 +24,7 @@ export function usePlaytest() {
     const arr = [...array]
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1))
-      ;[arr[i], arr[j]] = [arr[j], arr[i]]
+        ;[arr[i], arr[j]] = [arr[j], arr[i]]
     }
     return arr
   }
@@ -49,6 +53,8 @@ export function usePlaytest() {
     hasKept.value = false
     cardsToBottomRemaining.value = 0
     hand.value = []
+    battlefield.value = []
+    graveyard.value = []
 
     // Shuffle and draw initial hand
     library.value = shuffle(originalDeck.value)
@@ -95,11 +101,44 @@ export function usePlaytest() {
     drawCards(1)
   }
 
+  // Zone transition functions
+  function playCard(cardIndex) {
+    if (cardIndex < 0 || cardIndex >= hand.value.length) return
+    const card = hand.value.splice(cardIndex, 1)[0]
+    battlefield.value.push(card)
+  }
+
+  function destroyCard(cardIndex) {
+    if (cardIndex < 0 || cardIndex >= battlefield.value.length) return
+    const card = battlefield.value.splice(cardIndex, 1)[0]
+    graveyard.value.push(card)
+  }
+
+  function discardFromHand(cardIndex) {
+    if (cardIndex < 0 || cardIndex >= hand.value.length) return
+    const card = hand.value.splice(cardIndex, 1)[0]
+    graveyard.value.push(card)
+  }
+
+  function bounceToHand(cardIndex) {
+    if (cardIndex < 0 || cardIndex >= battlefield.value.length) return
+    const card = battlefield.value.splice(cardIndex, 1)[0]
+    hand.value.push(card)
+  }
+
+  function returnFromGraveyard(cardIndex) {
+    if (cardIndex < 0 || cardIndex >= graveyard.value.length) return
+    const card = graveyard.value.splice(cardIndex, 1)[0]
+    hand.value.push(card)
+  }
+
   function reset() {
     mulliganCount.value = 0
     hasKept.value = false
     cardsToBottomRemaining.value = 0
     hand.value = []
+    battlefield.value = []
+    graveyard.value = []
     library.value = shuffle([...originalDeck.value])
     drawCards(7)
   }
@@ -108,6 +147,8 @@ export function usePlaytest() {
     isActive.value = false
     library.value = []
     hand.value = []
+    battlefield.value = []
+    graveyard.value = []
     originalDeck.value = []
     mulliganCount.value = 0
     hasKept.value = false
@@ -117,19 +158,29 @@ export function usePlaytest() {
   return {
     library,
     hand,
+    battlefield,
+    graveyard,
     mulliganCount,
     hasKept,
     cardsToBottomRemaining,
     isActive,
     librarySize,
     handSize,
+    battlefieldSize,
+    graveyardSize,
     needsToBottom,
     startPlaytest,
     mulligan,
     keepHand,
     putOnBottom,
     drawStep,
+    playCard,
+    destroyCard,
+    discardFromHand,
+    bounceToHand,
+    returnFromGraveyard,
     reset,
     endPlaytest
   }
 }
+

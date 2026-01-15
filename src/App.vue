@@ -179,7 +179,7 @@ const booster = useBooster(allCards)
 const draft = useDraft(allCards)
 
 // Saved pool for resuming
-const { savedPool, savedDeck, savedBasicLands, poolType } = useSavedPool()
+const { savedPool, savedDeck, savedBasicLands, poolType, savePool } = useSavedPool()
 
 // Card detail modal state
 const showCardDetail = ref(false)
@@ -248,10 +248,10 @@ function resumePool() {
   }
 }
 
-function closeDraft() {
-  // Save the pool before closing if there are cards
+function closeDraft(deckState) {
+  // Save the pool and deck state before closing if there are cards
   if (draft.pool.value.length > 0) {
-    savePool(draft.pool.value, 'draft')
+    savePool(draft.pool.value, 'draft', deckState)
   }
   draft.closeDraft()
 }
