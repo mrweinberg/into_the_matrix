@@ -857,10 +857,11 @@ Digital (This creature can block or be blocked only by creatures with digital.)
 When this creature transforms into Expert Sniper, create a Gun token.
 {R}: Eject. ({R}: Transform this card. Activate only as a sorcery.)
 
-[C096] Zealous Protector {3}{R}
+[C096] Zealous Jammer {3}{R}
 Creature — Human Soldier (4/3)
 Reach
-Zealous Protector can block creatures with digital as though they didn't have digital.
+This creature can block creatures with digital as though they didn't have digital.
+When this creature enters, if you control a nontoken artifact, deal 2 damage to each opponent.
 
 [C097] Manic Decrypter {1}{R}
 Creature — Human Rogue (2/1)
@@ -1074,7 +1075,7 @@ Creature — Human Cleric (1/1)
 When this creature enters, you get {E}.
 Whenever this creature attacks, you may pay {E}. If you do, put a +1/+1 counter on target creature.
 
-[C122] Zion Acid-Slinger {1}{G}
+[C122] Exterminator Jammer {1}{G}
 Creature — Human Warrior (2/1)
 Reach, deathtouch
 This creature can block creatures with digital as though they didn't have digital.
@@ -1594,7 +1595,7 @@ When The Oracle’s Cookie enters or leaves the battlefield, scry 2.
 {2}, {T}, Sacrifice The Oracle’s Cookie: You gain 3 life.
 
 [C151] APU Corps {5}
-Artifact Creature — Construct Mech (4/5)
+Artifact Creature — Construct (4/5)
 Reach
 When APU Corps enters, you get {E}{E}.
 

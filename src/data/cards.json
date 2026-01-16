@@ -2597,13 +2597,14 @@
   },
   {
     "id": "C096",
-    "name": "Zealous Protector",
+    "name": "Zealous Jammer",
     "cost": "{3}{R}",
     "type": "Creature — Human Soldier (4/3)",
     "displayType": "Creature — Human Soldier",
     "text": [
       "Reach",
-      "Zealous Protector can block creatures with digital as though they didn't have digital."
+      "This creature can block creatures with digital as though they didn't have digital.",
+      "When this creature enters, if you control a nontoken artifact, deal 2 damage to each opponent."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2611,7 +2612,7 @@
     "hasBackFace": false,
     "pt": "4/3",
     "colorIndicator": null,
-    "fileName": "C096_zealous_protector.png"
+    "fileName": "C096_zealous_jammer.png"
   },
   {
     "id": "C097",
@@ -3323,7 +3324,7 @@
   },
   {
     "id": "C122",
-    "name": "Zion Acid-Slinger",
+    "name": "Exterminator Jammer",
     "cost": "{1}{G}",
     "type": "Creature — Human Warrior (2/1)",
     "displayType": "Creature — Human Warrior",
@@ -3337,7 +3338,7 @@
     "hasBackFace": false,
     "pt": "2/1",
     "colorIndicator": null,
-    "fileName": "C122_zion_acid_slinger.png"
+    "fileName": "C122_exterminator_jammer.png"
   },
   {
     "id": "C123",
@@ -4966,8 +4967,8 @@
     "id": "C151",
     "name": "APU Corps",
     "cost": "{5}",
-    "type": "Artifact Creature — Construct Mech (4/5)",
-    "displayType": "Artifact Creature — Construct Mech",
+    "type": "Artifact Creature — Construct (4/5)",
+    "displayType": "Artifact Creature — Construct",
     "text": [
       "Reach",
       "When APU Corps enters, you get {E}{E}."
