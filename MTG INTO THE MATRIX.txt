@@ -947,8 +947,7 @@ If you do, target creature can't block this turn.
 
 [U062] Surge Channeler {2}{R}
 Creature — Human Artificer (2/3)
-Whenever you get one or more {E}, you may pay {E}.
-If you do, deal 1 damage to any target.
+Whenever you cast a spell, you get {E} and may pay {E}{E}. If you do, deal 2 damage to any target.
 
 [U063] Pilot’s Instinct {1}{R}
 Instant
@@ -1279,6 +1278,11 @@ When Zion Mystic enters, you get {E}.
 Instant
 Distribute X +1/+1 counters among any number of target creatures you control.
 Those creatures gain trample until end of turn.
+
+[R088] Dozer, Ship's Engineer {3}{G}
+Legendary Creature — Human Artificer (3/3)
+Whenever a land enters under your control, put a +1/+1 counter on Dozer.
+Whenever Dozer attacks, search your library for a basic land card, put it onto the battlefield tapped unless Dozer's power is 6 or greater, then shuffle.
 
 --- MYTHICS ---
 

@@ -355,8 +355,16 @@ class Card {
     }
 
     let likenessInstruction = "";
+    const override = artOverrides[this.id];
+    const characterDesc = override?.character;
     if (this.type.toLowerCase().includes("legendary")) {
-      likenessInstruction = "CHARACTER IDENTITY: This is a LEGENDARY character/subject. The illustration MUST strictly resemble the specific character/vehicle as they appear in The Matrix films.";
+      if (characterDesc) {
+        // We have a specific character description from overrides - use it
+        likenessInstruction = `CHARACTER IDENTITY: This is a LEGENDARY character. SPECIFIC APPEARANCE: ${characterDesc}. The illustration MUST depict this specific character accurately.`;
+      } else {
+        // Legendary but no character data (might be a vehicle or unknown character)
+        likenessInstruction = "CHARACTER IDENTITY: This is a LEGENDARY character/subject. The illustration MUST strictly resemble the specific character/vehicle as they appear in The Matrix films.";
+      }
     } else if (this.type.toLowerCase().includes("creature")) {
       likenessInstruction = "CHARACTER IDENTITY: Generic character. Do NOT resemble any specific actor/character from The Matrix films.";
     } else {
@@ -364,7 +372,7 @@ class Card {
     }
 
     let sunglassesConstraint = "";
-    if (world.setting.includes("Real World") || world.setting.includes("Zion") || world.setting.includes("Machine")) {
+    if (world.setting.includes("Real World") || world.setting.includes("Zion") || world.setting.includes("Machine") || world.setting.includes("Hovercraft") || world.setting.includes("Power Plant")) {
       sunglassesConstraint = "6. NO SUNGLASSES. Characters in the Real World/Zion do NOT wear sunglasses.";
     } else {
       sunglassesConstraint = "6. Sunglasses are characteristic of the Matrix simulation.";
@@ -372,7 +380,6 @@ class Card {
 
     let visualContext = this.flavor.length > 0 ? this.flavor : this.text.join(" ");
 
-    const override = artOverrides[this.id];
     let subjectDescription = `Main focus features **${subjectColor}** accents. ${likenessInstruction} ${diversity}`;
     let weaponry = "4. WEAPONRY: If the character needs a weapon, use modern firearms, martial arts, or futuristic lightning rifles (only if Real World).";
 

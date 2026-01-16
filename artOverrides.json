@@ -1,11 +1,159 @@
 [
     {
-        "id": "R056",
-        "setting": "The Nebuchadnezzar's Crew Quarters",
+        "id": "U009",
+        "character": "Laurence Fishburne as Morpheus. African American, bald head, broad muscular build, dignified bearing. Iconic small round reflective sunglasses, long black leather coat."
+    },
+    {
+        "id": "R003",
+        "character": "Belinda McClory as Switch. Androgynous white female, short platinum blonde hair, pale skin, sharp features. Always wears white clothing in the Matrix."
+    },
+    {
+        "id": "R008",
+        "character": "Carrie-Anne Moss as Trinity. White female, short slicked-back black hair, angular features, athletic build. Tight black leather/PVC outfit."
+    },
+    {
+        "id": "R023",
+        "character": "Randall Duk Kim as The Keymaker. Elderly Asian male, grey hair, small stature, gentle demeanor. Wears simple workman's clothes, carries many keys."
+    },
+    {
+        "id": "R026",
+        "character": "Keanu Reeves as Thomas Anderson/Neo before awakening. Office worker, short neat hair, tired expression, suit."
+    },
+    {
+        "id": "R028",
+        "character": "Collin Chou as Seraph. Asian male, serene expression, traditional Chinese clothing aesthetic, guardian bearing. The Oracle's protector."
+    },
+    {
+        "id": "M02",
+        "character": "Neil Patrick Harris as The Analyst. White male, styled brown hair, clean-shaven, smug knowing expression. Wears glasses, business casual attire. From Matrix Resurrections."
+    },
+    {
+        "id": "U052",
+        "character": "Paul Goddard as Agent Brown. White male, short brown hair, angular face, cold expression. Black suit, black tie, rectangular sunglasses, earpiece. Identical Agent appearance."
+    },
+    {
+        "id": "R041",
+        "character": "A Program Vampire from the Merovingian's court. Pale skin, sharp features, elegant but predatory bearing. Dark formal clothing with old-world European aesthetic."
+    },
+    {
+        "id": "R042",
+        "character": "Bruce Spence as The Trainman. Tall gaunt white male, disheveled grey hair, wild eyes, shabby clothing. Controls Mobil Ave station."
+    },
+    {
+        "id": "R047",
+        "character": "Ian Bliss as Bane/Smith. White male possessed by Smith, increasingly unhinged expression, self-inflicted scars on arms."
+    },
+    {
+        "id": "R064",
+        "character": "Joe Pantoliano as Cypher. White male, receding dark curly hair, unshaven, weathered face, cynical expression. Wears shabby clothing."
+    },
+    {
+        "id": "R065",
+        "character": "A seductive Program from the Matrix. Striking appearance, red dress or red-themed outfit, dangerous allure."
+    },
+    {
+        "id": "R068",
+        "character": "Carrie-Anne Moss as Trinity. White female, short slicked-back black hair, angular features, athletic build. Tight black leather/PVC outfit, often on a motorcycle."
+    },
+    {
+        "id": "R088",
+        "character": "Anthony Ray Parker as Dozer. Large, physically imposing African American male, shaved head, broad shoulders, kind eyes. Tank's older brother. Born in Zion - no jack plugs. Wears simple utilitarian clothing, often seen working on ship machinery."
+    },
+    {
+        "id": "U104",
+        "character": "Robert Taylor as Agent Jones. White male, short dark hair, angular face, cold expression. Black suit, black tie, rectangular sunglasses, earpiece. Identical Agent appearance."
+    },
+    {
+        "id": "U105",
+        "character": "Matt Doran as Mouse. Young white male, boyish face, spiky brown hair, slight build, eager expression. The youngest crew member, enthusiastic programmer."
+    },
+    {
+        "id": "U112",
+        "character": "Marcus Chong as Tank. Young African American male, shaved head, muscular build, warm smile. Born in Zion - no jack plugs. Wears simple worn clothing."
+    },
+    {
+        "id": "U113",
+        "subject": "An agent of the matrix. Looks like a generic white guy with greying hair.",
+        "setting": "An interrogation room. White walls, table in the middle.",
+        "composition": "Agent Grey is looming above a man slouched over the table.",
+        "character": "A Matrix Agent. White male, grey hair, cold expression. Black suit, black tie, rectangular sunglasses, earpiece. Identical Agent appearance."
+    },
+    {
+        "id": "U114",
+        "character": "Adrian and Neil Rayment as The Twins. Identical white males, long white dreadlocks, pale almost albino skin, silver/white clothing. Can phase through objects."
+    },
+    {
+        "id": "U115",
+        "character": "Monica Bellucci as Persephone. Italian female, long dark hair, pale skin, melancholic beauty, elegant gowns."
+    },
+    {
+        "id": "U117",
+        "subject": "Captain Mifune, a middle-aged black man in a white robe with a red vest. Portrayed by Nathaniel Lees. He has a focused look on his face as he commands his construct.",
+        "setting": "The dock of Zion, under seige by sentinels. The sky is dark and filled with smoke, with the city in the background.",
+        "composition": "Captain Mifune in the foreground, in his construct, leading a group of rebels against the sentinels.",
+        "lighting": "Harsh, dramatic lighting with strong contrasts, highlighting the chaos of the battle.",
+        "character": "Nathaniel Lees as Captain Mifune. Māori/Pacific Islander male, fierce warrior, commanding presence. APU pilot commander."
+    },
+    {
+        "id": "R101",
+        "character": "Laurence Fishburne as Morpheus. African American, bald head, broad muscular build, dignified bearing. Long black leather coat, warrior stance."
+    },
+    {
+        "id": "R106",
+        "character": "Harry Lennix as Commander Lock. African American male, military bearing, stern expression, shaved head. Zion military commander."
+    },
+    {
+        "id": "R107",
+        "character": "Jada Pinkett Smith as Niobe. African American female, short cropped hair, athletic build, fierce determined expression. Ship captain, skilled pilot."
+    },
+    {
+        "id": "R109",
+        "character": "Laurence Fishburne as Morpheus. African American, bald head, broad muscular build, dignified bearing. Contemplative, wise expression."
+    },
+    {
+        "id": "R112",
+        "character": "Keanu Reeves as Neo. Tall, lean build, black hair, clean-shaven. Early awakening, discovering his powers."
+    },
+    {
+        "id": "R114",
+        "character": "Lambert Wilson as The Merovingian. French white male, slicked-back dark hair, goatee, aristocratic bearing, arrogant expression. Expensive tailored suits."
+    },
+    {
+        "id": "R115",
         "subject": "Apoc from The Matrix as portrayed by Julian Arahanga",
+        "setting": "The Nebuchadnezzar's Crew Quarters",
         "composition": "Medium shot of Apoc sitting at a small table, reading a book. The room is dimly lit with greenish hues from the ship's monitors.",
         "artStyle": "Painterly, cyberpunk aesthetic with a focus on moody lighting and detailed textures.",
-        "sunglasses": false
+        "sunglasses": false,
+        "character": "Julian Arahanga as Apoc. Māori male, dark hair pulled back, goatee, intense focused expression. Wears dark tactical clothing."
+    },
+    {
+        "id": "R116",
+        "character": "Hugo Weaving as Agent Smith. White male, short brown hair with receding hairline, angular face, cold expression. Black suit, black tie, rectangular sunglasses, earpiece."
+    },
+    {
+        "id": "M03",
+        "character": "Gloria Foster as The Oracle. Elderly African American woman, grey hair, warm maternal presence, knowing smile. Wears simple housedress, often baking cookies."
+    },
+    {
+        "id": "M09",
+        "character": "Helmut Bakaitis as The Architect. Elderly white male, white hair and beard, stern cold expression. White suit, sits in monitor room."
+    },
+    {
+        "id": "M10",
+        "character": "Hugo Weaving as Agent Smith. White male, short brown hair with receding hairline, angular face, cold menacing expression. Black suit, black tie, rectangular sunglasses."
+    },
+    {
+        "id": "M11",
+        "character": "Tanveer K. Atwal as Sati. Young South Asian girl, long dark hair, innocent curious expression. Program child."
+    },
+    {
+        "id": "M12",
+        "character": "Keanu Reeves as Neo. Tall, lean build, shoulder-length black hair, clean-shaven. Long black coat, black clothes. The One."
+    },
+    {
+        "id": "M16",
+        "character": "Hugo Weaving as Agent Smith, now rogue and unshackled from the system. White male, disheveled appearance, manic expression. Suit may be damaged or dirty."
     },
     {
         "id": "C087",
@@ -31,15 +179,8 @@
         "lighting": "Soft, natural lighting with a warm glow, evoking a sense of peace and contemplation."
     },
     {
-        "id": "U099",
-        "subject": "Captain Mifune, a middle-aged black man in a white robe with a red vest. Portrayed by Nathaniel Lees. He has a focused look on his face as he commands his construct.",
-        "setting": "The dock of Zion, under seige by sentinels. The sky is dark and filled with smoke, with the city in the background.",
-        "composition": "Captain Mifune in the foreground, in his construct, leading a group of rebels against the sentinels.",
-        "lighting": "Harsh, dramatic lighting with strong contrasts, highlighting the chaos of the battle."
-    },
-    {
         "id": "R092",
-        "subject": "The Logos (Captain Niobe’s ship) has a distinct design that sets it apart from the more famous Nebuchadnezzar. While the Nebuchadnezzar is long, skeletal, and vaguely resembles a deep-sea predator, the Logos is compact, stout, and heavily armored. Here is a visual breakdown: Silhouette: It is much shorter and wider than standard hovercraft. It has a squat, beetle-like or horseshoe crab shape. It lacks the long, protruding tail section found on other ships, giving it a dense, bulldog-like appearance. Hull Plating: The exterior is a dark, gunmetal grey with a heavy industrial finish. It looks significantly more solid and encased than other ships, with fewer exposed skeletal gaps. The plating is curved and aerodynamic, suggesting its role as the fleet's fastest and most maneuverable vessel. Propulsion (The Hover Pads): This is its most defining feature. Instead of the Nebuchadnezzar's many smaller pads, the Logos relies on fewer, larger, and very prominent electromagnetic hover discs mounted on thick, articulated struts. When active, these generate the signature crackling blue lightning. Cockpit: The cockpit is integrated smoothly into the front of the main fuselage rather than jutting out on a long neck. It has a sloping, armored front profile. Texture: Like all ships in the Real World, it is covered in a complex layer of conduits, pipes, and cables, but the Logos wears them more tightly against its hull, reinforcing the compact tank aesthetic.In summary: If the Nebuchadnezzar is a jagged spear, the Logos is a polished, heavy stone. It looks built for tight squeezes and high-speed maneuvers in the Mechanical Lines."
+        "subject": "The Logos (Captain Niobe's ship) has a distinct design that sets it apart from the more famous Nebuchadnezzar. While the Nebuchadnezzar is long, skeletal, and vaguely resembles a deep-sea predator, the Logos is compact, stout, and heavily armored. Here is a visual breakdown: Silhouette: It is much shorter and wider than standard hovercraft. It has a squat, beetle-like or horseshoe crab shape. It lacks the long, protruding tail section found on other ships, giving it a dense, bulldog-like appearance. Hull Plating: The exterior is a dark, gunmetal grey with a heavy industrial finish. It looks significantly more solid and encased than other ships, with fewer exposed skeletal gaps. The plating is curved and aerodynamic, suggesting its role as the fleet's fastest and most maneuverable vessel. Propulsion (The Hover Pads): This is its most defining feature. Instead of the Nebuchadnezzar's many smaller pads, the Logos relies on fewer, larger, and very prominent electromagnetic hover discs mounted on thick, articulated struts. When active, these generate the signature crackling blue lightning. Cockpit: The cockpit is integrated smoothly into the front of the main fuselage rather than jutting out on a long neck. It has a sloping, armored front profile. Texture: Like all ships in the Real World, it is covered in a complex layer of conduits, pipes, and cables, but the Logos wears them more tightly against its hull, reinforcing the compact tank aesthetic.In summary: If the Nebuchadnezzar is a jagged spear, the Logos is a polished, heavy stone. It looks built for tight squeezes and high-speed maneuvers in the Mechanical Lines."
     },
     {
         "id": "U008",
@@ -57,12 +198,6 @@
         "setting": "The pod fields, where the machines are incubating humans to use as energy sources. You can see thousands in the background. The pods glow slightly green, the crackle of red around the electricity shows it humming.",
         "composition": "Neo just sitting up in the foreground, miles of pods reaching to the horizon.",
         "artStyle": "Stark, expressionist, painting."
-    },
-    {
-        "id": "U113",
-        "subject": "An agent of the matrix. Looks like a generic white guy with greying hair.",
-        "setting": "An interrogation room. White walls, table in the middle.",
-        "composition": "Agent Grey is looming above a man slouched over the table."
     },
     {
         "id": "U001",
