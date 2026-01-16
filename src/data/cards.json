@@ -1259,12 +1259,12 @@
     "id": "C049",
     "name": "Link Monitor",
     "cost": "{1}{U}",
-    "type": "Creature — Program Artificer (2/1)",
-    "displayType": "Creature — Program Artificer",
+    "type": "Creature — Human Artificer (2/1)",
+    "displayType": "Creature — Human Artificer",
     "text": [
       "Whenever a creature you control transforms, you get {E}.",
       "{T}: Add {U}. Spend this mana only to cast spells with digital, instants, or sorceries.",
-      "{T}: Transform target creature with a jack-in or eject ability."
+      "{1}{U}: Transform target creature with a jack-in or eject ability."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1440,8 +1440,8 @@
     "id": "U028",
     "name": "Surveillance Agent",
     "cost": "{1}{U}",
-    "type": "Creature — Agent Program (3/2)",
-    "displayType": "Creature — Agent Program",
+    "type": "Creature — Program Agent (3/2)",
+    "displayType": "Creature — Program Agent",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
@@ -1868,8 +1868,8 @@
     "id": "C069",
     "name": "Replica Agent",
     "cost": "{B}",
-    "type": "Creature — Agent Program (1/1)",
-    "displayType": "Creature — Agent Program",
+    "type": "Creature — Program Agent (1/1)",
+    "displayType": "Creature — Program Agent",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "When this creature leaves the battlefield, create a 1/1 colorless Program creature token with digital."
@@ -1991,8 +1991,8 @@
     "id": "C076",
     "name": "Chateau Vampire",
     "cost": "{1}{B}",
-    "type": "Creature — Vampire Program (1/3)",
-    "displayType": "Creature — Vampire Program",
+    "type": "Creature — Program Vampire (1/3)",
+    "displayType": "Creature — Program Vampire",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Lifelink",
@@ -2138,8 +2138,8 @@
     "id": "U045",
     "name": "Meter Reader",
     "cost": "{1}{B}",
-    "type": "Creature — Agent Program (2/3)",
-    "displayType": "Creature — Agent Program",
+    "type": "Creature — Program Agent (2/3)",
+    "displayType": "Creature — Program Agent",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Menace",
@@ -2159,8 +2159,8 @@
     "id": "U046",
     "name": "Reinforcement Agent",
     "cost": "{1}{B}",
-    "type": "Creature — Agent Program (4/3)",
-    "displayType": "Creature — Agent Program",
+    "type": "Creature — Program Agent (4/3)",
+    "displayType": "Creature — Program Agent",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)"
@@ -2249,8 +2249,8 @@
     "id": "U052",
     "name": "Agent Brown, Enforcer",
     "cost": "{2}{B}{B}",
-    "type": "Legendary Creature — Agent Program (3/3)",
-    "displayType": "Legendary Creature — Agent Program",
+    "type": "Legendary Creature — Program Agent (3/3)",
+    "displayType": "Legendary Creature — Program Agent",
     "text": [
       "Flash, digital (This creature can block or be blocked only by creatures with digital.)",
       "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
@@ -2909,8 +2909,7 @@
     "type": "Creature — Human Artificer (2/3)",
     "displayType": "Creature — Human Artificer",
     "text": [
-      "Whenever you get one or more {E}, you may pay {E}.",
-      "If you do, deal 1 damage to any target."
+      "Whenever you cast a spell, you get {E} and may pay {E}{E}. If you do, deal 2 damage to any target."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4016,6 +4015,24 @@
     "fileName": "R087_martial_arts_upload.png"
   },
   {
+    "id": "R088",
+    "name": "Dozer, Ship's Engineer",
+    "cost": "{3}{G}",
+    "type": "Legendary Creature — Human Artificer (3/3)",
+    "displayType": "Legendary Creature — Human Artificer",
+    "text": [
+      "Whenever a land enters under your control, put a +1/+1 counter on Dozer.",
+      "Whenever Dozer attacks, search your library for a basic land card, put it onto the battlefield tapped unless Dozer's power is 6 or greater, then shuffle."
+    ],
+    "flavor": "",
+    "rarity": "Rare",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "3/3",
+    "colorIndicator": null,
+    "fileName": "R088_dozer__ship_s_engineer.png"
+  },
+  {
     "id": "M08",
     "name": "Root Access",
     "cost": "{5}{G}{G}",
@@ -4095,8 +4112,8 @@
     "id": "U104",
     "name": "Agent Jones",
     "cost": "{1}{U}{B}",
-    "type": "Legendary Creature — Agent Program (4/2)",
-    "displayType": "Legendary Creature — Agent Program",
+    "type": "Legendary Creature — Program Agent (4/2)",
+    "displayType": "Legendary Creature — Program Agent",
     "text": [
       "Flash, digital (This creature can block or be blocked only by creatures with digital.)",
       "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
@@ -4751,8 +4768,8 @@
     "id": "R116",
     "name": "Agent Smith, Antivirus",
     "cost": "{3}{U}{B}",
-    "type": "Legendary Creature — Agent Program (4/4)",
-    "displayType": "Legendary Creature — Agent Program",
+    "type": "Legendary Creature — Program Agent (4/4)",
+    "displayType": "Legendary Creature — Program Agent",
     "text": [
       "Override creature with digital",
       "Ward {2}, Digital (This creature can block or be blocked only by creatures with digital.)",
@@ -4911,8 +4928,8 @@
     "id": "M16",
     "name": "Agent Smith, Unshackled",
     "cost": "{3}{B}{R}",
-    "type": "Legendary Creature — Agent Rogue (4/4)",
-    "displayType": "Legendary Creature — Agent Rogue",
+    "type": "Legendary Creature — Program Rogue (4/4)",
+    "displayType": "Legendary Creature — Program Rogue",
     "text": [
       "Override creature",
       "Menace, haste",
