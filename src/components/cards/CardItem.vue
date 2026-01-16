@@ -4,7 +4,13 @@
     :data-color="colorClass"
     :data-pt="card.pt ? 'yes' : 'no'"
     @click="handleClick"
+    @contextmenu.prevent="handleRightClick"
   >
+    <!-- Note Indicator -->
+    <div v-if="noteInfo" class="note-indicator" :title="noteInfo.text">
+      {{ getBadgeIcon(noteInfo.badge) || '📝' }}
+    </div>
+    
     <div class="card-header">
       <span class="card-name">{{ card.name }}</span>
       <span class="mana-cost" v-html="formattedCost"></span>
@@ -43,6 +49,7 @@
 import { computed, ref } from 'vue'
 import { replaceSymbols } from '@/utils/manaSymbols'
 import { determineColorClass } from '@/utils/cardUtils'
+import { useCardNotes } from '@/composables/useCardNotes'
 
 const props = defineProps({
   card: {
@@ -55,7 +62,9 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['click'])
+const emit = defineEmits(['click', 'edit-note'])
+
+const { getNote } = useCardNotes()
 
 const imageLoaded = ref(false)
 
@@ -67,6 +76,14 @@ const rarityClass = computed(() => `rarity-symbol rarity-${props.card.rarity}`)
 const colorIndicatorClass = computed(() =>
   props.card.colorIndicator ? `ms ms-ci ms-ci-${props.card.colorIndicator}` : ''
 )
+
+const noteInfo = computed(() => getNote(props.card.id))
+
+function getBadgeIcon(badge) {
+  if (!badge) return null
+  const icons = { red: '🔴', yellow: '🟡', green: '🟢', blue: '🔵' }
+  return icons[badge] || null
+}
 
 function formatText(text) {
   if (!text) return ''
@@ -84,6 +101,10 @@ function handleClick() {
   }
 }
 
+function handleRightClick() {
+  emit('edit-note', props.card)
+}
+
 function onImageLoad(e) {
   imageLoaded.value = true
   e.target.style.zIndex = '2'
@@ -93,3 +114,18 @@ function onImageError(e) {
   e.target.style.display = 'none'
 }
 </script>
+
+<style scoped>
+.note-indicator {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 10;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2px 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+</style>
+

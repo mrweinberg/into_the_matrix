@@ -10,11 +10,13 @@
           :card="card"
           :back-card="getBackFace(card)"
           @click="handleCardClick"
+          @edit-note="handleEditNote"
         />
         <CardItem
           v-else
           :card="card"
           @click="handleCardClick"
+          @edit-note="handleEditNote"
         />
       </template>
     </template>
@@ -33,7 +35,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['card-click'])
+const emit = defineEmits(['card-click', 'edit-note'])
 const cardStore = useCardStore()
 
 function getBackFace(card) {
@@ -42,6 +44,10 @@ function getBackFace(card) {
 
 function handleCardClick(card) {
   emit('card-click', card)
+}
+
+function handleEditNote(card) {
+  emit('edit-note', card)
 }
 </script>
 
@@ -53,3 +59,4 @@ function handleCardClick(card) {
   color: #555;
 }
 </style>
+

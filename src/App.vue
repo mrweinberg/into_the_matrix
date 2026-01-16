@@ -22,6 +22,7 @@
       @resume-pool="resumePool"
       @open-print-proxies="openPrintProxiesFromDashboard"
       @open-archetypes="showArchetypes = true"
+      @open-notes-manager="showNotesManager = true"
     />
 
     <div class="filter-status">
@@ -38,6 +39,7 @@
     <CardGallery
       :cards="filteredCards"
       @card-click="openCardDetail"
+      @edit-note="openCardNote"
     />
 
     <!-- Booster Pack Modal -->
@@ -110,6 +112,20 @@
       @close="showArchetypes = false"
       @view-card="openCardDetailFromArchetype"
     />
+
+    <!-- Card Note Editor Modal -->
+    <CardNoteModal
+      :show="showCardNote"
+      :card="cardNoteTarget"
+      @close="showCardNote = false"
+    />
+
+    <!-- Notes Manager Modal -->
+    <NotesManagerModal
+      :show="showNotesManager"
+      @close="showNotesManager = false"
+      @edit-card="openCardNote"
+    />
   </div>
 </template>
 
@@ -136,6 +152,8 @@ import SealedModal from '@/components/modals/SealedModal.vue'
 import SetStatsModal from '@/components/modals/SetStatsModal.vue'
 import PrintProxyModal from '@/components/modals/PrintProxyModal.vue'
 import ArchetypeModal from '@/components/modals/ArchetypeModal.vue'
+import CardNoteModal from '@/components/modals/CardNoteModal.vue'
+import NotesManagerModal from '@/components/modals/NotesManagerModal.vue'
 
 const cardStore = useCardStore()
 
@@ -201,6 +219,11 @@ const showStats = ref(false)
 
 // Archetypes modal state
 const showArchetypes = ref(false)
+
+// Card notes modal state
+const showCardNote = ref(false)
+const cardNoteTarget = ref(null)
+const showNotesManager = ref(false)
 
 // Print proxy modal state
 const showPrintProxy = ref(false)
@@ -297,6 +320,11 @@ function openCardDetailFromArchetype(card) {
   showCardDetail.value = true
   viewingFromArchetype.value = true
   showArchetypes.value = false // Temporarily hide to show modal
+}
+
+function openCardNote(card) {
+  cardNoteTarget.value = card
+  showCardNote.value = true
 }
 
 function closeCardDetail() {

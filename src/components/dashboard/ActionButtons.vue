@@ -63,6 +63,11 @@
           <span class="btn-icon">&#9830;</span>
           <span class="btn-text">Archetypes</span>
         </button>
+        <button class="action-btn action-secondary card-notes-btn" @click="$emit('open-notes-manager')">
+          <span class="btn-icon">📝</span>
+          <span class="btn-text">Card Notes</span>
+          <span v-if="noteCount > 0" class="note-badge">{{ noteCount }}</span>
+        </button>
       </div>
     </div>
   </div>
@@ -71,10 +76,12 @@
 <script setup>
 import { computed } from 'vue'
 import { useSavedPool } from '@/composables/useSavedPool'
+import { useCardNotes } from '@/composables/useCardNotes'
 
-defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-stats', 'open-notes', 'resume-pool', 'open-print-proxies', 'open-archetypes'])
+defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-stats', 'open-notes', 'resume-pool', 'open-print-proxies', 'open-archetypes', 'open-notes-manager'])
 
 const { savedPool, poolType, clearPool, hasSavedPool: hasSavedPoolFn, getDeckCardCount } = useSavedPool()
+const { noteCount } = useCardNotes()
 
 const hasSavedPool = computed(() => hasSavedPoolFn())
 const deckCardCount = computed(() => getDeckCardCount())
@@ -271,5 +278,23 @@ const deckCardCount = computed(() => getDeckCardCount())
   .info-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.card-notes-btn {
+  position: relative;
+}
+
+.note-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--matrix-green);
+  color: #000;
+  font-size: 0.65rem;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 8px;
+  min-width: 16px;
+  text-align: center;
 }
 </style>

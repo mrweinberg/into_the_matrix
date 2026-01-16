@@ -14,6 +14,7 @@
           @resume-pool="$emit('resume-pool')"
           @open-print-proxies="$emit('open-print-proxies')"
           @open-archetypes="$emit('open-archetypes')"
+          @open-notes-manager="$emit('open-notes-manager')"
         />
       </div>
 
@@ -77,7 +78,8 @@ defineEmits([
   'reset-filters',
   'resume-pool',
   'open-print-proxies',
-  'open-archetypes'
+  'open-archetypes',
+  'open-notes-manager'
 ])
 </script>
 
