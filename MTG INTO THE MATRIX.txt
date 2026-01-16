@@ -444,10 +444,10 @@ Enchanted permanent does not untap during its controller's untap step.
 {E}{E}: Shuffle enchanted permanent into its owner's deck.
 
 [C049] Link Monitor {1}{U}
-Creature — Program Artificer (2/1)
+Creature — Human Artificer (2/1)
 Whenever a creature you control transforms, you get {E}.
 {T}: Add {U}. Spend this mana only to cast spells with digital, instants, or sorceries.
-{T}: Transform target creature with a jack-in or eject ability.
+{1}{U}: Transform target creature with a jack-in or eject ability.
 
 --- UNCOMMONS ---
 
