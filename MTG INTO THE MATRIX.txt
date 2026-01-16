@@ -125,7 +125,7 @@ Destroy target attacking or blocking creature.
 [C009] Deja Vu {W}
 Instant
 Exile target creature you control, then return it to the battlefield.
-If it was transformed, return it transformed and you get.
+If it was transformed, return it transformed and you get {E}{E}.
 
 [C010] Fleet Mechanic {2}{W}
 Creature — Human Artificer (2/3)
@@ -701,7 +701,7 @@ All creatures get -2/-2 until end of turn.
 Whenever a creature dies this turn, if it had digital, you get {E}.
 
 [U042] Information Leech {1}{B}
-Creature - Program Rogue
+Creature - Program Rogue (2/1)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Lifelink
 Whenever you gain life, you may pay {E}{E}. If you do, draw a card.
@@ -914,8 +914,8 @@ If it was a creature, Slag Melt deals 2 damage to that creature's controller.
 [C107] Machine Addict {3}{R}
 Creature - Human Rogue (4/3)
 Haste
-When Machine Addict enters, add {E}{E}{E}.
-At the beginning of your next end step, lose {E}{E}{E}.
+When Machine Addict enters, you get {E}{E}{E}.
+At the beginning of your next end step, you lose {E}{E}{E}.
 
 [C108] Independent Trader {1}{R}
 Creature - Human Citizen (2/1)
@@ -1144,7 +1144,7 @@ Destroy target artifact or enchantment. You get {E}{E}.
 
 [C136] Kinetic Impact {G}
 Sorcery
-Target creature you control deals damage equal to its power to targer creature you don't control.
+Target creature you control deals damage equal to its power to target creature you don't control.
 
 [C137] Sifter of Ruins {1}{G}
 Creature - Human Archivist (1/2)
@@ -1296,7 +1296,7 @@ Put the rest on the bottom of your library in a random order.
 [U100] Mind-Body Sync {W}{U}
 Enchantment
 Whenever a creature you control jacks-in or ejects, put a +1/+1 counter on it.
-{W}{U}: Transform target creature you control with a a jack-in or eject ability.
+{W}{U}: Transform target creature you control with a jack-in or eject ability.
 
 [U101] Nebuchadnezzar's Ace {1}{W}{U}
 Creature — Human Pilot (2/2)
@@ -1356,7 +1356,7 @@ Whenever a land enters under your control, you get {E}.
 [U113] Agent Grey, Suppressor {1}{U}{B}
 Legendary Creature - Agent Program (3/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
-Override a digital creature (When this enters, sacrifice it unless you exile another digital creature you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)
+Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)
 When Agent Grey enters, you may tap up to one target creature. 
 Whenever a creature an opponent controls becomes tapped, you may pay {1}. If you do, put a stun counter on it.
 
@@ -1516,7 +1516,7 @@ You may choose new targets for the copy.
 
 [R116] Agent Smith, Antivirus {3}{U}{B}
 Legendary Creature — Agent Program (4/4)
-Override a digital creature
+Override creature with digital
 Ward {2}, Digital (This creature can block or be blocked only by creatures with digital.)
 Whenever a creature enters under an opponent's control, you may pay {U/B}. If you do, gain control of it until the end of your next turn. Do this only once each turn.
 At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own.

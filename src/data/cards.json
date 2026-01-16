@@ -187,7 +187,7 @@
     "displayType": "Instant",
     "text": [
       "Exile target creature you control, then return it to the battlefield.",
-      "If it was transformed, return it transformed and you get."
+      "If it was transformed, return it transformed and you get {E}{E}."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2101,7 +2101,7 @@
     "id": "U042",
     "name": "Information Leech",
     "cost": "{1}{B}",
-    "type": "Creature - Program Rogue",
+    "type": "Creature - Program Rogue (2/1)",
     "displayType": "Creature - Program Rogue",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
@@ -2112,7 +2112,7 @@
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "",
+    "pt": "2/1",
     "colorIndicator": null,
     "fileName": "U042_information_leech.png"
   },
@@ -2800,8 +2800,8 @@
     "displayType": "Creature - Human Rogue",
     "text": [
       "Haste",
-      "When Machine Addict enters, add {E}{E}{E}.",
-      "At the beginning of your next end step, lose {E}{E}{E}."
+      "When Machine Addict enters, you get {E}{E}{E}.",
+      "At the beginning of your next end step, you lose {E}{E}{E}."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3578,7 +3578,7 @@
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "Target creature you control deals damage equal to its power to targer creature you don't control."
+      "Target creature you control deals damage equal to its power to target creature you don't control."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -4042,7 +4042,7 @@
     "displayType": "Enchantment",
     "text": [
       "Whenever a creature you control jacks-in or ejects, put a +1/+1 counter on it.",
-      "{W}{U}: Transform target creature you control with a a jack-in or eject ability."
+      "{W}{U}: Transform target creature you control with a jack-in or eject ability."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4245,7 +4245,7 @@
     "displayType": "Legendary Creature - Agent Program",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Override a digital creature (When this enters, sacrifice it unless you exile another digital creature you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
+      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
       "When Agent Grey enters, you may tap up to one target creature.",
       "Whenever a creature an opponent controls becomes tapped, you may pay {1}. If you do, put a stun counter on it."
     ],
@@ -4754,7 +4754,7 @@
     "type": "Legendary Creature — Agent Program (4/4)",
     "displayType": "Legendary Creature — Agent Program",
     "text": [
-      "Override a digital creature",
+      "Override creature with digital",
       "Ward {2}, Digital (This creature can block or be blocked only by creatures with digital.)",
       "Whenever a creature enters under an opponent's control, you may pay {U/B}. If you do, gain control of it until the end of your next turn. Do this only once each turn.",
       "At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own."
