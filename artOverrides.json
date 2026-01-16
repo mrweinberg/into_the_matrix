@@ -154,7 +154,8 @@
     },
     {
         "id": "R116",
-        "character": "Hugo Weaving as Agent Smith. White male, short brown hair with receding hairline, angular face, cold expression. Black suit, black tie, rectangular sunglasses, earpiece."
+        "character": "Hugo Weaving as Agent Smith. White male, short brown hair with receding hairline, angular face, cold expression. Black suit, black tie, rectangular sunglasses, earpiece.",
+        "composition": "MENACING DOMINANCE. Standing with cold confidence, arms slightly spread, head tilted with disdain. Absolute authority."
     },
     {
         "id": "M03",
@@ -170,7 +171,8 @@
     },
     {
         "id": "M10",
-        "character": "Hugo Weaving as Agent Smith. White male, short brown hair with receding hairline, angular face, cold menacing expression. Black suit, black tie, rectangular sunglasses."
+        "character": "Hugo Weaving as Agent Smith. White male, short brown hair with receding hairline, angular face, cold menacing expression. Black suit, black tie, rectangular sunglasses.",
+        "composition": "VIRAL THREAT. Multiple Smith copies visible, all with identical cold stares, advancing in synchronized menace."
     },
     {
         "id": "M11",
@@ -184,7 +186,8 @@
     },
     {
         "id": "M16",
-        "character": "Hugo Weaving as Agent Smith, now rogue and unshackled from the system. White male, disheveled appearance, manic expression. Suit may be damaged or dirty."
+        "character": "Hugo Weaving as Agent Smith, now rogue and unshackled from the system. White male, disheveled appearance, manic expression. Suit may be damaged or dirty.",
+        "composition": "UNHINGED CHAOS. Standing amid rain and green code, arms spread wide, laughing maniacally. Complete breakdown of control."
     },
     {
         "id": "C087",

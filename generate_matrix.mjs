@@ -74,13 +74,23 @@ class Card {
   }
 
   // --- 2. LIGHTING ENGINE ---
-  getLighting() {
+  getLighting(world = null) {
     const c = this.getSubjectColor();
-    if (c.includes("White")) return "Lighting: Bright, harsh interrogation lights or 'The Construct' pure white.";
-    if (c.includes("Blue")) return "Lighting: Cool blue, CRT monitor glow, rain-slicked reflections.";
-    if (c.includes("Black")) return "Lighting: Low-key Noir, heavy shadows, bioluminescent red/pink ambient glow (if Real World).";
-    if (c.includes("Red")) return "Lighting: Dynamic, high-contrast, sparks flying, muzzle flashes, emergency red sirens.";
-    if (c.includes("Green")) return "Lighting: Iconic 'Matrix Green' tint, fluorescent office flicker, code cascading in shadows.";
+    const isRealWorld = world && (world.setting.includes("Real World") || world.setting.includes("Zion") || world.setting.includes("Hovercraft") || world.setting.includes("Machine") || world.setting.includes("Power Plant") || world.setting.includes("Nebuchadnezzar"));
+
+    // Real World gets industrial/gritty lighting, never Construct white
+    if (isRealWorld) {
+      if (c.includes("Red")) return "Lighting: Emergency red lighting, sparks, industrial glow.";
+      if (c.includes("Green")) return "Lighting: Dim green ambient glow, industrial fluorescent.";
+      return "Lighting: Low industrial lighting, shadows, rust-colored ambient glow.";
+    }
+
+    // Matrix simulation lighting - avoid mentioning objects, focus on light quality
+    if (c.includes("White")) return "Lighting: Bright, harsh overhead lights, clinical white exposure.";
+    if (c.includes("Blue")) return "Lighting: Cool blue ambient glow, neon signage reflections, rain-slicked surfaces.";
+    if (c.includes("Black")) return "Lighting: Low-key Noir, heavy shadows, streetlamp pools of light.";
+    if (c.includes("Red")) return "Lighting: Dynamic, high-contrast, sparks flying, muzzle flashes, emergency sirens.";
+    if (c.includes("Green")) return "Lighting: Green-tinted ambient light, fluorescent flicker, digital code overlay in shadows.";
     return "Lighting: Cinematic, high contrast.";
   }
 
@@ -132,7 +142,9 @@ class Card {
     const nameLower = this.name.toLowerCase();
 
     if (!typeLower.includes("creature")) return "";
-    if (!typeLower.includes("human") && !typeLower.includes("scout") && !typeLower.includes("soldier") && !typeLower.includes("pilot")) return "";
+    // Exclude non-humanoid types from diversity generation
+    if (typeLower.includes("robot") || typeLower.includes("construct") || typeLower.includes("sentinel")) return "";
+    if (!typeLower.includes("human") && !typeLower.includes("scout") && !typeLower.includes("soldier") && !typeLower.includes("pilot") && !typeLower.includes("citizen") && !typeLower.includes("artificer") && !typeLower.includes("advisor")) return "";
     if (typeLower.includes("legendary")) return "";
 
     const knownCharacters = ["neo", "morpheus", "trinity", "smith", "oracle", "seraph", "niobe", "ghost", "merovingian", "persephone", "keymaker", "architect"];
@@ -220,20 +232,37 @@ class Card {
   getCompositionType() {
     if (!this.type.toLowerCase().includes("creature")) return "";
 
+    const typeLower = this.type.toLowerCase();
+    const isRobot = typeLower.includes("robot") || typeLower.includes("construct");
+
     const roll = Math.floor(Math.random() * 100);
 
+    // Robots get machine-appropriate compositions (no coats, no martial arts)
+    if (isRobot) {
+      if (roll < 25) {
+        return "COMPOSITION: MENACING APPROACH. The machine advancing toward the viewer, tentacles/arms extended, red sensor eyes glowing.";
+      } else if (roll < 50) {
+        return "COMPOSITION: SWARM FORMATION. Multiple units in coordinated pattern, emphasizing their mechanical precision and numbers.";
+      } else if (roll < 75) {
+        return "COMPOSITION: MECHANICAL DETAIL. Close-up on joints, sensors, or weapons systems. Industrial texture and cold metal.";
+      } else {
+        return "COMPOSITION: HUNTING/SEARCHING. The machine scanning an environment, sensor pod rotating, searching for targets.";
+      }
+    }
+
+    // Humanoid creatures get varied compositions
     if (roll < 20) {
       return "COMPOSITION: DYNAMIC ACTION. High kinetic energy. Mid-air kick, dodging bullets, or diving while shooting. Use motion blur and Dutch angles.";
     } else if (roll < 40) {
       return "COMPOSITION: HEROIC STANCE. The subject is standing tall, centered, looking cool and collected. Coat billowing in the wind. Iconic movie poster vibe.";
     } else if (roll < 60) {
-      return "COMPOSITION: INTENSE CLOSE-UP. Focus on the face, sunglasses reflections, or specific cybernetic details. Shallow depth of field, high emotion or focus.";
+      return "COMPOSITION: INTENSE CLOSE-UP. Focus on the face, eyes, or specific cybernetic details. Shallow depth of field, high emotion or focus.";
     } else if (roll < 75) {
       return "COMPOSITION: IMPOSING LOW ANGLE. The camera looks up at the subject, making them appear powerful and dominant. Noir lighting, strong shadows.";
     } else if (roll < 90) {
-      return "COMPOSITION: ENVIRONMENTAL WIDE SHOT. The subject is small within a massive, impressive setting. Emphasize the scale of the world.";
+      return "COMPOSITION: ENVIRONMENTAL WIDE SHOT. The subject is placed within a massive, impressive setting. Emphasize the scale of the world.";
     } else {
-      return "COMPOSITION: STEALTH / TENSION. The subject is taking cover behind a wall, peeking around a corner, or hacking a terminal in the shadows. Suspenseful atmosphere.";
+      return "COMPOSITION: STEALTH / TENSION. The subject is taking cover behind a wall, peeking around a corner, or moving through shadows. Suspenseful atmosphere.";
     }
   }
 
@@ -351,7 +380,7 @@ class Card {
     const robotVisuals = this.getRobotVisuals();
 
     // NEW V33 FEATURES
-    let lighting = this.getLighting();
+    let lighting = this.getLighting(world);
     const visualKeywords = this.getVisualKeywords();
     const framingInstruction = this.getFramingInstruction();
     if (framingInstruction) {
@@ -631,10 +660,14 @@ async function main() {
   const isForce = args.includes('--force') || args.includes('-f');
   const isCleanup = args.includes('--cleanup') || args.includes('-c');
 
-  let specificId = null;
+  let specificIds = null;
   const specificIndex = args.findIndex(arg => arg === '--specific' || arg === '-s');
   if (specificIndex !== -1 && args[specificIndex + 1]) {
-    specificId = args[specificIndex + 1].replace(/[\[\]]/g, '');
+    // Support comma-separated list of IDs, e.g., -s M03,M09,R116
+    specificIds = args[specificIndex + 1]
+      .replace(/[\[\]]/g, '')
+      .split(',')
+      .map(id => id.trim().toUpperCase());
   }
 
   const allCards = parseDesignBible(INPUT_FILE);
@@ -663,15 +696,15 @@ async function main() {
   console.log(`   MATRIX SET ART GENERATOR (V35 - Efficient Delay)`);
   if (isDryRun) console.log("   ⚠️  DRY RUN MODE ENABLED ⚠️");
   if (isForce) console.log("   🔥 FORCE MODE: OVERWRITING ALL FILES 🔥");
-  if (specificId) console.log(`   🎯 SPECIFIC MODE: Targeting Card ID '${specificId}'`);
+  if (specificIds) console.log(`   🎯 SPECIFIC MODE: Targeting Card ID(s) '${specificIds.join(", ")}'`);
   console.log("------------------------------------------");
 
   let cardsToProcess = [];
 
-  if (specificId) {
-    cardsToProcess = allCards.filter(card => card.id === specificId);
+  if (specificIds) {
+    cardsToProcess = allCards.filter(card => specificIds.includes(card.id.toUpperCase()));
     if (cardsToProcess.length === 0) {
-      console.error(`❌ Error: Card ID '${specificId}' not found in ${INPUT_FILE}`);
+      console.error(`❌ Error: No cards matching IDs '${specificIds.join(", ")}' found in ${INPUT_FILE}`);
       return;
     }
   } else {
@@ -684,7 +717,7 @@ async function main() {
   const ai = new GoogleGenAI({ apiKey: API_KEY });
 
   for (let i = 0; i < cardsToProcess.length; i++) {
-    const forceThisCard = isForce || (specificId !== null);
+    const forceThisCard = isForce || (specificIds !== null);
 
     // Capture return value
     const didGenerate = await generateArtForCard(ai, cardsToProcess[i], isDryRun, forceThisCard);
