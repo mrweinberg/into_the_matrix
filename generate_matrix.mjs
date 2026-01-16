@@ -119,7 +119,11 @@ class Card {
   }
 
   hasDigitalKeyword() {
-    const strictDigitalRegex = /(?:^|,\s*)Digital(?:\s*,|\s*$)/i;
+    // Match "Digital" as a keyword ability, allowing:
+    // - Start of line or after comma: (?:^|,\s*)
+    // - The word "Digital" (case insensitive)
+    // - Followed by: comma, end of line, or reminder text in parentheses
+    const strictDigitalRegex = /(?:^|,\s*)[Dd]igital(?:\s*,|\s*\(|\s*$)/i;
     return this.text.some(line => strictDigitalRegex.test(line));
   }
 
@@ -322,7 +326,7 @@ class Card {
     } else if (world.setting.includes("Real World") || world.setting.includes("Zion") || world.setting.includes("Machine")) {
       baseStyle = "Gritty Impasto Realism. Heavy texture, emphasis on rust, sweat, grime. Classical oil painting vibe.";
     } else if (world.setting.includes("Matrix") || world.setting.includes("Construct") || world.setting.includes("City")) {
-      baseStyle = "Sleek, High-Fidelity Realism. Sharp edges, polished surfaces, clear lighting. 90s sci-fi concept art.";
+      baseStyle = "Sleek, High-Fidelity Realism Painting. Sharp edges, polished surfaces, clear lighting. Realistic oil painting.";
     }
 
     const roll = Math.floor(Math.random() * 100);
@@ -356,32 +360,32 @@ class Card {
 
     let likenessInstruction = "";
     const override = artOverrides[this.id];
-    const characterDesc = override?.character;
+    const characterDesc = override?.character?.replace(/\.+$/, '');  // Remove trailing periods
     if (this.type.toLowerCase().includes("legendary")) {
       if (characterDesc) {
         // We have a specific character description from overrides - use it
-        likenessInstruction = `CHARACTER IDENTITY: This is a LEGENDARY character. SPECIFIC APPEARANCE: ${characterDesc}. The illustration MUST depict this specific character accurately.`;
+        likenessInstruction = `LEGENDARY CHARACTER. SPECIFIC APPEARANCE: ${characterDesc}. Depict this specific character accurately.`;
       } else {
         // Legendary but no character data (might be a vehicle or unknown character)
-        likenessInstruction = "CHARACTER IDENTITY: This is a LEGENDARY character/subject. The illustration MUST strictly resemble the specific character/vehicle as they appear in The Matrix films.";
+        likenessInstruction = "LEGENDARY character/subject. Must resemble the specific character/vehicle from The Matrix films.";
       }
     } else if (this.type.toLowerCase().includes("creature")) {
-      likenessInstruction = "CHARACTER IDENTITY: Generic character. Do NOT resemble any specific actor/character from The Matrix films.";
+      likenessInstruction = "Generic character. Do NOT resemble any specific actor from The Matrix films.";
     } else {
-      likenessInstruction = "CHARACTER IDENTITY: N/A. Use your judgment based on the subject. Ensure that characters generated are diverse.";
+      likenessInstruction = "Use your judgment. Ensure diverse character representation.";
     }
 
     let sunglassesConstraint = "";
     if (world.setting.includes("Real World") || world.setting.includes("Zion") || world.setting.includes("Machine") || world.setting.includes("Hovercraft") || world.setting.includes("Power Plant")) {
-      sunglassesConstraint = "6. NO SUNGLASSES. Characters in the Real World/Zion do NOT wear sunglasses.";
+      sunglassesConstraint = "NO SUNGLASSES. Characters in the Real World/Zion never wear sunglasses.";
     } else {
-      sunglassesConstraint = "6. Sunglasses are characteristic of the Matrix simulation.";
+      sunglassesConstraint = "SUNGLASSES encouraged. Characteristic of the Matrix simulation.";
     }
 
     let visualContext = this.flavor.length > 0 ? this.flavor : this.text.join(" ");
 
-    let subjectDescription = `Main focus features **${subjectColor}** accents. ${likenessInstruction} ${diversity}`;
-    let weaponry = "4. WEAPONRY: If the character needs a weapon, use modern firearms, martial arts, or futuristic lightning rifles (only if Real World).";
+    let subjectDescription = `Color accents: ${subjectColor}. ${likenessInstruction} ${diversity}`.trim();
+    let weaponry = "WEAPONS: Modern firearms, martial arts, or lightning rifles (Real World only). No fantasy/medieval weapons.";
 
     if (override) {
       console.log(`   ⚡ Applying overrides for ${this.id}...`);
@@ -390,9 +394,9 @@ class Card {
       if (override.composition) composition = "COMPOSITION: " + override.composition;
       if (override.artStyle) artStyle = override.artStyle;
       if (override.lighting) lighting = override.lighting;
-      if (override.sunglasses === false) sunglassesConstraint = "6. NO SUNGLASSES.";
-      if (override.sunglasses === true) sunglassesConstraint = "6. Sunglasses are MANDATORY.";
-      if (override.weaponry === false) weaponry = false;
+      if (override.sunglasses === false) sunglassesConstraint = "NO SUNGLASSES for this character.";
+      if (override.sunglasses === true) sunglassesConstraint = "SUNGLASSES MANDATORY for this character.";
+      if (override.weaponry === false) weaponry = "";
     }
 
     const descriptiveText = visualContext
@@ -400,44 +404,60 @@ class Card {
       .replace(/Digital|Jack-in|Eject|Override|Scry|Ward/g, "")
       .replace(/\(Color Indicator: .*?\)/g, "")
       .replace(/\\/g, "")
+      .replace(/---.*?---/g, "")  // Remove section headers like "--- MYTHICS ---"
+      .replace(/\s+/g, " ")       // Collapse multiple spaces
+      .trim()
       .substring(0, 600);
 
+    // Build constraints array, filtering out empty entries
+    const constraints = [
+      world.tech,
+      weaponry,
+      robotVisuals,
+      sunglassesConstraint
+    ].filter(c => c && c.trim());
+
+    // Build the numbered constraints section
+    const constraintsText = constraints
+      .map((c, i) => `${i + 1}. ${c.replace(/^\d+\.\s*/, '')}`)  // Remove any existing numbers, add fresh ones
+      .join("\n      ");
+
+    // Build subject details, filtering empty entries
+    const subjectDetails = [subjectDescription, visualKeywords]
+      .filter(s => s && s.trim())
+      .map(s => `- ${s}`)
+      .join("\n      ");
+
     return `
-      Generate an image.
-      MANDATORY: NO TEXT. Do not render the card title, mana cost, or text box. This is an illustration ONLY.
-      
-      Subject: An illustration for a Magic: The Gathering card named "${this.name}". 
-      Universe: The Matrix (Sci-Fi / Cyberpunk).
+      Generate an image for a Magic: The Gathering card.
+
+      CRITICAL: NO TEXT IN IMAGE. No card title, mana symbols, or text boxes. Illustration only.
+
+      === CARD INFO ===
+      Name: "${this.name}"
       Type: ${this.type}
-      
-      STRICT VISUAL CONSTRAINTS:
-      1. ${world.tech} (Strictly adhere to this era).
-      ${weaponry}
-      5. ${robotVisuals}
-      ${sunglassesConstraint}
-      
-      **SCENE RECOGNITION PROTOCOL:**
-      - ANALYZE the Card Name: "${this.name}".
-      - Does this name refer to a specific, iconic scene or shot from The Matrix movies?
-      - IF YES: Prioritize depicting that specific scene.
-      - IF NO: Use the Setting, Subject, and Composition details below.
-      
-      FALLBACK SETTING & TONE (Use if not a specific movie scene):
-      - Location: ${world.setting}.
-      - ${lighting}
-      - Color Palette/Mood: ${world.tone}.
-      - ${composition}
-      
-      SUBJECT DETAILS:
-      - ${subjectDescription}
-      - ${visualKeywords}
-      
-      ACTION/MOOD DESCRIPTION: "${descriptiveText}"
-      
-      ART STYLE: ${artStyle}
-      - Use dramatic lighting and strong composition.
-      
-      Aspect Ratio: 4:3.
+      Universe: The Matrix (1999 film trilogy)
+
+      === VISUAL CONSTRAINTS ===
+      ${constraintsText}
+
+      === SETTING ===
+      Location: ${world.setting}
+      ${lighting}
+      Color Palette: ${world.tone}
+
+      === COMPOSITION ===
+      ${composition}
+
+      === SUBJECT ===
+      ${subjectDetails}
+
+      === MOOD/ACTION ===
+      ${descriptiveText || "Dramatic scene fitting the card name and type."}
+
+      === STYLE ===
+      ${artStyle}
+      Dramatic lighting. Strong composition. Aspect ratio: 4:3.
     `.trim();
   }
 

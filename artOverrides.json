@@ -13,43 +13,58 @@
     },
     {
         "id": "R023",
-        "character": "Randall Duk Kim as The Keymaker. Elderly Asian male, grey hair, small stature, gentle demeanor. Wears simple workman's clothes, carries many keys."
+        "character": "Randall Duk Kim as The Keymaker. Elderly Asian male, grey hair, small stature, gentle demeanor. Wears simple workman's clothes, carries many keys.",
+        "composition": "GENTLE CRAFTSMAN. Seated at workbench or standing calmly, surrounded by keys, working on a lock or holding a key ring.",
+        "setting": "The Keymaker's Workshop. Walls covered with thousands of keys, workbenches with locks, dim warm lighting."
     },
     {
         "id": "R026",
-        "character": "Keanu Reeves as Thomas Anderson/Neo before awakening. Office worker, short neat hair, tired expression, suit."
+        "character": "Keanu Reeves as Thomas Anderson/Neo before awakening. Office worker, short neat hair, tired expression, suit.",
+        "composition": "ISOLATED CUBICLE. Seated at desk in bland office, hunched over keyboard, exhausted and disconnected from surroundings.",
+        "setting": "Metacortex Office. Sterile grey cubicle farm, fluorescent lighting, CRT monitors, late 1990s corporate aesthetic."
     },
     {
         "id": "R028",
-        "character": "Collin Chou as Seraph. Asian male, serene expression, traditional Chinese clothing aesthetic, guardian bearing. The Oracle's protector."
+        "character": "Collin Chou as Seraph. Asian male, serene expression, traditional Chinese clothing aesthetic, guardian bearing. The Oracle's protector.",
+        "setting": "The Oracle's Apartment building hallway or the Tea House. Simple, clean, Asian-influenced decor."
     },
     {
         "id": "M02",
-        "character": "Neil Patrick Harris as The Analyst. White male, styled brown hair, clean-shaven, smug knowing expression. Wears glasses, business casual attire. From Matrix Resurrections."
+        "character": "Neil Patrick Harris as The Analyst. White male, styled brown hair, clean-shaven, smug knowing expression. Wears glasses, business casual attire. From Matrix Resurrections.",
+        "composition": "THERAPIST POSE. Seated casually, leaning back with smug confidence, legs crossed, speaking to unseen patient.",
+        "setting": "Modern therapist's office. Clean, minimalist, comfortable furniture, large windows with city view."
     },
     {
         "id": "U052",
-        "character": "Paul Goddard as Agent Brown. White male, short brown hair, angular face, cold expression. Black suit, black tie, rectangular sunglasses, earpiece. Identical Agent appearance."
+        "character": "Agent Brown. CRITICAL: DO NOT DEPICT HUGO WEAVING. Depicted as a white male with sandy blondeshort hair, small close-set eyes, flushed cheeks. Looks like a middle manager, not a warrior. Black suit straining slightly. Completely different person from Agent Smith.",
+        "composition": "STOIC MENACE. Standing rigid, hands clasped behind back, emotionless surveillance pose."
     },
     {
         "id": "R041",
-        "character": "A Program Vampire from the Merovingian's court. Pale skin, sharp features, elegant but predatory bearing. Dark formal clothing with old-world European aesthetic."
+        "character": "A Program Vampire from the Merovingian's court. Pale skin, sharp features, elegant but predatory bearing. Dark formal clothing with old-world European aesthetic.",
+        "setting": "The Merovingian's Chateau. Grand marble staircase, ornate chandeliers, gothic European opulence."
     },
     {
         "id": "R042",
-        "character": "Bruce Spence as The Trainman. Tall gaunt white male, disheveled grey hair, wild eyes, shabby clothing. Controls Mobil Ave station."
+        "character": "Bruce Spence as The Trainman. Tall gaunt white male, disheveled grey hair, wild eyes, shabby clothing. Controls Mobil Ave station.",
+        "setting": "Mobil Ave Subway Station. Empty, liminal subway platform, flickering lights, infinite white void beyond tracks."
     },
     {
         "id": "R047",
-        "character": "Ian Bliss as Bane/Smith. White male possessed by Smith, increasingly unhinged expression, self-inflicted scars on arms."
+        "character": "Ian Bliss as Bane/Smith. White male possessed by Smith, increasingly unhinged expression, self-inflicted scars on arms.",
+        "setting": "Hovercraft Medical Bay or corridor. Dim lighting, cramped metal walls, unsettling atmosphere."
     },
     {
         "id": "R064",
-        "character": "Joe Pantoliano as Cypher. White male, receding dark curly hair, unshaven, weathered face, cynical expression. Wears shabby clothing."
+        "character": "Joe Pantoliano as Cypher. White male, receding dark curly hair, unshaven, weathered face, cynical expression. Wears shabby clothing.",
+        "composition": "SCHEMING TRAITOR. Seated alone, hunched and secretive, lit from below or by screen glow, distrustful glance.",
+        "setting": "The Nebuchadnezzar operator station at night. Alone, lit by green monitor glow, conspiratorial atmosphere."
     },
     {
         "id": "R065",
-        "character": "A seductive Program from the Matrix. Striking appearance, red dress or red-themed outfit, dangerous allure."
+        "character": "A seductive Program from the Matrix. Striking appearance, red dress or red-themed outfit, dangerous allure.",
+        "composition": "ALLURING PRESENCE. Standing confidently, commanding attention, sensual pose, dangerous beauty on display.",
+        "setting": "Busy Matrix city street. Crowd of people in background, she stands out in vivid red against grey surroundings."
     },
     {
         "id": "R068",
@@ -61,15 +76,19 @@
     },
     {
         "id": "U104",
-        "character": "Robert Taylor as Agent Jones. White male, short dark hair, angular face, cold expression. Black suit, black tie, rectangular sunglasses, earpiece. Identical Agent appearance."
+        "character": "Agent Jones. CRITICAL: DO NOT DEPICT HUGO WEAVING. Depicted as a VERY TALL, EXTREMELY THIN white male with a LONG NARROW FACE, PROMINENT NOSE, and SUNKEN CHEEKS. Jet black slicked hair, pale almost sickly complexion. Looks gaunt and skeletal. Black suit hangs loosely on thin frame. Completely different person from Agent Smith.",
+        "composition": "HUNTING STANCE. Alert, scanning for targets, one hand reaching for concealed weapon."
     },
     {
         "id": "U105",
-        "character": "Matt Doran as Mouse. Young white male, boyish face, spiky brown hair, slight build, eager expression. The youngest crew member, enthusiastic programmer."
+        "character": "Matt Doran as Mouse. Early 20s white male, boyish face, spiky brown hair, slight build, eager expression. The youngest crew member, enthusiastic programmer.",
+        "composition": "EAGER PROGRAMMER. At a terminal or showing off code, enthusiastic expression, gesturing while explaining something.",
+        "setting": "The Nebuchadnezzar interior."
     },
     {
         "id": "U112",
-        "character": "Marcus Chong as Tank. Young African American male, shaved head, muscular build, warm smile. Born in Zion - no jack plugs. Wears simple worn clothing."
+        "character": "Marcus Chong as Tank. Young half-black/half-chinese male, shaved head, toned but thin build, warm smile. Born in Zion - no jack plugs. Wears simple worn clothing.",
+        "composition": "OPERATOR AT STATION. Seated before multiple screens with headset, focused but with warm expression, ready to guide the crew."
     },
     {
         "id": "U113",
@@ -80,11 +99,14 @@
     },
     {
         "id": "U114",
-        "character": "Adrian and Neil Rayment as The Twins. Identical white males, long white dreadlocks, pale almost albino skin, silver/white clothing. Can phase through objects."
+        "character": "Adrian and Neil Rayment as The Twins. Identical white males, long white dreadlocks, pale almost albino skin, silver/white clothing. Can phase through objects.",
+        "setting": "Matrix Highway or the Merovingian's Chateau. High-speed chase or elegant but dangerous environment."
     },
     {
         "id": "U115",
-        "character": "Monica Bellucci as Persephone. Italian female, long dark hair, pale skin, melancholic beauty, elegant gowns."
+        "character": "Monica Bellucci as Persephone. Italian female, long dark hair, pale skin, melancholic beauty, elegant gowns.",
+        "composition": "MELANCHOLIC BEAUTY. Seated or leaning against ornate furniture, wistful expression, isolated in her gilded cage.",
+        "setting": "The Merovingian's Chateau. Ornate European interior, velvet furniture, chandeliers, trapped in opulent prison."
     },
     {
         "id": "U117",
@@ -100,7 +122,8 @@
     },
     {
         "id": "R106",
-        "character": "Harry Lennix as Commander Lock. African American male, military bearing, stern expression, shaved head. Zion military commander."
+        "character": "Harry Lennix as Commander Lock. African American male, military bearing, stern expression, shaved head. Zion military commander.",
+        "setting": "Zion Command Center. War room with tactical displays, military personnel, serious atmosphere."
     },
     {
         "id": "R107",
@@ -116,7 +139,9 @@
     },
     {
         "id": "R114",
-        "character": "Lambert Wilson as The Merovingian. French white male, slicked-back dark hair, goatee, aristocratic bearing, arrogant expression. Expensive tailored suits."
+        "character": "Lambert Wilson as The Merovingian. French white male, slicked-back dark hair, goatee, aristocratic bearing, arrogant expression. Expensive tailored suits.",
+        "composition": "DECADENT KING. Seated on a throne-like chair or at head of table, glass of wine, superior sneer, surrounded by opulence.",
+        "setting": "Le Vrai restaurant or the Chateau dining room. Opulent French restaurant, fine wine, decadent atmosphere."
     },
     {
         "id": "R115",
@@ -133,11 +158,15 @@
     },
     {
         "id": "M03",
-        "character": "Gloria Foster as The Oracle. Elderly African American woman, grey hair, warm maternal presence, knowing smile. Wears simple housedress, often baking cookies."
+        "character": "Gloria Foster as The Oracle. Elderly African American woman, grey hair, warm maternal presence, knowing smile. Wears simple housedress, often baking cookies.",
+        "composition": "WARM MATERNAL. Seated in kitchen or on porch, warm smile, offering cookies or wisdom, soft natural lighting.",
+        "setting": "The Oracle's Apartment kitchen. Warm, homey, cookies baking, simple modest furnishings, afternoon light."
     },
     {
         "id": "M09",
-        "character": "Helmut Bakaitis as The Architect. Elderly white male, white hair and beard, stern cold expression. White suit, sits in monitor room."
+        "character": "Helmut Bakaitis as The Architect. Elderly white male, white hair and beard, stern cold expression. White suit, sits in monitor room.",
+        "composition": "COLD CREATOR. Seated in white chair, surrounded by monitors showing infinite possibilities, detached clinical expression.",
+        "setting": "The Architect's Monitor Room. Curved wall of hundreds of screens, stark white architecture, clinical and cold."
     },
     {
         "id": "M10",
@@ -145,7 +174,9 @@
     },
     {
         "id": "M11",
-        "character": "Tanveer K. Atwal as Sati. Young South Asian girl, long dark hair, innocent curious expression. Program child."
+        "character": "Tanveer K. Atwal as Sati. Young South Asian girl, long dark hair, innocent curious expression. Program child.",
+        "composition": "INNOCENT WONDER. Child looking up at something beautiful, soft lighting, peaceful expression, perhaps watching her sunrise.",
+        "setting": "Matrix park or street at sunrise. Beautiful golden light, peaceful early morning, her created sunrise painting the sky."
     },
     {
         "id": "M12",
@@ -215,5 +246,59 @@
         "subject": "A flood of Sentinels chasing two scared humans",
         "setting": "The sewers of the real world",
         "composition": "On the left are the two humans, and the rest of the sewer pipe is full of sentinels."
+    },
+    {
+        "id": "M14",
+        "subject": "The Nebuchadnezzar hovercraft. ICONIC SHIP: Resembling a rugged, metallic beetle, the ship has a bulky, submarine-like hull designed for sewer navigation. Its dark grey surface is encased in industrial plating, exposed pipes, and vents. Instead of wings, it utilizes heavy electromagnetic pads that emit crackling blue lightning for propulsion. The aesthetic is purely functional and scavenged, devoid of sleek lines.",
+        "setting": "Real World sewer tunnels. Dark mechanical passages, water below, pipes and cables lining walls.",
+        "composition": "The ship in profile or three-quarter view, hovering through massive mechanical tunnels. Blue glow from hover pads illuminating surroundings."
+    },
+    {
+        "id": "R131",
+        "subject": "The Logos hovercraft. Captain Niobe's ship. DISTINCT FROM NEBUCHADNEZZAR: Compact, squat, beetle-like design. Heavily armored with curved hull plating. Gunmetal grey. Fewer but LARGER electromagnetic hover pads on thick articulated struts. Cockpit integrated into front, not on a long neck. Dense bulldog-like silhouette. Built for speed and tight maneuvers.",
+        "setting": "Real World mechanical tunnels. Navigating tight passages at high speed.",
+        "composition": "Dynamic angle showing the compact armored design, blue lightning crackling from hover pads."
+    },
+    {
+        "id": "R132",
+        "subject": "The Ducati 996 motorcycle. INSIDE THE MATRIX: Sleek black Italian sportbike. Trinity's iconic motorcycle from the highway chase. Low aggressive stance, distinctive single-sided swingarm, twin headlights. 1990s design aesthetic. Glossy black with chrome accents.",
+        "setting": "Matrix city street or highway. Urban environment with green-tinted lighting.",
+        "composition": "Dynamic angle emphasizing speed and sleekness. Motion blur on wheels if moving."
+    },
+    {
+        "id": "M13",
+        "subject": "The Hammer hovercraft. A HEAVY combat vessel, much larger and more militarized than standard ships. Bristling with weapons. Thick armored hull. Multiple heavy gun turrets visible. Industrial military aesthetic. Dull olive/brown coloring with battle damage.",
+        "setting": "Real World surface or tunnels. Battle conditions, smoke and debris.",
+        "composition": "Imposing view showing scale and weaponry. Sentinel wreckage nearby if space allows."
+    },
+    {
+        "id": "U139",
+        "subject": "The Mjolnir hovercraft (also called The Hammer of Zion). A heavily armed Zion warship. Large frame with reinforced hull. Multiple weapons systems. Industrial military design. Named for Thor's hammer - looks powerful and unstoppable.",
+        "setting": "Zion Dock or Real World tunnels. Combat-ready atmosphere.",
+        "composition": "Heroic angle emphasizing power and scale. APUs or other military equipment nearby."
+    },
+    {
+        "id": "U141",
+        "subject": "A Sentinel Trap-Ship. A hovercraft modified or disguised to appear damaged or derelict, used as bait for Sentinels. Deliberate exposed wiring and fake damage. Hidden weapons or EMP charge visible to viewer.",
+        "setting": "Real World tunnels. Lying in wait, partially concealed.",
+        "composition": "Tense atmosphere. Ship looks abandoned but dangerous. Subtle signs of the trap."
+    },
+    {
+        "id": "C153",
+        "subject": "A standard Zion hovercraft. Generic military transport vessel. Similar skeletal design to Nebuchadnezzar but less distinctive. Functional, battle-worn, mass-produced appearance. Electromagnetic hover pads, exposed framework, cables and pipes.",
+        "setting": "Real World tunnels or Zion dock.",
+        "composition": "Workmanlike framing, emphasizing utility over glamour."
+    },
+    {
+        "id": "C154",
+        "subject": "A scavenged/rebuilt hovercraft chassis. Clearly salvaged from wreckage, patched together from multiple ships. Mismatched plating, improvised repairs, welded sections. Functional but rough. Desperate engineering.",
+        "setting": "Real World junkyard or repair bay. Surrounded by scrap metal.",
+        "composition": "Show the patchwork nature, different colored metal sections welded together."
+    },
+    {
+        "id": "C158",
+        "subject": "A combat hovercraft in action. Military-grade Zion vessel engaged in battle. Gun turrets firing, hover pads blazing. Aggressive flight posture. Sentinel parts or explosions nearby.",
+        "setting": "Real World battle. Tunnel combat or surface warfare against machines.",
+        "composition": "Dynamic action shot. Muzzle flashes, debris, desperate combat."
     }
 ]
