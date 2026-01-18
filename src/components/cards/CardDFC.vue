@@ -1,8 +1,8 @@
 <template>
   <div class="dfc-wrapper">
-    <CardItem :card="card" :clickable="clickable" @click="handleClick" />
+    <CardItem :card="card" :clickable="clickable" @click="handleClick" @edit-note="handleEditNote" />
     <div class="transform-icon">⇄</div>
-    <CardItem :card="backCard" :clickable="clickable" @click="handleClick" />
+    <CardItem :card="backCard" :clickable="clickable" @click="handleClick" @edit-note="handleEditNote" />
   </div>
 </template>
 
@@ -24,9 +24,13 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['click'])
+const emit = defineEmits(['click', 'edit-note'])
 
 function handleClick() {
   emit('click', props.card)
+}
+
+function handleEditNote(card) {
+  emit('edit-note', card)
 }
 </script>

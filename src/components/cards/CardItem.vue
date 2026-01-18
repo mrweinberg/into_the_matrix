@@ -95,9 +95,14 @@ function formatText(text) {
   return formated
 }
 
-function handleClick() {
+function handleClick(event) {
   if (props.clickable) {
-    emit('click', props.card)
+    // Command-click (Mac) or Ctrl-click (Windows) opens notes modal
+    if (event.metaKey || event.ctrlKey) {
+      emit('edit-note', props.card)
+    } else {
+      emit('click', props.card)
+    }
   }
 }
 
