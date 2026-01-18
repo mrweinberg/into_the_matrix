@@ -78,7 +78,7 @@
     "type": "Creature — Human Monk (1/2)",
     "displayType": "Creature — Human Monk",
     "text": [
-      "{U}: Jack-in. ({U}: Transform this card. Activate only as a sorcery.)"
+      "{W}: Jack-in. ({W}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -97,6 +97,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "First strike",
+      "Whenever this creature attacks, scry 1.",
       "{W}: Eject. ({W}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
@@ -127,13 +128,14 @@
   {
     "id": "C006",
     "name": "Stasis Field",
-    "cost": "{1}{W}",
+    "cost": "{2}{W}",
     "type": "Enchantment — Aura",
     "displayType": "Enchantment — Aura",
     "text": [
       "Enchant creature",
       "When Stasis Field enters, scry 1.",
-      "Enchanted creature can't attack or block."
+      "Enchanted creature can't attack or block.",
+      "{E}{E}{E}: Exile enchanted creature."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -215,59 +217,6 @@
     "fileName": "C010_fleet_mechanic.png"
   },
   {
-    "id": "C011",
-    "name": "Zion Armorer",
-    "cost": "{2}{W}",
-    "type": "Creature — Human Soldier (2/3)",
-    "displayType": "Creature — Human Soldier",
-    "text": [
-      "When Zion Armorer enters, create a Gun token."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "2/3",
-    "colorIndicator": null,
-    "fileName": "C011_zion_armorer.png"
-  },
-  {
-    "id": "C012",
-    "name": "Youthful Welder",
-    "cost": "{W}",
-    "type": "Creature — Human Artificer (1/1)",
-    "displayType": "Creature — Human Artificer",
-    "text": [
-      "{T}: Target Vehicle you control gets +2/+1 until end of turn.",
-      "{2}{W}, {T}: Create a Gun token."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "1/1",
-    "colorIndicator": null,
-    "fileName": "C012_youthful_welder.png"
-  },
-  {
-    "id": "C013",
-    "name": "Bullet Time",
-    "cost": "{1}{W}",
-    "type": "Instant",
-    "displayType": "Instant",
-    "text": [
-      "Target creature gains protection from artifacts, from instants, and from sorceries until end of turn.",
-      "Prevent all combat damage that would be dealt to it this turn."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "C013_bullet_time.png"
-  },
-  {
     "id": "C014",
     "name": "Prophesizing Elder",
     "cost": "{4}{W}",
@@ -275,7 +224,8 @@
     "displayType": "Creature — Human Cleric",
     "text": [
       "Vigilance",
-      "When Prophesizing Elder enters, scry 2 and you gain 3 life."
+      "When Prophesizing Elder enters, scry 2 and you gain 3 life.",
+      "Basic landcycling {2}"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -664,6 +614,24 @@
     "fileName": "U013_extraction_mission.png"
   },
   {
+    "id": "U014",
+    "name": "Youthful Welder",
+    "cost": "{W}",
+    "type": "Creature — Human Artificer (1/1)",
+    "displayType": "Creature — Human Artificer",
+    "text": [
+      "{T}: Target Vehicle you control gets +2/+1 until end of turn.",
+      "{2}{W}, {T}: Create a Gun token."
+    ],
+    "flavor": "",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "1/1",
+    "colorIndicator": null,
+    "fileName": "U014_youthful_welder.png"
+  },
+  {
     "id": "R001",
     "name": "Emergency Protocol",
     "cost": "{1}{W}",
@@ -913,7 +881,7 @@
     "displayType": "Creature — Human Wizard Program",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "This creature cannot be blocked.",
+      "Whenever this creature deals combat damage to a player, you get {E}{E}.",
       "{U}: Eject. ({U}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
@@ -962,44 +930,6 @@
     "fileName": "C032b_backdoor_accessor_back.png"
   },
   {
-    "id": "C033",
-    "name": "Local Beat Cop",
-    "cost": "{1}{U}",
-    "type": "Creature — Program Agent (2/1)",
-    "displayType": "Creature — Program Agent",
-    "text": [
-      "Flash, digital (This creature can block or be blocked only by creatures with digital.)",
-      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
-      "When Local Beat Cop enters, tap up to one target creature and put a stun counter on it."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "2/1",
-    "colorIndicator": null,
-    "fileName": "C033_local_beat_cop.png"
-  },
-  {
-    "id": "C034",
-    "name": "System Scan",
-    "cost": "{1}{U}",
-    "type": "Sorcery",
-    "displayType": "Sorcery",
-    "text": [
-      "Target opponent reveals their hand.",
-      "Look at the top card of their library. You may put it in their graveyard.",
-      "Draw a card."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "C034_system_scan.png"
-  },
-  {
     "id": "C035",
     "name": "Data Courier",
     "cost": "{1}{U}",
@@ -1019,24 +949,6 @@
     "fileName": "C035_data_courier.png"
   },
   {
-    "id": "C036",
-    "name": "Blue Screen",
-    "cost": "{1}{U}",
-    "type": "Instant",
-    "displayType": "Instant",
-    "text": [
-      "Tap target creature. Put two stun counters on it.",
-      "You get {E}."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "C036_blue_screen.png"
-  },
-  {
     "id": "C037",
     "name": "Compile Error",
     "cost": "{1}{U}",
@@ -1053,24 +965,6 @@
     "pt": "",
     "colorIndicator": null,
     "fileName": "C037_compile_error.png"
-  },
-  {
-    "id": "C038",
-    "name": "Corrupted Packet",
-    "cost": "{U}",
-    "type": "Instant",
-    "displayType": "Instant",
-    "text": [
-      "Target creature gets -3/-0 until end of turn.",
-      "Draw a card."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "C038_corrupted_packet.png"
   },
   {
     "id": "C039",
@@ -1254,25 +1148,6 @@
     "pt": "",
     "colorIndicator": null,
     "fileName": "C048_glitch_trap.png"
-  },
-  {
-    "id": "C049",
-    "name": "Link Monitor",
-    "cost": "{1}{U}",
-    "type": "Creature — Human Artificer (2/1)",
-    "displayType": "Creature — Human Artificer",
-    "text": [
-      "Whenever a creature you control transforms, you get {E}.",
-      "{T}: Add {U}. Spend this mana only to cast spells with digital, instants, or sorceries.",
-      "{1}{U}: Transform target creature with a jack-in or eject ability."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "2/1",
-    "colorIndicator": null,
-    "fileName": "C049_link_monitor.png"
   },
   {
     "id": "U020",
@@ -1511,6 +1386,44 @@
     "fileName": "U031_copy_and_paste.png"
   },
   {
+    "id": "U032",
+    "name": "Local Beat Cop",
+    "cost": "{1}{U}",
+    "type": "Creature — Program Agent (2/1)",
+    "displayType": "Creature — Program Agent",
+    "text": [
+      "Flash, digital (This creature can block or be blocked only by creatures with digital.)",
+      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
+      "When Local Beat Cop enters, tap up to one target creature and put a stun counter on it."
+    ],
+    "flavor": "",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "2/1",
+    "colorIndicator": null,
+    "fileName": "U032_local_beat_cop.png"
+  },
+  {
+    "id": "U033",
+    "name": "Link Monitor",
+    "cost": "{1}{U}",
+    "type": "Creature — Human Artificer (2/1)",
+    "displayType": "Creature — Human Artificer",
+    "text": [
+      "Whenever a creature you control transforms, you get {E}.",
+      "{T}: Add {U}. Spend this mana only to cast spells with digital, instants, or sorceries.",
+      "{1}{U}: Transform target creature with a jack-in or eject ability."
+    ],
+    "flavor": "",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "2/1",
+    "colorIndicator": null,
+    "fileName": "U033_link_monitor.png"
+  },
+  {
     "id": "R021",
     "name": "Code Runner",
     "cost": "{2}{U}",
@@ -1709,6 +1622,7 @@
     "type": "Artifact Creature — Robot (2/3)",
     "displayType": "Artifact Creature — Robot",
     "text": [
+      "Menace",
       "When Battery Farm Cultivator enters, you get {E}{E}.",
       "Whenever Battery Farm Cultivator attacks, you may pay {E}{E}. If you do, create a 1/1 white Citizen creature token with digital."
     ],
@@ -1747,7 +1661,7 @@
     "displayType": "Creature — Program Citizen",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "When Glitched Citizen enters, you get {E}.",
+      "When Glitched Citizen enters, you get {E}{E}.",
       "When Glitched Citizen leaves the battlefield, create a 1/1 white Citizen creature token with digital."
     ],
     "flavor": "",
@@ -1761,8 +1675,8 @@
   {
     "id": "C063",
     "name": "Pod Harvester",
-    "cost": "{1}{B}",
-    "type": "Artifact Creature — Robot (1/2)",
+    "cost": "{3}{B}",
+    "type": "Artifact Creature — Robot (3/4)",
     "displayType": "Artifact Creature — Robot",
     "text": [
       "{1}, Sacrifice another creature: You get {E}{E} and gain 1 life."
@@ -1771,32 +1685,14 @@
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "1/2",
+    "pt": "3/4",
     "colorIndicator": null,
     "fileName": "C063_pod_harvester.png"
   },
   {
-    "id": "C064",
-    "name": "Unplugged Neophyte",
-    "cost": "{B}",
-    "type": "Creature — Human Citizen (1/1)",
-    "displayType": "Creature — Human Citizen",
-    "text": [
-      "When Unplugged Neophyte dies, you get {E}{E}.",
-      "{B}: Return Unplugged Neophyte from your graveyard to your hand. Activate only if you have four or more {E}."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "1/1",
-    "colorIndicator": null,
-    "fileName": "C064_unplugged_neophyte.png"
-  },
-  {
     "id": "C065",
     "name": "Terminal Extraction",
-    "cost": "{1}{B}",
+    "cost": "{B}",
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
@@ -1830,24 +1726,6 @@
     "fileName": "C066_search_protocol_bot.png"
   },
   {
-    "id": "C067",
-    "name": "Dredge-Line Crawler",
-    "cost": "{3}{B}",
-    "type": "Artifact Creature — Robot (3/2)",
-    "displayType": "Artifact Creature — Robot",
-    "text": [
-      "Menace",
-      "When Dredge-Line Crawler dies, you may return target artifact card with mana value 3 or less from your graveyard to your hand."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "3/2",
-    "colorIndicator": null,
-    "fileName": "C067_dredge_line_crawler.png"
-  },
-  {
     "id": "C068",
     "name": "Merovingian's Indulgence",
     "cost": "{1}{B}",
@@ -1863,24 +1741,6 @@
     "pt": "",
     "colorIndicator": null,
     "fileName": "C068_merovingian_s_indulgence.png"
-  },
-  {
-    "id": "C069",
-    "name": "Replica Agent",
-    "cost": "{B}",
-    "type": "Creature — Program Agent (1/1)",
-    "displayType": "Creature — Program Agent",
-    "text": [
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "When this creature leaves the battlefield, create a 1/1 colorless Program creature token with digital."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "1/1",
-    "colorIndicator": null,
-    "fileName": "C069_replica_agent.png"
   },
   {
     "id": "C070",
@@ -1971,23 +1831,6 @@
     "fileName": "C074_mind_rot_protocol.png"
   },
   {
-    "id": "C075",
-    "name": "Deploy Sentinels",
-    "cost": "{2}{B}",
-    "type": "Instant",
-    "displayType": "Instant",
-    "text": [
-      "Create two 1/1 colorless Robot artifact creature tokens with flying."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "C075_deploy_sentinels.png"
-  },
-  {
     "id": "C076",
     "name": "Chateau Vampire",
     "cost": "{1}{B}",
@@ -2027,39 +1870,20 @@
   {
     "id": "C078",
     "name": "Blood-Fuel Converter",
-    "cost": "{1}{B}",
-    "type": "Creature — Human Cleric (1/2)",
+    "cost": "{2}{B}",
+    "type": "Creature — Human Cleric (1/4)",
     "displayType": "Creature — Human Cleric",
     "text": [
       "Lifelink",
-      "{1}{B}, Pay 1 life: You get {E}{E}."
+      "{B}, Pay 2 life: You get {E}{E}."
     ],
     "flavor": "",
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "1/2",
+    "pt": "1/4",
     "colorIndicator": null,
     "fileName": "C078_blood_fuel_converter.png"
-  },
-  {
-    "id": "C079",
-    "name": "Neural Spike",
-    "cost": "{B}",
-    "type": "Instant",
-    "displayType": "Instant",
-    "text": [
-      "Target opponent reveals their hand. You choose a nonland card from it.",
-      "That player discards that card unless they pay {E}{E}{E}.",
-      "If you control a creature with digital, you gain 2 life."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "C079_neural_spike.png"
   },
   {
     "id": "U040",
@@ -2284,6 +2108,25 @@
     "fileName": "U053_inevitable_deletion.png"
   },
   {
+    "id": "U054",
+    "name": "Unplugged Neophyte",
+    "cost": "{B}",
+    "type": "Creature — Human Citizen (2/1)",
+    "displayType": "Creature — Human Citizen",
+    "text": [
+      "Unplugged Neophyte can't block.",
+      "When Unplugged Neophyte dies, you get {E}{E}.",
+      "{B}: Return Unplugged Neophyte from your graveyard to your hand. Activate only if you have four or more {E}."
+    ],
+    "flavor": "",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "2/1",
+    "colorIndicator": null,
+    "fileName": "U054_unplugged_neophyte.png"
+  },
+  {
     "id": "R040",
     "name": "Sentinel Swarm",
     "cost": "{4}{B}",
@@ -2489,11 +2332,11 @@
   {
     "id": "C091",
     "name": "Signal Hijacker",
-    "cost": "{1}{R}",
+    "cost": "{2}{R}",
     "type": "Creature — Human Wizard (1/3)",
     "displayType": "Creature — Human Wizard",
     "text": [
-      "Prowess"
+      "Whenever you cast a noncreature spell, put a +1/+1 counter on this creature."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2538,24 +2381,6 @@
     "pt": "1/3",
     "colorIndicator": null,
     "fileName": "C093_static_charged_hacker.png"
-  },
-  {
-    "id": "C094",
-    "name": "Thermal Cutter",
-    "cost": "{1}{R}",
-    "type": "Instant",
-    "displayType": "Instant",
-    "text": [
-      "Thermal Cutter deals 3 damage to target creature.",
-      "If you control an artifact creature or a creature with digital, Thermal Cutter deals 2 damage to that creature's controller."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "C094_thermal_cutter.png"
   },
   {
     "id": "C095",
@@ -2615,25 +2440,6 @@
     "fileName": "C096_zealous_jammer.png"
   },
   {
-    "id": "C097",
-    "name": "Manic Decrypter",
-    "cost": "{1}{R}",
-    "type": "Creature — Human Rogue (2/1)",
-    "displayType": "Creature — Human Rogue",
-    "text": [
-      "Haste",
-      "Whenever you cast an instant or sorcery spell, Manic Decrypter gets +1/+0 until end of turn.",
-      "{1}{R}, {T}: Target creature with digital can't block this turn."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "2/1",
-    "colorIndicator": null,
-    "fileName": "C097_manic_decrypter.png"
-  },
-  {
     "id": "C098",
     "name": "Lock and Load",
     "cost": "{1}{R}",
@@ -2649,24 +2455,6 @@
     "pt": "",
     "colorIndicator": null,
     "fileName": "C098_lock_and_load.png"
-  },
-  {
-    "id": "C099",
-    "name": "Overcharge",
-    "cost": "{R}",
-    "type": "Instant",
-    "displayType": "Instant",
-    "text": [
-      "Target creature gets +3/+1 until end of turn.",
-      "If you have four or more {E}, it also gains trample until end of turn."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "C099_overcharge.png"
   },
   {
     "id": "C100",
@@ -2694,7 +2482,8 @@
     "displayType": "Creature — Human Warrior",
     "text": [
       "Trample",
-      "When Dockside Loader enters, you get {E}."
+      "When Dockside Loader enters, you get {E}{E}.",
+      "Basic landcycling {2}"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2741,49 +2530,15 @@
     "fileName": "C103_magma_code_brawler.png"
   },
   {
-    "id": "C104",
-    "name": "Panic Fire",
-    "cost": "{2}{R}",
-    "type": "Instant",
-    "displayType": "Instant",
-    "text": [
-      "Panic Fire deals 4 damage to target creature."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "C104_panic_fire.png"
-  },
-  {
-    "id": "C105",
-    "name": "Choose Fate",
-    "cost": "{R}",
-    "type": "Sorcery",
-    "displayType": "Sorcery",
-    "text": [
-      "Exile the top two cards of your library. Choose one of them.",
-      "Until your next turn, you may play that card."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "C105_choose_fate.png"
-  },
-  {
     "id": "C106",
     "name": "Slag Melt",
-    "cost": "{1}{R}",
+    "cost": "{3}{R}",
     "type": "Instant",
     "displayType": "Instant",
     "text": [
-      "Destroy target artifact.",
-      "If it was a creature, Slag Melt deals 2 damage to that creature's controller."
+      "Choose one —",
+      "• Destroy target artifact.",
+      "• Slag Melt deals 5 damage to target creature."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2792,25 +2547,6 @@
     "pt": "",
     "colorIndicator": null,
     "fileName": "C106_slag_melt.png"
-  },
-  {
-    "id": "C107",
-    "name": "Machine Addict",
-    "cost": "{3}{R}",
-    "type": "Creature - Human Rogue (4/3)",
-    "displayType": "Creature - Human Rogue",
-    "text": [
-      "Haste",
-      "When Machine Addict enters, you get {E}{E}{E}.",
-      "At the beginning of your next end step, you lose {E}{E}{E}."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "4/3",
-    "colorIndicator": null,
-    "fileName": "C107_machine_addict.png"
   },
   {
     "id": "C108",
@@ -2828,24 +2564,6 @@
     "pt": "2/1",
     "colorIndicator": null,
     "fileName": "C108_independent_trader.png"
-  },
-  {
-    "id": "C152",
-    "name": "Lightning Rifle",
-    "cost": "{1}{R}",
-    "type": "Artifact — Equipment",
-    "displayType": "Artifact — Equipment",
-    "text": [
-      "Equipped creature has \"{T}, Pay {E}: This creature deals 2 damage to target creature.\"",
-      "Equip {2}"
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "C152_lightning_rifle.png"
   },
   {
     "id": "C158",
@@ -3104,6 +2822,24 @@
     "fileName": "U071_draconic_sentinel.png"
   },
   {
+    "id": "U072",
+    "name": "Choose Fate",
+    "cost": "{R}",
+    "type": "Sorcery",
+    "displayType": "Sorcery",
+    "text": [
+      "Exile the top three cards of your library. Choose one of them.",
+      "Until your next turn, you may play that card."
+    ],
+    "flavor": "",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "",
+    "colorIndicator": null,
+    "fileName": "U072_choose_fate.png"
+  },
+  {
     "id": "R060",
     "name": "System Override",
     "cost": "{2}{R}",
@@ -3290,8 +3026,8 @@
   {
     "id": "C120",
     "name": "APU Operator",
-    "cost": "{2}{G}",
-    "type": "Creature — Human Soldier (3/3)",
+    "cost": "{3}{G}",
+    "type": "Creature — Human Soldier (4/4)",
     "displayType": "Creature — Human Soldier",
     "text": [
       "APU Operator gets +1/+1 and has trample as long as you have three or more {E}."
@@ -3300,7 +3036,7 @@
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "3/3",
+    "pt": "4/4",
     "colorIndicator": null,
     "fileName": "C120_apu_operator.png"
   },
@@ -3339,42 +3075,6 @@
     "pt": "2/1",
     "colorIndicator": null,
     "fileName": "C122_exterminator_jammer.png"
-  },
-  {
-    "id": "C123",
-    "name": "Nutrient Recycler",
-    "cost": "{2}{G}",
-    "type": "Artifact Creature — Robot (3/2)",
-    "displayType": "Artifact Creature — Robot",
-    "text": [
-      "When Nutrient Recycler enters, you get {E}.",
-      "Whenever a creature you control dies, put a +1/+1 counter on Nutrient Recycler."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "3/2",
-    "colorIndicator": null,
-    "fileName": "C123_nutrient_recycler.png"
-  },
-  {
-    "id": "C124",
-    "name": "Fungi-Farm Laborer",
-    "cost": "{1}{G}",
-    "type": "Creature — Human Citizen (2/1)",
-    "displayType": "Creature — Human Citizen",
-    "text": [
-      "When Fungi-Farm Laborer enters, you get {E}.",
-      "When Fungi-Farm Laborer dies, create a 1/1 green Ooze creature token."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "2/1",
-    "colorIndicator": null,
-    "fileName": "C124_fungi_farm_laborer.png"
   },
   {
     "id": "C125",
@@ -3429,60 +3129,23 @@
     "fileName": "C127_coordinated_takedown.png"
   },
   {
-    "id": "C128",
-    "name": "Hardline Connection",
-    "cost": "{G}",
-    "type": "Enchantment — Aura",
-    "displayType": "Enchantment — Aura",
-    "text": [
-      "Enchant land",
-      "When Hardline Connection enters, you get {E}{E}.",
-      "Enchanted land has \"{T}: Add a mana of any color.\""
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "C128_hardline_connection.png"
-  },
-  {
     "id": "C129",
     "name": "Dojo Program",
-    "cost": "{3}{G}",
-    "type": "Creature — Program Monk (3/3)",
+    "cost": "{2}{G}",
+    "type": "Creature — Program Monk (2/2)",
     "displayType": "Creature — Program Monk",
     "text": [
       "Flash",
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "When Dojo Program enters, you get {E}{E}."
+      "When Dojo Program enters, put a +1/+1 counter on target creature you control."
     ],
     "flavor": "",
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "3/3",
+    "pt": "2/2",
     "colorIndicator": null,
     "fileName": "C129_dojo_program.png"
-  },
-  {
-    "id": "C130",
-    "name": "Heavy-Load Lifter",
-    "cost": "{4}{G}",
-    "type": "Creature — Human Construct (4/4)",
-    "displayType": "Creature — Human Construct",
-    "text": [
-      "Trample",
-      "{1}{U}: Heavy-Load Lifter gains hexproof until end of turn."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "4/4",
-    "colorIndicator": null,
-    "fileName": "C130_heavy_load_lifter.png"
   },
   {
     "id": "C131",
@@ -3544,7 +3207,8 @@
     "type": "Artifact Creature — Construct Beast (6/6)",
     "displayType": "Artifact Creature — Construct Beast",
     "text": [
-      "Trample, ward {2}"
+      "Trample, ward {2}",
+      "Basic landcycling {2}"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3570,23 +3234,6 @@
     "pt": "",
     "colorIndicator": null,
     "fileName": "C135_natural_code.png"
-  },
-  {
-    "id": "C136",
-    "name": "Kinetic Impact",
-    "cost": "{G}",
-    "type": "Sorcery",
-    "displayType": "Sorcery",
-    "text": [
-      "Target creature you control deals damage equal to its power to target creature you don't control."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "C136_kinetic_impact.png"
   },
   {
     "id": "C137",
@@ -4967,11 +4614,12 @@
     "id": "C151",
     "name": "APU Corps",
     "cost": "{5}",
-    "type": "Artifact Creature — Construct (4/5)",
-    "displayType": "Artifact Creature — Construct",
+    "type": "Artifact — Vehicle (4/5)",
+    "displayType": "Artifact — Vehicle",
     "text": [
       "Reach",
-      "When APU Corps enters, you get {E}{E}."
+      "When APU Corps enters, you get {E}{E}.",
+      "Crew 2"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -4997,24 +4645,6 @@
     "pt": "4/4",
     "colorIndicator": null,
     "fileName": "C153_standard_issue_hovercraft.png"
-  },
-  {
-    "id": "C154",
-    "name": "Scavenged Chassis",
-    "cost": "{3}",
-    "type": "Artifact — Vehicle (3/4)",
-    "displayType": "Artifact — Vehicle",
-    "text": [
-      "Scavenged Chassis gets +2/+1 if it was crewed by a Robot this turn.",
-      "Crew 1"
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "3/4",
-    "colorIndicator": null,
-    "fileName": "C154_scavenged_chassis.png"
   },
   {
     "id": "C155",

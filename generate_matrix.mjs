@@ -251,13 +251,15 @@ class Card {
     }
 
     // Humanoid creatures get varied compositions
-    if (roll < 20) {
+    if (roll < 35) {
+      return "COMPOSITION: Use the context of the card to determine the composition.";
+    } else if (roll < 45) {
       return "COMPOSITION: DYNAMIC ACTION. High kinetic energy. Mid-air kick, dodging bullets, or diving while shooting. Use motion blur and Dutch angles.";
-    } else if (roll < 40) {
+    } else if (roll < 55) {
       return "COMPOSITION: HEROIC STANCE. The subject is standing tall, centered, looking cool and collected. Coat billowing in the wind. Iconic movie poster vibe.";
-    } else if (roll < 60) {
+    } else if (roll < 65) {
       return "COMPOSITION: INTENSE CLOSE-UP. Focus on the face, eyes, or specific cybernetic details. Shallow depth of field, high emotion or focus.";
-    } else if (roll < 75) {
+    } else if (roll < 80) {
       return "COMPOSITION: IMPOSING LOW ANGLE. The camera looks up at the subject, making them appear powerful and dominant. Noir lighting, strong shadows.";
     } else if (roll < 90) {
       return "COMPOSITION: ENVIRONMENTAL WIDE SHOT. The subject is placed within a massive, impressive setting. Emphasize the scale of the world.";

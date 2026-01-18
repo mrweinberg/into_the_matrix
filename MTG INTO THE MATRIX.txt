@@ -94,23 +94,25 @@ Whenever another creature you control enters, you gain 1 life.
 
 [C004] Zion Neophyte {W}
 Creature — Human Monk (1/2)
-{U}: Jack-in. ({U}: Transform this card. Activate only as a sorcery.)
+{W}: Jack-in. ({W}: Transform this card. Activate only as a sorcery.)
 //
 Awakened Kung Fu Master (Color Indicator: White)
 Creature — Human Monk Program (2/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
 First strike
+Whenever this creature attacks, scry 1.
 {W}: Eject. ({W}: Transform this card. Activate only as a sorcery.)
 
 [C005] Zion Militia {1}{W}
 Creature — Human Soldier (1/1)
 When Zion Militia enters, create a 1/1 white Human creature token and you get {E}.
 
-[C006] Stasis Field {1}{W}
+[C006] Stasis Field {2}{W}
 Enchantment — Aura
 Enchant creature
 When Stasis Field enters, scry 1.
 Enchanted creature can't attack or block.
+{E}{E}{E}: Exile enchanted creature.
 
 [C007] Dock Defender {2}{W}
 Creature — Human Soldier (2/3)
@@ -131,24 +133,11 @@ If it was transformed, return it transformed and you get {E}{E}.
 Creature — Human Artificer (2/3)
 When Fleet Mechanic enters, you may return target Vehicle or Equipment card from your graveyard to your hand.
 
-[C011] Zion Armorer {2}{W}
-Creature — Human Soldier (2/3)
-When Zion Armorer enters, create a Gun token.
-
-[C012] Youthful Welder {W}
-Creature — Human Artificer (1/1)
-{T}: Target Vehicle you control gets +2/+1 until end of turn.
-{2}{W}, {T}: Create a Gun token.
-
-[C013] Bullet Time {1}{W}
-Instant
-Target creature gains protection from artifacts, from instants, and from sorceries until end of turn.
-Prevent all combat damage that would be dealt to it this turn.
-
 [C014] Prophesizing Elder {4}{W}
 Creature — Human Cleric (3/5)
 Vigilance
 When Prophesizing Elder enters, scry 2 and you gain 3 life.
+Basic landcycling {2}
 
 [C015] Operator Support {W}
 Instant
@@ -258,6 +247,11 @@ Exile target nonland permanent.
 Sorcery
 Return up to three creature cards from your graveyard to the battlefield with total mana value 3 or less.
 
+[U014] Youthful Welder {W}
+Creature — Human Artificer (1/1)
+{T}: Target Vehicle you control gets +2/+1 until end of turn.
+{2}{W}, {T}: Create a Gun token.
+
 --- RARES ---
 
 [R001] Emergency Protocol {1}{W}
@@ -343,7 +337,7 @@ Creature — Human Wizard (1/1)
 Deep-Dive Hacker (Color Indicator: Blue)
 Creature — Human Wizard Program (2/1)
 Digital (This creature can block or be blocked only by creatures with digital.)
-This creature cannot be blocked.
+Whenever this creature deals combat damage to a player, you get {E}{E}.
 {U}: Eject. ({U}: Transform this card. Activate only as a sorcery.)
 
 [C032] Keymaker's Guide {1}{U}
@@ -357,38 +351,16 @@ Digital (This creature can block or be blocked only by creatures with digital.)
 {T}: Target creature with digital can't be blocked this turn.
 {1}{U}: Eject. ({1}{U}: Transform this card. Activate only as a sorcery.)
 
-[C033] Local Beat Cop {1}{U}
-Creature — Program Agent (2/1)
-Flash, digital (This creature can block or be blocked only by creatures with digital.)
-Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)
-When Local Beat Cop enters, tap up to one target creature and put a stun counter on it.
-
-[C034] System Scan {1}{U}
-Sorcery
-Target opponent reveals their hand.
-Look at the top card of their library. You may put it in their graveyard.
-Draw a card.
-
 [C035] Data Courier {1}{U}
 Creature — Program Scout (2/1)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Data Courier can block creatures without digital.
 When Data Courier leaves the battlefield, draw a card.
 
-[C036] Blue Screen {1}{U}
-Instant
-Tap target creature. Put two stun counters on it.
-You get {E}.
-
 [C037] Compile Error {1}{U}
 Instant
 Return target nonland permanent to its owner's hand.
 If you have three or more {E}, scry 2.
-
-[C038] Corrupted Packet {U}
-Instant
-Target creature gets -3/-0 until end of turn.
-Draw a card.
 
 [C039] Physics Override {1}{U}
 Instant
@@ -442,12 +414,6 @@ Flash
 Enchant creature or artifact
 Enchanted permanent does not untap during its controller's untap step.
 {E}{E}: Shuffle enchanted permanent into its owner's deck.
-
-[C049] Link Monitor {1}{U}
-Creature — Human Artificer (2/1)
-Whenever a creature you control transforms, you get {E}.
-{T}: Add {U}. Spend this mana only to cast spells with digital, instants, or sorceries.
-{1}{U}: Transform target creature with a jack-in or eject ability.
 
 --- UNCOMMONS ---
 
@@ -517,6 +483,18 @@ When this creature enters, return target instant or sorcery from your graveyard 
 [U031] Copy and Paste {3}{U}
 Sorcery
 Create a token copy of target creature you control. You may have it gain or lose digital.
+
+[U032] Local Beat Cop {1}{U}
+Creature — Program Agent (2/1)
+Flash, digital (This creature can block or be blocked only by creatures with digital.)
+Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)
+When Local Beat Cop enters, tap up to one target creature and put a stun counter on it.
+
+[U033] Link Monitor {1}{U}
+Creature — Human Artificer (2/1)
+Whenever a creature you control transforms, you get {E}.
+{T}: Add {U}. Spend this mana only to cast spells with digital, instants, or sorceries.
+{1}{U}: Transform target creature with a jack-in or eject ability.
 
 --- RARES ---
 
@@ -591,6 +569,7 @@ Whenever you cast a spell, you may pay {E}{E}. If you do, choose one:
 
 [C060] Battery Farm Cultivator {2}{B}
 Artifact Creature — Robot (2/3)
+Menace
 When Battery Farm Cultivator enters, you get {E}{E}.
 Whenever Battery Farm Cultivator attacks, you may pay {E}{E}. If you do, create a 1/1 white Citizen creature token with digital.
 
@@ -603,19 +582,14 @@ When Disposable Informant leaves the battlefield, target creature an opponent co
 [C062] Glitched Citizen {1}{B}
 Creature — Program Citizen (2/1)
 Digital (This creature can block or be blocked only by creatures with digital.)
-When Glitched Citizen enters, you get {E}.
+When Glitched Citizen enters, you get {E}{E}.
 When Glitched Citizen leaves the battlefield, create a 1/1 white Citizen creature token with digital.
 
-[C063] Pod Harvester {1}{B}
-Artifact Creature — Robot (1/2)
+[C063] Pod Harvester {3}{B}
+Artifact Creature — Robot (3/4)
 {1}, Sacrifice another creature: You get {E}{E} and gain 1 life.
 
-[C064] Unplugged Neophyte {B}
-Creature — Human Citizen (1/1)
-When Unplugged Neophyte dies, you get {E}{E}.
-{B}: Return Unplugged Neophyte from your graveyard to your hand. Activate only if you have four or more {E}.
-
-[C065] Terminal Extraction {1}{B}
+[C065] Terminal Extraction {B}
 Sorcery
 As an additional cost to cast this spell, sacrifice a creature or pay {E}{E}{E}.
 Destroy target creature.
@@ -625,19 +599,9 @@ Artifact Creature — Robot Scout (1/1)
 Menace
 {1}, {E}: Search-Protocol Bot gets +1/+0 until end of turn.
 
-[C067] Dredge-Line Crawler {3}{B}
-Artifact Creature — Robot (3/2)
-Menace
-When Dredge-Line Crawler dies, you may return target artifact card with mana value 3 or less from your graveyard to your hand.
-
 [C068] Merovingian's Indulgence {1}{B}
 Instant
 Target creature gets +1/+0 and gains lifelink and indestructible until end of turn.
-
-[C069] Replica Agent {B}
-Creature — Program Agent (1/1)
-Digital (This creature can block or be blocked only by creatures with digital.)
-When this creature leaves the battlefield, create a 1/1 colorless Program creature token with digital.
 
 [C070] Code Siphon {B}
 Instant
@@ -662,10 +626,6 @@ Basic landcycling {2}
 Sorcery
 Target player discards two cards and loses {E}{E}{E}.
 
-[C075] Deploy Sentinels {2}{B}
-Instant
-Create two 1/1 colorless Robot artifact creature tokens with flying.
-
 [C076] Chateau Vampire {1}{B}
 Creature — Program Vampire (1/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
@@ -677,16 +637,10 @@ Sorcery
 Target opponent loses 2 life and you gain 2 life.
 You get {E}{E}.
 
-[C078] Blood-Fuel Converter {1}{B}
-Creature — Human Cleric (1/2)
+[C078] Blood-Fuel Converter {2}{B}
+Creature — Human Cleric (1/4)
 Lifelink
-{1}{B}, Pay 1 life: You get {E}{E}.
-
-[C079] Neural Spike {B}
-Instant
-Target opponent reveals their hand. You choose a nonland card from it.
-That player discards that card unless they pay {E}{E}{E}.
-If you control a creature with digital, you gain 2 life.
+{B}, Pay 2 life: You get {E}{E}.
 
 --- UNCOMMONS ---
 
@@ -757,6 +711,12 @@ As an additional cost to cast this spell, sacrifice a creature.
 Destroy target creature or planeswalker.
 Draw a card.
 
+[U054] Unplugged Neophyte {B}
+Creature — Human Citizen (2/1)
+Unplugged Neophyte can't block.
+When Unplugged Neophyte dies, you get {E}{E}.
+{B}: Return Unplugged Neophyte from your graveyard to your hand. Activate only if you have four or more {E}.
+
 --- RARES ---
 
 [R040] Sentinel Swarm {4}{B}
@@ -826,9 +786,9 @@ Whenever a creature an opponent controls dies, return it to the battlefield unde
 Instant
 Electrobolt deals 2 damage to target creature. If that creature is an artifact or has digital, Electrobolt deals 4 damage to it instead.
 
-[C091] Signal Hijacker {1}{R}
+[C091] Signal Hijacker {2}{R}
 Creature — Human Wizard (1/3)
-Prowess
+Whenever you cast a noncreature spell, put a +1/+1 counter on this creature.
 
 [C092] Memory Wipe {1}{R}
 Sorcery
@@ -839,11 +799,6 @@ If you discarded a nonland card, you get {E}{E}.
 Creature — Human Wizard (1/3)
 Prowess
 {1}, Pay {E}: Static-Charged Hacker gets +2/+0 until end of turn.
-
-[C094] Thermal Cutter {1}{R}
-Instant
-Thermal Cutter deals 3 damage to target creature.
-If you control an artifact creature or a creature with digital, Thermal Cutter deals 2 damage to that creature's controller.
 
 [C095] Avid Marksman {1}{R}
 Creature — Human Soldier (2/1)
@@ -863,20 +818,9 @@ Reach
 This creature can block creatures with digital as though they didn't have digital.
 When this creature enters, if you control a nontoken artifact, deal 2 damage to each opponent.
 
-[C097] Manic Decrypter {1}{R}
-Creature — Human Rogue (2/1)
-Haste
-Whenever you cast an instant or sorcery spell, Manic Decrypter gets +1/+0 until end of turn.
-{1}{R}, {T}: Target creature with digital can't block this turn.
-
 [C098] Lock and Load {1}{R}
 Instant
 Target creature gets +2/+0 until end of turn. Create a Gun token attached to it.
-
-[C099] Overcharge {R}
-Instant
-Target creature gets +3/+1 until end of turn.
-If you have four or more {E}, it also gains trample until end of turn.
 
 [C100] Drone Pilot {R}
 Artifact Creature — Robot (1/1)
@@ -886,7 +830,8 @@ Vehicles crewed by Drone Pilot get +1/+0 and have menace.
 [C101] Dockside Loader {4}{R}
 Creature — Human Warrior (4/4)
 Trample
-When Dockside Loader enters, you get {E}.
+When Dockside Loader enters, you get {E}{E}.
+Basic landcycling {2}
 
 [C102] Sentinel Sweeper {3}{R}
 Artifact Creature — Robot (2/3)
@@ -898,34 +843,15 @@ Creature — Program Warrior (3/1)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Haste
 
-[C104] Panic Fire {2}{R}
+[C106] Slag Melt {3}{R}
 Instant
-Panic Fire deals 4 damage to target creature.
-
-[C105] Choose Fate {R}
-Sorcery
-Exile the top two cards of your library. Choose one of them.
-Until your next turn, you may play that card.
-
-[C106] Slag Melt {1}{R}
-Instant
-Destroy target artifact.
-If it was a creature, Slag Melt deals 2 damage to that creature's controller.
-
-[C107] Machine Addict {3}{R}
-Creature - Human Rogue (4/3)
-Haste
-When Machine Addict enters, you get {E}{E}{E}.
-At the beginning of your next end step, you lose {E}{E}{E}.
+Choose one —
+• Destroy target artifact.
+• Slag Melt deals 5 damage to target creature.
 
 [C108] Independent Trader {1}{R}
 Creature - Human Citizen (2/1)
 {1}, {T}, Discard a card: Draw a card.
-
-[C152] Lightning Rifle {1}{R}
-Artifact — Equipment
-Equipped creature has "{T}, Pay {E}: This creature deals 2 damage to target creature."
-Equip {2}
 
 [C158] Combat Hovercraft {3}{R}
 Artifact — Vehicle (5/3)
@@ -1003,6 +929,11 @@ Artifact Creature - Robot Dragon (5/5)
 Flying
 {R}: This creature gets +1/+0 until end of turn.
 
+[U072] Choose Fate {R}
+Sorcery
+Exile the top three cards of your library. Choose one of them.
+Until your next turn, you may play that card.
+
 --- RARES ---
 
 [R060] System Override {2}{R}
@@ -1066,8 +997,8 @@ At the beginning of your upkeep, exile the top card of your library. You may pla
 
 --- COMMONS ---
 
-[C120] APU Operator {2}{G}
-Creature — Human Soldier (3/3)
+[C120] APU Operator {3}{G}
+Creature — Human Soldier (4/4)
 APU Operator gets +1/+1 and has trample as long as you have three or more {E}.
 
 [C121] Bio-Metric Technician {1}{G}
@@ -1079,16 +1010,6 @@ Whenever this creature attacks, you may pay {E}. If you do, put a +1/+1 counter 
 Creature — Human Warrior (2/1)
 Reach, deathtouch
 This creature can block creatures with digital as though they didn't have digital.
-
-[C123] Nutrient Recycler {2}{G}
-Artifact Creature — Robot (3/2)
-When Nutrient Recycler enters, you get {E}.
-Whenever a creature you control dies, put a +1/+1 counter on Nutrient Recycler.
-
-[C124] Fungi-Farm Laborer {1}{G}
-Creature — Human Citizen (2/1)
-When Fungi-Farm Laborer enters, you get {E}.
-When Fungi-Farm Laborer dies, create a 1/1 green Ooze creature token.
 
 [C125] Shared Battery {G}
 Instant
@@ -1103,22 +1024,11 @@ Sorcery
 Target creature you control fights target creature you don't control.
 If you control three or more creatures, put a +1/+1 counter on the creature you control before it fights.
 
-[C128] Hardline Connection {G}
-Enchantment — Aura
-Enchant land
-When Hardline Connection enters, you get {E}{E}.
-Enchanted land has "{T}: Add a mana of any color."
-
-[C129] Dojo Program {3}{G}
-Creature — Program Monk (3/3)
+[C129] Dojo Program {2}{G}
+Creature — Program Monk (2/2)
 Flash
 Digital (This creature can block or be blocked only by creatures with digital.)
-When Dojo Program enters, you get {E}{E}.
-
-[C130] Heavy-Load Lifter {4}{G}
-Creature — Human Construct (4/4)
-Trample
-{1}{U}: Heavy-Load Lifter gains hexproof until end of turn.
+When Dojo Program enters, put a +1/+1 counter on target creature you control.
 
 [C131] Zion Traceur {1}{G}
 Creature — Human Scout (2/2)
@@ -1137,14 +1047,11 @@ Target creature gets +3/+3 and gains reach until end of turn.
 [C134] Rampaging Beastbot {4}{G}{G}
 Artifact Creature — Construct Beast (6/6)
 Trample, ward {2}
+Basic landcycling {2}
 
 [C135] Natural Code {1}{G}
 Instant
 Destroy target artifact or enchantment. You get {E}{E}.
-
-[C136] Kinetic Impact {G}
-Sorcery
-Target creature you control deals damage equal to its power to target creature you don't control.
 
 [C137] Sifter of Ruins {1}{G}
 Creature - Human Archivist (1/2)
@@ -1595,18 +1502,14 @@ When The Oracle’s Cookie enters or leaves the battlefield, scry 2.
 {2}, {T}, Sacrifice The Oracle’s Cookie: You gain 3 life.
 
 [C151] APU Corps {5}
-Artifact Creature — Construct (4/5)
+Artifact — Vehicle (4/5)
 Reach
 When APU Corps enters, you get {E}{E}.
+Crew 2
 
 [C153] Standard Issue Hovercraft {3}
 Artifact — Vehicle (4/4)
 Crew 2
-
-[C154] Scavenged Chassis {3}
-Artifact — Vehicle (3/4)
-Scavenged Chassis gets +2/+1 if it was crewed by a Robot this turn.
-Crew 1
 
 [C155] Simulated Steak {1}
 Artifact — Food
