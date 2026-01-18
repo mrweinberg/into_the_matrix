@@ -488,7 +488,7 @@ class Card {
 
       === STYLE ===
       ${artStyle}
-      Dramatic lighting. Strong composition. Aspect ratio: 5:4.
+      Dramatic lighting. Strong composition. Aspect ratio: 4:3.
     `.trim();
   }
 
