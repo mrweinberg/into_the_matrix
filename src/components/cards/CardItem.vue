@@ -70,7 +70,7 @@ const imageLoaded = ref(false)
 
 const colorClass = computed(() => determineColorClass(props.card))
 const formattedCost = computed(() => replaceSymbols(props.card.cost))
-const imagePath = computed(() => `matrix_art_output/${props.card.fileName}`)
+const imagePath = computed(() => `/cards/${props.card.fileName}`)
 const cleanId = computed(() => props.card.id.replace(/[\[\]]/g, ''))
 const rarityClass = computed(() => `rarity-symbol rarity-${props.card.rarity}`)
 const colorIndicatorClass = computed(() =>

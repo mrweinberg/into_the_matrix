@@ -11,7 +11,7 @@ const API_KEY = process.env.GEMINI_API_KEY;
 const MODEL_ID = "gemini-3-pro-image-preview";
 const INPUT_FILE = "MTG INTO THE MATRIX.txt";
 const OVERRIDE_FILE = "artOverrides.json";
-const OUTPUT_DIR = "matrix_art_output";
+const OUTPUT_DIR = "public/cards";
 
 const SESSION_SEED = Date.now();
 
@@ -488,7 +488,7 @@ class Card {
 
       === STYLE ===
       ${artStyle}
-      Dramatic lighting. Strong composition. Aspect ratio: 4:3.
+      Dramatic lighting. Strong composition. Aspect ratio: 5:4.
     `.trim();
   }
 
