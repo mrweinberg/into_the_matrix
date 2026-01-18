@@ -62,9 +62,9 @@
     }
   ],
   "stats": {
-    "totalCards": 266,
+    "totalCards": 265,
     "colorCombinations": {
-      "W": 39,
+      "W": 38,
       "U": 39,
       "B": 37,
       "R": 37,
@@ -85,14 +85,14 @@
       "Land": 16
     },
     "rarityBreakdown": {
-      "Common": 81,
+      "Common": 80,
       "Uncommon": 93,
       "Rare": 61,
       "Mythic": 15,
       "Land": 16
     },
     "typeBreakdown": {
-      "Creature": 144,
+      "Creature": 143,
       "Sorcery": 28,
       "Enchantment": 28,
       "Instant": 31,
@@ -103,7 +103,7 @@
       "W": {
         "0": 0,
         "1": 6,
-        "2": 13,
+        "2": 12,
         "3": 14,
         "4": 2,
         "5": 4,
@@ -195,7 +195,7 @@
       "Common": {
         "0": 1,
         "1": 13,
-        "2": 39,
+        "2": 38,
         "3": 13,
         "4": 9,
         "5": 4,
@@ -203,9 +203,9 @@
       }
     },
     "creatureStats": {
-      "total": 144,
+      "total": 143,
       "byRarity": {
-        "Common": 45,
+        "Common": 44,
         "Uncommon": 56,
         "Rare": 35,
         "Mythic": 8
@@ -215,7 +215,7 @@
         "toughness": 2.7
       },
       "powerDistribution": {
-        "0": 5,
+        "0": 4,
         "1": 33,
         "2": 53,
         "3": 31,
@@ -224,19 +224,19 @@
       },
       "toughnessDistribution": {
         "0": 1,
-        "1": 29,
+        "1": 28,
         "2": 36,
-        "3": 43,
-        "4": 23,
+        "3": 44,
+        "4": 22,
         "5+": 12
       }
     },
     "keywords": {
       "Vigilance": 12,
-      "Digital": 73,
+      "Digital": 72,
       "Jack-in": 21,
-      "Flying": 13,
-      "Defender": 7,
+      "Flying": 12,
+      "Defender": 6,
       "Ward": 10,
       "Lifelink": 9,
       "Eject": 7,
@@ -244,7 +244,7 @@
       "Indestructible": 11,
       "Reach": 11,
       "Double Strike": 2,
-      "Hexproof": 6,
+      "Hexproof": 7,
       "Flash": 18,
       "Haste": 21,
       "Override": 10,
@@ -258,20 +258,20 @@
       "sorceries": 28,
       "ratio": 1.11
     },
-    "averageCMC": 2.92,
+    "averageCMC": 2.93,
     "cardsWithAbilities": {
       "cardDraw": 29,
       "removal": 59,
       "counterspells": 5,
-      "tokenCreators": 31,
-      "energyCards": 109
+      "tokenCreators": 30,
+      "energyCards": 108
     },
     "rarityByColor": {
       "W": {
         "Mythic": 1,
         "Rare": 8,
         "Uncommon": 14,
-        "Common": 16
+        "Common": 15
       },
       "U": {
         "Mythic": 2,

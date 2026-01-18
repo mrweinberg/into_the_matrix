@@ -38,12 +38,12 @@
   },
   {
     "id": "C002",
-    "name": "Crowd Simulation",
+    "name": "Rebellious Crowd",
     "cost": "{3}{W}",
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "Create two 1/1 white Citizen creature tokens with digital.",
+      "Create two 1/1 white Human creature tokens.",
       "Draw a card."
     ],
     "flavor": "",
@@ -52,7 +52,7 @@
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "C002_crowd_simulation.png"
+    "fileName": "C002_rebellious_crowd.png"
   },
   {
     "id": "C003",
@@ -109,23 +109,6 @@
     "fileName": "C004b_awakened_kung_fu_master_back.png"
   },
   {
-    "id": "C005",
-    "name": "Zion Militia",
-    "cost": "{1}{W}",
-    "type": "Creature — Human Soldier (1/1)",
-    "displayType": "Creature — Human Soldier",
-    "text": [
-      "When Zion Militia enters, create a 1/1 white Human creature token and you get {E}."
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "1/1",
-    "colorIndicator": null,
-    "fileName": "C005_zion_militia.png"
-  },
-  {
     "id": "C006",
     "name": "Stasis Field",
     "cost": "{2}{W}",
@@ -153,8 +136,7 @@
     "displayType": "Creature — Human Soldier",
     "text": [
       "Flying",
-      "When Dock Defender enters, you may pay {1}.",
-      "If you do, create a Gun token."
+      "When Dock Defender enters, you may pay {1}. If you do, create a Gun token."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -191,7 +173,7 @@
       "Exile target creature you control, then return it to the battlefield.",
       "If it was transformed, return it transformed and you get {E}{E}."
     ],
-    "flavor": "",
+    "flavor": " \"It's a glitch in the Matrix. It happens when they change something\"",
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
@@ -224,7 +206,7 @@
     "displayType": "Creature — Human Cleric",
     "text": [
       "Vigilance",
-      "When Prophesizing Elder enters, scry 2 and you gain 3 life.",
+      "When Prophesizing Elder enters, scry 2 and you gain 2 life.",
       "Basic landcycling {2}"
     ],
     "flavor": "",
@@ -900,7 +882,7 @@
     "displayType": "Creature — Human Rogue",
     "text": [
       "When Keymaker's Guide enters, scry 2.",
-      "{W}: Jack-in. ({W}: Transform this card. Activate only as a sorcery.)"
+      "{U}: Jack-in. ({U}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -918,7 +900,7 @@
     "displayType": "Creature — Human Rogue Program",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "{T}: Target creature with digital can't be blocked this turn.",
+      "Prowess.",
       "{1}{U}: Eject. ({1}{U}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
@@ -973,7 +955,7 @@
     "type": "Instant",
     "displayType": "Instant",
     "text": [
-      "Target creature has base power and toughness 3/3 and gains flying until end of turn."
+      "Target creature has base power and toughness 4/4 and gains hexproof until end of turn."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -991,8 +973,7 @@
     "displayType": "Creature — Human Program",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "When System Patcher enters, return target creature to its owner's hand.",
-      "If that creature had digital, you get {E}{E}."
+      "When System Patcher enters, return target creature to its owner's hand. If that creature had digital, you get {E}{E}."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1023,17 +1004,16 @@
     "id": "C042",
     "name": "Deep-Web Miner",
     "cost": "{1}{U}",
-    "type": "Creature — Program Worker (0/4)",
-    "displayType": "Creature — Program Worker",
+    "type": "Creature — Human Worker (1/3)",
+    "displayType": "Creature — Human Worker",
     "text": [
-      "Defender",
       "{T}: You get {E}."
     ],
     "flavor": "",
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "0/4",
+    "pt": "1/3",
     "colorIndicator": null,
     "fileName": "C042_deep_web_miner.png"
   },
@@ -1062,7 +1042,8 @@
     "displayType": "Creature — Program Serpent",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Ward {2}"
+      "Ward {2}",
+      "Basic landcycling {2}"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1076,8 +1057,8 @@
     "id": "C045",
     "name": "Code Prowler",
     "cost": "{2}{U}",
-    "type": "Creature — Program Beast (3/2)",
-    "displayType": "Creature — Program Beast",
+    "type": "Creature — Construct Beast (3/2)",
+    "displayType": "Creature — Construct Beast",
     "text": [
       "Flash",
       "When Code Prowler enters, up to one target creature with digital gets -3/-0 until end of turn."
@@ -1119,7 +1100,7 @@
       "Defender",
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Whenever you cast an instant or sorcery spell, you get {E}.",
-      "{T}, Pay {E}{E}: Draw a card."
+      "{T}, Pay {E}{E}{E}: Draw a card."
     ],
     "flavor": "",
     "rarity": "Common",

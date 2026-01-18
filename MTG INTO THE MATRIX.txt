@@ -83,9 +83,9 @@ Digital (This creature can block or be blocked only by creatures with digital.)
 Vigilance
 At the beginning of your end step, if this creature didn't attack this turn, eject.
 
-[C002] Crowd Simulation {3}{W}
+[C002] Rebellious Crowd {3}{W}
 Sorcery
-Create two 1/1 white Citizen creature tokens with digital.
+Create two 1/1 white Human creature tokens.
 Draw a card.
 
 [C003] Community Organizer {1}{W}
@@ -103,10 +103,6 @@ First strike
 Whenever this creature attacks, scry 1.
 {W}: Eject. ({W}: Transform this card. Activate only as a sorcery.)
 
-[C005] Zion Militia {1}{W}
-Creature — Human Soldier (1/1)
-When Zion Militia enters, create a 1/1 white Human creature token and you get {E}.
-
 [C006] Stasis Field {2}{W}
 Enchantment — Aura
 Enchant creature
@@ -117,8 +113,7 @@ Enchanted creature can't attack or block.
 [C007] Dock Defender {2}{W}
 Creature — Human Soldier (2/3)
 Flying
-When Dock Defender enters, you may pay {1}.
-If you do, create a Gun token.
+When Dock Defender enters, you may pay {1}. If you do, create a Gun token.
 
 [C008] Purged by the Firewall {1}{W}
 Instant
@@ -128,6 +123,7 @@ Destroy target attacking or blocking creature.
 Instant
 Exile target creature you control, then return it to the battlefield.
 If it was transformed, return it transformed and you get {E}{E}.
+"It's a glitch in the Matrix. It happens when they change something"
 
 [C010] Fleet Mechanic {2}{W}
 Creature — Human Artificer (2/3)
@@ -136,7 +132,7 @@ When Fleet Mechanic enters, you may return target Vehicle or Equipment card from
 [C014] Prophesizing Elder {4}{W}
 Creature — Human Cleric (3/5)
 Vigilance
-When Prophesizing Elder enters, scry 2 and you gain 3 life.
+When Prophesizing Elder enters, scry 2 and you gain 2 life.
 Basic landcycling {2}
 
 [C015] Operator Support {W}
@@ -343,12 +339,12 @@ Whenever this creature deals combat damage to a player, you get {E}{E}.
 [C032] Keymaker's Guide {1}{U}
 Creature — Human Rogue (1/3)
 When Keymaker's Guide enters, scry 2.
-{W}: Jack-in. ({W}: Transform this card. Activate only as a sorcery.)
+{U}: Jack-in. ({U}: Transform this card. Activate only as a sorcery.)
 //
 Backdoor Accessor (Color Indicator: Blue)
 Creature — Human Rogue Program (2/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
-{T}: Target creature with digital can't be blocked this turn.
+Prowess.
 {1}{U}: Eject. ({1}{U}: Transform this card. Activate only as a sorcery.)
 
 [C035] Data Courier {1}{U}
@@ -364,21 +360,19 @@ If you have three or more {E}, scry 2.
 
 [C039] Physics Override {1}{U}
 Instant
-Target creature has base power and toughness 3/3 and gains flying until end of turn.
+Target creature has base power and toughness 4/4 and gains hexproof until end of turn.
 
 [C040] System Patcher {3}{U}
 Creature — Human Program (3/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
-When System Patcher enters, return target creature to its owner's hand.
-If that creature had digital, you get {E}{E}.
+When System Patcher enters, return target creature to its owner's hand. If that creature had digital, you get {E}{E}.
 
 [C041] Rapid Learning {U}
 Instant
 Draw a card. You get {E}{E}.
 
 [C042] Deep-Web Miner {1}{U}
-Creature — Program Worker (0/4)
-Defender
+Creature — Human Worker (1/3)
 {T}: You get {E}.
 
 [C043] Access Denied {1}{U}
@@ -389,9 +383,10 @@ Counter target creature spell.
 Creature — Program Serpent (5/5)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Ward {2}
+Basic landcycling {2}
 
 [C045] Code Prowler {2}{U}
-Creature — Program Beast (3/2)
+Creature — Construct Beast (3/2)
 Flash
 When Code Prowler enters, up to one target creature with digital gets -3/-0 until end of turn.
 
@@ -406,7 +401,7 @@ Creature — Wall (0/4)
 Defender
 Digital (This creature can block or be blocked only by creatures with digital.)
 Whenever you cast an instant or sorcery spell, you get {E}.
-{T}, Pay {E}{E}: Draw a card.
+{T}, Pay {E}{E}{E}: Draw a card.
 
 [C048] Glitch Trap {1}{U}
 Enchantment - Aura

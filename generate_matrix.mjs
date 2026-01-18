@@ -100,7 +100,7 @@ class Card {
     if (t.includes("land")) return "Framing: PANORAMIC LANDSCAPE / WIDE SHOT. Focus on the environment.";
     if (t.includes("vehicle")) return "Framing: DYNAMIC VEHICLE ACTION SHOT. Low angle or chasing perspective.";
     if (t.includes("artifact")) return "Framing: MACRO SHOT / OBJECT STUDY. Focus on the texture and machinery.";
-    if (t.includes("instant") || t.includes("sorcery")) return "Framing: DYNAMIC ACTION SHOT. Capture the exact moment the spell's effect occurs.";
+    if (t.includes("instant") || t.includes("sorcery")) return "Framing: ABSTRACT or SYMBOLIC or DYNAMIC. If this is a specific reference, use it. Otherwise, show how this effect would be used.";
     if (t.includes("saga") || t.includes("enchantment")) return "Framing: ABSTRACT or SYMBOLIC. Can include floating code or 'glitch' overlays.";
     if (t.includes("planeswalker")) return "Framing: HEROIC PORTRAIT. Low angle, looking up at the powerful subject.";
     return "";
