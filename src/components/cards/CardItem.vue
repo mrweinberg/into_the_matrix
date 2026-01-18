@@ -3,7 +3,7 @@
     class="card"
     :data-color="colorClass"
     :data-pt="card.pt ? 'yes' : 'no'"
-    @click="handleClick"
+    @click="handleClick($event)"
     @contextmenu.prevent="handleRightClick"
   >
     <!-- Note Indicator -->
