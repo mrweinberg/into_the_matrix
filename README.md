@@ -83,10 +83,9 @@ matrix/
 │   ├── App.vue             # Main application entry
 │   └── main.js             # App initialization
 ├── public/                 # Public assets
-│   └── matrix_art_output/  # Generated card images
-├── scripts/                # Utility scripts
+│   └── cards/              # Generated card images
 ├── generate_matrix.mjs     # AI art generation script
-├── generate_website.mjs    # Data parsing script
+├── generate_data.mjs       # Card data JSON generator
 ├── MTG INTO THE MATRIX.txt # Card designs and mechanics
 ├── package.json            # Dependencies and scripts
 └── vite.config.js          # Vite configuration

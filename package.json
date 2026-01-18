@@ -6,8 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "generate-data": "node generate_website.mjs --json-only",
-    "generate-html": "node generate_website.mjs",
+    "generate-data": "node generate_data.mjs",
     "generate-art": "node generate_matrix.mjs",
     "build:full": "npm run generate-data && npm run build"
   },

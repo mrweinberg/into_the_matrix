@@ -6,7 +6,7 @@ import path from "node:path";
 // ==========================================
 
 const NEW_CARD_FILE = "MTG INTO THE MATRIX.txt"; // The file containing the NEW codes
-const OUTPUT_DIR = "matrix_art_output";     // Your images folder
+const OUTPUT_DIR = "public/cards";     // Your images folder
 
 // ==========================================
 // 1. HELPER CLASSES & PARSING
@@ -74,7 +74,7 @@ function parseNewBible(filePath) {
         const idMatch = cleanLine.match(idTagRegex);
         if (idMatch) {
             if (currentCard) cards.push(currentCard);
-            
+
             currentCard = new CardPlaceholder();
             currentCard.id = idMatch[1];
             currentCard.name = idMatch[2].trim();
@@ -84,14 +84,14 @@ function parseNewBible(filePath) {
         // Detect Back Face Name (if not caught by ID line)
         if (currentCard && currentCard.isBackFace && !currentCard.name && !cleanLine.startsWith("(") && !cleanLine.startsWith("[")) {
             // Usually the line after // or a color indicator line
-             if (!cleanLine.includes("Color Indicator")) {
-                 currentCard.name = cleanLine.trim();
-             }
+            if (!cleanLine.includes("Color Indicator")) {
+                currentCard.name = cleanLine.trim();
+            }
         }
-        
+
         // Handle "Name (Color Indicator)" lines common in DFC back faces
         if (currentCard && currentCard.isBackFace && !currentCard.name && cleanLine.includes("Color Indicator")) {
-             currentCard.name = cleanLine.replace(/\(Color Indicator: .*?\)/, '').trim();
+            currentCard.name = cleanLine.replace(/\(Color Indicator: .*?\)/, '').trim();
         }
     });
 
@@ -129,14 +129,14 @@ function main() {
     // 3. Match and Rename
     newCards.forEach(card => {
         const { safeName, nameSuffix, idSuffix } = card.getSafeNameComponents();
-        
+
         // The unique part of the filename that shouldn't change is the name part
         // Format: [CODE][ab]_[safeName][suffix].png
         // We look for a file that ENDS WITH: _[safeName][suffix].png
-        
+
         const expectedEnd = `_${safeName}${nameSuffix}.png`;
         const expectedNewFilename = `${card.id}${idSuffix}${expectedEnd}`;
-        
+
         // Find a file that matches the name part
         const matchingFile = existingFiles.find(file => file.endsWith(expectedEnd));
 

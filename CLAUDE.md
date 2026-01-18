@@ -18,11 +18,11 @@ Options:
 - `--specific <card_id>` / `-s <card_id>`: Generate for specific card (e.g., `-s C01`, `-s M03`)
 - `--cleanup` / `-c`: Remove orphan files not matching any card
 
-### Generate Website
+### Generate Card Data
 ```bash
-node generate_website.mjs
+npm run generate-data
 ```
-Outputs `index.html` with the interactive card gallery.
+Generates `cards.json`, `notes.json`, and `setInfo.json` in `src/data/`.
 
 ### Install Dependencies
 ```bash
@@ -41,13 +41,12 @@ npm install
   - `Card` class with prompt generation methods (`generatePrompt()`, `getWorldContext()`, `getLighting()`, etc.)
   - Handles transform cards (front/back faces) via `//` separator in source file
   - Uses `artOverrides.json` for per-card prompt customizations
-  - Output goes to `matrix_art_output/` directory
+  - Output goes to `public/cards/` directory
 
-- **generate_website.mjs**: Static HTML generation
-  - Separate `Card` class (duplicated parsing logic)
-  - Generates self-contained HTML with embedded CSS/JS
-  - Includes booster pack simulator and draft mode features
-  - Uses Mana Font CDN for Magic symbols
+- **generate_data.mjs**: Card data JSON generation
+  - Parses `MTG INTO THE MATRIX.txt` into JSON format
+  - Generates `cards.json`, `notes.json`, and `setInfo.json` in `src/data/`
+  - Includes comprehensive set statistics
 
 ### Art Generation Logic
 The prompt system in `generate_matrix.mjs` has several layers:

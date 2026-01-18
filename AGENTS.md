@@ -25,9 +25,9 @@ ITM is a Magic: The Gathering fan set with two main components:
 /
 ├── MTG INTO THE MATRIX.txt    # Source of truth - all card designs
 ├── generate_matrix.mjs        # AI art generation script
-├── generate_website.mjs       # Legacy static HTML generator (deprecated)
+├── generate_data.mjs          # Card data JSON generator
 ├── artOverrides.json          # Per-card art prompt customizations
-├── matrix_art_output/         # Generated card artwork (PNG files)
+├── public/cards/              # Generated card artwork (PNG files)
 │
 ├── src/                       # Vue 3 application
 │   ├── main.js               # App entry point, CSS imports
@@ -75,20 +75,20 @@ ITM is a Magic: The Gathering fan set with two main components:
 
 ## Key Architectural Decisions
 
-### 1. Dual Code Paths (Legacy vs Modern)
+### 1. Data Generation
 
-**Decision**: The project has two website generation approaches:
-- `generate_website.mjs` - Original monolithic HTML generator (deprecated)
-- `src/` - Modern Vue 3 SPA (current)
+**Decision**: Card data is pre-parsed from the source text file into JSON.
+- `generate_data.mjs` - Parses `MTG INTO THE MATRIX.txt` into JSON data files
+- `src/` - Modern Vue 3 SPA that consumes the JSON
 
-**Reason**: Started as a simple static page, evolved into a full SPA as features grew. The legacy generator remains for reference but the Vue app is the active codebase.
+**Reason**: The source file format is human-friendly but complex to parse. Pre-processing into JSON simplifies the frontend and makes the build faster.
 
 ### 2. Card Data Flow
 
 ```
 MTG INTO THE MATRIX.txt (source of truth)
         ↓
-generate_website.mjs parses → src/data/*.json
+generate_data.mjs parses → src/data/*.json
         ↓
 cardStore.js loads JSON → Components consume via composables
 ```
@@ -214,7 +214,7 @@ App.vue
 
 | Task | Primary Files |
 |------|---------------|
-| Add new card property | `generate_website.mjs` (parsing), `cardStore.js` |
+| Add new card property | `generate_data.mjs` (parsing), `cardStore.js` |
 | Change card rendering | `CardItem.vue`, `cards.css` |
 | Modify draft logic | `useDraft.js`, `boosterLogic.js` |
 | Change deck builder UI | `DeckBuilder.vue`, `DeckCardRow.vue` |
