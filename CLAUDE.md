@@ -18,6 +18,12 @@ Options:
 - `--specific <card_id>` / `-s <card_id>`: Generate for specific card (e.g., `-s C01`, `-s M03`)
 - `--cleanup` / `-c`: Remove orphan files not matching any card
 
+### Resize Artwork to 4:3
+```bash
+node resize_art.mjs
+```
+Use this script to batch resize 5:4 images to 4:3 using Gemini image generation (editing mode).
+
 ### Generate Card Data
 ```bash
 npm run generate-data
@@ -32,32 +38,23 @@ npm install
 ## Architecture
 
 ### Card Data Flow
-1. `MTG INTO THE MATRIX.txt` - Source of truth for all card designs, mechanics, and flavor text
-2. Both generators parse this file using similar regex-based parsing logic
-3. Card IDs follow the pattern `[X##]` where X is rarity prefix (C=Common, U=Uncommon, R=Rare, M=Mythic) and ## is the number
+1. **Source of Truth**: `MTG INTO THE MATRIX.txt` (Text file with card definitions)
+2. **Generators**: `generate_data.mjs` parses this into JSON for the frontend.
+3. **Card IDs**: `[X##]` where X is rarity (C/U/R/M) and ## is the number.
 
 ### Key Files
 - **generate_matrix.mjs**: AI art generation with Gemini API
-  - `Card` class with prompt generation methods (`generatePrompt()`, `getWorldContext()`, `getLighting()`, etc.)
-  - Handles transform cards (front/back faces) via `//` separator in source file
   - Uses `artOverrides.json` for per-card prompt customizations
   - Output goes to `public/cards/` directory
+- **resize_art.mjs**: Ensures all art is 4:3 aspect ratio
+- **fix_syntax.mjs**: Standardizes card text syntax (modern wording)
 
 - **generate_data.mjs**: Card data JSON generation
   - Parses `MTG INTO THE MATRIX.txt` into JSON format
   - Generates `cards.json`, `notes.json`, and `setInfo.json` in `src/data/`
-  - Includes comprehensive set statistics
-
-### Art Generation Logic
-The prompt system in `generate_matrix.mjs` has several layers:
-- **World Context**: Differentiates Matrix simulation vs Real World based on `Digital` keyword
-- **Character Diversity**: Deterministic random appearance for non-legendary humans
-- **Vehicle/Robot Visuals**: Type-specific rendering instructions
-- **Lighting Engine**: Color-based lighting rules
-- **Composition Types**: Random framing styles for creatures
 
 ### File Naming Convention
-Card art files: `{ID}{suffix}_{sanitized_name}.png`
+Card art files: `public/cards/{ID}{suffix}_{sanitized_name}.png`
 - Transform card fronts: `{ID}a_{name}_front.png`
 - Transform card backs: `{ID}b_{name}_back.png`
 

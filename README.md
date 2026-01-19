@@ -58,12 +58,13 @@ npm run generate-data
 #### 3. Generate Card Artwork
 To generate AI art for the cards:
 ```bash
-npm run generate-art
+node generate_matrix.mjs
 ```
 **Options:**
-- `npm run generate-art -- --dryrun` (Preview only)
-- `npm run generate-art -- --force` (Overwrite existing)
-- `npm run generate-art -- --specific C001` (Specific card)
+- `node generate_matrix.mjs --dryrun` (Preview only)
+- `node generate_matrix.mjs --force` (Overwrite existing)
+- `node generate_matrix.mjs --specific C001` (Specific card)
+- `node resize_art.mjs` (Resize existing art to 4:3)
 
 #### 4. Production Build
 To create a strictly static version of the site (e.g. for GitHub Pages):
@@ -77,16 +78,16 @@ The output will be in the `dist/` folder.
 ```
 matrix/
 ├── src/                    # Vue source code
-│   ├── assets/             # JSON data and styles
+│   ├── data/               # Generated JSON data
 │   ├── components/         # Vue components (Card, Dashboard, etc.)
-│   ├── utils/              # Game logic and sorting helpers
+│   ├── composables/        # Shared game logic (Draft, Filters)
 │   ├── App.vue             # Main application entry
-│   └── main.js             # App initialization
 ├── public/                 # Public assets
-│   └── cards/              # Generated card images
+│   └── cards/              # CONSOLIDATED card images
 ├── generate_matrix.mjs     # AI art generation script
 ├── generate_data.mjs       # Card data JSON generator
-├── MTG INTO THE MATRIX.txt # Card designs and mechanics
+├── fix_syntax.mjs          # Syntax standardization utility
+├── MTG INTO THE MATRIX.txt # SOURCE OF TRUTH (Card designs)
 ├── package.json            # Dependencies and scripts
 └── vite.config.js          # Vite configuration
 ```
@@ -99,11 +100,12 @@ matrix/
 - **Transform Card Support**: Handles double-faced cards with separate artwork for each side.
 
 ### Website Features (Vue 3)
-- **Interactive Gallery**: Browse all 251 cards with high-quality artwork.
-- **Instant Filtering**: Filter by name, type, rarity, color, and mechanics in real-time.
-- **Booster Pack Simulator**: Generate randomized 15-card booster packs with proper rarity distribution.
-- **Draft Simulator**: Simulate a full booster draft against AI bots.
-- **Responsive Design**: Mobile-friendly interface.
+- **Interactive Gallery**: Browse all 296 cards with high-quality artwork.
+- **Instant Filtering**: Filter by name, type, rarity, color, and mechanics.
+- **Booster Draft**: Simulate a full 3-pack draft against AI bots.
+- **Sealed Deck**: Open 6 packs and build a deck from the pool.
+- **Deck Builder**: Visual deck construction with mana curves and stats.
+- **Proxy Generator**: Print-ready layout for creating physical proxies.
 - **Design Notes**: View developer notes for set design philosophy.
 
 ## 🛠 Customization
@@ -112,7 +114,7 @@ matrix/
 Edit `MTG INTO THE MATRIX.txt` to add cards or change mechanics. Then run `npm run generate-data`.
 
 ### Adjusting AI Prompts
-In `generate_matrix.mjs`, modify `generatePrompt()` to change art styles.
+In `artOverrides.json`, add specific instructions for any card ID.
 
 ## 📄 Legal Notice
 
