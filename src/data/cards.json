@@ -2929,7 +2929,7 @@
   },
   {
     "id": "U073",
-    "name": "Righteous Surge",
+    "name": "Righteous Charge",
     "cost": "{R}",
     "type": "Sorcery",
     "displayType": "Sorcery",
@@ -2943,7 +2943,7 @@
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "U073_righteous_surge.png"
+    "fileName": "U073_righteous_charge.png"
   },
   {
     "id": "U074",
@@ -3508,7 +3508,7 @@
   },
   {
     "id": "U084",
-    "name": "Surge of Renewal",
+    "name": "Burst of Renewal",
     "cost": "{2}{G}",
     "type": "Enchantment — Aura",
     "displayType": "Enchantment — Aura",
@@ -3524,7 +3524,7 @@
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "U084_surge_of_renewal.png"
+    "fileName": "U084_burst_of_renewal.png"
   },
   {
     "id": "U085",

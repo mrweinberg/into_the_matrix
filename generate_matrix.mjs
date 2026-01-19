@@ -585,7 +585,7 @@ async function generateArtForCard(aiClient, card, isDryRun, forceOverwrite) {
   const outputPath = path.join(OUTPUT_DIR, card.getFileName());
 
   if (!forceOverwrite && fs.existsSync(outputPath)) {
-    console.log(`[SKIP] ${card.getFileName()} already exists.`);
+    // console.log(`[SKIP] ${card.getFileName()} already exists.`);
     return false; // Skipped
   }
 
