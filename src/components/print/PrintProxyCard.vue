@@ -49,7 +49,7 @@ const props = defineProps({
 
 const colorClass = computed(() => determineColorClass(props.card))
 const formattedCost = computed(() => replaceSymbols(props.card.cost || ''))
-const imagePath = computed(() => `matrix_art_output/${props.card.fileName}`)
+const imagePath = computed(() => `${import.meta.env.BASE_URL}cards/${props.card.fileName}`)
 const cleanId = computed(() => (props.card.id || '').replace(/[\[\]]/g, ''))
 const colorIndicatorClass = computed(() =>
   props.card.colorIndicator ? `ms ms-ci ms-ci-${props.card.colorIndicator}` : ''

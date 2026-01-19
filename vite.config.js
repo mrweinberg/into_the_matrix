@@ -4,7 +4,7 @@ import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [vue()],
-  base: './',
+  base: '/into_the_matrix/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets'
