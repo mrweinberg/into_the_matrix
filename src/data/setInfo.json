@@ -225,14 +225,14 @@
       "toughnessDistribution": {
         "0": 1,
         "1": 29,
-        "2": 41,
-        "3": 45,
+        "2": 40,
+        "3": 46,
         "4": 22,
         "5+": 13
       }
     },
     "keywords": {
-      "Vigilance": 12,
+      "Vigilance": 13,
       "Digital": 73,
       "Jack-in": 22,
       "Flying": 11,

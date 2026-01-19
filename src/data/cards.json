@@ -1426,7 +1426,7 @@
     "id": "U035",
     "name": "Broadcast Intruder",
     "cost": "{2}{U}",
-    "type": "Creature — Human Rogue (2/2)",
+    "type": "Creature — Human Rogue (2/3)",
     "displayType": "Creature — Human Rogue",
     "text": [
       "When this creature enters, you get {E}{E}.",
@@ -1436,7 +1436,7 @@
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": true,
-    "pt": "2/2",
+    "pt": "2/3",
     "colorIndicator": null,
     "fileName": "U035a_broadcast_intruder_front.png"
   },
@@ -3733,9 +3733,8 @@
     "type": "Enchantment",
     "displayType": "Enchantment",
     "text": [
-      "Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token and you get {E}.",
-      "This ability triggers only once each turn.",
-      "{1}, Sacrifice an Ooze: Surveil 1."
+      "Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token and you get {E}. This ability triggers only once each turn.",
+      "{1}, Sacrifice an Ooze: Surveil 2."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -3772,9 +3771,9 @@
     "text": [
       "I — Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
       "II — Create a 1/1 white Human creature token.",
-      "III — Put two +1/+1 counters on target creature you control."
+      "III — Put two +1/+1 counters on target creature you control. It gains vigilance until end of turn."
     ],
-    "flavor": "It gains vigilance until end of turn.",
+    "flavor": "",
     "rarity": "Rare",
     "isBackFace": false,
     "hasBackFace": false,
@@ -3878,13 +3877,13 @@
   },
   {
     "id": "R088",
-    "name": "Dozer, Ship's Engineer",
+    "name": "Dozer, Freeborn Operator",
     "cost": "{3}{G}",
     "type": "Legendary Creature — Human Artificer (3/3)",
     "displayType": "Legendary Creature — Human Artificer",
     "text": [
-      "Whenever a land enters under your control, put a +1/+1 counter on Dozer.",
-      "Whenever Dozer attacks, search your library for a basic land card, put it onto the battlefield tapped unless Dozer's power is 6 or greater, then shuffle."
+      "Landfall — Whenever a land enters under your control, put a +1/+1 counter on Dozer.",
+      "Whenever Dozer attacks, search your library for a basic land card, put it onto the battlefield and shuffle. It enters tapped unless Dozer's power is 6 or greater."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -3892,7 +3891,7 @@
     "hasBackFace": false,
     "pt": "3/3",
     "colorIndicator": null,
-    "fileName": "R088_dozer__ship_s_engineer.png"
+    "fileName": "R088_dozer__freeborn_operator.png"
   },
   {
     "id": "M08",
@@ -4655,7 +4654,7 @@
     "text": [
       "Digital (The Oracle can block or be blocked only by creatures with digital.)",
       "Ward {2}",
-      "Play with the top card of your library revealed.",
+      "You may look at the top card of your library at any time.",
       "You may cast the top card of your library.",
       "Whenever you cast a spell from your library, you get {E}.",
       "{E}{E}: Scry 2."

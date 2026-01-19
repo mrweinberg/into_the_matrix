@@ -498,7 +498,7 @@ Whenever a creature you control transforms, you get {E}.
 {1}{U}: Transform target creature with a jack-in or eject ability.
 
 [U035] Broadcast Intruder {2}{U}
-Creature — Human Rogue (2/2)
+Creature — Human Rogue (2/3)
 When this creature enters, you get {E}{E}.
 {1}{U}: Jack-in. ({1}{U}: Transform this card. Activate only as a sorcery.)
 //
@@ -1210,9 +1210,8 @@ When this creature becomes tapped, you may exile a creature card from your grave
 
 [R080] Bio-Energy Conversion {1}{G}
 Enchantment
-Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token and you get {E}.
-This ability triggers only once each turn.
-{1}, Sacrifice an Ooze: Surveil 1.
+Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token and you get {E}. This ability triggers only once each turn.
+{1}, Sacrifice an Ooze: Surveil 2.
 
 [R081] Reclaim the Surface {4}{G}{G}
 Sorcery
@@ -1223,8 +1222,7 @@ Then, if you have 6 or more {E}, creatures you control gain haste and indestruct
 Enchantment — Saga
 I — Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.
 II — Create a 1/1 white Human creature token.
-III — Put two +1/+1 counters on target creature you control.
-It gains vigilance until end of turn.
+III — Put two +1/+1 counters on target creature you control. It gains vigilance until end of turn.
 
 [R083] System Purge Virus {3}{G}{G}
 Sorcery
@@ -1255,10 +1253,10 @@ Instant
 Distribute X +1/+1 counters among any number of target creatures you control.
 Those creatures gain trample until end of turn.
 
-[R088] Dozer, Ship's Engineer {3}{G}
+[R088] Dozer, Freeborn Operator {3}{G}
 Legendary Creature — Human Artificer (3/3)
-Whenever a land enters under your control, put a +1/+1 counter on Dozer.
-Whenever Dozer attacks, search your library for a basic land card, put it onto the battlefield tapped unless Dozer's power is 6 or greater, then shuffle.
+Landfall — Whenever a land enters under your control, put a +1/+1 counter on Dozer.
+Whenever Dozer attacks, search your library for a basic land card, put it onto the battlefield and shuffle. It enters tapped unless Dozer's power is 6 or greater.
 
 --- MYTHICS ---
 
@@ -1507,7 +1505,7 @@ At the beginning of your end step, each opponent loses 1 life for each creature 
 Legendary Creature — Program Advisor (1/5)
 Digital (The Oracle can block or be blocked only by creatures with digital.)
 Ward {2}
-Play with the top card of your library revealed.
+You may look at the top card of your library at any time.
 You may cast the top card of your library.
 Whenever you cast a spell from your library, you get {E}.
 {E}{E}: Scry 2.
