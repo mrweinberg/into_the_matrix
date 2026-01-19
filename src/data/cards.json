@@ -2206,9 +2206,8 @@
     "displayType": "Artifact Creature — Robot",
     "text": [
       "Flying, menace",
-      "When this creature enters, create two 1/1 colorless Robot artifact creature tokens with flying.",
-      "Whenever a Robot you control dies, you may pay {2}{B}. If you do, create a 1/1 colorless Robot artifact creature token with flying.",
-      "Sacrifice a Robot: this creature gets +2/+2 until end of turn."
+      "When this creature enters, create two 2/2   colorless Robot artifact creature tokens with menace.",
+      "Whenever a Robot you control dies, you may pay {2}{B}. If you do, create a 2/2 colorless Robot artifact creature token with menace."
     ],
     "flavor": "",
     "rarity": "Rare",
