@@ -248,6 +248,12 @@ Creature — Human Artificer (1/1)
 {T}: Target Vehicle you control gets +2/+1 until end of turn.
 {2}{W}, {T}: Create a Gun token.
 
+[U015] Stand Together {1}{W}
+Instant
+Creatures you control gain indestructible until end of turn.
+If you control 3 or more Humans, scry 2.
+"If we have to die, we die standing. Together."
+
 --- RARES ---
 
 [R001] Emergency Protocol {1}{W}
@@ -491,6 +497,17 @@ Whenever a creature you control transforms, you get {E}.
 {T}: Add {U}. Spend this mana only to cast spells with digital, instants, or sorceries.
 {1}{U}: Transform target creature with a jack-in or eject ability.
 
+[U035] Broadcast Intruder {2}{U}
+Creature — Human Rogue (2/2)
+When Broadcast Intruder enters, you get {E}{E}.
+{1}{U}: Jack-in. ({1}{U}: Transform this card. Activate only as a sorcery.)
+//
+Pirate Signal (Color Indicator: Blue)
+Creature — Human Rogue Program (3/2)
+Digital (This creature can block or be blocked only by creatures with digital.)
+Whenever Pirate Signal attacks, you may pay {E}. If you do, another target creature gains digital until end of turn.
+{2}: Eject. ({2}: Transform this card. Activate only as a sorcery.)
+
 --- RARES ---
 
 [R021] Code Runner {2}{U}
@@ -701,10 +718,6 @@ Menace
 Whenever another artifact or creature you control is put into a graveyard from the battlefield, you get {E}.
 Sacrifice an artifact or creature: Sentinel Scavenger gets +1/+1 until end of turn.
 
-[U051] Sudden Respawn {4}{B}
-Instant
-Return target creature from your graveyard to the battlefield tapped.
-
 [U052] Agent Brown, Enforcer {2}{B}{B}
 Legendary Creature — Program Agent (3/3)
 Flash, digital (This creature can block or be blocked only by creatures with digital.)
@@ -851,9 +864,15 @@ Flying
 When Sentinel Sweeper dies, you get {E}.
 
 [C103] Magma-Code Brawler {2}{R}
-Creature — Program Warrior (3/1)
+Creature — Program Warrior (3/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Haste
+
+[C104] Zion Shocktrooper {2}{R}
+Creature — Human Warrior (4/2)
+Menace
+Zion Shocktrooper can't block.
+"We don't go up there to hide. We go up there to hit them back."
 
 [C106] Slag Melt {3}{R}
 Instant
@@ -949,6 +968,12 @@ Until your next turn, you may play that card.
 Sorcery
 Target creature you control gets haste and trample until end of turn.
 Flashback {2}{R}
+
+[U074] Shrapnel Ejection {1}{R}
+Instant
+As an additional cost to cast this spell, sacrifice an artifact or creature.
+Shrapnel Ejection deals damage equal to the sacrificed permanent's mana value plus 2 to any target.
+"Sometimes the only way to win is to blow up the exit."
 
 --- RARES ---
 
@@ -1171,6 +1196,17 @@ Whenever you cast a spell during an opponent's turn, you get {E}.
 Pay {E}{E}: System Root-Weaver gets +2/+2 until end of turn. Activate only once each turn.
 "Growing within the firewall's blind spot."
 
+[U093] Restore the Code {1}{G}
+Sorcery
+Return target permanent card from your graveyard to your hand. If you have 4 or more {E}, you may put that card onto the battlefield tapped instead if it's a land or a creature with mana value 3 or less.
+"In the real world, nothing is wasted. Not even the dead."
+
+[U094] Hydroponics Recycler {1}{G}
+Creature — Human Druid (2/1)
+When Hydroponics Recycler enters, mill three cards.
+When this creature becomes tapped, you may exile a creature card from your graveyard. If you do, create a 1/1 green Ooze creature token.
+"In Zion, death breeds life."
+
 --- RARES ---
 
 [R080] Bio-Energy Conversion {1}{G}
@@ -1202,16 +1238,12 @@ If you have 6 or more {E}, you may choose both.
 Creature — Human Scout (3/2)
 Reach
 Tunnel Path-Finder can't be blocked by creatures with power 2 or less.
-Whenever Tunnel Path-Finder attacks, you may exile up to two target cards from any graveyard.
-For each card exiled this way, you get {E}.
+Whenever Tunnel Path-Finder attacks, you may exile up to two target cards from any graveyard. For each card exiled this way, you get {E}.
 
 [R085] Zion Archivist {1}{G}{G}
 Legendary Creature — Human Advisor (2/3)
-Reach
-When Zion Archivist enters, shuffle target player's graveyard into their library.
-You may draw a card for each creature card shuffled into a library this way, then discard that many cards.
-{G}, {T}: Put target card from your graveyard on the bottom of your library.
-If it was a Human or Robot card, draw a card.
+When Zion Archivist enters, shuffle target player's graveyard into their library. You may draw a card for each creature card shuffled into a library this way, then discard that many cards.
+{G}, {T}: Put target card from your graveyard on the bottom of your library. If it was a Human or Robot card, draw a card.
 
 [R086] Zion Mystic {G}
 Legendary Creature — Human Shaman (1/2)

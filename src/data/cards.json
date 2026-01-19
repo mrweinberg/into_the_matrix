@@ -366,12 +366,12 @@
   {
     "id": "U003",
     "name": "Defensive Formation",
-    "cost": "{1}{W}",
+    "cost": "{3}{W}",
     "type": "Enchantment",
     "displayType": "Enchantment",
     "text": [
       "Creatures you control get +0/+2 as long as they are untapped.",
-      "{1}{W}: Target creature you control gains vigilance until end of turn."
+      "{W}: Target creature you control gains vigilance until end of turn."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -612,6 +612,24 @@
     "pt": "1/1",
     "colorIndicator": null,
     "fileName": "U014_youthful_welder.png"
+  },
+  {
+    "id": "U015",
+    "name": "Stand Together",
+    "cost": "{1}{W}",
+    "type": "Instant",
+    "displayType": "Instant",
+    "text": [
+      "Creatures you control gain indestructible until end of turn.",
+      "If you control 3 or more Humans, scry 2."
+    ],
+    "flavor": " \"If we have to die, we die standing. Together.\"",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "",
+    "colorIndicator": null,
+    "fileName": "U015_stand_together.png"
   },
   {
     "id": "R001",
@@ -1405,6 +1423,43 @@
     "fileName": "U033_link_monitor.png"
   },
   {
+    "id": "U035",
+    "name": "Broadcast Intruder",
+    "cost": "{2}{U}",
+    "type": "Creature — Human Rogue (2/2)",
+    "displayType": "Creature — Human Rogue",
+    "text": [
+      "When Broadcast Intruder enters, you get {E}{E}.",
+      "{1}{U}: Jack-in. ({1}{U}: Transform this card. Activate only as a sorcery.)"
+    ],
+    "flavor": "",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": true,
+    "pt": "2/2",
+    "colorIndicator": null,
+    "fileName": "U035a_broadcast_intruder_front.png"
+  },
+  {
+    "id": "U035",
+    "name": "Pirate Signal",
+    "cost": "",
+    "type": "Creature — Human Rogue Program (3/2)",
+    "displayType": "Creature — Human Rogue Program",
+    "text": [
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Whenever Pirate Signal attacks, you may pay {E}. If you do, another target creature gains digital until end of turn.",
+      "{2}: Eject. ({2}: Transform this card. Activate only as a sorcery.)"
+    ],
+    "flavor": "",
+    "rarity": "Uncommon",
+    "isBackFace": true,
+    "hasBackFace": false,
+    "pt": "3/2",
+    "colorIndicator": "ub",
+    "fileName": "U035b_pirate_signal_back.png"
+  },
+  {
     "id": "R021",
     "name": "Code Runner",
     "cost": "{2}{U}",
@@ -1967,8 +2022,7 @@
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Menace",
       "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
-      "Whenever Meter Reader deals combat damage to a player, that player loses {E} equal to the damage dealt.",
-      "You get {E} equal to the amount of {E} that player lost."
+      "Whenever Meter Reader deals combat damage to a player, that player loses {E} equal to the damage dealt. You get {E} equal to the amount of {E} that player lost."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2068,23 +2122,6 @@
     "pt": "3/3",
     "colorIndicator": null,
     "fileName": "U050_sentinel_scavenger.png"
-  },
-  {
-    "id": "U051",
-    "name": "Sudden Respawn",
-    "cost": "{4}{B}",
-    "type": "Instant",
-    "displayType": "Instant",
-    "text": [
-      "Return target creature from your graveyard to the battlefield tapped."
-    ],
-    "flavor": "",
-    "rarity": "Uncommon",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "U051_sudden_respawn.png"
   },
   {
     "id": "U052",
@@ -2550,7 +2587,7 @@
     "id": "C103",
     "name": "Magma-Code Brawler",
     "cost": "{2}{R}",
-    "type": "Creature — Program Warrior (3/1)",
+    "type": "Creature — Program Warrior (3/2)",
     "displayType": "Creature — Program Warrior",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
@@ -2560,9 +2597,27 @@
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "3/1",
+    "pt": "3/2",
     "colorIndicator": null,
     "fileName": "C103_magma_code_brawler.png"
+  },
+  {
+    "id": "C104",
+    "name": "Zion Shocktrooper",
+    "cost": "{2}{R}",
+    "type": "Creature — Human Warrior (4/2)",
+    "displayType": "Creature — Human Warrior",
+    "text": [
+      "Menace",
+      "Zion Shocktrooper can't block."
+    ],
+    "flavor": " \"We don't go up there to hide. We go up there to hit them back.\"",
+    "rarity": "Common",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "4/2",
+    "colorIndicator": null,
+    "fileName": "C104_zion_shocktrooper.png"
   },
   {
     "id": "C106",
@@ -2890,6 +2945,24 @@
     "pt": "",
     "colorIndicator": null,
     "fileName": "U073_righteous_surge.png"
+  },
+  {
+    "id": "U074",
+    "name": "Shrapnel Ejection",
+    "cost": "{1}{R}",
+    "type": "Instant",
+    "displayType": "Instant",
+    "text": [
+      "As an additional cost to cast this spell, sacrifice an artifact or creature.",
+      "Shrapnel Ejection deals damage equal to the sacrificed permanent's mana value plus 2 to any target."
+    ],
+    "flavor": " \"Sometimes the only way to win is to blow up the exit.\"",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "",
+    "colorIndicator": null,
+    "fileName": "U074_shrapnel_ejection.png"
   },
   {
     "id": "R060",
@@ -3620,6 +3693,41 @@
     "fileName": "U092_system_root_weaver.png"
   },
   {
+    "id": "U093",
+    "name": "Restore the Code",
+    "cost": "{1}{G}",
+    "type": "Sorcery",
+    "displayType": "Sorcery",
+    "text": [
+      "Return target permanent card from your graveyard to your hand. If you have 4 or more {E}, you may put that card onto the battlefield tapped instead if it's a land or a creature with mana value 3 or less."
+    ],
+    "flavor": " \"In the real world, nothing is wasted. Not even the dead.\"",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "",
+    "colorIndicator": null,
+    "fileName": "U093_restore_the_code.png"
+  },
+  {
+    "id": "U094",
+    "name": "Hydroponics Recycler",
+    "cost": "{1}{G}",
+    "type": "Creature — Human Druid (2/1)",
+    "displayType": "Creature — Human Druid",
+    "text": [
+      "When Hydroponics Recycler enters, mill three cards.",
+      "When this creature becomes tapped, you may exile a creature card from your graveyard. If you do, create a 1/1 green Ooze creature token."
+    ],
+    "flavor": " \"In Zion, death breeds life.\"",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "2/1",
+    "colorIndicator": null,
+    "fileName": "U094_hydroponics_recycler.png"
+  },
+  {
     "id": "R080",
     "name": "Bio-Energy Conversion",
     "cost": "{1}{G}",
@@ -3704,8 +3812,7 @@
     "text": [
       "Reach",
       "Tunnel Path-Finder can't be blocked by creatures with power 2 or less.",
-      "Whenever Tunnel Path-Finder attacks, you may exile up to two target cards from any graveyard.",
-      "For each card exiled this way, you get {E}."
+      "Whenever Tunnel Path-Finder attacks, you may exile up to two target cards from any graveyard. For each card exiled this way, you get {E}."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -3722,11 +3829,8 @@
     "type": "Legendary Creature — Human Advisor (2/3)",
     "displayType": "Legendary Creature — Human Advisor",
     "text": [
-      "Reach",
-      "When Zion Archivist enters, shuffle target player's graveyard into their library.",
-      "You may draw a card for each creature card shuffled into a library this way, then discard that many cards.",
-      "{G}, {T}: Put target card from your graveyard on the bottom of your library.",
-      "If it was a Human or Robot card, draw a card."
+      "When Zion Archivist enters, shuffle target player's graveyard into their library. You may draw a card for each creature card shuffled into a library this way, then discard that many cards.",
+      "{G}, {T}: Put target card from your graveyard on the bottom of your library. If it was a Human or Robot card, draw a card."
     ],
     "flavor": "",
     "rarity": "Rare",
