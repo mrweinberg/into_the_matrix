@@ -463,6 +463,7 @@ class Card {
       Generate an image for a Magic: The Gathering card.
 
       CRITICAL: NO TEXT IN IMAGE. No card title, mana symbols, or text boxes. Illustration only.
+      If the card name and flavor text are indicative of a specific scene from the movies, depict that scene.
 
       === CARD INFO ===
       Name: "${this.name}"
