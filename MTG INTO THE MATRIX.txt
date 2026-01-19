@@ -984,7 +984,7 @@ You may cast this creature as though it had flash if you have four or more {E}.
 [R061] Hunter-Killer Sentinel {3}{R}
 Artifact Creature — Robot (3/3)
 Flash, flying
-When this creature enters, you may change the target of target spell or ability to this creature.
+When this creature enters, you may change the target of target spell or ability that only targets one creature to this creature.
 Whenever this creature deals combat damage to a player, you may sacrifice it. If you do, it deals 4 damage to each creature that player controls.
 
 [R062] EMP Blast {1}{R}{R}
@@ -995,7 +995,7 @@ Each player loses {E}{E}{E}{E}.
 [R063] The Machine War {3}{R}
 Enchantment — Saga
 I — Goad all creatures your opponents control.
-II — this creature deals 2 damage to each creature.
+II — This saga deals 2 damage to each creature.
 III — Create a 5/5 colorless Robot artifact creature token with menace and haste.
 
 [R064] Cypher, Reality Skeptic {2}{R}
@@ -1003,27 +1003,17 @@ Legendary Creature — Human Rogue (2/2)
 First strike
 At the beginning of your precombat main phase, you may sacrifice a creature or artifact. If you do, add {R}{R} and exile the top card of your library. You may play that card this turn.
 
+[R067] Sentinel Scout {2}{R}
+Artifact Creature — Robot Scout (3/2)
+Menace
+Whenever this creature deals combat damage to a player, deal 3 damage to up to one target creature with digital.
+
 [R065] The Red Woman {2}{R}{R}
 Legendary Creature — Program (1/1)
 Digital (The Red Woman can block or be blocked only by creatures with digital.)
 Indestructible
 Creatures your opponents control attack each combat if able.
 Whenever an opponent attacks you with one or more creatures, exile the top card from your library. Until the end of your next turn, you may play that card.
-
-[R066] Weapons Cache {2}{R}
-Enchantment
-At the beginning of your upkeep, create a Gun token.
-If you would create a Gun token, create an additional Gun token.
-
-[R067] Sentinel Scout {2}{R}
-Artifact Creature — Robot Scout (3/2)
-Menace
-Whenever this creature deals combat damage to a player, deal 3 damage to up to one target creature with digital.
-
-[R068] Trinity, Combat Driver {2}{R}
-Legendary Creature — Human Pilot (3/2)
-Whenever Trinity crews a Vehicle, create a Gun token attached to that Vehicle.
-Vehicles you control that are creatures get +1/+0 for every 2 {E} you have, rounded down.
 
 [R069] Electrical Burst {1}{R}
 Sorcery
@@ -1038,6 +1028,16 @@ If you have 6 or more {E}, this creature deals 2 damage to each opponent.
 Enchantment
 If a source would deal damage to a permanent or player, it deals double that damage instead.
 At the beginning of your upkeep, exile the top card of your library. You may play it this turn.
+
+[M07] Trinity, Combat Driver {2}{R}
+Legendary Creature — Human Pilot (3/2)
+Whenever Trinity crews a Vehicle, create a Gun token attached to that Vehicle.
+Vehicles you control that are creatures get +1/+0 for every 2 {E} you have, rounded down.
+
+[M08] Weapons Cache {2}{R}
+Enchantment
+At the beginning of your upkeep, create a Gun token.
+If you would create one or more Gun tokens, create an additional Gun token.
 
 
 ========== GREEN (39 Cards) ==========
@@ -1213,11 +1213,6 @@ Enchantment
 Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token and you get {E}. This ability triggers only once each turn.
 {1}, Sacrifice an Ooze: Surveil 2.
 
-[R081] Reclaim the Surface {4}{G}{G}
-Sorcery
-Create two 4/4 green Beast creature tokens.
-Then, if you have 6 or more {E}, creatures you control gain haste and indestructible until end of turn.
-
 [R082] Founding of Zion {2}{G}
 Enchantment — Saga
 I — Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.
@@ -1266,6 +1261,9 @@ Reveal the top seven cards of your library.
 You may put any number of permanent cards from among them onto the battlefield.
 Put the rest on the bottom of your library in a random order.
 
+[M09] Reclaim the Surface {X}{X}{G}
+Sorcery
+Create X 4/4 green Construct artifact creature tokens with trample. Then, if you have 8 or more {E}, creatures you control get +X/+X and gain haste until end of turn.
 
 ========== MULTICOLOR (44 Cards) ==========
 

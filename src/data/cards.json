@@ -3056,44 +3056,6 @@
     "fileName": "R064_cypher__reality_skeptic.png"
   },
   {
-    "id": "R065",
-    "name": "The Red Woman",
-    "cost": "{2}{R}{R}",
-    "type": "Legendary Creature — Program (1/1)",
-    "displayType": "Legendary Creature — Program",
-    "text": [
-      "Digital (The Red Woman can block or be blocked only by creatures with digital.)",
-      "Indestructible",
-      "Creatures your opponents control attack each combat if able.",
-      "Whenever an opponent attacks you with one or more creatures, exile the top card from your library. Until the end of your next turn, you may play that card."
-    ],
-    "flavor": "",
-    "rarity": "Rare",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "1/1",
-    "colorIndicator": null,
-    "fileName": "R065_the_red_woman.png"
-  },
-  {
-    "id": "R066",
-    "name": "Weapons Cache",
-    "cost": "{2}{R}",
-    "type": "Enchantment",
-    "displayType": "Enchantment",
-    "text": [
-      "At the beginning of your upkeep, create a Gun token.",
-      "If you would create a Gun token, create an additional Gun token."
-    ],
-    "flavor": "",
-    "rarity": "Rare",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "R066_weapons_cache.png"
-  },
-  {
     "id": "R067",
     "name": "Sentinel Scout",
     "cost": "{2}{R}",
@@ -3112,22 +3074,24 @@
     "fileName": "R067_sentinel_scout.png"
   },
   {
-    "id": "R068",
-    "name": "Trinity, Combat Driver",
-    "cost": "{2}{R}",
-    "type": "Legendary Creature — Human Pilot (3/2)",
-    "displayType": "Legendary Creature — Human Pilot",
+    "id": "R065",
+    "name": "The Red Woman",
+    "cost": "{2}{R}{R}",
+    "type": "Legendary Creature — Program (1/1)",
+    "displayType": "Legendary Creature — Program",
     "text": [
-      "Whenever Trinity crews a Vehicle, create a Gun token attached to that Vehicle.",
-      "Vehicles you control that are creatures get +1/+0 for every 2 {E} you have, rounded down."
+      "Digital (The Red Woman can block or be blocked only by creatures with digital.)",
+      "Indestructible",
+      "Creatures your opponents control attack each combat if able.",
+      "Whenever an opponent attacks you with one or more creatures, exile the top card from your library. Until the end of your next turn, you may play that card."
     ],
     "flavor": "",
     "rarity": "Rare",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "3/2",
+    "pt": "1/1",
     "colorIndicator": null,
-    "fileName": "R068_trinity__combat_driver.png"
+    "fileName": "R065_the_red_woman.png"
   },
   {
     "id": "R069",
@@ -3166,6 +3130,42 @@
     "pt": "",
     "colorIndicator": null,
     "fileName": "M06_system_instability.png"
+  },
+  {
+    "id": "M07",
+    "name": "Trinity, Combat Driver",
+    "cost": "{2}{R}",
+    "type": "Legendary Creature — Human Pilot (3/2)",
+    "displayType": "Legendary Creature — Human Pilot",
+    "text": [
+      "Whenever Trinity crews a Vehicle, create a Gun token attached to that Vehicle.",
+      "Vehicles you control that are creatures get +1/+0 for every 2 {E} you have, rounded down."
+    ],
+    "flavor": "",
+    "rarity": "Mythic",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "3/2",
+    "colorIndicator": null,
+    "fileName": "M07_trinity__combat_driver.png"
+  },
+  {
+    "id": "M08",
+    "name": "Weapons Cache",
+    "cost": "{2}{R}",
+    "type": "Enchantment",
+    "displayType": "Enchantment",
+    "text": [
+      "At the beginning of your upkeep, create a Gun token.",
+      "If you would create a Gun token, create an additional Gun token."
+    ],
+    "flavor": "",
+    "rarity": "Mythic",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "",
+    "colorIndicator": null,
+    "fileName": "M08_weapons_cache.png"
   },
   {
     "id": "C120",
@@ -3745,24 +3745,6 @@
     "fileName": "R080_bio_energy_conversion.png"
   },
   {
-    "id": "R081",
-    "name": "Reclaim the Surface",
-    "cost": "{4}{G}{G}",
-    "type": "Sorcery",
-    "displayType": "Sorcery",
-    "text": [
-      "Create two 4/4 green Beast creature tokens.",
-      "Then, if you have 6 or more {E}, creatures you control gain haste and indestructible until end of turn."
-    ],
-    "flavor": "",
-    "rarity": "Rare",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "R081_reclaim_the_surface.png"
-  },
-  {
     "id": "R082",
     "name": "Founding of Zion",
     "cost": "{2}{G}",
@@ -3911,6 +3893,23 @@
     "pt": "",
     "colorIndicator": null,
     "fileName": "M08_root_access.png"
+  },
+  {
+    "id": "M09",
+    "name": "Reclaim the Surface",
+    "cost": "{X}{X}{G}",
+    "type": "Sorcery",
+    "displayType": "Sorcery",
+    "text": [
+      "Create X 4/4 green Construct artifact creature tokens with trample. Then, if you have 8 or more {E}, creatures you control get +X/+X and gain haste until end of turn."
+    ],
+    "flavor": "",
+    "rarity": "Mythic",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "",
+    "colorIndicator": null,
+    "fileName": "M09_reclaim_the_surface.png"
   },
   {
     "id": "U100",

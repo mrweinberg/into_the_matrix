@@ -87,8 +87,8 @@
     "rarityBreakdown": {
       "Common": 81,
       "Uncommon": 103,
-      "Rare": 62,
-      "Mythic": 15,
+      "Rare": 59,
+      "Mythic": 18,
       "Land": 16
     },
     "typeBreakdown": {
@@ -138,12 +138,12 @@
       },
       "G": {
         "0": 0,
-        "1": 4,
+        "1": 5,
         "2": 18,
         "3": 7,
         "4": 4,
         "5": 1,
-        "6+": 6
+        "6+": 5
       },
       "Multicolor": {
         "0": 0,
@@ -167,9 +167,9 @@
     "manaCurveByRarity": {
       "Mythic": {
         "0": 0,
-        "1": 0,
+        "1": 1,
         "2": 1,
-        "3": 1,
+        "3": 3,
         "4": 3,
         "5": 6,
         "6+": 4
@@ -178,10 +178,10 @@
         "0": 0,
         "1": 4,
         "2": 9,
-        "3": 26,
+        "3": 24,
         "4": 15,
         "5": 6,
-        "6+": 2
+        "6+": 1
       },
       "Uncommon": {
         "0": 0,
@@ -207,8 +207,8 @@
       "byRarity": {
         "Common": 45,
         "Uncommon": 63,
-        "Rare": 35,
-        "Mythic": 8
+        "Rare": 34,
+        "Mythic": 9
       },
       "averagePT": {
         "power": 2.4,
@@ -241,7 +241,7 @@
       "Lifelink": 9,
       "Eject": 7,
       "First Strike": 4,
-      "Indestructible": 12,
+      "Indestructible": 11,
       "Reach": 10,
       "Double Strike": 2,
       "Hexproof": 7,
@@ -250,7 +250,7 @@
       "Override": 9,
       "Menace": 21,
       "Deathtouch": 3,
-      "Trample": 18
+      "Trample": 19
     },
     "dfcCount": 19,
     "instantSorceryRatio": {
@@ -258,7 +258,7 @@
       "sorceries": 31,
       "ratio": 1.03
     },
-    "averageCMC": 2.92,
+    "averageCMC": 2.9,
     "cardsWithAbilities": {
       "cardDraw": 28,
       "removal": 62,
@@ -286,14 +286,14 @@
         "Common": 15
       },
       "R": {
-        "Mythic": 1,
-        "Rare": 10,
+        "Mythic": 3,
+        "Rare": 8,
         "Uncommon": 15,
         "Common": 15
       },
       "G": {
-        "Mythic": 1,
-        "Rare": 9,
+        "Mythic": 2,
+        "Rare": 8,
         "Uncommon": 15,
         "Common": 15
       },
