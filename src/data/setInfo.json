@@ -62,11 +62,11 @@
     }
   ],
   "stats": {
-    "totalCards": 265,
+    "totalCards": 266,
     "colorCombinations": {
       "W": 38,
       "U": 39,
-      "B": 37,
+      "B": 38,
       "R": 37,
       "G": 36,
       "UW": 4,
@@ -86,13 +86,13 @@
     },
     "rarityBreakdown": {
       "Common": 80,
-      "Uncommon": 93,
+      "Uncommon": 94,
       "Rare": 61,
       "Mythic": 15,
       "Land": 16
     },
     "typeBreakdown": {
-      "Creature": 143,
+      "Creature": 144,
       "Sorcery": 28,
       "Enchantment": 28,
       "Instant": 31,
@@ -122,7 +122,7 @@
         "0": 0,
         "1": 6,
         "2": 11,
-        "3": 9,
+        "3": 10,
         "4": 6,
         "5": 4,
         "6+": 1
@@ -187,7 +187,7 @@
         "0": 0,
         "1": 7,
         "2": 34,
-        "3": 35,
+        "3": 36,
         "4": 10,
         "5": 4,
         "6+": 3
@@ -203,15 +203,15 @@
       }
     },
     "creatureStats": {
-      "total": 143,
+      "total": 144,
       "byRarity": {
         "Common": 44,
-        "Uncommon": 56,
+        "Uncommon": 57,
         "Rare": 35,
         "Mythic": 8
       },
       "averagePT": {
-        "power": 2.3,
+        "power": 2.4,
         "toughness": 2.7
       },
       "powerDistribution": {
@@ -219,13 +219,13 @@
         "1": 33,
         "2": 53,
         "3": 31,
-        "4": 13,
+        "4": 14,
         "5+": 9
       },
       "toughnessDistribution": {
         "0": 1,
         "1": 28,
-        "2": 36,
+        "2": 37,
         "3": 44,
         "4": 22,
         "5+": 12
@@ -233,7 +233,7 @@
     },
     "keywords": {
       "Vigilance": 12,
-      "Digital": 72,
+      "Digital": 73,
       "Jack-in": 21,
       "Flying": 12,
       "Defender": 6,
@@ -241,7 +241,7 @@
       "Lifelink": 9,
       "Eject": 7,
       "First Strike": 3,
-      "Indestructible": 11,
+      "Indestructible": 12,
       "Reach": 11,
       "Double Strike": 2,
       "Hexproof": 7,
@@ -282,7 +282,7 @@
       "B": {
         "Mythic": 1,
         "Rare": 8,
-        "Uncommon": 13,
+        "Uncommon": 14,
         "Common": 15
       },
       "R": {

@@ -661,6 +661,12 @@ Sorcery
 Return up to two target creature cards from your graveyard to your hand.
 If you control a Robot or a creature with digital, you get {E}{E}.
 
+[U044] Abel, Chateau Bouncer {2}{B}
+Legendary Creature — Program Werewolf (4/2)
+Digital (This creature can block or be blocked only by creatures with digital.)
+Abel, Chateau Bouncer has indestructible as long as you've gained life this turn.
+"The Merovingian pays him to ensure the party never stops."
+
 [U045] Meter Reader {1}{B}
 Creature — Program Agent (2/3)
 Digital (This creature can block or be blocked only by creatures with digital.)

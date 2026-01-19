@@ -1940,6 +1940,24 @@
     "fileName": "U043_waste_management.png"
   },
   {
+    "id": "U044",
+    "name": "Abel, Chateau Bouncer",
+    "cost": "{2}{B}",
+    "type": "Legendary Creature — Program Werewolf (4/2)",
+    "displayType": "Legendary Creature — Program Werewolf",
+    "text": [
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Abel, Chateau Bouncer has indestructible as long as you've gained life this turn."
+    ],
+    "flavor": " \"The Merovingian pays him to ensure the party never stops.\"",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "4/2",
+    "colorIndicator": null,
+    "fileName": "U044_abel__chateau_bouncer.png"
+  },
+  {
     "id": "U045",
     "name": "Meter Reader",
     "cost": "{1}{B}",
