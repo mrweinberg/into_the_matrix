@@ -7,7 +7,7 @@
     "displayType": "Creature — Human Soldier",
     "text": [
       "Vigilance",
-      "At the beginning of combat on your turn, if you control a creature with digital, you may jack-in Hovercraft Crewman."
+      "At the beginning of combat on your turn, if you control a creature with digital, you may jack-in this creature."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -116,7 +116,7 @@
     "displayType": "Enchantment — Aura",
     "text": [
       "Enchant creature",
-      "When Stasis Field enters, scry 1.",
+      "When this creature enters, scry 1.",
       "Enchanted creature can't attack or block.",
       "{E}{E}{E}: Exile enchanted creature."
     ],
@@ -136,7 +136,7 @@
     "displayType": "Creature — Human Soldier",
     "text": [
       "Flying",
-      "When Dock Defender enters, you may pay {1}. If you do, create a Gun token."
+      "When this creature enters, you may pay {1}. If you do, create a Gun token."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -188,7 +188,7 @@
     "type": "Creature — Human Artificer (2/3)",
     "displayType": "Creature — Human Artificer",
     "text": [
-      "When Fleet Mechanic enters, you may return target Vehicle or Equipment card from your graveyard to your hand."
+      "When this creature enters, you may return target Vehicle or Equipment card from your graveyard to your hand."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -206,7 +206,7 @@
     "displayType": "Creature — Human Cleric",
     "text": [
       "Vigilance",
-      "When Prophesizing Elder enters, scry 2 and you gain 2 life.",
+      "When this creature enters, scry 2 and you gain 2 life.",
       "Basic landcycling {2}"
     ],
     "flavor": "",
@@ -238,11 +238,11 @@
     "id": "C016",
     "name": "Zion Volunteer",
     "cost": "{1}{W}",
-    "type": "Creature - Human Citizen (3/1)",
-    "displayType": "Creature - Human Citizen",
+    "type": "Creature — Human Citizen (3/1)",
+    "displayType": "Creature — Human Citizen",
     "text": [
       "Ward {1}",
-      "When Zion Volunteer enters, if you control an artifact, gain 3 life."
+      "When this creature enters, if you control an artifact, gain 3 life."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -352,8 +352,8 @@
     "displayType": "Creature — Human Soldier",
     "text": [
       "Vigilance",
-      "When Uplink Guardian enters, you get {E}.",
-      "Whenever a creature you control jacks-in or ejects, put a +1/+1 counter on Uplink Guardian and you get {E}."
+      "When this creature enters, you get {E}.",
+      "Whenever a creature you control jacks-in or ejects, put a +1/+1 counter on this creature and you get {E}."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -388,7 +388,7 @@
     "type": "Creature — Human Artificer (2/2)",
     "displayType": "Creature — Human Artificer",
     "text": [
-      "Whenever an Equipment you control is put into a graveyard from the battlefield, put a +1/+1 counter on Scrap-Metal Tactician."
+      "Whenever an Equipment you control is put into a graveyard from the battlefield, put a +1/+1 counter on this creature."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -472,8 +472,8 @@
     "id": "U008",
     "name": "Life Celebrant",
     "cost": "{2}{W}",
-    "type": "Creature - Human Citizen (2/3)",
-    "displayType": "Creature - Human Citizen",
+    "type": "Creature — Human Citizen (2/3)",
+    "displayType": "Creature — Human Citizen",
     "text": [
       "Whenever you gain life, put a +1/+1 counter on this creature. You may untap it."
     ],
@@ -489,11 +489,11 @@
     "id": "U009",
     "name": "Morpheus, Seeker of Potential",
     "cost": "{4}{W}",
-    "type": "Legendary Creature - Human Advisor (4/4)",
-    "displayType": "Legendary Creature - Human Advisor",
+    "type": "Legendary Creature — Human Advisor (4/4)",
+    "displayType": "Legendary Creature — Human Advisor",
     "text": [
       "First strike",
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (Morpheus can block or be blocked only by creatures with digital.)",
       "Whenever Morpheus attacks, look at the top four cards of your library. You may reveal a creature with a Jack-In ability or with digital from among them and put it into your hand. Put the rest on the bottom of your library in any order."
     ],
     "flavor": "",
@@ -508,8 +508,8 @@
     "id": "U010",
     "name": "Field Medic",
     "cost": "{W}",
-    "type": "Creature - Human Cleric (1/1)",
-    "displayType": "Creature - Human Cleric",
+    "type": "Creature — Human Cleric (1/1)",
+    "displayType": "Creature — Human Cleric",
     "text": [
       "{T}: You gain 1 life.",
       "{1}{W}: Jack-in. ({1}{W}: Transform this card. Activate only as a sorcery.)"
@@ -526,8 +526,8 @@
     "id": "U010",
     "name": "System Mender",
     "cost": "",
-    "type": "Creature - Human Program Cleric (1/2)",
-    "displayType": "Creature - Human Program Cleric",
+    "type": "Creature — Human Program Cleric (1/2)",
+    "displayType": "Creature — Human Program Cleric",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Lifelink",
@@ -545,8 +545,8 @@
     "id": "U011",
     "name": "Hoversuit Striker",
     "cost": "{3}{W}{W}",
-    "type": "Creature - Human Soldier (2/4)",
-    "displayType": "Creature - Human Soldier",
+    "type": "Creature — Human Soldier (2/4)",
+    "displayType": "Creature — Human Soldier",
     "text": [
       "Flying",
       "This creature gets +1/+1 if you control a nontoken artifact.",
@@ -659,8 +659,8 @@
     "displayType": "Artifact Creature — Robot Wall",
     "text": [
       "Defender, reach, vigilance",
-      "As long as you control a Vehicle, Automated Turret can attack as though it didn't have defender.",
-      "Whenever Automated Turret blocks, it deals 2 damage to target attacking creature."
+      "As long as you control a Vehicle, this creature can attack as though it didn't have defender.",
+      "Whenever this creature blocks, it deals 2 damage to target attacking creature."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -695,7 +695,7 @@
     "type": "Legendary Creature — Human Soldier Program (2/2)",
     "displayType": "Legendary Creature — Human Soldier Program",
     "text": [
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (Switch can block or be blocked only by creatures with digital.)",
       "Double strike, vigilance",
       "When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target creature with power 3 or greater.",
       "{W}: Eject."
@@ -750,8 +750,8 @@
     "type": "Creature — Human Soldier (3/2)",
     "displayType": "Creature — Human Soldier",
     "text": [
-      "Whenever Zion Frontline Hero attacks, another target attacking creature gets +X/+X until end of turn, where X is Zion Frontline Hero's power.",
-      "At the beginning of your end step, if Zion Frontline Hero is in your graveyard and you control three or more other creatures, you may pay {E}{E}. If you do, return it to your hand."
+      "Whenever this creature attacks, another target attacking creature gets +X/+X until end of turn, where X is this creature's power.",
+      "At the beginning of your end step, if this creature is in your graveyard and you control three or more other creatures, you may pay {E}{E}. If you do, return it to your hand."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -805,7 +805,7 @@
     "type": "Legendary Creature — Human Soldier Program (3/3)",
     "displayType": "Legendary Creature — Human Soldier Program",
     "text": [
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (Trinity can block or be blocked only by creatures with digital.)",
       "Haste, vigilance",
       "Whenever Trinity, Digital Savior attacks, create a Gun token attached to her.",
       "{W}: Eject."
@@ -899,7 +899,7 @@
     "type": "Creature — Human Rogue (1/3)",
     "displayType": "Creature — Human Rogue",
     "text": [
-      "When Keymaker's Guide enters, scry 2.",
+      "When this creature enters, scry 2.",
       "{U}: Jack-in. ({U}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
@@ -937,8 +937,8 @@
     "displayType": "Creature — Program Scout",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Data Courier can block creatures without digital.",
-      "When Data Courier leaves the battlefield, draw a card."
+      "This creature can block creatures without digital.",
+      "When this creature leaves the battlefield, draw a card."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -991,7 +991,7 @@
     "displayType": "Creature — Human Program",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "When System Patcher enters, return target creature to its owner's hand. If that creature had digital, you get {E}{E}."
+      "When this creature enters, return target creature to its owner's hand. If that creature had digital, you get {E}{E}."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1079,7 +1079,7 @@
     "displayType": "Creature — Construct Beast",
     "text": [
       "Flash",
-      "When Code Prowler enters, up to one target creature with digital gets -3/-0 until end of turn."
+      "When this creature enters, up to one target creature with digital gets -3/-0 until end of turn."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1097,7 +1097,7 @@
     "displayType": "Enchantment — Aura",
     "text": [
       "Enchant creature",
-      "When Take the Blue Pill enters, tap enchanted creature and you get {E}{E}.",
+      "When this creature enters, tap enchanted creature and you get {E}{E}.",
       "Enchanted creature doesn't untap during its controller's untap step."
     ],
     "flavor": "",
@@ -1132,8 +1132,8 @@
     "id": "C048",
     "name": "Glitch Trap",
     "cost": "{1}{U}",
-    "type": "Enchantment - Aura",
-    "displayType": "Enchantment - Aura",
+    "type": "Enchantment — Aura",
+    "displayType": "Enchantment — Aura",
     "text": [
       "Flash",
       "Enchant creature or artifact",
@@ -1319,8 +1319,8 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
-      "Surveillance Agent can't be blocked.",
-      "{1}{U}: Return Surveillance Agent to its owner's hand."
+      "This creature can't be blocked.",
+      "{1}{U}: Return this creature to its owner's hand."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -1353,8 +1353,8 @@
     "id": "U030",
     "name": "Subroutine Analyst",
     "cost": "{2}{U}{U}",
-    "type": "Creature - Program Wizard (2/1)",
-    "displayType": "Creature - Program Wizard",
+    "type": "Creature — Program Wizard (2/1)",
+    "displayType": "Creature — Program Wizard",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "When this creature enters, return target instant or sorcery from your graveyard to your hand."
@@ -1393,7 +1393,7 @@
     "text": [
       "Flash, digital (This creature can block or be blocked only by creatures with digital.)",
       "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
-      "When Local Beat Cop enters, tap up to one target creature and put a stun counter on it."
+      "When this creature enters, tap up to one target creature and put a stun counter on it."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -1429,7 +1429,7 @@
     "type": "Creature — Human Rogue (2/2)",
     "displayType": "Creature — Human Rogue",
     "text": [
-      "When Broadcast Intruder enters, you get {E}{E}.",
+      "When this creature enters, you get {E}{E}.",
       "{1}{U}: Jack-in. ({1}{U}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
@@ -1469,7 +1469,7 @@
       "Flash, ward {1}",
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Spells you cast during your opponent's turn cost {1} less to cast.",
-      "Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on Code Runner and you get {E}."
+      "Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on this creature and you get {E}."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -1562,7 +1562,7 @@
     "displayType": "Legendary Creature — Human",
     "text": [
       "Skulk",
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (Thomas Anderson can block or be blocked only by creatures with digital.)",
       "When Thomas Anderson deals combat damage to a player, look at the top card of your library. If it's a legendary creature, you may reveal it and put it into your hand. If you do, put a +1/+1 counter on Thomas Anderson."
     ],
     "flavor": "",
@@ -1598,7 +1598,7 @@
     "displayType": "Legendary Creature — Angel Program",
     "text": [
       "Ward {2}",
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (Seraph can block or be blocked only by creatures with digital.)",
       "You may cast creature spells as though they had flash.",
       "Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on target creature you control."
     ],
@@ -1618,7 +1618,7 @@
     "displayType": "Legendary Creature — Program Advisor",
     "text": [
       "Flash",
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (The Analyst can block or be blocked only by creatures with digital.)",
       "When The Analyst enters, if it's your turn, end the turn.",
       "If it's an opponent's turn, return up to one target spell to its owner's hand."
     ],
@@ -1659,8 +1659,8 @@
     "displayType": "Artifact Creature — Robot",
     "text": [
       "Menace",
-      "When Battery Farm Cultivator enters, you get {E}{E}.",
-      "Whenever Battery Farm Cultivator attacks, you may pay {E}{E}. If you do, create a 1/1 white Citizen creature token with digital."
+      "When this creature enters, you get {E}{E}.",
+      "Whenever this creature attacks, you may pay {E}{E}. If you do, create a 1/1 white Citizen creature token with digital."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1679,7 +1679,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Deathtouch",
-      "When Disposable Informant leaves the battlefield, target creature an opponent controls gets -1/-1 until end of turn."
+      "When this creature leaves the battlefield, target creature an opponent controls gets -1/-1 until end of turn."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1697,8 +1697,8 @@
     "displayType": "Creature — Program Citizen",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "When Glitched Citizen enters, you get {E}{E}.",
-      "When Glitched Citizen leaves the battlefield, create a 1/1 white Citizen creature token with digital."
+      "When this creature enters, you get {E}{E}.",
+      "When this creature leaves the battlefield, create a 1/1 white Citizen creature token with digital."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1751,7 +1751,7 @@
     "displayType": "Artifact Creature — Robot Scout",
     "text": [
       "Menace",
-      "{1}, Pay {E}: Search-Protocol Bot gets +1/+1 until end of turn."
+      "{1}, Pay {E}: this creature gets +1/+1 until end of turn."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1803,7 +1803,7 @@
     "displayType": "Creature — Program Assassin",
     "text": [
       "Deathtouch",
-      "As long as Corrupted Hitman has first strike, it gets +2/+0."
+      "As long as this creature has first strike, it gets +2/+0."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1875,7 +1875,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Lifelink",
-      "Whenever you gain life, Chateau Vampire gets +1/+0 until end of turn."
+      "Whenever you gain life, this creature gets +1/+0 until end of turn."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1929,7 +1929,7 @@
     "displayType": "Creature — Program Virus",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "When Recycled Data leaves the battlefield, return another target creature card from your graveyard to your hand."
+      "When this creature leaves the battlefield, return another target creature card from your graveyard to your hand."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -1961,8 +1961,8 @@
     "id": "U042",
     "name": "Information Leech",
     "cost": "{1}{B}",
-    "type": "Creature - Program Rogue (2/1)",
-    "displayType": "Creature - Program Rogue",
+    "type": "Creature — Program Rogue (2/1)",
+    "displayType": "Creature — Program Rogue",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Lifelink",
@@ -2001,8 +2001,8 @@
     "type": "Legendary Creature — Program Werewolf (4/2)",
     "displayType": "Legendary Creature — Program Werewolf",
     "text": [
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Abel, Chateau Bouncer has indestructible as long as you've gained life this turn."
+      "Digital (Abel can block or be blocked only by creatures with digital.)",
+      "Abel has indestructible as long as you've gained life this turn."
     ],
     "flavor": " \"The Merovingian pays him to ensure the party never stops.\"",
     "rarity": "Uncommon",
@@ -2022,7 +2022,7 @@
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Menace",
       "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
-      "Whenever Meter Reader deals combat damage to a player, that player loses {E} equal to the damage dealt. You get {E} equal to the amount of {E} that player lost."
+      "Whenever this creature deals combat damage to a player, that player loses {E} equal to the damage dealt. You get {E} equal to the amount of {E} that player lost."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2057,8 +2057,8 @@
     "type": "Artifact Creature — Robot (2/1)",
     "displayType": "Artifact Creature — Robot",
     "text": [
-      "When Machine City Enforcer enters, you get {E}{E}.",
-      "Whenever Machine City Enforcer attacks, you may pay {E}{E}. If you do, target creature can't block this turn."
+      "When this creature enters, you get {E}{E}.",
+      "Whenever this creature attacks, you may pay {E}{E}. If you do, target creature can't block this turn."
     ],
     "flavor": " \"It clears the path for the swarm.\"",
     "rarity": "Uncommon",
@@ -2113,7 +2113,7 @@
     "text": [
       "Menace",
       "Whenever another artifact or creature you control is put into a graveyard from the battlefield, you get {E}.",
-      "Sacrifice an artifact or creature: Sentinel Scavenger gets +1/+1 until end of turn."
+      "Sacrifice an artifact or creature: this creature gets +1/+1 until end of turn."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2130,7 +2130,7 @@
     "type": "Legendary Creature — Program Agent (3/3)",
     "displayType": "Legendary Creature — Program Agent",
     "text": [
-      "Flash, digital (This creature can block or be blocked only by creatures with digital.)",
+      "Flash, digital (Agent Brown can block or be blocked only by creatures with digital.)",
       "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
       "When Agent Brown enters, if it overrode a creature, destroy target creature."
     ],
@@ -2168,9 +2168,9 @@
     "type": "Creature — Human Citizen (2/1)",
     "displayType": "Creature — Human Citizen",
     "text": [
-      "Unplugged Neophyte can't block.",
-      "When Unplugged Neophyte dies, you get {E}{E}.",
-      "{B}: Return Unplugged Neophyte from your graveyard to your hand. Activate only if you have four or more {E}."
+      "This creature can't block.",
+      "When this creature dies, you get {E}{E}.",
+      "{B}: Return this creature from your graveyard to your hand. Activate only if you have four or more {E}."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2187,7 +2187,7 @@
     "type": "Artifact Creature — Robot (2/2)",
     "displayType": "Artifact Creature — Robot",
     "text": [
-      "When Sentinel Fabricator enters, you get {E}{E}.",
+      "When this creature enters, you get {E}{E}.",
       "At the beginning of your end step, if you paid three or more {E} this turn, create a 2/2 colorless Robot artifact creature token with menace."
     ],
     "flavor": " \"The factories of 01 never sleep.\"",
@@ -2206,9 +2206,9 @@
     "displayType": "Artifact Creature — Robot",
     "text": [
       "Flying, menace",
-      "When Sentinel Swarm enters, create three 1/1 colorless Robot artifact creature tokens with flying.",
+      "When this creature enters, create three 1/1 colorless Robot artifact creature tokens with flying.",
       "Whenever a Robot you control dies, you may pay {2}{B}. If you do, create a 1/1 colorless Robot artifact creature token with flying.",
-      "Sacrifice a Robot: Sentinel Swarm gets +2/+2 until end of turn."
+      "Sacrifice a Robot: this creature gets +2/+2 until end of turn."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -2225,7 +2225,7 @@
     "type": "Legendary Creature — Program Vampire (2/5)",
     "displayType": "Legendary Creature — Program Vampire",
     "text": [
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (Cain can block or be blocked only by creatures with digital.)",
       "Lifelink",
       "Whenever you gain life, up to one target creature gets -X/-X until end of turn, where X is the amount of life you gained."
     ],
@@ -2355,8 +2355,8 @@
     "displayType": "Legendary Creature — Human Rogue",
     "text": [
       "Menace",
-      "Whenever Bane, Sleeper Agent deals combat damage to a player, you may sacrifice an artifact or creature. If you do, look at that player's hand and choose a nonland card from it. That player discards that card.",
-      "When Bane, Sleeper Agent dies, you may pay {E}{E}{E}. If you do, return it to its owner's hand."
+      "Whenever Bane deals combat damage to a player, you may sacrifice an artifact or creature. If you do, look at that player's hand and choose a nonland card from it. That player discards that card.",
+      "When Bane dies, you may pay {E}{E}{E}. If you do, return it to its owner's hand."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -2391,7 +2391,7 @@
     "type": "Instant",
     "displayType": "Instant",
     "text": [
-      "Electrobolt deals 2 damage to target creature. If that creature is an artifact or has digital, Electrobolt deals 4 damage to it instead."
+      "This creature deals 2 damage to target creature. If that creature is an artifact or has digital, this creature deals 4 damage to it instead."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2444,7 +2444,7 @@
     "displayType": "Creature — Human Wizard",
     "text": [
       "Prowess",
-      "{1}, Pay {E}: Static-Charged Hacker gets +2/+0 until end of turn."
+      "{1}, Pay {E}: this creature gets +2/+0 until end of turn."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2462,7 +2462,7 @@
     "displayType": "Creature — Human Soldier",
     "text": [
       "Haste",
-      "Whenever Avid Marksman becomes equipped, it gets +1/+1 until end of turn.",
+      "Whenever this creature becomes equipped, it gets +1/+1 until end of turn.",
       "{2}{R}: Jack-in. ({2}{R}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
@@ -2536,7 +2536,7 @@
     "displayType": "Artifact Creature — Robot",
     "text": [
       "Haste",
-      "Vehicles crewed by Drone Pilot get +1/+0 and have menace."
+      "Vehicles crewed by this creature get +1/+0 and have menace."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2554,7 +2554,7 @@
     "displayType": "Creature — Human Warrior",
     "text": [
       "Trample",
-      "When Dockside Loader enters, you get {E}{E}.",
+      "When this creature enters, you get {E}{E}.",
       "Basic landcycling {2}"
     ],
     "flavor": "",
@@ -2573,7 +2573,7 @@
     "displayType": "Artifact Creature — Robot",
     "text": [
       "Flying",
-      "When Sentinel Sweeper dies, you get {E}."
+      "When this creature dies, you get {E}."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2609,7 +2609,7 @@
     "displayType": "Creature — Human Warrior",
     "text": [
       "Menace",
-      "Zion Shocktrooper can't block."
+      "This creature can't block."
     ],
     "flavor": " \"We don't go up there to hide. We go up there to hit them back.\"",
     "rarity": "Common",
@@ -2628,7 +2628,7 @@
     "text": [
       "Choose one —",
       "• Destroy target artifact.",
-      "• Slag Melt deals 5 damage to target creature."
+      "• this creature deals 5 damage to target creature."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2642,8 +2642,8 @@
     "id": "C108",
     "name": "Independent Trader",
     "cost": "{1}{R}",
-    "type": "Creature - Human Citizen (2/1)",
-    "displayType": "Creature - Human Citizen",
+    "type": "Creature — Human Citizen (2/1)",
+    "displayType": "Creature — Human Citizen",
     "text": [
       "{1}, {T}, Discard a card: Draw a card."
     ],
@@ -2682,7 +2682,7 @@
     "text": [
       "Enchant creature",
       "Enchanted creature loses digital and has training.",
-      "When Take the Red Pill enters, put a +1/+1 counter on target creature."
+      "When this creature enters, put a +1/+1 counter on target creature."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2700,7 +2700,7 @@
     "displayType": "Creature — Human Rogue",
     "text": [
       "Haste",
-      "When Pipeline Saboteur attacks, you may pay {E}. If you do, target creature can't block this turn."
+      "When this creature attacks, you may pay {E}. If you do, target creature can't block this turn."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2773,7 +2773,7 @@
     "type": "Creature — Human Soldier (3/2)",
     "displayType": "Creature — Human Soldier",
     "text": [
-      "Whenever a Vehicle or equipped creature you control attacks, Turret Maniac deals 1 damage to any target."
+      "Whenever a Vehicle or equipped creature you control attacks, this creature deals 1 damage to any target."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2847,7 +2847,7 @@
     "type": "Creature — Human Shaman (1/3)",
     "displayType": "Creature — Human Shaman",
     "text": [
-      "Whenever you get one or more {E}, Conduit Overloader deals 1 damage to each opponent."
+      "Whenever you get one or more {E}, this creature deals 1 damage to each opponent."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2864,7 +2864,7 @@
     "type": "Creature — Human Artificer (3/2)",
     "displayType": "Creature — Human Artificer",
     "text": [
-      "Whenever you sacrifice an artifact, Volatile Fabricator deals 1 damage to any target."
+      "Whenever you sacrifice an artifact, this creature deals 1 damage to any target."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2954,7 +2954,7 @@
     "displayType": "Instant",
     "text": [
       "As an additional cost to cast this spell, sacrifice an artifact or creature.",
-      "Shrapnel Ejection deals damage equal to the sacrificed permanent's mana value plus 2 to any target."
+      "This creature deals damage equal to the sacrificed permanent's mana value plus 2 to any target."
     ],
     "flavor": " \"Sometimes the only way to win is to blow up the exit.\"",
     "rarity": "Uncommon",
@@ -2972,7 +2972,7 @@
     "displayType": "Sorcery",
     "text": [
       "Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn. If it's an artifact or has digital, sacrifice it at the beginning of the next end step.",
-      "You may cast System Override as though it had flash if you have four or more {E}."
+      "You may cast this creature as though it had flash if you have four or more {E}."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -2990,8 +2990,8 @@
     "displayType": "Artifact Creature — Robot",
     "text": [
       "Flash, flying",
-      "When Hunter-Killer Sentinel enters, you may change the target of target spell or ability to Hunter-Killer Sentinel.",
-      "Whenever Hunter-Killer Sentinel deals combat damage to a player, you may sacrifice it. If you do, it deals 4 damage to each creature that player controls."
+      "When this creature enters, you may change the target of target spell or ability to this creature.",
+      "Whenever this creature deals combat damage to a player, you may sacrifice it. If you do, it deals 4 damage to each creature that player controls."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -3008,7 +3008,7 @@
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "EMP Blast deals 3 damage to each creature with digital and each artifact creature.",
+      "This creature deals 3 damage to each creature with digital and each artifact creature.",
       "Each player loses {E}{E}{E}{E}."
     ],
     "flavor": "",
@@ -3027,7 +3027,7 @@
     "displayType": "Enchantment — Saga",
     "text": [
       "I — Goad all creatures your opponents control.",
-      "II — The Machine War deals 2 damage to each creature.",
+      "II — this creature deals 2 damage to each creature.",
       "III — Create a 5/5 colorless Robot artifact creature token with menace and haste."
     ],
     "flavor": "",
@@ -3063,7 +3063,7 @@
     "type": "Legendary Creature — Program (1/1)",
     "displayType": "Legendary Creature — Program",
     "text": [
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (The Red Woman can block or be blocked only by creatures with digital.)",
       "Indestructible",
       "Creatures your opponents control attack each combat if able.",
       "Whenever an opponent attacks you with one or more creatures, exile the top card from your library. Until the end of your next turn, you may play that card."
@@ -3102,7 +3102,7 @@
     "displayType": "Artifact Creature — Robot Scout",
     "text": [
       "Menace",
-      "Whenever Sentinel Scout deals combat damage to a player, deal 3 damage to up to one target creature with digital."
+      "Whenever this creature deals combat damage to a player, deal 3 damage to up to one target creature with digital."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -3119,7 +3119,7 @@
     "type": "Legendary Creature — Human Pilot (3/2)",
     "displayType": "Legendary Creature — Human Pilot",
     "text": [
-      "Whenever Trinity, Combat Driver crews a Vehicle, create a Gun token attached to that Vehicle.",
+      "Whenever Trinity crews a Vehicle, create a Gun token attached to that Vehicle.",
       "Vehicles you control that are creatures get +1/+0 for every 2 {E} you have, rounded down."
     ],
     "flavor": "",
@@ -3138,9 +3138,9 @@
     "displayType": "Sorcery",
     "text": [
       "Choose one. If you have 3 or more {E} as you cast this spell, you may choose both.",
-      "• Electrical Burst deals 3 damage to target creature.",
-      "• Electrical Burst deals 1 damage to all creatures your opponents control.",
-      "If you have 6 or more {E}, Electrical Burst deals 2 damage to each opponent."
+      "• this creature deals 3 damage to target creature.",
+      "• this creature deals 1 damage to all creatures your opponents control.",
+      "If you have 6 or more {E}, this creature deals 2 damage to each opponent."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -3175,7 +3175,7 @@
     "type": "Creature — Human Soldier (4/4)",
     "displayType": "Creature — Human Soldier",
     "text": [
-      "APU Operator gets +1/+1 and has trample as long as you have three or more {E}."
+      "This creature gets +1/+1 and has trample as long as you have three or more {E}."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3245,7 +3245,7 @@
     "type": "Creature — Human Shaman (2/1)",
     "displayType": "Creature — Human Shaman",
     "text": [
-      "When Rust-Plague Shaman enters, you may destroy target artifact or enchantment."
+      "When this creature enters, you may destroy target artifact or enchantment."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3282,7 +3282,7 @@
     "text": [
       "Flash",
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "When Dojo Program enters, put a +1/+1 counter on target creature you control."
+      "When this creature enters, put a +1/+1 counter on target creature you control."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3300,7 +3300,7 @@
     "displayType": "Creature — Human Scout",
     "text": [
       "Reach",
-      "Whenever you cast a spell that targets Zion Traceur, put a +1/+1 counter on it."
+      "Whenever you cast a spell that targets this creature, put a +1/+1 counter on it."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3384,8 +3384,8 @@
     "id": "C137",
     "name": "Sifter of Ruins",
     "cost": "{1}{G}",
-    "type": "Creature - Human Archivist (1/2)",
-    "displayType": "Creature - Human Archivist",
+    "type": "Creature — Human Archivist (1/2)",
+    "displayType": "Creature — Human Archivist",
     "text": [
       "When this creature enters, mill three cards.",
       "You may put a land card from among them into your hand.",
@@ -3403,8 +3403,8 @@
     "id": "C138",
     "name": "Lineage Honorer",
     "cost": "{3}{G}",
-    "type": "Creature - Human Archivist (4/3)",
-    "displayType": "Creature - Human Archivist",
+    "type": "Creature — Human Archivist (4/3)",
+    "displayType": "Creature — Human Archivist",
     "text": [
       "Ward {2}",
       "At the beginning of your end step, if a creature died this turn, put a +1/+1 counter on this creature."
@@ -3461,8 +3461,8 @@
     "displayType": "Creature — Plant Wall",
     "text": [
       "Defender",
-      "When Nutrient Silo dies, you get {E}{E} and draw a card.",
-      "{1}{B}, Sacrifice Nutrient Silo: Target creature gets -2/-2 until end of turn."
+      "When this creature dies, you get {E}{E} and draw a card.",
+      "{1}{B}, Sacrifice this creature: Target creature gets -2/-2 until end of turn."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3511,8 +3511,8 @@
     "id": "U084",
     "name": "Surge of Renewal",
     "cost": "{2}{G}",
-    "type": "Enchantment - Aura",
-    "displayType": "Enchantment - Aura",
+    "type": "Enchantment — Aura",
+    "displayType": "Enchantment — Aura",
     "text": [
       "Enchant Creature",
       "Flash",
@@ -3535,7 +3535,7 @@
     "displayType": "Enchantment",
     "text": [
       "Flash",
-      "When Code Vision enters, draw a card.",
+      "When this creature enters, draw a card.",
       "Creatures you control can block creatures with digital as though they didn't have digital."
     ],
     "flavor": "",
@@ -3554,7 +3554,7 @@
     "displayType": "Artifact Creature — Construct Beast",
     "text": [
       "Trample",
-      "When Prime Construct enters, you gain 4 life."
+      "When this creature enters, you gain 4 life."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3609,7 +3609,7 @@
     "displayType": "Creature — Human Warrior",
     "text": [
       "Trample",
-      "Pay {E}: Augmented Brawler gets +1/+1 until end of turn."
+      "Pay {E}: this creature gets +1/+1 until end of turn."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3627,7 +3627,7 @@
     "displayType": "Creature — Human Technician",
     "text": [
       "Defender",
-      "Matrix Watcher can block creatures with digital as though they didn't have digital.",
+      "This creature can block creatures with digital as though they didn't have digital.",
       "{2}{G}: Scry 1."
     ],
     "flavor": "",
@@ -3682,7 +3682,7 @@
     "text": [
       "Flash",
       "Whenever you cast a spell during an opponent's turn, you get {E}.",
-      "Pay {E}{E}: System Root-Weaver gets +2/+2 until end of turn. Activate only once each turn."
+      "Pay {E}{E}: this creature gets +2/+2 until end of turn. Activate only once each turn."
     ],
     "flavor": " \"Growing within the firewall's blind spot.\"",
     "rarity": "Uncommon",
@@ -3716,7 +3716,7 @@
     "type": "Creature — Human Druid (2/1)",
     "displayType": "Creature — Human Druid",
     "text": [
-      "When Hydroponics Recycler enters, mill three cards.",
+      "When this creature enters, mill three cards.",
       "When this creature becomes tapped, you may exile a creature card from your graveyard. If you do, create a 1/1 green Ooze creature token."
     ],
     "flavor": " \"In Zion, death breeds life.\"",
@@ -3811,8 +3811,8 @@
     "displayType": "Creature — Human Scout",
     "text": [
       "Reach",
-      "Tunnel Path-Finder can't be blocked by creatures with power 2 or less.",
-      "Whenever Tunnel Path-Finder attacks, you may exile up to two target cards from any graveyard. For each card exiled this way, you get {E}."
+      "This creature can't be blocked by creatures with power 2 or less.",
+      "Whenever this creature attacks, you may exile up to two target cards from any graveyard. For each card exiled this way, you get {E}."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -3978,7 +3978,7 @@
     "type": "Legendary Creature — Program Agent (4/2)",
     "displayType": "Legendary Creature — Program Agent",
     "text": [
-      "Flash, digital (This creature can block or be blocked only by creatures with digital.)",
+      "Flash, digital (Agent Jones can block or be blocked only by creatures with digital.)",
       "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
       "Whenever Agent Jones becomes the target of a spell or ability, you may return it to its owner's hand."
     ],
@@ -4017,7 +4017,7 @@
     "type": "Instant",
     "displayType": "Instant",
     "text": [
-      "Counter target spell unless its controller pays {3}. If they do, Fatal Exception deals 3 damage to them."
+      "Counter target spell unless its controller pays {3}. If they do, this creature deals 3 damage to them."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4121,10 +4121,10 @@
     "id": "U113",
     "name": "Agent Grey, Suppressor",
     "cost": "{1}{U}{B}",
-    "type": "Legendary Creature - Agent Program (3/3)",
-    "displayType": "Legendary Creature - Agent Program",
+    "type": "Legendary Creature — Agent Program (3/3)",
+    "displayType": "Legendary Creature — Agent Program",
     "text": [
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (Agent Grey can block or be blocked only by creatures with digital.)",
       "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
       "When Agent Grey enters, you may tap up to one target creature.",
       "Whenever a creature an opponent controls becomes tapped, you may pay {1}. If you do, put a stun counter on it."
@@ -4144,9 +4144,9 @@
     "type": "Legendary Creature — Program Spirit (3/2)",
     "displayType": "Legendary Creature — Program Spirit",
     "text": [
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (The Twins can block or be blocked only by creatures with digital.)",
       "Menace",
-      "{W}{B}: Exile The Twins and return them to the battlefield at end of turn."
+      "{W}{B}: Exile The Twins and return them to the battlefield at the beginning of the next end step."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4163,7 +4163,7 @@
     "type": "Legendary Creature — Program Noble (2/3)",
     "displayType": "Legendary Creature — Program Noble",
     "text": [
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (Persephone can block or be blocked only by creatures with digital.)",
       "Lifelink",
       "Whenever another creature dies, you gain 1 life and may pay {2}. If you do, draw a card."
     ],
@@ -4200,7 +4200,7 @@
     "type": "Creature — Human Soldier (2/2)",
     "displayType": "Creature — Human Soldier",
     "text": [
-      "When this creature enters or transforms into Uploaded Vanguard, create a Gun token.",
+      "When this creature enters or transforms into this creature, create a Gun token.",
       "{2}: Jack-in. ({2}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
@@ -4235,11 +4235,11 @@
     "id": "U119",
     "name": "Zion Heavy-Loader",
     "cost": "{1}{R}{G}",
-    "type": "Creature - Human Warrior (3/3)",
-    "displayType": "Creature - Human Warrior",
+    "type": "Creature — Human Warrior (3/3)",
+    "displayType": "Creature — Human Warrior",
     "text": [
       "Trample",
-      "When Zion Heavy-Loader enters, you get {E}{E}.",
+      "When this creature enters, you get {E}{E}.",
       "At the beginning of combat on your turn, you may pay {E}{E}.",
       "If you do, target creature you control gets +2/+0 and trample until end of turn."
     ],
@@ -4255,8 +4255,8 @@
     "id": "U120",
     "name": "Bio-Current Technician",
     "cost": "{R}{G}",
-    "type": "Creature - Human Druid Artificer (2/2)",
-    "displayType": "Creature - Human Druid Artificer",
+    "type": "Creature — Human Druid Artificer (2/2)",
+    "displayType": "Creature — Human Druid Artificer",
     "text": [
       "Haste",
       "{T}: Add {R} or {G}.",
@@ -4274,11 +4274,11 @@
     "id": "U121",
     "name": "Code-Stream Stabilizer",
     "cost": "{1}{U}{G}",
-    "type": "Creature - Human Wizard (3/3)",
-    "displayType": "Creature - Human Wizard",
+    "type": "Creature — Human Wizard (3/3)",
+    "displayType": "Creature — Human Wizard",
     "text": [
       "Flash",
-      "When Code-Stream Stabilizer enters, you may have it tap or untap target creature.",
+      "When this creature enters, you may have it tap or untap target creature.",
       "That creature can block creatures with digital until end of turn."
     ],
     "flavor": "",
@@ -4311,8 +4311,8 @@
     "id": "U123",
     "name": "Resistance Recuiter",
     "cost": "{1}{W}{G}",
-    "type": "Creature - Human Soldier (1/1)",
-    "displayType": "Creature - Human Soldier",
+    "type": "Creature — Human Soldier (1/1)",
+    "displayType": "Creature — Human Soldier",
     "text": [
       "This creature gets +1/+1 for each other Human you control.",
       "When this creature enters, look at the top four cards of your library.",
@@ -4331,8 +4331,8 @@
     "id": "R100",
     "name": "Welcome to the Real World",
     "cost": "{2}{G}{R}",
-    "type": "Enchantment - Saga",
-    "displayType": "Enchantment - Saga",
+    "type": "Enchantment — Saga",
+    "displayType": "Enchantment — Saga",
     "text": [
       "I - Search your library for a basic land and put it on the battlefield tapped, then shuffle.",
       "II - Gain {E} for each land you control.",
@@ -4373,7 +4373,7 @@
     "displayType": "Legendary Creature — Human Warrior Program",
     "text": [
       "Trample",
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (Morpheus can block or be blocked only by creatures with digital.)",
       "Creatures with digital get +1/+1 for each creature you control that doesn't have digital.",
       "{1}{G}{W}: Eject."
     ],
@@ -4394,7 +4394,7 @@
     "text": [
       "Trample",
       "This creature enters with an amount of +1/+1 counters on it equal to the total amount of mana spent to cast it.",
-      "When this creature dies, create X 1/1 green Ooze creature tokens, where X is Prime Biomass's power."
+      "When this creature dies, create X 1/1 green Ooze creature tokens, where X is this creature's power."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -4448,7 +4448,7 @@
     "displayType": "Legendary Artifact Creature — Robot",
     "text": [
       "Flying, menace",
-      "Whenever Prime Sentinel, The Hunter attacks, you may sacrifice another artifact or creature. If you do, Prime Sentinel deals damage equal to that card's mana value to any target."
+      "Whenever Prime Sentinel attacks, you may sacrifice another artifact or creature. If you do, Prime Sentinel deals damage equal to that card's mana value to any target."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -4522,7 +4522,7 @@
     "displayType": "Legendary Creature — Human Monk",
     "text": [
       "Flash",
-      "When Morpheus, Revealer enters, target creature gets +2/+2 and gains hexproof until end of turn.",
+      "When Morpheus enters, target creature gets +2/+2 and gains hexproof until end of turn.",
       "At the beginning of your end step, if you control a creature with power 4 or greater, you get {E}."
     ],
     "flavor": "",
@@ -4635,7 +4635,7 @@
     "displayType": "Legendary Creature — Program Agent",
     "text": [
       "Override creature with digital",
-      "Ward {2}, Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Ward {2}, Digital (Agent Smith can block or be blocked only by creatures with digital.)",
       "Whenever a creature enters under an opponent's control, you may pay {U/B}. If you do, gain control of it until the end of your next turn. Do this only once each turn.",
       "At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own."
     ],
@@ -4654,7 +4654,7 @@
     "type": "Legendary Creature — Program Advisor (1/5)",
     "displayType": "Legendary Creature — Program Advisor",
     "text": [
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (The Oracle can block or be blocked only by creatures with digital.)",
       "Ward {2}",
       "Play with the top card of your library revealed.",
       "You may cast the top card of your library.",
@@ -4676,7 +4676,7 @@
     "type": "Legendary Creature — Avatar Program (3/6)",
     "displayType": "Legendary Creature — Avatar Program",
     "text": [
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (The Architect can block or be blocked only by creatures with digital.)",
       "Vigilance",
       "When The Architect enters, if it was cast, return all creatures to their owners' hands.",
       "Whenever a creature enters, its controller may pay {2}. If they don't, put a digital counter on it.",
@@ -4697,9 +4697,9 @@
     "type": "Legendary Creature — Program Agent (3/3)",
     "displayType": "Legendary Creature — Program Agent",
     "text": [
-      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Digital (Agent Smith can block or be blocked only by creatures with digital.)",
       "Menace",
-      "The \"legend rule\" doesn't apply to tokens you control named Agent Smith, System Anomaly.",
+      "The \"legend rule\" doesn't apply to tokens you control named Agent Smith.",
       "Whenever Agent Smith deals combat damage to a player, create a token that's a copy of it."
     ],
     "flavor": "",
@@ -4814,8 +4814,8 @@
     "type": "Artifact — Food",
     "displayType": "Artifact — Food",
     "text": [
-      "When The Oracle’s Cookie enters or leaves the battlefield, scry 2.",
-      "{2}, {T}, Sacrifice The Oracle’s Cookie: You gain 3 life."
+      "When this creature enters or leaves the battlefield, scry 2.",
+      "{2}, {T}, Sacrifice this creature: You gain 3 life."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -4833,7 +4833,7 @@
     "displayType": "Artifact — Vehicle",
     "text": [
       "Reach",
-      "When APU Corps enters, you get {E}{E}.",
+      "When this creature enters, you get {E}{E}.",
       "Crew 2"
     ],
     "flavor": "",
@@ -4903,7 +4903,7 @@
     "type": "Artifact",
     "displayType": "Artifact",
     "text": [
-      "When Prism Interface enters, draw a card and you get {E}.",
+      "When this creature enters, draw a card and you get {E}.",
       "{1}, {T}: Add one mana of any color.",
       "{T}, Pay {E}: Add one mana of any color."
     ],
@@ -4940,9 +4940,9 @@
     "type": "Artifact — Equipment",
     "displayType": "Artifact — Equipment",
     "text": [
-      "When Scavenged Parts enters, you get {E}{E}.",
+      "When this creature enters, you get {E}{E}.",
       "Equipped creature gets +1/+1.",
-      "Pay {E}{E}: Attach Scavenged Parts to target creature you control. Activate only as a sorcery.",
+      "Pay {E}{E}: Attach this creature to target creature you control. Activate only as a sorcery.",
       "Equip {2}"
     ],
     "flavor": "",
@@ -4960,7 +4960,7 @@
     "type": "Artifact Creature — Robot Guardian (3/3)",
     "displayType": "Artifact Creature — Robot Guardian",
     "text": [
-      "Whenever Machine City Guard attacks, you may pay {E}.",
+      "Whenever this creature attacks, you may pay {E}.",
       "If you do, target creature can't block this turn."
     ],
     "flavor": "",
@@ -5053,7 +5053,7 @@
     "type": "Artifact",
     "displayType": "Artifact",
     "text": [
-      "{T}, Sacrifice Portable EMP: Tap all artifacts and creatures with digital. Put a stun counter on each creature tapped this way."
+      "{T}, Sacrifice this creature: Tap all artifacts and creatures with digital. Put a stun counter on each creature tapped this way."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -5090,8 +5090,8 @@
     "displayType": "Legendary Artifact — Vehicle",
     "text": [
       "Flying",
-      "Whenever The Logos deals combat damage to a player, draw a card.",
-      "Whenever you draw a card, if The Logos is a creature, put a +1/+1 counter on it.",
+      "Whenever this creature deals combat damage to a player, draw a card.",
+      "Whenever you draw a card, if this creature is a creature, put a +1/+1 counter on it.",
       "Crew 2"
     ],
     "flavor": "",
@@ -5111,7 +5111,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Haste",
-      "Whenever The Ducati attacks, you may pay {E}{E}.",
+      "Whenever this creature attacks, you may pay {E}{E}.",
       "If you do, target creature can't block this turn.",
       "Crew 1"
     ],
@@ -5131,7 +5131,7 @@
     "displayType": "Legendary Artifact — Vehicle",
     "text": [
       "Flying",
-      "Whenever The Nebuchadnezzar attacks, you may have any number of creatures you control jack-in or eject.",
+      "Whenever this creature attacks, you may have any number of creatures you control jack-in or eject.",
       "Put a +1/+1 counter on each of those creatures.",
       "Crew 2"
     ],
