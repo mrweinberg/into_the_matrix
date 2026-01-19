@@ -6,6 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "test": "vitest",
+    "test:run": "vitest run",
     "generate-data": "node generate_data.mjs",
     "generate-art": "node generate_matrix.mjs",
     "build:full": "npm run generate-data && npm run build"
@@ -19,6 +21,9 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",
-    "vite": "^5.0.0"
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^20.3.3",
+    "vite": "^5.0.0",
+    "vitest": "^4.0.17"
   }
 }

@@ -235,7 +235,7 @@
       "Vigilance": 12,
       "Digital": 73,
       "Jack-in": 22,
-      "Flying": 12,
+      "Flying": 11,
       "Ward": 10,
       "Defender": 5,
       "Lifelink": 9,
@@ -248,7 +248,7 @@
       "Flash": 22,
       "Haste": 22,
       "Override": 9,
-      "Menace": 19,
+      "Menace": 21,
       "Deathtouch": 3,
       "Trample": 18
     },
@@ -260,7 +260,7 @@
     },
     "averageCMC": 2.92,
     "cardsWithAbilities": {
-      "cardDraw": 29,
+      "cardDraw": 28,
       "removal": 62,
       "counterspells": 5,
       "tokenCreators": 32,

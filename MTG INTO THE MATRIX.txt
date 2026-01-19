@@ -747,7 +747,7 @@ At the beginning of your end step, if you paid three or more {E} this turn, crea
 [R040] Sentinel Swarm {4}{B}
 Artifact Creature — Robot (2/3)
 Flying, menace
-When this creature enters, create three 1/1 colorless Robot artifact creature tokens with flying.
+When this creature enters, create two 1/1 colorless Robot artifact creature tokens with flying.
 Whenever a Robot you control dies, you may pay {2}{B}. If you do, create a 1/1 colorless Robot artifact creature token with flying.
 Sacrifice a Robot: this creature gets +2/+2 until end of turn.
 
@@ -1276,7 +1276,7 @@ Put the rest on the bottom of your library in a random order.
 
 [U100] Mind-Body Sync {W}{U}
 Enchantment
-Whenever a creature you control jacks-in or ejects, put a +1/+1 counter on it.
+Whenever a creature you control transforms, put a +1/+1 counter on it. When you do, you may tap up to one target creature.
 {W}{U}: Transform target creature you control with a jack-in or eject ability.
 
 [U101] Nebuchadnezzar's Ace {1}{W}{U}
@@ -1317,7 +1317,7 @@ Draw two cards and you get {E}{E}.
 [U108] Scrap Repurposer {1}{B}{R}
 Creature — Robot Artificer (2/3)
 Whenever an artifact creature you control dies, you get {E} and may discard a card. If you do, draw a card.
-{3}, Sacrifice an artifact: Create a 3/3 colorless Robot artifact creature token. Activate this ability only as a sorcery.
+{3}, Sacrifice an artifact: Create a 2/2 colorless Robot artifact creature token with menace. Activate this ability only as a sorcery.
 
 [U110] Swarm Commander {B}{R}
 Artifact Creature — Robot (2/2)
@@ -1392,7 +1392,7 @@ That creature can block creatures with digital until end of turn.
 [U122] The Source's Defense {1}{B}{G}
 Enchantment
 At the beginning of your upkeep, you may mill two cards.
-{3}, Exile a creature card from your graveyard: Create a 2/2 colorless Robot artifact creature token with flying.
+{3}, Exile a creature card from your graveyard: Create a 2/2 colorless Robot artifact creature token with menace.
 
 [U123] Resistance Recuiter {1}{W}{G}
 Creature — Human Soldier (1/1)
@@ -1567,13 +1567,13 @@ Agent Smith has digital as long as the overridden creature had digital.
 
 [C150] The Oracle’s Cookie {2}
 Artifact — Food
-When this creature enters or leaves the battlefield, scry 2.
+When this artifact enters or leaves the battlefield, scry 2.
 {2}, {T}, Sacrifice this creature: You gain 3 life.
 
 [C151] APU Corps {5}
 Artifact — Vehicle (4/5)
 Reach
-When this creature enters, you get {E}{E}.
+When this artifact enters, you get {E}{E}.
 Crew 2
 
 [C153] Standard Issue Hovercraft {3}
@@ -1591,7 +1591,7 @@ Artifact
 
 [C157] Prism Interface {2}
 Artifact
-When this creature enters, draw a card and you get {E}.
+When this artifact enters, you get {E}.
 {1}, {T}: Add one mana of any color.
 {T}, Pay {E}: Add one mana of any color.
 
@@ -1604,9 +1604,9 @@ Whenever a creature enters under your control, you get {E}.
 
 [U137] Scavenged Parts {1}
 Artifact — Equipment
-When this creature enters, you get {E}{E}.
-Equipped creature gets +1/+1.
-Pay {E}{E}: Attach this creature to target creature you control. Activate only as a sorcery.
+When this artifact enters, you get {E}{E}.
+Equipped artifact gets +1/+1.
+Pay {E}{E}: Attach this artifact to target artifact you control. Activate only as a sorcery.
 Equip {2}
 
 [U138] Machine City Guard {3}
