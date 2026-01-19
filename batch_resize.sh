@@ -15,7 +15,7 @@ for f in public/cards/*.png; do
       node resize_art.mjs "$f"
       count=$((count + 1))
       # Small delay to avoid rate limiting
-      sleep 0.5
+      sleep 0.2
     fi
   fi
 done

@@ -190,8 +190,21 @@
         "composition": "UNHINGED CHAOS. Standing amid rain and green code, arms spread wide, laughing maniacally. Complete breakdown of control."
     },
     {
+        "id": "C002",
+        "setting": "The streets of Zion",
+        "subject": "A rebellious crowd of unarmed citizens of zion, rising up",
+        "artStyle": "Realistic fantasy-esque oil painting"
+    },
+    {
         "id": "C009",
         "subject": "A cat with a glitched copy in a hallway. Neo is walking by but has a double take."
+    },
+    {
+        "id": "U044",
+        "character": "Malcolm Kennard as Abel. White male, short neat blonde hair, sharp angular features, pale complexion, cold professional expression. Dressed in an immaculate tailored black suit. In werewolf form: retains human intelligence in eyes, sleek formidable build.",
+        "setting": "The Merovingian's Chateau entrance. Grand ornate doors, marble floors, gothic European opulence with candelabras.",
+        "composition": "IMPOSING GUARDIAN. Standing with arms crossed at the entrance, blocking the way. Sneering down at the viewer with arrogant confidence.",
+        "subject": "Malcolm Kennard as Abel standing guard at the Chateau. Crisp suit, arrogant posture, hint of supernatural strength."
     },
     {
         "id": "C087",

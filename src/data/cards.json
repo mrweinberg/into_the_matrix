@@ -1696,7 +1696,7 @@
     "displayType": "Artifact Creature — Robot Scout",
     "text": [
       "Menace",
-      "{1}, {E}: Search-Protocol Bot gets +1/+0 until end of turn."
+      "{1}, Pay {E}: Search-Protocol Bot gets +1/+1 until end of turn."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1997,6 +1997,24 @@
     "fileName": "U046_reinforcement_agent.png"
   },
   {
+    "id": "U047",
+    "name": "Machine City Enforcer",
+    "cost": "{1}{B}",
+    "type": "Artifact Creature — Robot (2/1)",
+    "displayType": "Artifact Creature — Robot",
+    "text": [
+      "When Machine City Enforcer enters, you get {E}{E}.",
+      "Whenever Machine City Enforcer attacks, you may pay {E}{E}. If you do, target creature can't block this turn."
+    ],
+    "flavor": " \"It clears the path for the swarm.\"",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "2/1",
+    "colorIndicator": null,
+    "fileName": "U047_machine_city_enforcer.png"
+  },
+  {
     "id": "U048",
     "name": "Systematic Overwrite",
     "cost": "{2}{B}",
@@ -2124,6 +2142,24 @@
     "pt": "2/1",
     "colorIndicator": null,
     "fileName": "U054_unplugged_neophyte.png"
+  },
+  {
+    "id": "U055",
+    "name": "Sentinel Fabricator",
+    "cost": "{2}{B}",
+    "type": "Artifact Creature — Robot (2/2)",
+    "displayType": "Artifact Creature — Robot",
+    "text": [
+      "When Sentinel Fabricator enters, you get {E}{E}.",
+      "At the beginning of your end step, if you paid three or more {E} this turn, create a 2/2 colorless Robot artifact creature token with menace."
+    ],
+    "flavor": " \"The factories of 01 never sleep.\"",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "2/2",
+    "colorIndicator": null,
+    "fileName": "U055_sentinel_fabricator.png"
   },
   {
     "id": "R040",
@@ -2609,8 +2645,7 @@
     "displayType": "Creature — Human Rogue",
     "text": [
       "Haste",
-      "When Pipeline Saboteur attacks, you may pay {E}.",
-      "If you do, target creature can't block this turn."
+      "When Pipeline Saboteur attacks, you may pay {E}. If you do, target creature can't block this turn."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2665,7 +2700,8 @@
     "displayType": "Creature — Human Soldier",
     "text": [
       "Double strike",
-      "When Akimbo Specialist enters, create a Gun token."
+      "When this creature enters, create a Gun token.",
+      "Triggered abilities during your first strike phase cannot cause you to sacrifice an equipment attached to this creature."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2694,15 +2730,14 @@
   },
   {
     "id": "U066",
-    "name": "Electrical Burst",
+    "name": "Channeled Surge",
     "cost": "{1}{R}",
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "Choose one. If you have 3 or more {E} as you cast this spell, you may choose both.",
-      "• Electrical Burst deals 3 damage to target creature.",
-      "• Electrical Burst deals 1 damage to all creatures your opponents control.",
-      "If you have 6 or more {E}, Electrical Burst deals 2 damage to each opponent."
+      "If you cast this from your hand, you get {E}{E}.",
+      "You may pay any amount of {E}. Deal that much damage to target creature.",
+      "Flashback {3}{R}{R}"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2710,7 +2745,7 @@
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "U066_electrical_burst.png"
+    "fileName": "U066_channeled_surge.png"
   },
   {
     "id": "U067",
@@ -2837,6 +2872,24 @@
     "pt": "",
     "colorIndicator": null,
     "fileName": "U072_choose_fate.png"
+  },
+  {
+    "id": "U073",
+    "name": "Righteous Surge",
+    "cost": "{R}",
+    "type": "Sorcery",
+    "displayType": "Sorcery",
+    "text": [
+      "Target creature you control gets haste and trample until end of turn.",
+      "Flashback {2}{R}"
+    ],
+    "flavor": "",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "",
+    "colorIndicator": null,
+    "fileName": "U073_righteous_surge.png"
   },
   {
     "id": "R060",
@@ -3003,6 +3056,26 @@
     "pt": "3/2",
     "colorIndicator": null,
     "fileName": "R068_trinity__combat_driver.png"
+  },
+  {
+    "id": "R069",
+    "name": "Electrical Burst",
+    "cost": "{1}{R}",
+    "type": "Sorcery",
+    "displayType": "Sorcery",
+    "text": [
+      "Choose one. If you have 3 or more {E} as you cast this spell, you may choose both.",
+      "• Electrical Burst deals 3 damage to target creature.",
+      "• Electrical Burst deals 1 damage to all creatures your opponents control.",
+      "If you have 6 or more {E}, Electrical Burst deals 2 damage to each opponent."
+    ],
+    "flavor": "",
+    "rarity": "Rare",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "",
+    "colorIndicator": null,
+    "fileName": "R069_electrical_burst.png"
   },
   {
     "id": "M06",
@@ -3334,7 +3407,7 @@
     "displayType": "Creature — Fungus",
     "text": [
       "If you would get one or more {E}, you get that much plus one {E} instead.",
-      "{B}, Pay {E}{E}: Target creature you control gains indestructible until end of turn. Tap it."
+      "{G}, Pay {E}{E}: Target creature you control gains indestructible until end of turn. Tap it."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3363,13 +3436,15 @@
   },
   {
     "id": "U084",
-    "name": "Battery Storage",
-    "cost": "{1}{G}",
-    "type": "Enchantment",
-    "displayType": "Enchantment",
+    "name": "Surge of Renewal",
+    "cost": "{2}{G}",
+    "type": "Enchantment - Aura",
+    "displayType": "Enchantment - Aura",
     "text": [
-      "When Battery Storage enters, you get {E}{E}.",
-      "Pay {E}{E}: Target artifact or creature you control gains indestructible until end of turn. Tap it."
+      "Enchant Creature",
+      "Flash",
+      "When this enters, untap enchanted creature.",
+      "Enchanted creature gets +2/+2."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3377,7 +3452,7 @@
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "U084_battery_storage.png"
+    "fileName": "U084_surge_of_renewal.png"
   },
   {
     "id": "U085",
@@ -3506,6 +3581,43 @@
     "pt": "",
     "colorIndicator": null,
     "fileName": "U090_combat_simulation.png"
+  },
+  {
+    "id": "U091",
+    "name": "Ravenous Construct",
+    "cost": "{7}{G}",
+    "type": "Artifact Creature — Construct Beast (7/7)",
+    "displayType": "Artifact Creature — Construct Beast",
+    "text": [
+      "Affinity for {E} (This creature costs {1} less to cast for each {E} you have.)",
+      "Trample"
+    ],
+    "flavor": "",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "7/7",
+    "colorIndicator": null,
+    "fileName": "U091_ravenous_construct.png"
+  },
+  {
+    "id": "U092",
+    "name": "System Root-Weaver",
+    "cost": "{1}{G}",
+    "type": "Creature — Plant (1/3)",
+    "displayType": "Creature — Plant",
+    "text": [
+      "Flash",
+      "Whenever you cast a spell during an opponent's turn, you get {E}.",
+      "Pay {E}{E}: System Root-Weaver gets +2/+2 until end of turn. Activate only once each turn."
+    ],
+    "flavor": " \"Growing within the firewall's blind spot.\"",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "1/3",
+    "colorIndicator": null,
+    "fileName": "U092_system_root_weaver.png"
   },
   {
     "id": "R080",
