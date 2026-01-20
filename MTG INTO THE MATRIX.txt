@@ -1255,7 +1255,7 @@ Whenever Dozer attacks, search your library for a basic land card, put it onto t
 
 --- MYTHICS ---
 
-[M08] Root Access {5}{G}{G}
+[M17] Root Access {5}{G}{G}
 Sorcery
 Reveal the top seven cards of your library.
 You may put any number of permanent cards from among them onto the battlefield.
@@ -1515,7 +1515,7 @@ You may cast the top card of your library.
 Whenever you cast a spell from your library, you get {E}.
 {E}{E}: Scry 2.
 
-[M09] The Architect, System Creator {4}{W}{U}
+[M18] The Architect, System Creator {4}{W}{U}
 Legendary Creature — Avatar Program (3/6)
 Digital (The Architect can block or be blocked only by creatures with digital.)
 Vigilance
@@ -1523,7 +1523,7 @@ When The Architect enters, if it was cast, return all creatures to their owners'
 Whenever a creature enters, its controller may pay {2}. If they don't, put a digital counter on it.
 (Creatures with digital counters have digital.)
 
-[M10] Agent Smith, System Anomaly {1}{W}{B}
+[M19] Agent Smith, System Anomaly {1}{W}{B}
 Legendary Creature — Program Agent (3/3)
 Digital (Agent Smith can block or be blocked only by creatures with digital.)
 Menace
@@ -1675,7 +1675,7 @@ Crew 1
 
 --- MYTHICS ---
 
-[M14] The Nebuchadnezzar {4}
+[M20] The Nebuchadnezzar {4}
 Legendary Artifact — Vehicle (4/5)
 Flying
 Whenever this creature attacks, you may have any number of creatures you control jack-in or eject.

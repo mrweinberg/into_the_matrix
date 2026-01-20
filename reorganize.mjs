@@ -1,13 +1,17 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // --- CONFIGURATION ---
 const INPUT_FILENAME = 'MTG INTO THE MATRIX.txt';
-const OUTPUT_FILENAME = 'MTG_INTO_THE_MATRIX_REORGANIZED.txt';
+const OUTPUT_FILENAME = 'MTG INTO THE MATRIX.txt'; // Overwrites original
 
 // --- CONSTANTS ---
 const SECTION_ORDER = [
-    "WHITE", "BLUE", "BLACK", "RED", "GREEN", 
+    "WHITE", "BLUE", "BLACK", "RED", "GREEN",
     "MULTICOLOR", "ARTIFACTS & COLORLESS", "LANDS"
 ];
 
@@ -70,13 +74,13 @@ function parseCards(lines) {
 
         // Check for Card Header
         const match = trimmed.match(CARD_HEADER_REGEX);
-        
+
         if (match) {
             // If we were building a card, save it
             if (currentCard) cards.push(currentCard);
-            
+
             isIntro = false;
-            
+
             // Start New Card
             currentCard = {
                 rarityCode: match[1], // 'C', 'U', 'R', 'M'
@@ -85,10 +89,10 @@ function parseCards(lines) {
                 lines: [line],
                 typeLine: "" // Will grab next line
             };
-        } 
+        }
         // If it's a section header (===) or rarity header (---), ignore it
         else if (IGNORE_HEADER_REGEX.test(trimmed)) {
-            continue; 
+            continue;
         }
         // Content Lines
         else {
@@ -97,7 +101,7 @@ function parseCards(lines) {
                 if (trimmed) introLines.push(line);
             } else if (currentCard) {
                 currentCard.lines.push(line);
-                
+
                 // Try to grab type line (usually the 2nd line of a card)
                 if (currentCard.lines.length === 2 && trimmed) {
                     currentCard.typeLine = trimmed;
@@ -192,7 +196,7 @@ function writeOutput(outputPath, introLines, cards) {
 
     stream.end(() => {
         console.log(`\n✅ Success! File saved to: ${OUTPUT_FILENAME}`);
-        
+
         // Print Stats
         const stats = {};
         cards.forEach(c => {

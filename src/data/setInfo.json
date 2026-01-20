@@ -236,13 +236,13 @@
       "Vigilance": 13,
       "Digital": 73,
       "Jack-in": 22,
-      "Flying": 12,
+      "Flying": 11,
       "Ward": 11,
       "Defender": 5,
       "Lifelink": 9,
       "Eject": 7,
       "First Strike": 4,
-      "Indestructible": 12,
+      "Indestructible": 11,
       "Reach": 10,
       "Double Strike": 2,
       "Hexproof": 7,
@@ -265,7 +265,7 @@
       "removal": 63,
       "counterspells": 5,
       "tokenCreators": 32,
-      "energyCards": 116
+      "energyCards": 115
     },
     "rarityByColor": {
       "W": {

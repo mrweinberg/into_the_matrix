@@ -3876,7 +3876,7 @@
     "fileName": "R088_dozer__freeborn_operator.png"
   },
   {
-    "id": "M08",
+    "id": "M17",
     "name": "Root Access",
     "cost": "{5}{G}{G}",
     "type": "Sorcery",
@@ -3892,7 +3892,7 @@
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "M08_root_access.png"
+    "fileName": "M17_root_access.png"
   },
   {
     "id": "M09",
@@ -4686,7 +4686,7 @@
     "fileName": "M03_the_oracle__destiny_planner.png"
   },
   {
-    "id": "M09",
+    "id": "M18",
     "name": "The Architect, System Creator",
     "cost": "{4}{W}{U}",
     "type": "Legendary Creature — Avatar Program (3/6)",
@@ -4704,10 +4704,10 @@
     "hasBackFace": false,
     "pt": "3/6",
     "colorIndicator": null,
-    "fileName": "M09_the_architect__system_creator.png"
+    "fileName": "M18_the_architect__system_creator.png"
   },
   {
-    "id": "M10",
+    "id": "M19",
     "name": "Agent Smith, System Anomaly",
     "cost": "{1}{W}{B}",
     "type": "Legendary Creature — Program Agent (3/3)",
@@ -4724,7 +4724,7 @@
     "hasBackFace": false,
     "pt": "3/3",
     "colorIndicator": null,
-    "fileName": "M10_agent_smith__system_anomaly.png"
+    "fileName": "M19_agent_smith__system_anomaly.png"
   },
   {
     "id": "M14",
@@ -4733,9 +4733,9 @@
     "type": "Enchantment — Saga",
     "displayType": "Enchantment — Saga",
     "text": [
-      "I — Each player chooses a legendary creature they control. Those creatures gain flying, indestructible, and \"Whenever this creature deals damage, you get that much {E}.\"",
-      "II — The creatures chosen with The Grand Equation fight each other. If a creature would die this turn, exile it instead, then exile all other creatures with the same name as that creature.",
-      "III — Exile all nonland permanents. Each player returns all cards exiled with The Grand Equation to the battlefield under their owner's control."
+      "I — Choose two creatures. As long as you this saga is on the battlefield, all creatures except one become copies of the other.",
+      "II — The creatures chosen fight each other. If a creature would die this turn, exile it instead, then exile all other creatures with the same name as that creature.",
+      "III — Exile all nonland permanents. Each player returns all cards exiled with The Grand Equation to the battlefield under their owner's control at the beginning of your next upkeep."
     ],
     "flavor": " \"Everything that has a beginning has an end, Neo.\"",
     "rarity": "Mythic",
@@ -5159,7 +5159,7 @@
     "fileName": "R132_the_ducati.png"
   },
   {
-    "id": "M14",
+    "id": "M20",
     "name": "The Nebuchadnezzar",
     "cost": "{4}",
     "type": "Legendary Artifact — Vehicle (4/5)",
@@ -5176,7 +5176,7 @@
     "hasBackFace": false,
     "pt": "4/5",
     "colorIndicator": null,
-    "fileName": "M14_the_nebuchadnezzar.png"
+    "fileName": "M20_the_nebuchadnezzar.png"
   },
   {
     "id": "M15",
