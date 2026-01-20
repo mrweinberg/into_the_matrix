@@ -320,5 +320,12 @@
         "subject": "A combat hovercraft in action. Military-grade Zion vessel engaged in battle. Gun turrets firing, hover pads blazing. Aggressive flight posture. Sentinel parts or explosions nearby.",
         "setting": "Real World battle. Tunnel combat or surface warfare against machines.",
         "composition": "Dynamic action shot. Muzzle flashes, debris, desperate combat."
+    },
+    {
+        "id": "M14",
+        "subject": "The final battle between Neo and Agent Smith. Neo stands alone facing MILLIONS of Agent Smith clones in the rain. A single determined figure against an endless army of identical agents in black suits. Epic scale, apocalyptic confrontation.",
+        "setting": "Devastated Matrix city at night. Torrential rain, dark storm clouds with green lightning. Destroyed buildings, flooded streets, debris everywhere. The simulated city is collapsing and glitching.",
+        "composition": "EPIC CONFRONTATION. Wide shot showing Neo (center, iconic long black coat) surrounded by countless Agent Smith copies extending into the distance. Rain pouring down, dramatic lighting from above. The scale emphasizes Neo's isolation against the infinite horde.",
+        "character": "Keanu Reeves as Neo in his iconic long black coat. Hugo Weaving as Agent Smith multiplied into millions of identical copies, all in black suits and sunglasses."
     }
 ]

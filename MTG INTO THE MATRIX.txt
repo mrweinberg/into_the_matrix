@@ -1265,6 +1265,13 @@ Put the rest on the bottom of your library in a random order.
 Sorcery
 Create X 4/4 green Construct artifact creature tokens with trample. Then, if you have 8 or more {E}, creatures you control get +X/+X and gain haste until end of turn.
 
+[M10] Bio-Spark Behemoth {4}{G}{G}
+Creature — Construct Beast (6/6)
+Trample, Ward {2}
+When Bio-Spark Behemoth enters or attacks, you get {E}{E}{E}.
+At the beginning of your postcombat main phase, add {G} for every 2 {E} you have.
+"It eats lightning and breathes fuel."
+
 ========== MULTICOLOR (44 Cards) ==========
 
 --- UNCOMMONS ---
@@ -1523,6 +1530,13 @@ Menace
 The "legend rule" doesn't apply to tokens you control named Agent Smith.
 Whenever Agent Smith deals combat damage to a player, create a token that's a copy of it.
 
+[M14] The Grand Equation {W}{U}{B}
+Enchantment — Saga
+I — Choose two creatures. As long as you this saga is on the battlefield, all creatures except one become copies of the other.
+II — The creatures chosen fight each other. If a creature would die this turn, exile it instead, then exile all other creatures with the same name as that creature.
+III — Exile all nonland permanents. Each player returns all cards exiled with The Grand Equation to the battlefield under their owner's control at the beginning of your next upkeep.
+"Everything that has a beginning has an end, Neo."
+
 [M11] Sati, The Sunrise {G}{W}
 Legendary Creature — Program Child (1/2)
 Digital
@@ -1563,7 +1577,7 @@ Agent Smith has digital as long as the overridden creature had digital.
 [C150] The Oracle’s Cookie {2}
 Artifact — Food
 When this artifact enters or leaves the battlefield, scry 2.
-{2}, {T}, Sacrifice this creature: You gain 3 life.
+{2}, {T}, Sacrifice this artifact: You gain 3 life.
 
 [C151] APU Corps {5}
 Artifact — Vehicle (4/5)

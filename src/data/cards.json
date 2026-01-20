@@ -2989,7 +2989,7 @@
     "displayType": "Artifact Creature — Robot",
     "text": [
       "Flash, flying",
-      "When this creature enters, you may change the target of target spell or ability to this creature.",
+      "When this creature enters, you may change the target of target spell or ability that only targets one creature to this creature.",
       "Whenever this creature deals combat damage to a player, you may sacrifice it. If you do, it deals 4 damage to each creature that player controls."
     ],
     "flavor": "",
@@ -3026,7 +3026,7 @@
     "displayType": "Enchantment — Saga",
     "text": [
       "I — Goad all creatures your opponents control.",
-      "II — this creature deals 2 damage to each creature.",
+      "II — This saga deals 2 damage to each creature.",
       "III — Create a 5/5 colorless Robot artifact creature token with menace and haste."
     ],
     "flavor": "",
@@ -3157,7 +3157,7 @@
     "displayType": "Enchantment",
     "text": [
       "At the beginning of your upkeep, create a Gun token.",
-      "If you would create a Gun token, create an additional Gun token."
+      "If you would create one or more Gun tokens, create an additional Gun token."
     ],
     "flavor": "",
     "rarity": "Mythic",
@@ -3910,6 +3910,25 @@
     "pt": "",
     "colorIndicator": null,
     "fileName": "M09_reclaim_the_surface.png"
+  },
+  {
+    "id": "M10",
+    "name": "Bio-Spark Behemoth",
+    "cost": "{4}{G}{G}",
+    "type": "Creature — Construct Beast (6/6)",
+    "displayType": "Creature — Construct Beast",
+    "text": [
+      "Trample, Ward {2}",
+      "When Bio-Spark Behemoth enters or attacks, you get {E}{E}{E}.",
+      "At the beginning of your postcombat main phase, add {G} for every 2 {E} you have."
+    ],
+    "flavor": " \"It eats lightning and breathes fuel.\"",
+    "rarity": "Mythic",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "6/6",
+    "colorIndicator": null,
+    "fileName": "M10_bio_spark_behemoth.png"
   },
   {
     "id": "U100",
@@ -4708,6 +4727,25 @@
     "fileName": "M10_agent_smith__system_anomaly.png"
   },
   {
+    "id": "M14",
+    "name": "The Grand Equation",
+    "cost": "{W}{U}{B}",
+    "type": "Enchantment — Saga",
+    "displayType": "Enchantment — Saga",
+    "text": [
+      "I — Each player chooses a legendary creature they control. Those creatures gain flying, indestructible, and \"Whenever this creature deals damage, you get that much {E}.\"",
+      "II — The creatures chosen with The Grand Equation fight each other. If a creature would die this turn, exile it instead, then exile all other creatures with the same name as that creature.",
+      "III — Exile all nonland permanents. Each player returns all cards exiled with The Grand Equation to the battlefield under their owner's control."
+    ],
+    "flavor": " \"Everything that has a beginning has an end, Neo.\"",
+    "rarity": "Mythic",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "",
+    "colorIndicator": null,
+    "fileName": "M14_the_grand_equation.png"
+  },
+  {
     "id": "M11",
     "name": "Sati, The Sunrise",
     "cost": "{G}{W}",
@@ -4812,7 +4850,7 @@
     "displayType": "Artifact — Food",
     "text": [
       "When this artifact enters or leaves the battlefield, scry 2.",
-      "{2}, {T}, Sacrifice this creature: You gain 3 life."
+      "{2}, {T}, Sacrifice this artifact: You gain 3 life."
     ],
     "flavor": "",
     "rarity": "Common",

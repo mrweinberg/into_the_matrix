@@ -419,7 +419,6 @@ class Card {
     let weaponry = "WEAPONS: Modern firearms, martial arts, or lightning rifles (Real World only). No fantasy/medieval weapons.";
 
     if (override) {
-      console.log(`   ⚡ Applying overrides for ${this.id}...`);
       if (override.setting) world.setting = override.setting;
       if (override.subject) subjectDescription = override.subject;
       if (override.composition) composition = "COMPOSITION: " + override.composition;
@@ -602,6 +601,9 @@ async function generateArtForCard(aiClient, card, isDryRun, forceOverwrite) {
   console.log(`\n🎨 Generating: ${card.name} (${card.isBackFace ? "BACK" : "FRONT"})`);
   console.log(`   🔍 Digital: ${isDigital} -> ${isDigital ? "MATRIX" : "REAL WORLD"}`);
   console.log(`   🌍 Setting: ${world.setting}`);
+  if (artOverrides[card.id]) {
+    console.log(`   ⚡ Applying overrides for ${card.id}...`);
+  }
 
   const startTime = Date.now();
 
