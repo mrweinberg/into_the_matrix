@@ -1545,15 +1545,15 @@ Digital
 
 [M12] Neo, Humanity's Inspiration {1}{U}{W}{R}
 Legendary Creature — Human Monk (3/4)
-Vigilance
-Creatures you control that don't have digital get +1/+1.
-At the beginning of combat on your turn, if you control a creature with digital, you may pay {3}.
-If you do, jack-in.
+Vigilance, prowess
+Humans you control have training (Whenever this creature attacks with another creature with greater power, put a +1/+1 counter on this creature.)
+Tap two untapped Humans you control: Jack-in. 
 //
 Neo, The One (Color Indicator: U/W/R)
 Legendary Creature — Human Avatar Program (4/4)
 Flying, digital, ward {2}
 Whenever Neo, The One attacks, put a +1/+1 counter on it and return target nonland permanent to its owner's hand.
+{2}: Eject.
 
 [M13] The Hammer, Heavy Hovercraft {3}{R}{G}
 Legendary Artifact — Vehicle (7/6)
