@@ -563,11 +563,11 @@
   {
     "id": "U012",
     "name": "Disposal Subroutine",
-    "cost": "{1}{W}",
+    "cost": "{2}{W}",
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "As an additional cost to cast this spell, pay {E}{E} or {3}.",
+      "As an additional cost to cast this spell, pay {E}{E} or {2}.",
       "Exile target nonland permanent."
     ],
     "flavor": "",
@@ -3657,7 +3657,7 @@
   {
     "id": "U091",
     "name": "Ravenous Construct",
-    "cost": "{7}{G}",
+    "cost": "{6}{G}{6}",
     "type": "Artifact Creature — Construct Beast (7/7)",
     "displayType": "Artifact Creature — Construct Beast",
     "text": [

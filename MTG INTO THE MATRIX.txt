@@ -234,9 +234,9 @@ Flying
 This creature gets +1/+1 if you control a nontoken artifact.
 This creature gets +1/+1 if it is equipped.
 
-[U012] Disposal Subroutine {1}{W}
+[U012] Disposal Subroutine {2}{W}
 Sorcery
-As an additional cost to cast this spell, pay {E}{E} or {3}.
+As an additional cost to cast this spell, pay {E}{E} or {2}.
 Exile target nonland permanent.
 
 [U013] Extraction Mission {1}{W}{W}
@@ -1183,7 +1183,7 @@ Sorcery
 Put two +1/+1 counters on two target creatures you control.
 "Stop trying to hit me and hit me!"
 
-[U091] Ravenous Construct {7}{G}
+[U091] Ravenous Construct {6}{G}{6}
 Artifact Creature — Construct Beast (7/7)
 Affinity for {E} (This creature costs {1} less to cast for each {E} you have.)
 Trample
