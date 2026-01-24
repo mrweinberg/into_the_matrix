@@ -150,9 +150,9 @@
         "0": 0,
         "1": 1,
         "2": 9,
-        "3": 22,
+        "3": 21,
         "4": 5,
-        "5": 5,
+        "5": 6,
         "6+": 2
       },
       "Colorless": {
@@ -170,9 +170,9 @@
         "0": 0,
         "1": 1,
         "2": 1,
-        "3": 4,
+        "3": 3,
         "4": 3,
-        "5": 6,
+        "5": 7,
         "6+": 5
       },
       "Rare": {
@@ -247,7 +247,7 @@
       "Double Strike": 2,
       "Hexproof": 7,
       "Flash": 22,
-      "Haste": 22,
+      "Haste": 21,
       "Override": 9,
       "Menace": 21,
       "Deathtouch": 3,
@@ -262,9 +262,9 @@
     "averageCMC": 2.94,
     "cardsWithAbilities": {
       "cardDraw": 28,
-      "removal": 63,
+      "removal": 62,
       "counterspells": 5,
-      "tokenCreators": 32,
+      "tokenCreators": 31,
       "energyCards": 115
     },
     "rarityByColor": {

@@ -1102,9 +1102,7 @@ Destroy target artifact or enchantment. You get {E}{E}.
 
 [C137] Sifter of Ruins {1}{G}
 Creature — Human Archivist (1/2)
-When this creature enters, mill three cards.
-You may put a land card from among them into your hand.
-If you don't, put a +1/+1 counter on this creature.
+When this creature enters, mill three cards. You may put a land card from among them into your hand. If you don't, put a +1/+1 counter on this creature.
 
 [C138] Lineage Honorer {3}{G}
 Creature — Human Archivist (4/3)
@@ -1120,7 +1118,7 @@ If this mana is spent to cast a creature spell that doesn't have digital, that c
 
 [U080] Heavy-Duty Construct {3}{G}
 Creature — Robot (6/5)
-Trample
+This creature can't be blocked by more than one creature.
 As an additional cost to cast this spell, pay {E}{E} or sacrifice a creature.
 
 [U081] Nutrient Silo {1}{G}
@@ -1183,7 +1181,7 @@ Sorcery
 Put two +1/+1 counters on two target creatures you control.
 "Stop trying to hit me and hit me!"
 
-[U091] Ravenous Construct {6}{G}{6}
+[U091] Ravenous Construct {6}{G}{G}
 Artifact Creature — Construct Beast (7/7)
 Affinity for {E} (This creature costs {1} less to cast for each {E} you have.)
 Trample
@@ -1215,9 +1213,9 @@ Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooz
 
 [R082] Founding of Zion {2}{G}
 Enchantment — Saga
-I — Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.
-II — Create a 1/1 white Human creature token.
-III — Put two +1/+1 counters on target creature you control. It gains vigilance until end of turn.
+I — Look at the top five cards of your library. You may reveal a Human or Land card from among them and put it into your hand. Put the rest on the bottom of your library.
+II — You may put a land card from your hand onto the battlefield. You gain 2 life.
+III — Creatures you control get +1/+1 and gain vigilance until end of turn.
 
 [R083] System Purge Virus {3}{G}{G}
 Sorcery
@@ -1530,11 +1528,11 @@ Menace
 The "legend rule" doesn't apply to tokens you control named Agent Smith.
 Whenever Agent Smith deals combat damage to a player, create a token that's a copy of it.
 
-[M14] The Grand Equation {W}{U}{B}
+[M14] The Grand Equation {2}{W}{U}{B}
 Enchantment — Saga
-I — Choose two creatures. As long as you this saga is on the battlefield, all creatures except one become copies of the other.
-II — The creatures chosen fight each other. If a creature would die this turn, exile it instead, then exile all other creatures with the same name as that creature.
-III — Exile all nonland permanents. Each player returns all cards exiled with The Grand Equation to the battlefield under their owner's control at the beginning of your next upkeep.
+I — Choose two creatures. As long as you this saga is on the battlefield, all creatures except one of the chosen creatures become copies of the other.
+II — Choose two creature with different names. They fight each other..
+III — Return all nonland permanents to their owners' hands.
 "Everything that has a beginning has an end, Neo."
 
 [M11] Sati, The Sunrise {G}{W}
@@ -1565,7 +1563,7 @@ Crew 3
 [M16] Agent Smith, Unshackled {3}{B}{R}
 Legendary Creature — Program Rogue (4/4)
 Override creature
-Menace, haste
+Menace
 You may have Agent Smith override creatures you don't control.
 Agent Smith has digital as long as the overridden creature had digital.
 

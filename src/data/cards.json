@@ -3751,9 +3751,9 @@
     "type": "Enchantment — Saga",
     "displayType": "Enchantment — Saga",
     "text": [
-      "I — Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
-      "II — Create a 1/1 white Human creature token.",
-      "III — Put two +1/+1 counters on target creature you control. It gains vigilance until end of turn."
+      "I — Look at the top five cards of your library. You may reveal a Human or Land card from among them and put it into your hand. Put the rest on the bottom of your library.",
+      "II — You may put a land card from your hand onto the battlefield. You gain 2 life.",
+      "III — Creatures you control get +1/+1 and gain vigilance until end of turn."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -4729,13 +4729,13 @@
   {
     "id": "M14",
     "name": "The Grand Equation",
-    "cost": "{W}{U}{B}",
+    "cost": "{2}{W}{U}{B}",
     "type": "Enchantment — Saga",
     "displayType": "Enchantment — Saga",
     "text": [
-      "I — Choose two creatures. As long as you this saga is on the battlefield, all creatures except one become copies of the other.",
-      "II — The creatures chosen fight each other. If a creature would die this turn, exile it instead, then exile all other creatures with the same name as that creature.",
-      "III — Exile all nonland permanents. Each player returns all cards exiled with The Grand Equation to the battlefield under their owner's control at the beginning of your next upkeep."
+      "I — Choose two creatures. As long as you this saga is on the battlefield, all creatures except one of the chosen creatures become copies of the other.",
+      "II — Choose two creature with different names. They fight each other..",
+      "III — Return all nonland permanents to their owners' hands."
     ],
     "flavor": " \"Everything that has a beginning has an end, Neo.\"",
     "rarity": "Mythic",
@@ -4830,7 +4830,7 @@
     "displayType": "Legendary Creature — Program Rogue",
     "text": [
       "Override creature",
-      "Menace, haste",
+      "Menace",
       "You may have Agent Smith override creatures you don't control.",
       "Agent Smith has digital as long as the overridden creature had digital."
     ],

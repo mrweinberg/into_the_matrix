@@ -327,5 +327,13 @@
         "setting": "Devastated Matrix city at night. Torrential rain, dark storm clouds with green lightning. Destroyed buildings, flooded streets, debris everywhere. The simulated city is collapsing and glitching.",
         "composition": "EPIC CONFRONTATION. Wide shot showing Neo (center, iconic long black coat) surrounded by countless Agent Smith copies extending into the distance. Rain pouring down, dramatic lighting from above. The scale emphasizes Neo's isolation against the infinite horde.",
         "character": "Keanu Reeves as Neo in his iconic long black coat. Hugo Weaving as Agent Smith multiplied into millions of identical copies, all in black suits and sunglasses."
+    },
+    {
+        "id": "R082",
+        "subject": "A mural depicting the Founding of Zion in three stages, painted on a weathered metal wall. LEFT PANEL: Freed humans escaping from the Machine City, fleeing through tunnels. CENTER PANEL: The first settlers arriving at the underground cavern that will become Zion, looking up in wonder. RIGHT PANEL: The completed city of Zion, with its docks, council chambers, and hovercrafts.",
+        "setting": "Real World underground. The mural is painted on rusted, industrial metal plating in a Zion corridor. Warm lighting from torches or electric lamps illuminates the artwork.",
+        "composition": "TRIPTYCH MURAL. The image shows a painted mural on metal, with visible brushstrokes, weathering, and patina. The three panels flow left to right showing the progression from exodus to settlement to civilization. Folk art style with bold colors against the dark metal background.",
+        "artStyle": "Folk art mural painted on metal. Visible brushstrokes, slightly naive style, warm earth tones with highlights of hope. The metal surface should show through in weathered areas. Think Diego Rivera meets post-apocalyptic cave art.",
+        "sunglasses": false
     }
 ]
