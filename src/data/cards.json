@@ -2142,6 +2142,44 @@
     "fileName": "U050_sentinel_scavenger.png"
   },
   {
+    "id": "U051",
+    "name": "Unplugged Operative",
+    "cost": "{1}{B}",
+    "type": "Creature — Human Rogue (2/1)",
+    "displayType": "Creature — Human Rogue",
+    "text": [
+      "Deathtouch",
+      "{1}{B}: Jack-in. ({1}{B}: Transform this card. Activate only as a sorcery.)"
+    ],
+    "flavor": "",
+    "rarity": "Uncommon",
+    "isBackFace": false,
+    "hasBackFace": true,
+    "pt": "2/1",
+    "colorIndicator": null,
+    "fileName": "U051a_unplugged_operative_front.png"
+  },
+  {
+    "id": "U051",
+    "name": "Shadow Network Agent",
+    "cost": "",
+    "type": "Creature — Human Rogue Program (3/2)",
+    "displayType": "Creature — Human Rogue Program",
+    "text": [
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "Menace",
+      "Whenever this creature deals combat damage to a player, that player discards a card.",
+      "{B}: Eject. ({B}: Transform this card. Activate only as a sorcery.)"
+    ],
+    "flavor": "",
+    "rarity": "Uncommon",
+    "isBackFace": true,
+    "hasBackFace": false,
+    "pt": "3/2",
+    "colorIndicator": "b",
+    "fileName": "U051b_shadow_network_agent_back.png"
+  },
+  {
     "id": "U052",
     "name": "Agent Brown, Enforcer",
     "cost": "{2}{B}{B}",
@@ -2470,6 +2508,24 @@
     "pt": "1/3",
     "colorIndicator": null,
     "fileName": "C093_static_charged_hacker.png"
+  },
+  {
+    "id": "C094",
+    "name": "Adrenaline Upload",
+    "cost": "{R}",
+    "type": "Instant",
+    "displayType": "Instant",
+    "text": [
+      "Target creature gets +2/+0 and gains haste until end of turn.",
+      "You get {E}{E}."
+    ],
+    "flavor": " \"I know kung fu.\"",
+    "rarity": "Common",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "",
+    "colorIndicator": null,
+    "fileName": "C094_adrenaline_upload.png"
   },
   {
     "id": "C095",
@@ -5485,8 +5541,8 @@
     "displayType": "Legendary Land",
     "text": [
       "{T}: Add {C}.",
-      "{T}: Add one mana of any color. Spend this mana only to cast a Program spell.",
-      "{3}, {T}: Target Program creature you control gains indestructible until end of turn."
+      "{T}: Add {W} or {B}. Spend this mana only to cast a Program spell or a spell that causes you to gain life.",
+      "Whenever you gain life, you may pay {1}. If you do, each opponent loses 1 life. This ability triggers only once each turn."
     ],
     "flavor": "",
     "rarity": "Land",

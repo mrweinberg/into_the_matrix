@@ -723,6 +723,18 @@ Menace
 Whenever another artifact or creature you control is put into a graveyard from the battlefield, you get {E}.
 Sacrifice an artifact or creature: this creature gets +1/+1 until end of turn.
 
+[U051] Unplugged Operative {1}{B}
+Creature — Human Rogue (2/1)
+Deathtouch
+{1}{B}: Jack-in. ({1}{B}: Transform this card. Activate only as a sorcery.)
+//
+Shadow Network Agent (Color Indicator: Black)
+Creature — Human Rogue Program (3/2)
+Digital (This creature can block or be blocked only by creatures with digital.)
+Menace
+Whenever this creature deals combat damage to a player, that player discards a card.
+{B}: Eject. ({B}: Transform this card. Activate only as a sorcery.)
+
 [U052] Agent Brown, Enforcer {2}{B}{B}
 Legendary Creature — Program Agent (3/3)
 Flash, digital (Agent Brown can block or be blocked only by creatures with digital.)
@@ -828,6 +840,12 @@ If you discarded a nonland card, you get {E}{E}.
 Creature — Human Wizard (1/3)
 Prowess
 {1}, Pay {E}: this creature gets +2/+0 until end of turn.
+
+[C094] Adrenaline Upload {R}
+Instant
+Target creature gets +2/+0 and gains haste until end of turn.
+You get {E}{E}.
+"I know kung fu."
 
 [C095] Avid Marksman {1}{R}
 Creature — Human Soldier (2/1)
@@ -1785,6 +1803,6 @@ Legendary Land
 [R151] Club Hel
 Legendary Land
 {T}: Add {C}.
-{T}: Add one mana of any color. Spend this mana only to cast a Program spell.
-{3}, {T}: Target Program creature you control gains indestructible until end of turn.
+{T}: Add {W} or {B}. Spend this mana only to cast a Program spell or a spell that causes you to gain life.
+Whenever you gain life, you may pay {1}. If you do, each opponent loses 1 life. This ability triggers only once each turn.
 
