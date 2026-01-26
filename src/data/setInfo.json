@@ -62,12 +62,12 @@
     }
   ],
   "stats": {
-    "totalCards": 281,
+    "totalCards": 279,
     "colorCombinations": {
       "W": 40,
       "U": 40,
-      "B": 40,
-      "R": 41,
+      "B": 39,
+      "R": 40,
       "G": 40,
       "UW": 4,
       "BU": 3,
@@ -86,17 +86,17 @@
       "Land": 16
     },
     "rarityBreakdown": {
-      "Common": 82,
-      "Uncommon": 104,
+      "Common": 81,
+      "Uncommon": 103,
       "Rare": 59,
       "Mythic": 20,
       "Land": 16
     },
     "typeBreakdown": {
       "Creature": 153,
-      "Sorcery": 31,
+      "Sorcery": 30,
       "Enchantment": 29,
-      "Instant": 33,
+      "Instant": 32,
       "Artifact": 19,
       "Land": 16
     },
@@ -123,14 +123,14 @@
         "0": 0,
         "1": 6,
         "2": 13,
-        "3": 11,
+        "3": 10,
         "4": 6,
         "5": 3,
         "6+": 1
       },
       "R": {
         "0": 0,
-        "1": 5,
+        "1": 4,
         "2": 13,
         "3": 11,
         "4": 9,
@@ -188,14 +188,14 @@
         "0": 0,
         "1": 8,
         "2": 38,
-        "3": 40,
+        "3": 39,
         "4": 11,
         "5": 3,
         "6+": 4
       },
       "Common": {
         "0": 1,
-        "1": 14,
+        "1": 13,
         "2": 38,
         "3": 14,
         "4": 9,
@@ -247,7 +247,7 @@
       "Double Strike": 2,
       "Hexproof": 7,
       "Flash": 24,
-      "Haste": 22,
+      "Haste": 21,
       "Override": 9,
       "Menace": 21,
       "Deathtouch": 4,
@@ -255,11 +255,11 @@
     },
     "dfcCount": 20,
     "instantSorceryRatio": {
-      "instants": 33,
-      "sorceries": 31,
-      "ratio": 1.06
+      "instants": 32,
+      "sorceries": 30,
+      "ratio": 1.07
     },
-    "averageCMC": 2.91,
+    "averageCMC": 2.92,
     "cardsWithAbilities": {
       "cardDraw": 28,
       "removal": 62,
@@ -283,14 +283,14 @@
       "B": {
         "Mythic": 1,
         "Rare": 8,
-        "Uncommon": 16,
+        "Uncommon": 15,
         "Common": 15
       },
       "R": {
         "Mythic": 2,
         "Rare": 8,
         "Uncommon": 15,
-        "Common": 16
+        "Common": 15
       },
       "G": {
         "Mythic": 2,

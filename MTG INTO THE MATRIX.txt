@@ -272,14 +272,14 @@ Whenever this creature blocks, it deals 2 damage to target attacking creature.
 [R003] Switch, Faithful Defender {1}{W}{W}
 Legendary Creature — Human Soldier (2/2)
 Double strike, vigilance
-{W}: Jack-in.
+{E}: Jack-in.
 //
 Switch, Digital Guardian (Color Indicator: White)
 Legendary Creature — Human Soldier Program (2/2)
 Digital (Switch can block or be blocked only by creatures with digital.)
 Double strike, vigilance
 When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target creature with power 3 or greater.
-{W}: Eject.
+{E}: Eject.
 
 [R004] Guns. Lots of Guns. {2}{W}
 Sorcery
@@ -707,11 +707,6 @@ When this creature enters, you get {E}{E}.
 Whenever this creature attacks, you may pay {E}{E}. If you do, target creature can't block this turn.
 "It clears the path for the swarm."
 
-[U048] Systematic Overwrite {2}{B}
-Sorcery
-Target creature's controller sacrifices it unless they pay {E}{E}{E}.
-If a creature died this turn, you may return a Robot or Program card from your graveyard to your hand.
-
 [U049] Biomatter Repurposer {2}{B}
 Artifact Creature — Robot (3/2)
 When this creature enters, you may exile an artifact or creature card from a graveyard. If you do, you get {E}{E}.
@@ -841,12 +836,6 @@ Creature — Human Wizard (1/3)
 Prowess
 {1}, Pay {E}: this creature gets +2/+0 until end of turn.
 
-[C094] Adrenaline Upload {R}
-Instant
-Target creature gets +2/+0 and gains haste until end of turn.
-You get {E}{E}.
-"I know kung fu."
-
 [C095] Avid Marksman {1}{R}
 Creature — Human Soldier (2/1)
 Haste
@@ -954,14 +943,13 @@ Flashback {3}{R}{R}
 [U067] Adrenaline Junkie {1}{R}
 Creature — Human Warrior (2/1)
 Haste
-At the beginning of combat on your turn, you may pay {1}{R}.
-If you do, jack-in.
+At the beginning of combat on your turn, you may pay {E}{E}. If you do, jack-in.
 //
 Bullet-Hose Avatar (Color Indicator: Red)
 Creature — Human Warrior Program (4/1)
 Digital (This creature can block or be blocked only by creatures with digital.)
 First strike, haste
-At the beginning of the next end step, eject.
+At the beginning of your end step, eject.
 
 [U068] Conduit Overloader {1}{R}
 Creature — Human Shaman (1/3)

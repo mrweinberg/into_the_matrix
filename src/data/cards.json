@@ -678,7 +678,7 @@
     "displayType": "Legendary Creature — Human Soldier",
     "text": [
       "Double strike, vigilance",
-      "{W}: Jack-in."
+      "{E}: Jack-in."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -698,7 +698,7 @@
       "Digital (Switch can block or be blocked only by creatures with digital.)",
       "Double strike, vigilance",
       "When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target creature with power 3 or greater.",
-      "{W}: Eject."
+      "{E}: Eject."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -2087,24 +2087,6 @@
     "fileName": "U047_machine_city_enforcer.png"
   },
   {
-    "id": "U048",
-    "name": "Systematic Overwrite",
-    "cost": "{2}{B}",
-    "type": "Sorcery",
-    "displayType": "Sorcery",
-    "text": [
-      "Target creature's controller sacrifices it unless they pay {E}{E}{E}.",
-      "If a creature died this turn, you may return a Robot or Program card from your graveyard to your hand."
-    ],
-    "flavor": "",
-    "rarity": "Uncommon",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "U048_systematic_overwrite.png"
-  },
-  {
     "id": "U049",
     "name": "Biomatter Repurposer",
     "cost": "{2}{B}",
@@ -2510,24 +2492,6 @@
     "fileName": "C093_static_charged_hacker.png"
   },
   {
-    "id": "C094",
-    "name": "Adrenaline Upload",
-    "cost": "{R}",
-    "type": "Instant",
-    "displayType": "Instant",
-    "text": [
-      "Target creature gets +2/+0 and gains haste until end of turn.",
-      "You get {E}{E}."
-    ],
-    "flavor": " \"I know kung fu.\"",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "C094_adrenaline_upload.png"
-  },
-  {
     "id": "C095",
     "name": "Avid Marksman",
     "cost": "{1}{R}",
@@ -2883,8 +2847,7 @@
     "displayType": "Creature — Human Warrior",
     "text": [
       "Haste",
-      "At the beginning of combat on your turn, you may pay {1}{R}.",
-      "If you do, jack-in."
+      "At the beginning of combat on your turn, you may pay {E}{E}. If you do, jack-in."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2903,7 +2866,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "First strike, haste",
-      "At the beginning of the next end step, eject."
+      "At the beginning of your end step, eject."
     ],
     "flavor": "",
     "rarity": "Uncommon",
