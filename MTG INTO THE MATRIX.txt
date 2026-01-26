@@ -24,8 +24,8 @@ RG: Bio-Electric Power
 This deck focuses on generating large amounts of Energy {E} and spending it on massive "Real World" threats like Beasts and Vehicles. It aims to overwhelm the board with high-power creatures and trampling damage.
 GW: Zion Resistance
 A "go-wide" strategy that boosts Non-Digital (Human) creatures. It utilizes Vigilance and Lifelink to stabilize the board and punish the Machines for attacking into Zion's defenses.
-WB: Lifesucking Exiles
-This archetype revolves around an attrition based strategy utilizing the Merovingian's exiles enabling you to gain life and utilize that lifegain.
+WB: Lifedrain Syndicate
+This archetype revolves around an attrition-based strategy centered on the Merovingian's network of Programs. It uses lifegain and death triggers to generate value, draining opponents while building card advantage through Treasure and sacrifice synergies.
 UR: Code Modification
 A spells-matter and high-tech deck that uses Energy to power your spells or pay off casting them. It features Humans and Programs that grow or trigger abilities whenever you cast noncreature spells.
 BG: Harvester Operations
@@ -1314,13 +1314,14 @@ Whenever an artifact creature you control dies, you get {E} and may discard a ca
 {3}, Sacrifice an artifact: Create a 2/2 colorless Robot artifact creature token with menace. Activate this ability only as a sorcery.
 
 [U110] Swarm Commander {B}{R}
-Artifact Creature — Robot (2/2)
+Artifact Creature — Robot (3/2)
 Menace
 Other Artifact creatures you control get +1/+0.
 
 [U111] Reality Advocate {G}{W}
 Creature — Human Advisor (2/2)
 Other creatures you control that don't have digital get +1/+1.
+Whenever a human enters the battlefield under your control, you get {E}.
 
 [U112] Tank, the Operator {1}{G}{U}
 Legendary Creature — Human Pilot (2/3)
@@ -1530,8 +1531,8 @@ Whenever Agent Smith deals combat damage to a player, create a token that's a co
 
 [M14] The Grand Equation {2}{W}{U}{B}
 Enchantment — Saga
-I — Choose two creatures. As long as you this saga is on the battlefield, all creatures except one of the chosen creatures become copies of the other.
-II — Choose two creature with different names. They fight each other..
+I — Choose two creatures. As long as this saga is on the battlefield, all creatures except one of the chosen creatures become copies of the other.
+II — Choose two creatures with different names. They fight each other.
 III — Return all nonland permanents to their owners' hands.
 "Everything that has a beginning has an end, Neo."
 

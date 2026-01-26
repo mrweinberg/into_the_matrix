@@ -4062,7 +4062,7 @@
     "id": "U110",
     "name": "Swarm Commander",
     "cost": "{B}{R}",
-    "type": "Artifact Creature — Robot (2/2)",
+    "type": "Artifact Creature — Robot (3/2)",
     "displayType": "Artifact Creature — Robot",
     "text": [
       "Menace",
@@ -4072,7 +4072,7 @@
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "2/2",
+    "pt": "3/2",
     "colorIndicator": null,
     "fileName": "U110_swarm_commander.png"
   },
@@ -4083,7 +4083,8 @@
     "type": "Creature — Human Advisor (2/2)",
     "displayType": "Creature — Human Advisor",
     "text": [
-      "Other creatures you control that don't have digital get +1/+1."
+      "Other creatures you control that don't have digital get +1/+1.",
+      "Whenever a human enters the battlefield under your control, you get {E}."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4731,8 +4732,8 @@
     "type": "Enchantment — Saga",
     "displayType": "Enchantment — Saga",
     "text": [
-      "I — Choose two creatures. As long as you this saga is on the battlefield, all creatures except one of the chosen creatures become copies of the other.",
-      "II — Choose two creature with different names. They fight each other..",
+      "I — Choose two creatures. As long as this saga is on the battlefield, all creatures except one of the chosen creatures become copies of the other.",
+      "II — Choose two creatures with different names. They fight each other.",
       "III — Return all nonland permanents to their owners' hands."
     ],
     "flavor": " \"Everything that has a beginning has an end, Neo.\"",
