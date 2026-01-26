@@ -64,18 +64,18 @@
   "stats": {
     "totalCards": 279,
     "colorCombinations": {
-      "W": 39,
+      "W": 40,
       "U": 40,
       "B": 39,
-      "R": 41,
-      "G": 41,
+      "R": 40,
+      "G": 40,
       "UW": 4,
       "BU": 3,
       "RU": 3,
       "BG": 4,
       "BR": 5,
       "GW": 5,
-      "GU": 5,
+      "GU": 6,
       "BW": 4,
       "RW": 4,
       "GR": 4,
@@ -105,7 +105,7 @@
         "0": 0,
         "1": 6,
         "2": 11,
-        "3": 15,
+        "3": 16,
         "4": 3,
         "5": 4,
         "6+": 0
@@ -132,7 +132,7 @@
         "0": 0,
         "1": 4,
         "2": 13,
-        "3": 12,
+        "3": 11,
         "4": 9,
         "5": 2,
         "6+": 1
@@ -144,7 +144,7 @@
         "3": 7,
         "4": 4,
         "5": 1,
-        "6+": 6
+        "6+": 5
       },
       "Multicolor": {
         "0": 0,
@@ -153,7 +153,7 @@
         "3": 21,
         "4": 5,
         "5": 6,
-        "6+": 2
+        "6+": 3
       },
       "Colorless": {
         "0": 1,
@@ -240,18 +240,18 @@
       "Ward": 11,
       "Defender": 5,
       "Lifelink": 9,
-      "Eject": 7,
+      "Eject": 8,
       "First Strike": 4,
       "Indestructible": 11,
       "Reach": 10,
       "Double Strike": 2,
       "Hexproof": 7,
-      "Flash": 22,
+      "Flash": 24,
       "Haste": 21,
       "Override": 9,
       "Menace": 21,
       "Deathtouch": 3,
-      "Trample": 20
+      "Trample": 19
     },
     "dfcCount": 19,
     "instantSorceryRatio": {
@@ -259,7 +259,7 @@
       "sorceries": 31,
       "ratio": 1.03
     },
-    "averageCMC": 2.94,
+    "averageCMC": 2.92,
     "cardsWithAbilities": {
       "cardDraw": 28,
       "removal": 62,
@@ -269,7 +269,7 @@
     },
     "rarityByColor": {
       "W": {
-        "Mythic": 1,
+        "Mythic": 2,
         "Rare": 8,
         "Uncommon": 15,
         "Common": 15
@@ -287,19 +287,19 @@
         "Common": 15
       },
       "R": {
-        "Mythic": 3,
+        "Mythic": 2,
         "Rare": 8,
         "Uncommon": 15,
         "Common": 15
       },
       "G": {
-        "Mythic": 3,
+        "Mythic": 2,
         "Rare": 8,
         "Uncommon": 15,
         "Common": 15
       },
       "Multicolor": {
-        "Mythic": 8,
+        "Mythic": 9,
         "Rare": 16,
         "Uncommon": 20,
         "Common": 0

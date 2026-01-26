@@ -837,6 +837,24 @@
     "fileName": "M01_the_truce.png"
   },
   {
+    "id": "M08",
+    "name": "Weapons Cache",
+    "cost": "{2}{W}",
+    "type": "Enchantment",
+    "displayType": "Enchantment",
+    "text": [
+      "At the beginning of your upkeep, create a Gun token.",
+      "If you would create one or more Gun tokens, create an additional Gun token."
+    ],
+    "flavor": "",
+    "rarity": "Mythic",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "",
+    "colorIndicator": null,
+    "fileName": "M08_weapons_cache.png"
+  },
+  {
     "id": "C030",
     "name": "Follow the White Rabbit",
     "cost": "{1}{U}",
@@ -2390,7 +2408,7 @@
     "type": "Instant",
     "displayType": "Instant",
     "text": [
-      "This creature deals 2 damage to target creature. If that creature is an artifact or has digital, this creature deals 4 damage to it instead."
+      "Electrobolt deals 2 damage to target creature. If that creature is an artifact or has digital, Electrobolt deals 4 damage to it instead."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2627,7 +2645,7 @@
     "text": [
       "Choose one —",
       "• Destroy target artifact.",
-      "• this creature deals 5 damage to target creature."
+      "• Slag Melt deals 5 damage to target creature."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2953,7 +2971,7 @@
     "displayType": "Instant",
     "text": [
       "As an additional cost to cast this spell, sacrifice an artifact or creature.",
-      "This creature deals damage equal to the sacrificed permanent's mana value plus 2 to any target."
+      "Shrapnel Ejection deals damage equal to the sacrificed permanent's mana value plus 2 to any target."
     ],
     "flavor": " \"Sometimes the only way to win is to blow up the exit.\"",
     "rarity": "Uncommon",
@@ -3007,7 +3025,7 @@
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "This creature deals 3 damage to each creature with digital and each artifact creature.",
+      "EMP Blast deals 3 damage to each creature with digital and each artifact creature.",
       "Each player loses {E}{E}{E}{E}."
     ],
     "flavor": "",
@@ -3101,9 +3119,9 @@
     "displayType": "Sorcery",
     "text": [
       "Choose one. If you have 3 or more {E} as you cast this spell, you may choose both.",
-      "• this creature deals 3 damage to target creature.",
-      "• this creature deals 1 damage to all creatures your opponents control.",
-      "If you have 6 or more {E}, this creature deals 2 damage to each opponent."
+      "• Electrical Burst deals 3 damage to target creature.",
+      "• Electrical Burst deals 1 damage to each creature your opponents control.",
+      "If you have 6 or more {E}, Electrical Burst deals 2 damage to each opponent."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -3148,24 +3166,6 @@
     "pt": "3/2",
     "colorIndicator": null,
     "fileName": "M07_trinity__combat_driver.png"
-  },
-  {
-    "id": "M08",
-    "name": "Weapons Cache",
-    "cost": "{2}{R}",
-    "type": "Enchantment",
-    "displayType": "Enchantment",
-    "text": [
-      "At the beginning of your upkeep, create a Gun token.",
-      "If you would create one or more Gun tokens, create an additional Gun token."
-    ],
-    "flavor": "",
-    "rarity": "Mythic",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "M08_weapons_cache.png"
   },
   {
     "id": "C120",
@@ -3386,9 +3386,7 @@
     "type": "Creature — Human Archivist (1/2)",
     "displayType": "Creature — Human Archivist",
     "text": [
-      "When this creature enters, mill three cards.",
-      "You may put a land card from among them into your hand.",
-      "If you don't, put a +1/+1 counter on this creature."
+      "When this creature enters, mill three cards. You may put a land card from among them into your hand. If you don't, put a +1/+1 counter on this creature."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3405,7 +3403,7 @@
     "type": "Creature — Human Archivist (4/3)",
     "displayType": "Creature — Human Archivist",
     "text": [
-      "Ward {2}",
+      "Flash, ward {2}",
       "At the beginning of your end step, if a creature died this turn, put a +1/+1 counter on this creature."
     ],
     "flavor": "",
@@ -3441,7 +3439,7 @@
     "type": "Creature — Robot (6/5)",
     "displayType": "Creature — Robot",
     "text": [
-      "Trample",
+      "This creature can't be blocked by more than one creature.",
       "As an additional cost to cast this spell, pay {E}{E} or sacrifice a creature."
     ],
     "flavor": "",
@@ -3625,7 +3623,7 @@
     "type": "Creature — Human Technician (2/4)",
     "displayType": "Creature — Human Technician",
     "text": [
-      "Defender",
+      "Flash, defender",
       "This creature can block creatures with digital as though they didn't have digital.",
       "{2}{G}: Scry 1."
     ],
@@ -3657,7 +3655,7 @@
   {
     "id": "U091",
     "name": "Ravenous Construct",
-    "cost": "{6}{G}{6}",
+    "cost": "{6}{G}{G}",
     "type": "Artifact Creature — Construct Beast (7/7)",
     "displayType": "Artifact Creature — Construct Beast",
     "text": [
@@ -3876,25 +3874,6 @@
     "fileName": "R088_dozer__freeborn_operator.png"
   },
   {
-    "id": "M17",
-    "name": "Root Access",
-    "cost": "{5}{G}{G}",
-    "type": "Sorcery",
-    "displayType": "Sorcery",
-    "text": [
-      "Reveal the top seven cards of your library.",
-      "You may put any number of permanent cards from among them onto the battlefield.",
-      "Put the rest on the bottom of your library in a random order."
-    ],
-    "flavor": "",
-    "rarity": "Mythic",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "M17_root_access.png"
-  },
-  {
     "id": "M09",
     "name": "Reclaim the Surface",
     "cost": "{X}{X}{G}",
@@ -4033,7 +4012,7 @@
     "type": "Instant",
     "displayType": "Instant",
     "text": [
-      "Counter target spell unless its controller pays {3}. If they do, this creature deals 3 damage to them."
+      "Counter target spell unless its controller pays {3}. If they do, Fatal Exception deals 3 damage to them."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4686,6 +4665,25 @@
     "fileName": "M03_the_oracle__destiny_planner.png"
   },
   {
+    "id": "M17",
+    "name": "Root Access",
+    "cost": "{4}{G}{G}{U}",
+    "type": "Sorcery",
+    "displayType": "Sorcery",
+    "text": [
+      "Reveal the top seven cards of your library.",
+      "You may put any number of permanent cards from among them onto the battlefield.",
+      "Put the rest on the bottom of your library in a random order."
+    ],
+    "flavor": "",
+    "rarity": "Mythic",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "",
+    "colorIndicator": null,
+    "fileName": "M17_root_access.png"
+  },
+  {
     "id": "M18",
     "name": "The Architect, System Creator",
     "cost": "{4}{W}{U}",
@@ -5088,7 +5086,7 @@
     "type": "Artifact",
     "displayType": "Artifact",
     "text": [
-      "{T}, Sacrifice this creature: Tap all artifacts and creatures with digital. Put a stun counter on each creature tapped this way."
+      "{T}, Sacrifice Portable EMP: Tap all artifacts and creatures with digital. Put a stun counter on each creature tapped this way."
     ],
     "flavor": "",
     "rarity": "Uncommon",

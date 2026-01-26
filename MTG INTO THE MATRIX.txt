@@ -320,6 +320,11 @@ Enchantment
 Creatures have base power and toughness 1/1.
 Players have hexproof.
 
+[M08] Weapons Cache {2}{W}
+Enchantment
+At the beginning of your upkeep, create a Gun token.
+If you would create one or more Gun tokens, create an additional Gun token.
+
 
 ========== BLUE (40 Cards) ==========
 
@@ -808,7 +813,7 @@ Whenever a creature an opponent controls dies, return it to the battlefield unde
 
 [C090] Electrobolt {R}
 Instant
-This creature deals 2 damage to target creature. If that creature is an artifact or has digital, this creature deals 4 damage to it instead.
+Electrobolt deals 2 damage to target creature. If that creature is an artifact or has digital, Electrobolt deals 4 damage to it instead.
 
 [C091] Signal Hijacker {2}{R}
 Creature — Human Wizard (1/3)
@@ -877,7 +882,7 @@ This creature can't block.
 Instant
 Choose one —
 • Destroy target artifact.
-• this creature deals 5 damage to target creature.
+• Slag Melt deals 5 damage to target creature.
 
 [C108] Independent Trader {1}{R}
 Creature — Human Citizen (2/1)
@@ -971,7 +976,7 @@ Flashback {2}{R}
 [U074] Shrapnel Ejection {1}{R}
 Instant
 As an additional cost to cast this spell, sacrifice an artifact or creature.
-This creature deals damage equal to the sacrificed permanent's mana value plus 2 to any target.
+Shrapnel Ejection deals damage equal to the sacrificed permanent's mana value plus 2 to any target.
 "Sometimes the only way to win is to blow up the exit."
 
 --- RARES ---
@@ -989,7 +994,7 @@ Whenever this creature deals combat damage to a player, you may sacrifice it. If
 
 [R062] EMP Blast {1}{R}{R}
 Sorcery
-This creature deals 3 damage to each creature with digital and each artifact creature.
+EMP Blast deals 3 damage to each creature with digital and each artifact creature.
 Each player loses {E}{E}{E}{E}.
 
 [R063] The Machine War {3}{R}
@@ -1018,9 +1023,9 @@ Whenever an opponent attacks you with one or more creatures, exile the top card 
 [R069] Electrical Burst {1}{R}
 Sorcery
 Choose one. If you have 3 or more {E} as you cast this spell, you may choose both.
-• this creature deals 3 damage to target creature.
-• this creature deals 1 damage to all creatures your opponents control.
-If you have 6 or more {E}, this creature deals 2 damage to each opponent.
+• Electrical Burst deals 3 damage to target creature.
+• Electrical Burst deals 1 damage to each creature your opponents control.
+If you have 6 or more {E}, Electrical Burst deals 2 damage to each opponent.
 
 --- MYTHICS ---
 
@@ -1033,11 +1038,6 @@ At the beginning of your upkeep, exile the top card of your library. You may pla
 Legendary Creature — Human Pilot (3/2)
 Whenever Trinity crews a Vehicle, create a Gun token attached to that Vehicle.
 Vehicles you control that are creatures get +1/+0 for every 2 {E} you have, rounded down.
-
-[M08] Weapons Cache {2}{R}
-Enchantment
-At the beginning of your upkeep, create a Gun token.
-If you would create one or more Gun tokens, create an additional Gun token.
 
 
 ========== GREEN (39 Cards) ==========
@@ -1106,7 +1106,7 @@ When this creature enters, mill three cards. You may put a land card from among 
 
 [C138] Lineage Honorer {3}{G}
 Creature — Human Archivist (4/3)
-Ward {2}
+Flash, ward {2}
 At the beginning of your end step, if a creature died this turn, put a +1/+1 counter on this creature.
 
 [C139] Deep Earth Cultivator {1}{G}
@@ -1172,7 +1172,7 @@ Pay {E}: this creature gets +1/+1 until end of turn.
 
 [U089] Matrix Watcher {2}{G}
 Creature — Human Technician (2/4)
-Defender
+Flash, defender
 This creature can block creatures with digital as though they didn't have digital.
 {2}{G}: Scry 1.
 
@@ -1253,12 +1253,6 @@ Whenever Dozer attacks, search your library for a basic land card, put it onto t
 
 --- MYTHICS ---
 
-[M17] Root Access {5}{G}{G}
-Sorcery
-Reveal the top seven cards of your library.
-You may put any number of permanent cards from among them onto the battlefield.
-Put the rest on the bottom of your library in a random order.
-
 [M09] Reclaim the Surface {X}{X}{G}
 Sorcery
 Create X 4/4 green Construct artifact creature tokens with trample. Then, if you have 8 or more {E}, creatures you control get +X/+X and gain haste until end of turn.
@@ -1307,7 +1301,7 @@ If you do, draw a card.
 
 [U106] Fatal Exception {U}{R}
 Instant
-Counter target spell unless its controller pays {3}. If they do, this creature deals 3 damage to them.
+Counter target spell unless its controller pays {3}. If they do, Fatal Exception deals 3 damage to them.
 
 [U107] Liquefy {B}{G}
 Instant
@@ -1513,6 +1507,12 @@ You may cast the top card of your library.
 Whenever you cast a spell from your library, you get {E}.
 {E}{E}: Scry 2.
 
+[M17] Root Access {4}{G}{G}{U}
+Sorcery
+Reveal the top seven cards of your library.
+You may put any number of permanent cards from among them onto the battlefield.
+Put the rest on the bottom of your library in a random order.
+
 [M18] The Architect, System Creator {4}{W}{U}
 Legendary Creature — Avatar Program (3/6)
 Digital (The Architect can block or be blocked only by creatures with digital.)
@@ -1646,7 +1646,7 @@ Artifact
 
 [U144] Portable EMP {3}
 Artifact
-{T}, Sacrifice this creature: Tap all artifacts and creatures with digital. Put a stun counter on each creature tapped this way.
+{T}, Sacrifice Portable EMP: Tap all artifacts and creatures with digital. Put a stun counter on each creature tapped this way.
 
 --- RARES ---
 
