@@ -4254,8 +4254,7 @@
     "text": [
       "Trample",
       "When this creature enters, you get {E}{E}.",
-      "At the beginning of combat on your turn, you may pay {E}{E}.",
-      "If you do, target creature you control gets +2/+0 and trample until end of turn."
+      "At the beginning of combat on your turn, you may pay {E}{E}. When you do, target creature you control gets +2/+0 and trample until end of turn."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -5485,7 +5484,8 @@
     "displayType": "Legendary Land",
     "text": [
       "{T}: Add {C}.",
-      "{T}: Add one mana of any color. Spend this mana only to cast an Artifact, Robot, or Program spell or to activate an ability of an Artifact, Robot, or Program source."
+      "{T}: Add one mana of any color. Spend this mana only to cast an Artifact, Robot, or Program spell or to activate an ability of an Artifact, Robot, or Program source.",
+      "{4}, {T}, sacrifice this land: Look at the top four cards of your library. You may reveal an artifact, robot, or program card from among them and put it into your hand. Then shuffle."
     ],
     "flavor": "",
     "rarity": "Land",
@@ -5503,7 +5503,7 @@
     "displayType": "Legendary Land",
     "text": [
       "{T}: Add {C}.",
-      "{T}: Add {W} or {B}. Spend this mana only to cast a Program spell or a spell that causes you to gain life.",
+      "{T}: Add {W} or {B}. Spend this mana only to cast a Program spell.",
       "Whenever you gain life, you may pay {1}. If you do, each opponent loses 1 life. This ability triggers only once each turn."
     ],
     "flavor": "",
