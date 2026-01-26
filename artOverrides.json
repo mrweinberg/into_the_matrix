@@ -407,5 +407,21 @@
         "setting": "Zion manufacturing zone. Forge, assembly lines, workers building defensive equipment.",
         "composition": "Industrial workspace with half-assembled constructs. Sparks, tools, human ingenuity at work.",
         "sunglasses": false
+    },
+    {
+        "id": "R150",
+        "subject": "The Machine City (01), the heart of machine civilization. Towering spires of black metal and orange light, infinite machines, the face of the Deus Ex Machina visible in the architecture. REAL WORLD.",
+        "setting": "Machine City 01. Alien mechanical metropolis, towering structures, swarms of machines, overwhelming scale.",
+        "composition": "Aerial view approaching the city. Black spires reaching into orange-lit sky. Sentinel swarms visible. The face-structure of Deus Ex Machina looming.",
+        "lighting": "Harsh orange and amber glow. Industrial hellscape lighting. Lightning in dark clouds above.",
+        "artStyle": "Epic scale, terrifying beauty. The seat of machine power."
+    },
+    {
+        "id": "R151",
+        "subject": "Club Hel, the Merovingian's subterranean fetish nightclub. Bathed in sickly digital Matrix green glow. Patrons in black latex, PVC, and shiny leather with silver studded collars and chains. Industrial gothic basement vault. INSIDE THE MATRIX.",
+        "setting": "Club Hel basement interior. Subterranean industrial-gothic vault with massive tiered concrete pillars, exposed metal rivets, steel grating floors, vaulted arched ceilings like a dark cathedral.",
+        "composition": "Interior looking across the club floor. Massive grooved concrete columns. Black-clad patrons in fetish gear. Sleek concrete bar with backlit compartments. High-shine reflective surfaces.",
+        "lighting": "High-contrast digital Matrix green glow throughout. Harsh artificial recessed lighting. Deep obsidian shadows. High specular highlights on latex and PVC. Sickly green tint on every surface.",
+        "artStyle": "Atmospheric and oppressive. Industrial gothic. Oil painting with heavy brushstrokes. Dark seductive subterranean cathedral."
     }
 ]

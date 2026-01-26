@@ -1791,6 +1791,6 @@ Legendary Land
 [R151] Club Hel
 Legendary Land
 {T}: Add {C}.
-{T}: Add {W} or {B}. Spend this mana only to cast a Program spell.
-Whenever you gain life, you may pay {1}. If you do, each opponent loses 1 life. This ability triggers only once each turn.
+{T}: Add one mana of any color. Spend this mana only to cast creature spell with digital.
+{4}, {T}: Creatures you control with digital get +1/+1 until end of turn.
 
