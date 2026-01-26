@@ -1280,10 +1280,9 @@
     "type": "Instant",
     "displayType": "Instant",
     "text": [
-      "Reveal the top five cards of your library. An opponent separates those cards into two piles.",
-      "Put one pile into your hand and the other into your graveyard."
+      "Reveal the top five cards of your library. An opponent separates those cards into two piles. Put one pile into your hand and the other into your graveyard."
     ],
-    "flavor": "",
+    "flavor": " \"You take the blue pill—the story ends, you wake up in your bed and believe whatever you want to believe. You take the red pill—you stay in Wonderland, and I show you how deep the rabbit hole goes.\"",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
@@ -2481,7 +2480,7 @@
     "displayType": "Creature — Human Wizard",
     "text": [
       "Prowess",
-      "{1}, Pay {E}: this creature gets +2/+0 until end of turn."
+      "As long as you have three or more {E}, this creature gets +1/+0 and has first strike."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2754,7 +2753,7 @@
     "type": "Creature — Human Artificer (2/3)",
     "displayType": "Creature — Human Artificer",
     "text": [
-      "Whenever you cast a spell, you get {E} and may pay {E}{E}. If you do, deal 2 damage to any target."
+      "Whenever you cast a spell, you get {E} and may pay {E}{E}. If you do, this creature deals 2 damage to any target."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2829,7 +2828,7 @@
     "text": [
       "If you cast this from your hand, you get {E}{E}.",
       "You may pay any amount of {E}. Deal that much damage to target creature.",
-      "Flashback {3}{R}{R}"
+      "Flashback {2}{R}{R}"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3478,7 +3477,7 @@
     "text": [
       "Defender",
       "When this creature dies, you get {E}{E} and draw a card.",
-      "{1}{B}, Sacrifice this creature: Target creature gets -2/-2 until end of turn."
+      "{2}, Sacrifice this creature: Target creature gets +2/+2 until end of turn."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3564,21 +3563,21 @@
   },
   {
     "id": "U086",
-    "name": "Prime Construct",
-    "cost": "{5}{G}{G}",
-    "type": "Artifact Creature — Construct Beast (7/7)",
+    "name": "Nourishing Construct",
+    "cost": "{4}{G}{G}",
+    "type": "Artifact Creature — Construct Beast (5/6)",
     "displayType": "Artifact Creature — Construct Beast",
     "text": [
-      "Trample",
-      "When this creature enters, you gain 4 life."
+      "Vigilance",
+      "When this enters, gain 1 life for each {E} you have."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "7/7",
+    "pt": "5/6",
     "colorIndicator": null,
-    "fileName": "U086_prime_construct.png"
+    "fileName": "U086_nourishing_construct.png"
   },
   {
     "id": "U087",
@@ -4121,7 +4120,7 @@
     "displayType": "Legendary Creature — Human Pilot",
     "text": [
       "Whenever a land enters under your control, you get {E}.",
-      "{T}, Pay {E}{E}: Target creature gains your choice of hexproof, trample, or reach until end of turn.",
+      "{T}, Pay {E}{E}: Target creature gains your choice of trample or reach until end of turn.",
       "{T}, Pay {E}{E}: The next creature spell you cast this turn can be cast as if it had flash."
     ],
     "flavor": "",

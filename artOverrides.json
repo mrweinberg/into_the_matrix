@@ -335,5 +335,77 @@
         "composition": "TRIPTYCH MURAL. The image shows a painted mural on metal, with visible brushstrokes, weathering, and patina. The three panels flow left to right showing the progression from exodus to settlement to civilization. Folk art style with bold colors against the dark metal background.",
         "artStyle": "Folk art mural painted on metal. Visible brushstrokes, slightly naive style, warm earth tones with highlights of hope. The metal surface should show through in weathered areas. Think Diego Rivera meets post-apocalyptic cave art.",
         "sunglasses": false
+    },
+    {
+        "id": "U026",
+        "subject": "Morpheus's outstretched hands presenting two pills: a red pill in one palm, a blue pill in the other. The pills are the clear focus, glowing softly. Neo's hand reaches toward them from the viewer's perspective.",
+        "setting": "A dimly lit room with worn leather armchairs. Rain streaks down windows behind. The green tint of the Matrix code subtly reflects in surfaces.",
+        "composition": "CLOSE-UP on Morpheus's open hands with the two pills. Shallow depth of field keeps the pills sharp while Morpheus and background are slightly soft. The red pill is positioned slightly more prominently.",
+        "character": "Laurence Fishburne as Morpheus. African American, bald head, broad build. Iconic small round reflective sunglasses. Long black leather coat. Calm, patient expression.",
+        "lighting": "Moody chiaroscuro lighting. Soft blue glow from the blue pill, warm red glow from the red pill. Green-tinted ambient light from windows.",
+        "artStyle": "Cinematic, painterly. Strong emphasis on the pills as the focal point of choice and destiny."
+    },
+    {
+        "id": "C170",
+        "subject": "A Matrix city skyline at twilight. Gleaming skyscrapers with green-tinted windows, helicopter searchlights sweeping the sky. INSIDE THE MATRIX.",
+        "setting": "Matrix city rooftop. High above the streets, looking out at endless urban sprawl. Green-tinted atmospheric haze.",
+        "composition": "Wide panoramic view from a rooftop edge. City lights stretching to horizon. Subtle digital artifacts in the air."
+    },
+    {
+        "id": "C171",
+        "subject": "A rain-soaked back alley at night in the Matrix. Neon signs reflecting in puddles, steam rising from grates. Film noir atmosphere. INSIDE THE MATRIX.",
+        "setting": "Matrix city alley. Narrow passage between buildings, fire escapes, dumpsters. Perpetual rain.",
+        "composition": "Looking down a long narrow alley. Neon reflections in wet pavement. Figure silhouetted at far end."
+    },
+    {
+        "id": "C172",
+        "subject": "The scorched surface of the Real World. Blackened sky with perpetual lightning, twisted metal ruins, nothing grows. REAL WORLD surface.",
+        "setting": "Real World surface. Post-apocalyptic wasteland above the tunnels. Scorched earth, machine structures in distance.",
+        "composition": "Desolate landscape stretching to dark horizon. Red lightning illuminating dead terrain."
+    },
+    {
+        "id": "C173",
+        "subject": "Massive bio-electric power conduits in the Real World. Crackling energy arcs between towers, organic-looking power infrastructure. REAL WORLD.",
+        "setting": "Machine City power infrastructure. Towering energy conduits, lightning, the hum of power generation.",
+        "composition": "Looking up at massive power pylons with energy arcing between them. Orange and green electrical discharge."
+    },
+    {
+        "id": "C174",
+        "subject": "A cozy dwelling carved into Zion's rock walls. Warm lighting, woven textiles, personal effects. A human home in the last city. REAL WORLD.",
+        "setting": "Zion residential cave. Modest but warm living space, handmade furnishings, soft lighting.",
+        "composition": "Interior view of a Zion home. Warm amber lighting, comfortable chaos of lived-in space.",
+        "sunglasses": false
+    },
+    {
+        "id": "C175",
+        "subject": "A grand Matrix government building lobby. Marble floors, security checkpoints, suited bureaucrats. Cold institutional power. INSIDE THE MATRIX.",
+        "setting": "Matrix administrative building. Government or corporate headquarters, imposing architecture, guards.",
+        "composition": "Looking across a vast marble lobby. Metal detectors, security guards, sterile orderly oppression."
+    },
+    {
+        "id": "C176",
+        "subject": "An old-fashioned telephone booth in a Matrix alley, its phone ringing. The hardline connection to the Real World, glowing faintly. TRANSITIONAL.",
+        "setting": "Matrix city street. The iconic phone booth hardline exit. Flickering streetlight nearby.",
+        "composition": "The phone booth as focal point, receiver dangling, faint glow suggesting escape route. Green code faintly visible."
+    },
+    {
+        "id": "C177",
+        "subject": "Massive pipes and conduits in the Zion waste processing system. Recycled water, organic material being processed. REAL WORLD.",
+        "setting": "Zion waste conduits. Industrial recycling infrastructure, pipes carrying processed material.",
+        "composition": "Network of pipes converging, steam and moisture, the circulation system of the last human city."
+    },
+    {
+        "id": "C178",
+        "subject": "The Zion dock hangar with hovercrafts being repaired. APUs in storage, workers crawling over ships. Military preparation. REAL WORLD.",
+        "setting": "Zion Dock. Massive underground hangar, hovercrafts, maintenance crews, military activity.",
+        "composition": "Wide view of the dock. Multiple ships in various stages of repair. Sparks from welding, organized chaos.",
+        "sunglasses": false
+    },
+    {
+        "id": "C179",
+        "subject": "A Zion factory floor where constructs and equipment are assembled. Salvaged machine parts being repurposed. REAL WORLD.",
+        "setting": "Zion manufacturing zone. Forge, assembly lines, workers building defensive equipment.",
+        "composition": "Industrial workspace with half-assembled constructs. Sparks, tools, human ingenuity at work.",
+        "sunglasses": false
     }
 ]

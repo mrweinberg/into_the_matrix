@@ -454,8 +454,8 @@ Creatures can't attack you unless their controller pays {2} for each creature at
 
 [U026] Fact or Fiction {3}{U}
 Instant
-Reveal the top five cards of your library. An opponent separates those cards into two piles.
-Put one pile into your hand and the other into your graveyard.
+Reveal the top five cards of your library. An opponent separates those cards into two piles. Put one pile into your hand and the other into your graveyard.
+"You take the blue pill—the story ends, you wake up in your bed and believe whatever you want to believe. You take the red pill—you stay in Wonderland, and I show you how deep the rabbit hole goes."
 
 [U027] Hardline Searcher {1}{U}
 Creature — Human Rogue (1/2)
@@ -834,7 +834,7 @@ If you discarded a nonland card, you get {E}{E}.
 [C093] Static-Charged Hacker {1}{R}
 Creature — Human Wizard (1/3)
 Prowess
-{1}, Pay {E}: this creature gets +2/+0 until end of turn.
+As long as you have three or more {E}, this creature gets +1/+0 and has first strike.
 
 [C095] Avid Marksman {1}{R}
 Creature — Human Soldier (2/1)
@@ -915,7 +915,7 @@ When this creature attacks, you may pay {E}. If you do, target creature can't bl
 
 [U062] Surge Channeler {2}{R}
 Creature — Human Artificer (2/3)
-Whenever you cast a spell, you get {E} and may pay {E}{E}. If you do, deal 2 damage to any target.
+Whenever you cast a spell, you get {E} and may pay {E}{E}. If you do, this creature deals 2 damage to any target.
 
 [U063] Pilot’s Instinct {1}{R}
 Instant
@@ -938,7 +938,7 @@ Whenever a Vehicle or equipped creature you control attacks, this creature deals
 Sorcery
 If you cast this from your hand, you get {E}{E}.
 You may pay any amount of {E}. Deal that much damage to target creature.
-Flashback {3}{R}{R}
+Flashback {2}{R}{R}
 
 [U067] Adrenaline Junkie {1}{R}
 Creature — Human Warrior (2/1)
@@ -1131,7 +1131,7 @@ As an additional cost to cast this spell, pay {E}{E} or sacrifice a creature.
 Creature — Plant Wall (0/4)
 Defender
 When this creature dies, you get {E}{E} and draw a card.
-{1}{B}, Sacrifice this creature: Target creature gets -2/-2 until end of turn.
+{2}, Sacrifice this creature: Target creature gets +2/+2 until end of turn.
 
 [U082] Conductive Mycelium {2}{G}
 Creature — Fungus (2/3)
@@ -1155,10 +1155,10 @@ Flash
 When this creature enters, draw a card.
 Creatures you control can block creatures with digital as though they didn't have digital.
 
-[U086] Prime Construct {5}{G}{G}
-Artifact Creature — Construct Beast (7/7)
-Trample
-When this creature enters, you gain 4 life.
+[U086] Nourishing Construct {4}{G}{G}
+Artifact Creature — Construct Beast (5/6)
+Vigilance
+When this enters, gain 1 life for each {E} you have.
 
 [U087] Hydroponics Tender {1}{G}
 Creature — Human Druid (1/3)
@@ -1332,7 +1332,7 @@ Whenever a human enters the battlefield under your control, you get {E}.
 [U112] Tank, the Operator {1}{G}{U}
 Legendary Creature — Human Pilot (2/3)
 Whenever a land enters under your control, you get {E}.
-{T}, Pay {E}{E}: Target creature gains your choice of hexproof, trample, or reach until end of turn.
+{T}, Pay {E}{E}: Target creature gains your choice of trample or reach until end of turn.
 {T}, Pay {E}{E}: The next creature spell you cast this turn can be cast as if it had flash.
 
 [U113] Agent Grey, Suppressor {1}{U}{B}
@@ -1375,8 +1375,7 @@ Attacking creatures you control with digital get +1/+0.
 Creature — Human Warrior (3/3)
 Trample
 When this creature enters, you get {E}{E}.
-At the beginning of combat on your turn, you may pay {E}{E}.
-If you do, target creature you control gets +2/+0 and trample until end of turn.
+At the beginning of combat on your turn, you may pay {E}{E}. When you do, target creature you control gets +2/+0 and trample until end of turn.
 
 [U120] Bio-Current Technician {R}{G}
 Creature — Human Druid Artificer (2/2)
