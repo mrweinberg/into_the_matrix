@@ -272,14 +272,14 @@ Whenever this creature blocks, it deals 2 damage to target attacking creature.
 [R003] Switch, Faithful Defender {1}{W}{W}
 Legendary Creature — Human Soldier (2/2)
 Double strike, vigilance
-{E}: Jack-in.
+{E}{E}: Jack-in.
 //
 Switch, Digital Guardian (Color Indicator: White)
 Legendary Creature — Human Soldier Program (2/2)
 Digital (Switch can block or be blocked only by creatures with digital.)
 Double strike, vigilance
 When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target creature with power 3 or greater.
-{E}: Eject.
+{E}{E}: Eject.
 
 [R004] Guns. Lots of Guns. {2}{W}
 Sorcery

@@ -678,7 +678,7 @@
     "displayType": "Legendary Creature — Human Soldier",
     "text": [
       "Double strike, vigilance",
-      "{E}: Jack-in."
+      "{E}{E}: Jack-in."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -698,7 +698,7 @@
       "Digital (Switch can block or be blocked only by creatures with digital.)",
       "Double strike, vigilance",
       "When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target creature with power 3 or greater.",
-      "{E}: Eject."
+      "{E}{E}: Eject."
     ],
     "flavor": "",
     "rarity": "Rare",
