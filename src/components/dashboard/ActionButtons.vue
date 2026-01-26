@@ -63,6 +63,10 @@
           <span class="btn-icon">&#9830;</span>
           <span class="btn-text">Archetypes</span>
         </button>
+        <button class="action-btn action-secondary" @click="$emit('open-changelog')">
+          <span class="btn-icon">&#128221;</span>
+          <span class="btn-text">Changelog</span>
+        </button>
         <button class="action-btn action-secondary card-notes-btn" @click="$emit('open-notes-manager')">
           <span class="btn-icon">📝</span>
           <span class="btn-text">Card Notes</span>
@@ -78,7 +82,7 @@ import { computed } from 'vue'
 import { useSavedPool } from '@/composables/useSavedPool'
 import { useCardNotes } from '@/composables/useCardNotes'
 
-defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-stats', 'open-notes', 'resume-pool', 'open-print-proxies', 'open-archetypes', 'open-notes-manager'])
+defineEmits(['open-booster', 'start-draft', 'generate-sealed', 'open-stats', 'open-notes', 'resume-pool', 'open-print-proxies', 'open-archetypes', 'open-notes-manager', 'open-changelog'])
 
 const { savedPool, poolType, clearPool, hasSavedPool: hasSavedPoolFn, getDeckCardCount } = useSavedPool()
 const { noteCount } = useCardNotes()

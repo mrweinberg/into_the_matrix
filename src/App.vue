@@ -23,6 +23,7 @@
       @open-print-proxies="openPrintProxiesFromDashboard"
       @open-archetypes="showArchetypes = true"
       @open-notes-manager="showNotesManager = true"
+      @open-changelog="showChangelog = true"
     />
 
     <div class="filter-status">
@@ -126,6 +127,12 @@
       @close="showNotesManager = false"
       @edit-card="openCardNote"
     />
+
+    <!-- Changelog Modal -->
+    <ChangelogModal
+      :show="showChangelog"
+      @close="showChangelog = false"
+    />
   </div>
 </template>
 
@@ -154,6 +161,7 @@ import PrintProxyModal from '@/components/modals/PrintProxyModal.vue'
 import ArchetypeModal from '@/components/modals/ArchetypeModal.vue'
 import CardNoteModal from '@/components/modals/CardNoteModal.vue'
 import NotesManagerModal from '@/components/modals/NotesManagerModal.vue'
+import ChangelogModal from '@/components/modals/ChangelogModal.vue'
 
 const cardStore = useCardStore()
 
@@ -224,6 +232,7 @@ const showArchetypes = ref(false)
 const showCardNote = ref(false)
 const cardNoteTarget = ref(null)
 const showNotesManager = ref(false)
+const showChangelog = ref(false)
 
 // Print proxy modal state
 const showPrintProxy = ref(false)

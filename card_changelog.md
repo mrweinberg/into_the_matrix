@@ -261,6 +261,96 @@ Added section headers and reorganized cards within each color by rarity.
 
 ---
 
+## 2026-01-14 — Templating & Commons Cleanup
+
+**Theme:** Standardizing ability text and common slot refinement
+
+### Templating Changes
+- Ability text now uses "this creature" instead of card names throughout for consistency
+- Type syntax standardized (e.g., `Creature - Human` → `Creature — Human`)
+
+### Card Changes
+- **[C002] Crowd Simulation** → **Rebellious Crowd**: Now creates Human tokens instead of Citizen tokens with digital
+- **[C004] Zion Neophyte**: Jack-in cost `{U}` → `{W}` (color fix), added "scry 1" on attack trigger
+- **[C005] Zion Militia**: Removed from set
+- **[C006] Stasis Field**: `{1}{W}` → `{2}{W}`, added `{E}{E}{E}` exile ability
+- **[C009] Deja Vu**: Fixed energy text, added flavor text
+- **[C014] Prophesizing Elder**: Lifegain 3 → 2, added Basic landcycling {2}
+- **[U003] Defensive Formation**: `{1}{W}` → `{3}{W}`, activation cost `{1}{W}` → `{W}`
+- **[U012] Disposal Subroutine**: `{1}{W}` → `{2}{W}`, additional cost `{3}` → `{2}`
+
+### Cards Moved
+- **Youthful Welder**: Common → Uncommon (now [U014])
+- **Stand Together**: Added as new Uncommon [U015]
+
+---
+
+## 2026-01-15 — New Card Additions
+
+### New Cards
+- **[U051] Unplugged Operative** {1}{B} — (2/1) Deathtouch DFC Rogue
+- **[C094] Adrenaline Upload** {R} — Instant: +2/+0, haste, {E}{E}
+- **Abel, Chateau Bouncer** {2}{B} — (4/2) Digital Werewolf Program
+
+### Balance Changes
+- **Sentinel Swarm**: Tokens now 2/2 with menace (was 1/1 flying), removed sacrifice trigger
+- **Information Leech**: Added power/toughness (was missing)
+
+---
+
+## 2026-01-20 — Mythic Rarity Reorganization
+
+### Rarity Changes (Rare → Mythic)
+- **Weapons Cache**: Now [M08]
+- **Bio-Spark Behemoth**: Now [M10]
+- **The Grand Equation**: Now [M14]
+
+### New Mythics Added
+- **[M09] Reclaim the Surface** {X}{X}{G} — Create X 4/4 Constructs
+- **[M10] Bio-Spark Behemoth** {4}{G}{G} — (6/6) Energy generator with mana production
+
+### Card Fixes
+- **The Grand Equation**: Fixed typos ("you this saga" → "this saga", "creature with" → "creatures with")
+- **Dozer**: Renamed and rebalanced
+
+---
+
+## 2026-01-22 — Neo & Energy Updates
+
+### Major Changes
+- **Neo, Humanity's Inspiration**: Added Prowess and Training for Humans
+- **Neo, The One**: Added `{2}: Eject` ability (previously could not transform back)
+- **Weapons Cache**: Changed to {2}{W}, now White instead of Red
+- **Root Access**: Changed to {4}{G}{G}{U} (added Blue)
+
+### Other Changes
+- **Lineage Honorer**: Added Flash
+- **Matrix Watcher**: Added Flash
+
+---
+
+## 2026-01-26 — Energy Cost Conversions
+
+**Theme:** Converting Jack-in costs to Energy for key cards
+
+### Cards Removed
+- **[C094] Adrenaline Upload**: Removed (too similar to other combat tricks)
+- **[U048] Systematic Overwrite**: Removed ("Punisher" mechanic problematic)
+
+### Energy Cost Changes
+- **[R003] Switch, Faithful Defender**: Jack-in `{W}` → `{E}`, Eject `{W}` → `{E}`
+- **[U067] Adrenaline Junkie**: Jack-in `{1}{R}` → `{E}{E}`, trigger changed to "At the beginning of combat", Eject trigger now "At the beginning of your end step"
+
+### Other Changes
+- **Swarm Commander**: (2/2) → (3/2)
+- **Reality Advocate**: Added "Whenever a human enters the battlefield under your control, you get {E}"
+- **Club Hel**: Completely redesigned — now adds {W} or {B} for Program/lifegain spells, has lifegain → drain trigger
+
+### Archetype Rename
+- **WB: Lifesucking Exiles** → **WB: Lifedrain Syndicate**
+
+---
+
 ## Summary
 
 ### Major Themes Throughout Development

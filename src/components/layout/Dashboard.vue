@@ -15,6 +15,7 @@
           @open-print-proxies="$emit('open-print-proxies')"
           @open-archetypes="$emit('open-archetypes')"
           @open-notes-manager="$emit('open-notes-manager')"
+          @open-changelog="$emit('open-changelog')"
         />
       </div>
 
@@ -79,7 +80,8 @@ defineEmits([
   'resume-pool',
   'open-print-proxies',
   'open-archetypes',
-  'open-notes-manager'
+  'open-notes-manager',
+  'open-changelog'
 ])
 </script>
 
