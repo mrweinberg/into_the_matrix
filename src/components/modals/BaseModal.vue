@@ -20,7 +20,9 @@
 </template>
 
 <script setup>
-defineProps({
+import { watch, onUnmounted } from 'vue'
+
+const props = defineProps({
   show: {
     type: Boolean,
     default: false
@@ -40,5 +42,23 @@ defineProps({
   }
 })
 
-defineEmits(['close'])
+const emit = defineEmits(['close'])
+
+const handleKeydown = (e) => {
+  if (e.key === 'Escape') {
+    emit('close')
+  }
+}
+
+watch(() => props.show, (isVisible) => {
+  if (isVisible) {
+    document.addEventListener('keydown', handleKeydown)
+  } else {
+    document.removeEventListener('keydown', handleKeydown)
+  }
+}, { immediate: true })
+
+onUnmounted(() => {
+  document.removeEventListener('keydown', handleKeydown)
+})
 </script>

@@ -920,8 +920,7 @@ Whenever you cast a spell, you get {E} and may pay {E}{E}. If you do, this creat
 [U063] Pilot’s Instinct {1}{R}
 Instant
 Choose one —
-• Target Vehicle becomes an artifact creature until end of turn.
-It gains haste and indestructible until end of turn.
+• Target Vehicle becomes an artifact creature until end of turn. It gains haste and indestructible until end of turn.
 • Up to two target creatures can't block this turn.
 
 [U064] Akimbo Specialist {2}{R}
@@ -936,7 +935,7 @@ Whenever a Vehicle or equipped creature you control attacks, this creature deals
 
 [U066] Channeled Surge {1}{R}
 Sorcery
-If you cast this from your hand, you get {E}{E}.
+If you cast this from your hand, you get {E}{E}{E}.
 You may pay any amount of {E}. Deal that much damage to target creature.
 Flashback {2}{R}{R}
 
@@ -1123,7 +1122,7 @@ If this mana is spent to cast a creature spell that doesn't have digital, that c
 --- UNCOMMONS ---
 
 [U080] Heavy-Duty Construct {3}{G}
-Creature — Robot (6/5)
+Creature — Construct (6/5)
 This creature can't be blocked by more than one creature.
 As an additional cost to cast this spell, pay {E}{E} or sacrifice a creature.
 
@@ -1158,7 +1157,7 @@ Creatures you control can block creatures with digital as though they didn't hav
 [U086] Nourishing Construct {4}{G}{G}
 Artifact Creature — Construct Beast (5/6)
 Vigilance
-When this enters, gain 1 life for each {E} you have.
+When this creature enters, gain 1 life for each {E} you have.
 
 [U087] Hydroponics Tender {1}{G}
 Creature — Human Druid (1/3)
@@ -1367,9 +1366,8 @@ When this creature enters or transforms into this creature, create a Gun token.
 Vanguard Avatar (Color Indicator: R/W)
 Creature — Human Soldier Program (3/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
-First strike
-Attacking creatures you control with digital get +1/+0.
-{2}: Eject. ({2}: Transform this card. Activate only as a sorcery.)
+Attacking creatures you control get +1/+0.
+{1}: Eject. ({1}: Transform this card. Activate only as a sorcery.)
 
 [U119] Zion Heavy-Loader {1}{R}{G}
 Creature — Human Warrior (3/3)
@@ -1386,8 +1384,7 @@ If this mana is used to cast a creature with power 4 or greater, you get {E}{E}.
 [U121] Code-Stream Stabilizer {1}{U}{G}
 Creature — Human Wizard (3/3)
 Flash
-When this creature enters, you may have it tap or untap target creature.
-That creature can block creatures with digital until end of turn.
+When this creature enters, you may have it tap or untap target creature. That creature can block creatures with digital until end of turn.
 
 [U122] The Source's Defense {1}{B}{G}
 Enchantment
@@ -1397,9 +1394,7 @@ At the beginning of your upkeep, you may mill two cards.
 [U123] Resistance Recuiter {1}{W}{G}
 Creature — Human Soldier (1/1)
 This creature gets +1/+1 for each other Human you control.
-When this creature enters, look at the top four cards of your library.
-You may reveal a Human card from among them and put it in your hand.
-Put the rest on the bottom of your library.
+When this creature enters, look at the top four cards of your library. You may reveal a Human card from among them and put it in your hand. Put the rest on the bottom of your library.
 
 --- RARES ---
 
@@ -1464,7 +1459,7 @@ At the beginning of combat on your turn, create a Gun token, then you may attach
 Legendary Creature — Human Monk (3/3)
 Flash
 When Morpheus enters, target creature gets +2/+2 and gains hexproof until end of turn.
-At the beginning of your end step, if you control a creature with power 4 or greater, you get {E}.
+At the beginning of your end step, if you control a creature with power 4 or greater, you get {E}{E}.
 
 [R111] One Against Many {1}{W}{U}
 Instant
@@ -1492,8 +1487,7 @@ Whenever another creature dies, you may pay {1}. If you do, create a Treasure to
 Legendary Creature — Human Rogue (2/4)
 Haste
 Whenever you cast an instant or sorcery spell, you get {E}.
-Whenever Apoc attacks, you may pay {E}{E}{E}. If you do, copy the next instant or sorcery spell you cast this turn.
-You may choose new targets for the copy.
+Whenever Apoc attacks, you may pay {E}{E}{E}. If you do, copy the next instant or sorcery spell you cast this turn. You may choose new targets for the copy.
 
 [R116] Agent Smith, Antivirus {3}{U}{B}
 Legendary Creature — Program Agent (4/4)
@@ -1556,7 +1550,7 @@ Tap two untapped Humans you control: Jack-in.
 Neo, The One (Color Indicator: U/W/R)
 Legendary Creature — Human Avatar Program (4/4)
 Flying, digital, ward {2}
-Whenever Neo, The One attacks, put a +1/+1 counter on it and return target nonland permanent to its owner's hand.
+Whenever Neo, The One attacks, put a +1/+1 counter on him and return target nonland permanent to its owner's hand.
 {2}: Eject.
 
 [M13] The Hammer, Heavy Hovercraft {3}{R}{G}
@@ -1673,8 +1667,7 @@ Crew 2
 Legendary Artifact — Vehicle (3/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Haste
-Whenever this creature attacks, you may pay {E}{E}.
-If you do, target creature can't block this turn.
+Whenever this creature attacks, you may pay {E}{E}. If you do, target creature can't block this turn.
 Crew 1
 
 --- MYTHICS ---

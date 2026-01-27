@@ -347,63 +347,63 @@
     },
     {
         "id": "C170",
-        "subject": "A Matrix city skyline at twilight. Gleaming skyscrapers with green-tinted windows, helicopter searchlights sweeping the sky. INSIDE THE MATRIX.",
+        "subject": "A Matrix city skyline at twilight. Gleaming skyscrapers with green-tinted windows, helicopter searchlights sweeping the sky. WHITE and BLUE mana land. INSIDE THE MATRIX.",
         "setting": "Matrix city rooftop. High above the streets, looking out at endless urban sprawl. Green-tinted atmospheric haze.",
         "composition": "Wide panoramic view from a rooftop edge. City lights stretching to horizon. Subtle digital artifacts in the air."
     },
     {
         "id": "C171",
-        "subject": "A rain-soaked back alley at night in the Matrix. Neon signs reflecting in puddles, steam rising from grates. Film noir atmosphere. INSIDE THE MATRIX.",
+        "subject": "A rain-soaked back alley at night in the Matrix. Neon signs reflecting in puddles, steam rising from grates. Film noir atmosphere. BLUE and BLACK mana land. INSIDE THE MATRIX.",
         "setting": "Matrix city alley. Narrow passage between buildings, fire escapes, dumpsters. Perpetual rain.",
         "composition": "Looking down a long narrow alley. Neon reflections in wet pavement. Figure silhouetted at far end."
     },
     {
         "id": "C172",
-        "subject": "The scorched surface of the Real World. Blackened sky with perpetual lightning, twisted metal ruins, nothing grows. REAL WORLD surface.",
+        "subject": "The scorched surface of the Real World. Blackened sky with perpetual lightning, twisted metal ruins, nothing grows. BLACK and RED mana land. REAL WORLD surface.",
         "setting": "Real World surface. Post-apocalyptic wasteland above the tunnels. Scorched earth, machine structures in distance.",
         "composition": "Desolate landscape stretching to dark horizon. Red lightning illuminating dead terrain."
     },
     {
         "id": "C173",
-        "subject": "Massive bio-electric power conduits in the Real World. Crackling energy arcs between towers, organic-looking power infrastructure. REAL WORLD.",
+        "subject": "Massive bio-electric power conduits in the Real World. Crackling energy arcs between towers, organic-looking power infrastructure. RED and GREEN mana land. REAL WORLD.",
         "setting": "Machine City power infrastructure. Towering energy conduits, lightning, the hum of power generation.",
         "composition": "Looking up at massive power pylons with energy arcing between them. Orange and green electrical discharge."
     },
     {
         "id": "C174",
-        "subject": "A cozy dwelling carved into Zion's rock walls. Warm lighting, woven textiles, personal effects. A human home in the last city. REAL WORLD.",
+        "subject": "A cozy dwelling carved into Zion's rock walls. Warm lighting, woven textiles, personal effects. A human home in the last city. GREEN and WHITE mana land. REAL WORLD.",
         "setting": "Zion residential cave. Modest but warm living space, handmade furnishings, soft lighting.",
         "composition": "Interior view of a Zion home. Warm amber lighting, comfortable chaos of lived-in space.",
         "sunglasses": false
     },
     {
         "id": "C175",
-        "subject": "A grand Matrix government building lobby. Marble floors, security checkpoints, suited bureaucrats. Cold institutional power. INSIDE THE MATRIX.",
+        "subject": "A grand Matrix government building lobby. Marble floors, security checkpoints, suited bureaucrats. Cold institutional power. WHITE and BLACK mana land. INSIDE THE MATRIX.",
         "setting": "Matrix administrative building. Government or corporate headquarters, imposing architecture, guards.",
         "composition": "Looking across a vast marble lobby. Metal detectors, security guards, sterile orderly oppression."
     },
     {
         "id": "C176",
-        "subject": "An old-fashioned telephone booth in a Matrix alley, its phone ringing. The hardline connection to the Real World, glowing faintly. TRANSITIONAL.",
+        "subject": "An old-fashioned telephone booth in a Matrix alley, its phone ringing. The hardline connection to the Real World, glowing faintly. BLUE and RED mana land. TRANSITIONAL.",
         "setting": "Matrix city street. The iconic phone booth hardline exit. Flickering streetlight nearby.",
         "composition": "The phone booth as focal point, receiver dangling, faint glow suggesting escape route. Green code faintly visible."
     },
     {
         "id": "C177",
-        "subject": "Massive pipes and conduits in the Zion waste processing system. Recycled water, organic material being processed. REAL WORLD.",
+        "subject": "Massive pipes and conduits in the Zion waste processing system. Recycled water, organic material being processed. BLACK and GREEN mana land. REAL WORLD.",
         "setting": "Zion waste conduits. Industrial recycling infrastructure, pipes carrying processed material.",
         "composition": "Network of pipes converging, steam and moisture, the circulation system of the last human city."
     },
     {
         "id": "C178",
-        "subject": "The Zion dock hangar with hovercrafts being repaired. APUs in storage, workers crawling over ships. Military preparation. REAL WORLD.",
+        "subject": "The Zion dock hangar with hovercrafts being repaired. APUs in storage, workers crawling over ships. Military preparation. RED and WHITE mana land. REAL WORLD.",
         "setting": "Zion Dock. Massive underground hangar, hovercrafts, maintenance crews, military activity.",
         "composition": "Wide view of the dock. Multiple ships in various stages of repair. Sparks from welding, organized chaos.",
         "sunglasses": false
     },
     {
         "id": "C179",
-        "subject": "A Zion factory floor where constructs and equipment are assembled. Salvaged machine parts being repurposed. REAL WORLD.",
+        "subject": "A Zion factory floor where constructs and equipment are assembled. Salvaged machine parts being repurposed. GREEN and BLUE mana land. REAL WORLD.",
         "setting": "Zion manufacturing zone. Forge, assembly lines, workers building defensive equipment.",
         "composition": "Industrial workspace with half-assembled constructs. Sparks, tools, human ingenuity at work.",
         "sunglasses": false
@@ -423,5 +423,13 @@
         "composition": "Interior looking across the club floor. Massive grooved concrete columns. Black-clad patrons in fetish gear. Sleek concrete bar with backlit compartments. High-shine reflective surfaces.",
         "lighting": "High-contrast digital Matrix green glow throughout. Harsh artificial recessed lighting. Deep obsidian shadows. High specular highlights on latex and PVC. Sickly green tint on every surface.",
         "artStyle": "Atmospheric and oppressive. Industrial gothic. Oil painting with heavy brushstrokes. Dark seductive subterranean cathedral."
+    },
+    {
+        "id": "U162",
+        "subject": "The Pod Fields stretching to infinity. Millions of human bodies suspended in red organic pods, connected by cables and tubes, harvested for bio-energy by the machines. Horrifying industrial scale. REAL WORLD.",
+        "setting": "The Power Plant pod fields. Towering organic towers covered in pods, each containing a sleeping human. Red organic glow. Machines tending the crop.",
+        "composition": "Vast view of endless pod towers stretching to a dark horizon. Lightning crackling in the scorched sky. A harvester machine moving between the towers. Scale emphasizes the horror.",
+        "lighting": "Sickly red organic glow from the pods. Dark oppressive sky with occasional lightning. The glow of harvested bio-electricity.",
+        "artStyle": "Nightmarish industrial horror. The true face of the Matrix's power source."
     }
 ]
