@@ -116,7 +116,7 @@
     "displayType": "Enchantment — Aura",
     "text": [
       "Enchant creature",
-      "When this creature enters, scry 1.",
+      "When Stasis Field enters, scry 1.",
       "Enchanted creature can't attack or block.",
       "{E}{E}{E}: Exile enchanted creature."
     ],
@@ -1093,8 +1093,8 @@
     "id": "C045",
     "name": "Code Prowler",
     "cost": "{2}{U}",
-    "type": "Creature — Construct Beast (3/2)",
-    "displayType": "Creature — Construct Beast",
+    "type": "Artifact Creature — Construct Beast (3/2)",
+    "displayType": "Artifact Creature — Construct Beast",
     "text": [
       "Flash",
       "When this creature enters, up to one target creature with digital gets -3/-0 until end of turn."
@@ -1115,7 +1115,7 @@
     "displayType": "Enchantment — Aura",
     "text": [
       "Enchant creature",
-      "When this creature enters, tap enchanted creature and you get {E}{E}.",
+      "When Take the Blue Pill enters, tap enchanted creature and you get {E}{E}.",
       "Enchanted creature doesn't untap during its controller's untap step."
     ],
     "flavor": "",
@@ -2718,7 +2718,7 @@
     "text": [
       "Enchant creature",
       "Enchanted creature loses digital and has training.",
-      "When this creature enters, put a +1/+1 counter on target creature."
+      "When Take the Red Pill enters, put a +1/+1 counter on target creature."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2771,8 +2771,7 @@
     "displayType": "Instant",
     "text": [
       "Choose one —",
-      "• Target Vehicle becomes an artifact creature until end of turn.",
-      "It gains haste and indestructible until end of turn.",
+      "• Target Vehicle becomes an artifact creature until end of turn. It gains haste and indestructible until end of turn.",
       "• Up to two target creatures can't block this turn."
     ],
     "flavor": "",
@@ -2826,7 +2825,7 @@
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "If you cast this from your hand, you get {E}{E}.",
+      "If you cast this from your hand, you get {E}{E}{E}.",
       "You may pay any amount of {E}. Deal that much damage to target creature.",
       "Flashback {2}{R}{R}"
     ],
@@ -3007,7 +3006,7 @@
     "displayType": "Sorcery",
     "text": [
       "Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn. If it's an artifact or has digital, sacrifice it at the beginning of the next end step.",
-      "You may cast this creature as though it had flash if you have four or more {E}."
+      "You may cast this spell as though it had flash if you have four or more {E}."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -3454,8 +3453,8 @@
     "id": "U080",
     "name": "Heavy-Duty Construct",
     "cost": "{3}{G}",
-    "type": "Creature — Robot (6/5)",
-    "displayType": "Creature — Robot",
+    "type": "Artifact Creature — Construct (6/5)",
+    "displayType": "Artifact Creature — Construct",
     "text": [
       "This creature can't be blocked by more than one creature.",
       "As an additional cost to cast this spell, pay {E}{E} or sacrifice a creature."
@@ -3550,7 +3549,7 @@
     "displayType": "Enchantment",
     "text": [
       "Flash",
-      "When this creature enters, draw a card.",
+      "When Code Vision enters, draw a card.",
       "Creatures you control can block creatures with digital as though they didn't have digital."
     ],
     "flavor": "",
@@ -3569,7 +3568,7 @@
     "displayType": "Artifact Creature — Construct Beast",
     "text": [
       "Vigilance",
-      "When this enters, gain 1 life for each {E} you have."
+      "When this creature enters, gain 1 life for each {E} you have."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3912,8 +3911,8 @@
     "id": "M10",
     "name": "Bio-Spark Behemoth",
     "cost": "{4}{G}{G}",
-    "type": "Creature — Construct Beast (6/6)",
-    "displayType": "Creature — Construct Beast",
+    "type": "Artifact Creature — Construct Beast (6/6)",
+    "displayType": "Artifact Creature — Construct Beast",
     "text": [
       "Trample, Ward {2}",
       "When Bio-Spark Behemoth enters or attacks, you get {E}{E}{E}.",
@@ -4062,8 +4061,8 @@
     "id": "U108",
     "name": "Scrap Repurposer",
     "cost": "{1}{B}{R}",
-    "type": "Creature — Robot Artificer (2/3)",
-    "displayType": "Creature — Robot Artificer",
+    "type": "Artifact Creature — Robot Artificer (2/3)",
+    "displayType": "Artifact Creature — Robot Artificer",
     "text": [
       "Whenever an artifact creature you control dies, you get {E} and may discard a card. If you do, draw a card.",
       "{3}, Sacrifice an artifact: Create a 2/2 colorless Robot artifact creature token with menace. Activate this ability only as a sorcery."
@@ -4233,9 +4232,8 @@
     "displayType": "Creature — Human Soldier Program",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "First strike",
-      "Attacking creatures you control with digital get +1/+0.",
-      "{2}: Eject. ({2}: Transform this card. Activate only as a sorcery.)"
+      "Attacking creatures you control get +1/+0.",
+      "{1}: Eject. ({1}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4291,8 +4289,7 @@
     "displayType": "Creature — Human Wizard",
     "text": [
       "Flash",
-      "When this creature enters, you may have it tap or untap target creature.",
-      "That creature can block creatures with digital until end of turn."
+      "When this creature enters, you may have it tap or untap target creature. That creature can block creatures with digital until end of turn."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4328,9 +4325,7 @@
     "displayType": "Creature — Human Soldier",
     "text": [
       "This creature gets +1/+1 for each other Human you control.",
-      "When this creature enters, look at the top four cards of your library.",
-      "You may reveal a Human card from among them and put it in your hand.",
-      "Put the rest on the bottom of your library."
+      "When this creature enters, look at the top four cards of your library. You may reveal a Human card from among them and put it in your hand. Put the rest on the bottom of your library."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4536,7 +4531,7 @@
     "text": [
       "Flash",
       "When Morpheus enters, target creature gets +2/+2 and gains hexproof until end of turn.",
-      "At the beginning of your end step, if you control a creature with power 4 or greater, you get {E}."
+      "At the beginning of your end step, if you control a creature with power 4 or greater, you get {E}{E}."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -4629,8 +4624,7 @@
     "text": [
       "Haste",
       "Whenever you cast an instant or sorcery spell, you get {E}.",
-      "Whenever Apoc attacks, you may pay {E}{E}{E}. If you do, copy the next instant or sorcery spell you cast this turn.",
-      "You may choose new targets for the copy."
+      "Whenever Apoc attacks, you may pay {E}{E}{E}. If you do, copy the next instant or sorcery spell you cast this turn. You may choose new targets for the copy."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -4807,7 +4801,7 @@
     "displayType": "Legendary Creature — Human Avatar Program",
     "text": [
       "Flying, digital, ward {2}",
-      "Whenever Neo, The One attacks, put a +1/+1 counter on it and return target nonland permanent to its owner's hand.",
+      "Whenever Neo, The One attacks, put a +1/+1 counter on him and return target nonland permanent to its owner's hand.",
       "{2}: Eject."
     ],
     "flavor": "",
@@ -5162,8 +5156,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Haste",
-      "Whenever this creature attacks, you may pay {E}{E}.",
-      "If you do, target creature can't block this turn.",
+      "Whenever this creature attacks, you may pay {E}{E}. If you do, target creature can't block this turn.",
       "Crew 1"
     ],
     "flavor": "",
@@ -5503,8 +5496,8 @@
     "displayType": "Legendary Land",
     "text": [
       "{T}: Add {C}.",
-      "{T}: Add {W} or {B}. Spend this mana only to cast a Program spell.",
-      "Whenever you gain life, you may pay {1}. If you do, each opponent loses 1 life. This ability triggers only once each turn."
+      "{T}: Add one mana of any color. Spend this mana only to cast creature spell with digital.",
+      "{4}, {T}: Creatures you control with digital get +1/+1 until end of turn."
     ],
     "flavor": "",
     "rarity": "Land",

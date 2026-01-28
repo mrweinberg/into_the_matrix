@@ -291,7 +291,7 @@ function handleClose() {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  min-height: 500px;
+  min-height: 400px;
   position: relative;
 }
 
@@ -386,7 +386,7 @@ function handleClose() {
   display: flex;
   gap: 12px;
   flex: 1;
-  min-height: 180px;
+  min-height: 100px;
 }
 
 .zone {
@@ -436,14 +436,14 @@ function handleClose() {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  padding: 8px;
+  gap: 6px;
+  padding: 6px;
   overflow-y: auto;
   align-content: flex-start;
 }
 
 .battlefield-cards {
-  min-height: 150px;
+  min-height: 120px;
 }
 
 .graveyard-cards {
@@ -451,13 +451,49 @@ function handleClose() {
 }
 
 .zone-card {
-  width: 120px;
+  width: 180px;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .zone-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 255, 65, 0.3);
+}
+
+/* Compact card style for playtest */
+.zone-card :deep(.card) {
+  height: auto;
+}
+.zone-card :deep(.card-header) {
+  padding: 5px 8px;
+}
+.zone-card :deep(.card-name) {
+  font-size: 0.8em;
+}
+.zone-card :deep(.mana-cost) {
+  font-size: 0.9em;
+}
+.zone-card :deep(.art-container) {
+  min-height: 80px;
+  max-height: 80px;
+}
+.zone-card :deep(.type-line) {
+  padding: 3px 8px;
+  font-size: 0.7em;
+}
+.zone-card :deep(.text-box) {
+  padding: 6px 8px;
+  font-size: 0.7em;
+  line-height: 1.25;
+}
+.zone-card :deep(.pt-box) {
+  bottom: 5px;
+  right: 5px;
+  padding: 2px 5px;
+  font-size: 0.8em;
+}
+.zone-card :deep(.card[data-pt="yes"] .text-box) {
+  padding-bottom: 25px;
 }
 
 .graveyard-card {
@@ -492,12 +528,11 @@ function handleClose() {
 .hand-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   justify-content: center;
-  padding: 10px;
+  padding: 8px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
-  min-height: 160px;
 }
 
 .hand-cards.selection-mode {
@@ -507,7 +542,7 @@ function handleClose() {
 
 .hand-card {
   position: relative;
-  width: 140px;
+  width: 200px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .hand-card:hover { transform: translateY(-4px); }
@@ -515,6 +550,42 @@ function handleClose() {
 .hand-card.selectable:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0, 255, 65, 0.3);
+}
+
+/* Compact card style for hand */
+.hand-card :deep(.card) {
+  height: auto;
+}
+.hand-card :deep(.card-header) {
+  padding: 5px 8px;
+}
+.hand-card :deep(.card-name) {
+  font-size: 0.8em;
+}
+.hand-card :deep(.mana-cost) {
+  font-size: 0.9em;
+}
+.hand-card :deep(.art-container) {
+  min-height: 90px;
+  max-height: 90px;
+}
+.hand-card :deep(.type-line) {
+  padding: 3px 8px;
+  font-size: 0.7em;
+}
+.hand-card :deep(.text-box) {
+  padding: 6px 8px;
+  font-size: 0.7em;
+  line-height: 1.25;
+}
+.hand-card :deep(.pt-box) {
+  bottom: 5px;
+  right: 5px;
+  padding: 2px 5px;
+  font-size: 0.8em;
+}
+.hand-card :deep(.card[data-pt="yes"] .text-box) {
+  padding-bottom: 25px;
 }
 
 .select-overlay {
@@ -582,8 +653,8 @@ function handleClose() {
   .play-area { flex-direction: column; }
   .graveyard-zone { width: 100%; }
   .graveyard-zone.expanded { width: 100%; }
-  .hand-card { width: 120px; }
-  .zone-card { width: 100px; }
+  .hand-card { width: 160px; }
+  .zone-card { width: 140px; }
 }
 </style>
 

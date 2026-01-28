@@ -13,7 +13,35 @@
 
 .draft-pool-sidebar h3 {
   color: var(--matrix-green);
-  margin-top: 0;
+  margin: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.sort-select {
+  width: 100%;
+  padding: 6px 8px;
+  background: #222;
+  border: 1px solid var(--matrix-green);
+  color: #fff;
+  font-size: 0.85em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sort-select:hover {
+  background: #333;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--matrix-green);
+  box-shadow: 0 0 4px var(--matrix-green);
 }
 
 .pool-list {
@@ -26,10 +54,83 @@
   margin-bottom: 5px;
   cursor: pointer;
   padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pool-list .card-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .pool-list li:hover {
   color: var(--matrix-green);
+}
+
+.pool-list .card-count {
+  color: var(--matrix-green);
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Color pip for color sorting */
+.pool-list .color-pip {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pool-list .color-pip.w { background: #f9faf4; }
+.pool-list .color-pip.u { background: #0e68ab; }
+.pool-list .color-pip.b { background: #150b00; }
+.pool-list .color-pip.r { background: #d3202a; }
+.pool-list .color-pip.g { background: #00733e; }
+.pool-list .color-pip.gold { background: linear-gradient(135deg, #d4af37, #aa8c2c); }
+.pool-list .color-pip.artifact { background: #8f9ba3; }
+.pool-list .color-pip.land { background: linear-gradient(135deg, #8b7355, #6b5344); }
+
+/* MV badge for mana value sorting */
+.pool-list .mv-badge {
+  min-width: 18px;
+  height: 18px;
+  background: #333;
+  border: 1px solid #555;
+  border-radius: 3px;
+  font-size: 0.75em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #ccc;
+}
+
+/* Type badge for type sorting */
+.pool-list .type-badge {
+  min-width: 28px;
+  padding: 1px 4px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 3px;
+  font-size: 0.65em;
+  font-weight: bold;
+  text-align: center;
+  flex-shrink: 0;
+  color: #aaa;
+}
+
+/* Pick badge for pick order */
+.pool-list .pick-badge {
+  min-width: 24px;
+  font-size: 0.75em;
+  color: #888;
+  flex-shrink: 0;
 }
 
 .draft-mode .modal-content {

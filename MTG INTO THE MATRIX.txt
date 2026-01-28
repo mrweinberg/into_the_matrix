@@ -106,7 +106,7 @@ Whenever this creature attacks, scry 1.
 [C006] Stasis Field {2}{W}
 Enchantment — Aura
 Enchant creature
-When this creature enters, scry 1.
+When Stasis Field enters, scry 1.
 Enchanted creature can't attack or block.
 {E}{E}{E}: Exile enchanted creature.
 
@@ -397,14 +397,14 @@ Ward {2}
 Basic landcycling {2}
 
 [C045] Code Prowler {2}{U}
-Creature — Construct Beast (3/2)
+Artifact Creature — Construct Beast (3/2)
 Flash
 When this creature enters, up to one target creature with digital gets -3/-0 until end of turn.
 
 [C046] Take the Blue Pill {1}{U}{U}
 Enchantment — Aura
 Enchant creature
-When this creature enters, tap enchanted creature and you get {E}{E}.
+When Take the Blue Pill enters, tap enchanted creature and you get {E}{E}.
 Enchanted creature doesn't untap during its controller's untap step.
 
 [C047] Archive Interface {1}{U}
@@ -906,7 +906,7 @@ Crew 2
 Enchantment — Aura
 Enchant creature
 Enchanted creature loses digital and has training.
-When this creature enters, put a +1/+1 counter on target creature.
+When Take the Red Pill enters, put a +1/+1 counter on target creature.
 
 [U061] Pipeline Saboteur {1}{R}
 Creature — Human Rogue (2/1)
@@ -989,7 +989,7 @@ Shrapnel Ejection deals damage equal to the sacrificed permanent's mana value pl
 [R060] System Override {2}{R}
 Sorcery
 Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn. If it's an artifact or has digital, sacrifice it at the beginning of the next end step.
-You may cast this creature as though it had flash if you have four or more {E}.
+You may cast this spell as though it had flash if you have four or more {E}.
 
 [R061] Hunter-Killer Sentinel {3}{R}
 Artifact Creature — Robot (3/3)
@@ -1122,7 +1122,7 @@ If this mana is spent to cast a creature spell that doesn't have digital, that c
 --- UNCOMMONS ---
 
 [U080] Heavy-Duty Construct {3}{G}
-Creature — Construct (6/5)
+Artifact Creature — Construct (6/5)
 This creature can't be blocked by more than one creature.
 As an additional cost to cast this spell, pay {E}{E} or sacrifice a creature.
 
@@ -1151,7 +1151,7 @@ Enchanted creature gets +2/+2.
 [U085] Code Vision {1}{G}
 Enchantment
 Flash
-When this creature enters, draw a card.
+When Code Vision enters, draw a card.
 Creatures you control can block creatures with digital as though they didn't have digital.
 
 [U086] Nourishing Construct {4}{G}{G}
@@ -1263,7 +1263,7 @@ Sorcery
 Create X 4/4 green Construct artifact creature tokens with trample. Then, if you have 8 or more {E}, creatures you control get +X/+X and gain haste until end of turn.
 
 [M10] Bio-Spark Behemoth {4}{G}{G}
-Creature — Construct Beast (6/6)
+Artifact Creature — Construct Beast (6/6)
 Trample, Ward {2}
 When Bio-Spark Behemoth enters or attacks, you get {E}{E}{E}.
 At the beginning of your postcombat main phase, add {G} for every 2 {E} you have.
@@ -1314,7 +1314,7 @@ As an additional cost to cast this spell, sacrifice a creature or artifact.
 Draw two cards and you get {E}{E}.
 
 [U108] Scrap Repurposer {1}{B}{R}
-Creature — Robot Artificer (2/3)
+Artifact Creature — Robot Artificer (2/3)
 Whenever an artifact creature you control dies, you get {E} and may discard a card. If you do, draw a card.
 {3}, Sacrifice an artifact: Create a 2/2 colorless Robot artifact creature token with menace. Activate this ability only as a sorcery.
 
