@@ -458,7 +458,8 @@
     "type": "Creature — Human Soldier (3/2)",
     "displayType": "Creature — Human Soldier",
     "text": [
-      "First strike"
+      "First strike",
+      "{2}{W}: Jack-in. ({2}{W}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -1677,7 +1678,7 @@
     "text": [
       "Menace",
       "When this creature enters, you get {E}{E}.",
-      "Whenever this creature attacks, you may pay {E}{E}. If you do, create a 1/1 white Citizen creature token with digital."
+      "Whenever this creature attacks, you may pay {E}{E}. If you do, create a 1/1 white Program Citizen creature token with digital."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1691,8 +1692,8 @@
     "id": "C061",
     "name": "Disposable Informant",
     "cost": "{B}",
-    "type": "Creature — Human Program Assassin (1/1)",
-    "displayType": "Creature — Human Program Assassin",
+    "type": "Creature — Program Assassin (1/1)",
+    "displayType": "Creature — Program Assassin",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Deathtouch",
@@ -1715,7 +1716,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "When this creature enters, you get {E}{E}.",
-      "When this creature leaves the battlefield, create a 1/1 white Citizen creature token with digital."
+      "When this creature leaves the battlefield, create a 1/1 white Program Citizen creature token with digital."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2791,7 +2792,7 @@
     "text": [
       "Double strike",
       "When this creature enters, create a Gun token.",
-      "Triggered abilities during your first strike phase cannot cause you to sacrifice an equipment attached to this creature."
+      "Equipment attached to Akimbo Specialist aren't sacrificed when it deals first strike damage."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4010,7 +4011,7 @@
     "displayType": "Legendary Creature — Human Wizard",
     "text": [
       "Whenever you cast an instant or sorcery spell, you get {E}.",
-      "{T}, Pay {E}: Create a 1/1 white Citizen creature token with digital.",
+      "{T}, Pay {E}: Create a 1/1 white Program Citizen creature token with digital.",
       "Whenever a creature you control with digital deals combat damage to a player, you may discard a card.",
       "If you do, draw a card."
     ],
@@ -4342,9 +4343,9 @@
     "type": "Enchantment — Saga",
     "displayType": "Enchantment — Saga",
     "text": [
-      "I - Search your library for a basic land and put it on the battlefield tapped, then shuffle.",
-      "II - Gain {E} for each land you control.",
-      "III - Create an X/X colorless Construct token with trample, where X is the amount of {E} you have."
+      "I — Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+      "II — You get {E} for each land you control.",
+      "III — Create an X/X colorless Construct creature token with trample, where X is the amount of {E} you have."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -4743,7 +4744,7 @@
     "type": "Enchantment — Saga",
     "displayType": "Enchantment — Saga",
     "text": [
-      "I — Choose two creatures. As long as this saga is on the battlefield, all creatures except one of the chosen creatures become copies of the other.",
+      "I — Choose two creatures. As long as this Saga is on the battlefield, each other creature is a copy of the second chosen creature. The first chosen creature is unaffected.",
       "II — Choose two creatures with different names. They fight each other.",
       "III — Return all nonland permanents to their owners' hands."
     ],
