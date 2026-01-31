@@ -985,4 +985,119 @@ defineExpose({
     overflow: auto;
   }
 }
+
+@media (max-width: 600px) {
+  .deck-builder {
+    padding: 2px;
+    gap: 6px;
+    max-height: none;
+    height: auto;
+  }
+
+  .preview-panel {
+    display: none;
+  }
+
+  .pool-section,
+  .deck-section,
+  .stats-panel {
+    padding: 4px 6px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .section-header h3 {
+    font-size: 0.8rem;
+  }
+
+  .pool-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .rarity-breakdown {
+    flex-wrap: wrap;
+  }
+
+  .pool-hint,
+  .deck-hint {
+    font-size: 0.65rem;
+  }
+
+  .filter-bar {
+    gap: 6px;
+    padding: 4px 0;
+  }
+
+  .filter-group {
+    flex-wrap: wrap;
+  }
+
+  .filter-label {
+    font-size: 0.65rem;
+    width: 100%;
+  }
+
+  .filter-btn {
+    padding: 4px 6px;
+    font-size: 0.8em;
+  }
+
+  .filter-btn.type-btn {
+    font-size: 0.6rem;
+    padding: 3px 4px;
+  }
+
+  .pool-list {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .builder-divider {
+    flex-direction: column;
+    gap: 8px;
+    padding: 6px;
+  }
+
+  .deck-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .deck-counts {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .export-btn,
+  .print-btn,
+  .playtest-btn,
+  .stats-btn {
+    padding: 6px 12px;
+    font-size: 0.7rem;
+  }
+
+  .deck-columns {
+    flex-direction: column;
+    overflow-x: visible;
+    overflow-y: auto;
+    gap: 8px;
+  }
+
+  .cmc-column {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .cmc-header {
+    font-size: 0.75rem;
+    padding: 4px;
+  }
+}
 </style>

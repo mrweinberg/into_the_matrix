@@ -1,5 +1,5 @@
 ﻿INTO THE MATRIX (ITM) - Set Design Document
-Total Card Count: 251
+Total Card Count: 253
 
 0. Design Notes
 This set was designed with the help of Gemini and Claude. While I designed the mechanics and the initial cards, they helped fill out the file, create the art, and create the website. Final polishing, ensuring the set makes sense, and making the cards flavorful and fun has been done by hand.
@@ -554,7 +554,7 @@ When Thomas Anderson deals combat damage to a player, look at the top card of yo
 
 [R027] There is No Spoon {1}{U}{U}
 Instant
-Counter target spell. You get {E} equal to that spell's mana value.
+Counter target spell. You get an amount of {E} equal to that spell's mana value.
 
 [R028] Seraph, Guardian of the Oracle {3}{U}
 Legendary Creature — Angel Program (3/4)
@@ -632,7 +632,7 @@ As long as this creature has first strike, it gets +2/+0.
 
 [C072] Reinitialize Soul {1}{B}
 Sorcery
-Kicker {1}{B},{E}{E}
+Kicker—{1}{B}, pay {E}{E}
 Return target creature card from your graveyard to your hand. If this spell was kicked, put it onto the battlefield instead.
 
 [C073] Sewer Dredger {4}{B}
@@ -960,12 +960,12 @@ Creature — Human Artificer (3/2)
 Whenever you sacrifice an artifact, this creature deals 1 damage to any target.
 
 [U070] Sentinel Charger {3}{R}
-Artifact Creature - Robot (4/3)
+Artifact Creature — Robot (4/3)
 Haste
 When this creature enters, you may discard a card. If you do, draw a card and create a Gun token attached to this creature.
 
 [U071] Draconic Sentinel {4}{R}{R}
-Artifact Creature - Robot Dragon (5/5)
+Artifact Creature — Robot Dragon (5/5)
 Flying
 {R}: This creature gets +1/+0 until end of turn.
 
@@ -1189,7 +1189,7 @@ Put two +1/+1 counters on two target creatures you control.
 
 [U091] Ravenous Construct {6}{G}{G}
 Artifact Creature — Construct Beast (7/7)
-Affinity for {E} (This creature costs {1} less to cast for each {E} you have.)
+This spell costs {1} less to cast for each {E} you have.
 Trample
 
 [U092] System Root-Weaver {1}{G}
@@ -1613,8 +1613,8 @@ Whenever a creature enters under your control, you get {E}.
 [U137] Scavenged Parts {1}
 Artifact — Equipment
 When this artifact enters, you get {E}{E}.
-Equipped artifact gets +1/+1.
-Pay {E}{E}: Attach this artifact to target artifact you control. Activate only as a sorcery.
+Equipped creature gets +1/+1.
+Pay {E}{E}: Attach this artifact to target creature you control. Activate only as a sorcery.
 Equip {2}
 
 [U138] Machine City Guard {3}
@@ -1660,8 +1660,8 @@ Equip {2}
 [R131] The Logos {3}
 Legendary Artifact — Vehicle (3/4)
 Flying
-Whenever this creature deals combat damage to a player, draw a card.
-Whenever you draw a card, if this creature is a creature, put a +1/+1 counter on it.
+Whenever The Logos deals combat damage to a player, draw a card.
+Whenever you draw a card, if The Logos is a creature, put a +1/+1 counter on it.
 Crew 2
 
 [R132] The Ducati {2}

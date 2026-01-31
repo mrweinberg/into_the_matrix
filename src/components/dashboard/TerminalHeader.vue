@@ -67,4 +67,38 @@
   0%, 100% { opacity: 1; box-shadow: 0 0 5px #0f0; }
   50% { opacity: 0.5; box-shadow: 0 0 2px #0f0; }
 }
+
+@media (max-width: 600px) {
+  .terminal-header {
+    padding: 8px 10px;
+  }
+
+  .terminal-controls {
+    gap: 4px;
+  }
+
+  .control-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .terminal-title {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    text-align: center;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 8px;
+  }
+
+  .terminal-status {
+    font-size: 0.65rem;
+  }
+
+  .terminal-status span:last-child {
+    display: none;
+  }
+}
 </style>

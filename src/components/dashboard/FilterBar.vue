@@ -255,9 +255,15 @@ const hasActiveFilters = computed(() =>
 }
 
 @media (max-width: 600px) {
+  .filter-bar {
+    padding: 12px 10px;
+    gap: 12px;
+  }
+
   .filter-row {
     flex-direction: column;
     align-items: stretch;
+    gap: 10px;
   }
 
   .filter-row-secondary {
@@ -273,9 +279,39 @@ const hasActiveFilters = computed(() =>
     min-width: auto;
   }
 
+  .filter-input,
+  .filter-select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    padding: 10px 12px;
+  }
+
+  .filter-label {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+  }
+
   .color-pills,
   .mv-pills {
     justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .color-pill {
+    width: 32px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .mv-pill {
+    width: 32px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+
+  .clear-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
   }
 }
 </style>

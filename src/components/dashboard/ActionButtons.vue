@@ -282,6 +282,52 @@ const deckCardCount = computed(() => getDeckCardCount())
   .info-grid {
     grid-template-columns: 1fr;
   }
+
+  .resume-banner {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .resume-info {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .resume-text {
+    font-size: 0.8rem;
+  }
+
+  .resume-details {
+    display: block;
+    font-size: 0.7rem;
+  }
+
+  .resume-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section-title {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+
+  .action-btn {
+    padding: 14px 10px;
+  }
+
+  .action-btn.action-primary .btn-icon {
+    font-size: 1.5rem;
+  }
+
+  .btn-text {
+    font-size: 0.8rem;
+  }
+
+  .btn-hint {
+    font-size: 0.6rem;
+  }
 }
 
 .card-notes-btn {

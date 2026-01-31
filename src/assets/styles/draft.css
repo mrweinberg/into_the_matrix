@@ -181,3 +181,60 @@
     display: none !important;
   }
 }
+
+@media (max-width: 600px) {
+  .draft-pool-sidebar {
+    height: 130px;
+    padding: 10px 12px;
+  }
+
+  .draft-pool-sidebar h3 {
+    font-size: 0.9em;
+  }
+
+  .sidebar-header {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .sort-select {
+    padding: 5px 6px;
+    font-size: 0.8em;
+  }
+
+  .pool-list {
+    font-size: 0.8em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+  }
+
+  .pool-list li {
+    margin-bottom: 0;
+    padding: 2px 0;
+    flex: 0 0 auto;
+  }
+
+  .pool-list .color-pip {
+    width: 10px;
+    height: 10px;
+  }
+
+  .pool-list .mv-badge {
+    min-width: 16px;
+    height: 16px;
+    font-size: 0.7em;
+  }
+
+  .pool-list .type-badge {
+    min-width: 24px;
+    padding: 1px 3px;
+    font-size: 0.6em;
+  }
+
+  .draft-mode .modal-content {
+    max-width: 100%;
+    margin-bottom: 140px;
+    border-radius: 0;
+  }
+}
