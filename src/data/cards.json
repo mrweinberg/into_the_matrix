@@ -3314,7 +3314,7 @@
   },
   {
     "id": "C131",
-    "name": "Impressionable Youth",
+    "name": "Zion Protégé",
     "cost": "{1}{G}",
     "type": "Creature — Human Citizen (2/2)",
     "displayType": "Creature — Human Citizen",
@@ -3328,7 +3328,7 @@
     "hasBackFace": false,
     "pt": "2/2",
     "colorIndicator": null,
-    "fileName": "C131_impressionable_youth.png"
+    "fileName": "C131_zion_prot_g_.png"
   },
   {
     "id": "C132",
@@ -3350,20 +3350,21 @@
   },
   {
     "id": "C133",
-    "name": "Bio-Surge",
+    "name": "Geothermal Scout",
     "cost": "{1}{G}",
-    "type": "Instant",
-    "displayType": "Instant",
+    "type": "Creature - Human Scout (2/2)",
+    "displayType": "Creature - Human Scout",
     "text": [
-      "Target creature gets +3/+3 and gains reach until end of turn."
+      "When this creature enters or attacks, you get {E}.",
+      "When this creature blocks or is blocked, you may pay {E}{E}. If you do, it gets +2/+2 until end of turn."
     ],
     "flavor": "",
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "",
+    "pt": "2/2",
     "colorIndicator": null,
-    "fileName": "C133_bio_surge.png"
+    "fileName": "C133_geothermal_scout.png"
   },
   {
     "id": "C134",
@@ -3455,21 +3456,21 @@
   },
   {
     "id": "U080",
-    "name": "Heavy-Duty Construct",
-    "cost": "{3}{G}",
-    "type": "Artifact Creature — Construct (6/5)",
-    "displayType": "Artifact Creature — Construct",
+    "name": "Aether Weaver",
+    "cost": "{2}{G}",
+    "type": "Creature — Human Shaman (1/3)",
+    "displayType": "Creature — Human Shaman",
     "text": [
-      "This creature can't be blocked by more than one creature.",
-      "As an additional cost to cast this spell, pay {E}{E} or sacrifice a creature."
+      "When this creature enters, gain {E} equal to the greatest power among creatures you control.",
+      "Pay {E}{E}: Put a +1/+1 counter on target creature you control. Activate only as a sorcery."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "6/5",
+    "pt": "1/3",
     "colorIndicator": null,
-    "fileName": "U080_heavy_duty_construct.png"
+    "fileName": "U080_aether_weaver.png"
   },
   {
     "id": "U081",
@@ -3700,7 +3701,7 @@
     "text": [
       "Flash",
       "Whenever you cast a spell during an opponent's turn, you get {E}.",
-      "Pay {E}{E}: this creature gets +2/+2 until end of turn. Activate only once each turn."
+      "Pay {E}{E}: This creature gets +2/+2 until end of turn. Activate only once each turn."
     ],
     "flavor": " \"Growing within the firewall's blind spot.\"",
     "rarity": "Uncommon",

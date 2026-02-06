@@ -88,10 +88,10 @@
       "Land": 16
     },
     "typeBreakdown": {
-      "Creature": 153,
+      "Creature": 154,
       "Sorcery": 30,
       "Enchantment": 29,
-      "Instant": 32,
+      "Instant": 31,
       "Artifact": 16,
       "Land": 16
     },
@@ -136,8 +136,8 @@
         "0": 0,
         "1": 6,
         "2": 16,
-        "3": 8,
-        "4": 4,
+        "3": 9,
+        "4": 3,
         "5": 2,
         "6+": 4
       },
@@ -183,8 +183,8 @@
         "0": 0,
         "1": 8,
         "2": 37,
-        "3": 40,
-        "4": 10,
+        "3": 41,
+        "4": 9,
         "5": 4,
         "6+": 3
       },
@@ -199,9 +199,9 @@
       }
     },
     "creatureStats": {
-      "total": 153,
+      "total": 154,
       "byRarity": {
-        "Common": 45,
+        "Common": 46,
         "Uncommon": 64,
         "Rare": 34,
         "Mythic": 10
@@ -212,19 +212,19 @@
       },
       "powerDistribution": {
         "0": 4,
-        "1": 33,
-        "2": 56,
+        "1": 34,
+        "2": 57,
         "3": 34,
         "4": 15,
-        "5+": 11
+        "5+": 10
       },
       "toughnessDistribution": {
         "0": 1,
         "1": 30,
-        "2": 41,
-        "3": 44,
+        "2": 42,
+        "3": 45,
         "4": 23,
-        "5+": 14
+        "5+": 13
       }
     },
     "keywords": {
@@ -238,7 +238,7 @@
       "Eject": 8,
       "First Strike": 5,
       "Indestructible": 9,
-      "Reach": 9,
+      "Reach": 8,
       "Double Strike": 2,
       "Hexproof": 6,
       "Flash": 23,
@@ -249,9 +249,9 @@
     },
     "dfcCount": 20,
     "instantSorceryRatio": {
-      "instants": 32,
+      "instants": 31,
       "sorceries": 30,
-      "ratio": 1.07
+      "ratio": 1.03
     },
     "averageCMC": 2.91,
     "cardsWithAbilities": {
@@ -259,7 +259,7 @@
       "removal": 65,
       "counterspells": 5,
       "tokenCreators": 31,
-      "energyCards": 114
+      "energyCards": 115
     },
     "rarityByColor": {
       "W": {

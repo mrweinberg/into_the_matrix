@@ -24,10 +24,12 @@ ITM is a Magic: The Gathering fan set with two main components:
 ```
 /
 ├── MTG INTO THE MATRIX.txt    # SOURCE OF TRUTH - all card designs and mechanics
-├── generate_matrix.mjs        # AI art generation script (Gemini)
-├── generate_data.mjs          # Card data JSON generator (Parses text file)
-├── resize_art.mjs             # Image resizing script (Ensures 4:3 aspect ratio)
-├── fix_syntax.mjs             # Utility to standardize magic syntax
+├── scripts/                   # Utility Scripts
+│   ├── generate_matrix.mjs    # AI art generation script (Gemini)
+│   ├── generate_data.mjs      # Card data JSON generator (Parses text file)
+│   ├── resize_art.mjs         # Image resizing script (Ensures 4:3 aspect ratio)
+│   ├── fix_syntax.mjs         # Utility to standardize magic syntax
+│   └── analyze_set.cjs        # Set analysis script
 ├── artOverrides.json          # Per-card art prompt customizations
 ├── public/cards/              # CONSOLIDATED card artwork (PNG files)
 │

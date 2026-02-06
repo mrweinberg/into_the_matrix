@@ -8,8 +8,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:run": "vitest run",
-    "generate-data": "node generate_data.mjs",
-    "generate-art": "node generate_matrix.mjs",
+    "generate-data": "node scripts/generate_data.mjs",
+    "generate-art": "node scripts/generate_matrix.mjs",
     "build:full": "npm run generate-data && npm run build"
   },
   "dependencies": {
