@@ -1,5 +1,5 @@
 ﻿INTO THE MATRIX (ITM) - Set Design Document
-Total Card Count: 253
+Total Card Count: 251
 
 0. Design Notes
 This set was designed with the help of Gemini and Claude. While I designed the mechanics and the initial cards, they helped fill out the file, create the art, and create the website. Final polishing, ensuring the set makes sense, and making the cards flavorful and fun has been done by hand.
@@ -50,6 +50,8 @@ Eject {Cost}
 Action Word
 {Cost}: Eject. ({Cost}: Transform this card. Activate only as a sorcery.)
 Design Note: Represents leaving the Matrix.
+
+Design Note (Jack-in/Eject as Digital Interaction): Jack-in and Eject provide a key way for colors—especially White—to interact with the Digital world. Rather than relying solely on "can block creatures with digital" effects, creatures with Jack-in can transform to gain Digital themselves, allowing them to block and be blocked by Digital creatures. This gives White and other colors flexible, proactive answers to Digital threats while maintaining the thematic separation between the Real World and the Matrix. A creature can jack-in to fight Programs on their own turf, then eject to return to the physical battlefield.
 
 Override [Quality]
 Keyword Ability
@@ -521,7 +523,7 @@ Creature — Human Rogue (2/2)
 Flash, ward {1}
 Digital (This creature can block or be blocked only by creatures with digital.)
 Spells you cast during your opponent's turn cost {1} less to cast.
-Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on this creature and you get {E}.
+Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on this creature.
 
 [R022] Residual Self Image {3}{U}
 Enchantment
@@ -561,7 +563,7 @@ Legendary Creature — Angel Program (3/4)
 Ward {2}
 Digital (Seraph can block or be blocked only by creatures with digital.)
 You may cast creature spells as though they had flash.
-Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on target creature you control.
+Whenever you cast a spell during an opponent's turn, draw a card.
 
 --- MYTHICS ---
 

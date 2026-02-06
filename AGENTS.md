@@ -98,6 +98,7 @@ ITM is a Magic: The Gathering fan set with two main components:
 | **Edit Art Prompts** | `artOverrides.json` |
 | **Logic** | `src/utils/boosterLogic.js`, `src/composables/useDraft.js` |
 | **UI/Styling** | `src/components/cards/CardItem.vue`, `src/assets/styles/cards.css` |
+| **Card Changelog** | `card_changelog.md` | Updated when cards are added/changed. |
 
 ## State Management
 
