@@ -183,20 +183,21 @@
   },
   {
     "id": "C010",
-    "name": "Fleet Mechanic",
-    "cost": "{2}{W}",
-    "type": "Creature — Human Artificer (2/3)",
-    "displayType": "Creature — Human Artificer",
+    "name": "Council of Elders",
+    "cost": "{4}{W}",
+    "type": "Creature — Human Advisor (3/2)",
+    "displayType": "Creature — Human Advisor",
     "text": [
-      "When this creature enters, you may return target Vehicle or Equipment card from your graveyard to your hand."
+      "Affinity for humans",
+      "When this creature enters, draw a card."
     ],
     "flavor": "",
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "2/3",
+    "pt": "3/2",
     "colorIndicator": null,
-    "fileName": "C010_fleet_mechanic.png"
+    "fileName": "C010_council_of_elders.png"
   },
   {
     "id": "C014",
@@ -600,17 +601,16 @@
     "id": "U014",
     "name": "Youthful Welder",
     "cost": "{W}",
-    "type": "Creature — Human Artificer (1/1)",
+    "type": "Creature — Human Artificer (2/1)",
     "displayType": "Creature — Human Artificer",
     "text": [
-      "{T}: Target Vehicle you control gets +2/+1 until end of turn.",
       "{2}{W}, {T}: Create a Gun token."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "1/1",
+    "pt": "2/1",
     "colorIndicator": null,
     "fileName": "U014_youthful_welder.png"
   },
@@ -1336,7 +1336,7 @@
     "displayType": "Creature — Program Agent",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
+      "Champion a creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves.)",
       "This creature can't be blocked.",
       "{1}{U}: Return this creature to its owner's hand."
     ],
@@ -1410,7 +1410,7 @@
     "displayType": "Creature — Program Agent",
     "text": [
       "Flash, digital (This creature can block or be blocked only by creatures with digital.)",
-      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
+      "Champion a creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves.)",
       "When this creature enters, tap up to one target creature and put a stun counter on it."
     ],
     "flavor": "",
@@ -1487,7 +1487,7 @@
       "Flash, ward {1}",
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Spells you cast during your opponent's turn cost {1} less to cast.",
-      "Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on this creature and you get {E}."
+      "Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on this creature."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -1598,7 +1598,7 @@
     "type": "Instant",
     "displayType": "Instant",
     "text": [
-      "Counter target spell. You get {E} equal to that spell's mana value."
+      "Counter target spell. You get an amount of {E} equal to that spell's mana value."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -1618,7 +1618,7 @@
       "Ward {2}",
       "Digital (Seraph can block or be blocked only by creatures with digital.)",
       "You may cast creature spells as though they had flash.",
-      "Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on target creature you control."
+      "Whenever you cast a spell during an opponent's turn, draw a card."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -1838,7 +1838,7 @@
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "Kicker {1}{B},{E}{E}",
+      "Kicker—{1}{B}, pay {E}{E}",
       "Return target creature card from your graveyard to your hand. If this spell was kicked, put it onto the battlefield instead."
     ],
     "flavor": "",
@@ -2039,7 +2039,8 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Menace",
-      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
+      "Champion a creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves.)",
+      "This creature has haste if you controlled the exiled creature since your turn began.",
       "Whenever this creature deals combat damage to a player, that player loses {E} equal to the damage dealt. You get {E} equal to the amount of {E} that player lost."
     ],
     "flavor": "",
@@ -2053,18 +2054,19 @@
   {
     "id": "U046",
     "name": "Reinforcement Agent",
-    "cost": "{1}{B}",
-    "type": "Creature — Program Agent (4/3)",
+    "cost": "{2}{B}",
+    "type": "Creature — Program Agent (5/4)",
     "displayType": "Creature — Program Agent",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)"
+      "Champion a creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves.)",
+      "This creature has haste if you controlled the exiled creature since your turn began."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "4/3",
+    "pt": "5/4",
     "colorIndicator": null,
     "fileName": "U046_reinforcement_agent.png"
   },
@@ -2169,7 +2171,7 @@
     "displayType": "Legendary Creature — Program Agent",
     "text": [
       "Flash, digital (Agent Brown can block or be blocked only by creatures with digital.)",
-      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
+      "Champion a creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves.)",
       "When Agent Brown enters, if it overrode a creature, destroy target creature."
     ],
     "flavor": "",
@@ -2567,13 +2569,13 @@
   },
   {
     "id": "C100",
-    "name": "Drone Pilot",
+    "name": "Explosive Drone",
     "cost": "{R}",
     "type": "Artifact Creature — Robot (1/1)",
     "displayType": "Artifact Creature — Robot",
     "text": [
       "Haste",
-      "Vehicles crewed by this creature get +1/+0 and have menace."
+      "{3}{R}, Sacrifice Explosive Drone: Deal 3 damage to any target."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2581,7 +2583,7 @@
     "hasBackFace": false,
     "pt": "1/1",
     "colorIndicator": null,
-    "fileName": "C100_drone_pilot.png"
+    "fileName": "C100_explosive_drone.png"
   },
   {
     "id": "C101",
@@ -2604,21 +2606,21 @@
   },
   {
     "id": "C102",
-    "name": "Sentinel Sweeper",
+    "name": "Sentinel Breaker",
     "cost": "{3}{R}",
-    "type": "Artifact Creature — Robot (2/3)",
+    "type": "Artifact Creature — Robot (4/3)",
     "displayType": "Artifact Creature — Robot",
     "text": [
-      "Flying",
-      "When this creature dies, you get {E}."
+      "Trample",
+      "When this creature dies, you get {E}{E}."
     ],
     "flavor": "",
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "2/3",
+    "pt": "4/3",
     "colorIndicator": null,
-    "fileName": "C102_sentinel_sweeper.png"
+    "fileName": "C102_sentinel_breaker.png"
   },
   {
     "id": "C103",
@@ -2766,14 +2768,15 @@
   },
   {
     "id": "U063",
-    "name": "Pilot’s Instinct",
+    "name": "Overclock",
     "cost": "{1}{R}",
     "type": "Instant",
     "displayType": "Instant",
     "text": [
-      "Choose one —",
-      "• Target Vehicle becomes an artifact creature until end of turn. It gains haste and indestructible until end of turn.",
-      "• Up to two target creatures can't block this turn."
+      "Choose one -",
+      "* Up to two target creatures can't block this turn.",
+      "* You get {E}{E}{E}.",
+      "* Destroy target artifact."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2781,7 +2784,7 @@
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "U063_pilot_s_instinct.png"
+    "fileName": "U063_overclock.png"
   },
   {
     "id": "U064",
@@ -2913,8 +2916,8 @@
     "id": "U070",
     "name": "Sentinel Charger",
     "cost": "{3}{R}",
-    "type": "Artifact Creature - Robot (4/3)",
-    "displayType": "Artifact Creature - Robot",
+    "type": "Artifact Creature — Robot (4/3)",
+    "displayType": "Artifact Creature — Robot",
     "text": [
       "Haste",
       "When this creature enters, you may discard a card. If you do, draw a card and create a Gun token attached to this creature."
@@ -2931,8 +2934,8 @@
     "id": "U071",
     "name": "Draconic Sentinel",
     "cost": "{4}{R}{R}",
-    "type": "Artifact Creature - Robot Dragon (5/5)",
-    "displayType": "Artifact Creature - Robot Dragon",
+    "type": "Artifact Creature — Robot Dragon (5/5)",
+    "displayType": "Artifact Creature — Robot Dragon",
     "text": [
       "Flying",
       "{R}: This creature gets +1/+0 until end of turn."
@@ -3677,7 +3680,7 @@
     "type": "Artifact Creature — Construct Beast (7/7)",
     "displayType": "Artifact Creature — Construct Beast",
     "text": [
-      "Affinity for {E} (This creature costs {1} less to cast for each {E} you have.)",
+      "This spell costs {1} less to cast for each {E} you have.",
       "Trample"
     ],
     "flavor": "",
@@ -3988,18 +3991,17 @@
     "id": "U104",
     "name": "Agent Jones",
     "cost": "{1}{U}{B}",
-    "type": "Legendary Creature — Program Agent (4/2)",
+    "type": "Legendary Creature — Program Agent (3/2)",
     "displayType": "Legendary Creature — Program Agent",
     "text": [
-      "Flash, digital (Agent Jones can block or be blocked only by creatures with digital.)",
-      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
-      "Whenever Agent Jones becomes the target of a spell or ability, you may return it to its owner's hand."
+      "Digital (Agent Jones can block or be blocked only by creatures with digital.)",
+      "If a creature you control dealing combat damage to a player triggers an ability, it triggers an additional time."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "4/2",
+    "pt": "3/2",
     "colorIndicator": null,
     "fileName": "U104_agent_jones.png"
   },
@@ -4012,8 +4014,7 @@
     "text": [
       "Whenever you cast an instant or sorcery spell, you get {E}.",
       "{T}, Pay {E}: Create a 1/1 white Program Citizen creature token with digital.",
-      "Whenever a creature you control with digital deals combat damage to a player, you may discard a card.",
-      "If you do, draw a card."
+      "Whenever a creature you control with digital deals combat damage to a player, you may discard a card. If you do, draw a card."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4139,7 +4140,7 @@
     "displayType": "Legendary Creature — Agent Program",
     "text": [
       "Digital (Agent Grey can block or be blocked only by creatures with digital.)",
-      "Override creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves. If you controlled the exiled card since your turn began, this gains haste.)",
+      "Champion a creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves.)",
       "When Agent Grey enters, you may tap up to one target creature.",
       "Whenever a creature an opponent controls becomes tapped, you may pay {1}. If you do, put a stun counter on it."
     ],
@@ -4196,8 +4197,8 @@
     "type": "Legendary Creature — Human Soldier (2/2)",
     "displayType": "Legendary Creature — Human Soldier",
     "text": [
-      "Creatures you control that are equipped or are Vehicles get +1/+1.",
-      "Whenever a Vehicle you control attacks, you get {E}."
+      "Equipped creatures you control get +1/+0.",
+      "Whenever an equipped creature you control deals combat damage to a player, draw a card. This ability triggers only once each turn."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4642,7 +4643,7 @@
     "type": "Legendary Creature — Program Agent (4/4)",
     "displayType": "Legendary Creature — Program Agent",
     "text": [
-      "Override creature with digital",
+      "Champion a creature with digital",
       "Ward {2}, Digital (Agent Smith can block or be blocked only by creatures with digital.)",
       "Whenever a creature enters under an opponent's control, you may pay {U/B}. If you do, gain control of it until the end of your next turn. Do this only once each turn.",
       "At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own."
@@ -4840,10 +4841,10 @@
     "type": "Legendary Creature — Program Rogue (4/4)",
     "displayType": "Legendary Creature — Program Rogue",
     "text": [
-      "Override creature",
+      "Champion a creature",
       "Menace",
-      "You may have Agent Smith override creatures you don't control.",
-      "Agent Smith has digital as long as the overridden creature had digital."
+      "You may have Agent Smith champion creatures you don't control.",
+      "Agent Smith has digital as long as the championed creature had digital."
     ],
     "flavor": "",
     "rarity": "Mythic",
@@ -4870,42 +4871,6 @@
     "pt": "",
     "colorIndicator": null,
     "fileName": "C150_the_oracle_s_cookie.png"
-  },
-  {
-    "id": "C151",
-    "name": "APU Corps",
-    "cost": "{5}",
-    "type": "Artifact — Vehicle (4/5)",
-    "displayType": "Artifact — Vehicle",
-    "text": [
-      "Reach",
-      "When this artifact enters, you get {E}{E}.",
-      "Crew 2"
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "4/5",
-    "colorIndicator": null,
-    "fileName": "C151_apu_corps.png"
-  },
-  {
-    "id": "C153",
-    "name": "Standard Issue Hovercraft",
-    "cost": "{3}",
-    "type": "Artifact — Vehicle (4/4)",
-    "displayType": "Artifact — Vehicle",
-    "text": [
-      "Crew 2"
-    ],
-    "flavor": "",
-    "rarity": "Common",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "4/4",
-    "colorIndicator": null,
-    "fileName": "C153_standard_issue_hovercraft.png"
   },
   {
     "id": "C155",
@@ -4987,8 +4952,8 @@
     "displayType": "Artifact — Equipment",
     "text": [
       "When this artifact enters, you get {E}{E}.",
-      "Equipped artifact gets +1/+1.",
-      "Pay {E}{E}: Attach this artifact to target artifact you control. Activate only as a sorcery.",
+      "Equipped creature gets +1/+1.",
+      "Pay {E}{E}: Attach this artifact to target creature you control. Activate only as a sorcery.",
       "Equip {2}"
     ],
     "flavor": "",
@@ -5016,26 +4981,6 @@
     "pt": "3/3",
     "colorIndicator": null,
     "fileName": "U138_machine_city_guard.png"
-  },
-  {
-    "id": "U139",
-    "name": "The Mjolnir, Hammer of Zion",
-    "cost": "{4}",
-    "type": "Legendary Artifact — Vehicle (6/5)",
-    "displayType": "Legendary Artifact — Vehicle",
-    "text": [
-      "Trample",
-      "Whenever The Mjolnir becomes blocked, you may pay {E}{E}.",
-      "If you do, it deals 3 damage to target creature blocking it.",
-      "Crew 3"
-    ],
-    "flavor": "",
-    "rarity": "Uncommon",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "6/5",
-    "colorIndicator": null,
-    "fileName": "U139_the_mjolnir__hammer_of_zion.png"
   },
   {
     "id": "U140",
@@ -5136,8 +5081,8 @@
     "displayType": "Legendary Artifact — Vehicle",
     "text": [
       "Flying",
-      "Whenever this creature deals combat damage to a player, draw a card.",
-      "Whenever you draw a card, if this creature is a creature, put a +1/+1 counter on it.",
+      "Whenever The Logos deals combat damage to a player, draw a card.",
+      "Whenever you draw a card, if The Logos is a creature, put a +1/+1 counter on it.",
       "Crew 2"
     ],
     "flavor": "",

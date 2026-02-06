@@ -23,7 +23,7 @@ An aggressive artifact-centric deck that focuses on Robot tribal to push through
 RG: Bio-Electric Power
 This deck focuses on generating large amounts of Energy {E} and spending it on massive "Real World" threats like Beasts and Vehicles. It aims to overwhelm the board with high-power creatures and trampling damage.
 GW: Zion Resistance
-A "go-wide" strategy that boosts Non-Digital (Human) creatures. It utilizes Vigilance and Lifelink to stabilize the board and punish the Machines for attacking into Zion's defenses.
+A "go-wide" strategy that boosts Non-Digital (Human) creatures. It utilizes Vigilance and "affinity for humans" to stabilize the board and punish the Machines with overwhelming numbers.
 WB: Lifedrain Syndicate
 This archetype revolves around an attrition-based strategy centered on the Merovingian's network of Programs. It uses lifegain and death triggers to generate value, draining opponents while building card advantage through Treasure and sacrifice synergies.
 UR: Code Modification
@@ -31,7 +31,7 @@ A spells-matter and high-tech deck that uses Energy to power your spells or pay 
 BG: Harvester Operations
 This archetype focuses on the graveyard and the recycling of resources. It uses Robot and Ooze creatures to gain value from death triggers and spends Energy to return threats to the battlefield.
 RW: Armed and Ready
-The premier Vehicle and Equipment deck. It leverages Gun tokens and specialized Pilots to create a highly efficient, fast-moving combat force that rewards aggressive play.
+The premier "Guns" deck. It leverages Gun tokens and aggressive creatures to create a highly efficient, fast-moving combat force that rewards aggressive play.
 GU: System Mastery
 A midrange deck that uses Energy and flash threats to manipulate the battlefield and protect its creatures. It's a reactive value town.
 1. Mechanics & Glossary
@@ -127,9 +127,10 @@ Exile target creature you control, then return it to the battlefield.
 If it was transformed, return it transformed and you get {E}{E}.
 "It's a glitch in the Matrix. It happens when they change something"
 
-[C010] Fleet Mechanic {2}{W}
-Creature — Human Artificer (2/3)
-When this creature enters, you may return target Vehicle or Equipment card from your graveyard to your hand.
+[C010] Council of Elders {4}{W}
+Creature — Human Advisor (3/2)
+Affinity for humans
+When this creature enters, draw a card.
 
 [C014] Prophesizing Elder {4}{W}
 Creature — Human Cleric (3/5)
@@ -247,8 +248,7 @@ Sorcery
 Return up to three creature cards from your graveyard to the battlefield with total mana value 3 or less.
 
 [U014] Youthful Welder {W}
-Creature — Human Artificer (1/1)
-{T}: Target Vehicle you control gets +2/+1 until end of turn.
+Creature — Human Artificer (2/1)
 {2}{W}, {T}: Create a Gun token.
 
 [U015] Stand Together {1}{W}
@@ -863,10 +863,10 @@ When this creature enters, if you control a nontoken artifact, deal 2 damage to 
 Instant
 Target creature gets +2/+0 until end of turn. Create a Gun token attached to it.
 
-[C100] Drone Pilot {R}
+[C100] Explosive Drone {R}
 Artifact Creature — Robot (1/1)
 Haste
-Vehicles crewed by this creature get +1/+0 and have menace.
+{3}{R}, Sacrifice this creature: Deal 3 damage to any target.
 
 [C101] Dockside Loader {4}{R}
 Creature — Human Warrior (4/4)
@@ -874,10 +874,10 @@ Trample
 When this creature enters, you get {E}{E}.
 Basic landcycling {2}
 
-[C102] Sentinel Sweeper {3}{R}
-Artifact Creature — Robot (2/3)
-Flying
-When this creature dies, you get {E}.
+[C102] Sentinel Breaker {3}{R}
+Artifact Creature — Robot (4/3)
+Trample
+When this creature dies, you get {E}{E}.
 
 [C103] Magma-Code Brawler {2}{R}
 Creature — Program Warrior (3/2)
@@ -922,17 +922,18 @@ When this creature attacks, you may pay {E}. If you do, target creature can't bl
 Creature — Human Artificer (2/3)
 Whenever you cast a spell, you get {E} and may pay {E}{E}. If you do, this creature deals 2 damage to any target.
 
-[U063] Pilot’s Instinct {1}{R}
+[U063] Overclock {1}{R}
 Instant
-Choose one —
-• Target Vehicle becomes an artifact creature until end of turn. It gains haste and indestructible until end of turn.
-• Up to two target creatures can't block this turn.
+Choose one -
+* Up to two target creatures can't block this turn.
+* You get {E}{E}{E}.
+* Destroy target artifact.
 
 [U064] Akimbo Specialist {2}{R}
 Creature — Human Soldier (2/2)
 Double strike
 When this creature enters, create a Gun token.
-Equipment attached to Akimbo Specialist aren't sacrificed when it deals first strike damage.
+Equipment attached to Akimbo Specialist cannot be sacrified during the first strike damage step.
 
 [U065] Turret Maniac {3}{R}
 Creature — Human Soldier (3/2)
@@ -1358,8 +1359,8 @@ Whenever another creature dies, you gain 1 life and may pay {2}. If you do, draw
 
 [U117] Captain Mifune {R}{W}
 Legendary Creature — Human Soldier (2/2)
-Creatures you control that are equipped or are Vehicles get +1/+1.
-Whenever a Vehicle you control attacks, you get {E}.
+Equipped creatures you control get +1/+0.
+Whenever an equipped creature you control deals combat damage to a player, draw a card. This ability triggers only once each turn.
 
 [U118] Uploaded Vanguard {1}{R}{W}
 Creature — Human Soldier (2/2)
@@ -1580,16 +1581,6 @@ Artifact — Food
 When this artifact enters or leaves the battlefield, scry 2.
 {2}, {T}, Sacrifice this artifact: You gain 3 life.
 
-[C151] APU Corps {5}
-Artifact — Vehicle (4/5)
-Reach
-When this artifact enters, you get {E}{E}.
-Crew 2
-
-[C153] Standard Issue Hovercraft {3}
-Artifact — Vehicle (4/4)
-Crew 2
-
 [C155] Simulated Steak {1}
 Artifact — Food
 {2}, {T}, Sacrifice this artifact: You gain 3 life and draw a card.
@@ -1623,13 +1614,6 @@ Equip {2}
 Artifact Creature — Robot Guardian (3/3)
 Whenever this creature attacks, you may pay {E}.
 If you do, target creature can't block this turn.
-
-[U139] The Mjolnir, Hammer of Zion {4}
-Legendary Artifact — Vehicle (6/5)
-Trample
-Whenever The Mjolnir becomes blocked, you may pay {E}{E}.
-If you do, it deals 3 damage to target creature blocking it.
-Crew 3
 
 [U140] Mag-Lev Harpoon {2}
 Artifact — Equipment
