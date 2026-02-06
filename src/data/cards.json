@@ -3314,7 +3314,7 @@
   },
   {
     "id": "C131",
-    "name": "Zion Protégé",
+    "name": "Teachable Pupil",
     "cost": "{1}{G}",
     "type": "Creature — Human Citizen (2/2)",
     "displayType": "Creature — Human Citizen",
@@ -3328,7 +3328,7 @@
     "hasBackFace": false,
     "pt": "2/2",
     "colorIndicator": null,
-    "fileName": "C131_zion_prot_g_.png"
+    "fileName": "C131_teachable_pupil.png"
   },
   {
     "id": "C132",

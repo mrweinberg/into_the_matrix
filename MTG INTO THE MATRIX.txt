@@ -1088,7 +1088,7 @@ Flash
 Digital (This creature can block or be blocked only by creatures with digital.)
 When this creature enters, put a +1/+1 counter on target creature you control.
 
-[C131] Zion Protégé {1}{G}
+[C131] Teachable Pupil {1}{G}
 Creature — Human Citizen (2/2)
 Reach
 Whenever you cast a spell that targets this creature, put a +1/+1 counter on it.
