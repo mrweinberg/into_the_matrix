@@ -16,8 +16,8 @@ Energy is an important component of the set. Fundamental to The Matrix universe,
 Draft Archetypes:
 WU: System Infiltration
 This archetype focuses on the Jack-in and Eject mechanics to gain value from transitioning between the Real World and the Matrix, allowing a flexible approach to both offense and defense.
-UB: Agent control
-A classic control shell that utilizes Digital creatures and the Champion mechanic to possess and neutralize opponent threats.
+UB: Agent Control & Infiltration
+A control shell that utilizes Digital creatures and the Champion mechanic to possess and neutralize opponent threats. It relies on evasive creatures with "saboteur" abilities (triggers on combat damage) to generate card advantage and disrupt the opponent's hand.
 BR: Sentinel Aggro
 An aggressive artifact-centric deck that focuses on Robot tribal to push through. It rewards you for sacrificing artifacts for value and using Energy to burn out opponents.
 RG: Bio-Electric Power
