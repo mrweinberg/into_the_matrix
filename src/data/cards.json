@@ -2575,7 +2575,7 @@
     "displayType": "Artifact Creature — Robot",
     "text": [
       "Haste",
-      "{3}{R}, Sacrifice Explosive Drone: Deal 3 damage to any target."
+      "{3}{R}, Sacrifice this creature: Deal 3 damage to any target."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2795,7 +2795,7 @@
     "text": [
       "Double strike",
       "When this creature enters, create a Gun token.",
-      "Equipment attached to Akimbo Specialist aren't sacrificed when it deals first strike damage."
+      "Equipment attached to Akimbo Specialist cannot be sacrified during the first strike damage step."
     ],
     "flavor": "",
     "rarity": "Uncommon",
