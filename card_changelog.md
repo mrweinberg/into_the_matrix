@@ -351,6 +351,100 @@ Added section headers and reorganized cards within each color by rarity.
 
 ---
 
+## 2026-01-26 — Card Redesigns & Balance
+
+**Theme:** Redesigning underperformers and further balance tuning
+
+### Card Redesigns
+- **[C093] Static-Charged Hacker**: Activated pump `{1}, Pay {E}: +2/+0` replaced with static ability "As long as you have three or more {E}, this creature gets +1/+0 and has first strike"
+- **[U081] Nutrient Silo** (Plant Wall): Sacrifice ability changed from `{1}{B}: -2/-2` to `{2}: +2/+2`
+- **[U086] Prime Construct** → **Nourishing Construct**: (7/7) trample → (5/6) vigilance, life gain now scales with energy count
+- **[R151] Club Hel**: Redesigned again — now adds any-color mana for digital creature spells, gains `{4},{T}: +1/+1 pump` for digital creatures
+
+### Balance Changes
+- **[U066] Channeled Surge**: Energy gain {E}{E} → {E}{E}{E}, flashback reduced {3}{R}{R} → {2}{R}{R}
+- **[U062] Surge Channeler**: Templating fix ("this creature deals 2 damage" instead of "deal 2 damage")
+- **[U112] Tank, the Operator**: Hexproof removed from modal choice (now trample or reach only)
+- **[R110] Morpheus, the Believer**: Energy gain at end step {E} → {E}{E}
+- **[U118] Uploaded Vanguard** (back face Vanguard Avatar): Lost first strike, buff now applies to all attacking creatures (was digital only), eject cost {2} → {1}
+
+### New Abilities
+- **[R150] The Nexus**: Gained `{4}, {T}, sacrifice: look at top four for artifact/robot/program`
+- **[U026] Fact or Fiction**: Added flavor text (red pill/blue pill quote)
+
+---
+
+## 2026-01-28 — Artifact Type Corrections
+
+**Theme:** Fixing creature types to include "Artifact Creature" and Aura templating
+
+### Type Fixes
+- **[C045] Code Prowler**: "Creature — Construct Beast" → "Artifact Creature — Construct Beast"
+- **[U080] Heavy-Duty Construct**: "Creature — Construct" → "Artifact Creature — Construct"
+- **[M10] Bio-Spark Behemoth**: "Creature — Construct Beast" → "Artifact Creature — Construct Beast"
+- **[U108] Scrap Repurposer**: "Creature — Robot Artificer" → "Artifact Creature — Robot Artificer"
+
+### Templating Fixes
+- Fixed "When this creature enters" to use proper card names on non-creature permanents: **Stasis Field**, **Take the Blue Pill**, **Take the Red Pill**, **Code Vision**
+- **[R060] System Override**: Fixed "this creature" → "this spell" (it's a Sorcery)
+
+---
+
+## 2026-01-29 — Token Standardization & Card Clarifications
+
+### Token Name Standardization
+- All "Citizen creature token with digital" → "Program Citizen creature token with digital" (affected 3 cards)
+
+### Card Changes
+- **[C005] Awakened Rebel** (back face): Added `{2}{W}: Jack-in` ability
+- **[C061] Disposable Informant**: Type changed from "Human Program Assassin" to "Program Assassin"
+- **[U064] Akimbo Specialist**: Ability text reworded for clarity
+- **[R100] Welcome to the Real World**: Saga chapter formatting standardized (dashes, wording)
+- **[M14] The Grand Equation**: Chapter I text clarified — now explicitly says "each other creature is a copy of the second chosen creature"
+
+---
+
+## 2026-02-06 — Override → Champion, Vehicle Reduction & Major Reworks
+
+**Theme:** Replacing Override with official Champion keyword, reducing Vehicle count, reworking several cards
+
+### Mechanic Changes
+- **Override renamed to Champion**: All 9 cards updated to use "Champion a creature with digital" wording
+- Haste removed from base Champion definition; two specific cards (**Meter Reader**, **Reinforcement Agent**) now have haste as a separate conditional ability
+- **UB archetype** renamed from "Agent control" to "Agent Control & Infiltration", expanded to mention saboteur abilities
+- **GW archetype** updated from "Vigilance and Lifelink" to "Vigilance and affinity for humans"
+- **RW archetype** updated from "Vehicle and Equipment deck" to "Guns" deck
+- Card count updated: 253 → 251
+
+### Card Redesigns
+- **[C010] Fleet Mechanic** → **Council of Elders** {4}{W} (3/2): Completely new card with affinity for humans and cantrip
+- **[U104] Agent Jones**: Major rework — lost Flash, Champion, and bounce-on-target; now a 3/2 with saboteur-doubling ability
+- **[C100] Drone Pilot** → **Explosive Drone**: Lost Vehicle synergy, gained `{3}{R}, Sacrifice: deal 3 damage`
+- **[C102] Sentinel Sweeper** → **Sentinel Breaker**: (2/3) flying → (4/3) trample, death trigger buffed to {E}{E}
+- **[U063] Pilot's Instinct** → **Overclock**: Completely reworked — now modal (can't block / energy / destroy artifact)
+- **[U117] Captain Mifune**: Reworked from Vehicle lord to Equipment-focused draw engine
+
+### Card Balance Changes
+- **[U046] Reinforcement Agent**: {1}{B} (4/3) → {2}{B} (5/4)
+- **[U014] Youthful Welder**: Simplified — lost Vehicle pump, changed from 1/1 to 2/1
+- **[R021] Code Runner**: Removed "{E}" from opponent's-turn cast trigger
+- **[R028] Seraph, Guardian of the Oracle**: Trigger changed from "+1/+1 counter on target creature" to "draw a card"
+- **[U052] Agent Brown, Enforcer**: "overrode" retained in Champion context (now checks "if it championed a creature" in committed version, "overrode" in transition)
+
+### Cards Removed
+- **[C151] APU Corps** — Vehicle (4/5) reach
+- **[C153] Standard Issue Hovercraft** — Vehicle (4/4)
+- **[U139] The Mjolnir, Hammer of Zion** — Legendary Vehicle (6/5)
+
+### Creature Type Reordering
+- All transform card back faces reordered from "Human [Class] Program" to "Human Program [Class]" (16 cards affected)
+- **[R002] Automated Turret**: "Robot Wall" → "Construct Wall"
+
+### Design Notes Added
+- Added Jack-in/Eject design note explaining how transform mechanics enable Digital interaction for non-Digital colors
+
+---
+
 ## Summary
 
 ### Major Themes Throughout Development
@@ -362,3 +456,6 @@ Added section headers and reorganized cards within each color by rarity.
 6. **Artifact Type Addition**: Many Robots properly typed as Artifact Creature
 7. **Transform Card Polish**: Many DFCs got improved back faces
 8. **Mythic Cycle Expansion**: Added several new mythics across colors
+9. **Override → Champion**: Mechanic renamed to use official MTG keyword
+10. **Vehicle Reduction**: Three Vehicles removed, Vehicle-synergy cards reworked to Equipment/Gun focus
+11. **Creature Type Standardization**: "Human Program [Class]" ordering on transform backs, Construct types fixed

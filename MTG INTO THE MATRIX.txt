@@ -1059,10 +1059,10 @@ Vehicles you control that are creatures get +1/+0 for every 2 {E} you have, roun
 Creature — Human Soldier (4/4)
 This creature gets +1/+1 and has trample as long as you have three or more {E}.
 
-[C121] Bio-Metric Technician {1}{G}
+[C121] Bio-Metric Technician {G}
 Creature — Human Cleric (1/1)
-When this creature enters, you get {E}.
-Whenever this creature attacks, you may pay {E}. If you do, put a +1/+1 counter on target creature.
+When this creature enters, surveil 2.
+{4}: Target creature gets +2/+2 until end of turn.
 
 [C122] Exterminator Jammer {1}{G}
 Creature — Human Warrior (2/1)
@@ -1075,7 +1075,7 @@ Target creature gets +2/+2 until end of turn. If it doesn't have digital, you ge
 
 [C126] Rust-Plague Shaman {2}{G}
 Creature — Human Shaman (2/1)
-When this creature enters, you may destroy target artifact or enchantment.
+When this creature enters, you destroy up to one target artifact or enchantment.
 
 [C127] Coordinated Takedown {1}{G}
 Sorcery
@@ -1088,8 +1088,8 @@ Flash
 Digital (This creature can block or be blocked only by creatures with digital.)
 When this creature enters, put a +1/+1 counter on target creature you control.
 
-[C131] Zion Traceur {1}{G}
-Creature — Human Scout (2/2)
+[C131] Zion Protégé {1}{G}
+Creature — Human Citizen (2/2)
 Reach
 Whenever you cast a spell that targets this creature, put a +1/+1 counter on it.
 
@@ -1098,18 +1098,19 @@ Sorcery
 Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.
 You get {E}{E}.
 
-[C133] Bio-Surge {1}{G}
-Instant
-Target creature gets +3/+3 and gains reach until end of turn.
+[C133] Geothermal Scout {1}{G}
+Creature - Human Scout (2/2)
+When this creature enters or attacks, you get {E}.
+When this creature blocks or is blocked, you may pay {E}{E}. If you do, it gets +2/+2 until end of turn.
 
 [C134] Rampaging Beastbot {4}{G}{G}
 Artifact Creature — Construct Beast (6/6)
 Trample, ward {2}
 Basic landcycling {2}
 
-[C135] Natural Code {1}{G}
+[C135] Natural Code {2}{G}
 Instant
-Destroy target artifact or enchantment. You get {E}{E}.
+Destroy target artifact, enchantment, or creature with digital. You get {E}{E}.
 
 [C137] Sifter of Ruins {1}{G}
 Creature — Human Archivist (1/2)
@@ -1127,10 +1128,10 @@ If this mana is spent to cast a creature spell that doesn't have digital, that c
 
 --- UNCOMMONS ---
 
-[U080] Heavy-Duty Construct {3}{G}
-Artifact Creature — Construct (6/5)
-This creature can't be blocked by more than one creature.
-As an additional cost to cast this spell, pay {E}{E} or sacrifice a creature.
+[U080] Aether Weaver {2}{G}
+Creature — Human Shaman (1/3)
+When this creature enters, gain {E} equal to the greatest power among creatures you control.
+Pay {E}{E}: Put a +1/+1 counter on target creature you control. Activate only as a sorcery.
 
 [U081] Nutrient Silo {1}{G}
 Creature — Plant Wall (0/4)
@@ -1176,9 +1177,9 @@ Digital (This creature can block or be blocked only by creatures with digital.)
 Trample
 {0}: Eject. ({0}: Transform this card. Activate only as a sorcery.)
 
-[U088] Augmented Brawler {5}{G}
-Creature — Human Warrior (5/4)
-Trample
+[U088] Augmented Brawler {4}{G}
+Creature — Human Warrior (4/4)
+This creature can't be blocked by more than one creature.
 Pay {E}: this creature gets +1/+1 until end of turn.
 
 [U089] Matrix Watcher {2}{G}
@@ -1201,7 +1202,7 @@ Trample
 Creature — Plant (1/3)
 Flash
 Whenever you cast a spell during an opponent's turn, you get {E}.
-Pay {E}{E}: this creature gets +2/+2 until end of turn. Activate only once each turn.
+Pay {E}{E}: This creature gets +2/+2 until end of turn. Activate only once each turn.
 "Growing within the firewall's blind spot."
 
 [U093] Restore the Code {1}{G}
@@ -1272,7 +1273,7 @@ Create X 4/4 green Construct artifact creature tokens with trample. Then, if you
 Artifact Creature — Construct Beast (6/6)
 Trample, Ward {2}
 When Bio-Spark Behemoth enters or attacks, you get {E}{E}{E}.
-At the beginning of your postcombat main phase, add {G} for every 2 {E} you have.
+Pay {E}: Add {G}.
 "It eats lightning and breathes fuel."
 
 ========== MULTICOLOR (44 Cards) ==========
@@ -1335,7 +1336,7 @@ Whenever a human enters the battlefield under your control, you get {E}.
 [U112] Tank, the Operator {1}{G}{U}
 Legendary Creature — Human Pilot (2/3)
 Whenever a land enters under your control, you get {E}.
-{T}, Pay {E}{E}: Target creature gains your choice of trample or reach until end of turn.
+Pay {E}: Target creature gains your choice of trample or reach until end of turn.
 {T}, Pay {E}{E}: The next creature spell you cast this turn can be cast as if it had flash.
 
 [U113] Agent Grey, Suppressor {1}{U}{B}
@@ -1484,7 +1485,7 @@ Creatures you control have "{1}, {Q}, Pay {E}: This creature gains hexproof and 
 Legendary Creature — Program Rogue (2/3)
 Digital
 Whenever another creature dies, you may pay {1}. If you do, create a Treasure token.
-{T}, Sacrifice a Treasure: You draw a card and you lose 1 life.
+{T}, Sacrifice a Treasure: Draw a card.
 
 [R115] Apoc, System Breaker {1}{U}{R}
 Legendary Creature — Human Rogue (2/4)
@@ -1757,7 +1758,7 @@ When Aether Hub enters, you get {E}.
 [U162] The Pod Fields
 Land
 {T}: Add {C}.
-{1}{B}{G}, {T}, Sacrifice a creature: You get {E}{E}.
+{1}, {T}, Sacrifice a creature: You get {E}{E}.
 
 --- RARES ---
 
@@ -1771,5 +1772,5 @@ Legendary Land
 Legendary Land
 {T}: Add {C}.
 {T}: Add one mana of any color. Spend this mana only to cast creature spell with digital.
-{4}, {T}: Creatures you control with digital get +1/+1 until end of turn.
+{3}, {T}: Creatures you control with digital get +1/+1 until end of turn.
 

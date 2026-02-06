@@ -134,12 +134,12 @@
       },
       "G": {
         "0": 0,
-        "1": 5,
-        "2": 18,
-        "3": 7,
+        "1": 6,
+        "2": 16,
+        "3": 8,
         "4": 4,
-        "5": 1,
-        "6+": 5
+        "5": 2,
+        "6+": 4
       },
       "Multicolor": {
         "0": 0,
@@ -185,14 +185,14 @@
         "2": 37,
         "3": 40,
         "4": 10,
-        "5": 3,
-        "6+": 4
+        "5": 4,
+        "6+": 3
       },
       "Common": {
         "0": 1,
-        "1": 13,
-        "2": 38,
-        "3": 12,
+        "1": 14,
+        "2": 36,
+        "3": 13,
         "4": 9,
         "5": 4,
         "6+": 2
@@ -215,8 +215,8 @@
         "1": 33,
         "2": 56,
         "3": 34,
-        "4": 14,
-        "5+": 12
+        "4": 15,
+        "5+": 11
       },
       "toughnessDistribution": {
         "0": 1,
@@ -229,7 +229,7 @@
     },
     "keywords": {
       "Vigilance": 14,
-      "Digital": 73,
+      "Digital": 74,
       "Jack-in": 23,
       "Flying": 10,
       "Ward": 11,
@@ -245,7 +245,7 @@
       "Menace": 20,
       "Deathtouch": 4,
       "Haste": 15,
-      "Trample": 18
+      "Trample": 17
     },
     "dfcCount": 20,
     "instantSorceryRatio": {
@@ -253,13 +253,13 @@
       "sorceries": 30,
       "ratio": 1.07
     },
-    "averageCMC": 2.92,
+    "averageCMC": 2.91,
     "cardsWithAbilities": {
       "cardDraw": 31,
       "removal": 65,
       "counterspells": 5,
       "tokenCreators": 31,
-      "energyCards": 115
+      "energyCards": 114
     },
     "rarityByColor": {
       "W": {

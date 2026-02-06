@@ -3208,12 +3208,12 @@
   {
     "id": "C121",
     "name": "Bio-Metric Technician",
-    "cost": "{1}{G}",
+    "cost": "{G}",
     "type": "Creature — Human Cleric (1/1)",
     "displayType": "Creature — Human Cleric",
     "text": [
-      "When this creature enters, you get {E}.",
-      "Whenever this creature attacks, you may pay {E}. If you do, put a +1/+1 counter on target creature."
+      "When this creature enters, surveil 2.",
+      "{4}: Target creature gets +2/+2 until end of turn."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3265,7 +3265,7 @@
     "type": "Creature — Human Shaman (2/1)",
     "displayType": "Creature — Human Shaman",
     "text": [
-      "When this creature enters, you may destroy target artifact or enchantment."
+      "When this creature enters, you destroy up to one target artifact or enchantment."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3314,10 +3314,10 @@
   },
   {
     "id": "C131",
-    "name": "Zion Traceur",
+    "name": "Impressionable Youth",
     "cost": "{1}{G}",
-    "type": "Creature — Human Scout (2/2)",
-    "displayType": "Creature — Human Scout",
+    "type": "Creature — Human Citizen (2/2)",
+    "displayType": "Creature — Human Citizen",
     "text": [
       "Reach",
       "Whenever you cast a spell that targets this creature, put a +1/+1 counter on it."
@@ -3328,7 +3328,7 @@
     "hasBackFace": false,
     "pt": "2/2",
     "colorIndicator": null,
-    "fileName": "C131_zion_traceur.png"
+    "fileName": "C131_impressionable_youth.png"
   },
   {
     "id": "C132",
@@ -3386,11 +3386,11 @@
   {
     "id": "C135",
     "name": "Natural Code",
-    "cost": "{1}{G}",
+    "cost": "{2}{G}",
     "type": "Instant",
     "displayType": "Instant",
     "text": [
-      "Destroy target artifact or enchantment. You get {E}{E}."
+      "Destroy target artifact, enchantment, or creature with digital. You get {E}{E}."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3622,18 +3622,18 @@
   {
     "id": "U088",
     "name": "Augmented Brawler",
-    "cost": "{5}{G}",
-    "type": "Creature — Human Warrior (5/4)",
+    "cost": "{4}{G}",
+    "type": "Creature — Human Warrior (4/4)",
     "displayType": "Creature — Human Warrior",
     "text": [
-      "Trample",
+      "This creature can't be blocked by more than one creature.",
       "Pay {E}: this creature gets +1/+1 until end of turn."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "5/4",
+    "pt": "4/4",
     "colorIndicator": null,
     "fileName": "U088_augmented_brawler.png"
   },
@@ -3920,7 +3920,7 @@
     "text": [
       "Trample, Ward {2}",
       "When Bio-Spark Behemoth enters or attacks, you get {E}{E}{E}.",
-      "At the beginning of your postcombat main phase, add {G} for every 2 {E} you have."
+      "Pay {E}: Add {G}."
     ],
     "flavor": " \"It eats lightning and breathes fuel.\"",
     "rarity": "Mythic",
@@ -4121,7 +4121,7 @@
     "displayType": "Legendary Creature — Human Pilot",
     "text": [
       "Whenever a land enters under your control, you get {E}.",
-      "{T}, Pay {E}{E}: Target creature gains your choice of trample or reach until end of turn.",
+      "Pay {E}: Target creature gains your choice of trample or reach until end of turn.",
       "{T}, Pay {E}{E}: The next creature spell you cast this turn can be cast as if it had flash."
     ],
     "flavor": "",
@@ -4606,7 +4606,7 @@
     "text": [
       "Digital",
       "Whenever another creature dies, you may pay {1}. If you do, create a Treasure token.",
-      "{T}, Sacrifice a Treasure: You draw a card and you lose 1 life."
+      "{T}, Sacrifice a Treasure: Draw a card."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -5404,7 +5404,7 @@
     "displayType": "Land",
     "text": [
       "{T}: Add {C}.",
-      "{1}{B}{G}, {T}, Sacrifice a creature: You get {E}{E}."
+      "{1}, {T}, Sacrifice a creature: You get {E}{E}."
     ],
     "flavor": "",
     "rarity": "Land",
@@ -5442,7 +5442,7 @@
     "text": [
       "{T}: Add {C}.",
       "{T}: Add one mana of any color. Spend this mana only to cast creature spell with digital.",
-      "{4}, {T}: Creatures you control with digital get +1/+1 until end of turn."
+      "{3}, {T}: Creatures you control with digital get +1/+1 until end of turn."
     ],
     "flavor": "",
     "rarity": "Land",
