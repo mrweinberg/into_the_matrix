@@ -1,6 +1,10 @@
 function getRandom(arr, count) {
-  const shuffled = [...arr].sort(() => 0.5 - Math.random())
-  return shuffled.slice(0, count)
+  const copy = [...arr]
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]]
+  }
+  return copy.slice(0, count)
 }
 
 export function generateBoosterPackData(allCards) {
