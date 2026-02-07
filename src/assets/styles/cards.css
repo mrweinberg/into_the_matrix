@@ -189,6 +189,10 @@ i.ms-tap {
 .rarity-Land { color: #fff; background: var(--rarity-land); }
 
 @media (max-width: 900px) {
+  .card-name {
+    white-space: normal;
+  }
+
   .dfc-wrapper {
     flex-direction: column;
     grid-column: span 1;

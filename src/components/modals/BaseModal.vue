@@ -53,12 +53,15 @@ const handleKeydown = (e) => {
 watch(() => props.show, (isVisible) => {
   if (isVisible) {
     document.addEventListener('keydown', handleKeydown)
+    document.body.style.overflow = 'hidden'
   } else {
     document.removeEventListener('keydown', handleKeydown)
+    document.body.style.overflow = ''
   }
 }, { immediate: true })
 
 onUnmounted(() => {
   document.removeEventListener('keydown', handleKeydown)
+  document.body.style.overflow = ''
 })
 </script>

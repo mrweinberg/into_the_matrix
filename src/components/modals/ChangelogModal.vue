@@ -33,7 +33,11 @@ onMounted(async () => {
   }
 })
 
-const parsedChangelog = computed(() => marked.parse(changelogContent.value || ''))
+const parsedChangelog = computed(() => {
+  const raw = changelogContent.value || ''
+  const stripped = raw.replace(/^#\s+.*\n+/, '')
+  return marked.parse(stripped)
+})
 </script>
 
 <style scoped>
