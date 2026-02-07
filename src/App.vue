@@ -412,4 +412,18 @@ function openPrintProxiesFromDeck(cards) {
   background: var(--matrix-green);
   color: #000;
 }
+
+@media (max-width: 600px) {
+  .filter-status {
+    padding: 10px 12px;
+  }
+
+  .sort-controls {
+    gap: 8px;
+  }
+
+  .btn-sort-dir {
+    padding: 4px 8px;
+  }
+}
 </style>
