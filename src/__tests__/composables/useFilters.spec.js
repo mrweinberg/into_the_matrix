@@ -13,6 +13,8 @@ describe('useFilters', () => {
         { id: 'R01', name: 'Gold Champion', cost: '{1}{W}{U}', type: 'Creature — Human Champion', rarity: 'Rare', isBackFace: false, text: ['Vigilance'] },
         { id: 'R02', name: 'Colorless Golem', cost: '{4}', type: 'Artifact Creature — Golem', rarity: 'Rare', isBackFace: false, text: [] },
         { id: 'L01', name: 'Forest', cost: '', type: 'Basic Land — Forest', rarity: 'Land', isBackFace: false, text: ['{T}: Add {G}.'] },
+        { id: 'D01', name: 'Hovercraft Crewman', cost: '{1}{W}', type: 'Creature — Human Soldier', rarity: 'Common', isBackFace: false, hasBackFace: true, text: ['Vigilance'] },
+        { id: 'D01', name: 'Digital Avatar', cost: '', type: 'Creature — Human Program Soldier', rarity: 'Common', isBackFace: true, text: ['Digital', 'Vigilance'] },
         { id: 'B01', name: 'Back Face', cost: '', type: 'Creature', rarity: 'Common', isBackFace: true, text: [] },
     ])
 
@@ -41,7 +43,7 @@ describe('useFilters', () => {
             searchText.value = ''
 
             // Should exclude back faces
-            expect(filteredCards.value.length).toBe(8)
+            expect(filteredCards.value.length).toBe(9)
         })
     })
 
@@ -60,7 +62,7 @@ describe('useFilters', () => {
 
             rarity.value = 'All'
 
-            expect(filteredCards.value.length).toBe(8)
+            expect(filteredCards.value.length).toBe(9)
         })
     })
 
@@ -70,7 +72,7 @@ describe('useFilters', () => {
 
             typeText.value = 'Human'
 
-            expect(filteredCards.value.length).toBe(4) // Knight, Wizard, Rogue, Champion
+            expect(filteredCards.value.length).toBe(5) // Knight, Wizard, Rogue, Champion, Hovercraft Crewman
         })
 
         it('matches partial type strings', () => {
@@ -171,7 +173,7 @@ describe('useFilters', () => {
             expect(searchText.value).toBe('')
             expect(rarity.value).toBe('All')
             expect(activeColors.value).toEqual([])
-            expect(filteredCards.value.length).toBe(8)
+            expect(filteredCards.value.length).toBe(9)
         })
     })
 
@@ -182,6 +184,35 @@ describe('useFilters', () => {
             const backFaces = filteredCards.value.filter(c => c.isBackFace)
 
             expect(backFaces.length).toBe(0)
+        })
+    })
+
+    describe('DFC back face search', () => {
+        it('finds a DFC front face by searching the back face name', () => {
+            const { searchText, filteredCards } = useFilters(mockCards, mockCards)
+
+            searchText.value = 'Digital Avatar'
+
+            expect(filteredCards.value.length).toBe(1)
+            expect(filteredCards.value[0].name).toBe('Hovercraft Crewman')
+        })
+
+        it('finds a DFC front face by searching the back face text', () => {
+            const { searchText, filteredCards } = useFilters(mockCards, mockCards)
+
+            searchText.value = 'Digital'
+
+            expect(filteredCards.value.length).toBe(1)
+            expect(filteredCards.value[0].name).toBe('Hovercraft Crewman')
+        })
+
+        it('still finds front face by its own name', () => {
+            const { searchText, filteredCards } = useFilters(mockCards, mockCards)
+
+            searchText.value = 'Hovercraft'
+
+            expect(filteredCards.value.length).toBe(1)
+            expect(filteredCards.value[0].name).toBe('Hovercraft Crewman')
         })
     })
 })

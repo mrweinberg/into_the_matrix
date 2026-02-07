@@ -196,7 +196,7 @@ const {
   toggleColor,
   toggleMV,
   resetFilters
-} = useFilters(sortedCards)
+} = useFilters(sortedCards, allCards)
 
 // Booster pack
 const booster = useBooster(allCards)

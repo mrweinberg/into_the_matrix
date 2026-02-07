@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 import { determineColorClass, getCardColors, calculateCMC } from '@/utils/cardUtils'
 
-export function useFilters(cards) {
+export function useFilters(cards, allCards) {
   const searchText = ref('')
   const rarity = ref('All')
   const typeText = ref('')
@@ -13,9 +13,17 @@ export function useFilters(cards) {
       if (card.isBackFace) return false
 
       const searchLower = searchText.value.toLowerCase()
-      const matchSearch = searchLower === '' ||
+      let matchSearch = searchLower === '' ||
         card.name.toLowerCase().includes(searchLower) ||
         card.text.join(' ').toLowerCase().includes(searchLower)
+
+      if (!matchSearch && card.hasBackFace && allCards) {
+        const back = allCards.value.find(c => c.id === card.id && c.isBackFace)
+        if (back) {
+          matchSearch = back.name.toLowerCase().includes(searchLower) ||
+            back.text.join(' ').toLowerCase().includes(searchLower)
+        }
+      }
 
       const matchRarity = rarity.value === 'All' || card.rarity === rarity.value
 
