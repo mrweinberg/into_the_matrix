@@ -475,3 +475,5 @@ Added section headers and reorganized cards within each color by rarity.
     - **New**: 2/1 Flash Digital. ETB: Remove digital from target. On Hit: Draw a card.
 - **[C125] Shared Battery** → **Natural Resistance** {G}: Replaced redundant pump spell with Hexproof/Indestructible.
     - **New**: {G} Instant. Target creature gains hexproof/indestructible. You get {E}{E}.
+- **[C071] Corrupted Hitman** → **System Parasite** {1}{B}: Replaced generic Rogue with Energy utility.
+    - **New**: 1/2 Digital. ETB/Death: Get {E}. {T}, Pay {E}{E}: Drain 2 life.

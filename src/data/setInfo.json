@@ -229,21 +229,21 @@
     },
     "keywords": {
       "Vigilance": 15,
-      "Digital": 74,
+      "Digital": 75,
       "Jack-in": 23,
       "Flying": 10,
       "Ward": 11,
       "Defender": 5,
       "Lifelink": 10,
       "Eject": 8,
-      "First Strike": 6,
+      "First Strike": 5,
       "Indestructible": 11,
       "Reach": 9,
       "Double Strike": 3,
       "Hexproof": 8,
       "Flash": 23,
       "Menace": 21,
-      "Deathtouch": 5,
+      "Deathtouch": 4,
       "Haste": 17,
       "Trample": 18
     },
@@ -259,7 +259,7 @@
       "removal": 66,
       "counterspells": 5,
       "tokenCreators": 31,
-      "energyCards": 115
+      "energyCards": 116
     },
     "rarityByColor": {
       "W": {

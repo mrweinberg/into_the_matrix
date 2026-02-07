@@ -1816,13 +1816,14 @@
   },
   {
     "id": "C071",
-    "name": "Corrupted Hitman",
+    "name": "System Parasite",
     "cost": "{1}{B}",
-    "type": "Creature — Program Assassin (1/2)",
-    "displayType": "Creature — Program Assassin",
+    "type": "Creature — Program Insect (1/2)",
+    "displayType": "Creature — Program Insect",
     "text": [
-      "Deathtouch",
-      "As long as this creature has first strike, it gets +2/+0."
+      "Digital (This creature can block or be blocked only by creatures with digital.)",
+      "When this creature enters or dies, you get {E}.",
+      "{T}, Pay {E}{E}: Target opponent loses 2 life and you gain 2 life."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1830,7 +1831,7 @@
     "hasBackFace": false,
     "pt": "1/2",
     "colorIndicator": null,
-    "fileName": "C071_corrupted_hitman.png"
+    "fileName": "C071_system_parasite.png"
   },
   {
     "id": "C072",
