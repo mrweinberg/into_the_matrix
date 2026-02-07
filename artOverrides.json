@@ -431,5 +431,12 @@
         "composition": "Vast view of endless pod towers stretching to a dark horizon. Lightning crackling in the scorched sky. A harvester machine moving between the towers. Scale emphasizes the horror.",
         "lighting": "Sickly red organic glow from the pods. Dark oppressive sky with occasional lightning. The glow of harvested bio-electricity.",
         "artStyle": "Nightmarish industrial horror. The true face of the Matrix's power source."
+    },
+    {
+        "id": "U061",
+        "subject": "A Zion munitions specialist handing out rugged rifles and gear to a line of citizens and recruits.",
+        "setting": "A Zion armory or hallway. Racks of guns and crates of ammunition line the rough stone walls.",
+        "composition": "THE ARMORY LINE. In the foreground, the specialist is handing a rifle to a person. A line of other people waiting their turn stretches into the background.",
+        "sunglasses": false
     }
 ]

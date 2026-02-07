@@ -2735,21 +2735,20 @@
   },
   {
     "id": "U061",
-    "name": "Pipeline Saboteur",
-    "cost": "{1}{R}",
-    "type": "Creature — Human Rogue (2/1)",
-    "displayType": "Creature — Human Rogue",
+    "name": "Munitions Specialist",
+    "cost": "{2}{R}",
+    "type": "Creature — Human Artificer (2/3)",
+    "displayType": "Creature — Human Artificer",
     "text": [
-      "Haste",
-      "When this creature attacks, you may pay {E}. If you do, target creature can't block this turn."
+      "Whenever a creature enters the battlefield under your control, you may pay {1}. If you do, create a Gun token attached to it."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "2/1",
+    "pt": "2/3",
     "colorIndicator": null,
-    "fileName": "U061_pipeline_saboteur.png"
+    "fileName": "U061_munitions_specialist.png"
   },
   {
     "id": "U062",
@@ -4361,13 +4360,13 @@
   {
     "id": "R101",
     "name": "Morpheus, Uniter",
-    "cost": "{2}{W}{G}",
+    "cost": "{2}{W}{U}",
     "type": "Legendary Creature — Human Warrior (3/3)",
     "displayType": "Legendary Creature — Human Warrior",
     "text": [
       "Ward {2}, lifelink",
       "Creatures that don't have digital get +1/+1 for each creature you control with digital.",
-      "{1}{G}{W}: Jack-in."
+      "{1}{U}: Jack-in."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -4387,7 +4386,7 @@
       "Trample",
       "Digital (Morpheus can block or be blocked only by creatures with digital.)",
       "Creatures with digital get +1/+1 for each creature you control that doesn't have digital.",
-      "{1}{G}{W}: Eject."
+      "{1}{W}: Eject."
     ],
     "flavor": "",
     "rarity": "Rare",

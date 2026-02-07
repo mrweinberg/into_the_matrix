@@ -915,10 +915,9 @@ Enchant creature
 Enchanted creature loses digital and has training.
 When Take the Red Pill enters, put a +1/+1 counter on target creature.
 
-[U061] Pipeline Saboteur {1}{R}
-Creature — Human Rogue (2/1)
-Haste
-When this creature attacks, you may pay {E}. If you do, target creature can't block this turn.
+[U061] Munitions Specialist {2}{R}
+Creature — Human Artificer (2/3)
+Whenever a creature enters the battlefield under your control, you may pay {1}. If you do, create a Gun token attached to it.
 
 [U062] Surge Channeler {2}{R}
 Creature — Human Artificer (2/3)
@@ -1410,18 +1409,18 @@ I — Search your library for a basic land card, put it onto the battlefield tap
 II — You get {E} for each land you control.
 III — Create an X/X colorless Construct creature token with trample, where X is the amount of {E} you have.
 
-[R101] Morpheus, Uniter {2}{W}{G}
+[R101] Morpheus, Uniter {2}{W}{U}
 Legendary Creature — Human Warrior (3/3)
 Ward {2}, lifelink
 Creatures that don't have digital get +1/+1 for each creature you control with digital.
-{1}{G}{W}: Jack-in.
+{1}{U}: Jack-in.
 //
 Morpheus, Commander (Color Indicator: W/G)
 Legendary Creature — Human Program Warrior (3/3)
 Trample
 Digital (Morpheus can block or be blocked only by creatures with digital.)
 Creatures with digital get +1/+1 for each creature you control that doesn't have digital.
-{1}{G}{W}: Eject.
+{1}{W}: Eject.
 
 [R102] Prime Biomass {X}{B}{G}
 Creature — Avatar Horror (0/0)
