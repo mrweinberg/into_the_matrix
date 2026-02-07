@@ -88,9 +88,9 @@
       "Land": 16
     },
     "typeBreakdown": {
-      "Creature": 154,
+      "Creature": 155,
       "Sorcery": 30,
-      "Enchantment": 29,
+      "Enchantment": 28,
       "Instant": 31,
       "Artifact": 16,
       "Land": 16
@@ -199,10 +199,10 @@
       }
     },
     "creatureStats": {
-      "total": 154,
+      "total": 155,
       "byRarity": {
         "Common": 46,
-        "Uncommon": 64,
+        "Uncommon": 65,
         "Rare": 34,
         "Mythic": 10
       },
@@ -213,14 +213,14 @@
       "powerDistribution": {
         "0": 4,
         "1": 34,
-        "2": 57,
+        "2": 58,
         "3": 34,
         "4": 15,
         "5+": 10
       },
       "toughnessDistribution": {
         "0": 1,
-        "1": 30,
+        "1": 31,
         "2": 43,
         "3": 44,
         "4": 23,
@@ -229,7 +229,7 @@
     },
     "keywords": {
       "Vigilance": 14,
-      "Digital": 74,
+      "Digital": 75,
       "Jack-in": 23,
       "Flying": 9,
       "Ward": 11,
@@ -241,7 +241,7 @@
       "Reach": 8,
       "Double Strike": 2,
       "Hexproof": 6,
-      "Flash": 22,
+      "Flash": 23,
       "Menace": 21,
       "Deathtouch": 4,
       "Haste": 16,
@@ -255,8 +255,8 @@
     },
     "averageCMC": 2.91,
     "cardsWithAbilities": {
-      "cardDraw": 31,
-      "removal": 65,
+      "cardDraw": 32,
+      "removal": 66,
       "counterspells": 5,
       "tokenCreators": 31,
       "energyCards": 115

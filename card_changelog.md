@@ -471,3 +471,5 @@ Added section headers and reorganized cards within each color by rarity.
 - **[C133] Geothermal Scout** {1}{G}: Replaced **Bio-Surge**. New Energy Scout.
 - **[C131] Zion Protégé** {1}{G}: Renamed from **Impressionable Youth**. Heroic growth + Reach.
 - **[U080] Aether Weaver** {2}{G}: Replaced **Heavy-Duty Construct**. Shaman with power-matters energy gain.
+- **[U025] Propaganda** → **Data Harvester** {2}{U}: Replaced defensive enchantment with proactive Saboteur creature.
+    - **New**: 2/1 Flash Digital. ETB: Remove digital from target. On Hit: Draw a card.

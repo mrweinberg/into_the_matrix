@@ -1259,20 +1259,22 @@
   },
   {
     "id": "U025",
-    "name": "Propaganda",
+    "name": "Data Harvester",
     "cost": "{2}{U}",
-    "type": "Enchantment",
-    "displayType": "Enchantment",
+    "type": "Creature — Program Rogue (2/1)",
+    "displayType": "Creature — Program Rogue",
     "text": [
-      "Creatures can't attack you unless their controller pays {2} for each creature attacking you."
+      "Digital, flash",
+      "When Data Harvester enters, target creature an opponent controls loses digital until end of turn.",
+      "Whenever Data Harvester deals combat damage to a player, draw a card."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "",
+    "pt": "2/1",
     "colorIndicator": null,
-    "fileName": "U025_propaganda.png"
+    "fileName": "U025_data_harvester.png"
   },
   {
     "id": "U026",
