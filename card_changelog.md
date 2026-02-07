@@ -459,3 +459,15 @@ Added section headers and reorganized cards within each color by rarity.
 9. **Override → Champion**: Mechanic renamed to use official MTG keyword
 10. **Vehicle Reduction**: Three Vehicles removed, Vehicle-synergy cards reworked to Equipment/Gun focus
 11. **Creature Type Standardization**: "Human Program [Class]" ordering on transform backs, Construct types fixed
+
+---
+
+## 2026-02-06 — Late Polish & Hunter-Killer Rework
+
+### Card Redesigns
+- **[R061] Hunter-Killer Sentinel**: Redesigned.
+    - **Old**: 3/3 Flash Flying. Redirect spell on ETB. Sac upon Combat Damage -> 4 dmg board wipe. (Too convoluted/Strong)
+    - **New**: 3/3 Flying Haste. Sacs at EOT. Death trigger: Deals 3 damage divided as you choose. (More "Unearth" style aggression)
+- **[C133] Geothermal Scout** {1}{G}: Replaced **Bio-Surge**. New Energy Scout.
+- **[C131] Zion Protégé** {1}{G}: Renamed from **Impressionable Youth**. Heroic growth + Reach.
+- **[U080] Aether Weaver** {2}{G}: Replaced **Heavy-Duty Construct**. Shaman with power-matters energy gain.

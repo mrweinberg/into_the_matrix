@@ -998,10 +998,10 @@ Gain control of target creature until end of turn. Untap that creature. It gains
 You may cast this spell as though it had flash if you have four or more {E}.
 
 [R061] Hunter-Killer Sentinel {3}{R}
-Artifact Creature — Robot (3/3)
-Flash, flying
-When this creature enters, you may change the target of target spell or ability that only targets one creature to this creature.
-Whenever this creature deals combat damage to a player, you may sacrifice it. If you do, it deals 4 damage to each creature that player controls.
+Artifact Creature — Robot (3/2)
+Menace, haste
+At the beginning of the end step, sacrifice Hunter-Killer Sentinel.
+When Hunter-Killer Sentinel dies, it deals 3 damage divided as you choose among one, two, or three targets.
 
 [R062] EMP Blast {1}{R}{R}
 Sorcery

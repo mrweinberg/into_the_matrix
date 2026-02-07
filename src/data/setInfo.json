@@ -221,8 +221,8 @@
       "toughnessDistribution": {
         "0": 1,
         "1": 30,
-        "2": 42,
-        "3": 45,
+        "2": 43,
+        "3": 44,
         "4": 23,
         "5+": 13
       }
@@ -231,7 +231,7 @@
       "Vigilance": 14,
       "Digital": 74,
       "Jack-in": 23,
-      "Flying": 10,
+      "Flying": 9,
       "Ward": 11,
       "Defender": 5,
       "Lifelink": 9,
@@ -241,10 +241,10 @@
       "Reach": 8,
       "Double Strike": 2,
       "Hexproof": 6,
-      "Flash": 23,
-      "Menace": 20,
+      "Flash": 22,
+      "Menace": 21,
       "Deathtouch": 4,
-      "Haste": 15,
+      "Haste": 16,
       "Trample": 17
     },
     "dfcCount": 20,

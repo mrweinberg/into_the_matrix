@@ -3024,18 +3024,18 @@
     "id": "R061",
     "name": "Hunter-Killer Sentinel",
     "cost": "{3}{R}",
-    "type": "Artifact Creature — Robot (3/3)",
+    "type": "Artifact Creature — Robot (3/2)",
     "displayType": "Artifact Creature — Robot",
     "text": [
-      "Flash, flying",
-      "When this creature enters, you may change the target of target spell or ability that only targets one creature to this creature.",
-      "Whenever this creature deals combat damage to a player, you may sacrifice it. If you do, it deals 4 damage to each creature that player controls."
+      "Menace, haste",
+      "At the beginning of the end step, sacrifice Hunter-Killer Sentinel.",
+      "When Hunter-Killer Sentinel dies, it deals 3 damage divided as you choose among one, two, or three targets."
     ],
     "flavor": "",
     "rarity": "Rare",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "3/3",
+    "pt": "3/2",
     "colorIndicator": null,
     "fileName": "R061_hunter_killer_sentinel.png"
   },
