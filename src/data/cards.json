@@ -4339,25 +4339,6 @@
     "fileName": "U123_resistance_recuiter.png"
   },
   {
-    "id": "R100",
-    "name": "Welcome to the Real World",
-    "cost": "{2}{G}{R}",
-    "type": "Enchantment — Saga",
-    "displayType": "Enchantment — Saga",
-    "text": [
-      "I — Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
-      "II — You get {E} for each land you control.",
-      "III — Create an X/X colorless Construct creature token with trample, where X is the amount of {E} you have."
-    ],
-    "flavor": "",
-    "rarity": "Rare",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "R100_welcome_to_the_real_world.png"
-  },
-  {
     "id": "R101",
     "name": "Morpheus, Uniter",
     "cost": "{2}{W}{U}",
@@ -4393,8 +4374,27 @@
     "isBackFace": true,
     "hasBackFace": false,
     "pt": "3/3",
-    "colorIndicator": "wg",
+    "colorIndicator": "wu",
     "fileName": "R101b_morpheus__commander_back.png"
+  },
+  {
+    "id": "R100",
+    "name": "Welcome to the Real World",
+    "cost": "{2}{G}{R}",
+    "type": "Enchantment — Saga",
+    "displayType": "Enchantment — Saga",
+    "text": [
+      "I — Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+      "II — You get {E} for each land you control.",
+      "III — Create an X/X colorless Construct creature token with trample, where X is the amount of {E} you have."
+    ],
+    "flavor": "",
+    "rarity": "Rare",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "",
+    "colorIndicator": null,
+    "fileName": "R100_welcome_to_the_real_world.png"
   },
   {
     "id": "R102",
