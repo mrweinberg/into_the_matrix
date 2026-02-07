@@ -10,16 +10,18 @@
           v-model="searchTextModel"
         />
       </div>
-      <div class="filter-item">
+      <div class="filter-item rarity-item">
         <label class="filter-label">RARITY</label>
-        <select class="filter-select" v-model="rarityModel">
-          <option value="All">All</option>
-          <option value="Common">Common</option>
-          <option value="Uncommon">Uncommon</option>
-          <option value="Rare">Rare</option>
-          <option value="Mythic">Mythic</option>
-          <option value="Land">Land</option>
-        </select>
+        <div class="rarity-pills">
+          <button
+            v-for="r in rarityOptions"
+            :key="r"
+            :class="['rarity-pill', { active: activeRarities.includes(r) }]"
+            @click="$emit('toggle-rarity', r)"
+          >
+            {{ r }}
+          </button>
+        </div>
       </div>
       <div class="filter-item">
         <label class="filter-label">TYPE</label>
@@ -70,12 +72,14 @@
 import { computed } from 'vue'
 
 const searchTextModel = defineModel('searchText', { type: String })
-const rarityModel = defineModel('rarity', { type: String })
+const activeRarities = defineModel('activeRarities', { type: Array })
 const typeTextModel = defineModel('typeText', { type: String })
 const activeColors = defineModel('activeColors', { type: Array })
 const activeMVs = defineModel('activeMVs', { type: Array })
 
-defineEmits(['toggle-color', 'toggle-mv', 'reset-filters'])
+defineEmits(['toggle-color', 'toggle-rarity', 'toggle-mv', 'reset-filters'])
+
+const rarityOptions = ['Common', 'Uncommon', 'Rare', 'Mythic']
 
 const colorOptions = [
   { id: 'W', name: 'White', icon: 'ms ms-w ms-cost' },
@@ -90,7 +94,7 @@ const colorOptions = [
 
 const hasActiveFilters = computed(() =>
   searchTextModel.value !== '' ||
-  rarityModel.value !== 'All' ||
+  activeRarities.value.length > 0 ||
   typeTextModel.value !== '' ||
   activeColors.value.length > 0 ||
   activeMVs.value.length > 0
@@ -235,6 +239,42 @@ const hasActiveFilters = computed(() =>
   background: rgba(0, 255, 65, 0.1);
 }
 
+/* Rarity Pills */
+.rarity-item {
+  min-width: auto;
+}
+
+.rarity-pills {
+  display: flex;
+  gap: 6px;
+}
+
+.rarity-pill {
+  padding: 0 10px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #666;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+
+.rarity-pill:hover {
+  border-color: #888;
+  color: #aaa;
+}
+
+.rarity-pill.active {
+  border-color: var(--matrix-green);
+  color: var(--matrix-green);
+  background: rgba(0, 255, 65, 0.1);
+}
+
 /* Clear Button */
 .clear-btn {
   padding: 8px 16px;
@@ -291,7 +331,8 @@ const hasActiveFilters = computed(() =>
   }
 
   .color-pills,
-  .mv-pills {
+  .mv-pills,
+  .rarity-pills {
     justify-content: flex-start;
     flex-wrap: wrap;
   }

@@ -26,11 +26,12 @@
 
     <FilterBar
       v-model:search-text="searchTextModel"
-      v-model:rarity="rarityModel"
+      v-model:active-rarities="activeRaritiesModel"
       v-model:type-text="typeTextModel"
       v-model:active-colors="activeColorsModel"
       v-model:active-m-vs="activeMVsModel"
       @toggle-color="$emit('toggle-color', $event)"
+      @toggle-rarity="$emit('toggle-rarity', $event)"
       @toggle-mv="$emit('toggle-mv', $event)"
       @reset-filters="$emit('reset-filters')"
     />
@@ -63,7 +64,7 @@ defineProps({
 })
 
 const searchTextModel = defineModel('searchText', { type: String })
-const rarityModel = defineModel('rarity', { type: String })
+const activeRaritiesModel = defineModel('activeRarities', { type: Array })
 const typeTextModel = defineModel('typeText', { type: String })
 const activeColorsModel = defineModel('activeColors', { type: Array })
 const activeMVsModel = defineModel('activeMVs', { type: Array })
@@ -75,6 +76,7 @@ defineEmits([
   'open-notes',
   'open-stats',
   'toggle-color',
+  'toggle-rarity',
   'toggle-mv',
   'reset-filters',
   'resume-pool',

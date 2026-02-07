@@ -3,7 +3,7 @@ import { determineColorClass, getCardColors, calculateCMC } from '@/utils/cardUt
 
 export function useFilters(cards, allCards) {
   const searchText = ref('')
-  const rarity = ref('All')
+  const activeRarities = ref([])
   const typeText = ref('')
   const activeColors = ref([])
   const activeMVs = ref([])
@@ -25,7 +25,7 @@ export function useFilters(cards, allCards) {
         }
       }
 
-      const matchRarity = rarity.value === 'All' || card.rarity === rarity.value
+      const matchRarity = activeRarities.value.length === 0 || activeRarities.value.includes(card.rarity)
 
       const typeLower = typeText.value.toLowerCase()
       const matchType = typeLower === '' ||
@@ -156,6 +156,15 @@ export function useFilters(cards, allCards) {
     }
   }
 
+  function toggleRarity(r) {
+    const index = activeRarities.value.indexOf(r)
+    if (index > -1) {
+      activeRarities.value.splice(index, 1)
+    } else {
+      activeRarities.value.push(r)
+    }
+  }
+
   function toggleMV(mv) {
     const index = activeMVs.value.indexOf(mv)
     if (index > -1) {
@@ -167,7 +176,7 @@ export function useFilters(cards, allCards) {
 
   function resetFilters() {
     searchText.value = ''
-    rarity.value = 'All'
+    activeRarities.value = []
     typeText.value = ''
     activeColors.value = []
     activeMVs.value = []
@@ -175,12 +184,13 @@ export function useFilters(cards, allCards) {
 
   return {
     searchText,
-    rarity,
+    activeRarities,
     typeText,
     activeColors,
     activeMVs,
     filteredCards,
     toggleColor,
+    toggleRarity,
     toggleMV,
     resetFilters
   }

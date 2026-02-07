@@ -7,11 +7,12 @@
       :mechanics="setInfo.mechanics"
       :stats="setInfo.stats"
       v-model:search-text="searchText"
-      v-model:rarity="rarity"
+      v-model:active-rarities="activeRarities"
       v-model:type-text="typeText"
       v-model:active-colors="activeColors"
       v-model:active-m-vs="activeMVs"
       @toggle-color="toggleColor"
+      @toggle-rarity="toggleRarity"
       @toggle-mv="toggleMV"
       @reset-filters="resetFilters"
       @open-booster="openBooster"
@@ -188,12 +189,13 @@ const sortedCards = computed(() => sortCards(cardStore.frontFaceCards, sortBy.va
 // Filters
 const {
   searchText,
-  rarity,
+  activeRarities,
   typeText,
   activeColors,
   activeMVs,
   filteredCards,
   toggleColor,
+  toggleRarity,
   toggleMV,
   resetFilters
 } = useFilters(sortedCards, allCards)

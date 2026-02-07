@@ -49,20 +49,57 @@ describe('useFilters', () => {
 
     describe('rarity filter', () => {
         it('filters by specific rarity', () => {
-            const { rarity, filteredCards } = useFilters(mockCards)
+            const { activeRarities, filteredCards } = useFilters(mockCards)
 
-            rarity.value = 'Uncommon'
+            activeRarities.value = ['Uncommon']
 
             expect(filteredCards.value.length).toBe(2)
             expect(filteredCards.value.every(c => c.rarity === 'Uncommon')).toBe(true)
         })
 
-        it('shows all when rarity is "All"', () => {
-            const { rarity, filteredCards } = useFilters(mockCards)
+        it('filters by multiple rarities', () => {
+            const { activeRarities, filteredCards } = useFilters(mockCards)
 
-            rarity.value = 'All'
+            activeRarities.value = ['Common', 'Rare']
+
+            expect(filteredCards.value.every(c => c.rarity === 'Common' || c.rarity === 'Rare')).toBe(true)
+        })
+
+        it('shows all when no rarities selected', () => {
+            const { activeRarities, filteredCards } = useFilters(mockCards)
+
+            activeRarities.value = []
 
             expect(filteredCards.value.length).toBe(9)
+        })
+    })
+
+    describe('toggleRarity', () => {
+        it('toggles a rarity on', () => {
+            const { activeRarities, toggleRarity } = useFilters(mockCards)
+
+            toggleRarity('Rare')
+
+            expect(activeRarities.value).toContain('Rare')
+        })
+
+        it('toggles a rarity off when already active', () => {
+            const { activeRarities, toggleRarity } = useFilters(mockCards)
+
+            toggleRarity('Rare')
+            toggleRarity('Rare')
+
+            expect(activeRarities.value).not.toContain('Rare')
+        })
+
+        it('allows multiple rarities to be selected', () => {
+            const { activeRarities, toggleRarity } = useFilters(mockCards)
+
+            toggleRarity('Common')
+            toggleRarity('Uncommon')
+
+            expect(activeRarities.value).toContain('Common')
+            expect(activeRarities.value).toContain('Uncommon')
         })
     })
 
@@ -162,16 +199,16 @@ describe('useFilters', () => {
 
     describe('resetFilters', () => {
         it('resets all filters to default', () => {
-            const { searchText, rarity, activeColors, toggleColor, resetFilters, filteredCards } = useFilters(mockCards)
+            const { searchText, activeRarities, activeColors, toggleColor, toggleRarity, resetFilters, filteredCards } = useFilters(mockCards)
 
             searchText.value = 'Dragon'
-            rarity.value = 'Rare'
+            toggleRarity('Rare')
             toggleColor('R')
 
             resetFilters()
 
             expect(searchText.value).toBe('')
-            expect(rarity.value).toBe('All')
+            expect(activeRarities.value).toEqual([])
             expect(activeColors.value).toEqual([])
             expect(filteredCards.value.length).toBe(9)
         })
