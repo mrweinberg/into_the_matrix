@@ -1403,24 +1403,24 @@ When this creature enters, look at the top four cards of your library. You may r
 
 --- RARES ---
 
-[R100] Welcome to the Real World {2}{G}{R}
-Enchantment — Saga
-I — Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.
-II — You get {E} for each land you control.
-III — Create an X/X colorless Construct creature token with trample, where X is the amount of {E} you have.
-
 [R101] Morpheus, Uniter {2}{W}{U}
 Legendary Creature — Human Warrior (3/3)
 Ward {2}, lifelink
 Creatures that don't have digital get +1/+1 for each creature you control with digital.
 {1}{U}: Jack-in.
 //
-Morpheus, Commander (Color Indicator: W/G)
+Morpheus, Commander (Color Indicator: W/U)
 Legendary Creature — Human Program Warrior (3/3)
 Trample
 Digital (Morpheus can block or be blocked only by creatures with digital.)
 Creatures with digital get +1/+1 for each creature you control that doesn't have digital.
 {1}{W}: Eject.
+
+[R100] Welcome to the Real World {2}{G}{R}
+Enchantment — Saga
+I — Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.
+II — You get {E} for each land you control.
+III — Create an X/X colorless Construct creature token with trample, where X is the amount of {E} you have.
 
 [R102] Prime Biomass {X}{B}{G}
 Creature — Avatar Horror (0/0)
