@@ -18,6 +18,14 @@
         </div>
         <!-- Filter Bar -->
         <div class="filter-bar">
+          <div class="filter-group search-group">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search name or text..."
+              v-model="searchText"
+            />
+          </div>
           <div class="filter-group">
             <span class="filter-label">Color:</span>
             <div class="filter-buttons">
@@ -245,6 +253,7 @@ const showStats = ref(false)
 const hoveredCard = ref(null)
 
 // Filter state
+const searchText = ref('')
 const activeColors = ref(new Set())
 const activeTypes = ref(new Set())
 const activeRarities = ref(new Set())
@@ -322,6 +331,7 @@ function toggleMV(mvId) {
 }
 
 function clearFilters() {
+  searchText.value = ''
   activeColors.value = new Set()
   activeTypes.value = new Set()
   activeRarities.value = new Set()
@@ -329,10 +339,27 @@ function clearFilters() {
 }
 
 const hasActiveFilters = computed(() =>
-  activeColors.value.size > 0 || activeTypes.value.size > 0 || activeRarities.value.size > 0 || activeMVs.value.size > 0
+  searchText.value !== '' || activeColors.value.size > 0 || activeTypes.value.size > 0 || activeRarities.value.size > 0 || activeMVs.value.size > 0
 )
 
 function cardMatchesFilters(card) {
+  // Search filter
+  if (searchText.value !== '') {
+    const searchLower = searchText.value.toLowerCase()
+    const text = Array.isArray(card.text) ? card.text.join(' ') : (card.text || '')
+    let matchSearch = card.name.toLowerCase().includes(searchLower) ||
+      text.toLowerCase().includes(searchLower)
+    if (!matchSearch && card.hasBackFace) {
+      const back = cardStore.getBackFace(card)
+      if (back) {
+        const backText = Array.isArray(back.text) ? back.text.join(' ') : (back.text || '')
+        matchSearch = back.name.toLowerCase().includes(searchLower) ||
+          backText.toLowerCase().includes(searchLower)
+      }
+    }
+    if (!matchSearch) return false
+  }
+
   // Color filter
   if (activeColors.value.size > 0) {
     const cardColor = determineColorClass(card)
@@ -556,6 +583,32 @@ defineExpose({
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.search-group {
+  flex: 0 1 180px;
+  min-width: 120px;
+}
+
+.search-input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 3px 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  border-radius: 2px;
+  transition: border-color 0.15s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--matrix-green);
+}
+
+.search-input::placeholder {
+  color: #555;
 }
 
 .filter-label {
@@ -1041,6 +1094,15 @@ defineExpose({
   .filter-label {
     font-size: 0.65rem;
     width: 100%;
+  }
+
+  .search-group {
+    flex: 1 1 100%;
+  }
+
+  .search-input {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    padding: 6px 8px;
   }
 
   .filter-btn {
