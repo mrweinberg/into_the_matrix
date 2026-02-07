@@ -1822,7 +1822,7 @@
     "displayType": "Creature — Program Insect",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "When this creature enters or dies, you get {E}.",
+      "When this creature enters, you get {E}{E}.",
       "{T}, Pay {E}{E}: Target opponent loses 2 life and you gain 2 life."
     ],
     "flavor": "",

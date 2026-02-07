@@ -631,7 +631,7 @@ Target creature gets -2/-2 until end of turn. If that creature doesn't have digi
 [C071] System Parasite {1}{B}
 Creature — Program Insect (1/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
-When this creature enters or dies, you get {E}.
+When this creature enters, you get {E}{E}.
 {T}, Pay {E}{E}: Target opponent loses 2 life and you gain 2 life.
 
 [C072] Reinitialize Soul {1}{B}
