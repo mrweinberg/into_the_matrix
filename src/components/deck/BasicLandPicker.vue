@@ -1,13 +1,10 @@
 <template>
   <div class="basic-land-picker">
     <div v-for="type in landTypes" :key="type" class="land-btn-group">
-      <button class="land-btn" @click="$emit('add', type)">
-        <i :class="getIcon(type)"></i>
-      </button>
-      <div class="land-count">
-        <button class="small-btn" @click="$emit('remove', type)" :disabled="counts[type] === 0">-</button>
-        <span>{{ counts[type] }}</span>
-      </div>
+      <i :class="getIcon(type)" class="land-icon"></i>
+      <button class="small-btn" @click="$emit('remove', type)" :disabled="counts[type] === 0">-</button>
+      <span class="land-count">{{ counts[type] }}</span>
+      <button class="small-btn" @click="$emit('add', type)">+</button>
     </div>
   </div>
 </template>
@@ -39,9 +36,10 @@ function getIcon(type) {
 <style scoped>
 .basic-land-picker {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   justify-content: center;
-  padding: 5px;
+  align-items: center;
+  padding: 3px 5px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 6px;
   border: 1px solid rgba(0, 255, 65, 0.1);
@@ -49,29 +47,22 @@ function getIcon(type) {
 
 .land-btn-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 5px;
+  margin-left: 8px;
+  gap: 3px;
 }
 
-.land-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  transition: transform 0.2s;
-}
-
-.land-btn:hover {
-  transform: scale(1.1);
+.land-icon {
+  font-size: 1.1rem;
 }
 
 .land-count {
-  display: flex;
-  align-items: center;
-  gap: 8px;
   font-family: 'Courier New', monospace;
   color: var(--matrix-green);
+  font-size: 0.85rem;
+  min-width: 1ch;
+  text-align: center;
 }
 
 .small-btn {

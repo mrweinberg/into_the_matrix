@@ -18,68 +18,72 @@
         </div>
         <!-- Filter Bar -->
         <div class="filter-bar">
-          <div class="filter-group search-group">
-            <input
-              type="text"
-              class="search-input"
-              placeholder="Search name or text..."
-              v-model="searchText"
-            />
+          <div class="filter-row">
+            <div class="filter-group search-group">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search name or text..."
+                v-model="searchText"
+              />
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">Color:</span>
+              <div class="filter-buttons">
+                <button
+                  v-for="color in colorFilters"
+                  :key="color.id"
+                  :class="['filter-btn', 'color-' + color.id, { active: activeColors.has(color.id) }]"
+                  :title="color.name"
+                  @click="toggleColor(color.id)"
+                >
+                  <i :class="color.icon"></i>
+                </button>
+              </div>
+            </div>
+            <button v-if="hasActiveFilters" class="clear-filters" @click="clearFilters">Clear</button>
           </div>
-          <div class="filter-group">
-            <span class="filter-label">Color:</span>
-            <div class="filter-buttons">
-              <button
-                v-for="color in colorFilters"
-                :key="color.id"
-                :class="['filter-btn', 'color-' + color.id, { active: activeColors.has(color.id) }]"
-                :title="color.name"
-                @click="toggleColor(color.id)"
-              >
-                <i :class="color.icon"></i>
-              </button>
+          <div class="filter-row">
+            <div class="filter-group">
+              <span class="filter-label">Rarity:</span>
+              <div class="filter-buttons">
+                <button
+                  v-for="rarity in rarityFilters"
+                  :key="rarity.id"
+                  :class="['filter-btn', 'rarity-btn', { active: activeRarities.has(rarity.id) }]"
+                  @click="toggleRarity(rarity.id)"
+                >
+                  {{ rarity.label }}
+                </button>
+              </div>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">Type:</span>
+              <div class="filter-buttons">
+                <button
+                  v-for="type in typeFilters"
+                  :key="type.id"
+                  :class="['filter-btn', 'type-btn', { active: activeTypes.has(type.id) }]"
+                  @click="toggleType(type.id)"
+                >
+                  {{ type.label }}
+                </button>
+              </div>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">MV:</span>
+              <div class="filter-buttons">
+                <button
+                  v-for="mv in mvFilters"
+                  :key="mv.id"
+                  :class="['filter-btn', 'mv-btn', { active: activeMVs.has(mv.id) }]"
+                  @click="toggleMV(mv.id)"
+                >
+                  {{ mv.label }}
+                </button>
+              </div>
             </div>
           </div>
-          <div class="filter-group">
-            <span class="filter-label">Rarity:</span>
-            <div class="filter-buttons">
-              <button
-                v-for="rarity in rarityFilters"
-                :key="rarity.id"
-                :class="['filter-btn', 'rarity-btn', { active: activeRarities.has(rarity.id) }]"
-                @click="toggleRarity(rarity.id)"
-              >
-                {{ rarity.label }}
-              </button>
-            </div>
-          </div>
-          <div class="filter-group">
-            <span class="filter-label">Type:</span>
-            <div class="filter-buttons">
-              <button
-                v-for="type in typeFilters"
-                :key="type.id"
-                :class="['filter-btn', 'type-btn', { active: activeTypes.has(type.id) }]"
-                @click="toggleType(type.id)"
-              >
-                {{ type.label }}
-              </button>
-            </div>
-          </div>
-          <div class="filter-group">
-            <span class="filter-label">MV:</span>
-            <div class="filter-buttons">
-              <button
-                v-for="mv in mvFilters"
-                :key="mv.id"
-                :class="['filter-btn', 'mv-btn', { active: activeMVs.has(mv.id) }]"
-                @click="toggleMV(mv.id)"
-              >
-                {{ mv.label }}
-              </button>
-            </div>
-          </div>
-          <button v-if="hasActiveFilters" class="clear-filters" @click="clearFilters">Clear</button>
         </div>
         <div class="pool-list">
           <DeckCardRow
@@ -570,17 +574,24 @@ defineExpose({
 /* Filter Bar */
 .filter-bar {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 4px 0;
+  flex-direction: column;
+  gap: 2px;
+  padding: 2px 0;
   margin-bottom: 4px;
   border-bottom: 1px solid rgba(0, 255, 65, 0.1);
   flex-shrink: 0;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
 .filter-group {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 4px;
 }
