@@ -477,3 +477,15 @@ Added section headers and reorganized cards within each color by rarity.
     - **New**: {G} Instant. Target creature gains hexproof/indestructible. You get {E}{E}.
 - **[C071] Corrupted Hitman** → **System Parasite** {1}{B}: Replaced generic Rogue with Energy utility.
     - **New**: 1/2 Digital. ETB/Death: Get {E}. {T}, Pay {E}{E}: Drain 2 life.
+- **Major Mana Curve Rebalance**: Upshifted 12 cards to higher CMC and stats to smooth the set's transition into the 4+ mana range.
+    - **[C133] Geothermal Scout**: {1}{G} (2/2) → {2}{G} (3/3)
+    - **[C060] Battery Farm Cultivator**: {2}{B} (2/3) → {3}{B} (3/4)
+    - **[C102] Sentinel Breaker**: {3}{R} (4/3) → {4}{R} (5/4)
+    - **[C007] Dock Defender**: {2}{W} (2/3) → {3}{W} (3/3)
+    - **[C018] Weapon Drop**: {1}{W} → {2}{W}
+    - **[C046] Take the Blue Pill**: {1}{U}{U} → {2}{U}{U}
+    - **[U021] Recursive Search**: {2}{U} → {3}{U}
+    - **[U064] Akimbo Specialist**: {2}{R} (2/2) → {3}{R} (3/3)
+    - **[U108] Scrap Repurposer**: {1}{B}{R} (2/3) → {2}{B}{R} (3/4)
+    - **[U080] Aether Weaver**: {2}{G} (1/3) → {3}{G} (3/4)
+    - **[C062] Glitched Citizen**: {1}{B} (2/1) → {2}{B} (2/2)

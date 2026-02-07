@@ -32,6 +32,7 @@ ITM is a Magic: The Gathering fan set with two main components:
 │   └── analyze_set.cjs        # Set analysis script
 ├── artOverrides.json          # Per-card art prompt customizations
 ├── public/cards/              # CONSOLIDATED card artwork (PNG files)
+├── tmp/                       # Temporary files, including data used while processing analysis
 │
 ├── src/                       # Vue 3 application
 │   ├── main.js                # App entry point

@@ -112,8 +112,8 @@ When Stasis Field enters, scry 1.
 Enchanted creature can't attack or block.
 {E}{E}{E}: Exile enchanted creature.
 
-[C007] Dock Defender {2}{W}
-Creature — Human Soldier (2/3)
+[C007] Dock Defender {3}{W}
+Creature — Human Soldier (3/2)
 Flying
 When this creature enters, you may pay {1}. If you do, create a Gun token.
 
@@ -155,7 +155,7 @@ Choose one:
 * Destroy target enchantment.
 * Destroy up to 3 target artifact tokens.
 
-[C018] Weapon Drop {1}{W}
+[C018] Weapon Drop {2}{W}
 Instant
 Create two Gun tokens. You may attach them to creatures you control.
 
@@ -404,7 +404,7 @@ Artifact Creature — Construct Beast (3/2)
 Flash
 When this creature enters, up to one target creature with digital gets -3/-0 until end of turn.
 
-[C046] Take the Blue Pill {1}{U}{U}
+[C046] Take the Blue Pill {2}{U}{U}
 Enchantment — Aura
 Enchant creature
 When Take the Blue Pill enters, tap enchanted creature and you get {E}{E}.
@@ -432,7 +432,7 @@ As an additional cost to cast this spell, pay any amount of {E}.
 Tap X target creatures and put two stun counters on each of them, where X is the amount of {E} paid plus one.
 Draw a card.
 
-[U021] Recursive Search {2}{U}
+[U021] Recursive Search {3}{U}
 Sorcery
 Draw three cards. Then choose one —
 • Discard two cards.
@@ -445,7 +445,7 @@ Counter target spell. You draw a card, then discard a card.
 
 [U023] Subroutine Optimization {1}{U}
 Enchantment
-Whenever a creature enters under your control, if it has flash or entered during an opponent's turn, draw a card.
+Whenever one or more permanents enter under your control, if they entered during an opponent's turn, draw a card.
 
 [U024] Reality Shift {1}{U}
 Instant
@@ -588,8 +588,8 @@ Whenever you cast a spell, you may pay {E}{E}. If you do, choose one:
 
 --- COMMONS ---
 
-[C060] Battery Farm Cultivator {2}{B}
-Artifact Creature — Robot (2/3)
+[C060] Battery Farm Cultivator {3}{B}
+Artifact Creature — Robot (3/4)
 Menace
 When this creature enters, you get {E}{E}.
 Whenever this creature attacks, you may pay {E}{E}. If you do, create a 1/1 white Program Citizen creature token with digital.
@@ -876,8 +876,8 @@ Trample
 When this creature enters, you get {E}{E}.
 Basic landcycling {2}
 
-[C102] Sentinel Breaker {3}{R}
-Artifact Creature — Robot (4/3)
+[C102] Sentinel Breaker {4}{R}
+Artifact Creature — Robot (5/4)
 Trample
 When this creature dies, you get {E}{E}.
 
@@ -931,8 +931,8 @@ Choose one -
 * You get {E}{E}{E}.
 * Destroy target artifact.
 
-[U064] Akimbo Specialist {2}{R}
-Creature — Human Soldier (2/2)
+[U064] Akimbo Specialist {3}{R}
+Creature — Human Soldier (3/2)
 Double strike
 When this creature enters, create a Gun token.
 Equipment attached to Akimbo Specialist cannot be sacrified during the first strike damage step.
@@ -1090,18 +1090,18 @@ Flash
 Digital (This creature can block or be blocked only by creatures with digital.)
 When this creature enters, put a +1/+1 counter on target creature you control.
 
-[C131] Teachable Pupil {1}{G}
-Creature — Human Citizen (2/2)
-Reach
-Whenever you cast a spell that targets this creature, put a +1/+1 counter on it.
+[C131] Teachable Pupil {2}{G}
+Creature — Human Citizen (2/3)
+Reach, Ward {2}
+Whenever you cast a spell that targets this creature, put a +1/+1 counter on it and you get {E}.
 
 [C132] Unlikely Growth {1}{G}
 Sorcery
 Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.
 You get {E}{E}.
 
-[C133] Geothermal Scout {1}{G}
-Creature - Human Scout (2/2)
+[C133] Geothermal Scout {2}{G}
+Creature - Human Scout (3/3)
 When this creature enters or attacks, you get {E}.
 When this creature blocks or is blocked, you may pay {E}{E}. If you do, it gets +2/+2 until end of turn.
 
@@ -1130,8 +1130,8 @@ If this mana is spent to cast a creature spell that doesn't have digital, that c
 
 --- UNCOMMONS ---
 
-[U080] Aether Weaver {2}{G}
-Creature — Human Shaman (1/3)
+[U080] Aether Weaver {3}{G}
+Creature — Human Shaman (3/4)
 When this creature enters, gain {E} equal to the greatest power among creatures you control.
 Pay {E}{E}: Put a +1/+1 counter on target creature you control. Activate only as a sorcery.
 
@@ -1320,9 +1320,9 @@ Instant
 As an additional cost to cast this spell, sacrifice a creature or artifact.
 Draw two cards and you get {E}{E}.
 
-[U108] Scrap Repurposer {1}{B}{R}
-Artifact Creature — Robot Artificer (2/3)
-Whenever an artifact creature you control dies, you get {E} and may discard a card. If you do, draw a card.
+[U108] Scrap Repurposer {2}{B}{R}
+Artifact Creature — Robot Artificer (3/4)
+Whenever an artifact you control is put into a graveyard from the battlefield, you get {E} and may discard a card. If you do, draw a card.
 {3}, Sacrifice an artifact: Create a 2/2 colorless Robot artifact creature token with menace. Activate this ability only as a sorcery.
 
 [U110] Swarm Commander {B}{R}
@@ -1447,8 +1447,8 @@ Whenever Prime Sentinel attacks, you may sacrifice another artifact or creature.
 [R106] Commander Lock {2}{G}{W}
 Legendary Creature — Human Soldier (3/4)
 Vigilance
-At the beginning of combat on your turn, if you control three or more other creatures, you get {E}.
-Pay {E}{E}{E}{E}: Creatures you control get +2/+2 and gain trample until end of turn.
+At the beginning of combat on your turn, if you control three or more other creatures, you get {E}{E}.
+Pay {E}{E}{E}{E}{E}: Creatures you control get +2/+2 and gain trample until end of turn.
 
 [R107] Niobe, Logos Commander {3}{R}{W}{B}
 Legendary Creature — Human Pilot (5/5)
