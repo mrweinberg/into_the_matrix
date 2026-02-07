@@ -1070,9 +1070,9 @@ Creature — Human Warrior (2/1)
 Reach, deathtouch
 This creature can block creatures with digital as though they didn't have digital.
 
-[C125] Shared Battery {G}
+[C125] Natural Resistance {G}
 Instant
-Target creature gets +2/+2 until end of turn. If it doesn't have digital, you get {E}{E}.
+Target creature you control gains hexproof and indestructible until end of turn. You get {E}{E}.
 
 [C126] Rust-Plague Shaman {2}{G}
 Creature — Human Shaman (2/1)
@@ -1570,7 +1570,7 @@ Legendary Creature — Program Rogue (4/4)
 Champion a creature
 Menace
 You may have Agent Smith champion creatures you don't control.
-Agent Smith has digital as long as the championed creature had digital.
+Agent Smith has digital as long as the championed creature had digital. The same is true for flying,first strike, double strike, deathtouch, haste, hexproof, indestructible, lifelink, reach, trample, and vigilance.
 
 
 ========== ARTIFACTS & COLORLESS (23 Cards) ==========

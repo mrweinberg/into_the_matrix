@@ -473,3 +473,5 @@ Added section headers and reorganized cards within each color by rarity.
 - **[U080] Aether Weaver** {2}{G}: Replaced **Heavy-Duty Construct**. Shaman with power-matters energy gain.
 - **[U025] Propaganda** → **Data Harvester** {2}{U}: Replaced defensive enchantment with proactive Saboteur creature.
     - **New**: 2/1 Flash Digital. ETB: Remove digital from target. On Hit: Draw a card.
+- **[C125] Shared Battery** → **Natural Resistance** {G}: Replaced redundant pump spell with Hexproof/Indestructible.
+    - **New**: {G} Instant. Target creature gains hexproof/indestructible. You get {E}{E}.

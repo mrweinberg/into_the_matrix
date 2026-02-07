@@ -1261,18 +1261,17 @@
     "id": "U025",
     "name": "Data Harvester",
     "cost": "{2}{U}",
-    "type": "Creature — Program Rogue (2/1)",
+    "type": "Creature — Program Rogue (1/3)",
     "displayType": "Creature — Program Rogue",
     "text": [
       "Digital, flash",
-      "When Data Harvester enters, target creature an opponent controls loses digital until end of turn.",
-      "Whenever Data Harvester deals combat damage to a player, draw a card."
+      "Whenever this creature deals combat damage to a player, draw a card."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "2/1",
+    "pt": "1/3",
     "colorIndicator": null,
     "fileName": "U025_data_harvester.png"
   },
@@ -3245,12 +3244,12 @@
   },
   {
     "id": "C125",
-    "name": "Shared Battery",
+    "name": "Natural Resistance",
     "cost": "{G}",
     "type": "Instant",
     "displayType": "Instant",
     "text": [
-      "Target creature gets +2/+2 until end of turn. If it doesn't have digital, you get {E}{E}."
+      "Target creature you control gains hexproof and indestructible until end of turn. You get {E}{E}."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3258,7 +3257,7 @@
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "C125_shared_battery.png"
+    "fileName": "C125_natural_resistance.png"
   },
   {
     "id": "C126",
@@ -4846,7 +4845,7 @@
       "Champion a creature",
       "Menace",
       "You may have Agent Smith champion creatures you don't control.",
-      "Agent Smith has digital as long as the championed creature had digital."
+      "Agent Smith has digital as long as the championed creature had digital. The same is true for flying,first strike, double strike, deathtouch, haste, hexproof, indestructible, lifelink, reach, trample, and vigilance."
     ],
     "flavor": "",
     "rarity": "Mythic",
