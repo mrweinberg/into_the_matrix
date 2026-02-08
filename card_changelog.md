@@ -6,14 +6,47 @@ This document tracks changes to cards in MTG: Into The Matrix throughout develop
 
 ## 2026-02-07 — Archetype & Strategy Refinement
 
-**Theme:** Improving archetype support and reducing interaction redundancy.
+**Theme:** Improving archetype support, reducing interaction redundancy, and broad mana curve rebalance.
 
 ### Card Redesigns
 - **[U114] The Twins, Ghost Programs**: Redesigned to better support the **WB Attrition** archetype.
     - **Old**: {1}{W}{B} (3/2) Menace. {W}{B}: Exile and return at end of turn.
-    - **New**: {1}{W}{B} (3/1) Menace. Death trigger: Opponent loses 2 life, you gain 2 life. {W}{B}: Escape-style recursion from graveyard.
-- **[C048] Glitch Trap**: Redesigned from a "Freeze Aura" to a "Trap" bounce spell to reduce redundancy with **Take the Blue Pill**.
-    - **New**: {2}{U} Instant. Costs {2} less if targeting a permanent that entered this turn. Bounce target nonland permanent.
+    - **New**: {1}{W}{B} (3/1) Leaves-battlefield trigger: Opponent loses 1 life, you gain 1 life. {W}{B}: Exile and return at end of turn.
+- **[C048] Glitch Trap**: Redesigned from a Freeze Aura to library-tuck removal to reduce redundancy with **Take the Blue Pill**.
+    - **Old**: {1}{U} Enchantment — Aura. Flash. Enchanted permanent doesn't untap. {E}{E}: Shuffle enchanted permanent into library.
+    - **New**: {3}{U} Instant. Owner puts target nonland permanent second from top or bottom of library.
+- **[U061] Pipeline Saboteur → Munitions Specialist**: Complete rework to support **RW Equipment** archetype.
+    - **Old**: {1}{R} (2/1) Haste. Attack trigger: Pay {E} to tap a blocker.
+    - **New**: {2}{R} Human Artificer (2/3). Whenever a creature enters under your control, pay {1} to create a Gun token attached to it.
+- **[R101] Morpheus, Uniter**: Color identity shifted from W/G to **W/U**.
+    - Jack-in cost: {1}{G}{W} → {1}{U}. Eject cost: {1}{G}{W} → {1}{W}. Back face color indicator: W/G → W/U.
+
+### Ability Changes
+- **[C019] Peace Advocate**: Lost Defender, gained **Vigilance**. Stats: (0/4) → (1/4). Cost: {1}{W} → {2}{W}.
+- **[U002] Uplink Guardian**: Removed ETB "{E}" trigger, kept jack-in/eject trigger. Stats: (1/3) → (2/4). Cost: {2}{W} → {3}{W}.
+- **[U005] Captain's Speech**: Added "and vigilance" to buff. Cost: {1}{W}{W} → {2}{W}{W}.
+- **[U020] Code Freeze**: Stun counters reduced from two to one. Cost: {2}{U} → {3}{U}.
+- **[U062] Surge Channeler**: Trigger narrowed from "whenever you cast a spell" to "whenever you cast an **instant or sorcery**".
+- **[U107] Reality Advocate**: Removed "Whenever a human enters, you get {E}" trigger. Kept non-digital lord.
+- **[U108] Scrap Repurposer**: Death trigger broadened from "artifact creature" to "**artifact**". Cost: {1}{B}{R} → {2}{B}{R}. Stats: (2/3) → (3/4).
+- **[C131] Teachable Pupil**: Added **Ward {2}** and {E} on targeting trigger. Cost: {1}{G} → {2}{G}. Stats: (2/2) → (2/3).
+
+### Mana Cost / Stats Rebalance
+- **[C007] Dock Defender**: {2}{W} (2/3) → {3}{W} (3/2)
+- **[C018] Weapon Drop**: {1}{W} → {2}{W}
+- **[C035] Data Courier**: {1}{U} (2/1) → {2}{U} (3/2)
+- **[C042] Deep-Web Miner**: {1}{U} (1/3) → {2}{U} (1/4)
+- **[C044] Logic-Stream Serpent**: {5}{U} (5/5) → {4}{U} (3/5)
+- **[C046] Take the Blue Pill**: {2}{U}{U} → {1}{U}{U}
+- **[C060] Battery Farm Cultivator**: {2}{B} (2/3) → {3}{B} (3/4)
+- **[C071] System Parasite**: {1}{B} (1/2) → {2}{B} (2/3)
+- **[C102] Sentinel Breaker**: {3}{R} (4/3) → {4}{R} (5/4)
+- **[C133] Geothermal Scout**: {1}{G} (2/2) → {2}{G} (3/3)
+- **[U021] Recursive Search**: {2}{U} → {3}{U}
+- **[U064] Akimbo Specialist**: {2}{R} (2/2) → {3}{R} (3/2)
+- **[U080] Aether Weaver**: {2}{G} (1/3) → {3}{G} (3/4)
+- **[U045] Meter Reader**: {1}{B} (2/3) → {3}{B} (4/3)
+- **[U117] The Source's Defense**: Activation cost reduced from {3} to {2}.
 
 ---
 
