@@ -765,8 +765,8 @@
     "id": "R007",
     "name": "Escape Tactician",
     "cost": "{1}{W}{W}",
-    "type": "Legendary Creature — Human Soldier (2/4)",
-    "displayType": "Legendary Creature — Human Soldier",
+    "type": "Creature — Human Soldier (2/4)",
+    "displayType": "Creature — Human Soldier",
     "text": [
       "When Escape Tactician enters, you get {E}{E}.",
       "{E}{E}, {T}: Exile target creature you control. At the beginning of the next end step, return it to the battlefield under its owner's control."
@@ -3823,8 +3823,8 @@
     "id": "R085",
     "name": "Zion Archivist",
     "cost": "{1}{G}{G}",
-    "type": "Legendary Creature — Human Advisor (2/3)",
-    "displayType": "Legendary Creature — Human Advisor",
+    "type": "Creature — Human Advisor (2/3)",
+    "displayType": "Creature — Human Advisor",
     "text": [
       "When Zion Archivist enters, shuffle target player's graveyard into their library. You may draw a card for each creature card shuffled into a library this way, then discard that many cards.",
       "{G}, {T}: Put target card from your graveyard on the bottom of your library. If it was a Human or Robot card, draw a card."
@@ -3841,8 +3841,8 @@
     "id": "R086",
     "name": "Zion Mystic",
     "cost": "{G}",
-    "type": "Legendary Creature — Human Shaman (1/2)",
-    "displayType": "Legendary Creature — Human Shaman",
+    "type": "Creature — Human Shaman (1/2)",
+    "displayType": "Creature — Human Shaman",
     "text": [
       "When Zion Mystic enters, you get {E}.",
       "{E}, {T}: Add one mana of any color.",

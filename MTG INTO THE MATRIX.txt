@@ -298,7 +298,7 @@ Whenever this creature attacks, another target attacking creature gets +X/+X unt
 At the beginning of your end step, if this creature is in your graveyard and you control three or more other creatures, you may pay {E}{E}. If you do, return it to your hand.
 
 [R007] Escape Tactician {1}{W}{W}
-Legendary Creature — Human Soldier (2/4)
+Creature — Human Soldier (2/4)
 When Escape Tactician enters, you get {E}{E}.
 {E}{E}, {T}: Exile target creature you control. At the beginning of the next end step, return it to the battlefield under its owner's control.
 
@@ -1240,12 +1240,12 @@ This creature can't be blocked by creatures with power 2 or less.
 Whenever this creature attacks, you may exile up to two target cards from any graveyard. For each card exiled this way, you get {E}.
 
 [R085] Zion Archivist {1}{G}{G}
-Legendary Creature — Human Advisor (2/3)
+Creature — Human Advisor (2/3)
 When Zion Archivist enters, shuffle target player's graveyard into their library. You may draw a card for each creature card shuffled into a library this way, then discard that many cards.
 {G}, {T}: Put target card from your graveyard on the bottom of your library. If it was a Human or Robot card, draw a card.
 
 [R086] Zion Mystic {G}
-Legendary Creature — Human Shaman (1/2)
+Creature — Human Shaman (1/2)
 When Zion Mystic enters, you get {E}.
 {E}, {T}: Add one mana of any color.
 {2}, {T}: You get {E}.
