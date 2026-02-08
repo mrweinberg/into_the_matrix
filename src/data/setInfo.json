@@ -129,8 +129,8 @@
         "2": 12,
         "3": 11,
         "4": 9,
-        "5": 3,
-        "6+": 1
+        "5": 2,
+        "6+": 2
       },
       "G": {
         "0": 0,
@@ -194,8 +194,8 @@
         "2": 28,
         "3": 18,
         "4": 11,
-        "5": 6,
-        "6+": 1
+        "5": 5,
+        "6+": 2
       }
     },
     "creatureStats": {
@@ -214,38 +214,38 @@
         "0": 3,
         "1": 33,
         "2": 52,
-        "3": 42,
+        "3": 41,
         "4": 15,
-        "5+": 10
+        "5+": 11
       },
       "toughnessDistribution": {
         "0": 1,
         "1": 29,
         "2": 41,
         "3": 42,
-        "4": 29,
-        "5+": 13
+        "4": 28,
+        "5+": 14
       }
     },
     "keywords": {
-      "Vigilance": 17,
+      "Vigilance": 9,
       "Digital": 75,
-      "Jack-in": 23,
+      "Jack-in": 24,
       "Flying": 10,
-      "Ward": 12,
       "Lifelink": 10,
-      "Eject": 8,
+      "Eject": 9,
       "First Strike": 5,
       "Indestructible": 11,
-      "Reach": 9,
+      "Reach": 10,
       "Defender": 4,
       "Double Strike": 3,
       "Hexproof": 8,
       "Flash": 21,
+      "Ward": 4,
       "Menace": 20,
       "Deathtouch": 4,
-      "Haste": 16,
-      "Trample": 18
+      "Haste": 17,
+      "Trample": 15
     },
     "dfcCount": 20,
     "instantSorceryRatio": {
@@ -256,10 +256,10 @@
     "averageCMC": 2.99,
     "cardsWithAbilities": {
       "cardDraw": 32,
-      "removal": 66,
+      "removal": 67,
       "counterspells": 5,
-      "tokenCreators": 32,
-      "energyCards": 114
+      "tokenCreators": 33,
+      "energyCards": 113
     },
     "rarityByColor": {
       "W": {

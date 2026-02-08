@@ -134,7 +134,6 @@ When this creature enters, draw a card.
 
 [C014] Prophesizing Elder {4}{W}
 Creature — Human Cleric (3/5)
-Vigilance
 When this creature enters, scry 2 and you gain 2 life.
 Basic landcycling {2}
 
@@ -144,7 +143,6 @@ Target creature gets +2/+2. You get {E}{E}.
 
 [C016] Zion Volunteer {1}{W}
 Creature — Human Citizen (3/1)
-Ward {1}
 When this creature enters, if you control an artifact, gain 3 life.
 
 [C017] Forceful Disarmament {1}{W}
@@ -160,8 +158,7 @@ Instant
 Create two Gun tokens. You may attach them to creatures you control.
 
 [C019] Peace Advocate {2}{W}
-Creature — Human Citizen (1/4)
-Vigilance
+Creature — Human Citizen (1/5)
 {3}{W}: Jack-in. ({3}{W}: Transform this card. Activate only as a sorcery.)
 //
 System Guardian (Color Indicator: White)
@@ -179,13 +176,12 @@ Lifelink
 
 [U002] Uplink Guardian {3}{W}
 Creature — Human Soldier (2/4)
-Vigilance
 Whenever a creature you control jacks-in or ejects, put a +1/+1 counter on this creature and you get {E}.
 
-[U003] Defensive Formation {3}{W}
+[U003] United Front {3}{W}
 Enchantment
-Creatures you control get +0/+2 as long as they are untapped.
-{W}: Target creature you control gains vigilance until end of turn.
+Creature tokens you control get +1/+1.
+Whenever one or more creatures you control jack-in or eject, create a 1/1 white Human creature token.
 
 [U004] Scrap-Metal Tactician {1}{W}
 Creature — Human Artificer (2/2)
@@ -393,9 +389,8 @@ Instant
 Counter target creature spell.
 
 [C044] Logic-Stream Serpent {4}{U}
-Creature — Program Serpent (3/5)
+Creature — Program Serpent (4/5)
 Digital (This creature can block or be blocked only by creatures with digital.)
-Ward {2}
 Basic landcycling {2}
 
 [C045] Code Prowler {2}{U}
@@ -517,7 +512,7 @@ Whenever Pirate Signal attacks, you may pay {E}. If you do, another target creat
 
 [R021] Code Runner {2}{U}
 Creature — Human Rogue (2/2)
-Flash, ward {1}
+Flash
 Digital (This creature can block or be blocked only by creatures with digital.)
 Spells you cast during your opponent's turn cost {1} less to cast.
 Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on this creature.
@@ -800,7 +795,6 @@ At the beginning of your end step, sacrifice a creature or eject.
 
 [R046] Harvester Unit {3}{B}
 Artifact Creature — Robot (4/4)
-Trample
 Whenever another creature you control dies, you get {E}.
 {2}, Pay {E}{E}{E}: Return target creature card from your graveyard to the battlefield tapped.
 
@@ -866,16 +860,15 @@ Artifact Creature — Robot (1/1)
 Haste
 {3}{R}, Sacrifice this creature: Deal 3 damage to any target.
 
-[C101] Dockside Loader {4}{R}
-Creature — Human Warrior (4/4)
+[C101] Dockside Loader {5}{R}
+Creature — Human Warrior (6/4)
 Trample
 When this creature enters, you get {E}{E}.
 Basic landcycling {2}
 
 [C102] Sentinel Breaker {4}{R}
 Artifact Creature — Robot (5/4)
-Trample
-When this creature dies, you get {E}{E}.
+When this creature enters, it deals 2 damage to any target.
 
 [C103] Magma-Code Brawler {2}{R}
 Creature — Program Warrior (3/2)
@@ -1087,7 +1080,7 @@ When this creature enters, put a +1/+1 counter on target creature you control.
 
 [C131] Teachable Pupil {2}{G}
 Creature — Human Citizen (2/3)
-Reach, Ward {2}
+Reach, Ward {1}
 Whenever you cast a spell that targets this creature, put a +1/+1 counter on it and you get {E}.
 
 [C132] Unlikely Growth {1}{G}
@@ -1113,9 +1106,9 @@ Destroy target artifact, enchantment, or creature with digital. You get {E}{E}.
 Creature — Human Archivist (1/2)
 When this creature enters, mill three cards. You may put a land card from among them into your hand. If you don't, put a +1/+1 counter on this creature.
 
-[C138] Lineage Honorer {3}{G}
+[C138] Witness of the Fallen {3}{G}
 Creature — Human Archivist (4/3)
-Flash, ward {2}
+Flash
 At the beginning of your end step, if a creature died this turn, put a +1/+1 counter on this creature.
 
 [C139] Deep Earth Cultivator {1}{G}
@@ -1160,7 +1153,7 @@ Creatures you control can block creatures with digital as though they didn't hav
 
 [U086] Nourishing Construct {4}{G}{G}
 Artifact Creature — Construct Beast (5/6)
-Vigilance
+Reach
 When this creature enters, gain 1 life for each {E} you have.
 
 [U087] Hydroponics Tender {1}{G}
@@ -1224,7 +1217,7 @@ Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooz
 Enchantment — Saga
 I — Look at the top five cards of your library. You may reveal a Human or Land card from among them and put it into your hand. Put the rest on the bottom of your library.
 II — You may put a land card from your hand onto the battlefield. You gain 2 life.
-III — Creatures you control get +1/+1 and gain vigilance until end of turn.
+III — Creatures you control get +2/+2 until end of turn.
 
 [R083] System Purge Virus {3}{G}{G}
 Sorcery
@@ -1268,7 +1261,7 @@ Create X 4/4 green Construct artifact creature tokens with trample. Then, if you
 
 [M10] Bio-Spark Behemoth {4}{G}{G}
 Artifact Creature — Construct Beast (6/6)
-Trample, Ward {2}
+Trample
 When Bio-Spark Behemoth enters or attacks, you get {E}{E}{E}.
 Pay {E}: Add {G}.
 "It eats lightning and breathes fuel."
@@ -1400,13 +1393,12 @@ When this creature enters, look at the top four cards of your library. You may r
 
 [R101] Morpheus, Uniter {2}{W}{U}
 Legendary Creature — Human Warrior (3/3)
-Ward {2}, lifelink
+Lifelink
 Creatures that don't have digital get +1/+1 for each creature you control with digital.
 {1}{U}: Jack-in.
 //
 Morpheus, Commander (Color Indicator: W/U)
 Legendary Creature — Human Program Warrior (3/3)
-Trample
 Digital (Morpheus can block or be blocked only by creatures with digital.)
 Creatures with digital get +1/+1 for each creature you control that doesn't have digital.
 {1}{W}: Eject.
@@ -1419,7 +1411,7 @@ III — Create an X/X colorless Construct creature token with trample, where X i
 
 [R102] Prime Biomass {X}{B}{G}
 Creature — Avatar Horror (0/0)
-Trample
+Haste
 This creature enters with an amount of +1/+1 counters on it equal to the total amount of mana spent to cast it.
 When this creature dies, create X 1/1 green Ooze creature tokens, where X is this creature's power.
 
@@ -1440,7 +1432,6 @@ Whenever Prime Sentinel attacks, you may sacrifice another artifact or creature.
 
 [R106] Commander Lock {2}{G}{W}
 Legendary Creature — Human Soldier (3/4)
-Vigilance
 At the beginning of combat on your turn, if you control three or more other creatures, you get {E}{E}.
 Pay {E}{E}{E}{E}{E}: Creatures you control get +2/+2 and gain trample until end of turn.
 
@@ -1492,7 +1483,7 @@ Whenever Apoc attacks, you may pay {E}{E}{E}. If you do, copy the next instant o
 [R116] Agent Smith, Antivirus {3}{U}{B}
 Legendary Creature — Program Agent (4/4)
 Champion a creature with digital
-Ward {2}, Digital (Agent Smith can block or be blocked only by creatures with digital.)
+Digital (Agent Smith can block or be blocked only by creatures with digital.)
 Whenever a creature enters under an opponent's control, you may pay {U/B}. If you do, gain control of it until the end of your next turn. Do this only once each turn.
 At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own.
 
@@ -1501,7 +1492,6 @@ At the beginning of your end step, each opponent loses 1 life for each creature 
 [M03] The Oracle, Destiny Planner {3}{G}{U}
 Legendary Creature — Program Advisor (1/5)
 Digital (The Oracle can block or be blocked only by creatures with digital.)
-Ward {2}
 You may look at the top card of your library at any time.
 You may cast the top card of your library.
 Whenever you cast a spell from your library, you get {E}.
@@ -1516,7 +1506,6 @@ Put the rest on the bottom of your library in a random order.
 [M18] The Architect, System Creator {4}{W}{U}
 Legendary Creature — Avatar Program (3/6)
 Digital (The Architect can block or be blocked only by creatures with digital.)
-Vigilance
 When The Architect enters, if it was cast, return all creatures to their owners' hands.
 Whenever a creature enters, its controller may pay {2}. If they don't, put a digital counter on it.
 (Creatures with digital counters have digital.)
@@ -1565,7 +1554,7 @@ Legendary Creature — Program Rogue (4/4)
 Champion a creature
 Menace
 You may have Agent Smith champion creatures you don't control.
-Agent Smith has digital as long as the championed creature had digital. The same is true for flying,first strike, double strike, deathtouch, haste, hexproof, indestructible, lifelink, reach, trample, and vigilance.
+Agent Smith has digital as long as the championed creature had digital. The same is true for flying, first strike, double strike, deathtouch, haste, hexproof, indestructible, lifelink, reach, trample, and vigilance.
 
 
 ========== ARTIFACTS & COLORLESS (23 Cards) ==========

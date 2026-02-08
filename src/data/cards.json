@@ -206,7 +206,6 @@
     "type": "Creature — Human Cleric (3/5)",
     "displayType": "Creature — Human Cleric",
     "text": [
-      "Vigilance",
       "When this creature enters, scry 2 and you gain 2 life.",
       "Basic landcycling {2}"
     ],
@@ -242,7 +241,6 @@
     "type": "Creature — Human Citizen (3/1)",
     "displayType": "Creature — Human Citizen",
     "text": [
-      "Ward {1}",
       "When this creature enters, if you control an artifact, gain 3 life."
     ],
     "flavor": "",
@@ -294,17 +292,16 @@
     "id": "C019",
     "name": "Peace Advocate",
     "cost": "{2}{W}",
-    "type": "Creature — Human Citizen (1/4)",
+    "type": "Creature — Human Citizen (1/5)",
     "displayType": "Creature — Human Citizen",
     "text": [
-      "Vigilance",
       "{3}{W}: Jack-in. ({3}{W}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": true,
-    "pt": "1/4",
+    "pt": "1/5",
     "colorIndicator": null,
     "fileName": "C019a_peace_advocate_front.png"
   },
@@ -352,7 +349,6 @@
     "type": "Creature — Human Soldier (2/4)",
     "displayType": "Creature — Human Soldier",
     "text": [
-      "Vigilance",
       "Whenever a creature you control jacks-in or ejects, put a +1/+1 counter on this creature and you get {E}."
     ],
     "flavor": "",
@@ -365,13 +361,13 @@
   },
   {
     "id": "U003",
-    "name": "Defensive Formation",
+    "name": "United Front",
     "cost": "{3}{W}",
     "type": "Enchantment",
     "displayType": "Enchantment",
     "text": [
-      "Creatures you control get +0/+2 as long as they are untapped.",
-      "{W}: Target creature you control gains vigilance until end of turn."
+      "Creature tokens you control get +1/+1.",
+      "Whenever one or more creatures you control jack-in or eject, create a 1/1 white Human creature token."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -379,7 +375,7 @@
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "U003_defensive_formation.png"
+    "fileName": "U003_united_front.png"
   },
   {
     "id": "U004",
@@ -1074,18 +1070,17 @@
     "id": "C044",
     "name": "Logic-Stream Serpent",
     "cost": "{4}{U}",
-    "type": "Creature — Program Serpent (3/5)",
+    "type": "Creature — Program Serpent (4/5)",
     "displayType": "Creature — Program Serpent",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Ward {2}",
       "Basic landcycling {2}"
     ],
     "flavor": "",
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "3/5",
+    "pt": "4/5",
     "colorIndicator": null,
     "fileName": "C044_logic_stream_serpent.png"
   },
@@ -1481,7 +1476,7 @@
     "type": "Creature — Human Rogue (2/2)",
     "displayType": "Creature — Human Rogue",
     "text": [
-      "Flash, ward {1}",
+      "Flash",
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Spells you cast during your opponent's turn cost {1} less to cast.",
       "Whenever you cast a spell during an opponent's turn, put a +1/+1 counter on this creature."
@@ -2372,7 +2367,6 @@
     "type": "Artifact Creature — Robot (4/4)",
     "displayType": "Artifact Creature — Robot",
     "text": [
-      "Trample",
       "Whenever another creature you control dies, you get {E}.",
       "{2}, Pay {E}{E}{E}: Return target creature card from your graveyard to the battlefield tapped."
     ],
@@ -2586,8 +2580,8 @@
   {
     "id": "C101",
     "name": "Dockside Loader",
-    "cost": "{4}{R}",
-    "type": "Creature — Human Warrior (4/4)",
+    "cost": "{5}{R}",
+    "type": "Creature — Human Warrior (6/4)",
     "displayType": "Creature — Human Warrior",
     "text": [
       "Trample",
@@ -2598,7 +2592,7 @@
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "4/4",
+    "pt": "6/4",
     "colorIndicator": null,
     "fileName": "C101_dockside_loader.png"
   },
@@ -2609,8 +2603,7 @@
     "type": "Artifact Creature — Robot (5/4)",
     "displayType": "Artifact Creature — Robot",
     "text": [
-      "Trample",
-      "When this creature dies, you get {E}{E}."
+      "When this creature enters, it deals 2 damage to any target."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3316,7 +3309,7 @@
     "type": "Creature — Human Citizen (2/3)",
     "displayType": "Creature — Human Citizen",
     "text": [
-      "Reach, Ward {2}",
+      "Reach, Ward {1}",
       "Whenever you cast a spell that targets this creature, put a +1/+1 counter on it and you get {E}."
     ],
     "flavor": "",
@@ -3417,12 +3410,12 @@
   },
   {
     "id": "C138",
-    "name": "Lineage Honorer",
+    "name": "Witness of the Fallen",
     "cost": "{3}{G}",
     "type": "Creature — Human Archivist (4/3)",
     "displayType": "Creature — Human Archivist",
     "text": [
-      "Flash, ward {2}",
+      "Flash",
       "At the beginning of your end step, if a creature died this turn, put a +1/+1 counter on this creature."
     ],
     "flavor": "",
@@ -3431,7 +3424,7 @@
     "hasBackFace": false,
     "pt": "4/3",
     "colorIndicator": null,
-    "fileName": "C138_lineage_honorer.png"
+    "fileName": "C138_witness_of_the_fallen.png"
   },
   {
     "id": "C139",
@@ -3569,7 +3562,7 @@
     "type": "Artifact Creature — Construct Beast (5/6)",
     "displayType": "Artifact Creature — Construct Beast",
     "text": [
-      "Vigilance",
+      "Reach",
       "When this creature enters, gain 1 life for each {E} you have."
     ],
     "flavor": "",
@@ -3770,7 +3763,7 @@
     "text": [
       "I — Look at the top five cards of your library. You may reveal a Human or Land card from among them and put it into your hand. Put the rest on the bottom of your library.",
       "II — You may put a land card from your hand onto the battlefield. You gain 2 life.",
-      "III — Creatures you control get +1/+1 and gain vigilance until end of turn."
+      "III — Creatures you control get +2/+2 until end of turn."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -3916,7 +3909,7 @@
     "type": "Artifact Creature — Construct Beast (6/6)",
     "displayType": "Artifact Creature — Construct Beast",
     "text": [
-      "Trample, Ward {2}",
+      "Trample",
       "When Bio-Spark Behemoth enters or attacks, you get {E}{E}{E}.",
       "Pay {E}: Add {G}."
     ],
@@ -4340,7 +4333,7 @@
     "type": "Legendary Creature — Human Warrior (3/3)",
     "displayType": "Legendary Creature — Human Warrior",
     "text": [
-      "Ward {2}, lifelink",
+      "Lifelink",
       "Creatures that don't have digital get +1/+1 for each creature you control with digital.",
       "{1}{U}: Jack-in."
     ],
@@ -4359,7 +4352,6 @@
     "type": "Legendary Creature — Human Program Warrior (3/3)",
     "displayType": "Legendary Creature — Human Program Warrior",
     "text": [
-      "Trample",
       "Digital (Morpheus can block or be blocked only by creatures with digital.)",
       "Creatures with digital get +1/+1 for each creature you control that doesn't have digital.",
       "{1}{W}: Eject."
@@ -4398,7 +4390,7 @@
     "type": "Creature — Avatar Horror (0/0)",
     "displayType": "Creature — Avatar Horror",
     "text": [
-      "Trample",
+      "Haste",
       "This creature enters with an amount of +1/+1 counters on it equal to the total amount of mana spent to cast it.",
       "When this creature dies, create X 1/1 green Ooze creature tokens, where X is this creature's power."
     ],
@@ -4471,7 +4463,6 @@
     "type": "Legendary Creature — Human Soldier (3/4)",
     "displayType": "Legendary Creature — Human Soldier",
     "text": [
-      "Vigilance",
       "At the beginning of combat on your turn, if you control three or more other creatures, you get {E}{E}.",
       "Pay {E}{E}{E}{E}{E}: Creatures you control get +2/+2 and gain trample until end of turn."
     ],
@@ -4640,7 +4631,7 @@
     "displayType": "Legendary Creature — Program Agent",
     "text": [
       "Champion a creature with digital",
-      "Ward {2}, Digital (Agent Smith can block or be blocked only by creatures with digital.)",
+      "Digital (Agent Smith can block or be blocked only by creatures with digital.)",
       "Whenever a creature enters under an opponent's control, you may pay {U/B}. If you do, gain control of it until the end of your next turn. Do this only once each turn.",
       "At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own."
     ],
@@ -4660,7 +4651,6 @@
     "displayType": "Legendary Creature — Program Advisor",
     "text": [
       "Digital (The Oracle can block or be blocked only by creatures with digital.)",
-      "Ward {2}",
       "You may look at the top card of your library at any time.",
       "You may cast the top card of your library.",
       "Whenever you cast a spell from your library, you get {E}.",
@@ -4701,7 +4691,6 @@
     "displayType": "Legendary Creature — Avatar Program",
     "text": [
       "Digital (The Architect can block or be blocked only by creatures with digital.)",
-      "Vigilance",
       "When The Architect enters, if it was cast, return all creatures to their owners' hands.",
       "Whenever a creature enters, its controller may pay {2}. If they don't, put a digital counter on it.",
       "(Creatures with digital counters have digital.)"
@@ -4840,7 +4829,7 @@
       "Champion a creature",
       "Menace",
       "You may have Agent Smith champion creatures you don't control.",
-      "Agent Smith has digital as long as the championed creature had digital. The same is true for flying,first strike, double strike, deathtouch, haste, hexproof, indestructible, lifelink, reach, trample, and vigilance."
+      "Agent Smith has digital as long as the championed creature had digital. The same is true for flying, first strike, double strike, deathtouch, haste, hexproof, indestructible, lifelink, reach, trample, and vigilance."
     ],
     "flavor": "",
     "rarity": "Mythic",

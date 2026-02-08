@@ -22,6 +22,9 @@ This document tracks changes to cards in MTG: Into The Matrix throughout develop
     - Jack-in cost: {1}{G}{W} → {1}{U}. Eject cost: {1}{G}{W} → {1}{W}. Back face color indicator: W/G → W/U.
 
 ### Ability Changes
+- **[U003] Defensive Formation → United Front**: Redesigned to support "Go-Wide" and "Transform" archetypes.
+    - **Old**: {3}{W} Enchantment. +0/+2 to untapped creatures. Tactician ability.
+    - **New**: {3}{W} Enchantment. Token anthem (+1/+1). Creates 1/1 Humans on jack-in/eject.
 - **[C019] Peace Advocate**: Lost Defender, gained **Vigilance**. Stats: (0/4) → (1/4). Cost: {1}{W} → {2}{W}.
 - **[U002] Uplink Guardian**: Removed ETB "{E}" trigger, kept jack-in/eject trigger. Stats: (1/3) → (2/4). Cost: {2}{W} → {3}{W}.
 - **[U005] Captain's Speech**: Added "and vigilance" to buff. Cost: {1}{W}{W} → {2}{W}{W}.
