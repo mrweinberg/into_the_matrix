@@ -4,6 +4,19 @@ This document tracks changes to cards in MTG: Into The Matrix throughout develop
 
 ---
 
+## 2026-02-07 — Archetype & Strategy Refinement
+
+**Theme:** Improving archetype support and reducing interaction redundancy.
+
+### Card Redesigns
+- **[U114] The Twins, Ghost Programs**: Redesigned to better support the **WB Attrition** archetype.
+    - **Old**: {1}{W}{B} (3/2) Menace. {W}{B}: Exile and return at end of turn.
+    - **New**: {1}{W}{B} (3/1) Menace. Death trigger: Opponent loses 2 life, you gain 2 life. {W}{B}: Escape-style recursion from graveyard.
+- **[C048] Glitch Trap**: Redesigned from a "Freeze Aura" to a "Trap" bounce spell to reduce redundancy with **Take the Blue Pill**.
+    - **New**: {2}{U} Instant. Costs {2} less if targeting a permanent that entered this turn. Bounce target nonland permanent.
+
+---
+
 ## 2025-12-28 — Initial Creation
 
 Initial card file with 251 cards across all colors. Established core mechanics:

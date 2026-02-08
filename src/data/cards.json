@@ -293,18 +293,18 @@
   {
     "id": "C019",
     "name": "Peace Advocate",
-    "cost": "{1}{W}",
-    "type": "Creature — Human Citizen (0/4)",
+    "cost": "{2}{W}",
+    "type": "Creature — Human Citizen (1/4)",
     "displayType": "Creature — Human Citizen",
     "text": [
-      "Defender",
+      "Vigilance",
       "{3}{W}: Jack-in. ({3}{W}: Transform this card. Activate only as a sorcery.)"
     ],
     "flavor": "",
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": true,
-    "pt": "0/4",
+    "pt": "1/4",
     "colorIndicator": null,
     "fileName": "C019a_peace_advocate_front.png"
   },
@@ -348,19 +348,18 @@
   {
     "id": "U002",
     "name": "Uplink Guardian",
-    "cost": "{2}{W}",
-    "type": "Creature — Human Soldier (1/3)",
+    "cost": "{3}{W}",
+    "type": "Creature — Human Soldier (2/4)",
     "displayType": "Creature — Human Soldier",
     "text": [
       "Vigilance",
-      "When this creature enters, you get {E}.",
       "Whenever a creature you control jacks-in or ejects, put a +1/+1 counter on this creature and you get {E}."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "1/3",
+    "pt": "2/4",
     "colorIndicator": null,
     "fileName": "U002_uplink_guardian.png"
   },
@@ -402,11 +401,11 @@
   {
     "id": "U005",
     "name": "Captain's Speech",
-    "cost": "{1}{W}{W}",
+    "cost": "{2}{W}{W}",
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "Creatures you control get +2/+2 until end of turn."
+      "Creatures you control get +2/+2 and vigilance until end of turn."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -951,8 +950,8 @@
   {
     "id": "C035",
     "name": "Data Courier",
-    "cost": "{1}{U}",
-    "type": "Creature — Program Scout (2/1)",
+    "cost": "{2}{U}",
+    "type": "Creature — Program Scout (3/2)",
     "displayType": "Creature — Program Scout",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
@@ -963,7 +962,7 @@
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "2/1",
+    "pt": "3/2",
     "colorIndicator": null,
     "fileName": "C035_data_courier.png"
   },
@@ -1040,8 +1039,8 @@
   {
     "id": "C042",
     "name": "Deep-Web Miner",
-    "cost": "{1}{U}",
-    "type": "Creature — Human Worker (1/3)",
+    "cost": "{2}{U}",
+    "type": "Creature — Human Worker (1/4)",
     "displayType": "Creature — Human Worker",
     "text": [
       "{T}: You get {E}."
@@ -1050,7 +1049,7 @@
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "1/3",
+    "pt": "1/4",
     "colorIndicator": null,
     "fileName": "C042_deep_web_miner.png"
   },
@@ -1074,8 +1073,8 @@
   {
     "id": "C044",
     "name": "Logic-Stream Serpent",
-    "cost": "{5}{U}",
-    "type": "Creature — Program Serpent (5/5)",
+    "cost": "{4}{U}",
+    "type": "Creature — Program Serpent (3/5)",
     "displayType": "Creature — Program Serpent",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
@@ -1086,7 +1085,7 @@
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "5/5",
+    "pt": "3/5",
     "colorIndicator": null,
     "fileName": "C044_logic_stream_serpent.png"
   },
@@ -1111,7 +1110,7 @@
   {
     "id": "C046",
     "name": "Take the Blue Pill",
-    "cost": "{2}{U}{U}",
+    "cost": "{1}{U}{U}",
     "type": "Enchantment — Aura",
     "displayType": "Enchantment — Aura",
     "text": [
@@ -1150,14 +1149,11 @@
   {
     "id": "C048",
     "name": "Glitch Trap",
-    "cost": "{1}{U}",
-    "type": "Enchantment — Aura",
-    "displayType": "Enchantment — Aura",
+    "cost": "{3}{U}",
+    "type": "Instant",
+    "displayType": "Instant",
     "text": [
-      "Flash",
-      "Enchant creature or artifact",
-      "Enchanted permanent does not untap during its controller's untap step.",
-      "{E}{E}: Shuffle enchanted permanent into its owner's deck."
+      "The owner of target nonland permanent puts it into their library second from the top or on the bottom."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1170,12 +1166,12 @@
   {
     "id": "U020",
     "name": "Code Freeze",
-    "cost": "{2}{U}",
+    "cost": "{3}{U}",
     "type": "Instant",
     "displayType": "Instant",
     "text": [
       "As an additional cost to cast this spell, pay any amount of {E}.",
-      "Tap X target creatures and put two stun counters on each of them, where X is the amount of {E} paid plus one.",
+      "Tap X target creatures and put a stun counters on each of them, where X is the amount of {E} paid plus one.",
       "Draw a card."
     ],
     "flavor": "",
@@ -1817,8 +1813,8 @@
   {
     "id": "C071",
     "name": "System Parasite",
-    "cost": "{1}{B}",
-    "type": "Creature — Program Insect (1/2)",
+    "cost": "{2}{B}",
+    "type": "Creature — Program Insect (2/3)",
     "displayType": "Creature — Program Insect",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
@@ -1829,7 +1825,7 @@
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "1/2",
+    "pt": "2/3",
     "colorIndicator": null,
     "fileName": "C071_system_parasite.png"
   },
@@ -2035,8 +2031,8 @@
   {
     "id": "U045",
     "name": "Meter Reader",
-    "cost": "{1}{B}",
-    "type": "Creature — Program Agent (2/3)",
+    "cost": "{3}{B}",
+    "type": "Creature — Program Agent (4/3)",
     "displayType": "Creature — Program Agent",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
@@ -2049,7 +2045,7 @@
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "2/3",
+    "pt": "4/3",
     "colorIndicator": null,
     "fileName": "U045_meter_reader.png"
   },
@@ -2757,7 +2753,7 @@
     "type": "Creature — Human Artificer (2/3)",
     "displayType": "Creature — Human Artificer",
     "text": [
-      "Whenever you cast a spell, you get {E} and may pay {E}{E}. If you do, this creature deals 2 damage to any target."
+      "Whenever you cast an instant or sorcery, you get {E} and may pay {E}{E}. If you do, this creature deals 2 damage to any target."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4104,8 +4100,7 @@
     "type": "Creature — Human Advisor (2/2)",
     "displayType": "Creature — Human Advisor",
     "text": [
-      "Other creatures you control that don't have digital get +1/+1.",
-      "Whenever a human enters the battlefield under your control, you get {E}."
+      "Other creatures you control that don't have digital get +1/+1."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4158,18 +4153,18 @@
     "id": "U114",
     "name": "The Twins, Ghost Programs",
     "cost": "{1}{W}{B}",
-    "type": "Legendary Creature — Program Spirit (3/2)",
+    "type": "Legendary Creature — Program Spirit (3/1)",
     "displayType": "Legendary Creature — Program Spirit",
     "text": [
       "Digital (The Twins can block or be blocked only by creatures with digital.)",
-      "Menace",
+      "When The Twins leaves the battlefield, each opponent loses 1 life and you gain 1 life.",
       "{W}{B}: Exile The Twins and return them to the battlefield at the beginning of the next end step."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "3/2",
+    "pt": "3/1",
     "colorIndicator": null,
     "fileName": "U114_the_twins__ghost_programs.png"
   },
@@ -4310,7 +4305,7 @@
     "displayType": "Enchantment",
     "text": [
       "At the beginning of your upkeep, you may mill two cards.",
-      "{3}, Exile a creature card from your graveyard: Create a 2/2 colorless Robot artifact creature token with menace."
+      "{2}, Exile a creature card from your graveyard: Create a 2/2 colorless Robot artifact creature token with menace."
     ],
     "flavor": "",
     "rarity": "Uncommon",
