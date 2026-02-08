@@ -724,12 +724,12 @@
   {
     "id": "R005",
     "name": "Rooftop Rescue",
-    "cost": "{3}{W}",
-    "type": "Sorcery",
-    "displayType": "Sorcery",
+    "cost": "{2}{W}",
+    "type": "Legendary Sorcery",
+    "displayType": "Legendary Sorcery",
     "text": [
-      "Return target creature card from your graveyard to the battlefield.",
-      "If you control a Vehicle, that creature gains indestructible until your next turn."
+      "(You can cast this spell only if you control a legendary creature or planeswalker.)",
+      "Return target creature card from your graveyard to the battlefield. It gains protection from everything until your next turn."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -3233,12 +3233,12 @@
   },
   {
     "id": "C125",
-    "name": "Natural Resistance",
-    "cost": "{G}",
+    "name": "Sift Through Rubble",
+    "cost": "{1}{G}",
     "type": "Instant",
     "displayType": "Instant",
     "text": [
-      "Target creature you control gains hexproof and indestructible until end of turn. You get {E}{E}."
+      "Mill four cards. You may put a permanent card from among them into your hand."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3246,7 +3246,7 @@
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "C125_natural_resistance.png"
+    "fileName": "C125_sift_through_rubble.png"
   },
   {
     "id": "C126",
@@ -3635,9 +3635,9 @@
     "type": "Creature — Human Technician (2/4)",
     "displayType": "Creature — Human Technician",
     "text": [
-      "Flash, defender",
+      "Flash",
       "This creature can block creatures with digital as though they didn't have digital.",
-      "{2}{G}: Scry 1."
+      "{2}{G}: Surveil 1."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3738,12 +3738,13 @@
   },
   {
     "id": "R080",
-    "name": "Bio-Energy Conversion",
+    "name": "Bio-Energy Convertor",
     "cost": "{1}{G}",
-    "type": "Enchantment",
-    "displayType": "Enchantment",
+    "type": "Artifact",
+    "displayType": "Artifact",
     "text": [
-      "Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token and you get {E}. This ability triggers only once each turn.",
+      "Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token.",
+      "{T}, Exile a creature card from your graveyard: You get {E}.",
       "{1}, Sacrifice an Ooze: Surveil 2."
     ],
     "flavor": "",
@@ -3752,7 +3753,7 @@
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "R080_bio_energy_conversion.png"
+    "fileName": "R080_bio_energy_convertor.png"
   },
   {
     "id": "R082",

@@ -283,10 +283,10 @@ When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target cre
 Sorcery
 Create five Gun tokens. Until end of turn, Equipment you control have equip {0}.
 
-[R005] Rooftop Rescue {3}{W}
-Sorcery
-Return target creature card from your graveyard to the battlefield.
-If you control a Vehicle, that creature gains indestructible until your next turn.
+[R005] Rooftop Rescue {2}{W}
+Legendary Sorcery
+(You can cast this spell only if you control a legendary creature or planeswalker.)
+Return target creature card from your graveyard to the battlefield. It gains protection from everything until your next turn.
 
 [R006] Zion Frontline Hero {2}{W}
 Creature — Human Soldier (3/2)
@@ -1059,9 +1059,9 @@ Creature — Human Warrior (2/1)
 Reach, deathtouch
 This creature can block creatures with digital as though they didn't have digital.
 
-[C125] Natural Resistance {G}
+[C125] Sift Through Rubble {1}{G}
 Instant
-Target creature you control gains hexproof and indestructible until end of turn. You get {E}{E}.
+Mill four cards. You may put a permanent card from among them into your hand.
 
 [C126] Rust-Plague Shaman {2}{G}
 Creature — Human Shaman (2/1)
@@ -1174,9 +1174,9 @@ Pay {E}: this creature gets +1/+1 until end of turn.
 
 [U089] Matrix Watcher {2}{G}
 Creature — Human Technician (2/4)
-Flash, defender
+Flash
 This creature can block creatures with digital as though they didn't have digital.
-{2}{G}: Scry 1.
+{2}{G}: Surveil 1.
 
 [U090] Combat Simulation {1}{G}
 Sorcery
@@ -1208,9 +1208,10 @@ When this creature becomes tapped, you may exile a creature card from your grave
 
 --- RARES ---
 
-[R080] Bio-Energy Conversion {1}{G}
-Enchantment
-Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token and you get {E}. This ability triggers only once each turn.
+[R080] Bio-Energy Convertor {1}{G}
+Artifact
+Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token.
+{T}, Exile a creature card from your graveyard: You get {E}.
 {1}, Sacrifice an Ooze: Surveil 2.
 
 [R082] Founding of Zion {2}{G}
