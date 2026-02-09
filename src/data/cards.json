@@ -1898,13 +1898,13 @@
   },
   {
     "id": "C077",
-    "name": "System Drain",
-    "cost": "{1}{B}",
-    "type": "Sorcery",
-    "displayType": "Sorcery",
+    "name": "Desperate Insight",
+    "cost": "{2}{B}",
+    "type": "Instant",
+    "displayType": "Instant",
     "text": [
-      "Target opponent loses 2 life and you gain 2 life.",
-      "You get {E}{E}."
+      "Kicker - {E}{E}",
+      "Draw two cards. If this spell was not kicked, you lose 2 life."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1912,7 +1912,7 @@
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "C077_system_drain.png"
+    "fileName": "C077_desperate_insight.png"
   },
   {
     "id": "C078",
@@ -2126,7 +2126,7 @@
     "displayType": "Creature — Human Rogue",
     "text": [
       "Deathtouch",
-      "{1}{B}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{B}: Transform this card.)"
+      "{2}{B}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{B}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",

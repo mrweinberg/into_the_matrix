@@ -646,10 +646,10 @@ Digital (This creature can block or be blocked only by creatures with digital.)
 Lifelink
 Whenever you gain life, this creature gets +1/+0 until end of turn.
 
-[C077] System Drain {1}{B}
-Sorcery
-Target opponent loses 2 life and you gain 2 life.
-You get {E}{E}.
+[C077] Desperate Insight {2}{B}
+Instant
+Kicker - {E}{E}
+Draw two cards. If this spell was not kicked, you lose 2 life.
 
 [C078] Blood-Fuel Converter {2}{B}
 Creature — Human Cleric (1/4)

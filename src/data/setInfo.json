@@ -90,9 +90,9 @@
     },
     "typeBreakdown": {
       "Creature": 155,
-      "Sorcery": 30,
+      "Sorcery": 29,
       "Enchantment": 26,
-      "Instant": 32,
+      "Instant": 33,
       "Artifact": 17,
       "Land": 16
     },
@@ -118,8 +118,8 @@
       "B": {
         "0": 0,
         "1": 6,
-        "2": 10,
-        "3": 11,
+        "2": 9,
+        "3": 12,
         "4": 8,
         "5": 3,
         "6+": 1
@@ -192,8 +192,8 @@
       "Common": {
         "0": 1,
         "1": 13,
-        "2": 29,
-        "3": 18,
+        "2": 28,
+        "3": 19,
         "4": 11,
         "5": 5,
         "6+": 2
@@ -250,13 +250,13 @@
     },
     "dfcCount": 20,
     "instantSorceryRatio": {
-      "instants": 32,
-      "sorceries": 30,
-      "ratio": 1.07
+      "instants": 33,
+      "sorceries": 29,
+      "ratio": 1.14
     },
     "averageCMC": 2.99,
     "cardsWithAbilities": {
-      "cardDraw": 33,
+      "cardDraw": 34,
       "removal": 68,
       "counterspells": 5,
       "tokenCreators": 32,
