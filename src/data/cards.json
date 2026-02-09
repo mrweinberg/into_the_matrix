@@ -2033,7 +2033,6 @@
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Menace",
       "Champion a creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves.)",
-      "This creature has haste if you controlled the exiled creature since your turn began.",
       "Whenever this creature deals combat damage to a player, that player loses {E} equal to the damage dealt. You get {E} equal to the amount of {E} that player lost."
     ],
     "flavor": "",
@@ -2106,7 +2105,7 @@
     "type": "Artifact Creature — Robot (3/3)",
     "displayType": "Artifact Creature — Robot",
     "text": [
-      "Menace",
+      "Flying",
       "Whenever another artifact or creature you control is put into a graveyard from the battlefield, you get {E}.",
       "Sacrifice an artifact or creature: this creature gets +1/+1 until end of turn."
     ],
@@ -2140,11 +2139,10 @@
     "id": "U051",
     "name": "Shadow Network Agent",
     "cost": "",
-    "type": "Creature — Human Program Rogue (3/2)",
+    "type": "Creature — Human Program Rogue (3/3)",
     "displayType": "Creature — Human Program Rogue",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "Menace",
       "Whenever this creature deals combat damage to a player, that player discards a card.",
       "{B}: Eject. Activate only as a sorcery and only once each turn. ({B}: Transform this card.)"
     ],
@@ -2152,7 +2150,7 @@
     "rarity": "Uncommon",
     "isBackFace": true,
     "hasBackFace": false,
-    "pt": "3/2",
+    "pt": "3/3",
     "colorIndicator": "b",
     "fileName": "U051b_shadow_network_agent_back.png"
   },
@@ -2238,7 +2236,7 @@
     "type": "Artifact Creature — Robot (2/3)",
     "displayType": "Artifact Creature — Robot",
     "text": [
-      "Flying, menace",
+      "Flying",
       "When this creature enters, create two 2/2   colorless Robot artifact creature tokens with menace.",
       "Whenever a Robot you control dies, you may pay {2}{B}. If you do, create a 2/2 colorless Robot artifact creature token with menace."
     ],
@@ -2456,8 +2454,7 @@
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "Discard a card, then draw two cards.",
-      "If you discarded a nonland card, you get {E}{E}."
+      "Discard a card, then draw two cards. If you discarded a nonland card, you get {E}{E}."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2470,18 +2467,18 @@
   {
     "id": "C093",
     "name": "Static-Charged Hacker",
-    "cost": "{1}{R}",
-    "type": "Creature — Human Wizard (1/3)",
+    "cost": "{2}{R}",
+    "type": "Creature — Human Wizard (2/3)",
     "displayType": "Creature — Human Wizard",
     "text": [
       "Prowess",
-      "As long as you have three or more {E}, this creature gets +1/+0 and has first strike."
+      "When this creature enters, create a Treasure token."
     ],
     "flavor": "",
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "1/3",
+    "pt": "2/3",
     "colorIndicator": null,
     "fileName": "C093_static_charged_hacker.png"
   },
@@ -2492,7 +2489,6 @@
     "type": "Creature — Human Soldier (2/1)",
     "displayType": "Creature — Human Soldier",
     "text": [
-      "Haste",
       "Whenever this creature becomes equipped, it gets +1/+1 until end of turn.",
       "{2}{R}: Jack-in. Activate only as a sorcery and only once each turn. ({2}{R}: Transform this card.)"
     ],
@@ -2672,7 +2668,7 @@
     "id": "C108",
     "name": "Independent Trader",
     "cost": "{1}{R}",
-    "type": "Creature — Human Citizen (2/1)",
+    "type": "Creature — Human Citizen (2/2)",
     "displayType": "Creature — Human Citizen",
     "text": [
       "{1}, {T}, Discard a card: Draw a card."
@@ -2681,7 +2677,7 @@
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "2/1",
+    "pt": "2/2",
     "colorIndicator": null,
     "fileName": "C108_independent_trader.png"
   },
@@ -2746,7 +2742,7 @@
     "type": "Creature — Human Artificer (2/3)",
     "displayType": "Creature — Human Artificer",
     "text": [
-      "Whenever you cast an instant or sorcery, you get {E} and may pay {E}{E}. If you do, this creature deals 2 damage to any target."
+      "Whenever you cast an instant or sorcery, you get {E} and then pay {E}{E}. When you do, this creature deals 2 damage to any target."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2838,7 +2834,6 @@
     "type": "Creature — Human Warrior (2/1)",
     "displayType": "Creature — Human Warrior",
     "text": [
-      "Haste",
       "At the beginning of combat on your turn, you may pay {E}{E}. If you do, jack-in."
     ],
     "flavor": "",
@@ -2853,18 +2848,18 @@
     "id": "U067",
     "name": "Bullet-Hose Avatar",
     "cost": "",
-    "type": "Creature — Human Program Warrior (4/1)",
+    "type": "Creature — Human Program Warrior (3/1)",
     "displayType": "Creature — Human Program Warrior",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "First strike, haste",
+      "When this creature transforms into Bullet-Hose Avatar, up to one target creature gets +1/+0 and haste.",
       "At the beginning of your end step, eject."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": true,
     "hasBackFace": false,
-    "pt": "4/1",
+    "pt": "3/1",
     "colorIndicator": "r",
     "fileName": "U067b_bullet_hose_avatar_back.png"
   },
@@ -2909,8 +2904,8 @@
     "type": "Artifact Creature — Robot (4/3)",
     "displayType": "Artifact Creature — Robot",
     "text": [
-      "Haste",
-      "When this creature enters, you may discard a card. If you do, draw a card and create a Gun token attached to this creature."
+      "When this creature enters, you may discard a card. If you do, draw a card and create a Gun token attached to this creature.",
+      "When this creature attacks, it deals damage to each opponent equal to the number of equipped attacking creatures."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2963,8 +2958,8 @@
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "Target creature you control gets haste and trample until end of turn.",
-      "Flashback {2}{R}"
+      "Target creature you control gets haste, trample, and +2/+0 until end of turn.",
+      "Flashback {3}{R}"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3013,7 +3008,7 @@
   {
     "id": "R061",
     "name": "Hunter-Killer Sentinel",
-    "cost": "{3}{R}",
+    "cost": "{2}{R}",
     "type": "Artifact Creature — Robot (3/2)",
     "displayType": "Artifact Creature — Robot",
     "text": [
@@ -4076,8 +4071,8 @@
     "type": "Artifact Creature — Robot (3/2)",
     "displayType": "Artifact Creature — Robot",
     "text": [
-      "Menace",
-      "Other Artifact creatures you control get +1/+0."
+      "Other Artifact creatures you control get +1/+0.",
+      "When an artifact creature you control dies, this creature deals 1 damage to each opponent."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4262,7 +4257,6 @@
     "type": "Creature — Human Druid Artificer (2/2)",
     "displayType": "Creature — Human Druid Artificer",
     "text": [
-      "Haste",
       "{T}: Add {R} or {G}. If this mana is used to cast a creature with power 4 or greater, you get {E}{E}."
     ],
     "flavor": "",

@@ -691,7 +691,6 @@ Creature — Program Agent (4/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Menace
 Champion a creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves.)
-This creature has haste if you controlled the exiled creature since your turn began.
 Whenever this creature deals combat damage to a player, that player loses {E} equal to the damage dealt. You get {E} equal to the amount of {E} that player lost.
 
 [U046] Reinforcement Agent {2}{B}
@@ -713,7 +712,7 @@ Pay {E}{E}: Target creature gains lifelink until end of turn.
 
 [U050] Sentinel Scavenger {3}{B}
 Artifact Creature — Robot (3/3)
-Menace
+Flying
 Whenever another artifact or creature you control is put into a graveyard from the battlefield, you get {E}.
 Sacrifice an artifact or creature: this creature gets +1/+1 until end of turn.
 
@@ -723,9 +722,8 @@ Deathtouch
 {2}{B}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{B}: Transform this card.)
 //
 Shadow Network Agent (Color Indicator: Black)
-Creature — Human Program Rogue (3/2)
+Creature — Human Program Rogue (3/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
-Menace
 Whenever this creature deals combat damage to a player, that player discards a card.
 {B}: Eject. Activate only as a sorcery and only once each turn. ({B}: Transform this card.)
 
@@ -757,7 +755,7 @@ At the beginning of your end step, if you paid three or more {E} this turn, crea
 
 [R040] Sentinel Swarm {4}{B}
 Artifact Creature — Robot (2/3)
-Flying, menace
+Flying
 When this creature enters, create two 2/2   colorless Robot artifact creature tokens with menace.
 Whenever a Robot you control dies, you may pay {2}{B}. If you do, create a 2/2 colorless Robot artifact creature token with menace.
 
@@ -826,17 +824,15 @@ Whenever you cast a noncreature spell, put a +1/+1 counter on this creature.
 
 [C092] Memory Wipe {1}{R}
 Sorcery
-Discard a card, then draw two cards.
-If you discarded a nonland card, you get {E}{E}.
+Discard a card, then draw two cards. If you discarded a nonland card, you get {E}{E}.
 
-[C093] Static-Charged Hacker {1}{R}
-Creature — Human Wizard (1/3)
+[C093] Static-Charged Hacker {2}{R}
+Creature — Human Wizard (2/3)
 Prowess
-As long as you have three or more {E}, this creature gets +1/+0 and has first strike.
+When this creature enters, create a Treasure token.
 
 [C095] Avid Marksman {1}{R}
 Creature — Human Soldier (2/1)
-Haste
 Whenever this creature becomes equipped, it gets +1/+1 until end of turn.
 {2}{R}: Jack-in. Activate only as a sorcery and only once each turn. ({2}{R}: Transform this card.)
 //
@@ -889,7 +885,7 @@ Choose one —
 • Slag Melt deals 5 damage to target creature.
 
 [C108] Independent Trader {1}{R}
-Creature — Human Citizen (2/1)
+Creature — Human Citizen (2/2)
 {1}, {T}, Discard a card: Draw a card.
 
 [C158] Combat Hovercraft {3}{R}
@@ -911,7 +907,7 @@ Whenever a creature enters the battlefield under your control, you may pay {1}. 
 
 [U062] Surge Channeler {2}{R}
 Creature — Human Artificer (2/3)
-Whenever you cast an instant or sorcery, you get {E} and may pay {E}{E}. If you do, this creature deals 2 damage to any target.
+Whenever you cast an instant or sorcery, you get {E} and then pay {E}{E}. When you do, this creature deals 2 damage to any target.
 
 [U063] Overclock {1}{R}
 Instant
@@ -938,13 +934,12 @@ Flashback {2}{R}{R}
 
 [U067] Adrenaline Junkie {1}{R}
 Creature — Human Warrior (2/1)
-Haste
 At the beginning of combat on your turn, you may pay {E}{E}. If you do, jack-in.
 //
 Bullet-Hose Avatar (Color Indicator: Red)
-Creature — Human Program Warrior (4/1)
+Creature — Human Program Warrior (3/1)
 Digital (This creature can block or be blocked only by creatures with digital.)
-First strike, haste
+When this creature transforms into Bullet-Hose Avatar, up to one target creature gets +1/+0 and haste.
 At the beginning of your end step, eject.
 
 [U068] Conduit Overloader {1}{R}
@@ -957,8 +952,8 @@ Whenever you sacrifice an artifact, this creature deals 1 damage to any target.
 
 [U070] Sentinel Charger {3}{R}
 Artifact Creature — Robot (4/3)
-Haste
 When this creature enters, you may discard a card. If you do, draw a card and create a Gun token attached to this creature.
+When this creature attacks, it deals damage to each opponent equal to the number of equipped attacking creatures.
 
 [U071] Draconic Sentinel {4}{R}{R}
 Artifact Creature — Robot Dragon (5/5)
@@ -972,8 +967,8 @@ Until your next turn, you may play that card.
 
 [U073] Righteous Charge {R}
 Sorcery
-Target creature you control gets haste and trample until end of turn.
-Flashback {2}{R}
+Target creature you control gets haste, trample, and +2/+0 until end of turn.
+Flashback {3}{R}
 
 [U074] Shrapnel Ejection {1}{R}
 Instant
@@ -988,7 +983,7 @@ Sorcery
 Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn. If it's an artifact or has digital, sacrifice it at the beginning of the next end step.
 You may cast this spell as though it had flash if you have four or more {E}.
 
-[R061] Hunter-Killer Sentinel {3}{R}
+[R061] Hunter-Killer Sentinel {2}{R}
 Artifact Creature — Robot (3/2)
 Menace, haste
 At the beginning of the end step, sacrifice Hunter-Killer Sentinel.
@@ -1317,8 +1312,8 @@ Whenever an artifact you control is put into a graveyard from the battlefield, y
 
 [U110] Swarm Commander {B}{R}
 Artifact Creature — Robot (3/2)
-Menace
 Other Artifact creatures you control get +1/+0.
+When an artifact creature you control dies, this creature deals 1 damage to each opponent.
 
 [U111] Reality Advocate {G}{W}
 Creature — Human Advisor (2/2)
@@ -1373,7 +1368,6 @@ At the beginning of combat on your turn, you may pay {E}{E}. When you do, target
 
 [U120] Bio-Current Technician {R}{G}
 Creature — Human Druid Artificer (2/2)
-Haste
 {T}: Add {R} or {G}. If this mana is used to cast a creature with power 4 or greater, you get {E}{E}.
 
 [U121] Code-Stream Stabilizer {1}{U}{G}
