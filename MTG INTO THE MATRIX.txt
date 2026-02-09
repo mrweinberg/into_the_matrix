@@ -154,12 +154,12 @@ Choose one:
 * Destroy target enchantment.
 * Destroy up to 3 target artifact tokens.
 
-[C018] Weapon Drop {2}{W}
+[C018] Weapon Drop {1}{W}
 Instant
 Create two Gun tokens. You may attach them to creatures you control.
 
-[C019] Peace Advocate {2}{W}
-Creature — Human Citizen (1/5)
+[C019] Peace Advocate {1}{W}
+Creature — Human Citizen (1/4)
 {3}{W}: Jack-in. Activate only as a sorcery and only once each turn. ({3}{W}: Transform this card.)
 //
 System Guardian (Color Indicator: White)
@@ -179,7 +179,7 @@ Lifelink
 Creature — Human Soldier (2/4)
 Whenever a creature you control jacks-in or ejects, put a +1/+1 counter on this creature and you get {E}.
 
-[U003] Communal Unity {2}{W}
+[U003] Communal Unity {3}{W}
 Enchantment
 Creature tokens you control get +1/+1.
 Whenever one or more other creatures and/or artifacts you control die, draw a card. This ability triggers only once each turn.
@@ -289,10 +289,10 @@ Legendary Sorcery
 (You can cast this spell only if you control a legendary creature or planeswalker.)
 Return target creature card from your graveyard to the battlefield. It gains protection from everything until your next turn.
 
-[R006] Zion Frontline Hero {2}{W}
-Creature — Human Soldier (3/2)
+[R006] Zion Frontline Hero {3}{W}
+Creature — Human Soldier (3/3)
 Whenever this creature attacks, another target attacking creature gets +X/+X until end of turn, where X is this creature's power.
-At the beginning of your end step, if this creature is in your graveyard and you control three or more other creatures, you may pay {E}{E}. If you do, return it to your hand.
+At the beginning of your postcombat main phase, if this creature is in your graveyard and you control three or more creatures, you may pay {E}{E}. If you do, return it to your hand.
 
 [R007] Escape Tactician {1}{W}{W}
 Creature — Human Soldier (2/4)

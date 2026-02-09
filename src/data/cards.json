@@ -274,7 +274,7 @@
   {
     "id": "C018",
     "name": "Weapon Drop",
-    "cost": "{2}{W}",
+    "cost": "{1}{W}",
     "type": "Instant",
     "displayType": "Instant",
     "text": [
@@ -291,8 +291,8 @@
   {
     "id": "C019",
     "name": "Peace Advocate",
-    "cost": "{2}{W}",
-    "type": "Creature — Human Citizen (1/5)",
+    "cost": "{1}{W}",
+    "type": "Creature — Human Citizen (1/4)",
     "displayType": "Creature — Human Citizen",
     "text": [
       "{3}{W}: Jack-in. Activate only as a sorcery and only once each turn. ({3}{W}: Transform this card.)"
@@ -301,7 +301,7 @@
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": true,
-    "pt": "1/5",
+    "pt": "1/4",
     "colorIndicator": null,
     "fileName": "C019a_peace_advocate_front.png"
   },
@@ -362,7 +362,7 @@
   {
     "id": "U003",
     "name": "Communal Unity",
-    "cost": "{2}{W}",
+    "cost": "{3}{W}",
     "type": "Enchantment",
     "displayType": "Enchantment",
     "text": [
@@ -742,18 +742,18 @@
   {
     "id": "R006",
     "name": "Zion Frontline Hero",
-    "cost": "{2}{W}",
-    "type": "Creature — Human Soldier (3/2)",
+    "cost": "{3}{W}",
+    "type": "Creature — Human Soldier (3/3)",
     "displayType": "Creature — Human Soldier",
     "text": [
       "Whenever this creature attacks, another target attacking creature gets +X/+X until end of turn, where X is this creature's power.",
-      "At the beginning of your end step, if this creature is in your graveyard and you control three or more other creatures, you may pay {E}{E}. If you do, return it to your hand."
+      "At the beginning of your postcombat main phase, if this creature is in your graveyard and you control three or more creatures, you may pay {E}{E}. If you do, return it to your hand."
     ],
     "flavor": "",
     "rarity": "Rare",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "3/2",
+    "pt": "3/3",
     "colorIndicator": null,
     "fileName": "R006_zion_frontline_hero.png"
   },

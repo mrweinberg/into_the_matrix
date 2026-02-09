@@ -1,4 +1,8 @@
-# Card Changelog
+## February 9, 2026
+*   **White Curve Rebalancing**: Shifted several cards to address the 3-mana glut.
+    *   `[U003] Communal Unity`: Mana cost increased from {2}{W} to {3}{W}.
+    *   `[R006] Zion Frontline Hero`: Mana cost increased from {2}{W} to {3}{W}. Stats increased from 3/2 to 3/3.
+    *   `[C018] Weapon Drop`: Mana cost decreased from {2}{W} to {1}{W}.
 
 This document tracks changes to cards in MTG: Into The Matrix throughout development.
 
