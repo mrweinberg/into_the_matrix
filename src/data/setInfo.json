@@ -16,7 +16,8 @@
       "name": "Jack-in {Cost}",
       "text": [
         "Action Word",
-        "{Cost}: Jack-in. ({Cost}: Transform this card. Activate only as a sorcery.)"
+        "{Cost}: Jack-in. ({Cost}: Transform this card.)",
+        "Activate Jack-in or Eject abilities of a creature only once each turn."
       ],
       "notes": [
         "Found on Double-Faced Cards (TDFCs). Represents Humans entering the Matrix."
@@ -26,7 +27,7 @@
       "name": "Eject {Cost}",
       "text": [
         "Action Word",
-        "{Cost}: Eject. ({Cost}: Transform this card. Activate only as a sorcery.)",
+        "{Cost}: Eject. ({Cost}: Transform this card.)",
         "Design Note (Jack-in/Eject as Digital Interaction): Jack-in and Eject provide a key way for colors—especially White—to interact with the Digital world. Rather than relying solely on \"can block creatures with digital\" effects, creatures with Jack-in can transform to gain Digital themselves, allowing them to block and be blocked by Digital creatures. This gives White and other colors flexible, proactive answers to Digital threats while maintaining the thematic separation between the Real World and the Matrix. A creature can jack-in to fight Programs on their own turf, then eject to return to the physical battlefield.",
         "Champion [Quality]",
         "Keyword Ability",

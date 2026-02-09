@@ -78,7 +78,7 @@
     "type": "Creature — Human Monk (1/2)",
     "displayType": "Creature — Human Monk",
     "text": [
-      "{W}: Jack-in. ({W}: Transform this card. Activate only as a sorcery.)"
+      "{W}: Jack-in. Activate only as a sorcery and only once each turn. ({W}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -98,7 +98,7 @@
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "First strike",
       "Whenever this creature attacks, scry 1.",
-      "{W}: Eject. ({W}: Transform this card. Activate only as a sorcery.)"
+      "{W}: Eject. Activate only as a sorcery and only once each turn. ({W}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -295,7 +295,7 @@
     "type": "Creature — Human Citizen (1/5)",
     "displayType": "Creature — Human Citizen",
     "text": [
-      "{3}{W}: Jack-in. ({3}{W}: Transform this card. Activate only as a sorcery.)"
+      "{3}{W}: Jack-in. Activate only as a sorcery and only once each turn. ({3}{W}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -314,7 +314,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Vigilance",
-      "{W}: Eject. ({W}: Transform this card. Activate only as a sorcery.)"
+      "{W}: Eject. Activate only as a sorcery and only once each turn. ({W}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -437,7 +437,7 @@
     "displayType": "Creature — Human Citizen",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "{1}{W}: Eject. ({1}{W}: Transform this card. Activate only as a sorcery.)"
+      "{1}{W}: Eject. Activate only as a sorcery and only once each turn. ({1}{W}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -455,7 +455,7 @@
     "displayType": "Creature — Human Soldier",
     "text": [
       "First strike",
-      "{2}{W}: Jack-in. ({2}{W}: Transform this card. Activate only as a sorcery.)"
+      "{2}{W}: Jack-in. Activate only as a sorcery and only once each turn. ({2}{W}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -509,7 +509,7 @@
     "displayType": "Creature — Human Cleric",
     "text": [
       "{T}: You gain 1 life.",
-      "{1}{W}: Jack-in. ({1}{W}: Transform this card. Activate only as a sorcery.)"
+      "{1}{W}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{W}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -674,7 +674,7 @@
     "displayType": "Legendary Creature — Human Soldier",
     "text": [
       "Double strike, vigilance",
-      "{E}{E}: Jack-in."
+      "{E}{E}: Jack-in. Activate only once each turn. ({E}{E}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -694,7 +694,7 @@
       "Digital (Switch can block or be blocked only by creatures with digital.)",
       "Double strike, vigilance",
       "When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target creature with power 3 or greater.",
-      "{E}{E}: Eject."
+      "{E}{E}: Eject. Activate only once each turn. ({E}{E}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -784,7 +784,7 @@
     "text": [
       "Vigilance",
       "Whenever Trinity attacks, you may pay {E}{E}. If you do, attacking creatures you control get +2/+0 until end of turn.",
-      "{R}: Jack-in."
+      "{R}: Jack-in. Activate only once each turn. ({R}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -804,7 +804,7 @@
       "Digital (Trinity can block or be blocked only by creatures with digital.)",
       "Haste, vigilance",
       "Whenever Trinity, Digital Savior attacks, create a Gun token attached to her.",
-      "{W}: Eject."
+      "{W}: Eject. Activate only once each turn. ({W}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -877,7 +877,7 @@
     "displayType": "Creature — Human Wizard",
     "text": [
       "{T}: Add {C}. Spend this mana only to cast Artifact spells or activate abilities that jack-in or eject.",
-      "{1}{U}: Jack-in. ({1}{U}: Transform this card. Activate only as a sorcery.)"
+      "{1}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -896,7 +896,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Whenever this creature deals combat damage to a player, you get {E}{E}.",
-      "{U}: Eject. ({U}: Transform this card. Activate only as a sorcery.)"
+      "{U}: Eject. Activate only as a sorcery and only once each turn. ({U}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -914,7 +914,7 @@
     "displayType": "Creature — Human Rogue",
     "text": [
       "When this creature enters, scry 2.",
-      "{U}: Jack-in. ({U}: Transform this card. Activate only as a sorcery.)"
+      "{U}: Jack-in. Activate only as a sorcery and only once each turn. ({U}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -933,7 +933,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Prowess.",
-      "{1}{U}: Eject. ({1}{U}: Transform this card. Activate only as a sorcery.)"
+      "{1}{U}: Eject. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1291,7 +1291,7 @@
     "displayType": "Creature — Human Rogue",
     "text": [
       "{T}: Look at the top two cards of your library and exile one.",
-      "{1}{U}: Jack-in. ({1}{U}: Transform this card. Activate only as a sorcery.)"
+      "{1}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -1310,7 +1310,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Whenever this creature deals combat damage to a player, you may put a card exiled by it in your hand.",
-      "{U}: Eject. ({U}: Transform this card. Activate only as a sorcery.)"
+      "{U}: Eject. Activate only as a sorcery and only once each turn. ({U}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -1440,7 +1440,7 @@
     "displayType": "Creature — Human Rogue",
     "text": [
       "When this creature enters, you get {E}{E}.",
-      "{1}{U}: Jack-in. ({1}{U}: Transform this card. Activate only as a sorcery.)"
+      "{1}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -1459,7 +1459,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Whenever Pirate Signal attacks, you may pay {E}. If you do, another target creature gains digital until end of turn.",
-      "{2}: Eject. ({2}: Transform this card. Activate only as a sorcery.)"
+      "{2}: Eject. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2126,7 +2126,7 @@
     "displayType": "Creature — Human Rogue",
     "text": [
       "Deathtouch",
-      "{1}{B}: Jack-in. ({1}{B}: Transform this card. Activate only as a sorcery.)"
+      "{1}{B}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{B}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2146,7 +2146,7 @@
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Menace",
       "Whenever this creature deals combat damage to a player, that player discards a card.",
-      "{B}: Eject. ({B}: Transform this card. Activate only as a sorcery.)"
+      "{B}: Eject. Activate only as a sorcery and only once each turn. ({B}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2494,7 +2494,7 @@
     "text": [
       "Haste",
       "Whenever this creature becomes equipped, it gets +1/+1 until end of turn.",
-      "{2}{R}: Jack-in. ({2}{R}: Transform this card. Activate only as a sorcery.)"
+      "{2}{R}: Jack-in. Activate only as a sorcery and only once each turn. ({2}{R}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -2513,7 +2513,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "When this creature transforms into Expert Sniper, create a Gun token.",
-      "{R}: Eject. ({R}: Transform this card. Activate only as a sorcery.)"
+      "{R}: Eject. Activate only as a sorcery and only once each turn. ({R}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3581,7 +3581,7 @@
     "displayType": "Creature — Human Druid",
     "text": [
       "{T}: Add {G}.",
-      "{4}{G}: Jack-in. ({4}{G}: Transform this card. Activate only as a sorcery.)"
+      "{4}{G}: Jack-in. Activate only as a sorcery and only once each turn. ({4}{G}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3600,7 +3600,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Trample",
-      "{0}: Eject. ({0}: Transform this card. Activate only as a sorcery.)"
+      "{0}: Eject. Activate only as a sorcery and only once each turn. ({0}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3949,7 +3949,7 @@
     "text": [
       "Flying",
       "Other creatures you control that can jack-in get +1/+1.",
-      "{2}: Jack-in. ({2}: Transform this card. Activate only as a sorcery.)"
+      "{2}: Jack-in. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3969,7 +3969,7 @@
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Vigilance",
       "Other creatures you control with eject get +1/+1.",
-      "{2}: Eject. ({2}: Transform this card. Activate only as a sorcery.)"
+      "{2}: Eject. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4207,7 +4207,7 @@
     "displayType": "Creature — Human Soldier",
     "text": [
       "When this creature enters or transforms into this creature, create a Gun token.",
-      "{2}: Jack-in. ({2}: Transform this card. Activate only as a sorcery.)"
+      "{2}: Jack-in. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4226,7 +4226,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Attacking creatures you control get +1/+0.",
-      "{1}: Eject. ({1}: Transform this card. Activate only as a sorcery.)"
+      "{1}: Eject. Activate only as a sorcery and only once each turn. ({1}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4336,7 +4336,7 @@
     "text": [
       "Lifelink",
       "Creatures that don't have digital get +1/+1 for each creature you control with digital.",
-      "{1}{U}: Jack-in."
+      "{1}{U}: Jack-in. Activate only once each turn. ({1}{U}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -4355,7 +4355,7 @@
     "text": [
       "Digital (Morpheus can block or be blocked only by creatures with digital.)",
       "Creatures with digital get +1/+1 for each creature you control that doesn't have digital.",
-      "{1}{W}: Eject."
+      "{1}{W}: Eject. Activate only once each turn. ({1}{W}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Rare",

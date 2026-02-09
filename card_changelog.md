@@ -4,6 +4,18 @@ This document tracks changes to cards in MTG: Into The Matrix throughout develop
 
 ---
 
+## 2026-02-09 — Jack-in/Eject Mechanic Update
+
+**Theme:** Templating standardization for Jack-in/Eject abilities.
+
+### Mechanic Changes
+- **Jack-in/Eject**: Sorcery timing is no longer baked in; each card specifies timing explicitly.
+- **Once Per Turn**: Added restriction: "Activate Jack-in or Eject abilities of a creature only once each turn."
+- **Sorcery-Speed Cards**: Most cards now use "Activate only as a sorcery and only once each turn."
+- **Instant-Speed Exceptions**: Switch [R003], Trinity [R008], and Morpheus [R101] can be activated at instant speed but still only once per turn.
+
+---
+
 ## 2026-02-07 — Archetype & Strategy Refinement
 
 **Theme:** Improving archetype support, reducing interaction redundancy, and broad mana curve rebalance.

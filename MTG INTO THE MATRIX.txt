@@ -43,12 +43,13 @@ Design Note: Functions like "Shadow". Represents the separation between the Simu
 
 Jack-in {Cost}
 Action Word
-{Cost}: Jack-in. ({Cost}: Transform this card. Activate only as a sorcery.)
+{Cost}: Jack-in. ({Cost}: Transform this card.)
+Activate Jack-in or Eject abilities of a creature only once each turn.
 Design Note: Found on Double-Faced Cards (TDFCs). Represents Humans entering the Matrix.
 
 Eject {Cost}
 Action Word
-{Cost}: Eject. ({Cost}: Transform this card. Activate only as a sorcery.)
+{Cost}: Eject. ({Cost}: Transform this card.)
 Design Note: Represents leaving the Matrix.
 
 Design Note (Jack-in/Eject as Digital Interaction): Jack-in and Eject provide a key way for colors—especially White—to interact with the Digital world. Rather than relying solely on "can block creatures with digital" effects, creatures with Jack-in can transform to gain Digital themselves, allowing them to block and be blocked by Digital creatures. This gives White and other colors flexible, proactive answers to Digital threats while maintaining the thematic separation between the Real World and the Matrix. A creature can jack-in to fight Programs on their own turf, then eject to return to the physical battlefield.
@@ -96,14 +97,14 @@ Whenever another creature you control enters, you gain 1 life.
 
 [C004] Zion Neophyte {W}
 Creature — Human Monk (1/2)
-{W}: Jack-in. ({W}: Transform this card. Activate only as a sorcery.)
+{W}: Jack-in. Activate only as a sorcery and only once each turn. ({W}: Transform this card.)
 //
 Awakened Kung Fu Master (Color Indicator: White)
 Creature — Human Program Monk (2/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
 First strike
 Whenever this creature attacks, scry 1.
-{W}: Eject. ({W}: Transform this card. Activate only as a sorcery.)
+{W}: Eject. Activate only as a sorcery and only once each turn. ({W}: Transform this card.)
 
 [C006] Stasis Field {2}{W}
 Enchantment — Aura
@@ -159,13 +160,13 @@ Create two Gun tokens. You may attach them to creatures you control.
 
 [C019] Peace Advocate {2}{W}
 Creature — Human Citizen (1/5)
-{3}{W}: Jack-in. ({3}{W}: Transform this card. Activate only as a sorcery.)
+{3}{W}: Jack-in. Activate only as a sorcery and only once each turn. ({3}{W}: Transform this card.)
 //
 System Guardian (Color Indicator: White)
 Creature — Human Program Soldier (5/5)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Vigilance
-{W}: Eject. ({W}: Transform this card. Activate only as a sorcery.)
+{W}: Eject. Activate only as a sorcery and only once each turn. ({W}: Transform this card.)
 
 --- UNCOMMONS ---
 
@@ -199,12 +200,12 @@ Whenever another Human enters under your control, you get {E}.
 [U007] Restless Sleeper {W}
 Creature — Human Citizen (1/1)
 Digital (This creature can block or be blocked only by creatures with digital.)
-{1}{W}: Eject. ({1}{W}: Transform this card. Activate only as a sorcery.)
+{1}{W}: Eject. Activate only as a sorcery and only once each turn. ({1}{W}: Transform this card.)
 //
 Awakened Rebel (Color Indicator: White)
 Creature — Human Soldier (3/2)
 First strike
-{2}{W}: Jack-in. ({2}{W}: Transform this card. Activate only as a sorcery.)
+{2}{W}: Jack-in. Activate only as a sorcery and only once each turn. ({2}{W}: Transform this card.)
 
 [U008] Life Celebrant {2}{W}
 Creature — Human Citizen (2/3)
@@ -219,7 +220,7 @@ Whenever Morpheus attacks, look at the top four cards of your library. You may r
 [U010] Field Medic {W}
 Creature — Human Cleric (1/1)
 {T}: You gain 1 life.
-{1}{W}: Jack-in. ({1}{W}: Transform this card. Activate only as a sorcery.)
+{1}{W}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{W}: Transform this card.)
 //
 System Mender
 Creature — Human Program Cleric (1/2)
@@ -270,14 +271,14 @@ Whenever this creature blocks, it deals 2 damage to target attacking creature.
 [R003] Switch, Faithful Defender {1}{W}{W}
 Legendary Creature — Human Soldier (2/2)
 Double strike, vigilance
-{E}{E}: Jack-in.
+{E}{E}: Jack-in. Activate only once each turn. ({E}{E}: Transform this card.)
 //
 Switch, Digital Guardian (Color Indicator: White)
 Legendary Creature — Human Program Soldier (2/2)
 Digital (Switch can block or be blocked only by creatures with digital.)
 Double strike, vigilance
 When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target creature with power 3 or greater.
-{E}{E}: Eject.
+{E}{E}: Eject. Activate only once each turn. ({E}{E}: Transform this card.)
 
 [R004] Guns. Lots of Guns. {2}{W}
 Sorcery
@@ -302,14 +303,14 @@ When Escape Tactician enters, you get {E}{E}.
 Legendary Creature — Human Soldier (2/3)
 Vigilance
 Whenever Trinity attacks, you may pay {E}{E}. If you do, attacking creatures you control get +2/+0 until end of turn.
-{R}: Jack-in.
+{R}: Jack-in. Activate only once each turn. ({R}: Transform this card.)
 //
 Trinity, Digital Savior (Color Indicator: R/W)
 Legendary Creature — Human Program Soldier (3/3)
 Digital (Trinity can block or be blocked only by creatures with digital.)
 Haste, vigilance
 Whenever Trinity, Digital Savior attacks, create a Gun token attached to her.
-{W}: Eject.
+{W}: Eject. Activate only once each turn. ({W}: Transform this card.)
 
 --- MYTHICS ---
 
@@ -337,24 +338,24 @@ If this spell was kicked, put two into your hand instead.
 [C031] Code-Hack Splicer {U}
 Creature — Human Wizard (1/1)
 {T}: Add {C}. Spend this mana only to cast Artifact spells or activate abilities that jack-in or eject.
-{1}{U}: Jack-in. ({1}{U}: Transform this card. Activate only as a sorcery.)
+{1}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)
 //
 Deep-Dive Hacker (Color Indicator: Blue)
 Creature — Human Program Wizard (2/1)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Whenever this creature deals combat damage to a player, you get {E}{E}.
-{U}: Eject. ({U}: Transform this card. Activate only as a sorcery.)
+{U}: Eject. Activate only as a sorcery and only once each turn. ({U}: Transform this card.)
 
 [C032] Keymaker's Guide {1}{U}
 Creature — Human Rogue (1/3)
 When this creature enters, scry 2.
-{U}: Jack-in. ({U}: Transform this card. Activate only as a sorcery.)
+{U}: Jack-in. Activate only as a sorcery and only once each turn. ({U}: Transform this card.)
 //
 Backdoor Accessor (Color Indicator: Blue)
 Creature — Human Program Rogue (2/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Prowess.
-{1}{U}: Eject. ({1}{U}: Transform this card. Activate only as a sorcery.)
+{1}{U}: Eject. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)
 
 [C035] Data Courier {2}{U}
 Creature — Program Scout (3/2)
@@ -455,13 +456,13 @@ Reveal the top five cards of your library. An opponent separates those cards int
 [U027] Hardline Searcher {1}{U}
 Creature — Human Rogue (1/2)
 {T}: Look at the top two cards of your library and exile one.
-{1}{U}: Jack-in. ({1}{U}: Transform this card. Activate only as a sorcery.)
+{1}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)
 //
 Data Stream Surfer (Color Indicator: Blue)
 Creature — Human Program Rogue (2/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Whenever this creature deals combat damage to a player, you may put a card exiled by it in your hand.
-{U}: Eject. ({U}: Transform this card. Activate only as a sorcery.)
+{U}: Eject. Activate only as a sorcery and only once each turn. ({U}: Transform this card.)
 
 [U028] Surveillance Agent {1}{U}
 Creature — Program Agent (3/2)
@@ -500,13 +501,13 @@ Whenever a creature you control transforms, you get {E}.
 [U035] Broadcast Intruder {2}{U}
 Creature — Human Rogue (2/3)
 When this creature enters, you get {E}{E}.
-{1}{U}: Jack-in. ({1}{U}: Transform this card. Activate only as a sorcery.)
+{1}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)
 //
 Pirate Signal (Color Indicator: Blue)
 Creature — Human Program Rogue (3/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Whenever Pirate Signal attacks, you may pay {E}. If you do, another target creature gains digital until end of turn.
-{2}: Eject. ({2}: Transform this card. Activate only as a sorcery.)
+{2}: Eject. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)
 
 --- RARES ---
 
@@ -719,14 +720,14 @@ Sacrifice an artifact or creature: this creature gets +1/+1 until end of turn.
 [U051] Unplugged Operative {1}{B}
 Creature — Human Rogue (2/1)
 Deathtouch
-{1}{B}: Jack-in. ({1}{B}: Transform this card. Activate only as a sorcery.)
+{2}{B}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{B}: Transform this card.)
 //
 Shadow Network Agent (Color Indicator: Black)
 Creature — Human Program Rogue (3/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Menace
 Whenever this creature deals combat damage to a player, that player discards a card.
-{B}: Eject. ({B}: Transform this card. Activate only as a sorcery.)
+{B}: Eject. Activate only as a sorcery and only once each turn. ({B}: Transform this card.)
 
 [U052] Agent Brown, Enforcer {2}{B}{B}
 Legendary Creature — Program Agent (3/3)
@@ -837,13 +838,13 @@ As long as you have three or more {E}, this creature gets +1/+0 and has first st
 Creature — Human Soldier (2/1)
 Haste
 Whenever this creature becomes equipped, it gets +1/+1 until end of turn.
-{2}{R}: Jack-in. ({2}{R}: Transform this card. Activate only as a sorcery.)
+{2}{R}: Jack-in. Activate only as a sorcery and only once each turn. ({2}{R}: Transform this card.)
 //
 Expert Sniper (Color Indicator: Red)
 Creature — Human Program Soldier (3/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
 When this creature transforms into Expert Sniper, create a Gun token.
-{R}: Eject. ({R}: Transform this card. Activate only as a sorcery.)
+{R}: Eject. Activate only as a sorcery and only once each turn. ({R}: Transform this card.)
 
 [C096] Zealous Jammer {3}{R}
 Creature — Human Soldier (4/3)
@@ -1159,13 +1160,13 @@ When this creature enters, gain 1 life for each {E} you have.
 [U087] Hydroponics Tender {1}{G}
 Creature — Human Druid (1/3)
 {T}: Add {G}.
-{4}{G}: Jack-in. ({4}{G}: Transform this card. Activate only as a sorcery.)
+{4}{G}: Jack-in. Activate only as a sorcery and only once each turn. ({4}{G}: Transform this card.)
 //
 Overgrown Simulation (Color Indicator: Green)
 Creature — Human Program Druid (6/6)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Trample
-{0}: Eject. ({0}: Transform this card. Activate only as a sorcery.)
+{0}: Eject. Activate only as a sorcery and only once each turn. ({0}: Transform this card.)
 
 [U088] Augmented Brawler {4}{G}
 Creature — Human Warrior (4/4)
@@ -1280,14 +1281,14 @@ Whenever a creature you control transforms, put a +1/+1 counter on it. When you 
 Creature — Human Pilot (2/2)
 Flying
 Other creatures you control that can jack-in get +1/+1.
-{2}: Jack-in. ({2}: Transform this card. Activate only as a sorcery.)
+{2}: Jack-in. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)
 //
 Ace Pilot Avatar (Color Indicator: W/U)
 Creature — Human Program Pilot (3/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Vigilance
 Other creatures you control with eject get +1/+1.
-{2}: Eject. ({2}: Transform this card. Activate only as a sorcery.)
+{2}: Eject. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)
 
 [U104] Agent Jones {1}{U}{B} 
 Legendary Creature — Program Agent (3/2)
@@ -1356,13 +1357,13 @@ Whenever an equipped creature you control deals combat damage to a player, draw 
 [U118] Uploaded Vanguard {1}{R}{W}
 Creature — Human Soldier (2/2)
 When this creature enters or transforms into this creature, create a Gun token.
-{2}: Jack-in. ({2}: Transform this card. Activate only as a sorcery.)
+{2}: Jack-in. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)
 //
 Vanguard Avatar (Color Indicator: R/W)
 Creature — Human Program Soldier (3/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Attacking creatures you control get +1/+0.
-{1}: Eject. ({1}: Transform this card. Activate only as a sorcery.)
+{1}: Eject. Activate only as a sorcery and only once each turn. ({1}: Transform this card.)
 
 [U119] Zion Heavy-Loader {1}{R}{G}
 Creature — Human Warrior (3/3)
@@ -1396,13 +1397,13 @@ When this creature enters, look at the top four cards of your library. You may r
 Legendary Creature — Human Warrior (3/3)
 Lifelink
 Creatures that don't have digital get +1/+1 for each creature you control with digital.
-{1}{U}: Jack-in.
+{1}{U}: Jack-in. Activate only once each turn. ({1}{U}: Transform this card.)
 //
 Morpheus, Commander (Color Indicator: W/U)
 Legendary Creature — Human Program Warrior (3/3)
 Digital (Morpheus can block or be blocked only by creatures with digital.)
 Creatures with digital get +1/+1 for each creature you control that doesn't have digital.
-{1}{W}: Eject.
+{1}{W}: Eject. Activate only once each turn. ({1}{W}: Transform this card.)
 
 [R100] Welcome to the Real World {2}{G}{R}
 Enchantment — Saga
