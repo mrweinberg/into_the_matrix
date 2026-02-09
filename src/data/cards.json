@@ -361,13 +361,13 @@
   },
   {
     "id": "U003",
-    "name": "United Front",
-    "cost": "{3}{W}",
+    "name": "Communal Unity",
+    "cost": "{2}{W}",
     "type": "Enchantment",
     "displayType": "Enchantment",
     "text": [
       "Creature tokens you control get +1/+1.",
-      "Whenever one or more creatures you control jack-in or eject, create a 1/1 white Human creature token."
+      "Whenever one or more other creatures and/or artifacts you control die, draw a card. This ability triggers only once each turn."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -375,7 +375,7 @@
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "U003_united_front.png"
+    "fileName": "U003_communal_unity.png"
   },
   {
     "id": "U004",

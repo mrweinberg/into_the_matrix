@@ -178,10 +178,10 @@ Lifelink
 Creature — Human Soldier (2/4)
 Whenever a creature you control jacks-in or ejects, put a +1/+1 counter on this creature and you get {E}.
 
-[U003] United Front {3}{W}
+[U003] Communal Unity {2}{W}
 Enchantment
 Creature tokens you control get +1/+1.
-Whenever one or more creatures you control jack-in or eject, create a 1/1 white Human creature token.
+Whenever one or more other creatures and/or artifacts you control die, draw a card. This ability triggers only once each turn.
 
 [U004] Scrap-Metal Tactician {1}{W}
 Creature — Human Artificer (2/2)

@@ -100,8 +100,8 @@
         "0": 0,
         "1": 6,
         "2": 9,
-        "3": 15,
-        "4": 5,
+        "3": 16,
+        "4": 4,
         "5": 5,
         "6+": 0
       },
@@ -183,8 +183,8 @@
         "0": 0,
         "1": 8,
         "2": 35,
-        "3": 35,
-        "4": 17,
+        "3": 36,
+        "4": 16,
         "5": 4,
         "6+": 3
       },
@@ -230,10 +230,10 @@
     "keywords": {
       "Vigilance": 9,
       "Digital": 75,
-      "Jack-in": 24,
+      "Jack-in": 23,
       "Flying": 10,
       "Lifelink": 10,
-      "Eject": 9,
+      "Eject": 8,
       "First Strike": 5,
       "Indestructible": 9,
       "Reach": 10,
@@ -255,10 +255,10 @@
     },
     "averageCMC": 2.99,
     "cardsWithAbilities": {
-      "cardDraw": 32,
+      "cardDraw": 33,
       "removal": 68,
       "counterspells": 5,
-      "tokenCreators": 33,
+      "tokenCreators": 32,
       "energyCards": 112
     },
     "rarityByColor": {
