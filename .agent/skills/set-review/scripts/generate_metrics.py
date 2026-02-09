@@ -12,18 +12,24 @@ def generate_report():
 
     stats = data.get('stats', {})
     
-    print("# Set Metrics Summary")
+    print("# Enhanced Set Metrics Report")
     print(f"Total Cards: {stats.get('totalCards')}")
-    print("\n## Rarity Distribution")
-    for rarity, count in stats.get('rarityBreakdown', {}).items():
-        print(f"- {rarity}: {count}")
+    print(f"Average CMC: {stats.get('averageCMC')}")
     
-    print("\n## Color Distribution")
-    for color, count in stats.get('colorCombinations', {}).items():
-        if len(color) <= 2: # Stick to WUBRG and simple pairs for summary
-            print(f"- {color}: {count}")
+    print("\n## Evasion Distribution (Pillar Consistency)")
+    keywords = stats.get('keywords', {})
+    evasion_keys = ['Digital', 'Flying', 'Menace', 'Trample', 'Reach']
+    for k in evasion_keys:
+        print(f"- {k}: {keywords.get(k, 0)}")
 
-    print("\n## Mana Curve (Creatures)")
+    print("\n## Interaction & Resources")
+    capabilities = stats.get('cardsWithAbilities', {})
+    print(f"- Removal Spells: {capabilities.get('removal', 0)} (Target: ~25% of set)")
+    print(f"- Card Draw/Selection: {capabilities.get('cardDraw', 0)}")
+    print(f"- Energy Synergy: {capabilities.get('energyCards', 0)} ({round(capabilities.get('energyCards', 0)/int(data.get('cardCount', 1))*100, 1)}% density)")
+    print(f"- Token Creators: {capabilities.get('tokenCreators', 0)}")
+
+    print("\n## Creature Curve (Creatures)")
     curve = stats.get('manaCurveByColor', {})
     print("| Color | 1 | 2 | 3 | 4 | 5+ |")
     print("| :--- | :--- | :--- | :--- | :--- | :--- |")
