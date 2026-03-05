@@ -711,7 +711,7 @@
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "Create five Gun tokens. Until end of turn, Equipment you control have equip {0}."
+      "Create five Gun tokens. Until end of turn, equipment you control have equip {0}."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -1421,8 +1421,8 @@
     "displayType": "Creature — Human Artificer",
     "text": [
       "Whenever a creature you control transforms, you get {E}.",
-      "{T}: Add {U}. Spend this mana only to cast spells with digital, instants, or sorceries.",
-      "{1}{U}: Transform target creature with a jack-in or eject ability."
+      "{T}: Add {U}. Spend this mana only to cast instant or sorcery spells.",
+      "{T}: Add {U}. Spend this mana only to activate jack-in or eject abilities."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -1903,7 +1903,7 @@
     "type": "Instant",
     "displayType": "Instant",
     "text": [
-      "Kicker - {E}{E}",
+      "Kicker - Pay {E}{E}",
       "Draw two cards. If this spell was not kicked, you lose 2 life."
     ],
     "flavor": "",
@@ -2052,7 +2052,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Champion a creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves.)",
-      "This creature has haste if you controlled the exiled creature since your turn began."
+      "This creature has haste if you controlled the championed creature since your turn began."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2219,7 +2219,7 @@
     "displayType": "Artifact Creature — Robot",
     "text": [
       "When this creature enters, you get {E}{E}.",
-      "At the beginning of your end step, if you paid three or more {E} this turn, create a 2/2 colorless Robot artifact creature token with menace."
+      "At the beginning of your end step, if you paid two or more {E} this turn, create a 2/2 colorless Robot artifact creature token with menace."
     ],
     "flavor": " \"The factories of 01 never sleep.\"",
     "rarity": "Uncommon",
@@ -2257,7 +2257,7 @@
     "text": [
       "Digital (Cain can block or be blocked only by creatures with digital.)",
       "Lifelink",
-      "Whenever you gain life, up to one target creature gets -X/-X until end of turn, where X is the amount of life you gained."
+      "Whenever Cain deals combat damage to a player, up to one target creature gets -X/-X until end of turn, where X is the amount of life you have gained this turn."
     ],
     "flavor": " \"I have survived versions of the Matrix you cannot imagine. You will not survive this one.\"",
     "rarity": "Rare",
@@ -2348,7 +2348,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Menace",
-      "At the beginning of your end step, sacrifice a creature or eject."
+      "At the beginning of your upkeep, sacrifice a creature or eject."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -2384,8 +2384,7 @@
     "displayType": "Legendary Creature — Human Rogue",
     "text": [
       "Menace",
-      "Whenever Bane deals combat damage to a player, you may sacrifice an artifact or creature. If you do, look at that player's hand and choose a nonland card from it. That player discards that card.",
-      "When Bane dies, you may pay {E}{E}{E}. If you do, return it to its owner's hand."
+      "Whenever Bane deals combat damage to a player, you may sacrifice an artifact or creature. If you do, look at that player's hand and choose a nonland card from it. That player discards that card."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -3013,7 +3012,7 @@
     "displayType": "Artifact Creature — Robot",
     "text": [
       "Menace, haste",
-      "At the beginning of the end step, sacrifice Hunter-Killer Sentinel.",
+      "At the beginning of your end step, sacrifice Hunter-Killer Sentinel.",
       "When Hunter-Killer Sentinel dies, it deals 3 damage divided as you choose among one, two, or three targets."
     ],
     "flavor": "",
@@ -3081,21 +3080,21 @@
   },
   {
     "id": "R067",
-    "name": "Sentinel Scout",
+    "name": "Dynavolt Core",
     "cost": "{2}{R}",
-    "type": "Artifact Creature — Robot Scout (3/2)",
-    "displayType": "Artifact Creature — Robot Scout",
+    "type": "Artifact",
+    "displayType": "Artifact",
     "text": [
-      "Menace",
-      "Whenever this creature deals combat damage to a player, deal 3 damage to up to one target creature with digital."
+      "Whenever you sacrifice an artifact, you get {E}{E}.",
+      "{T}, Pay {E}{E}{E}: Improvised EMP Core deals 3 damage to any target."
     ],
     "flavor": "",
     "rarity": "Rare",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "3/2",
+    "pt": "",
     "colorIndicator": null,
-    "fileName": "R067_sentinel_scout.png"
+    "fileName": "R067_dynavolt_core.png"
   },
   {
     "id": "R065",
@@ -4146,7 +4145,7 @@
     "displayType": "Legendary Creature — Program Spirit",
     "text": [
       "Digital (The Twins can block or be blocked only by creatures with digital.)",
-      "When The Twins leaves the battlefield, each opponent loses 1 life and you gain 1 life.",
+      "When The Twins enters, each opponent loses 1 life and you gain 1 life.",
       "{W}{B}: Exile The Twins and return them to the battlefield at the beginning of the next end step."
     ],
     "flavor": "",
@@ -4551,8 +4550,8 @@
     "displayType": "Legendary Creature — Human Avatar",
     "text": [
       "{R/W}: Neo becomes a 2/2 Human Monk with vigilance.",
-      "{R/W}{R/W}: If Neo is a Monk, it becomes a 3/3 Human Monk Soldier and gains prowess.",
-      "{R/W}{R/W}{R/W}: If Neo is a Soldier, put a +1/+1 counter on it and it gains digital until end of turn."
+      "{R}{R}: If Neo is a Monk, it becomes a 3/3 Human Monk Soldier and gains prowess.",
+      "{W}{W}{W}: If Neo is a Soldier, put a +1/+1 counter on it and it gains digital until end of turn."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -4822,8 +4821,8 @@
     "displayType": "Legendary Creature — Program Rogue",
     "text": [
       "Champion a creature",
-      "Menace",
       "You may have Agent Smith champion creatures you don't control.",
+      "Menace",
       "Agent Smith has digital as long as the championed creature had digital. The same is true for flying, first strike, double strike, deathtouch, haste, hexproof, indestructible, lifelink, reach, trample, and vigilance."
     ],
     "flavor": "",
@@ -4933,8 +4932,7 @@
     "text": [
       "When this artifact enters, you get {E}{E}.",
       "Equipped creature gets +1/+1.",
-      "Pay {E}{E}: Attach this artifact to target creature you control. Activate only as a sorcery.",
-      "Equip {2}"
+      "Equip {2} or pay {E}{E}"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4948,17 +4946,18 @@
     "id": "U138",
     "name": "Machine City Guard",
     "cost": "{3}",
-    "type": "Artifact Creature — Robot Guardian (3/3)",
-    "displayType": "Artifact Creature — Robot Guardian",
+    "type": "Artifact Creature — Robot Drone (2/2)",
+    "displayType": "Artifact Creature — Robot Drone",
     "text": [
-      "Whenever this creature attacks, you may pay {E}.",
-      "If you do, target creature can't block this turn."
+      "Flash",
+      "Flying",
+      "When this creature enters, you may tap target artifact or creature with digital. If you do, put a stun counter on it."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "3/3",
+    "pt": "2/2",
     "colorIndicator": null,
     "fileName": "U138_machine_city_guard.png"
   },

@@ -282,7 +282,7 @@ When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target cre
 
 [R004] Guns. Lots of Guns. {2}{W}
 Sorcery
-Create five Gun tokens. Until end of turn, Equipment you control have equip {0}.
+Create five Gun tokens. Until end of turn, equipment you control have equip {0}.
 
 [R005] Rooftop Rescue {2}{W}
 Legendary Sorcery
@@ -495,8 +495,8 @@ When this creature enters, tap up to one target creature and put a stun counter 
 [U033] Link Monitor {1}{U}
 Creature — Human Artificer (2/1)
 Whenever a creature you control transforms, you get {E}.
-{T}: Add {U}. Spend this mana only to cast spells with digital, instants, or sorceries.
-{1}{U}: Transform target creature with a jack-in or eject ability.
+{T}: Add {U}. Spend this mana only to cast instant or sorcery spells.
+{T}: Add {U}. Spend this mana only to activate jack-in or eject abilities.
 
 [U035] Broadcast Intruder {2}{U}
 Creature — Human Rogue (2/3)
@@ -648,7 +648,7 @@ Whenever you gain life, this creature gets +1/+0 until end of turn.
 
 [C077] Desperate Insight {2}{B}
 Instant
-Kicker - {E}{E}
+Kicker - Pay {E}{E}
 Draw two cards. If this spell was not kicked, you lose 2 life.
 
 [C078] Blood-Fuel Converter {2}{B}
@@ -697,7 +697,7 @@ Whenever this creature deals combat damage to a player, that player loses {E} eq
 Creature — Program Agent (5/4)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Champion a creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves.)
-This creature has haste if you controlled the exiled creature since your turn began.
+This creature has haste if you controlled the championed creature since your turn began.
 
 [U047] Machine City Enforcer {1}{B}
 Artifact Creature — Robot (2/1)
@@ -748,7 +748,7 @@ When this creature dies, you get {E}{E}.
 [U055] Sentinel Fabricator {2}{B}
 Artifact Creature — Robot (2/2)
 When this creature enters, you get {E}{E}.
-At the beginning of your end step, if you paid three or more {E} this turn, create a 2/2 colorless Robot artifact creature token with menace.
+At the beginning of your end step, if you paid two or more {E} this turn, create a 2/2 colorless Robot artifact creature token with menace.
 "The factories of 01 never sleep."
 
 --- RARES ---
@@ -763,7 +763,7 @@ Whenever a Robot you control dies, you may pay {2}{B}. If you do, create a 2/2 c
 Legendary Creature — Program Vampire (2/5)
 Digital (Cain can block or be blocked only by creatures with digital.)
 Lifelink
-Whenever you gain life, up to one target creature gets -X/-X until end of turn, where X is the amount of life you gained.
+Whenever Cain deals combat damage to a player, up to one target creature gets -X/-X until end of turn, where X is the amount of life you have gained this turn.
 "I have survived versions of the Matrix you cannot imagine. You will not survive this one."
 
 [R042] The Trainman {3}{B}
@@ -790,7 +790,7 @@ Unshackled Virus (Color Indicator: Black)
 Creature — Human Program (5/4)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Menace
-At the beginning of your end step, sacrifice a creature or eject.
+At the beginning of your upkeep, sacrifice a creature or eject.
 
 [R046] Harvester Unit {3}{B}
 Artifact Creature — Robot (4/4)
@@ -801,7 +801,6 @@ Whenever another creature you control dies, you get {E}.
 Legendary Creature — Human Rogue (3/2)
 Menace
 Whenever Bane deals combat damage to a player, you may sacrifice an artifact or creature. If you do, look at that player's hand and choose a nonland card from it. That player discards that card.
-When Bane dies, you may pay {E}{E}{E}. If you do, return it to its owner's hand.
 
 --- MYTHICS ---
 
@@ -986,7 +985,7 @@ You may cast this spell as though it had flash if you have four or more {E}.
 [R061] Hunter-Killer Sentinel {2}{R}
 Artifact Creature — Robot (3/2)
 Menace, haste
-At the beginning of the end step, sacrifice Hunter-Killer Sentinel.
+At the beginning of your end step, sacrifice Hunter-Killer Sentinel.
 When Hunter-Killer Sentinel dies, it deals 3 damage divided as you choose among one, two, or three targets.
 
 [R062] EMP Blast {1}{R}{R}
@@ -1005,10 +1004,10 @@ Legendary Creature — Human Rogue (2/2)
 First strike
 At the beginning of your precombat main phase, you may sacrifice a creature or artifact. If you do, add {R}{R} and exile the top card of your library. You may play that card this turn.
 
-[R067] Sentinel Scout {2}{R}
-Artifact Creature — Robot Scout (3/2)
-Menace
-Whenever this creature deals combat damage to a player, deal 3 damage to up to one target creature with digital.
+[R067] Dynavolt Core {2}{R}
+Artifact
+Whenever you sacrifice an artifact, you get {E}{E}.
+{T}, Pay {E}{E}{E}: Improvised EMP Core deals 3 damage to any target.
 
 [R065] The Red Woman {2}{R}{R}
 Legendary Creature — Program (1/1)
@@ -1335,7 +1334,7 @@ Whenever a creature an opponent controls becomes tapped, you may pay {1}. If you
 [U114] The Twins, Ghost Programs {1}{W}{B}
 Legendary Creature — Program Spirit (3/1)
 Digital (The Twins can block or be blocked only by creatures with digital.)
-When The Twins leaves the battlefield, each opponent loses 1 life and you gain 1 life.
+When The Twins enters, each opponent loses 1 life and you gain 1 life.
 {W}{B}: Exile The Twins and return them to the battlefield at the beginning of the next end step.
 
 [U115] Persephone, Disillusioned Wife {1}{W}{B}
@@ -1456,8 +1455,8 @@ That creature can block any number of creatures this turn.
 [R112] Neo, Newly Awakened {R/W}
 Legendary Creature — Human Avatar (1/1)
 {R/W}: Neo becomes a 2/2 Human Monk with vigilance.
-{R/W}{R/W}: If Neo is a Monk, it becomes a 3/3 Human Monk Soldier and gains prowess.
-{R/W}{R/W}{R/W}: If Neo is a Soldier, put a +1/+1 counter on it and it gains digital until end of turn.
+{R}{R}: If Neo is a Monk, it becomes a 3/3 Human Monk Soldier and gains prowess.
+{W}{W}{W}: If Neo is a Soldier, put a +1/+1 counter on it and it gains digital until end of turn.
 
 [R113] Bullet Time Physics {1}{G}{U}
 Enchantment
@@ -1548,8 +1547,8 @@ Crew 3
 [M16] Agent Smith, Unshackled {3}{B}{R}
 Legendary Creature — Program Rogue (4/4)
 Champion a creature
-Menace
 You may have Agent Smith champion creatures you don't control.
+Menace
 Agent Smith has digital as long as the championed creature had digital. The same is true for flying, first strike, double strike, deathtouch, haste, hexproof, indestructible, lifelink, reach, trample, and vigilance.
 
 
@@ -1588,13 +1587,13 @@ Whenever a creature enters under your control, you get {E}.
 Artifact — Equipment
 When this artifact enters, you get {E}{E}.
 Equipped creature gets +1/+1.
-Pay {E}{E}: Attach this artifact to target creature you control. Activate only as a sorcery.
-Equip {2}
+Equip {2} or pay {E}{E}
 
 [U138] Machine City Guard {3}
-Artifact Creature — Robot Guardian (3/3)
-Whenever this creature attacks, you may pay {E}.
-If you do, target creature can't block this turn.
+Artifact Creature — Robot Drone (2/2)
+Flash
+Flying
+When this creature enters, you may tap target artifact or creature with digital. If you do, put a stun counter on it.
 
 [U140] Mag-Lev Harpoon {2}
 Artifact — Equipment

@@ -89,11 +89,11 @@
       "Land": 16
     },
     "typeBreakdown": {
-      "Creature": 155,
+      "Creature": 154,
       "Sorcery": 29,
       "Enchantment": 26,
       "Instant": 33,
-      "Artifact": 17,
+      "Artifact": 18,
       "Land": 16
     },
     "manaCurveByColor": {
@@ -200,11 +200,11 @@
       }
     },
     "creatureStats": {
-      "total": 155,
+      "total": 154,
       "byRarity": {
         "Common": 46,
         "Uncommon": 65,
-        "Rare": 34,
+        "Rare": 33,
         "Mythic": 10
       },
       "averagePT": {
@@ -214,8 +214,8 @@
       "powerDistribution": {
         "0": 3,
         "1": 32,
-        "2": 53,
-        "3": 41,
+        "2": 54,
+        "3": 39,
         "4": 15,
         "5+": 11
       },
@@ -223,16 +223,16 @@
         "0": 1,
         "1": 28,
         "2": 41,
-        "3": 43,
+        "3": 42,
         "4": 29,
         "5+": 13
       }
     },
     "keywords": {
       "Vigilance": 9,
-      "Digital": 75,
+      "Digital": 74,
       "Jack-in": 23,
-      "Flying": 11,
+      "Flying": 12,
       "Lifelink": 10,
       "Eject": 8,
       "First Strike": 4,
@@ -241,9 +241,9 @@
       "Defender": 3,
       "Double Strike": 3,
       "Hexproof": 7,
-      "Flash": 21,
+      "Flash": 22,
       "Ward": 4,
-      "Menace": 18,
+      "Menace": 17,
       "Deathtouch": 4,
       "Haste": 12,
       "Trample": 15
@@ -260,7 +260,7 @@
       "removal": 70,
       "counterspells": 5,
       "tokenCreators": 33,
-      "energyCards": 111
+      "energyCards": 110
     },
     "rarityByColor": {
       "W": {
