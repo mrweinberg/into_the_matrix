@@ -76,7 +76,7 @@ Equip {1}
 --- COMMONS ---
 
 [C001] Hovercraft Crewman {1}{W}
-Creature — Human Soldier (1/4)
+Creature — Human Soldier (2/2)
 Vigilance
 At the beginning of combat on your turn, if you control a creature with digital, you may jack-in this creature.
 //
@@ -337,7 +337,7 @@ If this spell was kicked, put two into your hand instead.
 
 [C031] Code-Hack Splicer {U}
 Creature — Human Wizard (1/1)
-{T}: Add {C}. Spend this mana only to cast Artifact spells or activate abilities that jack-in or eject.
+When this creature enters, create a Clue token.
 {1}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)
 //
 Deep-Dive Hacker (Color Indicator: Blue)
@@ -640,11 +640,11 @@ Basic landcycling {2}
 Sorcery
 Target player discards two cards and loses {E}{E}{E}.
 
-[C076] Chateau Vampire {1}{B}
+[C076] Chateau Vampire {2}{B}
 Creature — Program Vampire (1/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Lifelink
-Whenever you gain life, this creature gets +1/+0 until end of turn.
+Whenever you gain life, each opponent loses 1 life.
 
 [C077] Desperate Insight {2}{B}
 Instant
@@ -769,7 +769,7 @@ Whenever Cain deals combat damage to a player, up to one target creature gets -X
 [R042] The Trainman {3}{B}
 Legendary Creature — Program Guide (2/3)
 Digital
-When The Trainman enters, exile another target creature until The Trainman leaves the battlefield. If you control the exiled card, draw two cards and lose 2 life. If you don't control the exiled card, its owner loses 2 life and you gain 2 life.
+When The Trainman enters, exile another target creature until The Trainman leaves the battlefield. If you own the exiled card, draw two cards and lose 2 life. If you don't own the exiled card, its owner loses 2 life and you gain 2 life.
 
 [R043] Scorched Skies {2}{B}{B}
 Enchantment — Saga
@@ -784,13 +784,13 @@ At the beginning of your end step, if three or more creatures died this turn, dr
 
 [R045] Copper-Top Rebel {B}
 Creature — Human Rebel (1/1)
-{1}{B}, Sacrifice another creature: Jack-in.
+{1}{B}, Sacrifice another creature: Put a +1/+1 counter on this creature and jack-in.
 //
 Unshackled Virus (Color Indicator: Black)
-Creature — Human Program (5/4)
+Creature — Human Program (3/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Menace
-At the beginning of your upkeep, sacrifice a creature or eject.
+At the beginning of your upkeep, you may sacrifice a creature. If you do, put a +1/+1 counter on this creature. If you don't, eject.
 
 [R046] Harvester Unit {3}{B}
 Artifact Creature — Robot (4/4)
@@ -906,7 +906,7 @@ Whenever a creature enters the battlefield under your control, you may pay {1}. 
 
 [U062] Surge Channeler {2}{R}
 Creature — Human Artificer (2/3)
-Whenever you cast an instant or sorcery, you get {E} and then pay {E}{E}. When you do, this creature deals 2 damage to any target.
+Whenever you cast an instant or sorcery, you get {E} and then pay {E}{E}{E}. When you do, this creature deals 2 damage to any target.
 
 [U063] Overclock {1}{R}
 Instant
@@ -1108,8 +1108,7 @@ At the beginning of your end step, if a creature died this turn, put a +1/+1 cou
 
 [C139] Deep Earth Cultivator {1}{G}
 Creature — Human Druid (1/3)
-{T}: Add {G}.
-If this mana is spent to cast a creature spell that doesn't have digital, that creature enters with an additional +1/+1 counter on it.
+{T}: Add {G}. If this mana is spent to cast a creature spell that doesn't have digital, that creature enters with an additional +1/+1 counter on it.
 
 --- UNCOMMONS ---
 
@@ -1565,11 +1564,6 @@ When this artifact enters or leaves the battlefield, scry 2.
 Artifact — Food
 {2}, {T}, Sacrifice this artifact: You gain 3 life and draw a card.
 
-[C156] The Spoon {0}
-Artifact
-{1}, {T}: Target creature gains flying until end of turn.
-{2}, {T}: Target creature loses all abilities until end of turn.
-
 [C157] Prism Interface {2}
 Artifact
 When this artifact enters, you get {E}.
@@ -1718,22 +1712,12 @@ Construct Loading Zone enters tapped.
 {T}: Add {G} or {U}.
 {3}, {T}: You get {E}.
 
-[C180] Hardline Exit
-Land
-{T}, Sacrifice Hardline Exit: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.
-
 --- UNCOMMONS ---
 
 [U160] Broadcast Node
 Land
 {T}: Add {C}.
 {2}, {T}: Target creature gains digital until end of turn. (It can block or be blocked only by creatures with digital.)
-
-[U161] Aether Hub
-Land
-When Aether Hub enters, you get {E}.
-{T}: Add {C}.
-{T}, Pay {E}: Add one mana of any color.
 
 [U162] The Pod Fields
 Land
