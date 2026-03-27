@@ -877,7 +877,7 @@
     "displayType": "Creature — Human Wizard",
     "text": [
       "When this creature enters, create a Clue token.",
-      "{1}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)"
+      "{2}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -928,7 +928,7 @@
     "id": "C032",
     "name": "Backdoor Accessor",
     "cost": "",
-    "type": "Creature — Human Program Rogue (2/3)",
+    "type": "Creature — Human Program Rogue (2/2)",
     "displayType": "Creature — Human Program Rogue",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
@@ -939,7 +939,7 @@
     "rarity": "Common",
     "isBackFace": true,
     "hasBackFace": false,
-    "pt": "2/3",
+    "pt": "2/2",
     "colorIndicator": "ub",
     "fileName": "C032b_backdoor_accessor_back.png"
   },
@@ -1439,7 +1439,7 @@
     "type": "Creature — Human Rogue (2/3)",
     "displayType": "Creature — Human Rogue",
     "text": [
-      "When this creature enters, you get {E}{E}.",
+      "When this creature enters or transforms into this creature, you get {E}{E}.",
       "{1}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)"
     ],
     "flavor": "",
@@ -1459,7 +1459,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Whenever Pirate Signal attacks, you may pay {E}. If you do, another target creature gains digital until end of turn.",
-      "{2}: Eject. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)"
+      "{2}{U}: Eject. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2329,7 +2329,7 @@
     "type": "Creature — Human Rebel (1/1)",
     "displayType": "Creature — Human Rebel",
     "text": [
-      "{1}{B}, Sacrifice another creature: Put a +1/+1 counter on this creature and jack-in."
+      "{1}{B}, Sacrifice another creature: Put a +1/+1 counter on this creature and it jacks-in."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -2488,7 +2488,7 @@
     "type": "Creature — Human Soldier (2/1)",
     "displayType": "Creature — Human Soldier",
     "text": [
-      "Whenever this creature becomes equipped, it gets +1/+1 until end of turn.",
+      "Whenever you attach an equipment to this creature, it gets +1/+1 until end of turn. This ability only triggers up to twice each turn.",
       "{2}{R}: Jack-in. Activate only as a sorcery and only once each turn. ({2}{R}: Transform this card.)"
     ],
     "flavor": "",
@@ -3573,7 +3573,7 @@
     "type": "Creature — Human Druid (1/3)",
     "displayType": "Creature — Human Druid",
     "text": [
-      "{T}: Add {G}.",
+      "{T}: Add one mana of any color.",
       "{4}{G}: Jack-in. Activate only as a sorcery and only once each turn. ({4}{G}: Transform this card.)"
     ],
     "flavor": "",
@@ -3922,7 +3922,7 @@
     "type": "Enchantment",
     "displayType": "Enchantment",
     "text": [
-      "Whenever a creature you control transforms, put a +1/+1 counter on it. When you do, you may tap up to one target creature.",
+      "Whenever a creature you control transforms, put a +1/+1 counter on it.",
       "{W}{U}: Transform target creature you control with a jack-in or eject ability."
     ],
     "flavor": "",
@@ -3980,6 +3980,7 @@
     "displayType": "Legendary Creature — Program Agent",
     "text": [
       "Digital (Agent Jones can block or be blocked only by creatures with digital.)",
+      "When Agent Jones deals combat damage to a player, scry 1.",
       "If a creature you control dealing combat damage to a player triggers an ability, it triggers an additional time."
     ],
     "flavor": "",

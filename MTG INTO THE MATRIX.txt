@@ -338,7 +338,7 @@ If this spell was kicked, put two into your hand instead.
 [C031] Code-Hack Splicer {U}
 Creature — Human Wizard (1/1)
 When this creature enters, create a Clue token.
-{1}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)
+{2}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)
 //
 Deep-Dive Hacker (Color Indicator: Blue)
 Creature — Human Program Wizard (2/1)
@@ -352,7 +352,7 @@ When this creature enters, scry 2.
 {U}: Jack-in. Activate only as a sorcery and only once each turn. ({U}: Transform this card.)
 //
 Backdoor Accessor (Color Indicator: Blue)
-Creature — Human Program Rogue (2/3)
+Creature — Human Program Rogue (2/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Prowess.
 {1}{U}: Eject. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)
@@ -500,14 +500,14 @@ Whenever a creature you control transforms, you get {E}.
 
 [U035] Broadcast Intruder {2}{U}
 Creature — Human Rogue (2/3)
-When this creature enters, you get {E}{E}.
+When this creature enters or transforms into this creature, you get {E}{E}.
 {1}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)
 //
 Pirate Signal (Color Indicator: Blue)
 Creature — Human Program Rogue (3/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Whenever Pirate Signal attacks, you may pay {E}. If you do, another target creature gains digital until end of turn.
-{2}: Eject. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)
+{2}{U}: Eject. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)
 
 --- RARES ---
 
@@ -784,7 +784,7 @@ At the beginning of your end step, if three or more creatures died this turn, dr
 
 [R045] Copper-Top Rebel {B}
 Creature — Human Rebel (1/1)
-{1}{B}, Sacrifice another creature: Put a +1/+1 counter on this creature and jack-in.
+{1}{B}, Sacrifice another creature: Put a +1/+1 counter on this creature and it jacks-in.
 //
 Unshackled Virus (Color Indicator: Black)
 Creature — Human Program (3/3)
@@ -832,7 +832,7 @@ When this creature enters, create a Treasure token.
 
 [C095] Avid Marksman {1}{R}
 Creature — Human Soldier (2/1)
-Whenever this creature becomes equipped, it gets +1/+1 until end of turn.
+Whenever you attach an equipment to this creature, it gets +1/+1 until end of turn. This ability only triggers up to twice each turn.
 {2}{R}: Jack-in. Activate only as a sorcery and only once each turn. ({2}{R}: Transform this card.)
 //
 Expert Sniper (Color Indicator: Red)
@@ -1152,7 +1152,7 @@ When this creature enters, gain 1 life for each {E} you have.
 
 [U087] Hydroponics Tender {1}{G}
 Creature — Human Druid (1/3)
-{T}: Add {G}.
+{T}: Add one mana of any color.
 {4}{G}: Jack-in. Activate only as a sorcery and only once each turn. ({4}{G}: Transform this card.)
 //
 Overgrown Simulation (Color Indicator: Green)
@@ -1267,7 +1267,7 @@ Pay {E}: Add {G}.
 
 [U100] Mind-Body Sync {W}{U}
 Enchantment
-Whenever a creature you control transforms, put a +1/+1 counter on it. When you do, you may tap up to one target creature.
+Whenever a creature you control transforms, put a +1/+1 counter on it.
 {W}{U}: Transform target creature you control with a jack-in or eject ability.
 
 [U101] Nebuchadnezzar's Ace {1}{W}{U}
@@ -1286,6 +1286,7 @@ Other creatures you control with eject get +1/+1.
 [U104] Agent Jones {1}{U}{B} 
 Legendary Creature — Program Agent (3/2)
 Digital (Agent Jones can block or be blocked only by creatures with digital.)
+When Agent Jones deals combat damage to a player, scry 1.
 If a creature you control dealing combat damage to a player triggers an ability, it triggers an additional time.
 
 [U105] Mouse, Software Prodigy {1}{U}{R}
