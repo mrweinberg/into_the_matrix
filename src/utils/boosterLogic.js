@@ -7,6 +7,8 @@ function getRandom(arr, count) {
   return copy.slice(0, count)
 }
 
+let _pickUid = 0
+
 export function generateBoosterPackData(allCards) {
   const lands = allCards.filter(c => c.rarity === "Land" && !c.isBackFace)
   const commons = allCards.filter(c => c.rarity === "Common" && !c.isBackFace)
@@ -42,7 +44,7 @@ export function generateBoosterPackData(allCards) {
     }
   }
 
-  return pack
+  return pack.map(card => ({ ...card, pickId: `pick-${++_pickUid}` }))
 }
 
 export const rarityWeights = { Mythic: 4, Rare: 3, Uncommon: 2, Common: 1, Land: 0 }

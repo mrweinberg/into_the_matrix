@@ -16,17 +16,17 @@
               DRAFT: PACK {{ round }} / PICK {{ pick }}
             </h2>
             <div class="pack-grid">
-              <template v-for="card in currentPack" :key="card.id">
+              <template v-for="card in currentPack" :key="card.pickId || card.id">
                 <CardDFC
                   v-if="card.hasBackFace"
                   :card="card"
                   :back-card="getBackFace(card)"
-                  @click="pickCard(card.id)"
+                  @click="pickCard(card.pickId || card.id)"
                 />
                 <CardItem
                   v-else
                   :card="card"
-                  @click="pickCard(card.id)"
+                  @click="pickCard(card.pickId || card.id)"
                 />
               </template>
             </div>

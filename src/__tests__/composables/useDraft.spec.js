@@ -78,7 +78,7 @@ describe('useDraft', () => {
             draft.startDraft()
 
             const cardToPick = draft.currentPack.value[0]
-            draft.pickCard(cardToPick.id)
+            draft.pickCard(cardToPick.pickId)
 
             expect(draft.pool.value.length).toBe(1)
             expect(draft.pool.value[0].id).toBe(cardToPick.id)
@@ -91,7 +91,7 @@ describe('useDraft', () => {
             const cardToPick = draft.currentPack.value[0]
             const originalPackSize = draft.currentPack.value.length
 
-            draft.pickCard(cardToPick.id)
+            draft.pickCard(cardToPick.pickId)
 
             expect(draft.currentPack.value.length).toBe(originalPackSize - 1)
             expect(draft.currentPack.value.find(c => c.id === cardToPick.id)).toBeUndefined()
@@ -104,7 +104,7 @@ describe('useDraft', () => {
             expect(draft.pick.value).toBe(1)
 
             const cardToPick = draft.currentPack.value[0]
-            draft.pickCard(cardToPick.id)
+            draft.pickCard(cardToPick.pickId)
 
             expect(draft.pick.value).toBe(2)
         })
@@ -167,7 +167,7 @@ describe('useDraft', () => {
             // Pick multiple cards
             for (let i = 0; i < 5; i++) {
                 if (draft.currentPack.value.length > 0) {
-                    draft.pickCard(draft.currentPack.value[0].id)
+                    draft.pickCard(draft.currentPack.value[0].pickId)
                 }
             }
 
@@ -191,7 +191,7 @@ describe('useDraft', () => {
             let pickCount = 0
             while (draft.active.value && pickCount < 50) {
                 if (draft.currentPack.value.length > 0) {
-                    draft.pickCard(draft.currentPack.value[0].id)
+                    draft.pickCard(draft.currentPack.value[0].pickId)
                     pickCount++
                 } else {
                     break

@@ -54,7 +54,8 @@ export function useDraft(allCards) {
   }
 
   function pickCard(cardId) {
-    const cardIndex = state.packs[0].findIndex(c => c.id === cardId)
+    if (!state.packs[0] || state.packs[0].length === 0) return
+    const cardIndex = state.packs[0].findIndex(c => (c.pickId || c.id) === cardId)
     if (cardIndex === -1) return
 
     // 1. User picks card
