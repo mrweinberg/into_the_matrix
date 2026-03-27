@@ -1,5 +1,22 @@
 import fs from "node:fs";
 import path from "node:path";
+import { z } from "zod";
+
+const CardSchema = z.object({
+    id: z.string().min(1, "Missing ID"),
+    name: z.string().min(1, "Missing Name"),
+    cost: z.string(),
+    type: z.string().min(1, "Missing Type"),
+    displayType: z.string().optional(),
+    text: z.array(z.string()).optional(),
+    flavor: z.string().optional(),
+    rarity: z.string().optional(),
+    isBackFace: z.boolean().optional(),
+    hasBackFace: z.boolean().optional(),
+    pt: z.string().optional(),
+    colorIndicator: z.string().nullable().optional(),
+    fileName: z.string().optional()
+});
 
 // ==========================================
 // 1. CONFIGURATION
@@ -512,6 +529,23 @@ function main() {
     }
 
     const cardsForJson = data.cards.map(c => ({ ...c, fileName: c.getFileName() }));
+
+    console.log(`   🔍 Validating card schema...`);
+    let validationFailed = false;
+    cardsForJson.forEach((card, idx) => {
+        const result = CardSchema.safeParse(card);
+        if (!result.success) {
+            console.warn(`\n   ⚠️ Schema Validation Failed for card at index ${idx} (id: ${card.id || 'N/A'}, name: ${card.name || 'N/A'})`);
+            result.error.issues.forEach(issue => console.warn(`      - [${issue.path.join('.')}] ${issue.message}`));
+            validationFailed = true;
+        }
+    });
+
+    if (validationFailed) {
+        console.warn("\n   ⚠️ Some cards failed validation! Please check MTG INTO THE MATRIX.txt.\n");
+    } else {
+        console.log(`   ✅ Schema validation passed.`);
+    }
 
     fs.writeFileSync(
         path.join(dataDir, 'cards.json'),
