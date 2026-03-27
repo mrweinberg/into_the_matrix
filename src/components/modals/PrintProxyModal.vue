@@ -97,7 +97,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onBeforeUnmount } from 'vue'
 import BaseModal from './BaseModal.vue'
 import PrintProxyGrid from '@/components/print/PrintProxyGrid.vue'
 import { useCardStore } from '@/stores/cardStore'
@@ -221,9 +221,16 @@ function formatCost(cost) {
   return replaceSymbols(cost || '')
 }
 
+let printTimer = null
+
 function handlePrint() {
-  setTimeout(() => {
+  clearTimeout(printTimer)
+  printTimer = setTimeout(() => {
     window.print()
   }, 100)
 }
+
+onBeforeUnmount(() => {
+  clearTimeout(printTimer)
+})
 </script>

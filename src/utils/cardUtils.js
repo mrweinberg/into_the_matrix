@@ -1,22 +1,29 @@
 export function determineColorClass(card) {
-  let colorsFound = 0
-  if (card.cost.includes("{W}")) colorsFound++
-  if (card.cost.includes("{U}")) colorsFound++
-  if (card.cost.includes("{B}")) colorsFound++
-  if (card.cost.includes("{R}")) colorsFound++
-  if (card.cost.includes("{G}")) colorsFound++
+  const cost = card.cost || ''
+  const colors = extractColorsFromCost(cost)
 
   if (card.type.toLowerCase().includes("land")) return "Land"
-  if (colorsFound > 1) return "Gold"
-  if (colorsFound === 0) return "Artifact"
+  if (colors.length > 1) return "Gold"
+  if (colors.length === 0) return "Artifact"
 
-  if (card.cost.includes("{W}")) return "W"
-  if (card.cost.includes("{U}")) return "U"
-  if (card.cost.includes("{B}")) return "B"
-  if (card.cost.includes("{R}")) return "R"
-  if (card.cost.includes("{G}")) return "G"
+  return colors[0]
+}
 
-  return "Artifact"
+/**
+ * Extract unique color symbols (W, U, B, R, G) from a mana cost string,
+ * including colors inside hybrid symbols like {R/W} or {G/U}.
+ */
+export function extractColorsFromCost(cost) {
+  if (!cost) return []
+  const found = new Set()
+  const symbols = cost.match(/{[^{}]+}/g) || []
+  for (const sym of symbols) {
+    const inner = sym.replace(/[{}]/g, '')
+    for (const color of ['W', 'U', 'B', 'R', 'G']) {
+      if (inner.includes(color)) found.add(color)
+    }
+  }
+  return Array.from(found)
 }
 
 export function calculateCMC(cost) {

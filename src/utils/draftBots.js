@@ -1,4 +1,4 @@
-import { determineColorClass } from '@/utils/cardUtils'
+import { determineColorClass, extractColorsFromCost } from '@/utils/cardUtils'
 
 export class DraftBot {
     constructor(id) {
@@ -91,17 +91,8 @@ export class DraftBot {
 
     getCardColors(card) {
         const colorClass = determineColorClass(card)
-        if (colorClass === 'Gold' || colorClass === 'Multicolor') {
-            // Simplistic parsing of mana cost for gold cards if not explicitly tagged
-            // Ideally we'd use card.colors or parse cost. 
-            // Assuming 'cost' exists e.g., "{1}{W}{U}"
-            const found = []
-            if (card.cost.includes('{W}')) found.push('W')
-            if (card.cost.includes('{U}')) found.push('U')
-            if (card.cost.includes('{B}')) found.push('B')
-            if (card.cost.includes('{R}')) found.push('R')
-            if (card.cost.includes('{G}')) found.push('G')
-            return found
+        if (colorClass === 'Gold') {
+            return extractColorsFromCost(card.cost)
         }
         if (this.colors[colorClass] !== undefined) {
             return [colorClass]

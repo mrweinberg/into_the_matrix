@@ -28,7 +28,6 @@ export const useCardStore = defineStore('cards', () => {
         import('@/data/setInfo.json')
       ])
 
-      cards.value = cardsData.default
       designNotes.value = notesData.default
       setInfo.value = setInfoData.default
 
