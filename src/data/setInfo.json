@@ -50,8 +50,8 @@
       "name": "Gun Token",
       "text": [
         "Token Artifact — Equipment",
-        "Equipped creature gets +1/+0 and has first strike.",
-        "When equipped creature deals combat damage, sacrifice this Artifact.",
+        "Equipped creature gets +1/+0 and has first strike while attacking.",
+        "When equipped creature deals combat damage, sacrifice this artifact.",
         "Equip {1}"
       ],
       "notes": []
@@ -233,6 +233,7 @@
       "Digital": 74,
       "Jack-in": 22,
       "Flying": 10,
+      "First Strike": 14,
       "Lifelink": 10,
       "Eject": 7,
       "Indestructible": 9,
@@ -245,8 +246,7 @@
       "Menace": 17,
       "Deathtouch": 4,
       "Haste": 12,
-      "Trample": 15,
-      "First Strike": 3
+      "Trample": 15
     },
     "dfcCount": 20,
     "instantSorceryRatio": {
@@ -257,7 +257,7 @@
     "averageCMC": 3.01,
     "cardsWithAbilities": {
       "cardDraw": 34,
-      "removal": 70,
+      "removal": 80,
       "counterspells": 5,
       "tokenCreators": 34,
       "energyCards": 109

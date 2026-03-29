@@ -65,8 +65,8 @@ A counter given to players. Used to pay for activated abilities or triggered eff
 
 Gun Token
 Token Artifact — Equipment
-Equipped creature gets +1/+0 and has first strike.
-When equipped creature deals combat damage, sacrifice this Artifact.
+Equipped creature gets +1/+0 and has first strike while attacking.
+When equipped creature deals combat damage, sacrifice this artifact.
 Equip {1}
 
 2. Card Gallery
@@ -115,7 +115,7 @@ Enchanted creature can't attack or block.
 [C007] Dock Defender {3}{W}
 Creature — Human Soldier (3/2)
 Flying
-When this creature enters, you may pay {1}. If you do, create a Gun token.
+When this creature enters, you may pay {1}. If you do, create a Gun token. *(It's an Equipment artifact with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 
 [C008] Purged by the Firewall {1}{W}
 Instant
@@ -155,7 +155,7 @@ Choose one:
 
 [C018] Weapon Drop {1}{W}
 Instant
-Create two Gun tokens. You may attach them to creatures you control.
+Create two Gun tokens. You may attach them to creatures you control. *(They're Equipment artifacts with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 
 [C019] Peace Advocate {1}{W}
 Creature — Human Citizen (1/4)
@@ -193,8 +193,8 @@ Creatures you control get +2/+2 and vigilance until end of turn.
 
 [U006] Zion Drill Sergeant {2}{W}
 Creature — Human Soldier (2/2)
-Whenever another Human enters under your control, you get {E}.
-{T}, Pay {E}: Tap target creature.
+When this creature enters, you get {E}{E}.
+{T}, Pay {E}{E}: Tap target creature.
 
 [U007] Restless Sleeper {W}
 Creature — Human Citizen (1/1)
@@ -243,7 +243,7 @@ Return up to three creature cards from your graveyard to the battlefield with to
 
 [U014] Youthful Welder {W}
 Creature — Human Artificer (2/1)
-{2}{W}, {T}: Create a Gun token.
+{2}{W}, {T}: Create a Gun token. *(It's an Equipment artifact with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 
 [U015] Stand Together {1}{W}
 Instant
@@ -280,7 +280,7 @@ When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target cre
 
 [R004] Guns. Lots of Guns. {2}{W}
 Sorcery
-Create four Gun tokens. Until end of turn, they have equip {0}.
+Create four Gun tokens. Until end of turn, they have equip {0}. *(They're Equipment artifacts with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 
 [R005] Rooftop Rescue {2}{W}
 Legendary Sorcery
@@ -307,7 +307,7 @@ Trinity, Digital Savior (Color Indicator: R/W)
 Legendary Creature — Human Program Soldier (3/3)
 Digital (Trinity can block or be blocked only by creatures with digital.)
 Haste, vigilance
-Whenever Trinity, Digital Savior attacks, create a Gun token attached to her.
+Whenever Trinity, Digital Savior attacks, create a Gun token attached to her. *(It's an Equipment artifact with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 {W}: Eject. Activate only once each turn. ({W}: Transform this card.)
 
 --- MYTHICS ---
@@ -319,7 +319,7 @@ Players have hexproof.
 
 [M08] Weapons Cache {2}{W}
 Enchantment
-At the beginning of your upkeep, create a Gun token.
+At the beginning of your upkeep, create a Gun token. *(It's an Equipment artifact with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 If you would create one or more Gun tokens, create an additional Gun token.
 
 
@@ -836,7 +836,7 @@ Whenever you attach an equipment to this creature, it gets +1/+1 until end of tu
 Expert Sniper (Color Indicator: Red)
 Creature — Human Program Soldier (3/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
-When this creature transforms into Expert Sniper, create a Gun token.
+When this creature transforms into Expert Sniper, create a Gun token. *(It's an Equipment artifact with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 {R}: Eject. Activate only as a sorcery and only once each turn. ({R}: Transform this card.)
 
 [C096] Zealous Jammer {3}{R}
@@ -847,7 +847,7 @@ When this creature enters, if you control a nontoken artifact, deal 2 damage to 
 
 [C098] Lock and Load {1}{R}
 Instant
-Target creature gets +2/+0 until end of turn. Create a Gun token attached to it.
+Target creature gets +2/+0 until end of turn. Create a Gun token attached to it. *(It's an Equipment artifact with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 
 [C100] Explosive Drone {R}
 Artifact Creature — Robot (1/1)
@@ -900,7 +900,7 @@ When Take the Red Pill enters, put a +1/+1 counter on target creature.
 
 [U061] Munitions Specialist {2}{R}
 Creature — Human Artificer (2/3)
-Whenever a creature enters the battlefield under your control, you may pay {1}. If you do, create a Gun token attached to it.
+Whenever a creature enters the battlefield under your control, you may pay {1}. If you do, create a Gun token attached to it. *(It's an Equipment artifact with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 
 [U062] Surge Channeler {2}{R}
 Creature — Human Artificer (2/3)
@@ -916,7 +916,7 @@ Choose one -
 [U064] Akimbo Specialist {3}{R}
 Creature — Human Soldier (3/2)
 Double strike
-When this creature enters, create a Gun token.
+When this creature enters, create a Gun token. *(It's an Equipment artifact with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 Equipment attached to Akimbo Specialist cannot be sacrified during the first strike damage step.
 
 [U065] Turret Maniac {3}{R}
@@ -949,7 +949,7 @@ Whenever you sacrifice an artifact, this creature deals 1 damage to any target.
 
 [U070] Sentinel Charger {3}{R}
 Artifact Creature — Robot (4/3)
-When this creature enters, you may discard a card. If you do, draw a card and create a Gun token attached to this creature.
+When this creature enters, you may discard a card. If you do, draw a card and create a Gun token attached to this creature. *(It's an Equipment artifact with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 When this creature attacks, it deals damage to each opponent equal to the number of equipped attacking creatures.
 
 [U071] Draconic Sentinel {4}{R}{R}
@@ -1030,7 +1030,7 @@ At the beginning of your upkeep, exile the top card of your library. You may pla
 
 [M07] Trinity, Combat Driver {2}{R}
 Legendary Creature — Human Pilot (3/2)
-Whenever Trinity crews a Vehicle, create a Gun token attached to that Vehicle.
+Whenever Trinity crews a Vehicle, create a Gun token attached to that Vehicle. *(It's an Equipment artifact with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 Vehicles you control that are creatures get +1/+0 for every 2 {E} you have, rounded down.
 
 
@@ -1348,7 +1348,7 @@ Whenever an equipped creature you control deals combat damage to a player, draw 
 
 [U118] Uploaded Vanguard {1}{R}{W}
 Creature — Human Soldier (2/2)
-When this creature enters or transforms into this creature, create a Gun token.
+When this creature enters or transforms into this creature, create a Gun token. *(It's an Equipment artifact with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 {2}: Jack-in. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)
 //
 Vanguard Avatar (Color Indicator: R/W)
@@ -1437,7 +1437,7 @@ You may pay {0} rather than pay the equip cost of Equipment you control that tar
 [R108] The Virtual Armory {1}{W}{R}
 Enchantment
 Creatures you control get +1/+0 for each Equipment attached to them.
-At the beginning of combat on your turn, create a Gun token, then you may attach it to target creature you control.
+At the beginning of combat on your turn, create a Gun token, then you may attach it to target creature you control. *(It's an Equipment artifact with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 
 [R109] Morpheus, Revealer {2}{G}{U}
 Legendary Creature — Human Monk (3/3)
