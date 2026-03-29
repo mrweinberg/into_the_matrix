@@ -1374,7 +1374,7 @@ When this creature enters, you may have it tap or untap target creature. That cr
 
 [U122] The Source's Defense {1}{B}{G}
 Enchantment
-At the beginning of your upkeep, you may mill two cards.
+At the beginning of your upkeep, you may mill a cards.
 {2}, Exile a creature card from your graveyard: Create a 2/2 colorless Robot artifact creature token with menace.
 
 [U123] Resistance Recuiter {1}{W}{G}

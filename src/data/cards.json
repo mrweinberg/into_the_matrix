@@ -4289,7 +4289,7 @@
     "type": "Enchantment",
     "displayType": "Enchantment",
     "text": [
-      "At the beginning of your upkeep, you may mill two cards.",
+      "At the beginning of your upkeep, you may mill a cards.",
       "{2}, Exile a creature card from your graveyard: Create a 2/2 colorless Robot artifact creature token with menace."
     ],
     "flavor": "",
