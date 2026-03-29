@@ -1159,9 +1159,9 @@
   {
     "id": "U020",
     "name": "Code Freeze",
-    "cost": "{3}{U}",
-    "type": "Instant",
-    "displayType": "Instant",
+    "cost": "{3}{U}{U}",
+    "type": "Sorcery",
+    "displayType": "Sorcery",
     "text": [
       "As an additional cost to cast this spell, pay any amount of {E}.",
       "Tap X target creatures and put a stun counters on each of them, where X is the amount of {E} paid plus one.",

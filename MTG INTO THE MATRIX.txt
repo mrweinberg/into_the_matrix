@@ -416,8 +416,8 @@ The owner of target nonland permanent puts it into their library second from the
 
 --- UNCOMMONS ---
 
-[U020] Code Freeze {3}{U}
-Instant
+[U020] Code Freeze {3}{U}{U}
+Sorcery
 As an additional cost to cast this spell, pay any amount of {E}.
 Tap X target creatures and put a stun counters on each of them, where X is the amount of {E} paid plus one.
 Draw a card.
