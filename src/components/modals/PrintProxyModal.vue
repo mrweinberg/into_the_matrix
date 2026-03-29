@@ -97,7 +97,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, onBeforeUnmount } from 'vue'
+import { ref, computed, watch } from 'vue'
 import BaseModal from './BaseModal.vue'
 import PrintProxyGrid from '@/components/print/PrintProxyGrid.vue'
 import { useCardStore } from '@/stores/cardStore'
@@ -221,16 +221,39 @@ function formatCost(cost) {
   return replaceSymbols(cost || '')
 }
 
-let printTimer = null
+const PRINT_IMAGE_WIDTH = 750
+const PRINT_JPEG_QUALITY = 0.85
 
-function handlePrint() {
-  clearTimeout(printTimer)
-  printTimer = setTimeout(() => {
-    window.print()
-  }, 100)
+async function handlePrint() {
+  const container = document.querySelector('.print-only-container')
+  if (!container) { window.print(); return }
+
+  const images = container.querySelectorAll('img')
+  const originals = []
+
+  // Downscale each image via canvas to reduce PDF size
+  await Promise.all(Array.from(images).map((img) => {
+    return new Promise((resolve) => {
+      if (!img.naturalWidth) { resolve(); return }
+      originals.push({ el: img, src: img.src })
+
+      const scale = PRINT_IMAGE_WIDTH / img.naturalWidth
+      const canvas = document.createElement('canvas')
+      canvas.width = PRINT_IMAGE_WIDTH
+      canvas.height = Math.round(img.naturalHeight * scale)
+
+      const ctx = canvas.getContext('2d')
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+      img.src = canvas.toDataURL('image/jpeg', PRINT_JPEG_QUALITY)
+      resolve()
+    })
+  }))
+
+  // Small delay for DOM to settle, then print
+  await new Promise(r => setTimeout(r, 50))
+  window.print()
+
+  // Restore original high-res srcs after print dialog closes
+  originals.forEach(({ el, src }) => { el.src = src })
 }
-
-onBeforeUnmount(() => {
-  clearTimeout(printTimer)
-})
 </script>
