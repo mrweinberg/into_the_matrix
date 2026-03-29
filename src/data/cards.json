@@ -90,13 +90,12 @@
   },
   {
     "id": "C004",
-    "name": "Awakened Kung Fu Master",
+    "name": "Awakened Kung Fu Student",
     "cost": "",
-    "type": "Creature — Human Program Monk (2/2)",
+    "type": "Creature — Human Program Monk (1/2)",
     "displayType": "Creature — Human Program Monk",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
-      "First strike",
       "Whenever this creature attacks, scry 1.",
       "{W}: Eject. Activate only as a sorcery and only once each turn. ({W}: Transform this card.)"
     ],
@@ -104,9 +103,9 @@
     "rarity": "Common",
     "isBackFace": true,
     "hasBackFace": false,
-    "pt": "2/2",
+    "pt": "1/2",
     "colorIndicator": "w",
-    "fileName": "C004b_awakened_kung_fu_master_back.png"
+    "fileName": "C004b_awakened_kung_fu_student_back.png"
   },
   {
     "id": "C006",
@@ -485,11 +484,10 @@
   {
     "id": "U009",
     "name": "Morpheus, Seeker of Potential",
-    "cost": "{4}{W}",
-    "type": "Legendary Creature — Human Advisor (4/4)",
+    "cost": "{3}{W}",
+    "type": "Legendary Creature — Human Advisor (3/4)",
     "displayType": "Legendary Creature — Human Advisor",
     "text": [
-      "First strike",
       "Digital (Morpheus can block or be blocked only by creatures with digital.)",
       "Whenever Morpheus attacks, look at the top four cards of your library. You may reveal a creature with a Jack-In ability or with digital from among them and put it into your hand. Put the rest on the bottom of your library in any order."
     ],
@@ -497,7 +495,7 @@
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "4/4",
+    "pt": "3/4",
     "colorIndicator": null,
     "fileName": "U009_morpheus__seeker_of_potential.png"
   },
@@ -711,7 +709,7 @@
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "Create five Gun tokens. Until end of turn, equipment you control have equip {0}."
+      "Create four Gun tokens. Until end of turn, they have equip {0}."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -1070,7 +1068,7 @@
     "id": "C044",
     "name": "Logic-Stream Serpent",
     "cost": "{4}{U}",
-    "type": "Creature — Program Serpent (4/5)",
+    "type": "Creature — Program Serpent (3/5)",
     "displayType": "Creature — Program Serpent",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
@@ -1080,7 +1078,7 @@
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "4/5",
+    "pt": "3/5",
     "colorIndicator": null,
     "fileName": "C044_logic_stream_serpent.png"
   },
@@ -2066,7 +2064,7 @@
     "id": "U047",
     "name": "Machine City Enforcer",
     "cost": "{1}{B}",
-    "type": "Artifact Creature — Robot (2/1)",
+    "type": "Artifact Creature — Robot (2/2)",
     "displayType": "Artifact Creature — Robot",
     "text": [
       "When this creature enters, you get {E}{E}.",
@@ -2076,7 +2074,7 @@
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "2/1",
+    "pt": "2/2",
     "colorIndicator": null,
     "fileName": "U047_machine_city_enforcer.png"
   },
@@ -2293,7 +2291,7 @@
     "displayType": "Enchantment — Saga",
     "text": [
       "I — Each player sacrifices a creature or planeswalker.",
-      "II — You get {E}{E}{E}.",
+      "II — You get {E} for each creature you control.",
       "III — Creatures your opponents control get -X/-X until end of turn, where X is the amount of {E} you have."
     ],
     "flavor": "",
@@ -2741,7 +2739,7 @@
     "type": "Creature — Human Artificer (2/3)",
     "displayType": "Creature — Human Artificer",
     "text": [
-      "Whenever you cast an instant or sorcery, you get {E} and then pay {E}{E}{E}. When you do, this creature deals 2 damage to any target."
+      "Whenever you cast an instant or sorcery, you get {E} and then may pay {E}{E}{E}. When you do, this creature deals 2 damage to any target."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3574,7 +3572,7 @@
     "displayType": "Creature — Human Druid",
     "text": [
       "{T}: Add one mana of any color.",
-      "{4}{G}: Jack-in. Activate only as a sorcery and only once each turn. ({4}{G}: Transform this card.)"
+      "{4}{G}{G}: Jack-in. Activate only as a sorcery and only once each turn. ({4}{G}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3755,7 +3753,7 @@
     "type": "Enchantment — Saga",
     "displayType": "Enchantment — Saga",
     "text": [
-      "I — Look at the top five cards of your library. You may reveal a Human or Land card from among them and put it into your hand. Put the rest on the bottom of your library.",
+      "I — Look at the top five cards of your library. You may reveal a Human or Land card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
       "II — You may put a land card from your hand onto the battlefield. You gain 2 life.",
       "III — Creatures you control get +2/+2 until end of turn."
     ],
@@ -3976,7 +3974,7 @@
     "id": "U104",
     "name": "Agent Jones",
     "cost": "{1}{U}{B}",
-    "type": "Legendary Creature — Program Agent (3/2)",
+    "type": "Legendary Creature — Program Agent (2/2)",
     "displayType": "Legendary Creature — Program Agent",
     "text": [
       "Digital (Agent Jones can block or be blocked only by creatures with digital.)",
@@ -3987,7 +3985,7 @@
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "3/2",
+    "pt": "2/2",
     "colorIndicator": null,
     "fileName": "U104_agent_jones.png"
   },
@@ -4165,7 +4163,7 @@
     "text": [
       "Digital (Persephone can block or be blocked only by creatures with digital.)",
       "Lifelink",
-      "Whenever another creature dies, you gain 1 life and may pay {2}. If you do, draw a card."
+      "Whenever another creature you control dies, you gain 1 life and may pay {2}. If you do, draw a card."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -5037,11 +5035,10 @@
   {
     "id": "R131",
     "name": "The Logos",
-    "cost": "{3}",
+    "cost": "{4}",
     "type": "Legendary Artifact — Vehicle (3/4)",
     "displayType": "Legendary Artifact — Vehicle",
     "text": [
-      "Flying",
       "Whenever The Logos deals combat damage to a player, draw a card.",
       "Whenever you draw a card, if The Logos is a creature, put a +1/+1 counter on it.",
       "Crew 2"

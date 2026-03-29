@@ -99,10 +99,9 @@ Whenever another creature you control enters, you gain 1 life.
 Creature — Human Monk (1/2)
 {W}: Jack-in. Activate only as a sorcery and only once each turn. ({W}: Transform this card.)
 //
-Awakened Kung Fu Master (Color Indicator: White)
-Creature — Human Program Monk (2/2)
+Awakened Kung Fu Student (Color Indicator: White)
+Creature — Human Program Monk (1/2)
 Digital (This creature can block or be blocked only by creatures with digital.)
-First strike
 Whenever this creature attacks, scry 1.
 {W}: Eject. Activate only as a sorcery and only once each turn. ({W}: Transform this card.)
 
@@ -211,9 +210,8 @@ First strike
 Creature — Human Citizen (2/3)
 Whenever you gain life, put a +1/+1 counter on this creature. You may untap it.
 
-[U009] Morpheus, Seeker of Potential {4}{W}
-Legendary Creature — Human Advisor (4/4)
-First strike
+[U009] Morpheus, Seeker of Potential {3}{W}
+Legendary Creature — Human Advisor (3/4)
 Digital (Morpheus can block or be blocked only by creatures with digital.)
 Whenever Morpheus attacks, look at the top four cards of your library. You may reveal a creature with a Jack-In ability or with digital from among them and put it into your hand. Put the rest on the bottom of your library in any order.
 
@@ -282,7 +280,7 @@ When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target cre
 
 [R004] Guns. Lots of Guns. {2}{W}
 Sorcery
-Create five Gun tokens. Until end of turn, equipment you control have equip {0}.
+Create four Gun tokens. Until end of turn, they have equip {0}.
 
 [R005] Rooftop Rescue {2}{W}
 Legendary Sorcery
@@ -390,7 +388,7 @@ Instant
 Counter target creature spell.
 
 [C044] Logic-Stream Serpent {4}{U}
-Creature — Program Serpent (4/5)
+Creature — Program Serpent (3/5)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Basic landcycling {2}
 
@@ -700,7 +698,7 @@ Champion a creature with digital (When this enters, sacrifice it unless you exil
 This creature has haste if you controlled the championed creature since your turn began.
 
 [U047] Machine City Enforcer {1}{B}
-Artifact Creature — Robot (2/1)
+Artifact Creature — Robot (2/2)
 When this creature enters, you get {E}{E}.
 Whenever this creature attacks, you may pay {E}{E}. If you do, target creature can't block this turn.
 "It clears the path for the swarm."
@@ -774,7 +772,7 @@ When The Trainman enters, exile another target creature until The Trainman leave
 [R043] Scorched Skies {2}{B}{B}
 Enchantment — Saga
 I — Each player sacrifices a creature or planeswalker.
-II — You get {E}{E}{E}.
+II — You get {E} for each creature you control.
 III — Creatures your opponents control get -X/-X until end of turn, where X is the amount of {E} you have.
 
 [R044] Death Harvest Protocol {B}{B}
@@ -906,7 +904,7 @@ Whenever a creature enters the battlefield under your control, you may pay {1}. 
 
 [U062] Surge Channeler {2}{R}
 Creature — Human Artificer (2/3)
-Whenever you cast an instant or sorcery, you get {E} and then pay {E}{E}{E}. When you do, this creature deals 2 damage to any target.
+Whenever you cast an instant or sorcery, you get {E} and then may pay {E}{E}{E}. When you do, this creature deals 2 damage to any target.
 
 [U063] Overclock {1}{R}
 Instant
@@ -1153,7 +1151,7 @@ When this creature enters, gain 1 life for each {E} you have.
 [U087] Hydroponics Tender {1}{G}
 Creature — Human Druid (1/3)
 {T}: Add one mana of any color.
-{4}{G}: Jack-in. Activate only as a sorcery and only once each turn. ({4}{G}: Transform this card.)
+{4}{G}{G}: Jack-in. Activate only as a sorcery and only once each turn. ({4}{G}: Transform this card.)
 //
 Overgrown Simulation (Color Indicator: Green)
 Creature — Human Program Druid (6/6)
@@ -1210,7 +1208,7 @@ Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooz
 
 [R082] Founding of Zion {2}{G}
 Enchantment — Saga
-I — Look at the top five cards of your library. You may reveal a Human or Land card from among them and put it into your hand. Put the rest on the bottom of your library.
+I — Look at the top five cards of your library. You may reveal a Human or Land card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.
 II — You may put a land card from your hand onto the battlefield. You gain 2 life.
 III — Creatures you control get +2/+2 until end of turn.
 
@@ -1284,7 +1282,7 @@ Other creatures you control with eject get +1/+1.
 {2}: Eject. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)
 
 [U104] Agent Jones {1}{U}{B} 
-Legendary Creature — Program Agent (3/2)
+Legendary Creature — Program Agent (2/2)
 Digital (Agent Jones can block or be blocked only by creatures with digital.)
 When Agent Jones deals combat damage to a player, scry 1.
 If a creature you control dealing combat damage to a player triggers an ability, it triggers an additional time.
@@ -1341,7 +1339,7 @@ When The Twins enters, each opponent loses 1 life and you gain 1 life.
 Legendary Creature — Program Noble (2/3)
 Digital (Persephone can block or be blocked only by creatures with digital.)
 Lifelink
-Whenever another creature dies, you gain 1 life and may pay {2}. If you do, draw a card.
+Whenever another creature you control dies, you gain 1 life and may pay {2}. If you do, draw a card.
 
 [U117] Captain Mifune {R}{W}
 Legendary Creature — Human Soldier (2/2)
@@ -1618,9 +1616,8 @@ Equipped creature gets +2/+0.
 Whenever equipped creature attacks, you may pay {E}{E}. If you do, it deals damage equal to its power to target creature.
 Equip {2}
 
-[R131] The Logos {3}
+[R131] The Logos {4}
 Legendary Artifact — Vehicle (3/4)
-Flying
 Whenever The Logos deals combat damage to a player, draw a card.
 Whenever you draw a card, if The Logos is a creature, put a +1/+1 counter on it.
 Crew 2
