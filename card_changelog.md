@@ -1,37 +1,28 @@
-## March 29, 2026 — Major Rebalancing Pass
+## March 29, 2026 — White & Black Rebalancing, Slot Swaps
 
-**Theme:** Broad rebalancing across white and black, card redesigns, Gun token rules update, and slot reorganization.
+**Theme:** Major white curve adjustments, black card rebalancing, Gun token reminder text standardization, and several card redesigns.
 
 ### Card Slot Swaps
 - **[C018] Weapon Drop → Captain's Speech**: Slot now holds Captain's Speech {2}{W}{W} Sorcery (+2/+1 and vigilance). Weapon Drop moved to [U005].
 - **[U005] Captain's Speech → Weapon Drop**: Slot now holds Weapon Drop {2}{W} Instant (create two Gun tokens). Captain's Speech moved to [C018].
 
 ### Card Redesigns
-- **[R067] Sentinel Scout → Dynavolt Core**: Completely redesigned from a Robot Scout creature to an artifact. Now {2}{R} Artifact: "Whenever you sacrifice an artifact, you get {E}{E}. {T}, Pay {E}{E}{E}: deals 3 damage to any target."
-- **[U138] Machine City Guard**: Reworked from a 3/3 Robot Guardian with attack-trigger tap to a 2/2 Robot Drone with Flash, Flying, and ETB stun counter ability.
 - **[U024] Reality Shift → Profile Erasure**: Redesigned from {1}{U} Instant exile + manifest to {1}{U} Enchantment — Aura with Flash. Now turns target creature into a 0/1 blue Citizen Program with digital, removing all other abilities. *(Note: card name pending update to "Profile Erasure.")*
 - **[U100] Mind-Body Sync**: {W}{U} → {1}{W}{U}. Completely reworked — now reduces jack-in/eject activation costs by {1} and puts +1/+1 counters on combat damage instead of on transform. Lost the activated transform ability.
-- **[C031] Code-Hack Splicer**: Lost mana ability ("{T}: Add {C}"), now creates a Clue token on ETB instead. Jack-in cost {1}{U} → {2}{U}.
 - **[U053] Inevitable Deletion**: Redesigned from {1}{B}{B} sacrifice-based removal + draw to {1}{B} exile for mana value 3 or less.
 - **[C090] Electrobolt**: {R} → {1}{R}. No longer deals bonus damage to artifacts/digital. Now deals 2 damage divided among one or two targets.
 - **[U074] Shrapnel Ejection**: Reworked damage formula — tokens deal flat 3 damage, non-tokens deal damage equal to mana value (no longer +2).
-- **[C076] Chateau Vampire**: {1}{B} → {2}{B}. Ability changed from "+1/+0 until end of turn on lifegain" to "each opponent loses 1 life on lifegain."
-- **[R045] Copper-Top Rebel**: Jack-in now also puts a +1/+1 counter. Back face (Unshackled Virus) changed from (5/4) to (3/3) with +1/+1 counters on upkeep sacrifice instead of forced sacrifice-or-eject.
-
-### Cards Removed
-- **[C156] The Spoon**: Removed from set.
-- **[C180] Hardline Exit**: Land removed from set.
-- **[U161] Aether Hub**: Land removed from set.
 
 ### Mana Cost / Stats Changes
 - **[C001] Hovercraft Crewman** back face (Digital Avatar): (3/1) → (2/1)
-- **[C010] Council of Elders**: {4}{W} → {5}{W}
-- **[R004] Guns. Lots of Guns.**: {2}{W} → {X}{W} (now creates X Gun tokens)
-- **[R005] Rooftop Rescue**: {2}{W} → {2}{W} (briefly increased to {3}{W}, then reverted)
-- **[U001] Guardian of the Future**: Token ability {E} → {E}{E}
+- **[C004] Zion Neophyte** back face (Awakened Kung Fu Master → Awakened Kung Fu Student): (2/2) → (1/2). Lost first strike.
 - **[U009] Morpheus, Seeker of Potential**: {4}{W} (4/4) first strike → {3}{W} (3/4), lost first strike
+- **[C010] Council of Elders**: {4}{W} → {5}{W}
 - **[C019] Peace Advocate**: Jack-in cost {3}{W} → {2}{W}. Back face (5/5) → (2/4).
-- **[U021] Recursive Search**: {3}{U} → {2}{U} (briefly increased, then reverted)
+- **[U001] Guardian of the Future**: Token ability cost {E} → {E}{E}
+- **[R004] Guns. Lots of Guns.**: {2}{W} → {X}{W} (now creates X Gun tokens)
+- **[R005] Rooftop Rescue**: Cost briefly increased to {3}{W}, then reverted to {2}{W}.
+- **[U021] Recursive Search**: Cost briefly increased, then reverted to {2}{U}.
 - **[C044] Logic-Stream Serpent**: (4/5) → (3/5)
 - **[U047] Machine City Enforcer**: (2/1) → (2/2)
 - **[C063] Pod Harvester**: {3}{B} (3/4) → {2}{B} (2/3)
@@ -45,35 +36,80 @@
 - **[R131] The Logos**: {3} → {4}. Lost Flying.
 
 ### Ability & Text Changes
-- **[C004] Zion Neophyte** back face (Awakened Kung Fu Master → Awakened Kung Fu Student): (2/2) → (1/2). Lost first strike.
-- **[U035] Broadcast Intruder**: ETB trigger now also fires "or transforms into this creature." Eject cost {2} → {2}{U}.
-- **[C032] Manic Decrypter** back face (Backdoor Accessor): (2/3) → (2/2)
-- **[U033] Link Monitor**: Mana abilities reworded — now two separate tap abilities for casting instants/sorceries and activating jack-in/eject.
 - **[R026] Thomas Anderson**: Now also reveals "digital" creatures (was legendary only).
-- **[C077] Desperate Insight**: Kicker wording "{E}{E}" → "Pay {E}{E}"
-- **[U046] Reinforcement Agent**: "exiled creature" → "championed creature" in haste clause
-- **[U055] Sentinel Fabricator**: Energy threshold "three or more" → "two or more"
-- **[R041] Cain, Loyal Exile**: Trigger changed from lifegain to combat damage. Now "-X/-X where X is life gained this turn."
-- **[R047] Bane**: Removed death trigger ({E}{E}{E} return to hand).
 - **[R043] Scorched Skies**: Chapter II changed from "{E}{E}{E}" to "{E} for each creature you control."
-- **[R061] Hunter-Killer Sentinel**: "the end step" → "your end step"
-- **[U114] The Twins**: Trigger changed from "leaves the battlefield" to "enters."
-- **[R112] Neo, Newly Awakened**: Level-up costs changed from {R/W}/{R/W}{R/W}/{R/W}{R/W}{R/W} to {R/W}/{R}{R}/{W}{W}{W}.
-- **[M16] Agent Smith, Unshackled**: Menace and "champion creatures you don't control" text reordered.
-- **[U137] Power Suit**: Equip text simplified to "Equip {2} or pay {E}{E}" (was separate equip and activate).
-- **[C095] Avid Marksman**: Equipment trigger reworded with "up to twice each turn" limit.
-- **[U087] Hydroponics Tender**: Mana ability now adds any color. Jack-in cost {4}{G} → {4}{G}{G}.
-- **[U104] Agent Jones**: Added "When Agent Jones deals combat damage to a player, scry 1."
 - **[U062] Surge Channeler**: Energy cost changed to "may pay {E}{E}{E}" (was {E}{E}, mandatory).
+- **[U087] Hydroponics Tender**: Mana ability now adds any color. Jack-in cost {4}{G} → {4}{G}{G}.
 - **[R082] Founding of Zion**: Chapter I now puts remaining cards on bottom "in a random order."
 - **[U115] Persephone**: "another creature dies" → "another creature you control dies."
 - **[U020] Code Freeze**: {3}{U} Instant → {3}{U}{U} Sorcery.
 - **[U122] The Source's Defense**: "mill two cards" → "mill a card."
-- **[R042] The Trainman**: "control the exiled card" → "own the exiled card."
 
 ### Gun Token Update
 - **Gun Token**: First strike now only applies "while attacking." Rules text updated across all reminder text instances.
 - **[U006] Zion Drill Sergeant**: Reworked — ETB now gives {E}{E} (was "whenever another Human enters, get {E}"). Tap cost {E} → {E}{E}.
+
+---
+
+## March 27, 2026 — DFC Tuning & Trigger Updates
+
+**Theme:** Adjusting double-faced card costs and triggers for better gameplay balance.
+
+### Ability & Text Changes
+- **[C031] Code-Hack Splicer**: Jack-in cost {1}{U} → {2}{U}.
+- **[C032] Manic Decrypter** back face (Backdoor Accessor): (2/3) → (2/2).
+- **[U035] Broadcast Intruder**: ETB trigger now also fires "or transforms into this creature." Eject cost {2} → {2}{U}.
+- **[R045] Copper-Top Rebel**: Minor templating fix ("jacks-in" wording).
+- **[C095] Avid Marksman**: Equipment trigger reworded to "Whenever you attach an equipment" with "up to twice each turn" limit.
+- **[U087] Hydroponics Tender**: Mana ability changed from "{T}: Add {G}" to "{T}: Add one mana of any color."
+- **[U100] Mind-Body Sync**: Lost "you may tap up to one target creature" from transform trigger.
+- **[U104] Agent Jones**: Added "When Agent Jones deals combat damage to a player, scry 1."
+
+---
+
+## March 25, 2026 — Card Removals & Black Rework
+
+**Theme:** Removing underperforming/redundant cards, reworking black creatures, and adjusting stats across the set.
+
+### Card Redesigns
+- **[C031] Code-Hack Splicer**: Lost mana ability ("{T}: Add {C}"), now creates a Clue token on ETB instead.
+- **[C076] Chateau Vampire**: {1}{B} → {2}{B}. Ability changed from "+1/+0 until end of turn on lifegain" to "each opponent loses 1 life on lifegain."
+- **[R045] Copper-Top Rebel**: Jack-in now also puts a +1/+1 counter. Back face (Unshackled Virus) changed from (5/4) to (3/3) with +1/+1 counters on upkeep sacrifice instead of forced sacrifice-or-eject.
+
+### Cards Removed
+- **[C156] The Spoon**: Removed from set.
+- **[C180] Hardline Exit**: Land removed from set.
+- **[U161] Aether Hub**: Land removed from set.
+
+### Mana Cost / Stats Changes
+- **[C001] Hovercraft Crewman**: (1/4) → (2/2)
+- **[U062] Surge Channeler**: Energy cost {E}{E} → {E}{E}{E}.
+
+### Ability & Text Changes
+- **[R042] The Trainman**: "control the exiled card" → "own the exiled card."
+
+---
+
+## March 5, 2026 — Mechanic Reworks & Templating
+
+**Theme:** Reworking key cards, templating improvements, and trigger timing fixes.
+
+### Card Redesigns
+- **[R067] Sentinel Scout → Dynavolt Core**: Completely redesigned from a Robot Scout creature to an artifact. Now {2}{R} Artifact: "Whenever you sacrifice an artifact, you get {E}{E}. {T}, Pay {E}{E}{E}: deals 3 damage to any target."
+- **[U138] Machine City Guard**: Reworked from a 3/3 Robot Guardian with attack-trigger tap to a 2/2 Robot Drone with Flash, Flying, and ETB stun counter ability.
+
+### Ability & Text Changes
+- **[U033] Link Monitor**: Mana abilities reworded — now two separate tap abilities for casting instants/sorceries and activating jack-in/eject.
+- **[C077] Desperate Insight**: Kicker wording "{E}{E}" → "Pay {E}{E}."
+- **[U046] Reinforcement Agent**: "exiled creature" → "championed creature" in haste clause.
+- **[U055] Sentinel Fabricator**: Energy threshold "three or more" → "two or more."
+- **[R041] Cain, Loyal Exile**: Trigger changed from lifegain to combat damage. Now "-X/-X where X is life gained this turn."
+- **[R047] Bane**: Removed death trigger ({E}{E}{E} return to hand).
+- **[R061] Hunter-Killer Sentinel**: "the end step" → "your end step."
+- **[U114] The Twins**: Trigger changed from "leaves the battlefield" to "enters."
+- **[R112] Neo, Newly Awakened**: Level-up costs changed from {R/W}/{R/W}{R/W}/{R/W}{R/W}{R/W} to {R/W}/{R}{R}/{W}{W}{W}.
+- **[M16] Agent Smith, Unshackled**: Menace and "champion creatures you don't control" text reordered.
+- **[U137] Power Suit**: Equip text simplified to "Equip {2} or pay {E}{E}" (was separate equip and activate).
 
 ---
 
