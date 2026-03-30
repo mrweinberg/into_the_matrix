@@ -1,3 +1,38 @@
+## March 30, 2026 — Cross-Color Stat Tuning & Mythic Redesigns
+
+**Theme:** Broad power/toughness adjustments across green, red, and black; energy threshold standardization; two mythic/rare redesigns.
+
+### Card Redesigns
+- **[M05] Nightmare Matrix**: Completely reworked from {4}{B}{B} Enchantment (grant digital/menace, reanimate opponent's creatures on death) to {2}{B}{B} Sorcery — tutor any card, optionally cast it by paying {E} equal to its mana value, otherwise put it in hand.
+- **[R116] Apoc, Rogue Hacker**: Attack trigger reworked — no longer copies the next instant/sorcery for {E}{E}{E}. Now pays {E}{E}{E} to reveal cards from library until an instant/sorcery with mana value 3 or less is found; may cast it or put it in hand.
+
+### Mana Cost / Stats Changes
+- **[C004] Zion Neophyte** back face: Renamed "Awakened Kung Fu Student" → "Awakened Student".
+- **[U046] Data Stream Surfer** back face: (2/2) → (2/3). Gained vigilance.
+- **[U050] Sentinel Scavenger**: Lost flying.
+- **[U051] Unplugged Operative**: (2/1) → (2/2). Jack-in cost {2}{B} → {3}{B}. Back face Shadow Network Agent (3/3) → (3/2).
+- **[U064] Akimbo Specialist**: {3}{R} (3/2) → {1}{R}{R} (2/2).
+- **[C089] Hopeful Gunner** back face (Expert Sniper): (3/2) → (2/2).
+- **[C120] APU Operator**: (3/4) → (4/3).
+- **[C121] Bio-Metric Technician**: Pump ability cost {4} → {5}.
+- **[C129] Dojo Program**: (2/2) → (2/1).
+- **[C133] Geothermal Scout**: (3/3) → (3/2).
+- **[C138] Witness of the Fallen**: {3}{G} (4/3) Flash → {2}{G} (3/2) Vigilance.
+- **[U080] Aether Weaver**: (3/4) → (2/3).
+- **[R085] Zion Archivist**: Activated ability no longer costs {G} — now just {T}.
+- **[R106] Commander Lock**: Pump ability {E}{E}{E}{E}{E} for +2/+2 and trample → {E}{E}{E} for +1/+1 and trample. Now sorcery-speed only.
+- **[M09] Reclaim the Surface**: Energy threshold for bonus 8 → 6.
+
+### Ability & Text Changes
+- **[C036] Rogue Program**: Leaves-the-battlefield trigger changed from "draw a card" to "create a Clue token."
+- **[U054] Unplugged Neophyte**: Graveyard return condition "four or more {E}" → "3 or more {E}".
+- **[U065] Turret Maniac**: Trigger now deals 1 damage to "up to one target creature" instead of "any target."
+- **[U081] Nutrient Silo**: Death trigger now also gains 2 life.
+- **[U093] Restore the Code**: Reworked — energy threshold lowered from 4 to 3; now applies to any permanent with mana value 3 or less (not just lands/creatures).
+- **[R060] System Override**: Flash condition "four or more {E}" → "3 or more {E}".
+
+---
+
 ## March 29, 2026 — White & Black Rebalancing, Slot Swaps
 
 **Theme:** Major white curve adjustments, black card rebalancing, Gun token reminder text standardization, and several card redesigns.

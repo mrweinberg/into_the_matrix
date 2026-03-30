@@ -90,8 +90,8 @@
     },
     "typeBreakdown": {
       "Creature": 154,
-      "Sorcery": 30,
-      "Enchantment": 27,
+      "Sorcery": 31,
+      "Enchantment": 26,
       "Instant": 31,
       "Artifact": 17,
       "Land": 14
@@ -120,16 +120,16 @@
         "1": 6,
         "2": 9,
         "3": 13,
-        "4": 7,
+        "4": 8,
         "5": 3,
-        "6+": 1
+        "6+": 0
       },
       "R": {
         "0": 0,
         "1": 3,
         "2": 12,
-        "3": 12,
-        "4": 9,
+        "3": 13,
+        "4": 8,
         "5": 2,
         "6+": 2
       },
@@ -137,8 +137,8 @@
         "0": 0,
         "1": 5,
         "2": 15,
-        "3": 9,
-        "4": 5,
+        "3": 10,
+        "4": 4,
         "5": 2,
         "6+": 4
       },
@@ -167,9 +167,9 @@
         "1": 1,
         "2": 1,
         "3": 3,
-        "4": 3,
+        "4": 4,
         "5": 7,
-        "6+": 5
+        "6+": 4
       },
       "Rare": {
         "0": 0,
@@ -184,8 +184,8 @@
         "0": 0,
         "1": 8,
         "2": 35,
-        "3": 37,
-        "4": 15,
+        "3": 38,
+        "4": 14,
         "5": 4,
         "6+": 3
       },
@@ -193,8 +193,8 @@
         "0": 0,
         "1": 12,
         "2": 28,
-        "3": 19,
-        "4": 12,
+        "3": 20,
+        "4": 11,
         "5": 4,
         "6+": 3
       }
@@ -209,30 +209,30 @@
       },
       "averagePT": {
         "power": 2.4,
-        "toughness": 2.8
+        "toughness": 2.7
       },
       "powerDistribution": {
         "0": 3,
         "1": 31,
-        "2": 56,
-        "3": 41,
+        "2": 58,
+        "3": 39,
         "4": 12,
         "5+": 11
       },
       "toughnessDistribution": {
         "0": 1,
         "1": 26,
-        "2": 44,
+        "2": 46,
         "3": 43,
-        "4": 27,
+        "4": 25,
         "5+": 13
       }
     },
     "keywords": {
-      "Vigilance": 9,
-      "Digital": 74,
+      "Vigilance": 10,
+      "Digital": 73,
       "Jack-in": 22,
-      "Flying": 10,
+      "Flying": 9,
       "First Strike": 14,
       "Lifelink": 10,
       "Eject": 7,
@@ -241,9 +241,9 @@
       "Defender": 3,
       "Double Strike": 3,
       "Hexproof": 7,
-      "Flash": 23,
+      "Flash": 22,
       "Ward": 4,
-      "Menace": 17,
+      "Menace": 16,
       "Deathtouch": 4,
       "Haste": 12,
       "Trample": 15
@@ -251,16 +251,16 @@
     "dfcCount": 20,
     "instantSorceryRatio": {
       "instants": 31,
-      "sorceries": 30,
-      "ratio": 1.03
+      "sorceries": 31,
+      "ratio": 1
     },
-    "averageCMC": 3.02,
+    "averageCMC": 3,
     "cardsWithAbilities": {
-      "cardDraw": 33,
+      "cardDraw": 32,
       "removal": 80,
       "counterspells": 5,
-      "tokenCreators": 34,
-      "energyCards": 110
+      "tokenCreators": 35,
+      "energyCards": 111
     },
     "rarityByColor": {
       "W": {
