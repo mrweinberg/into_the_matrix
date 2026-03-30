@@ -768,7 +768,7 @@ Whenever Cain deals combat damage to a player, up to one target creature gets -X
 [R042] The Trainman {3}{B}
 Legendary Creature — Program Guide (2/3)
 Digital
-When The Trainman enters, exile another target creature until The Trainman leaves the battlefield. If you own the exiled card, draw two cards and lose 2 life. If you don't own the exiled card, its owner loses 2 life and you gain 2 life.
+When The Trainman enters, exile another target creature until The Trainman leaves the battlefield. If you own the exiled card, draw two cards and lose 2 life. If you don't own the exiled card, you gain 2 life.
 
 [R043] Scorched Skies {2}{B}{B}
 Enchantment — Saga

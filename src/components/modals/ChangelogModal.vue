@@ -74,7 +74,7 @@ function onHover(e) {
   if (!card) return
   hoverCard.value = card
   const rect = target.getBoundingClientRect()
-  previewX.value = rect.right + 8
+  previewX.value = rect.right + 300
   previewY.value = rect.top
 }
 
