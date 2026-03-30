@@ -31,6 +31,7 @@ defineEmits(['close'])
 const cardStore = useCardStore()
 const changelogContent = ref('')
 const hoverCard = ref(null)
+const previewX = ref(0)
 const previewY = ref(0)
 
 onMounted(async () => {
@@ -58,6 +59,7 @@ const parsedChangelog = computed(() => {
 })
 
 const previewStyle = computed(() => ({
+  left: `${previewX.value}px`,
   top: `${previewY.value}px`
 }))
 
@@ -70,6 +72,7 @@ function onHover(e) {
   if (!card) return
   hoverCard.value = card
   const rect = target.getBoundingClientRect()
+  previewX.value = rect.right + 8
   previewY.value = rect.top
 }
 
@@ -117,7 +120,6 @@ function onHoverEnd(e) {
 
 .changelog-hover-preview {
   position: fixed;
-  left: calc(50% + 340px);
   z-index: 1200;
   pointer-events: none;
   width: 280px;
