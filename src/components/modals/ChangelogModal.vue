@@ -6,10 +6,12 @@
       @mouseover="onHover"
       @mouseout="onHoverEnd"
     ></div>
+  </BaseModal>
+  <Teleport to="body">
     <div v-if="hoverCard" class="changelog-hover-preview" :style="previewStyle">
       <HoverPreview :card="hoverCard" />
     </div>
-  </BaseModal>
+  </Teleport>
 </template>
 
 <script setup>
@@ -118,6 +120,9 @@ function onHoverEnd(e) {
   text-shadow: 0 0 6px rgba(0, 255, 65, 0.4);
 }
 
+</style>
+
+<style>
 .changelog-hover-preview {
   position: fixed;
   z-index: 1200;
