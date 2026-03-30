@@ -8,7 +8,7 @@ import 'dotenv/config';
 // ==========================================
 
 const API_KEY = process.env.GEMINI_API_KEY;
-const MODEL_ID = "gemini-3-pro-image-preview";
+const MODEL_ID = "gemini-2.5-flash-image";
 const INPUT_FILE = "MTG INTO THE MATRIX.txt";
 const OVERRIDE_FILE = "artOverrides.json";
 const OUTPUT_DIR = "public/cards";
