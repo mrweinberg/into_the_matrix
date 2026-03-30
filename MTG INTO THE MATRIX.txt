@@ -81,7 +81,7 @@ Vigilance
 At the beginning of combat on your turn, if you control a creature with digital, you may jack-in this creature.
 //
 Digital Avatar (Color Indicator: White)
-Creature — Human Program Soldier (3/1)
+Creature — Human Program Soldier (2/1)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Vigilance
 At the beginning of your end step, if this creature didn't attack this turn, eject.
@@ -282,7 +282,7 @@ When Switch, Digital Guardian dies, you may pay {W}. If you do, exile target cre
 Sorcery
 Create X Gun tokens. Until end of turn, they have equip {0}. (They're Equipment artifacts with "Equipped creature gets +1/+0 and has first strike while attacking," "When equipped creature deals combat damage, sacrifice this artifact," and equip {1}.)*
 
-[R005] Rooftop Rescue {3}{W}
+[R005] Rooftop Rescue {2}{W}
 Legendary Sorcery
 (You can cast this spell only if you control a legendary creature or planeswalker.)
 Return target creature card from your graveyard to the battlefield. It gains protection from everything until your next turn.
@@ -422,7 +422,7 @@ As an additional cost to cast this spell, pay any amount of {E}.
 Tap X target creatures and put a stun counters on each of them, where X is the amount of {E} paid plus one.
 Draw a card.
 
-[U021] Recursive Search {3}{U}
+[U021] Recursive Search {2}{U}
 Sorcery
 Draw three cards. Then choose one —
 • Discard two cards.
@@ -438,8 +438,11 @@ Enchantment
 Whenever one or more permanents enter under your control, if they entered during an opponent's turn, draw a card.
 
 [U024] Reality Shift {1}{U}
-Instant
-Exile target creature. Its controller manifests the top card of their library.
+Enchantment - Aura
+NOTE: This card should be called Profile Erasure
+Flash
+Enchant creature
+Enchanted creature is a 0/1 blue Citizen Program with digital. It loses all other abilities.
 
 [U025] Data Harvester {2}{U}
 Creature — Program Rogue (1/3)
@@ -543,7 +546,7 @@ If you do, gain control of it.
 Legendary Creature — Human (1/2)
 Skulk
 Digital (Thomas Anderson can block or be blocked only by creatures with digital.)
-When Thomas Anderson deals combat damage to a player, look at the top card of your library. If it's a legendary creature, you may reveal it and put it into your hand. If you do, put a +1/+1 counter on Thomas Anderson.
+When Thomas Anderson deals combat damage to a player, look at the top card of your library. If it's a legendary or digital creature, you may reveal it and put it into your hand. If you do, put a +1/+1 counter on Thomas Anderson.
 
 [R027] There is No Spoon {1}{U}{U}
 Instant
@@ -597,7 +600,7 @@ When this creature enters, you get {E}{E}.
 When this creature leaves the battlefield, create a 1/1 white Program Citizen creature token with digital.
 
 [C063] Pod Harvester {2}{B}
-Artifact Creature — Robot (1/4)
+Artifact Creature — Robot (2/3)
 {1}, Sacrifice another creature: You get {E}{E} and gain 1 life.
 
 [C065] Terminal Extraction {B}
@@ -1261,10 +1264,10 @@ Pay {E}: Add {G}.
 
 --- UNCOMMONS ---
 
-[U100] Mind-Body Sync {W}{U}
+[U100] Mind-Body Sync {1}{W}{U}
 Enchantment
-Whenever a creature you control transforms, put a +1/+1 counter on it.
-{W}{U}: Transform target creature you control with a jack-in or eject ability.
+Jack-in and eject abilities you activate cost {1} less.
+Whenever a creature you control with a jack-in or eject ability deals combat damage to a player, put a +1/+1 counter on it.
 
 [U101] Nebuchadnezzar's Ace {1}{W}{U}
 Creature — Human Pilot (2/2)

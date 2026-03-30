@@ -21,7 +21,7 @@
     "id": "C001",
     "name": "Digital Avatar",
     "cost": "",
-    "type": "Creature — Human Program Soldier (3/1)",
+    "type": "Creature — Human Program Soldier (2/1)",
     "displayType": "Creature — Human Program Soldier",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
@@ -32,7 +32,7 @@
     "rarity": "Common",
     "isBackFace": true,
     "hasBackFace": false,
-    "pt": "3/1",
+    "pt": "2/1",
     "colorIndicator": "w",
     "fileName": "C001b_digital_avatar_back.png"
   },
@@ -722,7 +722,7 @@
   {
     "id": "R005",
     "name": "Rooftop Rescue",
-    "cost": "{3}{W}",
+    "cost": "{2}{W}",
     "type": "Legendary Sorcery",
     "displayType": "Legendary Sorcery",
     "text": [
@@ -1178,7 +1178,7 @@
   {
     "id": "U021",
     "name": "Recursive Search",
-    "cost": "{3}{U}",
+    "cost": "{2}{U}",
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
@@ -1233,10 +1233,13 @@
     "id": "U024",
     "name": "Reality Shift",
     "cost": "{1}{U}",
-    "type": "Instant",
-    "displayType": "Instant",
+    "type": "Enchantment - Aura",
+    "displayType": "Enchantment - Aura",
     "text": [
-      "Exile target creature. Its controller manifests the top card of their library."
+      "NOTE: This card should be called Profile Erasure",
+      "Flash",
+      "Enchant creature",
+      "Enchanted creature is a 0/1 blue Citizen Program with digital. It loses all other abilities."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -1571,7 +1574,7 @@
     "text": [
       "Skulk",
       "Digital (Thomas Anderson can block or be blocked only by creatures with digital.)",
-      "When Thomas Anderson deals combat damage to a player, look at the top card of your library. If it's a legendary creature, you may reveal it and put it into your hand. If you do, put a +1/+1 counter on Thomas Anderson."
+      "When Thomas Anderson deals combat damage to a player, look at the top card of your library. If it's a legendary or digital creature, you may reveal it and put it into your hand. If you do, put a +1/+1 counter on Thomas Anderson."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -1720,7 +1723,7 @@
     "id": "C063",
     "name": "Pod Harvester",
     "cost": "{2}{B}",
-    "type": "Artifact Creature — Robot (1/4)",
+    "type": "Artifact Creature — Robot (2/3)",
     "displayType": "Artifact Creature — Robot",
     "text": [
       "{1}, Sacrifice another creature: You get {E}{E} and gain 1 life."
@@ -1729,7 +1732,7 @@
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "1/4",
+    "pt": "2/3",
     "colorIndicator": null,
     "fileName": "C063_pod_harvester.png"
   },
@@ -3914,12 +3917,12 @@
   {
     "id": "U100",
     "name": "Mind-Body Sync",
-    "cost": "{W}{U}",
+    "cost": "{1}{W}{U}",
     "type": "Enchantment",
     "displayType": "Enchantment",
     "text": [
-      "Whenever a creature you control transforms, put a +1/+1 counter on it.",
-      "{W}{U}: Transform target creature you control with a jack-in or eject ability."
+      "Jack-in and eject abilities you activate cost {1} less.",
+      "Whenever a creature you control with a jack-in or eject ability deals combat damage to a player, put a +1/+1 counter on it."
     ],
     "flavor": "",
     "rarity": "Uncommon",
