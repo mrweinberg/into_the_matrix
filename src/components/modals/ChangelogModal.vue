@@ -117,7 +117,7 @@ function onHoverEnd(e) {
 
 .changelog-hover-preview {
   position: fixed;
-  right: calc(50% + 340px);
+  left: calc(50% + 340px);
   z-index: 1200;
   pointer-events: none;
   width: 280px;
