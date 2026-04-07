@@ -2,6 +2,7 @@
   <div
     class="card"
     :data-color="colorClass"
+    :data-digital="digital || undefined"
     :data-pt="card.pt ? 'yes' : 'no'"
     @click="handleClick($event)"
     @contextmenu.prevent="handleRightClick"
@@ -48,7 +49,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { replaceSymbols } from '@/utils/manaSymbols'
-import { determineColorClass } from '@/utils/cardUtils'
+import { determineColorClass, isDigital } from '@/utils/cardUtils'
 import { useCardNotes } from '@/composables/useCardNotes'
 
 const props = defineProps({
@@ -69,6 +70,7 @@ const { getNote } = useCardNotes()
 const imageLoaded = ref(false)
 
 const colorClass = computed(() => determineColorClass(props.card))
+const digital = computed(() => isDigital(props.card))
 const formattedCost = computed(() => replaceSymbols(props.card.cost))
 const imagePath = computed(() => `${import.meta.env.BASE_URL}cards/${props.card.fileName}`)
 const cleanId = computed(() => props.card.id.replace(/[\[\]]/g, ''))

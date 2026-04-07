@@ -22,6 +22,73 @@
 .card[data-color="Land"] { border-top-color: #bfa586; }
 .card[data-color="Artifact"] { border-top-color: #7d7d7d; }
 
+/* Digital creature frame effects — scanline overlay */
+.card[data-digital]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  pointer-events: none;
+  z-index: 10;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.04) 3px,
+      rgba(255, 255, 255, 0.04) 4px
+    );
+}
+
+/* Per-color digital glow */
+.card[data-digital][data-color="W"] {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 10px rgba(240, 242, 192, 0.3), inset 0 0 18px rgba(240, 242, 192, 0.06);
+}
+.card[data-digital][data-color="U"] {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 10px rgba(14, 104, 171, 0.4), inset 0 0 18px rgba(14, 104, 171, 0.08);
+}
+.card[data-digital][data-color="B"] {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 10px rgba(100, 60, 120, 0.4), inset 0 0 18px rgba(100, 60, 120, 0.08);
+}
+.card[data-digital][data-color="R"] {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 10px rgba(211, 32, 42, 0.35), inset 0 0 18px rgba(211, 32, 42, 0.07);
+}
+.card[data-digital][data-color="G"] {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 10px rgba(0, 115, 62, 0.4), inset 0 0 18px rgba(0, 115, 62, 0.08);
+}
+.card[data-digital][data-color="Gold"] {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 10px rgba(212, 175, 55, 0.35), inset 0 0 18px rgba(212, 175, 55, 0.07);
+}
+.card[data-digital][data-color="Artifact"] {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 10px rgba(160, 160, 160, 0.35), inset 0 0 18px rgba(160, 160, 160, 0.07);
+}
+
+/* Digital hover glow matches card color */
+.gallery .card[data-digital]:hover {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.08);
+}
+.gallery .card[data-digital][data-color="W"]:hover {
+  box-shadow: 0 0 25px rgba(240, 242, 192, 0.5), 0 0 40px rgba(240, 242, 192, 0.2);
+}
+.gallery .card[data-digital][data-color="U"]:hover {
+  box-shadow: 0 0 25px rgba(14, 104, 171, 0.6), 0 0 40px rgba(14, 104, 171, 0.25);
+}
+.gallery .card[data-digital][data-color="B"]:hover {
+  box-shadow: 0 0 25px rgba(100, 60, 120, 0.6), 0 0 40px rgba(100, 60, 120, 0.25);
+}
+.gallery .card[data-digital][data-color="R"]:hover {
+  box-shadow: 0 0 25px rgba(211, 32, 42, 0.55), 0 0 40px rgba(211, 32, 42, 0.2);
+}
+.gallery .card[data-digital][data-color="G"]:hover {
+  box-shadow: 0 0 25px rgba(0, 115, 62, 0.6), 0 0 40px rgba(0, 115, 62, 0.25);
+}
+.gallery .card[data-digital][data-color="Gold"]:hover {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.55), 0 0 40px rgba(212, 175, 55, 0.2);
+}
+.gallery .card[data-digital][data-color="Artifact"]:hover {
+  box-shadow: 0 0 25px rgba(160, 160, 160, 0.55), 0 0 40px rgba(160, 160, 160, 0.2);
+}
+
 .gallery .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);

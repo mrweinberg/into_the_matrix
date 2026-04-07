@@ -26,6 +26,10 @@ export function extractColorsFromCost(cost) {
   return Array.from(found)
 }
 
+export function isDigital(card) {
+  return (card.text || []).some(line => line.startsWith('Digital'))
+}
+
 export function calculateCMC(cost) {
   if (!cost) return 0
   let cmc = 0

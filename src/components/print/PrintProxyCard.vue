@@ -1,5 +1,5 @@
 <template>
-  <div class="print-card" :data-color="colorClass" :data-mode="displayMode">
+  <div class="print-card" :data-color="colorClass" :data-digital="digital || undefined" :data-mode="displayMode">
     <div class="print-card-header">
       <span class="print-card-name">{{ card.name }}</span>
       <span class="print-mana-cost" v-html="formattedCost"></span>
@@ -34,7 +34,7 @@
 <script setup>
 import { computed } from 'vue'
 import { replaceSymbols } from '@/utils/manaSymbols'
-import { determineColorClass } from '@/utils/cardUtils'
+import { determineColorClass, isDigital } from '@/utils/cardUtils'
 
 const props = defineProps({
   card: {
@@ -48,6 +48,7 @@ const props = defineProps({
 })
 
 const colorClass = computed(() => determineColorClass(props.card))
+const digital = computed(() => isDigital(props.card))
 const formattedCost = computed(() => replaceSymbols(props.card.cost || ''))
 const imagePath = computed(() => `${import.meta.env.BASE_URL}cards/${props.card.fileName}`)
 const cleanId = computed(() => (props.card.id || '').replace(/[\[\]]/g, ''))

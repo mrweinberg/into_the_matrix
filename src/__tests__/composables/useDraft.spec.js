@@ -94,7 +94,7 @@ describe('useDraft', () => {
             draft.pickCard(cardToPick.pickId)
 
             expect(draft.currentPack.value.length).toBe(originalPackSize - 1)
-            expect(draft.currentPack.value.find(c => c.id === cardToPick.id)).toBeUndefined()
+            expect(draft.currentPack.value.find(c => c.pickId === cardToPick.pickId)).toBeUndefined()
         })
 
         it('increments pick number', () => {
