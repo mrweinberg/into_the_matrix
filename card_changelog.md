@@ -1,3 +1,38 @@
+## April 6, 2026 — White Aggro Push, Blue Tightening & Multicolor Reworks
+
+**Theme:** White gets cheaper threats and more aggressive tools; blue creatures get stat trims and tighter triggers; several multicolor rares reworked; black removal and champion adjusted.
+
+### Card Redesigns
+- **[R006] Trinity, Digital Savior** (back face): Attack trigger completely reworked — no longer creates a Gun token. Now creates a 1/1 white Citizen creature token with digital, tapped and attacking.
+- **[U024] Reality Shift → Profile Erasure**: Card officially renamed to Profile Erasure.
+- **[C044] Logic-Stream Serpent**: (3/5) → (2/5). Gained vigilance and "This creature has +2/+0 while blocking."
+- **[R108] The Virtual Armory**: Reworked — was "At the beginning of combat, create a Gun token, then attach it to target creature." Now simply "{W}{R}: Create a Gun token."
+
+### Mana Cost / Stats Changes
+- **[C001] Hovercraft Crewman** back face (Digital Avatar): (2/1) → (2/2).
+- **[U002] Uplink Guardian**: {3}{W} (2/4) → {2}{W} (2/3).
+- **[U005] Weapon Drop**: {2}{W} → {W}.
+- **[U007] Restless Sleeper** back face (Awakened Rebel): Jack-in cost {2}{W} → {1}{W}.
+- **[U013] Extraction Mission**: Total mana value threshold 3 → 4.
+- **[U028] Surveillance Agent**: (3/2) → (3/1).
+- **[U029] Viral Overwrite**: {3}{U}{U} → {4}{U}{U}.
+- **[U045] Meter Reader**: {3}{B} (4/3) → {2}{B} (3/2).
+- **[R040] Sentinel Swarm**: {4}{B} → {3}{B}{B}.
+- **[R084] Tunnel Path-Finder**: {1}{G} (3/2) Reach → {2}{G}{G} (4/4) Haste.
+
+### Ability & Text Changes
+- **[U002] Uplink Guardian**: Trigger now fires only on jack-in (removed "or ejects").
+- **[U005] Weapon Drop**: Removed "You may attach them to creatures you control."
+- **[U067] Adrenaline Junkie**: Gained haste.
+- **[C068] Merovingian's Indulgence**: No longer grants indestructible. Now grants "when this creature dies, return it to the battlefield tapped."
+- **[U070] Sentinel Charger**: Gun token no longer created attached to this creature.
+- **[R021] Residual Self Image** (Hostile Subroutine): Trigger narrowed from "cast a spell" to "cast a permanent spell."
+- **[M04] Seraph**: Trigger narrowed from "cast a spell" to "cast a creature spell."
+- **[R112] Neo, Newly Awakened**: First form ({R/W} activation) no longer grants vigilance.
+- **[R067] Dynavolt Core**: Fixed self-reference — "Improvised EMP Core deals" → "This artifact deals."
+
+---
+
 ## March 30, 2026 — Cross-Color Stat Tuning & Mythic Redesigns
 
 **Theme:** Broad power/toughness adjustments across green, red, and black; energy threshold standardization; two mythic/rare redesigns.
