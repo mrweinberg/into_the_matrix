@@ -17,11 +17,11 @@ Draft Archetypes:
 WU: System Infiltration
 This archetype focuses on the Jack-in and Eject mechanics to gain value from transitioning between the Real World and the Matrix, allowing a flexible approach to both offense and defense.
 UB: Agent Control & Infiltration
-A control shell that utilizes Digital creatures and the Champion mechanic to possess and neutralize opponent threats. It relies on evasive creatures with "saboteur" abilities (triggers on combat damage) to generate card advantage and disrupt the opponent's hand.
+A control shell that utilizes Digital creatures to play a tempo or control game. It relies on evasive creatures with "saboteur" abilities (triggers on combat damage) to generate card advantage and disrupt the opponent's hand.
 BR: Sentinel Aggro
 An aggressive artifact-centric deck that focuses on Robot tribal to push through. It rewards you for sacrificing artifacts for value and using Energy to burn out opponents.
 RG: Bio-Electric Power
-This deck focuses on generating large amounts of Energy {E} and spending it on massive "Real World" threats like Beasts and Vehicles. It aims to overwhelm the board with high-power creatures and trampling damage.
+This deck focuses on generating large amounts of Energy {E} and mana to power big plays. It aims to overwhelm the board with high-power creatures and trampling damage.
 GW: Zion Resistance
 A "go-wide" strategy that boosts Non-Digital (Human) creatures. It utilizes Vigilance and "affinity for humans" to stabilize the board and punish the Machines with overwhelming numbers.
 WB: Lifedrain Syndicate
@@ -1358,15 +1358,15 @@ Digital (This creature can block or be blocked only by creatures with digital.)
 Attacking creatures you control get +1/+0.
 {1}: Eject. Activate only as a sorcery and only once each turn. ({1}: Transform this card.)
 
-[U119] Zion Heavy-Loader {1}{R}{G}
-Creature — Human Warrior (3/3)
+[U119] Zion Heavy-Loader {2}{R}{G}
+Creature — Human Warrior (4/4)
 Trample
 When this creature enters, you get {E}{E}.
 At the beginning of combat on your turn, you may pay {E}{E}. When you do, target creature you control gets +2/+0 and trample until end of turn.
 
 [U120] Bio-Current Technician {R}{G}
 Creature — Human Druid Artificer (2/2)
-{T}: Add {R} or {G}. If this mana is used to cast a creature with power 4 or greater, you get {E}{E}.
+{T}: Add {R} or {G}. If this mana is used to cast a spell with mana value 4 or greater, you get {E}{E}.
 
 [U121] Code-Stream Stabilizer {1}{U}{G}
 Creature — Human Wizard (3/3)

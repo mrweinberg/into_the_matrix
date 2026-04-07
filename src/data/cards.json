@@ -4234,8 +4234,8 @@
   {
     "id": "U119",
     "name": "Zion Heavy-Loader",
-    "cost": "{1}{R}{G}",
-    "type": "Creature — Human Warrior (3/3)",
+    "cost": "{2}{R}{G}",
+    "type": "Creature — Human Warrior (4/4)",
     "displayType": "Creature — Human Warrior",
     "text": [
       "Trample",
@@ -4246,7 +4246,7 @@
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "3/3",
+    "pt": "4/4",
     "colorIndicator": null,
     "fileName": "U119_zion_heavy_loader.png"
   },
@@ -4257,7 +4257,7 @@
     "type": "Creature — Human Druid Artificer (2/2)",
     "displayType": "Creature — Human Druid Artificer",
     "text": [
-      "{T}: Add {R} or {G}. If this mana is used to cast a creature with power 4 or greater, you get {E}{E}."
+      "{T}: Add {R} or {G}. If this mana is used to cast a spell with mana value 4 or greater, you get {E}{E}."
     ],
     "flavor": "",
     "rarity": "Uncommon",
