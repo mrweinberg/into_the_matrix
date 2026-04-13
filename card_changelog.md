@@ -2,6 +2,10 @@
 
 **Theme:** White gets cheaper threats and more aggressive tools; blue creatures get stat trims and tighter triggers; several multicolor rares reworked; black removal and champion adjusted.
 
+### Rarity & Slot Swaps
+- **[R118] The Source's Defense**: Moved from Uncommon [U122] to Rare [R118]. Activated ability cost {2} → {1}.
+- **[U122] Bio-Energy Convertor**: Moved from Green Rare [R080] to Multicolor Uncommon [U122]. Cost changed to {B}{G} and Surveil 2 → Surveil 1.
+
 ### Card Redesigns
 - **[R006] Trinity, Digital Savior** (back face): Attack trigger completely reworked — no longer creates a Gun token. Now creates a 1/1 white Citizen creature token with digital, tapped and attacking.
 - **[U024] Reality Shift → Profile Erasure**: Card officially renamed to Profile Erasure.

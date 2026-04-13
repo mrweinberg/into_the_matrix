@@ -343,20 +343,20 @@
   },
   {
     "id": "U002",
-    "name": "Uplink Guardian",
+    "name": "Doomed Duo",
     "cost": "{2}{W}",
-    "type": "Creature — Human Soldier (2/3)",
+    "type": "Creature — Human Soldier (3/2)",
     "displayType": "Creature — Human Soldier",
     "text": [
-      "Whenever a creature you control jacks-in, put a +1/+1 counter on this creature and you get {E}."
+      "{1}{W}, Exile this card from your graveyard: Created a 1/1 Human creature token and a 1/1 white Program creature token with digital."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "2/3",
+    "pt": "3/2",
     "colorIndicator": null,
-    "fileName": "U002_uplink_guardian.png"
+    "fileName": "U002_doomed_duo.png"
   },
   {
     "id": "U003",
@@ -1092,7 +1092,7 @@
     "displayType": "Artifact Creature — Construct Beast",
     "text": [
       "Flash",
-      "When this creature enters, up to one target creature with digital gets -3/-0 until end of turn."
+      "When this creature enters, up to one target creature gets -3/-0 until end of turn."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3411,7 +3411,7 @@
     "displayType": "Creature — Human Archivist",
     "text": [
       "Vigilance",
-      "At the beginning of your end step, if a creature died this turn, put a +1/+1 counter on this creature."
+      "Whenever one or more cards leave your graveyard, put a +1/+1 counter on this creature."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3731,25 +3731,6 @@
     "fileName": "U094_hydroponics_recycler.png"
   },
   {
-    "id": "R080",
-    "name": "Bio-Energy Convertor",
-    "cost": "{1}{G}",
-    "type": "Artifact",
-    "displayType": "Artifact",
-    "text": [
-      "Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token.",
-      "{T}, Exile a creature card from your graveyard: You get {E}.",
-      "{1}, Sacrifice an Ooze: Surveil 2."
-    ],
-    "flavor": "",
-    "rarity": "Rare",
-    "isBackFace": false,
-    "hasBackFace": false,
-    "pt": "",
-    "colorIndicator": null,
-    "fileName": "R080_bio_energy_convertor.png"
-  },
-  {
     "id": "R082",
     "name": "Founding of Zion",
     "cost": "{2}{G}",
@@ -3846,21 +3827,22 @@
   },
   {
     "id": "R087",
-    "name": "Martial Arts Upload",
-    "cost": "{X}{G}",
-    "type": "Instant",
-    "displayType": "Instant",
+    "name": "Persistent Defender",
+    "cost": "{3}{G}",
+    "type": "Creature — Human Soldier (5/4)",
+    "displayType": "Creature — Human Soldier",
     "text": [
-      "Distribute X +1/+1 counters among any number of target creatures you control.",
-      "Those creatures gain trample until end of turn."
+      "Flash, Reach",
+      "This creature can block creatures with digital.",
+      "Pay {E}{E}, Discard a card: Return this card from your graveyard to your hand. Activate this ability only as a sorcery."
     ],
     "flavor": "",
     "rarity": "Rare",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "",
+    "pt": "5/4",
     "colorIndicator": null,
-    "fileName": "R087_martial_arts_upload.png"
+    "fileName": "R087_persistent_defender.png"
   },
   {
     "id": "R088",
@@ -3924,6 +3906,7 @@
     "displayType": "Enchantment",
     "text": [
       "Jack-in and eject abilities you activate cost {1} less.",
+      "Whenever you jack-in or eject, you get {E}.",
       "Whenever a creature you control with a jack-in or eject ability deals combat damage to a player, put a +1/+1 counter on it."
     ],
     "flavor": "",
@@ -4030,21 +4013,22 @@
   },
   {
     "id": "U107",
-    "name": "Liquefy",
-    "cost": "{B}{G}",
-    "type": "Instant",
-    "displayType": "Instant",
+    "name": "Automaton Recycler",
+    "cost": "{4}{B}{G}",
+    "type": "Creature - Robot (3/4)",
+    "displayType": "Creature - Robot",
     "text": [
-      "As an additional cost to cast this spell, sacrifice a creature or artifact.",
-      "Draw two cards and you get {E}{E}."
+      "Delve (You may exile cards from your graveyard as you cast this spell. Each card exiled this way pays for {1}.)",
+      "Menace",
+      "When this creature attack s, you may pay {E}{E}. If you do, you may put a permanent card exiled with this creature into its owner's hand."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "",
+    "pt": "3/4",
     "colorIndicator": null,
-    "fileName": "U107_liquefy.png"
+    "fileName": "U107_automaton_recycler.png"
   },
   {
     "id": "U108",
@@ -4287,13 +4271,14 @@
   },
   {
     "id": "U122",
-    "name": "The Source's Defense",
-    "cost": "{1}{B}{G}",
-    "type": "Enchantment",
-    "displayType": "Enchantment",
+    "name": "Bio-Energy Convertor",
+    "cost": "{B}{G}",
+    "type": "Artifact",
+    "displayType": "Artifact",
     "text": [
-      "At the beginning of your upkeep, you may mill a cards.",
-      "{2}, Exile a creature card from your graveyard: Create a 2/2 colorless Robot artifact creature token with menace."
+      "Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token.",
+      "{T}, Exile a creature card from your graveyard: You get {E}.",
+      "{1}, Sacrifice an Ooze: Surveil 1."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4301,7 +4286,7 @@
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "U122_the_source_s_defense.png"
+    "fileName": "U122_bio_energy_convertor.png"
   },
   {
     "id": "U123",
@@ -4320,6 +4305,24 @@
     "pt": "1/1",
     "colorIndicator": null,
     "fileName": "U123_resistance_recuiter.png"
+  },
+  {
+    "id": "R118",
+    "name": "The Source's Defense",
+    "cost": "{1}{B}{G}",
+    "type": "Enchantment",
+    "displayType": "Enchantment",
+    "text": [
+      "At the beginning of your upkeep, you may mill two cards.",
+      "{1}, Exile a creature card from your graveyard: Create a 2/2 colorless Robot artifact creature token with menace."
+    ],
+    "flavor": "",
+    "rarity": "Rare",
+    "isBackFace": false,
+    "hasBackFace": false,
+    "pt": "",
+    "colorIndicator": null,
+    "fileName": "R118_the_source_s_defense.png"
   },
   {
     "id": "R101",

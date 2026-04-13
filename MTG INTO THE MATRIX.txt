@@ -173,9 +173,9 @@ Creature — Human Citizen (2/2)
 Lifelink
 {T}, Pay {E}{E}: Create a 1/1 white Human creature token.
 
-[U002] Uplink Guardian {2}{W}
-Creature — Human Soldier (2/3)
-Whenever a creature you control jacks-in, put a +1/+1 counter on this creature and you get {E}.
+[U002] Doomed Duo {2}{W}
+Creature — Human Soldier (3/2)
+{1}{W}, Exile this card from your graveyard: Created a 1/1 Human creature token and a 1/1 white Program creature token with digital.
 
 [U003] Communal Unity {3}{W}
 Enchantment
@@ -396,7 +396,7 @@ Basic landcycling {2}
 [C045] Code Prowler {2}{U}
 Artifact Creature — Construct Beast (3/2)
 Flash
-When this creature enters, up to one target creature with digital gets -3/-0 until end of turn.
+When this creature enters, up to one target creature gets -3/-0 until end of turn.
 
 [C046] Take the Blue Pill {1}{U}{U}
 Enchantment — Aura
@@ -1103,7 +1103,7 @@ When this creature enters, mill three cards. You may put a land card from among 
 [C138] Witness of the Fallen {2}{G}
 Creature — Human Archivist (3/2)
 Vigilance
-At the beginning of your end step, if a creature died this turn, put a +1/+1 counter on this creature.
+Whenever one or more cards leave your graveyard, put a +1/+1 counter on this creature.
 
 [C139] Deep Earth Cultivator {1}{G}
 Creature — Human Druid (1/3)
@@ -1201,12 +1201,6 @@ When this creature becomes tapped, you may exile a creature card from your grave
 
 --- RARES ---
 
-[R080] Bio-Energy Convertor {1}{G}
-Artifact
-Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token.
-{T}, Exile a creature card from your graveyard: You get {E}.
-{1}, Sacrifice an Ooze: Surveil 2.
-
 [R082] Founding of Zion {2}{G}
 Enchantment — Saga
 I — Look at the top five cards of your library. You may reveal a Human or Land card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.
@@ -1237,10 +1231,11 @@ When Zion Mystic enters, you get {E}.
 {E}, {T}: Add one mana of any color.
 {2}, {T}: You get {E}.
 
-[R087] Martial Arts Upload {X}{G}
-Instant
-Distribute X +1/+1 counters among any number of target creatures you control.
-Those creatures gain trample until end of turn.
+[R087] Persistent Defender {3}{G}
+Creature — Human Soldier (5/4)
+Flash, Reach
+This creature can block creatures with digital.
+Pay {E}{E}, Discard a card: Return this card from your graveyard to your hand. Activate this ability only as a sorcery.
 
 [R088] Dozer, Freeborn Operator {3}{G}
 Legendary Creature — Human Artificer (3/3)
@@ -1267,6 +1262,7 @@ Pay {E}: Add {G}.
 [U100] Mind-Body Sync {1}{W}{U}
 Enchantment
 Jack-in and eject abilities you activate cost {1} less.
+Whenever you jack-in or eject, you get {E}.
 Whenever a creature you control with a jack-in or eject ability deals combat damage to a player, put a +1/+1 counter on it.
 
 [U101] Nebuchadnezzar's Ace {1}{W}{U}
@@ -1298,10 +1294,11 @@ Whenever a creature you control with digital deals combat damage to a player, yo
 Instant
 Counter target spell unless its controller pays {3}. If they do, Fatal Exception deals 3 damage to them.
 
-[U107] Liquefy {B}{G}
-Instant
-As an additional cost to cast this spell, sacrifice a creature or artifact.
-Draw two cards and you get {E}{E}.
+[U107] Automaton Recycler {4}{B}{G}
+Creature - Robot (3/4)
+Delve (You may exile cards from your graveyard as you cast this spell. Each card exiled this way pays for {1}.)
+Menace
+When this creature attack s, you may pay {E}{E}. If you do, you may put a permanent card exiled with this creature into its owner's hand.
 
 [U108] Scrap Repurposer {2}{B}{R}
 Artifact Creature — Robot Artificer (3/4)
@@ -1373,10 +1370,11 @@ Creature — Human Wizard (3/3)
 Flash
 When this creature enters, you may have it tap or untap target creature. That creature can block creatures with digital until end of turn.
 
-[U122] The Source's Defense {1}{B}{G}
-Enchantment
-At the beginning of your upkeep, you may mill a cards.
-{2}, Exile a creature card from your graveyard: Create a 2/2 colorless Robot artifact creature token with menace.
+[U122] Bio-Energy Convertor {B}{G}
+Artifact
+Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooze creature token.
+{T}, Exile a creature card from your graveyard: You get {E}.
+{1}, Sacrifice an Ooze: Surveil 1.
 
 [U123] Resistance Recuiter {1}{W}{G}
 Creature — Human Soldier (1/1)
@@ -1384,6 +1382,11 @@ This creature gets +1/+1 for each other Human you control.
 When this creature enters, look at the top four cards of your library. You may reveal a Human card from among them and put it in your hand. Put the rest on the bottom of your library.
 
 --- RARES ---
+
+[R118] The Source's Defense {1}{B}{G}
+Enchantment
+At the beginning of your upkeep, you may mill two cards.
+{1}, Exile a creature card from your graveyard: Create a 2/2 colorless Robot artifact creature token with menace.
 
 [R101] Morpheus, Uniter {2}{W}{U}
 Legendary Creature — Human Warrior (3/3)
