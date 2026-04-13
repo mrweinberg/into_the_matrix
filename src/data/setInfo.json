@@ -119,8 +119,8 @@
         "0": 0,
         "1": 6,
         "2": 9,
-        "3": 14,
-        "4": 7,
+        "3": 13,
+        "4": 8,
         "5": 3,
         "6+": 0
       },
@@ -146,8 +146,8 @@
         "0": 0,
         "1": 1,
         "2": 8,
-        "3": 20,
-        "4": 7,
+        "3": 19,
+        "4": 8,
         "5": 6,
         "6+": 4
       },
@@ -184,8 +184,8 @@
         "0": 0,
         "1": 9,
         "2": 35,
-        "3": 37,
-        "4": 13,
+        "3": 35,
+        "4": 15,
         "5": 3,
         "6+": 5
       },
@@ -209,7 +209,7 @@
       },
       "averagePT": {
         "power": 2.5,
-        "toughness": 2.7
+        "toughness": 2.8
       },
       "powerDistribution": {
         "0": 3,
@@ -222,8 +222,8 @@
       "toughnessDistribution": {
         "0": 1,
         "1": 27,
-        "2": 46,
-        "3": 41,
+        "2": 44,
+        "3": 43,
         "4": 28,
         "5+": 13
       }
@@ -237,12 +237,12 @@
       "Lifelink": 10,
       "Eject": 6,
       "Indestructible": 8,
-      "Reach": 10,
+      "Reach": 9,
       "Defender": 3,
       "Double Strike": 3,
       "Hexproof": 7,
       "Flash": 23,
-      "Ward": 4,
+      "Ward": 3,
       "Menace": 17,
       "Deathtouch": 4,
       "Haste": 14,
@@ -256,11 +256,11 @@
     },
     "averageCMC": 3.03,
     "cardsWithAbilities": {
-      "cardDraw": 31,
+      "cardDraw": 32,
       "removal": 81,
       "counterspells": 5,
       "tokenCreators": 36,
-      "energyCards": 112
+      "energyCards": 111
     },
     "rarityByColor": {
       "W": {

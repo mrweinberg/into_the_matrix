@@ -348,7 +348,7 @@
     "type": "Creature — Human Soldier (3/2)",
     "displayType": "Creature — Human Soldier",
     "text": [
-      "{1}{W}, Exile this card from your graveyard: Created a 1/1 Human creature token and a 1/1 white Program creature token with digital."
+      "{1}{W}, Exile this card from your graveyard: Created a 1/1 Human creature token and a 1/1 white Program creature token with digital. Activate only as a sorcery."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2029,20 +2029,19 @@
   {
     "id": "U045",
     "name": "Meter Reader",
-    "cost": "{2}{B}",
-    "type": "Creature — Program Agent (3/2)",
+    "cost": "{2}{B}{B}",
+    "type": "Creature — Program Agent (2/3)",
     "displayType": "Creature — Program Agent",
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Menace",
-      "Champion a creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves.)",
       "Whenever this creature deals combat damage to a player, that player loses {E} equal to the damage dealt. You get {E} equal to the amount of {E} that player lost."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "3/2",
+    "pt": "2/3",
     "colorIndicator": null,
     "fileName": "U045_meter_reader.png"
   },
@@ -3301,17 +3300,16 @@
     "id": "C131",
     "name": "Teachable Pupil",
     "cost": "{2}{G}",
-    "type": "Creature — Human Citizen (2/3)",
+    "type": "Creature — Human Citizen (3/3)",
     "displayType": "Creature — Human Citizen",
     "text": [
-      "Reach, Ward {1}",
-      "Whenever you cast a spell that targets this creature, put a +1/+1 counter on it and you get {E}."
+      "When this creature enters, if you control a creature with power 4 or greater, draw a card."
     ],
     "flavor": "",
     "rarity": "Common",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "2/3",
+    "pt": "3/3",
     "colorIndicator": null,
     "fileName": "C131_teachable_pupil.png"
   },
@@ -3959,8 +3957,8 @@
   {
     "id": "U104",
     "name": "Agent Jones",
-    "cost": "{1}{U}{B}",
-    "type": "Legendary Creature — Program Agent (2/2)",
+    "cost": "{2}{U}{B}",
+    "type": "Legendary Creature — Program Agent (2/3)",
     "displayType": "Legendary Creature — Program Agent",
     "text": [
       "Digital (Agent Jones can block or be blocked only by creatures with digital.)",
@@ -3971,7 +3969,7 @@
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "2/2",
+    "pt": "2/3",
     "colorIndicator": null,
     "fileName": "U104_agent_jones.png"
   },
@@ -4020,7 +4018,7 @@
     "text": [
       "Delve (You may exile cards from your graveyard as you cast this spell. Each card exiled this way pays for {1}.)",
       "Menace",
-      "When this creature attack s, you may pay {E}{E}. If you do, you may put a permanent card exiled with this creature into its owner's hand."
+      "When this creature attacks, you may pay {E}{E}. If you do, you may put a permanent card exiled with this creature into its owner's hand."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4241,7 +4239,8 @@
     "type": "Creature — Human Druid Artificer (2/2)",
     "displayType": "Creature — Human Druid Artificer",
     "text": [
-      "{T}: Add {R} or {G}. If this mana is used to cast a spell with mana value 4 or greater, you get {E}{E}."
+      "Whenever you attack, if you attacked with a creature with power 4 or greater, you get {E}{E}.",
+      "{E}{E}: Add {R} or {G}."
     ],
     "flavor": "",
     "rarity": "Uncommon",

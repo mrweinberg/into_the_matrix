@@ -175,7 +175,7 @@ Lifelink
 
 [U002] Doomed Duo {2}{W}
 Creature — Human Soldier (3/2)
-{1}{W}, Exile this card from your graveyard: Created a 1/1 Human creature token and a 1/1 white Program creature token with digital.
+{1}{W}, Exile this card from your graveyard: Created a 1/1 Human creature token and a 1/1 white Program creature token with digital. Activate only as a sorcery.
 
 [U003] Communal Unity {3}{W}
 Enchantment
@@ -687,11 +687,10 @@ Digital (Abel can block or be blocked only by creatures with digital.)
 Abel has indestructible as long as you've gained life this turn.
 "The Merovingian pays him to ensure the party never stops."
 
-[U045] Meter Reader {2}{B}
-Creature — Program Agent (3/2)
+[U045] Meter Reader {2}{B}{B}
+Creature — Program Agent (2/3)
 Digital (This creature can block or be blocked only by creatures with digital.)
 Menace
-Champion a creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves.)
 Whenever this creature deals combat damage to a player, that player loses {E} equal to the damage dealt. You get {E} equal to the amount of {E} that player lost.
 
 [U046] Reinforcement Agent {2}{B}
@@ -1073,9 +1072,8 @@ Digital (This creature can block or be blocked only by creatures with digital.)
 When this creature enters, put a +1/+1 counter on target creature you control.
 
 [C131] Teachable Pupil {2}{G}
-Creature — Human Citizen (2/3)
-Reach, Ward {1}
-Whenever you cast a spell that targets this creature, put a +1/+1 counter on it and you get {E}.
+Creature — Human Citizen (3/3)
+When this creature enters, if you control a creature with power 4 or greater, draw a card.
 
 [C132] Unlikely Growth {1}{G}
 Sorcery
@@ -1278,8 +1276,8 @@ Vigilance
 Other creatures you control with eject get +1/+1.
 {2}: Eject. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)
 
-[U104] Agent Jones {1}{U}{B} 
-Legendary Creature — Program Agent (2/2)
+[U104] Agent Jones {2}{U}{B} 
+Legendary Creature — Program Agent (2/3)
 Digital (Agent Jones can block or be blocked only by creatures with digital.)
 When Agent Jones deals combat damage to a player, scry 1.
 If a creature you control dealing combat damage to a player triggers an ability, it triggers an additional time.
@@ -1298,7 +1296,7 @@ Counter target spell unless its controller pays {3}. If they do, Fatal Exception
 Creature - Robot (3/4)
 Delve (You may exile cards from your graveyard as you cast this spell. Each card exiled this way pays for {1}.)
 Menace
-When this creature attack s, you may pay {E}{E}. If you do, you may put a permanent card exiled with this creature into its owner's hand.
+When this creature attacks, you may pay {E}{E}. If you do, you may put a permanent card exiled with this creature into its owner's hand.
 
 [U108] Scrap Repurposer {2}{B}{R}
 Artifact Creature — Robot Artificer (3/4)
@@ -1363,7 +1361,8 @@ At the beginning of combat on your turn, you may pay {E}{E}. When you do, target
 
 [U120] Bio-Current Technician {R}{G}
 Creature — Human Druid Artificer (2/2)
-{T}: Add {R} or {G}. If this mana is used to cast a spell with mana value 4 or greater, you get {E}{E}.
+Whenever you attack, if you attacked with a creature with power 4 or greater, you get {E}{E}.
+{E}{E}: Add {R} or {G}.
 
 [U121] Code-Stream Stabilizer {1}{U}{G}
 Creature — Human Wizard (3/3)
