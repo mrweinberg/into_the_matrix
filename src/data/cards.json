@@ -4289,21 +4289,20 @@
   },
   {
     "id": "U123",
-    "name": "Resistance Recuiter",
-    "cost": "{1}{W}{G}",
-    "type": "Creature — Human Soldier (1/1)",
+    "name": "Resistance Coordinator",
+    "cost": "{1}{G}{W}",
+    "type": "Creature — Human Soldier (1/4)",
     "displayType": "Creature — Human Soldier",
     "text": [
-      "This creature gets +1/+1 for each other Human you control.",
-      "When this creature enters, look at the top four cards of your library. You may reveal a Human card from among them and put it in your hand. Put the rest on the bottom of your library."
+      "{T}, Tap two untapped creatures you control: Draw a card and gain 2 life."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "1/1",
+    "pt": "1/4",
     "colorIndicator": null,
-    "fileName": "U123_resistance_recuiter.png"
+    "fileName": "U123_resistance_coordinator.png"
   },
   {
     "id": "R118",

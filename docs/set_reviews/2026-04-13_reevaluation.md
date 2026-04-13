@@ -158,19 +158,107 @@ The changes reinforce existing flavor rather than introducing new themes:
 
 ---
 
-## Category 8: Parasitism & Portability — 6.5 / 10 (unchanged)
+## Category 8: Bomb & Mythic Design — 8.5 / 10 (new)
 
-| Mechanic | Parasitism Level | Change |
-|:---|:---|:---|
-| Energy | High | Stable (111 cards) |
-| Digital | Medium | Stable; Glitched Citizen improves internal reliability |
-| Jack-in/Eject | Medium | Stable; Mind-Body Sync energy link helps but adds energy dependency |
-| Champion | High (reduced) | Down from 8 to 7 cards; less exposure to fuel shortage |
-| Delve | Low | New; works in any set |
-| Power 4+ | Low | New; references a universal game concept |
-| Gun tokens | Low | Stable |
+### Rare/Mythic Profile
 
-The addition of Delve (universal mechanic) and power 4+ matters (references base game stats, not set-specific keywords) slightly improves the set's portability. These sub-themes would function in any limited environment. However, the core energy/digital dependency hasn't changed — ITM remains a set designed for self-contained play.
+| Metric | Count |
+|:---|:---|
+| Rares | 58 |
+| Mythics | 22 |
+| Immediate board impact | ~60% |
+| Requires setup/survives a turn | ~55% |
+| Answerable by common removal (≤3 toughness or non-creature) | ~45% |
+
+**What works:**
+
+- **Most bombs are powerful but interactive.** Agent Smith, System Anomaly (3/3 menace for 3 that self-replicates) is terrifying but dies to any removal spell before it snowballs. Switch (2/2 double strike) demands an answer but trades with a 2-drop in combat. The Analyst has flash and an ETB end-the-turn effect but is a 2/3 body afterward. These are "answer me or lose" cards that give you a realistic window to answer them.
+
+- **Setup bombs reward good drafting, not luck.** Death Harvest Protocol, Bio-Energy Convertor (uncommon but archetype-defining), Residual Self Image, and Endless Pursuit are powerful engines that do nothing without the right deck around them. Opening one of these is a signal, not a free win.
+
+- **Strong curve of mythic impact.** Sati (2 CMC) through Neo, The One (4 CMC) through Deus Ex Machina (8 CMC) gives mythics at every stage of the game. No cluster of 6+ CMC mythics that all demand the same late game.
+
+- **Character cards are the best bombs.** Neo, Trinity, Morpheus, Agent Smith — the cards you most want to open are also the ones that tell the set's story. This is excellent design alignment.
+
+**Concerns:**
+
+- **Deus Ex Machina is close to unanswerable.** 8/8 indestructible with mana generation. Only exile removal (rare in this set) or sacrifice effects handle it cleanly. At 8 CMC it's slow enough that most games end before it lands, but when it does, the game is effectively over.
+
+- **The Red Woman (indestructible 1/1)** is frustrating to face without exile effects. Low power limits her damage output, but the inability to remove her creates feel-bad moments.
+
+- **Rare density is high (58).** In a 273-card set, rares make up 21% — slightly above the typical 18-20% for a Play Booster set. This means more variance between sealed pools.
+
+**Why 8.5:** The bombs are exciting to open and generally answerable. The setup-vs-immediate split is healthy, and the character cards being the marquee bombs is perfect for a top-down IP set. Minor ding for Deus Ex Machina's near-invulnerability and slightly high rare count.
+
+---
+
+## Category 9: Gameplay Variance & Replayability — 8.0 / 10 (new)
+
+### Build-Around Density
+
+| Metric | Count |
+|:---|:---|
+| Build-around uncommons | 62 |
+| Modal/flexible cards | ~25 (true choose-one or multi-mode) |
+| Narrow cards (1 archetype only) | ~40 |
+| Archetype overlap cards (3+ homes) | 33 |
+
+**What drives replayability:**
+
+- **62 build-around uncommons is excellent.** That's roughly 60% of all uncommons serving as directional signals. When you open a pack and see Bio-Energy Convertor, Mouse, Scrap-Metal Tactician, or Communal Unity, each one pulls you toward a fundamentally different deck. This is the single most important number for draft replayability, and it's strong.
+
+- **The jack-in/eject system creates in-game variance.** Even within the same archetype, the transform decision tree changes every game. Do you eject for haste or stay jacked-in for the static ability? This adds decision density without increasing draft complexity.
+
+- **10 dual lands with energy modes** provide genuine flexibility — they're fixing, mana sinks, and archetype enablers simultaneously. Picking a dual land is never a dead decision.
+
+- **33 archetype-overlap cards enable pivoting.** Cards like Machine City Guard, Portable EMP, and Doomed Duo are good in multiple archetypes, meaning drafters can stay open longer before committing. This reduces the "locked in by pick 3" problem.
+
+**What limits replayability:**
+
+- **Digital payoffs cluster in UB.** About 40 cards reference "digital" as a payoff, and they skew heavily toward blue and black. This means UB-adjacent archetypes (WU, UB, BR, WB) all compete for overlapping cards, while GW and RG drafters rarely interact with the digital layer. The format effectively splits into "digital decks" and "non-digital decks" — a soft two-format problem.
+
+- **Power 4+ has only 2 dedicated payoffs** (Bio-Current Technician, Teachable Pupil). The theme exists but the payoff density is too thin to feel like a real "build-around" axis. More payoffs at uncommon would make RG's identity stickier across drafts.
+
+- **Sagas (6) and Vehicles (6)** are nice variance tools but too few to define a subtheme. They're seasoning, not a course.
+
+**Why 8.0:** The build-around uncommon count and jack-in system provide strong draft-to-draft variance. The digital clustering and thin power-4+ payoffs prevent the format from reaching its full potential — some seats feel more "solved" than others.
+
+---
+
+## Category 10: Board Stall Resolution — 8.5 / 10 (new)
+
+### Stall-Breaking Tools
+
+| Tool | Count | Common | Uncommon | Rare/Mythic |
+|:---|:---|:---|:---|:---|
+| Traditional evasion (flying/menace/trample/unblockable) | 47 | 9 | 13 | 25 |
+| Digital (contextual evasion) | 56 | 16 | 22 | 18 |
+| Mana sinks | 21 | 5 | 10 | 6 |
+| Go-wide / tokens | 45 | 10 | 17 | 18 |
+| Direct damage / reach | 16 | 4 | 7 | 5 |
+| Card advantage engines | 36 | 10 | 14 | 12 |
+
+**The digital factor:** Digital creatures can only block and be blocked by other digital creatures. Against a non-digital board, every digital creature is effectively unblockable. With 56 digital creatures in the set (38 front faces, 18 back faces via jack-in), this is the format's single largest source of evasion. It's contextual — digital-vs-digital matchups are normal combat — but in the common "real world vs. digital" board states, digital creatures punch through freely.
+
+**What works:**
+
+- **90+ creatures have some form of evasion.** Between 47 traditional evasion creatures and 56 digital creatures, over a third of all creatures in the set can bypass conventional blockers. This is exceptionally high and means board stalls should be rare.
+
+- **Evasion at common is actually deep.** The initial count of 9 traditional evasion commons looked thin, but adding 16 common digital creatures brings common evasion to **25 creatures** — roughly 1 in 3 commons can attack through a non-digital board. Drafters will reliably have evasion options regardless of rarity pulls.
+
+- **45 token-producing cards give go-wide a real presence.** Gun tokens are the standout — they're both creatures AND equipment, so they break stalls in two ways: adding bodies and pumping existing ones. The RW Equipment Aggro deck is the format's best stall-breaker precisely because of this dual function.
+
+- **21 mana sinks prevent flooding from being a death sentence.** Dynavolt Core (repeatable burn), Archive Interface (repeatable draw), Mouse (repeatable tokens), and Bio-Energy Convertor (repeatable value) all give late-game mana conversion. The energy system itself is a mana sink — excess mana can generate energy that fuels abilities.
+
+- **The digital/non-digital tension is itself a stall-breaker.** If both players are non-digital, a few digital creatures crack the board open. If both are digital, traditional evasion (flying, menace) does it. The two evasion systems cover each other's gaps.
+
+**What's missing:**
+
+- **Direct damage is the weakest category at 16 cards.** There's no common "Shock" or "Lightning Strike" equivalent that goes face. The burn that exists (Electrical Burst, Dynavolt Core, Shrapnel Ejection) is either rare, requires energy, or requires sacrifice. Red decks specifically lack the reach to close games from 5-6 life.
+
+- **Green has the least access to evasion.** Only 1 DFC means green decks rarely have digital creatures, and green's traditional evasion is mostly trample on larger creatures. GW and GU mirrors between two non-digital boards are the most stall-prone matchups.
+
+**Why 8.5:** The digital mechanic is the set's secret weapon for board stall resolution. It creates a format where two parallel combat layers coexist — digital and non-digital — and the mismatch between them generates natural evasion. Combined with 45 token producers, 21 mana sinks, and 47 traditional evasion creatures, this is a format where games end. The only soft spot is direct damage and green's limited access to the digital layer.
 
 ---
 
@@ -185,7 +273,9 @@ The addition of Delve (universal mechanic) and power 4+ matters (references base
 | 5. Interaction & Removal | 8.0 | 8.0 | — |
 | 6. Card Flow & Resource Access | 7.5 | 7.5 | — |
 | 7. Flavor & Thematic Cohesion | 9.0 | 9.0 | — |
-| 8. Parasitism & Portability | 6.5 | 6.5 | — |
+| 8. Bomb & Mythic Design | — | 8.5 | new |
+| 9. Gameplay Variance & Replayability | — | 8.0 | new |
+| 10. Board Stall Resolution | — | 8.5 | new |
 | **Overall** | **7.8** | **8.3** | **+0.5** |
 
 ---
@@ -224,7 +314,9 @@ The addition of Delve (universal mechanic) and power 4+ matters (references base
 
 6. **Automaton Recycler has a typo.** "When this creature attack s" — extra space. Also, the Delve/Bio-Energy Convertor tension (Delve exiles the creatures Convertor wants to exile for energy) is interesting but could frustrate drafters who expect the two signposts to synergize cleanly. The interaction is: Delve triggers Convertor's Ooze creation, but removes the cards Convertor's tap ability wants. This is a feature (interesting decisions) but could read as anti-synergy.
 
-7. **Energy parasitism** remains the set's biggest portability limitation. 111 energy cards means ITM lives or dies as a self-contained format.
+7. **Red lacks common reach.** No "Shock to face" at common means red decks can't close from 5-6 life without evasion creatures. Direct damage (16 cards total) is the thinnest stall-breaking category.
+
+8. **Green's evasion gap.** Green has the least access to both digital creatures (1 DFC) and traditional evasion. GW and GU non-digital mirrors are the most stall-prone matchups in the format.
 
 ---
 

@@ -1375,10 +1375,9 @@ Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooz
 {T}, Exile a creature card from your graveyard: You get {E}.
 {1}, Sacrifice an Ooze: Surveil 1.
 
-[U123] Resistance Recuiter {1}{W}{G}
-Creature — Human Soldier (1/1)
-This creature gets +1/+1 for each other Human you control.
-When this creature enters, look at the top four cards of your library. You may reveal a Human card from among them and put it in your hand. Put the rest on the bottom of your library.
+[U123] Resistance Coordinator {1}{G}{W}
+Creature — Human Soldier (1/4)
+{T}, Tap two untapped creatures you control: Draw a card and gain 2 life.
 
 --- RARES ---
 
