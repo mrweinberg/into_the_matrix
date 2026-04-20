@@ -175,7 +175,7 @@ Lifelink
 
 [U002] Doomed Duo {2}{W}
 Creature — Human Soldier (3/2)
-{1}{W}, Exile this card from your graveyard: Created a 1/1 Human creature token and a 1/1 white Program creature token with digital. Activate only as a sorcery.
+{1}{W}, Exile this card from your graveyard: Create a 1/1 Human creature token and a 1/1 white Program creature token with digital. Activate only as a sorcery.
 
 [U003] Communal Unity {3}{W}
 Enchantment
@@ -1421,7 +1421,7 @@ Whenever a creature you control with a +1/+1 counter on it deals combat damage t
 [R105] Pirate-Signal Broadcaster {3}{U}{R}
 Legendary Creature — Human Artificer (4/4)
 At the beginning of your end step, you get {E}{E}.
-Pay X {E}, Sacrifice this creature, discard your hand: Draw X cards. Activate only as a sorcery.
+Pay X {E}, Sacrifice this creature, Discard your hand: Draw X cards. Activate only as a sorcery.
 
 [R106] Commander Lock {2}{G}{W}
 Legendary Creature — Human Soldier (3/4)

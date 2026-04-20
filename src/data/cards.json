@@ -348,7 +348,7 @@
     "type": "Creature — Human Soldier (3/2)",
     "displayType": "Creature — Human Soldier",
     "text": [
-      "{1}{W}, Exile this card from your graveyard: Created a 1/1 Human creature token and a 1/1 white Program creature token with digital. Activate only as a sorcery."
+      "{1}{W}, Exile this card from your graveyard: Create a 1/1 Human creature token and a 1/1 white Program creature token with digital. Activate only as a sorcery."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -4440,7 +4440,7 @@
     "displayType": "Legendary Creature — Human Artificer",
     "text": [
       "At the beginning of your end step, you get {E}{E}.",
-      "Pay X {E}, Sacrifice this creature, discard your hand: Draw X cards. Activate only as a sorcery."
+      "Pay X {E}, Sacrifice this creature, Discard your hand: Draw X cards. Activate only as a sorcery."
     ],
     "flavor": "",
     "rarity": "Rare",
