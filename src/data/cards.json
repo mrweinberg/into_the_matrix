@@ -647,22 +647,20 @@
   },
   {
     "id": "R002",
-    "name": "Automated Turret",
-    "cost": "{2}{W}",
-    "type": "Artifact Creature — Construct Wall (4/4)",
-    "displayType": "Artifact Creature — Construct Wall",
+    "name": "Grid Collapse",
+    "cost": "{3}{W}{W}",
+    "type": "Sorcery",
+    "displayType": "Sorcery",
     "text": [
-      "Defender, reach, vigilance",
-      "As long as you control a Vehicle, this creature can attack as though it didn't have defender.",
-      "Whenever this creature blocks, it deals 2 damage to target attacking creature."
+      "Destroy all creatures. You may destroy an artifact and/or an enchantment."
     ],
     "flavor": "",
     "rarity": "Rare",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "4/4",
+    "pt": "",
     "colorIndicator": null,
-    "fileName": "R002_automated_turret.png"
+    "fileName": "R002_grid_collapse.png"
   },
   {
     "id": "R003",
@@ -3261,8 +3259,8 @@
     "id": "C127",
     "name": "Coordinated Takedown",
     "cost": "{1}{G}",
-    "type": "Sorcery",
-    "displayType": "Sorcery",
+    "type": "Instant",
+    "displayType": "Instant",
     "text": [
       "Target creature you control fights target creature you don't control.",
       "If you control three or more creatures, put a +1/+1 counter on the creature you control before it fights."
@@ -3639,20 +3637,22 @@
   },
   {
     "id": "U090",
-    "name": "Combat Simulation",
-    "cost": "{1}{G}",
+    "name": "Reality Check",
+    "cost": "{G}",
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "Put two +1/+1 counters on two target creatures you control."
+      "Choose one:",
+      "• Target creature you control deals damage equal to its power to target creature you don't control.",
+      "• Target creature you control deals damage equal to twice its power to target creature you don't control with digital."
     ],
-    "flavor": " \"Stop trying to hit me and hit me!\"",
+    "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
     "pt": "",
     "colorIndicator": null,
-    "fileName": "U090_combat_simulation.png"
+    "fileName": "U090_reality_check.png"
   },
   {
     "id": "U091",
@@ -4064,20 +4064,20 @@
   },
   {
     "id": "U111",
-    "name": "Reality Advocate",
-    "cost": "{G}{W}",
-    "type": "Creature — Human Advisor (2/2)",
-    "displayType": "Creature — Human Advisor",
+    "name": "Docking Bay Alarms",
+    "cost": "{1}{G}{W}",
+    "type": "Enchantment",
+    "displayType": "Enchantment",
     "text": [
-      "Other creatures you control that don't have digital get +1/+1."
+      "Whenever you get one or more {E}, create a 1/1 white Human Citizen creature token. This ability triggers only once each turn."
     ],
     "flavor": "",
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "2/2",
+    "pt": "",
     "colorIndicator": null,
-    "fileName": "U111_reality_advocate.png"
+    "fileName": "U111_docking_bay_alarms.png"
   },
   {
     "id": "U112",
@@ -4292,7 +4292,8 @@
     "type": "Creature — Human Soldier (1/4)",
     "displayType": "Creature — Human Soldier",
     "text": [
-      "{T}, Tap two untapped creatures you control: Draw a card and gain 2 life."
+      "Other creatures you control without digital get +1/+1.",
+      "{T}, Tap two untapped creatures you control: Draw a card."
     ],
     "flavor": "",
     "rarity": "Uncommon",

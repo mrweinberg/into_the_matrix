@@ -29,7 +29,7 @@ This archetype revolves around an attrition-based strategy centered on the Merov
 UR: Code Modification
 A spells-matter and high-tech deck that uses Energy to power your spells or pay off casting them. It features Humans and Programs that grow or trigger abilities whenever you cast noncreature spells.
 BG: Harvester Operations
-This archetype focuses on the graveyard and the recycling of resources. It uses Robot and Ooze creatures to gain value from death triggers and spends Energy to return threats to the battlefield.
+This archetype focuses on the graveyard and the recycling of resources. It uses the graveyard as a resource, both gaining value as cards fly in and out.
 RW: Armed and Ready
 The premier "Guns" deck. It leverages Gun tokens and aggressive creatures to create a highly efficient, fast-moving combat force that rewards aggressive play.
 GU: System Mastery
@@ -259,11 +259,9 @@ Choose one —
 • Return target creature card with mana value 3 or less from your graveyard to the battlefield.
 • Create two 1/1 white Human creature tokens.
 
-[R002] Automated Turret {2}{W}
-Artifact Creature — Construct Wall (4/4)
-Defender, reach, vigilance
-As long as you control a Vehicle, this creature can attack as though it didn't have defender.
-Whenever this creature blocks, it deals 2 damage to target attacking creature.
+[R002] Grid Collapse {3}{W}{W}
+Sorcery
+Destroy all creatures. You may destroy an artifact and/or an enchantment.
 
 [R003] Switch, Faithful Defender {1}{W}{W}
 Legendary Creature — Human Soldier (2/2)
@@ -1059,7 +1057,7 @@ Creature — Human Shaman (3/2)
 When this creature enters, if you have 3 or more {E}, you may destroy up to one target artifact or enchantment.
 
 [C127] Coordinated Takedown {1}{G}
-Sorcery
+Instant
 Target creature you control fights target creature you don't control.
 If you control three or more creatures, put a +1/+1 counter on the creature you control before it fights.
 
@@ -1167,10 +1165,11 @@ Flash
 This creature can block creatures with digital as though they didn't have digital.
 {2}{G}: Surveil 1.
 
-[U090] Combat Simulation {1}{G}
+[U090] Reality Check {G}
 Sorcery
-Put two +1/+1 counters on two target creatures you control.
-"Stop trying to hit me and hit me!"
+Choose one:
+• Target creature you control deals damage equal to its power to target creature you don't control.
+• Target creature you control deals damage equal to twice its power to target creature you don't control with digital.
 
 [U091] Ravenous Construct {6}{G}{G}
 Artifact Creature — Construct Beast (7/7)
@@ -1306,9 +1305,9 @@ Artifact Creature — Robot (3/2)
 Other Artifact creatures you control get +1/+0.
 When an artifact creature you control dies, this creature deals 1 damage to each opponent.
 
-[U111] Reality Advocate {G}{W}
-Creature — Human Advisor (2/2)
-Other creatures you control that don't have digital get +1/+1.
+[U111] Docking Bay Alarms {1}{G}{W}
+Enchantment
+Whenever you get one or more {E}, create a 1/1 white Human Citizen creature token. This ability triggers only once each turn.
 
 [U112] Tank, the Operator {1}{G}{U}
 Legendary Creature — Human Pilot (2/3)
@@ -1375,7 +1374,8 @@ Whenever one or more creature cards leave your graveyard, create a 1/1 green Ooz
 
 [U123] Resistance Coordinator {1}{G}{W}
 Creature — Human Soldier (1/4)
-{T}, Tap two untapped creatures you control: Draw a card and gain 2 life.
+Other creatures you control without digital get +1/+1.
+{T}, Tap two untapped creatures you control: Draw a card.
 
 --- RARES ---
 
