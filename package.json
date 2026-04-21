@@ -9,6 +9,7 @@
     "test": "vitest",
     "test:run": "vitest run",
     "generate-data": "node scripts/generate_data.mjs",
+    "lint-cards": "node scripts/lint_templating.cjs",
     "generate-art": "node scripts/generate_matrix.mjs",
     "build:full": "npm run generate-data && npm run build"
   },

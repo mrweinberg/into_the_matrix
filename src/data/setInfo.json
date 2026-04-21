@@ -257,7 +257,7 @@
     "averageCMC": 3.04,
     "cardsWithAbilities": {
       "cardDraw": 33,
-      "removal": 82,
+      "removal": 84,
       "counterspells": 5,
       "tokenCreators": 38,
       "energyCards": 118

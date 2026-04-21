@@ -294,7 +294,7 @@
     "type": "Creature — Human Citizen (1/4)",
     "displayType": "Creature — Human Citizen",
     "text": [
-      "{2}{W}: Jack-in. Activate only as a sorcery and only once each turn. ({3}{W}: Transform this card.)"
+      "{2}{W}: Jack-in. Activate only as a sorcery and only once each turn. ({2}{W}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -454,7 +454,7 @@
     "displayType": "Creature — Human Soldier",
     "text": [
       "First strike",
-      "{1}{W}: Jack-in. Activate only as a sorcery and only once each turn. ({2}{W}: Transform this card.)"
+      "{1}{W}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{W}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -873,7 +873,7 @@
     "displayType": "Creature — Human Wizard",
     "text": [
       "When this creature enters, create a Clue token.",
-      "{2}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{U}: Transform this card.)"
+      "{2}{U}: Jack-in. Activate only as a sorcery and only once each turn. ({2}{U}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Common",
@@ -1164,7 +1164,7 @@
     "displayType": "Sorcery",
     "text": [
       "As an additional cost to cast this spell, pay any amount of {E}.",
-      "Tap X target creatures and put a stun counters on each of them, where X is the amount of {E} paid plus one.",
+      "Tap X target creatures and put a stun counter on each of them, where X is the amount of {E} paid plus one.",
       "Draw a card."
     ],
     "flavor": "",
@@ -1255,7 +1255,7 @@
     "type": "Creature — Program Rogue (1/3)",
     "displayType": "Creature — Program Rogue",
     "text": [
-      "Digital, flash",
+      "Flash, digital (This creature can block or be blocked only by creatures with digital.)",
       "Whenever this creature deals combat damage to a player, draw a card."
     ],
     "flavor": "",
@@ -1459,7 +1459,7 @@
     "text": [
       "Digital (This creature can block or be blocked only by creatures with digital.)",
       "Whenever Pirate Signal attacks, you may pay {E}. If you do, another target creature gains digital until end of turn.",
-      "{2}{U}: Eject. Activate only as a sorcery and only once each turn. ({2}: Transform this card.)"
+      "{2}{U}: Eject. Activate only as a sorcery and only once each turn. ({2}{U}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -1514,7 +1514,7 @@
     "type": "Legendary Creature — Program Rogue (1/3)",
     "displayType": "Legendary Creature — Program Rogue",
     "text": [
-      "Digital",
+      "Digital (The Keymaker can block or be blocked only by creatures with digital.)",
       "{T}, Pay {E}: Target creature can't be blocked this turn.",
       "{T}, Pay {E}{E}: Target creature gains hexproof until end of turn."
     ],
@@ -2121,7 +2121,7 @@
     "displayType": "Creature — Human Rogue",
     "text": [
       "Deathtouch",
-      "{3}{B}: Jack-in. Activate only as a sorcery and only once each turn. ({1}{B}: Transform this card.)"
+      "{3}{B}: Jack-in. Activate only as a sorcery and only once each turn. ({3}{B}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2231,7 +2231,7 @@
     "displayType": "Artifact Creature — Robot",
     "text": [
       "Flying",
-      "When this creature enters, create two 2/2   colorless Robot artifact creature tokens with menace.",
+      "When this creature enters, create two 2/2 colorless Robot artifact creature tokens with menace.",
       "Whenever a Robot you control dies, you may pay {2}{B}. If you do, create a 2/2 colorless Robot artifact creature token with menace."
     ],
     "flavor": "",
@@ -2268,7 +2268,7 @@
     "type": "Legendary Creature — Program Guide (2/3)",
     "displayType": "Legendary Creature — Program Guide",
     "text": [
-      "Digital",
+      "Digital (The Trainman can block or be blocked only by creatures with digital.)",
       "When The Trainman enters, exile another target creature until The Trainman leaves the battlefield. If you own the exiled card, draw two cards and lose 2 life. If you don't own the exiled card, you gain 2 life."
     ],
     "flavor": "",
@@ -2395,8 +2395,7 @@
     "type": "Sorcery",
     "displayType": "Sorcery",
     "text": [
-      "# RENAME?",
-      "Search your library for a card. You may pay and amount of {E} equal to its mana value. If you do, cast it. Otherwise, put it into your hand."
+      "Search your library for a card. You may pay an amount of {E} equal to its mana value. If you do, cast it. Otherwise, put it into your hand."
     ],
     "flavor": "",
     "rarity": "Mythic",
@@ -2774,7 +2773,7 @@
     "text": [
       "Double strike",
       "When this creature enters, create a Gun token. (It's an Equipment artifact with \"Equipped creature gets +1/+0 and has first strike while attacking,\" \"When equipped creature deals combat damage, sacrifice this artifact,\" and equip {1}.)",
-      "Equipment attached to Akimbo Specialist cannot be sacrified during the first strike damage step."
+      "Equipment attached to Akimbo Specialist can't be sacrificed during the first strike damage step."
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -2972,7 +2971,7 @@
     "displayType": "Instant",
     "text": [
       "As an additional cost to cast this spell, sacrifice an artifact or creature.",
-      "If the sacrified permanent was a token, Scrapnel Ejection does 3 damage to any target. Otherwise, Shrapnel Ejection deals damage equal to the sacrificed permanent's mana value to any target."
+      "If the sacrificed permanent was a token, Shrapnel Ejection deals 3 damage to any target. Otherwise, Shrapnel Ejection deals damage equal to the sacrificed permanent's mana value to any target."
     ],
     "flavor": " \"Sometimes the only way to win is to blow up the exit.\"",
     "rarity": "Uncommon",
@@ -3570,7 +3569,7 @@
     "displayType": "Creature — Human Druid",
     "text": [
       "{T}: Add one mana of any color.",
-      "{4}{G}{G}: Jack-in. Activate only as a sorcery and only once each turn. ({4}{G}: Transform this card.)"
+      "{4}{G}{G}: Jack-in. Activate only as a sorcery and only once each turn. ({4}{G}{G}: Transform this card.)"
     ],
     "flavor": "",
     "rarity": "Uncommon",
@@ -3829,8 +3828,8 @@
     "type": "Creature — Human Soldier (5/4)",
     "displayType": "Creature — Human Soldier",
     "text": [
-      "Flash, Reach",
-      "This creature can block creatures with digital.",
+      "Flash, reach",
+      "This creature can block creatures with digital as though they didn't have digital.",
       "Pay {E}{E}, Discard a card: Return this card from your graveyard to your hand. Activate this ability only as a sorcery."
     ],
     "flavor": "",
@@ -4480,7 +4479,7 @@
       "Haste",
       "Whenever a creature you control deals combat damage to a player, you get {E}.",
       "{T}, Pay {E}: Target creature gets +2/+0 and gains trample until end of turn.",
-      "{T}, Pay six {E}: Untap all creatures you control. After this phase, there is an additional combat phase. Activate only as a sorcery and only once per turn."
+      "{T}, Pay six {E}: Untap all creatures you control. After this phase, there is an additional combat phase. Activate only as a sorcery and only once each turn."
     ],
     "flavor": "",
     "rarity": "Rare",
@@ -4589,7 +4588,7 @@
     "type": "Legendary Creature — Program Rogue (2/3)",
     "displayType": "Legendary Creature — Program Rogue",
     "text": [
-      "Digital",
+      "Digital (The Merovingian can block or be blocked only by creatures with digital.)",
       "Whenever another creature dies, you may pay {1}. If you do, create a Treasure token.",
       "{T}, Sacrifice a Treasure: Draw a card."
     ],
@@ -4627,7 +4626,7 @@
     "type": "Legendary Creature — Program Agent (4/4)",
     "displayType": "Legendary Creature — Program Agent",
     "text": [
-      "Champion a creature with digital",
+      "Champion a creature with digital (When this enters, sacrifice it unless you exile another creature with digital you control. Return that card when this leaves.)",
       "Digital (Agent Smith can block or be blocked only by creatures with digital.)",
       "Whenever a creature enters under an opponent's control, you may pay {U/B}. If you do, gain control of it until the end of your next turn. Do this only once each turn.",
       "At the beginning of your end step, each opponent loses 1 life for each creature you control but don't own."
@@ -4746,7 +4745,7 @@
     "type": "Legendary Creature — Program Child (1/2)",
     "displayType": "Legendary Creature — Program Child",
     "text": [
-      "Digital",
+      "Digital (Sati can block or be blocked only by creatures with digital.)",
       "{T}: Add one mana of any color.",
       "{W}{U}{G}, {T}, Sacrifice Sati: Exile all nonland permanents, then return them to the battlefield tapped under their owners' control."
     ],
@@ -4784,7 +4783,7 @@
     "type": "Legendary Creature — Human Program Avatar (4/4)",
     "displayType": "Legendary Creature — Human Program Avatar",
     "text": [
-      "Flying, digital, ward {2}",
+      "Flying, ward {2}, digital (Neo can block or be blocked only by creatures with digital.)",
       "Whenever Neo, The One attacks, put a +1/+1 counter on him and return target nonland permanent to its owner's hand.",
       "{2}: Eject."
     ],
@@ -4823,7 +4822,7 @@
     "type": "Legendary Creature — Program Rogue (4/4)",
     "displayType": "Legendary Creature — Program Rogue",
     "text": [
-      "Champion a creature",
+      "Champion a creature (When this enters, sacrifice it unless you exile another creature you control. Return that card when this leaves.)",
       "You may have Agent Smith champion creatures you don't control.",
       "Menace",
       "Agent Smith has digital as long as the championed creature had digital. The same is true for flying, first strike, double strike, deathtouch, haste, hexproof, indestructible, lifelink, reach, trample, and vigilance."
@@ -5106,7 +5105,7 @@
       "Indestructible",
       "As long as you have seven or fewer {E}, Deus Ex Machina isn't a creature.",
       "At the beginning of your upkeep, you get {E}{E}{E}.",
-      "Pay {E}{E}{E}{E}: Destroy target permanent. Activate this only as a sorcery and only once per turn."
+      "Pay {E}{E}{E}{E}: Destroy target permanent. Activate only as a sorcery and only once each turn."
     ],
     "flavor": "",
     "rarity": "Mythic",
