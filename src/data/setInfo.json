@@ -223,8 +223,8 @@
         "0": 1,
         "1": 25,
         "2": 45,
-        "3": 45,
-        "4": 28,
+        "3": 46,
+        "4": 27,
         "5+": 11
       }
     },
@@ -257,10 +257,10 @@
     "averageCMC": 3.04,
     "cardsWithAbilities": {
       "cardDraw": 33,
-      "removal": 81,
+      "removal": 82,
       "counterspells": 5,
       "tokenCreators": 38,
-      "energyCards": 117
+      "energyCards": 118
     },
     "rarityByColor": {
       "W": {

@@ -3211,7 +3211,8 @@
     "displayType": "Creature — Human Warrior",
     "text": [
       "Reach, deathtouch",
-      "This creature can block creatures with digital as though they didn't have digital."
+      "This creature can block creatures with digital as though they didn't have digital.",
+      "{G}, Exile this card from your graveyard: You get {E}{E}."
     ],
     "flavor": "",
     "rarity": "Common",
@@ -3753,7 +3754,7 @@
     "displayType": "Sorcery",
     "text": [
       "Choose one —",
-      "• Destroy up to three target creatures with digital.",
+      "• Destroy up to two target creatures with digital.",
       "• Destroy all artifacts and enchantments.",
       "If you have 6 or more {E}, you may choose both."
     ],
@@ -4288,8 +4289,8 @@
   {
     "id": "U123",
     "name": "Resistance Coordinator",
-    "cost": "{1}{G}{W}",
-    "type": "Creature — Human Soldier (1/4)",
+    "cost": "{1}{W}{G}",
+    "type": "Creature — Human Soldier (1/3)",
     "displayType": "Creature — Human Soldier",
     "text": [
       "Other creatures you control without digital get +1/+1.",
@@ -4299,7 +4300,7 @@
     "rarity": "Uncommon",
     "isBackFace": false,
     "hasBackFace": false,
-    "pt": "1/4",
+    "pt": "1/3",
     "colorIndicator": null,
     "fileName": "U123_resistance_coordinator.png"
   },
